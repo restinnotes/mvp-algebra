@@ -44,7 +44,15 @@ npm run dev
 - **BKT 掌握率**：每个知识点都有动态概率追踪，数据保存在本地跨 Session 共享。
 - **数字画像**：Gemini 3.1 会定期根据你的解题表现（如思路、易错点）总结你的学习特性，并展示在侧边栏。
 
-## 🔧 开发说明
+## � 参考与致谢
+本项目在架构设计与逻辑流程上参考并吸取了以下优秀开源项目的经验：
+- **[feilaz/AI_Powered_Math_Tutoring](https://github.com/feilaz/AI_Powered_Math_Tutoring)**：在 Long-Term Memory (LTM) 机制与 Agent 调度逻辑上提供了重要启发。
+- **Gemini 3.1 系列模型**：由 Google DeepMind 提供支持，本项目深度使用了其 Pro (Decomposition) 与 Flash-Lite (Real-time Eval) 模型。
+- **Next.js & Vercel**：提供了高效的开发框架与生产部署环境。
+
+---
+
+## �🔧 开发说明
 - `src/app/api/decompose`: 影子解题引擎 (Pro)
 - `src/app/api/evaluate-strategy`: 音频思路评估 (Flash Lite)
 - `src/app/api/recognize`: 手写识别与判定 (Flash Lite)
