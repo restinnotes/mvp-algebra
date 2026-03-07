@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
-import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare } from 'lucide-react';
+import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare, UserCircle } from 'lucide-react';
+import { BktEngine } from '@/lib/bkt';
+import { LTMMemory, StudentPersona } from '@/lib/memory';
 
 type StepStatus = 'locked' | 'active' | 'completed' | 'failed';
 
@@ -14,6 +16,7 @@ interface ChallengeStep {
     expectedResult: string;
     status: StepStatus;
     fallbackHint?: string;
+    knowledgeTag?: string; // For BKT tracking
 }
 
 interface LogEntry {
@@ -40,6 +43,27 @@ export default function DynamicScaffold() {
     const [strategyFeedback, setStrategyFeedback] = useState<{ isCorrect: boolean, feedback: string, next?: string } | null>(null);
     const [pendingSteps, setPendingSteps] = useState<ChallengeStep[]>([]);
     const recognitionRef = useRef<any>(null);
+
+    // LTM States
+    const [persona, setPersona] = useState<StudentPersona | null>(null);
+    const [masteryData, setMasteryData] = useState<Record<string, number>>({});
+
+    // Initial LTM Load
+    useEffect(() => {
+        const mem = LTMMemory.load();
+        setPersona(mem.persona);
+        setMasteryData(mem.mastery);
+    }, []);
+
+    // iPad Optimization: Prevent bounce scroll
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.body.style.overscrollBehavior = 'none';
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.body.style.overscrollBehavior = 'auto';
+        };
+    }, []);
 
     // Debug Panel State
     const [showDebug, setShowDebug] = useState(false);
@@ -145,12 +169,29 @@ export default function DynamicScaffold() {
                 if (latex) setRecognizedLatex(latex);
 
                 if (data.isCorrect) {
-                    addLog('info', `✅ Step ${currentStepId} 判定正确! latex="${latex}"`);
+                    addLog('info', `✅ Step ${currentStepId} 判定正确!`);
+
+                    // Update BKT & Persistence
+                    if (targetStep?.knowledgeTag) {
+                        const currentP = masteryData[targetStep.knowledgeTag] || 0.3;
+                        const newP = BktEngine.updateMastery(currentP, true);
+                        const updatedMastery = { ...masteryData, [targetStep.knowledgeTag]: newP };
+                        setMasteryData(updatedMastery);
+                        LTMMemory.save({ mastery: updatedMastery });
+                        addLog('info', `📈 知识点掌握率更新 [${targetStep.knowledgeTag}]: ${newP}`);
+                    }
+
                     setSteps(prev => prev.map(s => {
                         if (s.id === currentStepId) return { ...s, status: 'completed' };
                         if (s.id === currentStepId + 1) return { ...s, status: 'active' };
                         return s;
                     }));
+
+                    // End of session detection
+                    if (currentStepId === steps.length) {
+                        handleSessionEnd();
+                    }
+
                     setCurrentStepId(prev => prev + 1);
                     clearPad();
                 } else {
@@ -316,6 +357,28 @@ export default function DynamicScaffold() {
         }
     };
 
+    const handleSessionEnd = async () => {
+        addLog('info', '🏁 关卡挑战成功！正在生成学习画像总结...');
+        try {
+            const res = await fetch('/api/summarize-persona', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    currentPersona: persona,
+                    sessionLogs: logs.filter(l => l.type !== 'cheat').slice(-10) // Take last 10 meaningful logs
+                })
+            });
+            const updated = await res.json();
+            if (updated && !updated.error) {
+                setPersona(updated);
+                LTMMemory.updatePersona(updated);
+                addLog('info', '✅ 学生画像已更新并持久化');
+            }
+        } catch (e) {
+            console.error('Failed to update persona:', e);
+        }
+    };
+
     // ========== Manual text input (keyboard fallback) ==========
     const handleManualSubmit = (value: string) => {
         if (!value.trim()) return;
@@ -425,6 +488,22 @@ export default function DynamicScaffold() {
                         <h2 className="font-semibold tracking-wide text-sm uppercase">解题进度</h2>
                     </div>
                     <div className="flex flex-col gap-2">
+                        {persona && (
+                            <div className="mb-4 p-4 bg-indigo-500/5 border border-indigo-500/20 rounded-2xl">
+                                <div className="flex items-center gap-2 text-indigo-400 mb-2">
+                                    <UserCircle size={14} />
+                                    <span className="text-xs font-bold uppercase tracking-wider">AI 导师数字画像</span>
+                                </div>
+                                <p className="text-white/80 text-xs leading-relaxed italic mb-2">"{persona.lastSessionSummary}"</p>
+                                <div className="flex flex-wrap gap-1">
+                                    {persona.misconceptions.map((m, i) => (
+                                        <span key={i} className="px-2 py-0.5 bg-rose-500/10 text-rose-400 text-[10px] rounded-full border border-rose-500/20">
+                                            {m}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                         {steps.map((step) => (
                             <div key={step.id} className={`p-3 rounded-xl border flex items-center justify-between transition-all ${step.status === 'active' ? 'border-indigo-500/40 bg-indigo-500/5' :
                                 step.status === 'completed' ? 'border-emerald-500/20 bg-emerald-500/5 opacity-80' :
@@ -440,7 +519,16 @@ export default function DynamicScaffold() {
                                         {step.status === 'completed' ? <Check size={12} /> : step.id}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-white/90 font-medium text-sm">{step.label}</span>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-white/90 font-medium text-sm">{step.label}</span>
+                                            {step.knowledgeTag && masteryData[step.knowledgeTag] !== undefined && (
+                                                <div
+                                                    className={`w-1.5 h-1.5 rounded-full ${BktEngine.getMasteryStatus(masteryData[step.knowledgeTag]) === 'green' ? 'bg-emerald-500' :
+                                                        BktEngine.getMasteryStatus(masteryData[step.knowledgeTag]) === 'yellow' ? 'bg-amber-500' : 'bg-rose-500'}`}
+                                                    title={`掌握率: ${Math.round(masteryData[step.knowledgeTag] * 100)}%`}
+                                                />
+                                            )}
+                                        </div>
                                         <span className="text-white/40 text-xs mt-0.5">{step.expression}</span>
                                     </div>
                                 </div>
