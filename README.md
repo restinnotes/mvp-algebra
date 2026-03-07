@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Math Tutor - Zero-Question-Bank MVP (Gemini 3.1 Edition)
 
-## Getting Started
+这是一个基于 Next.js 开发的 AI 数学辅导应用，主打“零题库”方案：通过 Gemini 3.1 系列模型实现图片解析、逻辑拆解、思路评估和手写识别。
 
-First, run the development server:
+## 🚀 快速开始
 
+### 1. 环境准备
+确保已安装 [Node.js](https://nodejs.org/) (建议 v18+)。
+
+### 2. 获取代码
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/restinnotes/mvp-algebra.git
+cd mvp-algebra
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. 安装依赖
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. 配置环境变量
+在项目根目录下创建一个 `.env.local` 文件，填入你的 Gemini API Key：
+```env
+GEMINI_API_KEY=你的_API_KEY
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. 启动开发服务器
+```bash
+npm run dev
+```
+访问 `http://localhost:3000` 即可开始。
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎮 核心功能与工作流
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+本项目的核心是 **“影子解题 (Shadow Solving)”** 与 **“思路先行”** 的 Socratic 辅导模式：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **上传题目**：点击“上传新题目”，Gemini 3.1 Pro 在后台自动拆解题目为 3-5 个逻辑支架。
+2. **语音讲思路**：系统强制要求在动笔前口述思路。Gemini 3.1 Flash Lite 会实时评估逻辑。
+3. **阶梯式解题**：思路通过后，动态加载解题轴。学生每步手写，AI 实时判定正误。
+4. **知识图谱**：内置 BKT 引擎，实时追踪并可视化掌握率。
 
-## Deploy on Vercel
+## 🛠️ 技术栈
+- **Frontend**: Next.js, Tailwind CSS, Lucide React
+- **AI Models**: Gemini 3.1 Pro (推理), Gemini 3.1 Flash Lite (实时交互)
+- **Math**: React-KaTeX, Signature Canvas
+- **Logic**: BKT (Bayesian Knowledge Tracing)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 开发说明
+- `src/app/api/decompose`: 影子解题引擎 (Pro)
+- `src/app/api/evaluate-strategy`: 音频思路评估 (Flash Lite)
+- `src/app/api/recognize`: 手写识别与判定 (Flash Lite)
+- `src/components/DynamicScaffold.tsx`: 核心交互组件
