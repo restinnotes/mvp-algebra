@@ -7,31 +7,20 @@
 
 ## 🚀 快速开始
 
-### 1. 环境准备
-确保已安装 [Node.js](https://nodejs.org/) (建议 v18+)。
+### 1. 团队一键配置 (推荐)
+如果你使用的是 Windows 系统，只需在项目根目录右键选择 **“使用 PowerShell 运行”** `setup.ps1` 脚本。
+它会自动：
+- 检查 Node.js 环境
+- 安装所有依赖
+- 提示输入并配置 API Key
+- **自动检测并在屏幕上显示 iPad 访问的局域网 IP**
 
-### 2. 获取代码
-```bash
-git clone https://github.com/restinnotes/mvp-algebra.git
-cd mvp-algebra
-```
-
-### 3. 安装依赖
+### 2. 手动启动
 ```bash
 npm install
-```
-
-### 4. 配置环境变量
-在项目根目录下创建一个 `.env.local` 文件，填入你的 Gemini API Key：
-```env
-GEMINI_API_KEY=你的_API_KEY
-```
-
-### 5. 启动开发服务器
-```bash
 npm run dev
 ```
-访问 `http://localhost:3000` 即可开始。
+访问 `http://localhost:3000` 开始。
 
 ---
 
