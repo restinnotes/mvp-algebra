@@ -550,13 +550,8 @@ export default function DynamicScaffold() {
                     addLog('error', `❌ 键盘输入错误: ${data.feedback}`);
                 }
             }
-<<<<<<< HEAD
         } catch (e: unknown) {
             addLog('error', `Manual fetch error: ${e instanceof Error ? e.message : String(e)}`);
-=======
-        } catch (e: any) {
-            addLog('error', `Manual fetch error: ${e.message}`);
->>>>>>> master
         } finally {
             setIsProcessingOcr(false);
         }
