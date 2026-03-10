@@ -4,18 +4,17 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export async function POST(req: NextRequest) {
-    try {
-        const body = await req.json();
-        const { problemContext, history } = body;
+        try {
+                const body = await req.json();
+                const { problemContext, history } = body;
 
-        const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {
-            const content = log.contentType === 'math' ? `Math: ${log.latex}` : `Text: ${log.text}`;
-            return `[Step ${i + 1}] ${log.type === 'student' ? 'Student' : 'Tutor'}: ${content}`;
-        }).join('\n');
+                const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {
+                        const content = log.contentType === 'math' ? `Math: ${log.latex}` : `Text: ${log.text}`;
+                        return `[Step ${i + 1}] ${log.type === 'student' ? 'Student' : 'Tutor'}: ${content}`;
+                }).join('\n');
 
-        const promptText = `
+                const promptText = `
         You are an Educational Quality Expert. Review the following math problem session and provide a "Post-Problem Reflection" (总结与复盘) for the student.
-
         Problem: ${problemContext}
         Session History:
         ${historyText}
@@ -37,13 +36,13 @@ export async function POST(req: NextRequest) {
         Output ONLY the markdown text.
         `;
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-        const result = await model.generateContent(promptText);
-        const response = await result.response;
-        return NextResponse.json({ summary: response.text().trim() });
+                const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+                const result = await model.generateContent(promptText);
+                const response = await result.response;
+                return NextResponse.json({ summary: response.text().trim() });
 
-    } catch (error: unknown) {
-        console.error('Review API error:', error);
-        return NextResponse.json({ error: 'Failed to generate review' }, { status: 500 });
-    }
+        } catch (error: unknown) {
+                console.error('Review API error:', error);
+                return NextResponse.json({ error: 'Failed to generate review' }, { status: 500 });
+        }
 }

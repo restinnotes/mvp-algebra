@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
 import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play } from 'lucide-react';
+
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 
 
@@ -298,15 +299,22 @@ export default function DynamicScaffold() {
         await new Promise(r => setTimeout(r, 3000));
 
         // Step 3: Math Step 2
+<<<<<<< HEAD
         const step2 = '\\frac{2m+1}{m^2+m} = \\frac{3}{2}';
         setManualCalcInput(step2);
         await new Promise(r => setTimeout(r, 2000));
         await handleManualSubmit(step2);
+=======
+        setManualCalcInput('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
+>>>>>>> master
         addLog('info', '演示：已提交步骤 2 (代入韦达定理)');
 
         await new Promise(r => setTimeout(r, 3000));
 
         // Step 4: Auxiliary Calc (Brain tool)
+<<<<<<< HEAD
         const step3 = '2(2m+1) = 3(m^2+m)';
         setManualCalcInput(step3);
         addLog('info', '演示：正在展示“辅助计算”功能...');
@@ -328,6 +336,23 @@ export default function DynamicScaffold() {
         setManualCalcInput(step4);
         await new Promise(r => setTimeout(r, 2000));
         await handleManualSubmit(step4);
+=======
+        setManualCalcInput('2(2m+1) = 3(m^2+m)');
+        addLog('info', '演示：正在展示“辅助计算”功能...');
+        await new Promise(r => setTimeout(r, 1500));
+        await handleAuxCalculate(); // This will simplify 2(2m+1)=3(m^2+m) to something like 3m^2-m-2=0
+
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit(manualCalcInput); // Submit the simplified result
+        addLog('info', '演示：已通过代算提交简化后的方程');
+
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Step 5: Final Result
+        setManualCalcInput('m=1 (判别式检验已排除m=-2/3)');
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit('m=1');
+>>>>>>> master
         addLog('info', '演示：提交最终答案');
 
         setIsDemoRunning(false);
@@ -402,7 +427,11 @@ export default function DynamicScaffold() {
                 id: Date.now().toString(),
                 type: 'student',
                 contentType: 'text',
+<<<<<<< HEAD
                 text: textToSubmit,
+=======
+                text: strategyTranscript,
+>>>>>>> master
                 label: '解题思路',
                 message: data.feedback,
                 isCorrect: data.isCorrect
@@ -512,13 +541,22 @@ export default function DynamicScaffold() {
 
                 if (data.isCorrect) {
                     addLog('info', `✅ 键盘输入正确: ${data.stepLabel}`);
+<<<<<<< HEAD
                     if (data.isSolved) handleSessionEnd([...stepLogs, newLog]);
+=======
+                    if (data.isSolved) handleSessionEnd();
+>>>>>>> master
                 } else {
                     addLog('error', `❌ 键盘输入错误: ${data.feedback}`);
                 }
             }
+<<<<<<< HEAD
         } catch (e: unknown) {
             addLog('error', `Manual fetch error: ${e instanceof Error ? e.message : String(e)}`);
+=======
+        } catch (e: any) {
+            addLog('error', `Manual fetch error: ${e.message}`);
+>>>>>>> master
         } finally {
             setIsProcessingOcr(false);
         }
@@ -804,7 +842,11 @@ export default function DynamicScaffold() {
                             }}
                         />
                         <button
+<<<<<<< HEAD
                             onClick={() => handleAuxCalculate()}
+=======
+                            onClick={handleAuxCalculate}
+>>>>>>> master
                             disabled={isAuxCalculating || isProcessingOcr}
                             className={`p-2 rounded-lg transition-all ${isAuxCalculating ? 'bg-indigo-500/20 text-indigo-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
                             title="辅助计算 (AI代算当前内容)"
