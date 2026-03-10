@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
         const { currentPersona, sessionLogs } = await req.json();
 
         const model = genAI.getGenerativeModel({
-            model: "gemini-3.1-flash-lite",
+            model: "gemini-3.1-flash-lite-preview",
             generationConfig: {
                 responseMimeType: "application/json",
                 responseSchema: personaSchema as any,

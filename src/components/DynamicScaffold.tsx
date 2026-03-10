@@ -3,21 +3,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
-import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare, UserCircle } from 'lucide-react';
+import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play } from 'lucide-react';
 import { BktEngine } from '@/lib/bkt';
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 
-type StepStatus = 'locked' | 'active' | 'completed' | 'failed';
-
-interface ChallengeStep {
-    id: number;
-    label: string;
-    expression: React.ReactNode;
-    expectedResult: string;
-    status: StepStatus;
-    fallbackHint?: string;
-    knowledgeTag?: string; // For BKT tracking
-}
 
 interface LogEntry {
     time: string;
@@ -26,10 +15,7 @@ interface LogEntry {
 }
 
 export default function DynamicScaffold() {
-    const [currentStepId, setCurrentStepId] = useState<number>(1);
-    const [failures, setFailures] = useState<Record<number, number>>({});
-    const [padRef, setPadRef] = useState<any>(null); // Fixing ref type for signature canvas or keep as is if working
-    const canvasRef = useRef<any>(null);
+    const padRef = useRef<any>(null);
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
@@ -41,7 +27,12 @@ export default function DynamicScaffold() {
     const [strategyTranscript, setStrategyTranscript] = useState('');
     const [isEvaluatingStrategy, setIsEvaluatingStrategy] = useState(false);
     const [strategyFeedback, setStrategyFeedback] = useState<{ isCorrect: boolean, feedback: string, next?: string } | null>(null);
-    const [pendingSteps, setPendingSteps] = useState<ChallengeStep[]>([]);
+    const [isSolved, setIsSolved] = useState(false);
+    const [manualCalcInput, setManualCalcInput] = useState('');
+    const [isAuxCalculating, setIsAuxCalculating] = useState(false);
+    const [reviewSummary, setReviewSummary] = useState<string | null>(null);
+    const [isGeneratingReview, setIsGeneratingReview] = useState(false);
+    const [recordingTarget, setRecordingTarget] = useState<'strategy' | 'calculation' | null>(null);
     const recognitionRef = useRef<any>(null);
 
     // LTM States
@@ -74,57 +65,37 @@ export default function DynamicScaffold() {
         setLogs(prev => [...prev, { time, type, message }]);
     };
 
-    const [steps, setSteps] = useState<ChallengeStep[]>([
-        {
-            id: 1, label: "判别式前提",
-            expression: <InlineMath math="\Delta = b^2 - 4ac" />,
-            expectedResult: "1", status: 'active',
-            fallbackHint: "展开为: (4m^2+4m+1) - (4m^2+4m) = 1"
-        },
-        {
-            id: 2, label: "两根之和",
-            expression: <InlineMath math="x_1 + x_2 = -\frac{b}{a}" />,
-            expectedResult: "2m+1", status: 'locked'
-        },
-        {
-            id: 3, label: "两根之积",
-            expression: <InlineMath math="x_1 x_2 = \frac{c}{a}" />,
-            expectedResult: "m^2+m", status: 'locked'
-        },
-        {
-            id: 4, label: "通分目标式",
-            expression: <InlineMath math="\frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1+x_2}{x_1x_2} = \frac{3}{2}" />,
-            expectedResult: "1,2/3", status: 'locked'
-        }
-    ]);
+    // Dynamic Step Logs
+    interface StepLog {
+        id: string;
+        type: 'student' | 'ai';
+        contentType: 'math' | 'text';
+        latex?: string;
+        text?: string;
+        label?: string;
+        message?: string;
+        isCorrect?: boolean;
+    }
+    const [stepLogs, setStepLogs] = useState<StepLog[]>([]);
 
     const clearPad = () => {
         if (padRef.current) {
             padRef.current.clear();
-            setRecognizedLatex('');
         }
+        setRecognizedLatex('');
     };
 
-    // ========== CHEAT: Skip current step ==========
     const cheatSkip = () => {
-        addLog('cheat', `[CHEAT] 跳过 Step ${currentStepId}: ${steps.find(s => s.id === currentStepId)?.label}`);
-        setSteps(prev => prev.map(s => {
-            if (s.id === currentStepId) return { ...s, status: 'completed' };
-            if (s.id === currentStepId + 1) return { ...s, status: 'active' };
-            return s;
-        }));
-        setCurrentStepId(prev => prev + 1);
+        // Obsoleted in dynamic mode, maybe just add a log
+        addLog('cheat', `[CHEAT] Skipped`);
         clearPad();
     };
 
-    // ========== CHEAT: Complete all steps ==========
     const cheatCompleteAll = () => {
         addLog('cheat', '[CHEAT] 全部跳过，直通关');
-        setSteps(prev => prev.map(s => ({ ...s, status: 'completed' })));
-        setCurrentStepId(5);
+        handleSessionEnd();
     };
 
-    // ========== OCR Submit ==========
     const handleOcrSubmit = async () => {
         if (!padRef.current || padRef.current.isEmpty()) {
             addLog('error', '画板为空，无法提交');
@@ -134,21 +105,23 @@ export default function DynamicScaffold() {
         setIsProcessingOcr(true);
         setRecognizedLatex('');
 
-        const targetStep = steps.find(s => s.id === currentStepId);
-        addLog('info', `开始识别 Step ${currentStepId}: ${targetStep?.label}`);
+        addLog('info', `开始识别自由步骤...`);
 
         try {
             const dataUrl = padRef.current.getTrimmedCanvas().toDataURL('image/png');
             addLog('info', `Canvas base64 长度: ${dataUrl.length} chars`);
 
+            const history = stepLogs
+                .filter(log => log.isCorrect && log.contentType === 'math')
+                .map(log => ({ latex: log.latex, label: log.label }));
+
             const payload = {
                 imageBase64: dataUrl,
-                problemContext: "x^2 - (2m+1)x + m^2 + m = 0, two real roots x1 x2, 1/x1+1/x2=3/2",
-                stepLabel: targetStep?.label,
-                expectedResult: targetStep?.expectedResult
+                problemContext: problemText,
+                history: history
             };
 
-            addLog('api', `POST /api/recognize | stepLabel="${payload.stepLabel}" expectedResult="${payload.expectedResult}"`);
+            addLog('api', `POST /api/recognize`);
 
             const res = await fetch('/api/recognize', {
                 method: 'POST',
@@ -156,70 +129,35 @@ export default function DynamicScaffold() {
                 body: JSON.stringify(payload)
             });
 
-            addLog('api', `Response status: ${res.status} ${res.statusText}`);
+            addLog('api', `Response status: ${res.status}`);
 
             const data = await res.json();
             addLog('api', `Response body: ${JSON.stringify(data)}`);
 
-            // Handle the response - be more lenient about what counts as "recognized"
             const latex = (data.latex || '').replace(/\$/g, '');
+            if (latex) setRecognizedLatex(latex);
 
-            if (latex || data.isCorrect !== undefined) {
-                // We got something back from Gemini
-                if (latex) setRecognizedLatex(latex);
+            if (data.isCorrect !== undefined) {
+                const newLog: StepLog = {
+                    id: Date.now().toString(),
+                    type: 'student',
+                    contentType: 'math',
+                    latex: latex,
+                    label: data.stepLabel,
+                    message: data.feedback,
+                    isCorrect: data.isCorrect
+                };
+
+                setStepLogs(prev => [...prev, newLog]);
 
                 if (data.isCorrect) {
-                    addLog('info', `✅ Step ${currentStepId} 判定正确!`);
-
-                    // Update BKT & Persistence
-                    if (targetStep?.knowledgeTag) {
-                        const currentP = masteryData[targetStep.knowledgeTag] || 0.3;
-                        const newP = BktEngine.updateMastery(currentP, true);
-                        const updatedMastery = { ...masteryData, [targetStep.knowledgeTag]: newP };
-                        setMasteryData(updatedMastery);
-                        LTMMemory.save({ mastery: updatedMastery });
-                        addLog('info', `📈 知识点掌握率更新 [${targetStep.knowledgeTag}]: ${newP}`);
-                    }
-
-                    setSteps(prev => prev.map(s => {
-                        if (s.id === currentStepId) return { ...s, status: 'completed' };
-                        if (s.id === currentStepId + 1) return { ...s, status: 'active' };
-                        return s;
-                    }));
-
-                    // End of session detection
-                    if (currentStepId === steps.length) {
+                    addLog('info', `✅ 步骤判定正确: ${data.stepLabel}`);
+                    clearPad();
+                    if (data.isSolved) {
                         handleSessionEnd();
                     }
-
-                    setCurrentStepId(prev => prev + 1);
-                    clearPad();
                 } else {
-                    addLog('error', `❌ Step ${currentStepId} 判定错误. feedback="${data.feedback || 'none'}"`);
-                    const currentFails = (failures[currentStepId] || 0) + 1;
-                    setFailures(prev => ({ ...prev, [currentStepId]: currentFails }));
-
-                    setSteps(prev => prev.map(s => {
-                        if (s.id === currentStepId) {
-                            return {
-                                ...s,
-                                status: currentFails >= 3 ? 'failed' : 'active',
-                                fallbackHint: data.feedback || s.fallbackHint
-                            };
-                        }
-                        return s;
-                    }));
-
-                    if (currentFails >= 3) {
-                        addLog('error', `💀 Step ${currentStepId} 连续失败 3 次，触发熔断跳步`);
-                        setTimeout(() => {
-                            setSteps(prev => prev.map(s =>
-                                s.id === currentStepId + 1 ? { ...s, status: 'active' } : s
-                            ));
-                            setCurrentStepId(prev => prev + 1);
-                            clearPad();
-                        }, 3000);
-                    }
+                    addLog('error', `❌ 步骤判定错误: ${data.feedback}`);
                 }
             } else {
                 addLog('error', `API 返回数据异常: ${JSON.stringify(data)}`);
@@ -258,16 +196,6 @@ export default function DynamicScaffold() {
 
                 if (data.steps && data.steps.length > 0) {
                     setProblemText(data.problemStatement || "识别出的题目信息已更新");
-                    const newSteps = data.steps.map((s: any, index: number) => ({
-                        id: s.id || index + 1,
-                        label: s.label,
-                        expression: <InlineMath math={s.expression} />,
-                        expectedResult: s.expectedResult,
-                        status: 'locked', // Initial status is locked for all
-                        fallbackHint: s.hint,
-                        knowledgeTag: s.knowledgeTag
-                    }));
-                    setPendingSteps(newSteps);
                     addLog('info', `✅ 影子解题成功，等待思路确认后再开启支架`);
                 }
             };
@@ -282,11 +210,131 @@ export default function DynamicScaffold() {
         }
     };
 
+    // ========== Auxiliary Calculation ==========
+    const handleAuxCalculate = async () => {
+        let sourceLatex = manualCalcInput.trim();
+
+        // If manual input is empty, try to recognize from whiteboard first
+        if (!sourceLatex) {
+            if (!padRef.current || padRef.current.isEmpty()) {
+                addLog('error', '请先在画板书写或在输入框输入公式再进行辅助计算');
+                return;
+            }
+            setIsProcessingOcr(true);
+            try {
+                const dataUrl = padRef.current.getTrimmedCanvas().toDataURL('image/png');
+                const history = stepLogs
+                    .filter(log => log.isCorrect && log.contentType === 'math')
+                    .map(log => ({ latex: log.latex, label: log.label }));
+
+                const res = await fetch('/api/recognize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ imageBase64: dataUrl, problemContext: problemText, history })
+                });
+                const data = await res.json();
+                if (data.latex && data.latex !== "Parse Error") {
+                    sourceLatex = data.latex;
+                    setManualCalcInput(sourceLatex);
+                } else {
+                    addLog('error', '无法识别画板内容，请手动输入后再计算');
+                    return;
+                }
+            } catch (err) {
+                addLog('error', '识别失败');
+                return;
+            } finally {
+                setIsProcessingOcr(false);
+            }
+        }
+
+        setIsAuxCalculating(true);
+        addLog('info', `正在进行辅助计算: ${sourceLatex}...`);
+
+        try {
+            const res = await fetch('/api/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ latex: sourceLatex })
+            });
+            const data = await res.json();
+            if (data.result) {
+                setManualCalcInput(data.result);
+                addLog('info', '✅ 辅助计算完成');
+            } else {
+                addLog('error', '辅助计算失败');
+            }
+        } catch (err) {
+            addLog('error', '辅助计算异常');
+        } finally {
+            setIsAuxCalculating(false);
+        }
+    };
+
+    // ========== DEMO MODE (Automated Walkthrough) ==========
+    const [isDemoRunning, setIsDemoRunning] = useState(false);
+    const startDemo = async () => {
+        if (isDemoRunning) return;
+        setIsDemoRunning(true);
+        addLog('info', '🚀 开始完整流程演示...');
+
+        // Step 1: Strategy
+        setStrategyTranscript('先通分化简，利用韦达定理建立关于m的方程，最后根据判别式大于等于0检验结果。');
+        await new Promise(r => setTimeout(r, 1500));
+        await submitStrategy();
+        addLog('info', '演示：已提交解题思路');
+
+        // Wait for approval (polling logic)
+        let attempts = 0;
+        while (!isStrategyApproved && attempts < 20) {
+            await new Promise(r => setTimeout(r, 500));
+            attempts++;
+        }
+
+        // Step 2: Math Step 1
+        setManualCalcInput('\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}');
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit('\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}');
+        addLog('info', '演示：已提交步骤 1 (通分)');
+
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Step 3: Math Step 2
+        setManualCalcInput('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
+        addLog('info', '演示：已提交步骤 2 (代入韦达定理)');
+
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Step 4: Auxiliary Calc (Brain tool)
+        setManualCalcInput('2(2m+1) = 3(m^2+m)');
+        addLog('info', '演示：正在展示“辅助计算”功能...');
+        await new Promise(r => setTimeout(r, 1500));
+        await handleAuxCalculate(); // This will simplify 2(2m+1)=3(m^2+m) to something like 3m^2-m-2=0
+
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit(manualCalcInput); // Submit the simplified result
+        addLog('info', '演示：已通过代算提交简化后的方程');
+
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Step 5: Final Result 
+        setManualCalcInput('m=1 (判别式检验已排除m=-2/3)');
+        await new Promise(r => setTimeout(r, 2000));
+        handleManualSubmit('m=1');
+        addLog('info', '演示：提交最终答案');
+
+        setIsDemoRunning(false);
+        addLog('info', '✨ 演示流程结束，请查看顶部的复盘总结。');
+    };
+
     // ========== SPEECH RECOGNITION & STRATEGY ==========
-    const toggleRecording = () => {
+    const toggleRecording = (target: 'strategy' | 'calculation') => {
         if (isRecording) {
             recognitionRef.current?.stop();
             setIsRecording(false);
+            setRecordingTarget(null);
             return;
         }
 
@@ -303,18 +351,26 @@ export default function DynamicScaffold() {
 
         recognition.onresult = (event: any) => {
             let transcript = '';
-            for (let i = event.resultIndex; i < event.results.length; ++i) {
+            for (let i = 0; i < event.results.length; ++i) {
                 transcript += event.results[i][0].transcript;
             }
-            setStrategyTranscript(transcript);
+            if (target === 'strategy') {
+                setStrategyTranscript(transcript);
+            } else {
+                setManualCalcInput(transcript);
+            }
         };
 
-        recognition.onend = () => setIsRecording(false);
+        recognition.onend = () => {
+            setIsRecording(false);
+            setRecordingTarget(null);
+        };
 
         recognitionRef.current = recognition;
         recognition.start();
         setIsRecording(true);
-        addLog('info', '开始录音：请讲讲您的解题思路...');
+        setRecordingTarget(target);
+        addLog('info', `开始录音 (${target === 'strategy' ? '解题思路' : '数学推导'})...`);
     };
 
     const submitStrategy = async () => {
@@ -335,19 +391,21 @@ export default function DynamicScaffold() {
             setStrategyFeedback(data);
             addLog('api', `思路结果: ${JSON.stringify(data)}`);
 
+            const newLog: StepLog = {
+                id: Date.now().toString(),
+                type: 'student',
+                contentType: 'text',
+                text: strategyTranscript,
+                label: '解题思路',
+                message: data.feedback,
+                isCorrect: data.isCorrect
+            };
+            setStepLogs(prev => [...prev, newLog]);
+
             if (data.isCorrect) {
                 addLog('info', '✅ 思路正确，载入解题轴');
 
-                // When strategy is approved, load the pending steps and activate the first one
-                if (pendingSteps.length > 0) {
-                    const activatedSteps = pendingSteps.map((s, idx) => ({
-                        ...s,
-                        status: idx === 0 ? ('active' as StepStatus) : ('locked' as StepStatus)
-                    }));
-                    setSteps(activatedSteps);
-                    setCurrentStepId(activatedSteps[0].id);
-                }
-
+                // When strategy is approved, just clear the way
                 setTimeout(() => setIsStrategyApproved(true), 1500);
             }
         } catch (err: any) {
@@ -380,35 +438,73 @@ export default function DynamicScaffold() {
     };
 
     // ========== Manual text input (keyboard fallback) ==========
-    const handleManualSubmit = (value: string) => {
+    const handleManualSubmit = async (value: string) => {
         if (!value.trim()) return;
-        const step = steps.find(s => s.id === currentStepId);
-        if (!step) return;
 
-        addLog('info', `手动输入: "${value}" (期望包含: "${step.expectedResult}")`);
-        const isCorrect = step.expectedResult.includes(value.replace(/\s/g, ''));
+        addLog('info', `手动输入: "${value}"`);
+        setIsProcessingOcr(true);
 
-        if (isCorrect) {
-            addLog('info', `✅ 手动输入匹配成功`);
-            setSteps(prev => prev.map(s => {
-                if (s.id === currentStepId) return { ...s, status: 'completed' };
-                if (s.id === currentStepId + 1) return { ...s, status: 'active' };
-                return s;
-            }));
-            setCurrentStepId(prev => prev + 1);
-            clearPad();
-        } else {
-            addLog('error', `❌ 手动输入不匹配`);
-            const currentFails = (failures[currentStepId] || 0) + 1;
-            setFailures(prev => ({ ...prev, [currentStepId]: currentFails }));
+        try {
+            const history = stepLogs
+                .filter(log => log.isCorrect && log.contentType === 'math')
+                .map(log => ({ latex: log.latex, label: log.label }));
+            const payload = {
+                manualText: value.trim(),
+                problemContext: problemText,
+                history: history
+            };
+
+            const res = await fetch('/api/recognize', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await res.json();
+
+            // Override latex with manual value for log
+            const finalLatex = value.trim();
+
+            if (data.isCorrect !== undefined) {
+                const newLog: StepLog = {
+                    id: Date.now().toString(),
+                    type: 'student',
+                    contentType: 'math',
+                    latex: finalLatex,
+                    label: data.stepLabel,
+                    message: data.feedback,
+                    isCorrect: data.isCorrect
+                };
+
+                setStepLogs(prev => [...prev, newLog]);
+
+                if (data.isCorrect) {
+                    addLog('info', `✅ 键盘输入正确: ${data.stepLabel}`);
+                    if (data.isSolved) handleSessionEnd();
+                } else {
+                    addLog('error', `❌ 键盘输入错误: ${data.feedback}`);
+                }
+            }
+        } catch (e: any) {
+            addLog('error', `Manual fetch error: ${e.message}`);
+        } finally {
+            setIsProcessingOcr(false);
         }
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto h-[90vh] flex flex-col gap-4 relative">
+        <div className="w-full h-full flex flex-col gap-4 relative">
 
             {/* ===== DEBUG PANEL (floating, collapsible) ===== */}
             <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+                <button
+                    onClick={() => startDemo()}
+                    disabled={isDemoRunning}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500 hover:bg-indigo-600 text-white font-bold text-xs rounded-lg shadow-lg disabled:opacity-50"
+                >
+                    <Play size={14} fill="currentColor" />
+                    {isDemoRunning ? '演示运行中...' : '点击演示完整流程'}
+                </button>
                 <button
                     onClick={() => setShowDebug(!showDebug)}
                     className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/90 hover:bg-amber-600 text-black font-bold text-xs rounded-lg shadow-lg"
@@ -504,42 +600,62 @@ export default function DynamicScaffold() {
                                 </div>
                             </div>
                         )}
-                        {steps.map((step) => (
-                            <div key={step.id} className={`p-3 rounded-xl border flex items-center justify-between transition-all ${step.status === 'active' ? 'border-indigo-500/40 bg-indigo-500/5' :
-                                step.status === 'completed' ? 'border-emerald-500/20 bg-emerald-500/5 opacity-80' :
-                                    step.status === 'failed' ? 'border-rose-500/20 bg-rose-500/5 opacity-80' :
-                                        'border-white/5 bg-transparent opacity-40'
-                                }`}>
-                                <div className="flex items-center gap-3">
-                                    <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${step.status === 'completed' ? 'bg-emerald-500 text-white' :
-                                        step.status === 'active' ? 'bg-indigo-500 text-white' :
-                                            step.status === 'failed' ? 'bg-rose-500 text-white' :
-                                                'bg-white/10 text-white/50'
-                                        }`}>
-                                        {step.status === 'completed' ? <Check size={12} /> : step.id}
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-white/90 font-medium text-sm">{step.label}</span>
-                                            {step.knowledgeTag && masteryData[step.knowledgeTag] !== undefined && (
-                                                <div
-                                                    className={`w-1.5 h-1.5 rounded-full ${BktEngine.getMasteryStatus(masteryData[step.knowledgeTag]) === 'green' ? 'bg-emerald-500' :
-                                                        BktEngine.getMasteryStatus(masteryData[step.knowledgeTag]) === 'yellow' ? 'bg-amber-500' : 'bg-rose-500'}`}
-                                                    title={`掌握率: ${Math.round(masteryData[step.knowledgeTag] * 100)}%`}
-                                                />
-                                            )}
-                                        </div>
-                                        <span className="text-white/40 text-xs mt-0.5">{step.expression}</span>
-                                    </div>
+                        {reviewSummary && (
+                            <div className="mb-6 p-5 bg-amber-500/10 border border-amber-500/30 rounded-2xl shadow-xl animate-in fade-in slide-in-from-top-4 duration-700">
+                                <div className="flex items-center gap-2 text-amber-500 mb-3">
+                                    <Target size={18} />
+                                    <h3 className="text-sm font-bold uppercase tracking-widest">总结与归纳 · Post-Session Review</h3>
                                 </div>
-                                {step.status === 'completed' && (
-                                    <span className="text-emerald-400 font-mono text-xs bg-emerald-400/10 px-2 py-0.5 rounded">= {step.expectedResult}</span>
-                                )}
-                                {step.status === 'failed' && step.fallbackHint && (
-                                    <span className="text-rose-400 text-xs bg-rose-400/10 px-2 py-0.5 rounded max-w-[180px] truncate">{step.fallbackHint}</span>
-                                )}
-                                {step.status === 'active' && failures[step.id] > 0 && (
-                                    <span className="text-amber-400 text-xs flex items-center gap-1"><AlertTriangle size={10} /> {failures[step.id]}/3</span>
+                                <div className="prose prose-invert prose-sm max-w-none text-white/90 leading-relaxed whitespace-pre-wrap">
+                                    {reviewSummary}
+                                </div>
+                            </div>
+                        )}
+                        {isGeneratingReview && (
+                            <div className="mb-6 p-5 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center gap-3 animate-pulse">
+                                <RotateCcw className="animate-spin text-amber-500/50" />
+                                <span className="text-white/40 text-xs">AI 正在深度复盘本轮解题表现...</span>
+                            </div>
+                        )}
+                        {stepLogs.length === 0 && (
+                            <div className="flex flex-col items-center justify-center py-10 opacity-30">
+                                <span className="text-white">暂无解题记录。思路校验通过后，在下方画板开始第一步运算吧。</span>
+                            </div>
+                        )}
+                        {stepLogs.map((log, idx) => (
+                            <div key={log.id} className={`p-4 rounded-xl border flex flex-col gap-3 transition-all ${log.isCorrect ? 'border-emerald-500/20 bg-emerald-500/5' : 'border-rose-500/20 bg-rose-500/5'}`}>
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${log.isCorrect ? 'bg-emerald-500 text-white' : 'bg-rose-500 text-white'}`}>
+                                            {idx + 1}
+                                        </div>
+                                        <span className="text-white/90 font-medium text-sm">
+                                            {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
+                                        </span>
+                                    </div>
+                                    <span className={`px-2 py-0.5 rounded text-xs font-bold ${log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}`}>
+                                        {log.isCorrect ? '正确' : '需要优化'}
+                                    </span>
+                                </div>
+                                <div className="bg-black/30 rounded-lg p-3 overflow-x-auto text-white/80">
+                                    {log.contentType === 'math' ? (
+                                        log.latex === "Parse Error" ? (
+                                            <div className="flex items-center gap-2 text-rose-400/60 py-1">
+                                                <Bug size={14} />
+                                                <span className="text-xs">识别失败，请尝试更清晰的书写或输入</span>
+                                            </div>
+                                        ) : log.latex ? <InlineMath math={log.latex} /> : <span className="text-white/30 italic">（未识别出明确的数学推导）</span>
+                                    ) : (
+                                        <p className="text-sm leading-relaxed">{log.text}</p>
+                                    )}
+                                </div>
+                                {log.message && (
+                                    <div className="text-sm bg-white/5 p-3 rounded-lg flex gap-2">
+                                        <div className="shrink-0 mt-0.5">
+                                            {log.isCorrect ? <Check size={14} className="text-emerald-400" /> : <AlertTriangle size={14} className="text-rose-400" />}
+                                        </div>
+                                        <span className="text-white/70 leading-relaxed text-xs">{log.message}</span>
+                                    </div>
                                 )}
                             </div>
                         ))}
@@ -573,8 +689,18 @@ export default function DynamicScaffold() {
                             </p>
 
                             <div className="w-full max-w-lg space-y-4">
-                                <div className="min-h-[100px] p-4 bg-white/5 border border-white/10 rounded-2xl text-left text-white/80 transition-all">
-                                    {strategyTranscript || (isRecording ? "正在倾听..." : "点击下方麦克风开始说话...")}
+                                <div className="relative group">
+                                    <textarea
+                                        value={strategyTranscript}
+                                        onChange={(e) => setStrategyTranscript(e.target.value)}
+                                        placeholder={isRecording && recordingTarget === 'strategy' ? "正在倾听..." : "在此输入或点击下方麦克风说出您的解题思路..."}
+                                        className="w-full min-h-[120px] p-4 bg-white/5 border border-white/10 rounded-2xl text-left text-white/80 transition-all focus:border-indigo-500/50 outline-none resize-none"
+                                    />
+                                    {isRecording && recordingTarget === 'strategy' && (
+                                        <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-rose-500/20 text-rose-400 text-[10px] font-bold rounded-full animate-pulse border border-rose-500/30">
+                                            <Mic size={10} /> REC
+                                        </div>
+                                    )}
                                 </div>
 
                                 {strategyFeedback && (
@@ -589,10 +715,10 @@ export default function DynamicScaffold() {
 
                                 <div className="flex items-center justify-center gap-4 pt-4">
                                     <button
-                                        onClick={toggleRecording}
-                                        className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${isRecording ? 'bg-rose-500 animate-pulse text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
+                                        onClick={() => toggleRecording('strategy')}
+                                        className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${isRecording && recordingTarget === 'strategy' ? 'bg-rose-500 animate-pulse text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
                                     >
-                                        {isRecording ? <MicOff size={24} /> : <Mic size={24} />}
+                                        {isRecording && recordingTarget === 'strategy' ? <MicOff size={24} /> : <Mic size={24} />}
                                     </button>
 
                                     <button
@@ -626,29 +752,53 @@ export default function DynamicScaffold() {
                 )}
 
                 {/* Bottom action bar */}
-                {currentStepId <= 4 && (
+                {isStrategyApproved && !isSolved && (
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] max-w-2xl bg-[#1e212b]/95 backdrop-blur border border-indigo-500/30 p-2 rounded-2xl flex shadow-2xl items-center gap-2">
                         <span className="pl-3 text-indigo-400 font-mono whitespace-nowrap text-sm">
-                            {steps.find(s => s.id === currentStepId)?.label} =
+                            推导 =
                         </span>
                         <input
                             id="manual-input"
                             type="text"
+                            value={manualCalcInput}
+                            onChange={(e) => setManualCalcInput(e.target.value)}
                             className="flex-1 bg-transparent text-white/90 outline-none px-2 text-sm font-mono"
-                            placeholder="键盘输入 (可选)"
+                            placeholder={isRecording && recordingTarget === 'calculation' ? "正在听取..." : "键盘输入或点击麦克风说出推导"}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
-                                    handleManualSubmit(e.currentTarget.value);
-                                    e.currentTarget.value = '';
+                                    handleManualSubmit(manualCalcInput);
+                                    setManualCalcInput('');
                                 }
                             }}
                         />
                         <button
-                            onClick={handleOcrSubmit}
+                            onClick={handleAuxCalculate}
+                            disabled={isAuxCalculating || isProcessingOcr}
+                            className={`p-2 rounded-lg transition-all ${isAuxCalculating ? 'bg-indigo-500/20 text-indigo-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
+                            title="辅助计算 (AI代算当前内容)"
+                        >
+                            <BrainCircuit size={16} />
+                        </button>
+                        <button
+                            onClick={() => toggleRecording('calculation')}
+                            className={`p-2 rounded-lg transition-all ${isRecording && recordingTarget === 'calculation' ? 'bg-rose-500/20 text-rose-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
+                            title="语音输入推导"
+                        >
+                            {isRecording && recordingTarget === 'calculation' ? <MicOff size={16} /> : <Mic size={16} />}
+                        </button>
+                        <button
+                            onClick={() => {
+                                if (manualCalcInput.trim()) {
+                                    handleManualSubmit(manualCalcInput);
+                                    setManualCalcInput('');
+                                } else {
+                                    handleOcrSubmit();
+                                }
+                            }}
                             disabled={isProcessingOcr}
                             className="px-5 py-2 bg-indigo-500 hover:bg-indigo-600 disabled:opacity-50 text-white font-medium text-sm rounded-xl transition-colors shadow-lg whitespace-nowrap"
                         >
-                            {isProcessingOcr ? '识别中...' : '提交校验'}
+                            {isProcessingOcr ? '识别中...' : (manualCalcInput.trim() ? '提交推导' : '识别画板')}
                         </button>
                     </div>
                 )}
