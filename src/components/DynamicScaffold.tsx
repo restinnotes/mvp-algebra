@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
 import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play } from 'lucide-react';
-import { BktEngine } from '@/lib/bkt';
+
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 
 
@@ -15,7 +15,7 @@ interface LogEntry {
 }
 
 export default function DynamicScaffold() {
-    const padRef = useRef<any>(null);
+    const padRef = useRef<SignatureCanvas>(null);
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
@@ -33,17 +33,15 @@ export default function DynamicScaffold() {
     const [reviewSummary, setReviewSummary] = useState<string | null>(null);
     const [isGeneratingReview, setIsGeneratingReview] = useState(false);
     const [recordingTarget, setRecordingTarget] = useState<'strategy' | 'calculation' | null>(null);
-    const recognitionRef = useRef<any>(null);
+    const recognitionRef = useRef<{ stop: () => void } | null>(null);
 
     // LTM States
     const [persona, setPersona] = useState<StudentPersona | null>(null);
-    const [masteryData, setMasteryData] = useState<Record<string, number>>({});
 
     // Initial LTM Load
     useEffect(() => {
         const mem = LTMMemory.load();
         setPersona(mem.persona);
-        setMasteryData(mem.mastery);
     }, []);
 
     // iPad Optimization: Prevent bounce scroll
@@ -93,7 +91,7 @@ export default function DynamicScaffold() {
 
     const cheatCompleteAll = () => {
         addLog('cheat', '[CHEAT] 全部跳过，直通关');
-        handleSessionEnd();
+        handleSessionEnd(stepLogs);
     };
 
     const handleOcrSubmit = async () => {
@@ -154,7 +152,7 @@ export default function DynamicScaffold() {
                     addLog('info', `✅ 步骤判定正确: ${data.stepLabel}`);
                     clearPad();
                     if (data.isSolved) {
-                        handleSessionEnd();
+                        handleSessionEnd([...stepLogs, newLog]);
                     }
                 } else {
                     addLog('error', `❌ 步骤判定错误: ${data.feedback}`);
@@ -162,8 +160,8 @@ export default function DynamicScaffold() {
             } else {
                 addLog('error', `API 返回数据异常: ${JSON.stringify(data)}`);
             }
-        } catch (e: any) {
-            addLog('error', `Fetch 异常: ${e.message}`);
+        } catch (e: unknown) {
+            addLog('error', `Fetch 异常: ${e instanceof Error ? e.message : String(e)}`);
         } finally {
             setIsProcessingOcr(false);
         }
@@ -200,8 +198,8 @@ export default function DynamicScaffold() {
                 }
             };
             reader.readAsDataURL(file);
-        } catch (err: any) {
-            addLog('error', `影子解题异常: ${err.message}`);
+        } catch (err: unknown) {
+            addLog('error', `影子解题异常: ${err instanceof Error ? err.message : String(err)}`);
         } finally {
             setIsDecomposing(false);
             setIsStrategyApproved(false); // New problem = need new strategy
@@ -211,14 +209,14 @@ export default function DynamicScaffold() {
     };
 
     // ========== Auxiliary Calculation ==========
-    const handleAuxCalculate = async () => {
-        let sourceLatex = manualCalcInput.trim();
+    const handleAuxCalculate = async (overrideLatex?: string): Promise<string | null> => {
+        let sourceLatex = overrideLatex || manualCalcInput.trim();
 
         // If manual input is empty, try to recognize from whiteboard first
         if (!sourceLatex) {
             if (!padRef.current || padRef.current.isEmpty()) {
                 addLog('error', '请先在画板书写或在输入框输入公式再进行辅助计算');
-                return;
+                return null;
             }
             setIsProcessingOcr(true);
             try {
@@ -238,11 +236,11 @@ export default function DynamicScaffold() {
                     setManualCalcInput(sourceLatex);
                 } else {
                     addLog('error', '无法识别画板内容，请手动输入后再计算');
-                    return;
+                    return null;
                 }
-            } catch (err) {
+            } catch {
                 addLog('error', '识别失败');
-                return;
+                return null;
             } finally {
                 setIsProcessingOcr(false);
             }
@@ -261,11 +259,14 @@ export default function DynamicScaffold() {
             if (data.result) {
                 setManualCalcInput(data.result);
                 addLog('info', '✅ 辅助计算完成');
+                return data.result;
             } else {
                 addLog('error', '辅助计算失败');
+                return null;
             }
-        } catch (err) {
+        } catch {
             addLog('error', '辅助计算异常');
+            return null;
         } finally {
             setIsAuxCalculating(false);
         }
@@ -279,35 +280,63 @@ export default function DynamicScaffold() {
         addLog('info', '🚀 开始完整流程演示...');
 
         // Step 1: Strategy
-        setStrategyTranscript('先通分化简，利用韦达定理建立关于m的方程，最后根据判别式大于等于0检验结果。');
+        const demoStrategy = '先通分化简，利用韦达定理建立关于m的方程，最后根据判别式大于等于0检验结果。';
+        setStrategyTranscript(demoStrategy);
         await new Promise(r => setTimeout(r, 1500));
-        await submitStrategy();
+        await submitStrategy(demoStrategy);
         addLog('info', '演示：已提交解题思路');
 
-        // Wait for approval (polling logic)
-        let attempts = 0;
-        while (!isStrategyApproved && attempts < 20) {
-            await new Promise(r => setTimeout(r, 500));
-            attempts++;
-        }
+        // We know submitStrategy completes and sets a timeout for approval. Wait for it.
+        await new Promise(r => setTimeout(r, 2000));
 
         // Step 2: Math Step 1
-        setManualCalcInput('\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}');
+        const step1 = '\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}';
+        setManualCalcInput(step1);
         await new Promise(r => setTimeout(r, 2000));
-        handleManualSubmit('\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}');
+        await handleManualSubmit(step1);
         addLog('info', '演示：已提交步骤 1 (通分)');
 
         await new Promise(r => setTimeout(r, 3000));
 
         // Step 3: Math Step 2
+<<<<<<< HEAD
+        const step2 = '\\frac{2m+1}{m^2+m} = \\frac{3}{2}';
+        setManualCalcInput(step2);
+        await new Promise(r => setTimeout(r, 2000));
+        await handleManualSubmit(step2);
+=======
         setManualCalcInput('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
         await new Promise(r => setTimeout(r, 2000));
         handleManualSubmit('\\frac{2m+1}{m^2+m} = \\frac{3}{2}');
+>>>>>>> master
         addLog('info', '演示：已提交步骤 2 (代入韦达定理)');
 
         await new Promise(r => setTimeout(r, 3000));
 
         // Step 4: Auxiliary Calc (Brain tool)
+<<<<<<< HEAD
+        const step3 = '2(2m+1) = 3(m^2+m)';
+        setManualCalcInput(step3);
+        addLog('info', '演示：正在展示“辅助计算”功能...');
+        await new Promise(r => setTimeout(r, 1500));
+
+        // Use override to avoid stale state in handleAuxCalculate
+        const simplifiedResult = await handleAuxCalculate(step3);
+
+        await new Promise(r => setTimeout(r, 2000));
+        if (simplifiedResult) {
+            await handleManualSubmit(simplifiedResult);
+            addLog('info', '演示：已通过代算提交简化后的方程');
+        }
+
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Step 5: Final Result
+        const step4 = 'm=1 (判别式检验已排除m=-2/3)';
+        setManualCalcInput(step4);
+        await new Promise(r => setTimeout(r, 2000));
+        await handleManualSubmit(step4);
+=======
         setManualCalcInput('2(2m+1) = 3(m^2+m)');
         addLog('info', '演示：正在展示“辅助计算”功能...');
         await new Promise(r => setTimeout(r, 1500));
@@ -319,10 +348,11 @@ export default function DynamicScaffold() {
 
         await new Promise(r => setTimeout(r, 3000));
 
-        // Step 5: Final Result 
+        // Step 5: Final Result
         setManualCalcInput('m=1 (判别式检验已排除m=-2/3)');
         await new Promise(r => setTimeout(r, 2000));
         handleManualSubmit('m=1');
+>>>>>>> master
         addLog('info', '演示：提交最终答案');
 
         setIsDemoRunning(false);
@@ -338,18 +368,19 @@ export default function DynamicScaffold() {
             return;
         }
 
-        const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+        const SpeechRecognition = (window as unknown as { SpeechRecognition: unknown, webkitSpeechRecognition: unknown }).SpeechRecognition || (window as unknown as { SpeechRecognition: unknown, webkitSpeechRecognition: unknown }).webkitSpeechRecognition;
         if (!SpeechRecognition) {
             addLog('error', '您的浏览器不支持语音识别');
             return;
         }
 
-        const recognition = new SpeechRecognition();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const recognition = new (SpeechRecognition as any)();
         recognition.lang = 'zh-CN';
         recognition.continuous = true;
         recognition.interimResults = true;
 
-        recognition.onresult = (event: any) => {
+        recognition.onresult = (event: { results: Array<{ [key: number]: { transcript: string } }> }) => {
             let transcript = '';
             for (let i = 0; i < event.results.length; ++i) {
                 transcript += event.results[i][0].transcript;
@@ -373,8 +404,9 @@ export default function DynamicScaffold() {
         addLog('info', `开始录音 (${target === 'strategy' ? '解题思路' : '数学推导'})...`);
     };
 
-    const submitStrategy = async () => {
-        if (!strategyTranscript) return;
+    const submitStrategy = async (overrideText?: string) => {
+        const textToSubmit = overrideText || strategyTranscript;
+        if (!textToSubmit) return;
         setIsEvaluatingStrategy(true);
         addLog('api', 'POST /api/evaluate-strategy | 校验解题思路...');
 
@@ -384,7 +416,7 @@ export default function DynamicScaffold() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     problemStatement: problemText,
-                    strategyText: strategyTranscript
+                    strategyText: textToSubmit
                 })
             });
             const data = await res.json();
@@ -395,7 +427,11 @@ export default function DynamicScaffold() {
                 id: Date.now().toString(),
                 type: 'student',
                 contentType: 'text',
+<<<<<<< HEAD
+                text: textToSubmit,
+=======
                 text: strategyTranscript,
+>>>>>>> master
                 label: '解题思路',
                 message: data.feedback,
                 isCorrect: data.isCorrect
@@ -408,16 +444,38 @@ export default function DynamicScaffold() {
                 // When strategy is approved, just clear the way
                 setTimeout(() => setIsStrategyApproved(true), 1500);
             }
-        } catch (err: any) {
-            addLog('error', `思路校验异常: ${err.message}`);
+        } catch (err: unknown) {
+            addLog('error', `思路校验异常: ${err instanceof Error ? err.message : String(err)}`);
         } finally {
             setIsEvaluatingStrategy(false);
         }
     };
 
-    const handleSessionEnd = async () => {
-        addLog('info', '🏁 关卡挑战成功！正在生成学习画像总结...');
+    const handleSessionEnd = async (finalHistory: StepLog[] = []) => {
+        setIsSolved(true);
+        addLog('info', '🏁 关卡挑战成功！正在生成学习画像总结和复盘...');
+
+        setIsGeneratingReview(true);
         try {
+            // Use provided history, fallback to state
+            const effectiveHistory = finalHistory.length > 0 ? finalHistory : stepLogs;
+
+            // 1. Generate Review
+            const reviewRes = await fetch('/api/review', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    problemContext: problemText,
+                    history: effectiveHistory.filter(log => log.isCorrect)
+                })
+            });
+            const reviewData = await reviewRes.json();
+            if (reviewData.summary) {
+                setReviewSummary(reviewData.summary);
+                addLog('info', '✅ 成功生成复盘总结');
+            }
+
+            // 2. Update Persona
             const res = await fetch('/api/summarize-persona', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -433,7 +491,10 @@ export default function DynamicScaffold() {
                 addLog('info', '✅ 学生画像已更新并持久化');
             }
         } catch (e) {
-            console.error('Failed to update persona:', e);
+            console.error('Failed to update session end data:', e);
+            addLog('error', '生成复盘数据失败');
+        } finally {
+            setIsGeneratingReview(false);
         }
     };
 
@@ -480,13 +541,22 @@ export default function DynamicScaffold() {
 
                 if (data.isCorrect) {
                     addLog('info', `✅ 键盘输入正确: ${data.stepLabel}`);
+<<<<<<< HEAD
+                    if (data.isSolved) handleSessionEnd([...stepLogs, newLog]);
+=======
                     if (data.isSolved) handleSessionEnd();
+>>>>>>> master
                 } else {
                     addLog('error', `❌ 键盘输入错误: ${data.feedback}`);
                 }
             }
+<<<<<<< HEAD
+        } catch (e: unknown) {
+            addLog('error', `Manual fetch error: ${e instanceof Error ? e.message : String(e)}`);
+=======
         } catch (e: any) {
             addLog('error', `Manual fetch error: ${e.message}`);
+>>>>>>> master
         } finally {
             setIsProcessingOcr(false);
         }
@@ -590,7 +660,7 @@ export default function DynamicScaffold() {
                                     <UserCircle size={14} />
                                     <span className="text-xs font-bold uppercase tracking-wider">AI 导师数字画像</span>
                                 </div>
-                                <p className="text-white/80 text-xs leading-relaxed italic mb-2">"{persona.lastSessionSummary}"</p>
+                                <p className="text-white/80 text-xs leading-relaxed italic mb-2">&quot;{persona.lastSessionSummary}&quot;</p>
                                 <div className="flex flex-wrap gap-1">
                                     {persona.misconceptions.map((m, i) => (
                                         <span key={i} className="px-2 py-0.5 bg-rose-500/10 text-rose-400 text-[10px] rounded-full border border-rose-500/20">
@@ -722,7 +792,7 @@ export default function DynamicScaffold() {
                                     </button>
 
                                     <button
-                                        onClick={submitStrategy}
+                                        onClick={() => submitStrategy()}
                                         disabled={!strategyTranscript || isEvaluatingStrategy || isRecording}
                                         className="h-14 px-8 bg-indigo-500 hover:bg-indigo-600 disabled:opacity-30 disabled:hover:bg-indigo-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-500/20"
                                     >
@@ -772,7 +842,11 @@ export default function DynamicScaffold() {
                             }}
                         />
                         <button
+<<<<<<< HEAD
+                            onClick={() => handleAuxCalculate()}
+=======
                             onClick={handleAuxCalculate}
+>>>>>>> master
                             disabled={isAuxCalculating || isProcessingOcr}
                             className={`p-2 rounded-lg transition-all ${isAuxCalculating ? 'bg-indigo-500/20 text-indigo-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
                             title="辅助计算 (AI代算当前内容)"

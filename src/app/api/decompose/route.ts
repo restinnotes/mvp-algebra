@@ -44,6 +44,7 @@ export async function POST(req: NextRequest) {
             model: "gemini-3.1-pro",
             generationConfig: {
                 responseMimeType: "application/json",
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 responseSchema: responseSchema as any,
             },
         });
@@ -84,11 +85,11 @@ export async function POST(req: NextRequest) {
         const data = JSON.parse(jsonStr);
 
         return NextResponse.json(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Decomposition Error:', error);
         return NextResponse.json({
             error: 'Failed to decompose problem',
-            details: error.message
+            details: error instanceof Error ? error.message : String(error)
         }, { status: 500 });
     }
 }

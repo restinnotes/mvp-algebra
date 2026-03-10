@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
         You are a mathematical calculation assistant.
         Task: Simplify or expand the following LaTeX expression.
         Expression: ${latex}
-        
+
         Rules:
         1. Perform algebraic simplification or expansion as appropriate.
         2. Output ONLY the resulting LaTeX string.
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ result: text });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Calculation API error:', error);
         return NextResponse.json({ error: 'Failed to calculate' }, { status: 500 });
     }

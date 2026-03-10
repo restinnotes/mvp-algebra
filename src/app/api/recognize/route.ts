@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
             manualText ? `Student's Input (Typed Text): ${manualText}` : 'Student\'s Input: (See handwritten image)',
             '',
             'Previous Correct Steps:',
-            history && history.length > 0 ? history.map((s: any, i: number) => `Step ${i + 1}: ${s.latex || s.expression}`).join('\n') : 'None',
+            history && history.length > 0 ? history.map((s: { latex?: string, expression?: string }, i: number) => `Step ${i + 1}: ${s.latex || s.expression}`).join('\n') : 'None',
             '',
             'ADAPTIVITY RULES:',
             'Analyze the student\'s history to determine their proficiency level:',
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
             const jsonMatch = rawText.match(/\{[\s\S]*\}/);
             const cleanedText = jsonMatch ? jsonMatch[0] : rawText;
             parsedData = JSON.parse(cleanedText);
-        } catch (e) {
+        } catch (error: unknown) {
             console.error('Gemini JSON parse failed. Raw text:', rawText);
             parsedData = {
                 latex: "Parse Error",
@@ -78,10 +78,10 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json(parsedData);
 
-    } catch (error: any) {
-        console.error('OCR API error:', error?.message || error);
+    } catch (error: unknown) {
+        console.error('OCR API error:', error instanceof Error ? error.message : String(error));
         return NextResponse.json(
-            { latex: '', isCorrect: false, feedback: 'Server error: ' + (error?.message || 'unknown') },
+            { latex: '', isCorrect: false, feedback: 'Server error: ' + (error instanceof Error ? error.message : 'unknown') },
             { status: 200 }
         );
     }

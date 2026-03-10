@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
             model: "gemini-3.1-flash-lite-preview",
             generationConfig: {
                 responseMimeType: "application/json",
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 responseSchema: personaSchema as any,
             },
         });
@@ -54,7 +55,7 @@ export async function POST(req: NextRequest) {
         const updatedPersona = JSON.parse(response.text());
 
         return NextResponse.json(updatedPersona);
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Persona Summarization Error:', error);
         return NextResponse.json({ error: 'Failed' }, { status: 500 });
     }
