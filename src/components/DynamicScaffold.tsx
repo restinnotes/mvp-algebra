@@ -321,12 +321,25 @@ export default function DynamicScaffold() {
                 }
             }, 800);
         } else {
+            setStrategyTranscript(currentStep.text || '');
+            setStrategyFeedback({ isCorrect: currentStep.isCorrect || false, feedback: currentStep.message || '' });
             setStepLogs(prev => [...prev, currentStep]);
+
             const nextIdx = manualDemoStep + 1;
             if (nextIdx < demoSteps.length) {
                 setManualDemoStep(nextIdx);
-                const nextMath = findNextMathStep(nextIdx);
-                setManualCalcInput(nextMath?.latex || '');
+                const nextStep = demoSteps[nextIdx];
+                if (nextStep.contentType === 'math') {
+                    setTimeout(() => {
+                        setIsStrategyApproved(true);
+                        setManualCalcInput(nextStep.latex || '');
+                    }, 1500);
+                } else if (nextStep.contentType === 'text') {
+                    setTimeout(() => {
+                        setStrategyTranscript(nextStep.text || '');
+                        setStrategyFeedback(null);
+                    }, 1500);
+                }
             } else {
                 setManualDemoStep(nextIdx);
                 setIsManualDemo(false);
@@ -347,15 +360,14 @@ export default function DynamicScaffold() {
             { id: '8', type: 'student', contentType: 'math', latex: 'm=1', label: '判别式检验', message: '你求出m=1和m=-2/3，但代入原方程检验过了吗？注意：题目要求有两个实数根！', isCorrect: true },
         ];
         setDemoSteps(steps);
-        setManualDemoStep(1);
-        setStepLogs([steps[0]]);
+        setManualDemoStep(0);
+        setStepLogs([]);
         setIsManualDemo(true);
         setIsDemoRunning(true);
         setProblemText("已知关于 x 的方程 x^2 - (2m+1)x + m^2 + m = 0 有两个实数根 x1, x2。若 1/x1 + 1/x2 = 3/2，求实数 m 的值。");
-        setIsStrategyApproved(true);
-        
-        const nextMathStep = steps.find((s, i) => i > 1 && s.contentType === 'math');
-        setManualCalcInput(nextMathStep?.latex || '');
+        setIsStrategyApproved(false);
+        setStrategyTranscript(steps[0].text || '');
+        setStrategyFeedback(null);
         
         addLog('info', '🎬 手动演示模式启动 - 点击"识别画板"进入下一步');
     };
@@ -621,7 +633,11 @@ export default function DynamicScaffold() {
                 '韦达定理形式记忆模糊：有时会混淆符号'
             ],
             learningStyle: '视觉型',
-            lastSessionSummary: '本轮表现出对韦达定理的较好掌握，但在判别式检验环节存在明显薄弱点。连续3次在第一步通分后未及时代入韦达定理表达式的错误后，系统触发meltdown降级，最终在降级引导下完成求解。建议后续加强"有两个实数根⇔判别式≥0"的条件反射训练。'
+            learning_style: '视觉型',
+            lastSessionSummary: '本轮表现出对韦达定理的较好掌握，但在判别式检验环节存在明显薄弱点。连续3次在第一步通分后未及时代入韦达定理表达式的错误后，系统触发meltdown降级，最终在降级引导下完成求解。建议后续加强"有两个实数根⇔判别式≥0"的条件反射训练。',
+            last_session_summary: '本轮表现出对韦达定理的较好掌握，但在判别式检验环节存在明显薄弱点。连续3次在第一步通分后未及时代入韦达定理表达式的错误后，系统触发meltdown降级，最终在降级引导下完成求解。建议后续加强"有两个实数根⇔判别式≥0"的条件反射训练。',
+            weak_areas: ['韦达定理的应用', '判别式检验'],
+            strong_areas: ['一元二次方程通分']
         };
         
         setPersona(updatedPersona);
@@ -969,28 +985,45 @@ export default function DynamicScaffold() {
                         )}
                         
                         {/* 手动演示模式：只显示当前步骤的卡片 */}
-                        {isManualDemo && stepLogs.length > 0 && (
+                        {isManualDemo && (
                             <div className="flex flex-col gap-4 flex-1">
                                 <div className="flex items-center gap-3">
                                     <button
                                         type="button"
                                         onClick={() => {
-                                            if (stepLogs.length > 1) {
-                                                const newLogs = stepLogs.slice(0, -1);
+                                            if (manualDemoStep > 0) {
+                                                const newStepIdx = manualDemoStep - 1;
+                                                setManualDemoStep(newStepIdx);
+
+                                                const newLogs = stepLogs.slice(0, newStepIdx);
                                                 setStepLogs(newLogs);
-                                                const newStepIdx = newLogs.length;
-                                                setManualDemoStep(newStepIdx + 1);
+
                                                 const currStep = demoSteps[newStepIdx];
-                                                setManualCalcInput(currStep && currStep.contentType === 'math' ? (currStep.latex || '') : '');
+                                                if (!currStep) return;
+
+                                                if (currStep.contentType === 'text') {
+                                                    setIsStrategyApproved(false);
+                                                    setStrategyTranscript(currStep.text || '');
+                                                    // Find the last text step in new logs to restore feedback, or clear it if this is the first step
+                                                    const lastLog = newLogs.length > 0 ? newLogs[newLogs.length - 1] : null;
+                                                    if (lastLog && lastLog.contentType === 'text') {
+                                                        setStrategyFeedback({ isCorrect: lastLog.isCorrect || false, feedback: lastLog.message || '' });
+                                                    } else {
+                                                        setStrategyFeedback(null);
+                                                    }
+                                                } else {
+                                                    setIsStrategyApproved(true);
+                                                    setManualCalcInput(currStep.latex || '');
+                                                }
                                             }
                                         }}
-                                        disabled={stepLogs.length <= 1}
+                                        disabled={manualDemoStep <= 0}
                                         className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0"
                                     >
                                         <ChevronLeft size={16} />
                                     </button>
                                     <span className="text-white/50 text-xs font-mono flex-1 text-center">
-                                        {stepLogs.length} / {demoSteps.length}
+                                        {manualDemoStep} / {demoSteps.length}
                                     </span>
                                     <button
                                         type="button"
