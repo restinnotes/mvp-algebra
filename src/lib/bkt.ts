@@ -12,7 +12,7 @@ const DEFAULT_PARAMS: BktParams = {
     p_trans: 0.1
 };
 
-export { BktParams };
+export type { BktParams };
 
 export class BktEngine {
 

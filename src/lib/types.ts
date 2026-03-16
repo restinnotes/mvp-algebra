@@ -99,10 +99,10 @@ export interface CognitiveBug {
 
 export interface StudentPersona {
   misconceptions: string[];
-  learning_style: string;
-  weak_areas: string[];
-  strong_areas: string[];
-  last_session_summary: string;
+  learning_style?: string;
+  weak_areas?: string[];
+  strong_areas?: string[];
+  last_session_summary?: string;
 }
 
 export interface LTMData {
