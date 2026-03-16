@@ -23,9 +23,51 @@ const personaSchema = {
     required: ["misconceptions", "learningStyle", "lastSessionSummary"]
 };
 
+const MAX_PAYLOAD_SIZE = 100 * 1024; // 100KB
+const MAX_STRING_LENGTH = 2000;
+const MAX_ARRAY_LENGTH = 20;
+
+function validatePersona(persona: any) {
+    if (!persona || typeof persona !== 'object') return false;
+    if (persona.learningStyle && (typeof persona.learningStyle !== 'string' || persona.learningStyle.length > MAX_STRING_LENGTH)) return false;
+    if (persona.lastSessionSummary && (typeof persona.lastSessionSummary !== 'string' || persona.lastSessionSummary.length > MAX_STRING_LENGTH)) return false;
+    if (persona.misconceptions && !Array.isArray(persona.misconceptions)) return false;
+    if (persona.misconceptions) {
+        if (persona.misconceptions.length > MAX_ARRAY_LENGTH) return false;
+        for (const m of persona.misconceptions) {
+            if (typeof m !== 'string' || m.length > MAX_STRING_LENGTH) return false;
+        }
+    }
+    return true;
+}
+
+function validateLogs(logs: any) {
+    if (!logs) return true; // Optional
+    if (!Array.isArray(logs)) return false;
+    if (logs.length > MAX_ARRAY_LENGTH) return false;
+    for (const log of logs) {
+        if (!log || typeof log !== 'object') return false;
+        if (log.message && (typeof log.message !== 'string' || log.message.length > MAX_STRING_LENGTH)) return false;
+        if (log.type && (typeof log.type !== 'string' || log.type.length > 50)) return false;
+    }
+    return true;
+}
+
 export async function POST(req: NextRequest) {
     try {
-        const { currentPersona, sessionLogs } = await req.json();
+        // 1. Payload size limit
+        const contentLength = req.headers.get('content-length');
+        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
+        const body = await req.json();
+        const { currentPersona, sessionLogs } = body;
+
+        // 2. Input validation
+        if (!validatePersona(currentPersona) || !validateLogs(sessionLogs)) {
+            return NextResponse.json({ error: 'Invalid input format or content exceeded limits' }, { status: 400 });
+        }
 
         const model = genAI.getGenerativeModel({
             model: "gemini-3.1-flash-lite-preview",
