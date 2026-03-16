@@ -1,6 +1,6 @@
 import { generateJSON } from './gemini';
 import { SchemaType } from '@google/generative-ai';
-import { getAllNodes, formatKPsForPrompt, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
+import { getAllNodes, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
 import { LTMMemory } from './memory';
 import { findReferenceAnswer, type ReferenceAnswer } from './reference-answers';
 import type { ShadowSolveResult, DecomposedStep, StepCheckResult, AssistLevel, LTMData } from './types';
