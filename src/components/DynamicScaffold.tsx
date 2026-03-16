@@ -1210,11 +1210,11 @@ export default function DynamicScaffold() {
                                     </button>
 
                                     <button
-                                        onClick={() => submitStrategy()}
-                                        disabled={!strategyTranscript || isEvaluatingStrategy || isRecording}
+                                        onClick={() => isManualDemo ? handleDemoOcr() : submitStrategy()}
+                                        disabled={(!strategyTranscript && !isManualDemo) || isEvaluatingStrategy || isRecording}
                                         className="h-14 px-8 bg-indigo-500 hover:bg-indigo-600 disabled:opacity-30 disabled:hover:bg-indigo-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-500/20"
                                     >
-                                        {isEvaluatingStrategy ? "评估中..." : "提交思路"}
+                                        {isManualDemo ? `演示下一步 (${manualDemoStep + 1}/${demoSteps.length})` : (isEvaluatingStrategy ? "评估中..." : "提交思路")}
                                     </button>
                                 </div>
                             </div>
