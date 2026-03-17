@@ -23,6 +23,17 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image or text data provided' }, { status: 400 });
         }
 
+        if (imageBase64) {
+            if (typeof imageBase64 !== 'string') {
+                return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
+            }
+
+            // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
+            if (imageBase64.length > 5 * 1024 * 1024) {
+                return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+            }
+        }
+
         const base64Data = imageBase64
             ? imageBase64.replace(/^data:image\/(png|jpeg|webp);base64,/, '')
             : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="; // 1px dummy
@@ -61,7 +72,7 @@ export async function POST(req: NextRequest) {
     } catch (error: unknown) {
         console.error('OCR API error:', error instanceof Error ? error.message : String(error));
         return NextResponse.json(
-            { latex: '', isCorrect: false, feedback: 'Server error: ' + (error instanceof Error ? error.message : 'unknown') },
+            { latex: '', isCorrect: false, feedback: 'Server error: Please try again later.' },
             { status: 200 }
         );
     }
