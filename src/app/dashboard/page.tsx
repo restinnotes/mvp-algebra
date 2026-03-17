@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MindmapSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
+import { MindmapSyllabus } from '@/data/knowledgeGraph';
+import type { KnowledgeNode } from '@/data/knowledgeGraph';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, X, AlertTriangle } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
@@ -193,6 +194,7 @@ export default function DashboardPage() {
     };
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
         refreshData();
         const interval = setInterval(refreshData, 3000);
@@ -445,7 +447,7 @@ export default function DashboardPage() {
                             {/* Last Session Review */}
                             <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">最近一次切片洞察 ({new Date(studentData.lastUpdated).toLocaleTimeString().slice(0,5)})</h3>
                             <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner italic">
-                                "{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}"
+                                &quot;{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}&quot;
                             </p>
                         </div>
                         
