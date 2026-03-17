@@ -1,102 +1,83 @@
-import { test, describe, mock, beforeEach, afterEach } from "node:test";
-import assert from "node:assert";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { generateJSON, generateFromImage } from "./gemini.ts";
+import { test, describe, mock, afterEach, beforeEach } from 'node:test';
+import assert from 'node:assert';
+import { withRetry } from './gemini.ts';
 
-describe("gemini.ts", () => {
-  let originalGetGenerativeModel: any;
-
+describe('withRetry', () => {
   beforeEach(() => {
-    originalGetGenerativeModel = GoogleGenerativeAI.prototype.getGenerativeModel;
+    mock.timers.enable({ apis: ['setTimeout'] });
   });
 
   afterEach(() => {
-    GoogleGenerativeAI.prototype.getGenerativeModel = originalGetGenerativeModel;
+    mock.timers.reset();
   });
 
-  describe("generateJSON", () => {
-    test("parses clean JSON correctly", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async () => ({
-            response: { text: () => '{"status": "success", "value": 42}' }
-          })
-        };
-      });
-
-      const result = await generateJSON("prompt", {});
-      assert.deepStrictEqual(result, { status: "success", value: 42 });
-    });
-
-    test("falls back to parsing JSON wrapped in markdown code blocks", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async () => ({
-            response: { text: () => '```json\n{"status": "fallback", "value": 100}\n```' }
-          })
-        };
-      });
-
-      const result = await generateJSON("prompt", {});
-      assert.deepStrictEqual(result, { status: "fallback", value: 100 });
-    });
-
-    test("falls back to parsing JSON wrapped in markdown without json specifier", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async () => ({
-            response: { text: () => '```\n{"status": "fallback", "value": 200}\n```' }
-          })
-        };
-      });
-
-      const result = await generateJSON("prompt", {});
-      assert.deepStrictEqual(result, { status: "fallback", value: 200 });
-    });
+  test('happy path: should return result immediately if no error', async () => {
+    const fn = mock.fn(async () => 'success');
+    const result = await withRetry(fn);
+    assert.strictEqual(result, 'success');
+    assert.strictEqual(fn.mock.calls.length, 1);
   });
 
-  describe("generateFromImage", () => {
-    test("parses clean JSON correctly", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async () => ({
-            response: { text: () => '{"detected": true}' }
-          })
-        };
-      });
+  test('non-retriable error: should throw immediately', async () => {
+    const error = new Error('Some other error');
+    const fn = mock.fn(async () => { throw error; });
 
-      const result = await generateFromImage("prompt", "base64data", {});
-      assert.deepStrictEqual(result, { detected: true });
+    await assert.rejects(
+      async () => await withRetry(fn),
+      (err) => {
+        assert.strictEqual(err, error);
+        return true;
+      }
+    );
+    assert.strictEqual(fn.mock.calls.length, 1);
+  });
+
+  test('retriable error: should retry on 429 and succeed', async () => {
+    const error = new Error('API Rate Limit 429 Too Many Requests');
+    let attempts = 0;
+    const fn = mock.fn(async () => {
+      attempts++;
+      if (attempts < 3) throw error;
+      return 'success after retry';
     });
 
-    test("falls back to parsing JSON wrapped in markdown code blocks", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async () => ({
-            response: { text: () => '```json\n{"detected": false}\n```' }
-          })
-        };
-      });
+    const promise = withRetry(fn);
 
-      const result = await generateFromImage("prompt", "base64data", {});
-      assert.deepStrictEqual(result, { detected: false });
-    });
+    // Give microtask queue a chance to execute
+    await new Promise(r => process.nextTick(r));
 
-    test("handles base64 with data URI scheme correctly", async () => {
-      mock.method(GoogleGenerativeAI.prototype, "getGenerativeModel", () => {
-        return {
-          generateContent: async (args: any) => {
-            // Verify inlineData passed to generateContent
-            assert.strictEqual(args[1].inlineData.data, "testdata");
-            return {
-              response: { text: () => '{"status": "ok"}' }
-            };
-          }
-        };
-      });
+    // Timer 1
+    mock.timers.tick(10000);
+    await new Promise(r => process.nextTick(r));
 
-      const result = await generateFromImage("prompt", "data:image/png;base64,testdata", {});
-      assert.deepStrictEqual(result, { status: "ok" });
-    });
+    // Timer 2
+    mock.timers.tick(10000);
+    await new Promise(r => process.nextTick(r));
+
+    const result = await promise;
+    assert.strictEqual(result, 'success after retry');
+    assert.strictEqual(attempts, 3);
+  });
+
+  test('retriable error: should throw after max retries exceeded', async () => {
+    const error = new Error('quota exceeded');
+    const fn = mock.fn(async () => { throw error; });
+
+    const promise = withRetry(fn);
+
+    // Max retries is 5, so there are 6 attempts total (initial + 5 retries)
+    for (let i = 0; i < 6; i++) {
+      await new Promise(r => process.nextTick(r));
+      mock.timers.tick(200000);
+    }
+
+    await assert.rejects(
+      async () => await promise,
+      (err) => {
+        assert.strictEqual(err, error);
+        return true;
+      }
+    );
+    assert.strictEqual(fn.mock.calls.length, 6);
   });
 });

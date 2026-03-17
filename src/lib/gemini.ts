@@ -29,7 +29,7 @@ export type ModelTier = keyof typeof MODELS;
 const MAX_RETRIES = 5;
 const BASE_DELAY_MS = 3000;
 
-async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
+export async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
       return await fn();
