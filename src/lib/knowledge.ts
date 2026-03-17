@@ -6,6 +6,8 @@ const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
 const MAPPINGS_PATH = path.join(process.cwd(), 'mappings_auto.json');
 
 let _graphCache: KnowledgeGraph | null = null;
+let _nodesCache: KnowledgeNode[] | null = null;
+let _nodesMapCache: Map<string, KnowledgeNode> | null = null;
 let _mappingsCache: QuestionMapping[] | null = null;
 
 export function loadKnowledgeGraph(): KnowledgeGraph {
@@ -21,17 +23,23 @@ export function loadKnowledgeGraph(): KnowledgeGraph {
 }
 
 export function getAllNodes(): KnowledgeNode[] {
+  if (_nodesCache) return _nodesCache;
   const graph = loadKnowledgeGraph();
-  return graph.categories.flatMap((c: KnowledgeCategory) => c.nodes);
+  _nodesCache = graph.categories.flatMap((c: KnowledgeCategory) => c.nodes);
+  _nodesMapCache = new Map(_nodesCache.map(n => [n.id, n]));
+  return _nodesCache;
 }
 
 export function getNodeById(id: string): KnowledgeNode | undefined {
-  return getAllNodes().find((n: KnowledgeNode) => n.id === id);
+  getAllNodes(); // Ensure cache is populated
+  return _nodesMapCache?.get(id);
 }
 
 export function getNodesByIds(ids: string[]): KnowledgeNode[] {
-  const all = getAllNodes();
-  return ids.map(id => all.find((n: KnowledgeNode) => n.id === id)).filter(Boolean) as KnowledgeNode[];
+  getAllNodes(); // Ensure cache is populated
+  return ids
+    .map(id => _nodesMapCache?.get(id))
+    .filter((n): n is KnowledgeNode => !!n);
 }
 
 export function getNodesByCategory(categoryId: string): KnowledgeNode[] {
@@ -97,5 +105,7 @@ export function formatAllKPsCompact(): string {
 
 export function clearCache(): void {
   _graphCache = null;
+  _nodesCache = null;
+  _nodesMapCache = null;
   _mappingsCache = null;
 }
