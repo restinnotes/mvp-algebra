@@ -1,534 +1,182 @@
 {
-  "version": "2.0",
+  "version": "3.0",
+  "source": "上海市初中数学学科教学基本要求",
   "categories": [
     {
-      "id": "q18_fill_in",
-      "name": "Q18 填空压轴",
+      "id": "number_operations",
+      "name": "数与运算",
       "nodes": [
         {
-          "id": "geo_windmill_geometry",
-          "name": "风车型旋转全等构型识别",
-          "level": 3,
-          "importance": 4,
-          "description": "识别四个全等等腰/直角三角形拼接的“风车”结构，快速定位旋转对应点与可证全等的子图形。",
-          "prerequisites": ["geo_congruent_tri"],
-          "common_misconceptions": [
-            "只看外轮廓，漏掉内部顶点 E/F/G/H 的对应关系",
-            "把旋转对应误判为轴对称对应，导致角顺序写反",
-            "默认黑白三角形天然全等，未先核对题设给出的等量条件"
-          ]
-        },
-        {
-          "id": "geo_windmill_coord_method",
-          "name": "风车题建系与直线解析联立",
-          "level": 3,
-          "importance": 4,
-          "description": "在风车构型中建立坐标系，利用待定系数法写关键直线解析式并联立求交点，从而反推目标长度。",
-          "prerequisites": ["geo_coord_system_setup", "alg_undetermined_coeff", "alg_equation_intersection", "geo_windmill_geometry"],
-          "common_misconceptions": [
-            "已知边长 3、4 后坐标赋值方向选错，导致后续斜率整体反号",
-            "把过原点直线 y=mx 误写成 y=mx+b 并错误代入",
-            "求出交点坐标后直接当作线段长度，忘记再用距离公式"
-          ]
-        },
-        {
-          "id": "geo_fold_invariants",
-          "name": "翻折变换对应关系与不变量",
-          "level": 3,
-          "importance": 5,
-          "description": "翻折题的核心是建立折前折后对应边角相等、折痕不动点和到折痕距离相等等不变量。",
-          "prerequisites": ["geo_congruent_tri", "geo_median_midpoint"],
-          "common_misconceptions": [
-            "翻折后忘记标记对应角相等，只保留一条边相等",
-            "把折痕当中线使用，漏掉“到折痕距离相等”这一关键性质",
-            "默认折后点仍在线段原位置上，忽略可能落在延长线"
-          ]
-        },
-        {
-          "id": "geo_fold_tangent_circle",
-          "name": "矩形翻折后切线条件转化",
-          "level": 3,
-          "importance": 4,
-          "description": "将“翻折后某线与圆相切”转化为“圆心到线距离=半径”或“半径垂直切线”，并与矩形边长关系联动求解。",
-          "prerequisites": ["geo_fold_invariants", "geo_circle_line_relation", "geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "仅凭图形观感判断相切，未证明半径与切线垂直",
-            "切线判定时仍使用折前圆心/点位，导致距离计算对象错",
-            "得到相切条件后没有回代矩形已知边，方程无法闭环"
-          ]
-        },
-        {
-          "id": "ms_q18_005",
-          "name": "中线与特殊三角形长度转化",
-          "level": 3,
-          "importance": 5,
-          "description": "在“中线+直角/60°”背景下，综合斜边中线、面积法与三角函数把多段长度统一到同一参数。",
-          "prerequisites": ["ms_shared_011", "ms_shared_004", "ms_shared_005"],
-          "common_misconceptions": [
-            "把“AD 是 BC 的中线”误读成“AD ⟂ BC”",
-            "面积法列式时高取错到不对应底边的辅助线",
-            "三角函数先算出边长后不与中线关系联立校验"
-          ]
-        },
-        {
-          "id": "ms_q18_006",
-          "name": "等边与等腰直角中的角边比追踪",
+          "id": "num_divisibility",
+          "name": "数的整除",
           "level": 2,
-          "importance": 4,
-          "description": "针对黄浦/普陀翻折题，稳定调用 30°-60°-90° 与 45°-45°-90° 边比完成追角与求长。",
-          "prerequisites": ["ms_shared_005", "ms_q18_003"],
-          "common_misconceptions": [
-            "把 30°-60°-90° 的边比写成 1:√2:√3",
-            "等边三角形外角与内角混用，导致角度链断裂",
-            "跨三角形直接做角度相减，未先确认公共顶点与方向"
-          ]
+          "description": "理解因数、倍数、质数、合数的概念，掌握分解质因数的方法",
+          "prerequisites": []
         },
         {
-          "id": "ms_q18_007",
-          "name": "线圆“仅一个公共点”范围判定",
-          "level": 3,
-          "importance": 5,
-          "description": "对“与中线/线段仅一个公共点”问题，系统提取切线临界与端点临界，写出半径分段范围。",
-          "prerequisites": ["ms_shared_010", "ms_shared_006", "ms_q18_005"],
-          "common_misconceptions": [
-            "只考虑相切临界，漏掉圆过线段端点也可能唯一相交",
-            "把直线结论直接套在线段，未处理区间截断",
-            "求出临界值后统一写闭区间，忽略“有且只有一个”对端点的限制"
-          ]
-        },
-        {
-          "id": "ms_q18_008",
-          "name": "动点与两圆公共点区间构造",
-          "level": 3,
-          "importance": 4,
-          "description": "在直角梯形动点题中，把“与定圆有公共点+与线段仅一交点”转化为双约束不等式并取交集。",
-          "prerequisites": ["ms_shared_010", "ms_shared_006", "ms_q18_007"],
-          "common_misconceptions": [
-            "只对圆与圆位置关系分类，漏验与线段交点个数条件",
-            "把“有公共点”误写成“相切”，相交情形被漏掉",
-            "动点参数范围靠图形估读，不列代数不等式"
-          ]
-        },
-        {
-          "id": "geo_circle_line_relation",
-          "name": "双直线与圆三公共点双情形建模",
-          "level": 3,
-          "importance": 4,
-          "description": "处理“圆与两条定线有三个公共点”时，必须拆为“一切一交”两类图形并分别求半径。",
-          "prerequisites": ["geo_circle_line_relation", "gen_case_method"],
-          "common_misconceptions": [
-            "把“三个公共点”误解为每条线都与圆相交两点",
-            "只画一种示意图，漏掉内外位置互换的另一分支",
-            "半径算出后不检查 r>0 与几何位置可实现性"
-          ]
+          "id": "num_real",
+          "name": "实数",
+          "level": 2,
+          "description": "理解实数概念，掌握实数的四则运算和科学记数法",
+          "prerequisites": ["num_divisibility"]
         }
       ]
     },
     {
-      "id": "q24_function",
-      "name": "Q24 函数压轴",
+      "id": "algebra",
+      "name": "代数",
       "nodes": [
         {
-          "id": "alg_parabola_intercepts",
-          "name": "轴上截点确定抛物线参数",
-          "level": 3,
-          "importance": 5,
-          "description": "利用抛物线经过 x 轴、y 轴已知点的信息建立方程组，求解 a,b,c 或 m,n 等参数。",
-          "prerequisites": ["geo_coord_system_setup", "alg_undetermined_coeff"],
-          "common_misconceptions": [
-            "把“交 x 轴于 B”错写成 B(0,b) 形式",
-            "只代入一个已知点就尝试求三个未知参数",
-            "忽略“点 A 在点 B 右侧”等根次序信息"
-          ]
-        },
-        {
-          "id": "alg_parabola_vertex_sym",
-          "name": "顶点式与对称轴信息互化",
+          "id": "alg_expression",
+          "name": "代数式与整式",
           "level": 2,
-          "importance": 5,
-          "description": "在一般式、顶点式、对称轴方程之间灵活互化，提取顶点坐标、最值与对称信息。",
-          "prerequisites": ["alg_parabola_intercepts"],
-          "common_misconceptions": [
-            "对称轴公式 x=-b/2a 的符号抄错",
-            "配方时常数补偿漏加漏减，导致顶点纵坐标错误",
-            "得到顶点后仍混用旧表达式，计算不一致"
-          ]
+          "description": "掌握代数式的求值、整式运算",
+          "prerequisites": []
         },
         {
-          "id": "alg_parabola_line_intersect",
-          "name": "直线与抛物线交点联立求解",
+          "id": "alg_fraction",
+          "name": "分式",
           "level": 2,
-          "importance": 5,
-          "description": "把一次函数与抛物线联立成二次方程，结合图形位置筛选交点并回代完整坐标。",
-          "prerequisites": ["alg_equation_intersection", "alg_parabola_intercepts"],
-          "common_misconceptions": [
-            "联立移项时把二次项错误抵消",
-            "得到两个根后只保留一个，漏掉另一交点",
-            "只验代数方程，不验点是否在线段/射线上"
-          ]
+          "description": "理解分式有意义的条件，掌握分式运算",
+          "prerequisites": ["alg_expression"]
         },
         {
-          "id": "alg_angle_to_algebra",
-          "name": "用 tan/cot 把角条件代数化",
-          "level": 3,
-          "importance": 4,
-          "description": "通过作垂线构造直角三角形，把 ∠BCD、∠DAO 等角条件转写为 tan 或 cot 比值方程。",
-          "prerequisites": ["geo_trig_basics", "geo_pythagorean_dist", "alg_parabola_line_intersect"],
-          "common_misconceptions": [
-            "把 tan 写成邻边比对边，比例颠倒",
-            "使用 cot 时没有确认与 tan 对应同一锐角",
-            "作高后新增线段未通过勾股或相似补齐"
-          ]
-        },
-        {
-          "id": "alg_area_to_coord",
-          "name": "三角形面积条件反推点坐标",
-          "level": 3,
-          "importance": 4,
-          "description": "将面积给定值转化为“底×高/2”方程，反求交点坐标、截距或参数取值。",
-          "prerequisites": ["alg_parabola_line_intersect", "geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "底与高不垂直却直接相乘",
-            "面积公式漏写 1/2，参数结果成倍偏差",
-            "高度取坐标差时忘记绝对值，漏掉对称解"
-          ]
-        },
-        {
-          "id": "alg_line_moving_pt",
-          "name": "直线上动点参数化表示",
+          "id": "alg_rational_root",
+          "name": "二次根式",
           "level": 2,
-          "importance": 4,
-          "description": "设 P(m,km+b) 统一表示直线上动点，为角度、面积、距离等后续条件提供代入接口。",
-          "prerequisites": ["alg_parabola_line_intersect"],
-          "common_misconceptions": [
-            "设 P(m,n) 后忘记补充 n=km+b 约束",
-            "把参数 m 直接当长度参与几何等式",
-            "未结合“在线段/射线”给出参数范围"
-          ]
+          "description": "理解二次根式的概念，掌握运算方法",
+          "prerequisites": ["num_real"]
         },
         {
-          "id": "alg_case_discussion",
-          "name": "同角条件触发分支讨论",
-          "level": 3,
-          "importance": 5,
-          "description": "对“∠PEB=∠BCD”“BD=EO”等条件按点位上下/内外分支建模，分别求解并验根。",
-          "prerequisites": ["gen_case_method", "alg_angle_to_algebra", "alg_line_moving_pt"],
-          "common_misconceptions": [
-            "只讨论点在 x 轴上方分支，漏掉下方或外侧分支",
-            "不同分支沿用同一符号方向，方程被错误同化",
-            "求得数值后不回验分支前提（角向、位置、区间）"
-          ]
+          "id": "alg_equation",
+          "name": "方程与方程组",
+          "level": 2,
+          "description": "掌握一元一次方程、一元二次方程、分式方程的解法",
+          "prerequisites": ["alg_expression", "alg_fraction"]
         },
         {
-          "id": "alg_parabola_circle_pos",
-          "name": "抛物线关联两圆位置关系计算",
+          "id": "alg_inequality",
+          "name": "一元一次不等式",
+          "level": 2,
+          "description": "掌握不等式性质和解不等式",
+          "prerequisites": ["alg_equation"]
+        },
+        {
+          "id": "alg_linear_func",
+          "name": "一次函数",
           "level": 3,
-          "importance": 4,
-          "description": "将“以 A、C 为圆心作圆”转化为圆心距与半径比较，判断相离/相交/内外切并用于参数约束。",
-          "prerequisites": ["geo_circle_line_relation", "alg_parabola_vertex_sym", "gen_case_method", "geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "圆心距凭图估算，不用坐标或勾股精算",
-            "只比较 d 与 r1+r2，漏掉 |r1-r2| 分支",
-            "代数有解后未检验对应圆位置是否与题意一致"
-          ]
+          "description": "理解一次函数概念、图像与性质",
+          "prerequisites": ["alg_equation", "alg_inequality"]
+        },
+        {
+          "id": "alg_inverse_func",
+          "name": "反比例函数",
+          "level": 3,
+          "description": "理解反比例函数概念、图像与性质",
+          "prerequisites": ["alg_linear_func"]
+        },
+        {
+          "id": "alg_quadratic_func",
+          "name": "二次函数",
+          "level": 3,
+          "description": "掌握二次函数的图像与性质，会求解析式",
+          "prerequisites": ["alg_linear_func", "alg_equation"]
         }
       ]
     },
     {
-      "id": "q25_geometry",
-      "name": "Q25 几何压轴",
+      "id": "geometry",
+      "name": "几何",
       "nodes": [
         {
-          "id": "ms_q25_001",
-          "name": "几何压轴证明链路设计",
-          "level": 3,
-          "importance": 5,
-          "description": "先规划“已知→中间命题→目标命题”的证明路径，决定先全等、先相似或先判四边形类型。",
-          "prerequisites": ["geo_congruent_tri", "geo_similar_tri", "gen_case_method"],
-          "common_misconceptions": [
-            "直接硬证最终结论，缺少可落地的中间桥梁",
-            "证明顺序倒置，后文依赖前文尚未成立的结论",
-            "重复堆砌等式，关键缺口（如平行或共线）未补"
-          ]
-        },
-        {
-          "id": "geo_square_check",
-          "name": "正方形判定双通道应用",
-          "level": 3,
-          "importance": 5,
-          "description": "掌握“矩形+邻边相等”与“菱形+一个直角”两条正方形判定通道，并根据题设择优选路。",
-          "prerequisites": ["geo_proof_chain_design", "geo_rhombus_check"],
-          "common_misconceptions": [
-            "证得四边相等后直接下正方形结论，漏掉直角条件",
-            "有直角就判正方形，未先证平行四边形或菱形",
-            "邻边相等取错对应边，导致判定链条失效"
-          ]
-        },
-        {
-          "id": "geo_rhombus_check",
-          "name": "菱形判定与性质联动",
-          "level": 3,
-          "importance": 5,
-          "description": "在梯形/平行线背景下先证平行四边形，再用邻边相等或对角线性质推进到菱形并调取其性质。",
-          "prerequisites": ["geo_parallel_line_prop", "geo_congruent_tri"],
-          "common_misconceptions": [
-            "把“对角线互相平分”误当作菱形的充分条件",
-            "只证一组对边平行就判定平行四边形",
-            "未完成菱形判定就提前使用“对角线互相垂直”"
-          ]
-        },
-        {
-          "id": "geo_sas_congruence",
-          "name": "角平分线驱动的 SAS 全等构造",
-          "level": 3,
-          "importance": 4,
-          "description": "结合角平分线与平行线追角得到夹角，再配合公共边/已知边构造 SAS 全等，服务于长度与角度结论。",
-          "prerequisites": ["geo_congruent_tri", "geo_parallel_line_prop"],
-          "common_misconceptions": [
-            "角平分线只停留在“两个角相等”，未落到具体三角形",
-            "SAS 里取了非夹角，判定条件并不充分",
-            "公共边存在却未在全等判定中明确写出"
-          ]
-        },
-        {
-          "id": "geo_parallel_line_ratio",
-          "name": "平行线分比定理的二次代换",
-          "level": 3,
-          "importance": 5,
-          "description": "在多平行线 and 对角线交点网络中连续建立比例并代换，形成可求长度、平方关系或乘积关系。",
-          "prerequisites": ["geo_parallel_line_prop", "geo_similar_tri"],
-          "common_misconceptions": [
-            "比例式把不同三角形的边混接在同一比中",
-            "代换后同名线段符号不统一，后续无法消元",
-            "由比例直接开方，忽略几何取值范围与正负性"
-          ]
-        },
-        {
-          "id": "geo_circle_tangent_equation",
-          "name": "两圆相切的内外切方程化",
-          "level": 3,
-          "importance": 4,
-          "description": "对“⊙A 与 ⊙C 相切”同时建立外切 d=r1+r2 与内切 d=|r1-r2|，逐支求解并筛除伪解。",
-          "prerequisites": ["geo_circle_line_relation", "gen_case_method", "geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "默认只外切，内切分支完全漏掉",
-            "内切写成 d=r1-r2 且未取绝对值，出现负半径",
-            "方程有解后不检查点位是否满足线段/射线限制"
-          ]
-        },
-        {
-          "id": "geo_isosceles_existence",
-          "name": "等腰三角形存在性分类",
-          "level": 3,
-          "importance": 4,
-          "description": "针对“△AFD 为等腰”类题按三边相等的三种可能逐支列式，求参数并判可行性。",
-          "prerequisites": ["gen_case_method", "geo_circle_line_relation", "geo_trig_basics"],
-          "common_misconceptions": [
-            "只讨论一种边相等（如 AF=FD），其余两类遗漏",
-            "不同分支继续沿用同一图形角度关系",
-            "参数求出后未检查点 D 不与端点重合等附加约束"
-          ]
-        },
-        {
-          "id": "geo_midpoint_median_ext",
-          "name": "中点-中位线-延长线构造",
+          "id": "geo_triangle_basic",
+          "name": "三角形基础",
           "level": 2,
-          "importance": 4,
-          "description": "利用中点引出中位线平行关系，并在延长线场景中转化为等长或相似条件。",
-          "prerequisites": ["geo_median_midpoint", "geo_parallel_line_prop"],
-          "common_misconceptions": [
-            "点 M 是 CD 中点却写成与其他边端点的等长关系",
-            "中位线定理错用到非同一三角形的两边中点",
-            "延长线外角当内角使用，追角方向反了"
-          ]
-        },
-        {
-          "id": "geo_diagonal_intersection",
-          "name": "对角线交点性质调用",
-          "level": 2,
-          "importance": 4,
-          "description": "在菱形/平行四边形中调用对角线互相平分及（菱形）互相垂直性质，完成线段转换。",
-          "prerequisites": ["geo_median_midpoint", "geo_rhombus_check"],
-          "common_misconceptions": [
-            "把矩形“对角线相等”误套到菱形对角线",
-            "只用互相平分不用垂直性质，导致推导停滞",
-            "交点 E 附近线段记号混乱（EB、ED、EC 混写）"
-          ]
-        },
-        {
-          "id": "geo_golden_ratio_check",
-          "name": "黄金分割点判定与比值计算",
-          "level": 3,
-          "importance": 3,
-          "description": "识别 BE²=EC·BC 等黄金分割判定式，转化为固定比例并嵌入相似比进行复杂比值求解。",
-          "prerequisites": ["geo_similar_tri", "geo_parallel_line_ratio"],
-          "common_misconceptions": [
-            "把 BE²=EC·BC 误当作勾股定理的变形",
-            "黄金比两种常见形式混淆，代入场景错误",
-            "代入黄金比后不化简，最终比值计算连锁出错"
-          ]
-        },
-        {
-          "id": "geo_trapezoid_similarity",
-          "name": "梯形场景下相似网络搭建",
-          "level": 3,
-          "importance": 5,
-          "description": "在梯形+多平行线结构中系统搭建多组三角形相似关系，支撑菱形判定与垂直结论。",
-          "prerequisites": ["geo_parallel_line_prop", "geo_similar_tri", "gen_case_method"],
-          "common_misconceptions": [
-            "只找到一组显眼相似，遗漏关键中间相似",
-            "对应角来自不同平行线组，判定前提不成立",
-            "得到比例后不回到目标量（如 AE/CF）做收束"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "shared_foundations",
-      "name": "跨题型共享基础",
-      "nodes": [
-        {
-          "id": "geo_coord_system_setup",
-          "name": "坐标系建立与关键点坐标化",
-          "level": 2,
-          "importance": 5,
-          "description": "根据图形结构选择原点与坐标轴方向，把长度、平行、垂直关系稳定转为坐标表达。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "原点选得过偏，已知长度仍需引入过多参数",
-            "只设一个关键点坐标，遗漏对称点/中点的同步表达",
-            "把图上“看起来水平”当作坐标轴平行，未经题设就设斜率为 0"
-          ]
-        },
-        {
-          "id": "alg_equation_intersection",
-          "name": "方程联立求交点",
-          "level": 2,
-          "importance": 5,
-          "description": "把几何关系形成的多个代数方程联立求解交点，再结合图形位置筛选有效解。",
-          "prerequisites": ["geo_coord_system_setup"],
-          "common_misconceptions": [
-            "联立后只解出 x 不回代 y，坐标不完整",
-            "把几何参数提前当常数代入，导致方程次数变化",
-            "二次方程漏根后未做图形可行性回验"
-          ]
-        },
-        {
-          "id": "alg_undetermined_coeff",
-          "name": "待定系数法（一次/二次）",
-          "level": 2,
-          "importance": 5,
-          "description": "利用曲线经过已知点、轴对称等条件列方程组，确定一次或二次函数解析式。",
-          "prerequisites": ["geo_coord_system_setup"],
-          "common_misconceptions": [
-            "点坐标代入时把 x、y 位置写反",
-            "展开整理时一次项或常数项符号抄错",
-            "已知点在坐标轴上却没用“某坐标为 0”简化"
-          ]
-        },
-        {
-          "id": "geo_pythagorean_dist",
-          "name": "勾股定理与距离公式统一",
-          "level": 1,
-          "importance": 5,
-          "description": "在直角三角形和坐标场景中统一使用勾股定理与距离公式完成边长换算。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "在非直角三角形中直接套用 a²+b²=c²",
-            "坐标距离只算平方和不再开方",
-            "把负坐标差直接当负长度参与比较"
-          ]
-        },
-        {
-          "id": "geo_trig_basics",
-          "name": "三角函数基础（sin/cos/tan/cot）",
-          "level": 1,
-          "importance": 5,
-          "description": "在直角三角形中准确识别对边、邻边、斜边，并用 tan/cot 建立角与边的代数关系。",
-          "prerequisites": ["geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "tan 写成邻边比对边，方向颠倒",
-            "cot 与 tan 互倒时忽略对应角一致性",
-            "未确认直角位置就直接代入三角比"
-          ]
-        },
-        {
-          "id": "gen_case_method",
-          "name": "分类讨论方法论",
-          "level": 2,
-          "importance": 5,
-          "description": "按互斥且完备的标准分支（位置、符号、内外切等）建模，逐支求解并最终合并答案。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "只按一个分支计算就结束，遗漏其余情形",
-            "分支标准前后不一致，导致重复或漏解",
-            "得到结果后不检查是否满足该分支前提"
-          ]
+          "description": "理解三角形内角和、外角性质",
+          "prerequisites": []
         },
         {
           "id": "geo_congruent_tri",
-          "name": "全等三角形判定与对应",
-          "level": 2,
-          "importance": 5,
-          "description": "熟练使用 SSS、SAS、ASA 等判定，并严格维护对应顶点顺序以提取目标边角结论。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "见到“两边一角”就套 SAS，忽略是否为夹角",
-            "对应顶点顺序写反，后续对应边全部错位",
-            "证完全等后未提取与问题相关的对应量"
-          ]
+          "name": "全等三角形",
+          "level": 3,
+          "description": "掌握SSS、SAS、ASA、AAS、HL判定方法",
+          "prerequisites": ["geo_triangle_basic"]
         },
         {
           "id": "geo_similar_tri",
-          "name": "相似三角形判定与比例",
-          "level": 2,
-          "importance": 5,
-          "description": "通过 AA、SAS 比例等判定相似，并用对应边比例、面积比平方关系处理综合求值。",
-          "prerequisites": ["geo_congruent_tri"],
-          "common_misconceptions": [
-            "“一角相等+一组边成比例”未经对应确认就判相似",
-            "比例式分子分母对应顺序混乱",
-            "由相似比推面积比时忘记平方"
-          ]
+          "name": "相似三角形",
+          "level": 3,
+          "description": "掌握相似三角形的判定与性质",
+          "prerequisites": ["geo_congruent_tri"]
         },
         {
-          "id": "geo_parallel_line_prop",
-          "name": "平行线性质与分线段成比例",
-          "level": 2,
-          "importance": 4,
-          "description": "用平行线导出同位/内错角相等并建立比例关系，是梯形与多线交点题的核心桥梁。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "只写“因为平行”不说明对应角是哪一对",
-            "比例定理误用于不共线的线段",
-            "延长线情形下线段方向处理混乱"
-          ]
+          "id": "geo_trig_ratio",
+          "name": "锐角三角比",
+          "level": 3,
+          "description": "掌握sin、cos、tan的含义和计算",
+          "prerequisites": ["geo_triangle_basic"]
         },
         {
-          "id": "geo_circle_line_relation",
-          "name": "圆的基本性质与位置判定",
+          "id": "geo_parallelogram",
+          "name": "平行四边形",
           "level": 2,
-          "importance": 5,
-          "description": "掌握半径垂切线、点到圆心距离比较、圆心距与半径和差比较等圆位置关系核心规则。",
-          "prerequisites": ["geo_pythagorean_dist"],
-          "common_misconceptions": [
-            "把“切线”理解成“经过圆心的线”",
-            "判断两圆位置只比较半径，忽略圆心距",
-            "比较点到圆心距离与半径时漏掉等号临界"
-          ]
+          "description": "掌握平行四边形的性质与判定",
+          "prerequisites": ["geo_triangle_basic"]
         },
         {
-          "id": "geo_median_midpoint",
-          "name": "中点与中线性质",
-          "level": 1,
-          "importance": 4,
-          "description": "准确使用中点定义、中线性质及直角三角形斜边中线定理完成长度转化。",
-          "prerequisites": [],
-          "common_misconceptions": [
-            "把中线误当垂直平分线，擅自添加垂直条件",
-            "斜边中线等于斜边一半被错误推广到任意三角形",
-            "中点坐标只平均一个分量，另一分量照抄"
-          ]
+          "id": "geo_rectangle",
+          "name": "矩形、菱形、正方形",
+          "level": 3,
+          "description": "掌握特殊平行四边形的性质与判定",
+          "prerequisites": ["geo_parallelogram"]
+        },
+        {
+          "id": "geo_circle_basic",
+          "name": "圆的基本性质",
+          "level": 2,
+          "description": "理解圆的基本概念、垂径定理、圆周角定理",
+          "prerequisites": ["geo_triangle_basic"]
+        },
+        {
+          "id": "geo_circle_relation",
+          "name": "圆与直线的位置关系",
+          "level": 3,
+          "description": "掌握切线的判定与性质",
+          "prerequisites": ["geo_circle_basic"]
+        },
+        {
+          "id": "geo_motion_fold",
+          "name": "翻折",
+          "level": 3,
+          "description": "理解翻折变换的性质，对应边角相等",
+          "prerequisites": ["geo_congruent_tri"]
+        },
+        {
+          "id": "geo_motion_rotation",
+          "name": "旋转",
+          "level": 3,
+          "description": "理解旋转的性质，旋转对应点关系",
+          "prerequisites": ["geo_congruent_tri"]
+        }
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "统计与概率",
+      "nodes": [
+        {
+          "id": "stat_data",
+          "name": "统计量",
+          "level": 2,
+          "description": "理解平均数、中位数、众数、方差等统计量",
+          "prerequisites": []
+        },
+        {
+          "id": "stat_probability",
+          "name": "概率",
+          "level": 2,
+          "description": "掌握概率的计算方法",
+          "prerequisites": []
         }
       ]
     }
