@@ -16,7 +16,12 @@ const STORAGE_KEY = 'ai_tutor_ltm_v1';
 const DEFAULT_PERSONA = {
     misconceptions: [],
     learningStyle: "待评估",
-    lastSessionSummary: "欢迎开始学习"
+    learning_style: "待评估",
+    lastSessionSummary: "欢迎开始学习",
+    last_session_summary: "欢迎开始学习",
+    weak_areas: [],
+    strong_areas: [],
+    weak_categories: []
 };
 
 describe('LTMMemory', () => {
@@ -62,7 +67,9 @@ describe('LTMMemory', () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(mockData));
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data, mockData);
+      assert.deepStrictEqual(data.mastery, mockData.mastery);
+      assert.deepStrictEqual(data.persona, mockData.persona);
+      assert.strictEqual(data.lastUpdated, mockData.lastUpdated);
     });
 
     test('returns default data and logs error when JSON is invalid', () => {
@@ -126,7 +133,9 @@ describe('LTMMemory', () => {
       LTMMemory.updatePersona(newPersona);
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data.persona, newPersona);
+      assert.deepStrictEqual(data.persona.misconceptions, newPersona.misconceptions);
+      assert.strictEqual(data.persona.learningStyle, newPersona.learningStyle);
+      assert.strictEqual(data.persona.lastSessionSummary, newPersona.lastSessionSummary);
     });
   });
 });
