@@ -43,7 +43,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'OE=15/13', label: '计算交点', message: '这个比例关系代入直线方程验证了吗？注意 OE 是向量模长。', isCorrect: false },
                 { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=45/37', label: '最终结果', message: '计算非常严谨！这就是通过解析法求得的精确值。', isCorrect: true },
             ],
-            kps: { 'geo_coord_quadrant': 0.2, 'geo_dist_radius_conv': 0.45 },
+            kps: { 'geo_windmill_geometry': 0.2, 'geo_windmill_coord_method': 0.45 },
             review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
         },
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
@@ -56,7 +56,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个情况（圆心在两直线外侧）呢？', isCorrect: false },
                 { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
             ],
-            kps: { 'geo_dist_radius_conv': 0.5, 'geo_circle_line_relation': 0.4 },
+            kps: { 'geo_circle_line_relation': 0.5, 'geo_pythagorean_dist': 0.4 },
             review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全“圆心在两侧”与“圆心在同侧”两种情况并得出所有正确答案，理解力强。"
         }
     ];

@@ -1,5 +1,5 @@
 export interface KnowledgeNode {
-    id: string; // ms_q24_001 etc
+    id: string; // alg_parabola_intercepts etc
     name: string;
     level: number;
     description: string;
@@ -39,8 +39,8 @@ export const MindmapSyllabus: KnowledgeNode[] = [
                 level: 2,
                 description: "抛物线图像与性质的综合考查（演示关卡核心）",
                 children: [
-                    { id: "alg_parabola_intercepts", name: "直线截距与轴交点判定", level: 3, description: "利用一次函数截距快速锁定交点，避免盲目代入顶点公式。" },
-                    { id: "alg_parabola_undetermined_coeff", name: "待定系数法求二次解析式", level: 3, description: "利用交点坐标准确解出 a, c，注意计算准确度。" }
+                    { id: "alg_parabola_intercepts", name: "轴上截点判定", level: 3, description: "利用一次函数截距快速锁定交点，避免盲目代入顶点公式。" },
+                    { id: "alg_parabola_undetermined_coeff", name: "待定系数法求解析式", level: 3, description: "掌握解析式确定方法，注意计算准确度。" }
                 ]
             }
         ]
@@ -67,7 +67,8 @@ export const MindmapSyllabus: KnowledgeNode[] = [
                 level: 2,
                 description: "在纯几何图形中建立直角坐标系转化为代数问题",
                 children: [
-                    { id: "geo_coord_quadrant", name: "象限符号判定", level: 3, description: "根据图形相对位置，准确附加坐标系中的正负号。" }
+                    { id: "geo_windmill_geometry", name: "风车型构型识别", level: 3, description: "识别旋转全等构型。" },
+                    { id: "geo_windmill_coord_method", name: "建系与联立求解", level: 3, description: "掌握几何图形坐标化处理。" }
                 ]
             },
             {
