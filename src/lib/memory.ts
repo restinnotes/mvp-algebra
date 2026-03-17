@@ -333,13 +333,23 @@ export class LTMMemory {
     static addWrongProblem(problem: Omit<WrongProblem, 'id' | 'timestamp'>) {
         const current = this.load();
         
+        // Deduplicate: If problem with same title exists, overwrite it
+        const existingIndex = current.wrong_problems.findIndex(p => p.problemTitle === problem.problemTitle);
+        
         const newProblem: WrongProblem = {
             ...problem,
-            id: Math.random().toString(36).substring(2, 9),
+            id: existingIndex !== -1 ? current.wrong_problems[existingIndex].id : Math.random().toString(36).substring(2, 9),
             timestamp: new Date().toISOString()
         };
         
-        const updatedWrongProblems = [newProblem, ...current.wrong_problems].slice(0, 50);
+        let updatedWrongProblems;
+        if (existingIndex !== -1) {
+            updatedWrongProblems = [...current.wrong_problems];
+            updatedWrongProblems[existingIndex] = newProblem;
+        } else {
+            updatedWrongProblems = [newProblem, ...current.wrong_problems].slice(0, 50);
+        }
+        
         this.save({ wrong_problems: updatedWrongProblems });
     }
 

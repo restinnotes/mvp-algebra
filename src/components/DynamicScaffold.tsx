@@ -20,29 +20,28 @@ export const getDemoScript = (index: number) => {
     const scripts = [
         // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
         {
-            problem: "2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD",
+            problem: "2022浦东Q24: 见图。抛物线与直线 y=-x+3 分别交于x轴、y轴（点B在x轴正半轴，点C在y轴上），抛物线经过B、C两点，且对称轴为直线 x=1。求抛物线解析式；若点D为顶点，求tan∠BCD。",
             problemImage: <img src="/problems/pudong_q24.png" alt="2022浦东Q24配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
                 { id: 'p2', type: 'student' as const, contentType: 'text' as const, text: '先求直线与坐标轴交点B、C，代入抛物线求a,c，再配方求顶点D。', label: '解题思路', message: '思路非常清晰！第一步先锁定交点。', isCorrect: true },
-                { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,6)', label: '交点计算', message: '坐标算反了吧？再检查一下 y=-x+3 的截距。', isCorrect: false },
-                { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'B(6,0), C(0,3)', label: '交点计算', message: '正确！', isCorrect: true },
-                { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: '代入验证一下，a 的值似乎不对？', isCorrect: false },
-                { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: 'a=1/4, c=3', label: '求参', message: '好，抛物线解析式确定了。', isCorrect: true },
+                { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,3)', label: '交点计算', message: '非常准确，直线与轴的交点是解题基石。', isCorrect: true },
+                { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: 'c 是对的，但 a 的开口方向好像搞反了？对称轴在 x=1 情况下的 a 应该是多少？', isCorrect: false },
+                { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=-1, c=3', label: '求参', message: '解析式确定了：y = -x² + 2x + 3。', isCorrect: true },
             ],
             kps: { 'alg_parabola_intercepts': 0.3, 'alg_parabola_undetermined_coeff': 0.4 },
             review: "学生初始未能充分利用直线截距确定交点，直接代入顶点。后续计算a值出现错误。最终在指导下完成，需提升条件分析和计算准确性。"
         },
         // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
         {
-            problem: "2022徐汇Q18: 如图，四个白色全等直角三角形与四个黑色全等三角形按如所示方式摆放成“风车”型，且黑色三角形的顶点E、F、G、H分别在白色直角三角形的斜边上，已知∠ABO＝90°，OB＝3，AB＝4，若点A、E、D在同一直线上，则OE的长为______．",
+            problem: "2022徐汇Q18: 如图, 四个白色全等直角三角形与四个黑色全等直角三角形按如图方式摆放成“风车”型，黑色三角形的一个顶点E在白色直角三角形的斜边上。已知∠ABO=90°, OB=3, AB=4。若点A、E、D在同一直线上, 则OE的长为______。",
             problemImage: <img src="/problems/xuhui_q18.png" alt="2022徐汇Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
                 { id: 'x2', type: 'student' as const, contentType: 'text' as const, text: '以O为原点建立坐标系，确定A,B,C,D坐标，求出直线AD和OC解析式求交点E。', label: '解题思路', message: '非常棒的数形结合思想！', isCorrect: true },
-                { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(4,3)', label: '坐标确定', message: '注意 A 点在第三象限。', isCorrect: false },
-                { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
-                { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
+                { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3), D(3,0)', label: '坐标确定', message: '完全正确，数形结合的第一步。', isCorrect: true },
+                { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'OE=15/13', label: '计算交点', message: '这个比例关系代入直线方程验证了吗？注意 OE 是向量模长。', isCorrect: false },
+                { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=45/37', label: '最终结果', message: '计算非常严谨！这就是通过解析法求得的精确值。', isCorrect: true },
             ],
             kps: { 'geo_coord_quadrant': 0.2, 'geo_dist_radius_conv': 0.45 },
             review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
