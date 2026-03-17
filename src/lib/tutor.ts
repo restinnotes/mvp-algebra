@@ -1,6 +1,6 @@
 import { generateJSON } from './gemini';
 import { SchemaType } from '@google/generative-ai';
-import { getAllNodes, formatKPsForPrompt, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
+import { getAllNodes, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
 import { LTMMemory } from './memory';
 import { findReferenceAnswer, type ReferenceAnswer } from './reference-answers';
 import type { ShadowSolveResult, DecomposedStep, StepCheckResult, AssistLevel, LTMData } from './types';
@@ -75,11 +75,9 @@ export async function shadowSolve(
 
   const reference = findReferenceAnswer(problemText);
   if (reference) {
-    console.log(`[tutor] Reference answer found: ${reference.label}`);
     return runShadowSolveWithReference(problemText, kpCompact, weakWarnings, reference);
   }
 
-  console.log(`[tutor] No reference answer found, using full solve mode`);
   let lastResult: ShadowSolveResult | null = null;
   let verificationFeedback = '';
 
@@ -96,7 +94,6 @@ export async function shadowSolve(
 
     const verification = await verifyShadowSolve(problemText, result);
     if (verification.is_correct) {
-      console.log(`[tutor] Shadow solve verified correct on attempt ${attempt + 1}`);
       return result;
     }
 
