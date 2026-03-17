@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
     } catch (error: unknown) {
         console.error('OCR API error:', error instanceof Error ? error.message : String(error));
         return NextResponse.json(
-            { latex: '', isCorrect: false, feedback: 'Server error: ' + (error instanceof Error ? error.message : 'unknown') },
+            { latex: '', isCorrect: false, feedback: 'Server error: Please try again later.' },
             { status: 200 }
         );
     }
