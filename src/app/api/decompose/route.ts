@@ -38,6 +38,15 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image provided' }, { status: 400 });
         }
 
+        if (typeof imageBase64 !== 'string') {
+            return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
+        }
+
+        // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
+        if (imageBase64.length > 5 * 1024 * 1024) {
+            return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+        }
+
         const prompt = `
           You are a professional math tutor and expert in the Chinese middle school math curriculum.
           Your task is to "Shadow Solve" the math problem in the provided image and decompose it into a "Dynamic Scaffolding" tasks for a student.
