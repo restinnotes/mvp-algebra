@@ -30,7 +30,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: '代入验证一下，a 的值似乎不对？', isCorrect: false },
                 { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: 'a=1/4, c=3', label: '求参', message: '好，抛物线解析式确定了。', isCorrect: true },
             ],
-            kps: { 'ms_q24_001': 0.3, 'ms_q24_002': 0.4 },
+            kps: { 'alg_parabola_intercepts': 0.3, 'alg_parabola_undetermined_coeff': 0.4 },
             review: "学生初始未能充分利用直线截距确定交点，直接代入顶点。后续计算a值出现错误。最终在指导下完成，需提升条件分析和计算准确性。"
         },
         // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
@@ -44,7 +44,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
                 { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
             ],
-            kps: { 'ms_q18_001': 0.2, 'ms_shared_001': 0.45 },
+            kps: { 'geo_coord_quadrant': 0.2, 'geo_dist_radius_conv': 0.45 },
             review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
         },
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
@@ -57,7 +57,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个情况（圆心在两直线外侧）呢？', isCorrect: false },
                 { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
             ],
-            kps: { 'ms_shared_001': 0.5, 'ms_q18_003': 0.4 },
+            kps: { 'geo_dist_radius_conv': 0.5, 'geo_circle_line_relation': 0.4 },
             review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全“圆心在两侧”与“圆心在同侧”两种情况并得出所有正确答案，理解力强。"
         }
     ];
@@ -432,16 +432,20 @@ export default function DynamicScaffold() {
                 Object.entries(script.kps).forEach(([kp, score]) => {
                     LTMMemory.updateMastery(kp, score);
                 });
-                const updatedPersona: StudentPersona = {
-                    misconceptions: [
+                const combinedPersona: StudentPersona = {
+                    ...persona,
+                    misconceptions: Array.from(new Set([
+                        ...(persona?.misconceptions || []),
                         ...(script.review.includes('坐标') ? ['象限坐标符号混淆', '缺乏代数严谨性'] : []),
                         ...(script.review.includes('讨论') ? ['分类讨论意识不足', '思维缜密性欠缺'] : []),
                         ...(script.review.includes('截距') ? ['条件分析不全面', '计算易出错'] : [])
-                    ],
+                    ])),
                     lastSessionSummary: script.review,
-                    weak_areas: Object.keys(script.kps)
+                    last_session_summary: script.review,
+                    weak_areas: Array.from(new Set([...(persona?.weak_areas || []), ...Object.keys(script.kps)]))
                 };
-                LTMMemory.updatePersona(updatedPersona);
+                setPersona(combinedPersona);
+                LTMMemory.updatePersona(combinedPersona);
                 setDemoScriptIndex(prev => {
                     const next = prev + 1;
                     localStorage.setItem('demoScriptIndex', next.toString());
@@ -542,17 +546,21 @@ export default function DynamicScaffold() {
             LTMMemory.updateMastery(kp, score);
         });
 
-        const updatedPersona: StudentPersona = {
-            misconceptions: [
+        const combinedPersona: StudentPersona = {
+            ...persona,
+            misconceptions: Array.from(new Set([
+                ...(persona?.misconceptions || []),
                 ...(script.review.includes('坐标') ? ['平面坐标系正负号混淆', '第三象限坐标判定'] : []),
                 ...(script.review.includes('讨论') ? ['分情况讨论意识薄弱', '圆与直线的多解漏项'] : []),
                 ...(script.review.includes('截距') ? ['直线方程项对应的几何意义模糊'] : [])
-            ],
+            ])),
             lastSessionSummary: script.review,
-            weak_areas: Object.keys(script.kps)
+            last_session_summary: script.review,
+            weak_areas: Array.from(new Set([...(persona?.weak_areas || []), ...Object.keys(script.kps)]))
         };
         
-        LTMMemory.updatePersona(updatedPersona);
+        setPersona(combinedPersona);
+        LTMMemory.updatePersona(combinedPersona);
         setDemoScriptIndex(prev => {
             const next = prev + 1;
             localStorage.setItem('demoScriptIndex', next.toString());
@@ -703,10 +711,14 @@ export default function DynamicScaffold() {
                 setReviewSummary(reviewData.review.overall_assessment);
                 addLog('info', '✅ 成功生成复盘总结');
                 
-                const updatedPersona = {
+                const updatedPersona: StudentPersona = {
                     ...persona,
-                    misconceptions: (reviewData.review.cognitive_bugs_found as CognitiveBug[]).map(b => `${b.bug_type}: ${b.description}`),
-                    lastSessionSummary: reviewData.review.overall_assessment
+                    misconceptions: Array.from(new Set([
+                        ...(persona?.misconceptions || []),
+                        ...(reviewData.review.cognitive_bugs_found as CognitiveBug[]).map(b => `${b.bug_type}: ${b.description}`)
+                    ])),
+                    lastSessionSummary: reviewData.review.overall_assessment,
+                    last_session_summary: reviewData.review.overall_assessment
                 };
                 setPersona(updatedPersona);
                 LTMMemory.updatePersona(updatedPersona);

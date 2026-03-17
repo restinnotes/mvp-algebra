@@ -358,7 +358,7 @@ export default function DashboardPage() {
                                                     <div className="flex flex-wrap gap-2 mt-2">
                                                         {problem.kpIds.slice(0, 2).map(kp => (
                                                             <span key={kp} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-white/40">
-                                                                {kp.includes('ms_q18') ? '填空/几何' : kp.includes('ms_q24') ? '函数/压轴' : '综合'}
+                                                                {kp.startsWith('geo_') ? '几何' : kp.startsWith('alg_') ? '代数' : kp.startsWith('num_') ? '运算' : kp.startsWith('stat_') ? '统计' : '综合'}
                                                             </span>
                                                         ))}
                                                     </div>

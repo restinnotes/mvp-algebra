@@ -54,20 +54,20 @@ const DEFAULT_PERSONA: StudentPersona = {
 };
 
 function getCategoryFromKpId(kpId: string): string {
-    if (kpId.startsWith('ms_q18_')) return 'q18_fill_in';
-    if (kpId.startsWith('ms_q24_')) return 'q24_function';
-    if (kpId.startsWith('ms_q25_')) return 'q25_geometry';
-    if (kpId.startsWith('ms_shared_')) return 'shared';
-    return 'unknown';
+    if (kpId.startsWith('geo_')) return 'geometry';
+    if (kpId.startsWith('alg_')) return 'algebra';
+    if (kpId.startsWith('num_')) return 'numbers';
+    if (kpId.startsWith('stat_')) return 'stats';
+    return 'other';
 }
 
 function calculateCategorySummary(mastery: Record<string, number>): Record<string, { total_atomic: number; mastered: number; weak: number; average_mastery: number }> {
     const categories: Record<string, string[]> = {
-        'q18_fill_in': [],
-        'q24_function': [],
-        'q25_geometry': [],
-        'shared': [],
-        'unknown': []
+        'geometry': [],
+        'algebra': [],
+        'numbers': [],
+        'stats': [],
+        'other': []
     };
     
     for (const kpId of Object.keys(mastery)) {
