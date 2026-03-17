@@ -1,6 +1,6 @@
 import { generateJSON } from './gemini';
 import { SchemaType } from '@google/generative-ai';
-import { getAllNodes, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
+import { getAllNodes, formatKPsForPrompt, formatAllKPsCompact, getMisconceptionsForKP } from './knowledge';
 import { LTMMemory } from './memory';
 import { findReferenceAnswer, type ReferenceAnswer } from './reference-answers';
 import type { ShadowSolveResult, DecomposedStep, StepCheckResult, AssistLevel, LTMData } from './types';
@@ -75,9 +75,11 @@ export async function shadowSolve(
 
   const reference = findReferenceAnswer(problemText);
   if (reference) {
+    console.log(`[tutor] Reference answer found: ${reference.label}`);
     return runShadowSolveWithReference(problemText, kpCompact, weakWarnings, reference);
   }
 
+  console.log(`[tutor] No reference answer found, using full solve mode`);
   let lastResult: ShadowSolveResult | null = null;
   let verificationFeedback = '';
 
@@ -94,6 +96,7 @@ export async function shadowSolve(
 
     const verification = await verifyShadowSolve(problemText, result);
     if (verification.is_correct) {
+      console.log(`[tutor] Shadow solve verified correct on attempt ${attempt + 1}`);
       return result;
     }
 
@@ -156,8 +159,19 @@ ${verificationFeedback}
 你的任务:
 1. 精确解出题目
 2. 拆解为4-8个原子步骤
-3. 每个步骤关联KP ID
-4. hint必须是苏格拉底式提问
+3. 每个步骤必须包含完整的运算推导过程（expression字段）
+4. 每个步骤关联KP ID
+5. hint必须是苏格拉底式提问
+
+⚠️ 重要：expression字段必须包含详细的计算过程，例如：
+- ❌ 错误: "x = 5"
+- ✅ 正确: "由AB=4, OB=3, ∠ABO=90°, 根据勾股定理: OA² = AB² + OB² = 4² + 3² = 25, 所以 OA = 5"
+
+每个步骤的expression必须写出：
+1. 使用的公式/定理
+2. 代入的数值
+3. 计算过程
+4. 最终结果
 
 输出要求: 严格按 JSON schema 输出。`;
 
@@ -198,6 +212,16 @@ ${weakWarnings.map(w => `- ${w}`).join('\n')}` : ''}
 4. 步骤顺序跟随原题编号
 5. 每个步骤关联KP ID
 6. hint是苏格拉底式提问
+
+⚠️ 重要：expression字段必须包含详细的计算过程，例如：
+- ❌ 错误: "x = 5"
+- ✅ 正确: "由AB=4, OB=3, ∠ABO=90°, 根据勾股定理: OA² = AB² + OB² = 4² + 3² = 25, 所以 OA = 5"
+
+每个步骤的expression必须写出：
+1. 使用的公式/定理
+2. 代入的数值
+3. 计算过程
+4. 最终结果
 
 输出要求: 严格按 JSON schema 输出。`;
 

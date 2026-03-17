@@ -109,3 +109,55 @@ export function clearCache(): void {
   _nodesMapCache = null;
   _mappingsCache = null;
 }
+
+// ─── Question Search APIs ──────────────────────────────────────────────
+
+export function getQuestionsByKPs(kpIds: string[]): QuestionMapping[] {
+  const mappings = loadMappings();
+  return mappings.filter(m => 
+    m.kps.some(kp => kpIds.includes(kp))
+  );
+}
+
+export function getQuestionsForWeakPoints(
+  weakKPs: string[], 
+  excludePapers: string[] = [],
+  maxResults: number = 5
+): QuestionMapping[] {
+  const mappings = loadMappings();
+  
+  const scored = mappings
+    .filter(m => !excludePapers.includes(m.paper))
+    .map(m => {
+      const weakKPCoverage = m.kps.filter(kp => weakKPs.includes(kp)).length;
+      const matchRatio = weakKPCoverage / m.kps.length; // How much of this question matches selected KPs
+      return { 
+        mapping: m, 
+        score: weakKPCoverage * 10 * matchRatio + (1 - Math.abs(m.difficulty - 0.7)),
+        matchRatio 
+      };
+    })
+    .filter(s => s.score > 0 && s.matchRatio >= 0.3) // Require at least 30% KP overlap
+    .sort((a, b) => b.score - a.score);
+  
+  return scored.slice(0, maxResults).map(s => s.mapping);
+}
+
+
+export function getAllPapers(): string[] {
+  const mappings = loadMappings();
+  return [...new Set(mappings.map(m => m.paper))];
+}
+
+export function getKPQuestionStats(): Record<string, number> {
+  const mappings = loadMappings();
+  const stats: Record<string, number> = {};
+  
+  for (const m of mappings) {
+    for (const kp of m.kps) {
+      stats[kp] = (stats[kp] || 0) + 1;
+    }
+  }
+  
+  return stats;
+}
