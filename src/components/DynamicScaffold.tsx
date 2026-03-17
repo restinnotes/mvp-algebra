@@ -54,9 +54,11 @@ export default function DynamicScaffold() {
     const [sessionId, setSessionId] = useState<string | null>(null);
     const [showPersonaModal, setShowPersonaModal] = useState(false);
 
-    // Initial LTM Load
+    // Initial LTM Load with fixed demo student
     useEffect(() => {
-        const mem = LTMMemory.load();
+        const DEMO_STUDENT_ID = 'demo_student';
+        LTMMemory.initializeWithStudentId(DEMO_STUDENT_ID);
+        const mem = LTMMemory.load(DEMO_STUDENT_ID);
         setPersona(mem.persona);
     }, []);
 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
+import { LTMMemory } from '@/lib/memory';
 
 export async function POST(req: NextRequest) {
     try {
@@ -107,6 +108,19 @@ export async function POST(req: NextRequest) {
                     stepAttempts: state.step_attempts,
                     shadowSolve: state.shadow_solve,
                     reviewResult: state.review_result,
+                });
+            }
+
+            case 'getLTM': {
+                const { studentId } = body;
+                const ltm = LTMMemory.load(studentId || 'demo_student');
+                return NextResponse.json({
+                    mastery: ltm.mastery,
+                    category_summary: ltm.category_summary,
+                    persona: ltm.persona,
+                    cognitive_bugs: ltm.cognitive_bugs,
+                    session_count: ltm.session_history.length,
+                    weak_categories: ltm.persona.weak_categories || [],
                 });
             }
 

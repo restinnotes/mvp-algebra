@@ -61,7 +61,7 @@ export async function reviewSession(
     })
   );
 
-  const ltm = await LTMMemory.load(studentId);
+  const ltm = LTMMemory.load(studentId);
   const bktAttempts = stepAttempts.map(a => ({
     kp_id: a.kp_id,
     is_correct: a.is_correct,
@@ -70,11 +70,11 @@ export async function reviewSession(
   const updatedMastery = BktEngine.batchUpdate(ltm.mastery, bktAttempts);
 
   for (const [kpId, pL] of Object.entries(updatedMastery)) {
-    await LTMMemory.updateMastery(studentId, kpId, pL);
+    LTMMemory.updateMastery(kpId, pL);
   }
 
   for (const bug of cognitiveBugs) {
-    await LTMMemory.addCognitiveBug(studentId, bug);
+    LTMMemory.addCognitiveBug(bug);
   }
 
   const weakKPNames = weakKPs
@@ -82,7 +82,7 @@ export async function reviewSession(
     .filter(Boolean)
     .map(n => n!.name);
 
-  await LTMMemory.updatePersona(studentId, {
+  LTMMemory.updatePersona({
     weak_areas: weakKPNames,
     misconceptions: cognitiveBugs.map(b => `${b.bug_type}: ${b.description}`),
     last_session_summary: qualitative.overall_assessment,

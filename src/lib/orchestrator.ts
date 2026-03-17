@@ -389,7 +389,7 @@ async function persistSessionSummary(state: SessionState): Promise<void> {
     exit_ticket_passed: state.exit_ticket_passed,
   };
 
-  await LTMMemory.addSessionSummary(state.student_id, summary);
+  LTMMemory.addSession(summary);
 }
 
 export interface SessionInfo {
