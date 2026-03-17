@@ -3,18 +3,36 @@
     "paper": "2022_Xuhui_Two_Mock",
     "question": "18",
     "difficulty": 0.7,
-    "tags": ["翻折", "全等", "坐标法"],
-    "kps": ["geo_motion_rotation", "geo_congruent_tri", "alg_quadratic_func", "alg_expression"],
+    "tags": [
+      "翻折",
+      "全等",
+      "坐标法"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_congruent_tri",
+      "alg_quadratic_func",
+      "alg_expression"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
-    "district": "徐汇"
+    "district": "徐汇",
+    "content": "18\n如图，四个白色全等直角三角形与四个黑色全等三角形按如所示方式摆放成“风车”型，且黑色三角形的顶点E、F、G、H分别在白色直角三角形的斜边上，已知∠ABO＝90°，OB＝3，AB＝4，若点A、E、D在同一直线上，则OE的长为______．"
   },
   {
     "paper": "2022_Xuhui_Two_Mock",
     "question": "24",
     "difficulty": 0.75,
-    "tags": ["二次函数", "坐标", "角度"],
-    "kps": ["alg_quadratic_func", "alg_linear_func", "geo_trig_ratio"],
+    "tags": [
+      "二次函数",
+      "坐标",
+      "角度"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func",
+      "geo_trig_ratio"
+    ],
     "question_type": "Q24",
     "exam_type": "二模",
     "district": "徐汇"
@@ -23,18 +41,35 @@
     "paper": "2022_Xuhui_Two_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["相似", "全等", "正方形"],
-    "kps": ["geo_similar_tri", "geo_congruent_tri", "geo_rectangle"],
+    "tags": [
+      "相似",
+      "全等",
+      "正方形"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_congruent_tri",
+      "geo_rectangle"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
-    "district": "徐汇"
+    "district": "徐汇",
+    "content": "25\n如图，四边形ABCE中，∠BAC＝90°，AB＝AC，BF⊥CE于点F，点D为BF上一点，且∠BAD＝∠CAE．\n（1）求证：AD＝AE；\n（2）设BF交AC于点G，若，判断四边形ADFE的形状，并证明．\n如图，四边形ABCE中，∠BAC＝90°，AB＝AC，BF⊥CE于点F，点D为BF上一点，且∠BAD＝∠CAE．\n（1）求证：AD＝AE；（2）设BF交AC于点G，若，判断四边形ADFE的形状，并证明．\n【25题答案】\n（2）四边形ADFE是正方形，证明见解析．\n【分析】（1）根据条件，结合两个三角形全等的判定定理，得出≌，利用全等三角形的性质即可得出；\n（2）根据条件得到，进而判定四边形ADFE是矩形，再结合（1）中结论，即可得证．\n【小问1详解】\n证明：∠BAC＝90°，BF⊥CE，\n，，\n，\n，\n在和中，\n≌，\n；\n【小问2详解】\n四边形ADFE是正方形．\n证明：在中，∠BAC＝90°，AB＝AC，\n，\n，\n，即，\n，，\n∠BAC＝90°，\n，\n，\n，，\n四边形ADFE是矩形，\n由（1）知，\n四边形ADFE是正方形．\n【点睛】本题为几何证明综合题，涉及到三角形全等的判定与性质、相似三角形的判定与性质、矩形的判定和正方形的判定，熟练掌握相关知识点，并能根据题中条件与所证结准确寻找到思路是解决问题的关键．\n---"
   },
   {
     "paper": "2022_Pudong_Two_Mock",
     "question": "18",
     "difficulty": 0.65,
-    "tags": ["圆", "直线", "范围"],
-    "kps": ["geo_circle_basic", "geo_circle_relation", "alg_inequality"],
+    "tags": [
+      "圆",
+      "直线",
+      "范围"
+    ],
+    "kps": [
+      "geo_circle_basic",
+      "geo_circle_relation",
+      "alg_inequality"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
     "district": "浦东"
@@ -43,8 +78,16 @@
     "paper": "2022_Pudong_Two_Mock",
     "question": "24",
     "difficulty": 0.8,
-    "tags": ["二次函数", "三角函数", "存在性"],
-    "kps": ["alg_quadratic_func", "geo_trig_ratio", "alg_equation"],
+    "tags": [
+      "二次函数",
+      "三角函数",
+      "存在性"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio",
+      "alg_equation"
+    ],
     "question_type": "Q24",
     "exam_type": "二模",
     "district": "浦东"
@@ -53,8 +96,16 @@
     "paper": "2022_Pudong_Two_Mock",
     "question": "25",
     "difficulty": 0.9,
-    "tags": ["相似", "圆相切", "分类讨论"],
-    "kps": ["geo_similar_tri", "geo_circle_relation", "geo_rectangle"],
+    "tags": [
+      "相似",
+      "圆相切",
+      "分类讨论"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_circle_relation",
+      "geo_rectangle"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
     "district": "浦东"
@@ -63,88 +114,152 @@
     "paper": "2022_Changning_Two_Mock",
     "question": "18",
     "difficulty": 0.6,
-    "tags": ["圆", "旋转"],
-    "kps": ["geo_circle_basic", "geo_motion_rotation"],
+    "tags": [
+      "圆",
+      "旋转"
+    ],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
-    "district": "长宁"
+    "district": "长宁",
+    "content": "18\n如图，四边形ABCD是⊙O的内接矩形，将矩形ABCD沿着直线BC翻折，点A、点D的对应点分别为A'、D'，如果直线A'D'与⊙O相切，若AB=2，那么BC的长为"
   },
   {
     "paper": "2022_Changning_Two_Mock",
     "question": "24",
     "difficulty": 0.75,
-    "tags": ["二次函数", "圆相切"],
-    "kps": ["alg_quadratic_func", "geo_circle_relation"],
+    "tags": [
+      "二次函数",
+      "圆相切"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_circle_relation"
+    ],
     "question_type": "Q24",
     "exam_type": "二模",
-    "district": "长宁"
+    "district": "长宁",
+    "content": "24\n在平面直角坐标系中，抛物线y＝﹣x2+2bx+c与x轴交于点A、B（点A在点B的右侧），且与y轴交于点C.已知点A（3，0），O为坐标原点.\n（1）当B的坐标为（﹣5，0）时，求抛物线的解析式；\n（2）在（1）的条件下，以A为圆心，OA长为半径画⊙A，以C为圆心，AB长为半径画⊙C，通过计算说明⊙A和⊙C的位置关系；\n（3）如果△BAC∽△AOC，求抛物线顶点P的坐标."
   },
   {
     "paper": "2022_Changning_Two_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["相似", "梯形"],
-    "kps": ["geo_similar_tri", "geo_parallelogram"],
+    "tags": [
+      "相似",
+      "梯形"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_parallelogram"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
-    "district": "长宁"
+    "district": "长宁",
+    "content": "25\n在Rt△ABC中，∠ACB=90°，AC=9，sin∠BAC=.点D在边AB上（不与点A、B重合），以AD为半径的⊙A与射线AC相交于点E，射线DE与射线BC相交于点F，射线AF与⊙A交于点G，\n（1）如图1，设AD=x，用含x的代数式表示DE的长；\n（2）如果点E是的中点，求∠AFD的余切值；\n（3）如果△AFD为等腰三角形，直接写出AD的长，\n---"
   },
   {
     "paper": "2022_Qingpu_Two_Mock",
     "question": "18",
     "difficulty": 0.65,
-    "tags": ["圆", "动点"],
-    "kps": ["geo_circle_basic", "geo_circle_relation"],
+    "tags": [
+      "圆",
+      "动点"
+    ],
+    "kps": [
+      "geo_circle_basic",
+      "geo_circle_relation"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
-    "district": "青浦"
+    "district": "青浦",
+    "content": "18\n如图，在直角梯形中，，，是上一定点，，，，，点是上一个动点，以为圆心，为半径作，若与以为圆心，1为半径的有公共点，且与线段只有一个交点，则长度的取值范围是________________．\n三、解答\n如图，在直角梯形中，，，是上一定点，，，，，点是上一个动点，以为圆心，为半径作，若与以为圆心，1为半径的有公共点，且与线段只有一个交点，则长度的取值范围是________________．\n【18题答案】\n【分析】由题意可得当与AD相切时，PC为最小值；当与内切时，则PC为最大值，进而问题可求解．\n【详解】解：如图所示，\n当与AD相切时，切点为M，此时PC为最小值，\n∵PM⊥AD，，\n∴；\n当与内切时，切点为Q，此时PC为最大值，\n∴，\n综上所述：长度的取值范围是；\n故答案为．\n【点睛】本题主要考查切线的性质及圆与圆的位置关系，熟练掌握切线的性质及圆与圆的位置关系是解题的关键．\n三、解答"
   },
   {
     "paper": "2022_Qingpu_Two_Mock",
     "question": "24",
     "difficulty": 0.7,
-    "tags": ["全等", "相似"],
-    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "tags": [
+      "全等",
+      "相似"
+    ],
+    "kps": [
+      "geo_congruent_tri",
+      "geo_similar_tri"
+    ],
     "question_type": "Q24",
     "exam_type": "二模",
-    "district": "青浦"
+    "district": "青浦",
+    "content": "24\n如图，已知在梯形中，，对角线、交于，平分，点在底边上，连结交对角线于，．\n（1）求证：四边形是菱形；\n（2）连结，求证：．\n如图，已知在梯形中，，对角线、交于，平分，点在底边上，连结交对角线于，．\n（1）求证：四边形是菱形；\n（2）连结，求证：．\n【24题答案】\n【分析】（1）由平行线的性质可得，然后可得，则有，由角平分线及平行线的性质可得，进而问题可求证；\n（2）由（1）可知，然后可得，进而可得，最后根据相似三角形的性质可求证．\n【小问1详解】\n证明：∵，\n∴，，\n∵，\n∴，\n∴，\n∴四边形是平行四边形，\n∵平分，\n∴，\n∴，\n∴，\n∴四边形是菱形；\n【小问2详解】\n证明：由（1）可知，\n∵DE=DE，\n∴，\n∴，\n∵，，\n∴，\n∴，\n∴，即，\n∴．\n【点睛】本题主要考查菱形的性质与判定、角平分线的定义、平行线的性质及相似三角形的性质与判定，熟练掌握菱形的性质与判定、角平分线的定义、平行线的性质及相似三角形的性质与判定是解题的关键．\n---"
   },
   {
     "paper": "2022_Huangpu_Two_Mock",
     "question": "18",
     "difficulty": 0.7,
-    "tags": ["相似", "三角函数", "旋转"],
-    "kps": ["geo_similar_tri", "geo_trig_ratio", "geo_motion_rotation"],
+    "tags": [
+      "相似",
+      "三角函数",
+      "旋转"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_trig_ratio",
+      "geo_motion_rotation"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
-    "district": "黄浦"
+    "district": "黄浦",
+    "content": "18\n18．（4分）如图，在△ABC中，AD是BC边上的中线，∠ADC＝60°，BC＝3AD．将△ABD沿直线AD翻折，点B落在平面上的B′处，联结AB′交BC于点E，那么的值为 　   　．"
   },
   {
     "paper": "2022_Huangpu_Two_Mock",
     "question": "24",
     "difficulty": 0.8,
-    "tags": ["二次函数", "面积最值"],
-    "kps": ["alg_quadratic_func", "alg_expression"],
+    "tags": [
+      "二次函数",
+      "面积最值"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_expression"
+    ],
     "question_type": "Q24",
     "exam_type": "二模",
-    "district": "黄浦"
+    "district": "黄浦",
+    "content": "24\n24．（12分）在平面直角坐标系xOy中，抛物线y＝﹣x2+mx+n经过点A（5，0），顶点为点B，对称轴为直线x＝3，且对称轴与x轴交于点C．直线y＝kx+b经过点A，与线段BC交于点E．\n（1）求抛物线y＝﹣x2+mx+n的表达式；\n（2）联结BO、EO．当△BOE的面积为3时，求直线y＝kx+b的表达式；\n（3）在（2）的条件下，设点D为y轴上的一点，联结BD、AD．当BD＝EO时，求∠DAO的余切值．\n24．（12分）在平面直角坐标系xOy中，抛物线y＝﹣x2+mx+n经过点A（5，0），顶点为点B，对称轴为直线x＝3，且对称轴与x轴交于点C．直线y＝kx+b经过点A，与线段BC交于点E．\n（1）求抛物线y＝﹣x2+mx+n的表达式；\n（2）联结BO、EO．当△BOE的面积为3时，求直线y＝kx+b的表达式；\n（3）在（2）的条件下，设点D为y轴上的一点，联结BD、AD．当BD＝EO时，求∠DAO的余切值．\n【分析】（1）利用待定系数法和抛物线对称轴公式即可求解；\n（2）先求出顶点B坐标，根据△BOE的面积为3求出BE，进而求出点E坐标，利用待定系数法即可求解；\n（3）分BD∥OE和BD与OE不平行两种情况，分别求出D坐标，利用余切定义即可求解．\n【解答】解：（1）∵抛物线y＝﹣x2+mx+n经过点A（5，0），对称轴为直线x＝3，\n∴，\n∴，\n∴抛物线表达式为y＝﹣x2+6x﹣5；\n（2）把x＝3代入y＝﹣x2+6x﹣5得y＝4，\n∴抛物线顶点B坐标为（3，4），\n由△BOE的面积为3得BE×3＝3，\n∴BE＝2，\n∵点E在线段BC上，\n∴点E坐标为E（3，2），\n把点E（3，2）和点A（5，0）代入y＝kx+b得，\n，\n∴，∴直线的表达式为y＝﹣x+5；\n（3）如图，①若BD∥OE，\n∵BD＝EO，\n∴四边形OEBD为平行四边形，\n则点D坐标为（0，2），\n连接DA，\n∴cot∠DAO＝＝；\n②若BD不平行OE，如图D′，\n则四边形OEBD′为等腰梯形，\n做BF⊥y轴于F，则D′F＝DF＝2，\n∴点D′坐标为（0，6），\n连接D′A，\n∴cot∠D′AO＝＝，\n综上所述，此时∠DAO的余切值为或．\n【点评】本题为二次函数综合题，考查了二次函数性质，求一次函数解析式，余切定义等知识，熟练掌握各知识点是解题关键，解第（3）步时要注意分类讨论思想应用．"
   },
   {
     "paper": "2022_Huangpu_Two_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["全等", "相似"],
-    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "tags": [
+      "全等",
+      "相似"
+    ],
+    "kps": [
+      "geo_congruent_tri",
+      "geo_similar_tri"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
-    "district": "黄浦"
+    "district": "黄浦",
+    "content": "25\n25．（14分）如图，已知在△ABC中，BC＞AB，BD平分∠ABC，交边AC于点D，E是BC边上一点，且BE＝BA，过点A作AG∥DE，分别交BD、BC于点F、G，联结FE．\n（1）求证：四边形AFED是菱形；\n（2）求证：AB2＝BG•BC；\n（3）若AB＝AC，BG＝CE，联结AE，求的值．\n上海市黄浦区2021-2022学年九年级下学期期中检测（中考二模）数学试卷\n参考答案与试题解析\n一、选择题：（本大题共6题，每题4分，满分24分）\n25．（14分）如图，已知在△ABC中，BC＞AB，BD平分∠ABC，交边AC于点D，E是BC边上一点，且BE＝BA，过点A作AG∥DE，分别交BD、BC于点F、G，联结FE．\n（1）求证：四边形AFED是菱形；（2）求证：AB2＝BG•BC；\n（3）若AB＝AC，BG＝CE，联结AE，求的值．\n【分析】（1）由题目条件可证得，△ABF≌△EBF（SAS）及△ABD≌△EBD（SAS），进而可推出AF＝FE＝ED＝DA，可得出四边形AFED是菱形．\n（2）根据条件，得出△ABG∽△CBA即可证明结论．\n（3）由条件可得，△DAE∽△ABC，由相似比可得＝（）2，由BE2＝EC•BC，得到点E是BC的黄金分割点，可得出＝，即可得出结论．\n【解答】解：（1）证明：如图，\n∵BD平分∠ABC，\n∴∠ABF＝∠EBF，\n∵BA＝BE，BF＝BF，\n∴△ABF≌△EBF（SAS），\n∴AF＝EF，\n同理可得△ABD≌△EBD（SAS），\n∴AD＝ED，∠ADB＝∠EDB，\n∵AG∥DE，\n∴∠AFD＝∠EDF，\n∴∠AFD＝∠ADF，\n∴AF＝AD，\n∴AF＝FE＝ED＝DA，\n∴四边形AFED是菱形．\n（2）证明：由（1）得△ABF≌△EBF，∴∠BAG＝∠BEF，\n∵四边形AFED是菱形，\n∴AD∥FE，\n∴∠BEF＝∠C，\n∴∠BAG＝∠C，\n∵∠ABG＝∠CBA，\n∴△ABG∽△CBA，\n∴，即AB2＝BG•BC．\n（3）由（2）得，△ABG∽△CBA，AB＝AC，\n∴AG＝BG，\n∴∠GAB＝∠GBA，\n∴∠AGC＝2∠GAB，\n∵BG＝CE，\n∴BE＝CG，\n∴CG＝CA，\n∴∠CAG＝∠CGA，\n∵∠CAG＝2∠DAE，\n∴∠DAE＝∠ABC，\n∴∠DEA＝∠ACB，\n∴△DAE∽△ABC，\n∴＝（）2，\n∵AB2＝BG•BC，AB＝BE，BG＝EC，\n∴BE2＝EC•BC，\n∴点E是BC的黄金分割点，\n∴＝，\n∴＝，\n∵∠EAC＝∠C，\n∴CE＝AE，∴＝，\n∴＝．\n【点评】本题主要考查菱形的判定，相似三角形的性质与判定等内容，黄金分割点等内容；题目比较综合，熟练记忆相关性质与判定是解题基础．\n---"
   },
   {
     "paper": "2022_Putuo_Two_Mock",
     "question": "18",
     "difficulty": 0.7,
-    "tags": ["三角函数", "旋转"],
-    "kps": ["geo_trig_ratio", "geo_motion_rotation"],
+    "tags": [
+      "三角函数",
+      "旋转"
+    ],
+    "kps": [
+      "geo_trig_ratio",
+      "geo_motion_rotation"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
     "district": "普陀"
@@ -153,8 +268,14 @@
     "paper": "2022_Putuo_Two_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["全等", "相似"],
-    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "tags": [
+      "全等",
+      "相似"
+    ],
+    "kps": [
+      "geo_congruent_tri",
+      "geo_similar_tri"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
     "district": "普陀"
@@ -163,8 +284,13 @@
     "paper": "2022_Hongkou_Two_Mock",
     "question": "18",
     "difficulty": 0.6,
-    "tags": ["圆与直线"],
-    "kps": ["geo_circle_basic", "geo_circle_relation"],
+    "tags": [
+      "圆与直线"
+    ],
+    "kps": [
+      "geo_circle_basic",
+      "geo_circle_relation"
+    ],
     "question_type": "Q18",
     "exam_type": "二模",
     "district": "虹口"
@@ -173,8 +299,14 @@
     "paper": "2022_Hongkou_Two_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["全等", "相似"],
-    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "tags": [
+      "全等",
+      "相似"
+    ],
+    "kps": [
+      "geo_congruent_tri",
+      "geo_similar_tri"
+    ],
     "question_type": "Q25",
     "exam_type": "二模",
     "district": "虹口"
@@ -183,8 +315,14 @@
     "paper": "2020_Huangpu_One_Mock",
     "question": "18",
     "difficulty": 0.65,
-    "tags": ["翻折", "矩形"],
-    "kps": ["geo_motion_fold", "geo_rectangle"],
+    "tags": [
+      "翻折",
+      "矩形"
+    ],
+    "kps": [
+      "geo_motion_fold",
+      "geo_rectangle"
+    ],
     "question_type": "Q18",
     "exam_type": "一模",
     "district": "黄浦"
@@ -193,8 +331,14 @@
     "paper": "2020_Huangpu_One_Mock",
     "question": "24",
     "difficulty": 0.75,
-    "tags": ["二次函数", "平行四边形"],
-    "kps": ["alg_quadratic_func", "geo_parallelogram"],
+    "tags": [
+      "二次函数",
+      "平行四边形"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_parallelogram"
+    ],
     "question_type": "Q24",
     "exam_type": "一模",
     "district": "黄浦"
@@ -203,8 +347,15 @@
     "paper": "2020_Huangpu_One_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["相似", "梯形", "中位线"],
-    "kps": ["geo_similar_tri", "geo_parallelogram"],
+    "tags": [
+      "相似",
+      "梯形",
+      "中位线"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_parallelogram"
+    ],
     "question_type": "Q25",
     "exam_type": "一模",
     "district": "黄浦"
@@ -213,8 +364,14 @@
     "paper": "2020_Jingan_One_Mock",
     "question": "18",
     "difficulty": 0.7,
-    "tags": ["圆", "角度"],
-    "kps": ["geo_circle_basic", "geo_trig_ratio"],
+    "tags": [
+      "圆",
+      "角度"
+    ],
+    "kps": [
+      "geo_circle_basic",
+      "geo_trig_ratio"
+    ],
     "question_type": "Q18",
     "exam_type": "一模",
     "district": "静安"
@@ -223,8 +380,14 @@
     "paper": "2020_Jingan_One_Mock",
     "question": "24",
     "difficulty": 0.75,
-    "tags": ["二次函数", "角度"],
-    "kps": ["alg_quadratic_func", "geo_trig_ratio"],
+    "tags": [
+      "二次函数",
+      "角度"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio"
+    ],
     "question_type": "Q24",
     "exam_type": "一模",
     "district": "静安"
@@ -233,8 +396,15 @@
     "paper": "2020_Jingan_One_Mock",
     "question": "25",
     "difficulty": 0.9,
-    "tags": ["相似", "菱形", "黄金分割"],
-    "kps": ["geo_similar_tri", "geo_rectangle"],
+    "tags": [
+      "相似",
+      "菱形",
+      "黄金分割"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_rectangle"
+    ],
     "question_type": "Q25",
     "exam_type": "一模",
     "district": "静安"
@@ -243,8 +413,14 @@
     "paper": "2020_Minhang_One_Mock",
     "question": "18",
     "difficulty": 0.65,
-    "tags": ["旋转", "全等"],
-    "kps": ["geo_motion_rotation", "geo_congruent_tri"],
+    "tags": [
+      "旋转",
+      "全等"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_congruent_tri"
+    ],
     "question_type": "Q18",
     "exam_type": "一模",
     "district": "闵行"
@@ -253,8 +429,15 @@
     "paper": "2020_Minhang_One_Mock",
     "question": "24",
     "difficulty": 0.8,
-    "tags": ["二次函数", "面积", "相切"],
-    "kps": ["alg_quadratic_func", "geo_circle_relation"],
+    "tags": [
+      "二次函数",
+      "面积",
+      "相切"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_circle_relation"
+    ],
     "question_type": "Q24",
     "exam_type": "一模",
     "district": "闵行"
@@ -263,10 +446,671 @@
     "paper": "2020_Minhang_One_Mock",
     "question": "25",
     "difficulty": 0.85,
-    "tags": ["相似", "圆相切"],
-    "kps": ["geo_similar_tri", "geo_circle_relation"],
+    "tags": [
+      "相似",
+      "圆相切"
+    ],
+    "kps": [
+      "geo_similar_tri",
+      "geo_circle_relation"
+    ],
     "question_type": "Q25",
     "exam_type": "一模",
     "district": "闵行"
+  },
+  {
+    "paper": "2020_嘉定_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18.在△ABC中,（如图4）,把△ABC绕着点C按照顺时针的方向旋转,将A,B的对应点分别记为点,.如果恰好经过点A,那么点与点的距离为 ▲ .\n三,解答题：（本大题共7题,满分）\n19.（本题满分）\n计算：.\n20.（本题满分,第（1）小题,第（2）小题）\n已知不等臂跷跷板AB长为3米．跷跷板AB的支撑点O到地面的点的距离米.当跷跷板AB的一个端点A碰到地面时（如图5-1）,AB与直线的夹角的度数为.\n（1）当AB的另一个端点B碰到地面时（如图5-2）,跷跷板AB与直线的夹角的正弦值是多少？\n（2）当AB的另一个端点B碰到地面时（如图5-2）,点到直线的距离是多少米？\n21.（本题满分）\n如图6,在⊙O中,是两条弦,⊙O的半径长为,弧的长度为,弧的长度为（温馨提醒：弧的度数相等,弧的长度相等,弧相等,有联系也有区别）.\n当时,求证：.\n22.（本题满分）\n如图7,海中有一个小岛,该岛的四周10海里的范围内有暗礁.有一货轮在海面上由西向东航行.到达处时,该货轮位于小岛南偏西的方向上,再往东行驶20海里后到达小岛的南偏西的方向上的处.如果货轮继续向东航行,是否会有触礁的危险？\n请通过计算说明.\n23．（本题满分,第（1）小题,）\n已知：如图8,在中,点,分别在边,上,∥,.\n（1）求证：；\n（2）当平分时,求证：.",
+    "tags": [],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2020_嘉定_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24．（本题满分,每小题）\n在平面直角坐标系中,将点定义为点的“关联点”.\n已知：点在函数的图像上（如图9所示）,点的“关联点”是点.\n（1）请在图9的基础上画出函数的图像,简要说明画图方法；\n（2）如果点在函数的图像上,求点的坐标；\n（3）将点称为点的“待定关联点”（其中,）.如果点的“待定关联点”在函数的图像上,试用含的代数式表示点的坐标.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_嘉定_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25.（本题满分,其中第（1）小题,第（2）,（3）小题各）\n已知：点在内,且满足（如图10）,.\n（1）求证：∽；\n（2）如果,求的值；\n（3）如果, 且是等腰三角形,\n试求的值.",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri",
+      "geo_proof"
+    ]
+  },
+  {
+    "paper": "2020_奉贤_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18. 如图4,已知矩形（）,将矩形绕点顺时针旋转90°,点分别落在点处,连接,如果点是的中点,那么的正切值是_______.\n三,解答题\n19. （本题满分,第（1）小题,第（2）小题）\n已知函数.\n（1）指出这个函数图像的开口方向,顶点坐标和它的变化情况；\n（2）选取适当的数据填入下表,并在如图5所示的直角坐标系内描点,画出该函数的图像.\n20. （本题满分,每小题各）\n如图6,在梯形中,垂足为点.\n（1）求的余弦值；\n（2）设,用向量,表示.\n21. （本题满分,每小题各）\n如图7,已知是☉O的直径,是☉O上一点,垂足为点,是弧的中点,与弦交于点.\n（1）如果是弧的中点,求的值；\n（2）如果☉O的直径,求的长.\n22. （本题满分,每小题各）\n如图8-1是一把落地的遮阳伞的侧面示意图,伞柄垂直于水平地面,当点与点重合时,伞收紧；当点由点向点移动时,伞慢慢撑开；当点与点重合时,伞完全张开。已知遮阳伞的高度是220厘米,在它撑开的过程中,总有厘米,厘米,厘米.\n（1）当,求的长？\n（2）如图8-2,当伞完全张开时,求点到地面的距离. （参考数据：,）\n23. （本题满分,每小题各）\n已知：如图9,在平行四边形中,点在边上,点在边的延长线上,联结,.\n（1）求证：；\n（2）联结,交于点,如果平分,求证：.",
+    "tags": [],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2020_奉贤_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分,每小题各）\n如图10,在平面直角坐标系中,抛物线经过点和点,顶点为.\n（1）求这条抛物线的表达式和顶点的坐标；\n（2）点关于抛物线对称轴的对应点为点,联结,求的正切值；\n（3）将抛物线向上平移个单位,使顶点落在点处,点落在点处,如果,求的值.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio"
+    ]
+  },
+  {
+    "paper": "2020_奉贤_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图11,已知平行四边形中,点在射线上,过点作,垂足为点,交射线于点,交射线于点,联结,设.\n（1）当点在边上时,\n①求的面积；（用含的代数式表示）\n②当时,求的值；\n（2）当点在边的延长线上时,如果与相似,求的值.\n……\n0\n1\n3\n4\n5\n……\n……\n–5\n–\n–\n–5\n–\n……\nx\n……\n……\ny\n……\n……",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri",
+      "geo_rectangle"
+    ]
+  },
+  {
+    "paper": "2020_宝山_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 如图,点A在直线y x上,如果把抛物线 y x2 沿方向平移5个单位,那么平移后的抛物线的表达式为__________\n三,解答题（本大题共7题,满分）\n19. （本题满分）\n计算：\n20. （本题满分,每小题）\n已知：抛物线y x2 2x m与y轴交于点C0, 2,点D和点C关于抛物线对称轴对称.\n（1）求此抛物线的解析式和点 D 的坐标；\n（2）如果点 M 是抛物线的对称轴与 x 轴的交点,求△MCD的周长.\n21. （本题满分,每小题）\n某仓储中心有一个坡度为 i=1:2 的斜坡AB,顶部 A 处的高 AC 为4米,B,C在同一水平地面上,其横截面如图.\n（1）求该斜坡的坡面 AB 的长度；\n（2）现有一个侧面图为矩形DEFG的长方体货柜,其中长 DE=2.5米,高 EF=2米,该货柜沿斜坡向下时,点 D 离 BC 所在水平面的高度不断变化,求当 BF=3.5 米时,点 D 离 BC 所在水平面的高度 DH.\n22. （本题满分,每小题）\n如图,直线 l : y = x,点 A1 坐标为（1,0）,过点 A1 作 x 轴的垂线交直线 l 于点 B1 ,以原点 O 为圆心,OB1 为半径画弧交 x 轴于点 A2；再过点 A2 作 x 的垂线交直线 l 于点 B2,以原点 O 为圆心,OB2 长为半径画弧交 x 轴于点 A3,… 按此做法进行下去.\n求：（1）点 B1 的坐标和A1OB1的度数；\n（2）弦 A4 B3 的弦心距的长度.\n23. （本题满分,每小题）\n如图,△ABC中,AB = AC,AM为 BC 边的中线,点D在边 AC 上,联结 BD 交 AM 于点 F,延长 BD至点 E,使得 = ,联结 CE.\n求证：（1）∠ECD=2∠BAM；\n（2）BF是 DF和EF 的比例中项。",
+    "tags": [],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_宝山_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分,每小题）\n在平面直角坐标系内,反比例函数和二次函数 y a x2 x 1的图像交于点 A1, a和点 B 1, a .\n（1）求直线 AB 与 y 轴的交点坐标；\n（2）要使上述反比例函数和二次函数在某一区域都是 y 随着 x 的增大而增大,求 a 应满足的条件以及 x 的取值范围；\n（3）设二次函数的图像的顶点为 Q,当 Q 在以 AB 为直径的圆上时,求 a 的值.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func"
+    ]
+  },
+  {
+    "paper": "2020_宝山_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,OC 是△ABC 中 AB 边的中线,∠ABC=36°,点 D 为 OC 上一点,如果OD k OC ,过 D 作DE // CA 交于 BA 点 E,点 M 是 DE 的中点,将△ODE绕点 O 顺时针旋转 度（其中0 180）后,射线 OM 交直线 BC 于点 N.\n（1）如果△ABC 的面积为 26,求△ODE的面积（用 k 的代数式表示）；\n（2）当 N 和 B 不重合时,请探究∠ONB 的度数 y 与旋转角 的度数之间的函数关系式；\n（3）写出当△ONB 为等腰三角形时,旋转角 的度数.",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_崇明_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "崇明",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 如图,在中,点是的中点,点在边上,将沿翻折,使得点落在点处,当时,那么的长为________________．\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. （本题满分）\n计算：\n20. （本题满分,第（1）小题,第（2）小题）\n如图,在梯形中,对角线,相交于点,设,.试用,的式子表示向量.\n21. （本题满分,第（1）小题,第（2）小题）\n如图,AC是⊙O的直径,弦BD⊥AO于E,连接BC,过点O作OF⊥BC于F,若BD=8cm,AE=2cm,\n（1）求⊙O的半径；\n（2）求O到弦BC的距离．\n22. （本题满分,第（1）小题,第（2）小题）\n如图1,为放置在水平桌面上的台灯,底座的高为.长度均为的连杆,与始终在同一水平面上.\n（1）旋转连杆,使成平角,如图2,求连杆端点离桌面的高度.\n（2）将（1）中的连杆绕点逆时针旋转,使,如图3,问此时连杆端点离桌面的高度是增加了还是减少？增加或减少了多少？（精确到,参考数据：,）\n23. （本题满分,第（1）小题,第（2）小题）\n如图,中,是边上一点,联结,过点作,垂足为,且,联结,与边交于点．\n求证：（1）；\n（2）.",
+    "tags": [],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2020_崇明_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "崇明",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,抛物线与轴相交于点,点,与轴交于点,点是抛物线上一动点, 联结交线段于点．\n（1）求这条抛物线的解析式,并写出顶点坐标；\n（2）求的正切值；\n（3）当与相似时,求点的坐标．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio"
+    ]
+  },
+  {
+    "paper": "2020_崇明_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "崇明",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,在中,点为边上的一个动点（点不与点,点重合）．以为顶点作,射线交边于点,过点作交射线于点.\n（1）求证：；\n（2）当平分时,求的长；\n（3）当是等腰三角形时,求的长．\nx\n…\n1\n0\n1\n2\n…\ny\n…\n0\n3\n4\n3\n…",
+    "tags": [],
+    "kps": [
+      "geo_proof"
+    ]
+  },
+  {
+    "paper": "2020_徐汇_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18. 如图,在矩形中,将矩形绕着点顺时针旋转后得到矩形,点的对应点在对角线上,点分别与点对应,与边交于点,那么的长是__________.\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. （本题满分）\n已知：.\n（1）求代数式的值；\n（2）如果,求的值.\n20. （本题满分）\n已知二次函数自变量的值和它对应的函数值如下表所示：\n（1）请写出该二次函数图像的开口方向,对称轴,顶点坐标和的值；\n（2）设该二次函数图像与轴的左交点为,它的顶点为,该图像上点的横坐标为4,求的面积.\n21. （本题满分）\n如图,一艘游艇在离开码头处后,沿南偏西60°方向行驶到达处,此时从处发现灯塔在游轮的东北方向,已知灯塔在码头的正西方向200米处,求此时游轮与灯塔的距离（精确到1米）.\n（参考数据：,）\n22. （本题满分）\n如图,在△ABC中,AD,BE是△ABC的角平分线,BE CE,AB 2,AC 3,\n（1）设 , ,求向量 （用向量,表示）；\n（2）将△ABC沿直线AD翻折后,点B在边AC上的点F重合,联结DF,求S△CDF：S△CEB的值.\n23. （本题满分）\n如图,在中,点分别在上,与交于点.\n（1）求证：；\n（2）连接,求证：",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_徐汇_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分）\n如图,将抛物线平移后,新抛物线经过原抛物线的顶点,新抛物线与轴正半轴交于点,联结,设新抛物线与轴的另一交点是,新抛物线的顶点是.\n（1）求点的坐标；\n（2）设点在新抛物线上,联结,如果平分,求点的坐标；\n（3）在（2）的条件下,将抛物线沿轴左右平移,点的对应点为,当和相似时,请直接写出平移后得到抛物线的表达式.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_徐汇_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "25. （本题满分）\n如图,在中,点是边上的动点（点不与点重合）,点在边的延长线上,与边交于点.\n（1）求的值；\n（2）当时,求的长；\n（3）点在边上运动的过程中,的值是否会发生变化？如果不变化,请求的值；如果变化,请说明理由.\n……\n0\n1\n2\n3\n4\n……\n……\n3\n0\n–1\n0\n……",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_普陀_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "普陀",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 如图8,在中,点为边上一点,将绕点旋转得到（点,分别与点,对应）,使,边与边交于点,那么的长等于__________.\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. （本题满分）\n计算：\n20. （本题满分）\n如图9,在中,点,分别在边,上,.\n（1）当时,求的长；\n（2）设,那么__________,__________（用向量,表示）\n21. （本题满分）\n如图10,在中,点,分别在边,上,垂足为点,垂足为点,.\n（1）求证：；\n（2）如果,求的长.\n22. （本题满分）\n函数与函数（,为不等于零的常数）的图像有一个公共点,其中正比例函数的值随的值增大而减小,求这两个函数的解析式.\n23. （本题满分）\n已知：如图11,四边形的对角线,相交于点,.\n（1）求证：；\n（2）设的面积为,求证：.",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2020_普陀_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "普陀",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分）\n在平面直角坐标系中（如图12）,已知抛物线经过点,与轴交于点,抛物线的顶点为点,对称轴与轴交于点.\n（1）求抛物线的表达式及点的坐标；\n（2）点是轴正半轴上的一点,如果,求点的坐标；\n（3）在（2）的条件下,点是位于轴左侧抛物线上的一点,如果是以为直角边的直角三角形,求点的坐标.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_普陀_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "普陀",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "25. （本题满分）\n如图13,在梯形中,点在边上,点是射线上一个动点（不与点,重合）,联结交射线于点,设,.\n（1）求的长；\n（2）当动点在线段上时,试求与之间的函数解析式,并写出函数的定义域；\n（3）当动点运动时,直线与直线的夹角等于,请直接写出这时线段的长.",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_杨浦_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "杨浦",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18. 在Rt△ABC中,∠A=90°,AC=4,AB =,将△ABC沿着斜边BC翻折,点A在点A1 处,点D,E分别为边AC,BC的中点,联结DE并延长交 A1B所在直线于点F,联结A1E,如果△A1EF为直角三角形时,那么=__________\n三,解答题（本大题共7题,满分）\n19. （本题满分,第（1）小题,第（2）小题）\n抛物线y x2 bx c中,函数值y与自变量x之间的部分对应关系如下表：\n（1） 求该抛物线的表达式；\n（2） 如果将该抛物线平移,使它的顶点移到点M（2,4）的位置,那么其平移的方法是____________________________________________________________。\n20. （本题满分,第（1）小题,第（2）小题）\n如图,已知在梯形ABCD中,AB//CD,AB = 12,CD = 7,点E在边AD上, = ,过点E作EF//AB交边BC于点F.\n（1） 求线段EF的长；\n（2） 设 = , = ,联结AF,请用向量,表示向量.\n21. （本题满分,第（1）小题,第（2）小题）\n如图,已知在△ABC中,∠ACB = 90°,sin B = ,延长边BA至点D,使AD = AC,联结CD.\n（1） 求∠D的正切值；\n（2） 联边AC的中点E,联结BE并延长交边CD于点F,求的值.\n22. （本题满分）\n某校九年级数学兴趣小组的学生进行社会实践活动时,想利用所学的解直角三角形的知识测量教学楼的高度, 他们先在点D处用测角仪测得楼顶M的仰角为30°,再沿DF方向前行40米到达点E处,在点E处测得楼顶M的仰角为45°,已知测角仪的高AD为1.5米,请根据他们的测量数据求此楼MF 的高（结果精确到 0.1m,参考数据：1.414 ,1.732, 2.449 ）\n23. （本题满分,每小题各）\n如图,已知在△ABC中,AD是△ABC的中线,∠DAC=∠B,点E在边AD上,CE=CD.\n（1） 求证： =\n（2） 求证： AC2 = 2AE · AD .",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_杨浦_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "杨浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "24. （本题满分,每小题各）\n已知在平面直角坐标系xOy中,抛物线y = mx2 2mx + 4（m ≠ 0）与轴交于点 A,B（点A在点B的左侧）,且AB=6.\n（1） 求这条抛物线的对称轴及表达式；\n（2） 在y轴上取点E（0,2）,点F为第一象限内抛物线上一点,联结BF,EF,如果S四边形OEFB = 10,求点F的坐标；\n（3） 在第（2）小题的条件下,点F在抛物线对称轴右侧,点P在x轴上且在点B左侧,如果直线PF与y轴的夹角等于∠EBF,求点P的坐标.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func"
+    ]
+  },
+  {
+    "paper": "2020_杨浦_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "杨浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n已知在菱形ABCD中,AB=4,∠BAD=120°,点P是直线AB上任意一点,联结PC,在∠PCD 内部作射线CQ与对角线BD交于点Q（与 B,D 不重合）,且∠PCQ=30°.\n（1） 如图,当点P在边AB上时,如果BP = 3,求线段PC的长；\n（2） 当点P在射线BA上时,设BP = x,CQ = y,求y关于x的函数解析式及定义域；\n（3） 联结PQ,直线PQ与直线BC交于点E,如果△QCE与△BCP相似,求线段BP的长.\nx\n…\n3\n2\n1\n0\n1\n…\ny\n…\n4\n1\n0\n1\n4\n…",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_松江_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "松江",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 如图,矩形ABCD中,AD＝1,AB＝.将矩形ABCD绕着点B顺时针旋转90°得到矩形．联结,分别交边CD,于E,F．如果AE＝,那么＝ ．\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. （本题满分）\n计算：\n20. （本题满分,第（1）小题,第（2）小题）\n已知二次函数。\n（1）将函数的解析式化为的形式,并指出该函数图像顶点B坐标；\n（2）在平面直角坐标系中xOy中,设抛物线与y轴交点为C,抛物线的对称轴与x轴交点为A。求四边形OABC的面积.\n21. （本题满分）\n如图：在梯形ABCD中,AD∥BC,∠C＝90°,AD＝AB＝13,BD＝24。求边DC的长.\n22. （本题满分）\n如图,小岛A在港口P的南偏西45°方向上,一艘船从港口P,沿着正南方向,以每小时12海里的速度航行,1小时钟后到达B处,在B处测得小岛A在它的南偏西60°的方向上.小岛A离港口P有多少海里？\n23. （本题满分,第（1）小题,第（2）小题）\n已知：如图,点D,F在△ABC边AC上,点E在边BC上,且DE∥AB,.\n（1）求证：EF∥BD；\n（2）如果,求证：.",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_松江_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "松江",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,已知抛物线y＝x2＋bx＋c过点A(3, 0),点B(0, 3)．点M(m, 0)在线段OA上（与点A,O不重合）,过点M作x轴的垂线与线段AB交于点P,与抛物线交于点Q,联结BQ．\n（1）求抛物线表达式；\n（2）联结OP,当∠BOP＝∠PBQ时,求PQ的长度；\n（3）当△PBQ为等腰三角形时,求m的值．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_松江_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "松江",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n已知tan∠MON=2,矩形ABCD的边AB在射线OM上,AD=2,AB=m,CF⊥ON,垂足为点F.\n（1）如图（1）,作AE⊥ON,垂足为点E. 当m=2时,求线段EF的长度；\n（2）如图（2）,联结OC,当m=2,且CD平分∠FCO时,求∠COF的正弦值；\n（3）如图（3）,当△AFD与△CDF相似时,求m的值.",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri",
+      "geo_rectangle"
+    ]
+  },
+  {
+    "paper": "2020_浦东_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "浦东",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 在 Rt△ABC 中,∠C=90°,AC=2,BC=4,点 D,E 分别是边 BC,AB 的中点,将△BDE 绕着点 B 旋转,点 D,E 旋转后的对应点分别为点 D ',E ',当直线D 'E ' 经过点 A 时,线段 CD ' 的长为 ▲ ．\n三,解答题：（本大题共7题,满分）\n19．（本题满分）\n计算： + cot260°\n20．（本题满分, 其中每小题各）\n如图,在平行四边形 ABCD 中,点 E 在边 AD 上,且 AE=2ED,联结 BE 并延长交边 CD 的延长线于点F,设 = , = .\n（1）用 , 表示 , ；\n（2）先化简,再求作：( + ) + 2( ). (不要求写作法,但要写明结论)\n21．（本题满分,其中每小题各）\n如图,在△ABC 中,点 D,E 分别在边 AB,AC 上,且 AD=3,AC=6,AE=4,AB=8.\n（1）如果 BC=7,求线段 DE 的长；\n（2）设△DEC 的面积为 a ,求△BDC的面积.(用 a 的代数式表示).\n22．（本题满分）\n为了测量大楼顶上（居中）避雷针 BC 的长度,在地面上点 A 处测得避雷针底部 B 和顶部 C 的仰角分别为 55°58’和 57°,已知点 A 与楼底中间部位 D 的距离约为 80 米,求避雷针 BC 的长度。\n（参考数据：sin 55°58' ≈ 0.83,cos55°58' ≈ 0.56,tan 55°58' ≈ 1.48,sin 57°≈ 0.84,cos 57°≈ 0.54,tan 57°≈1.54 )\n23．（本题满分,其中每小题各）\n如图,已知△ABC 和△ADE,点 D 在 BC 边上,DA=DC,∠ADE=∠B,边 DE 与 AC 相交于点 F.\n（1）求证：AB · AD = DF · BC ；\n（2）如果 AE//BC,求证： =",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2020_浦东_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "浦东",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24．（本题满分,其中每小题各）\n如图,在平面直角坐标系 xOy 中,抛物线 y = x2 + bx + c 与 x 轴的两个交点分别为 A (1, 0),B (3, 0),与 y 轴相交于点 C.\n（1）求抛物线的表达式；\n（2）联结 AC,BC,求∠ACB 的正切值；\n（3）点 P 在抛物线上,且∠PAB=∠ACB,求点 P 的坐标.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio"
+    ]
+  },
+  {
+    "paper": "2020_浦东_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "浦东",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n在 Rt△ABC 中,∠A=90°,AB=4,AC=3,D 为 AB 边上一动点（点 D 与点 A,B 不重合）,联结 CD,过点 D 作 DE⊥DC 交边 BC 于点 E.\n（1）如图,当 ED=EB 时,求 AD 的长；\n（2）设 AD = x,BE = y ,求 y 关于 x 的函数解析式并写出函数定义域；\n（3）把△BCD 沿直线 CD 翻折得△CDB ',联结 AB ',当△CAB '是等腰三角形时,直接写出 AD 的长.\nx\n…\n0\n1\n2\n3\n4\n…\ny ax2 bx c\n…\n3\n0\n1\n0\n3\n…",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_虹口_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18,如图,在等腰梯形 ABCD 中,AD / / BC ,sin C ,AB 9 ,AD 6 ,点 E ,F 分别在边 AB ,\n5\nBC 上,联结 EF ,将 BEF 沿着 EF 所在直线翻折,使 BF 的对应线段 B ' F 经过顶点 A , B ' F 交对角线 BD 于点 P ,当 B ' F AB 时, AP \t.\n三,解答题\n20,在平面直角坐标系中,将抛物线C : y x2 2x 向左平移 2 个单位,向下平移 3 个单位得到新抛物线\nC2 .\n（1）求新抛物线C2 的表达式；\n（2）如图,将 OAB 沿 x 轴向左平移得到求点 B 与其对应点 B ' 的距离.\nO ' A' B ' ,点\nA0,5 的对应点 A' 落在平移后的新抛物线C2 上,\n21,如图,在 Rt ABC 中, ABC ,点G 是 Rt ABC 的重心,联结 BG 并延长交 AC 于点 D ,过点G 作GE BC 交边 BC 于点 E .\n（1）如果 AC a , AB b ,用a ,b 表示向量 BG ；\n（2）当 AB 12时,求GE 的长.\n22,某次台风来袭时,一棵笔直大树树干 AB（假定树干 AB 垂直于水平地面）被刮倾斜7（即BAB ' ）\n后折断倒在地上,树的顶部恰好接触到地面 D 处,测得CDA , AD 5 米,求这棵大树 AB 的高度.（结果保留根号）\n（参考数据： sin 37\n0.6 , cos37\n0.8 , tan 37\n0.75 ）\n23,如图,在 Rt ABC 中,ACB ,点 D 是边 BC 的中点,联结 AD .过点C 作CE AD 于点 E , 联结 BE .\n（1）求证： BD2 DE AD ；\n（2）如果ABC DCE ,求证： BD CE BE DE .",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_虹口_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "24,在平面直角坐标系中,抛物线 y x2 bx c 与 x 轴交于 A1, 0 ,B 两点,与 y 轴交于点C 0,3 ,\n点 P 在该抛物线的对称轴上,且纵坐标为 2 3 .\n（1）求抛物线的表达式以及点 P 的坐标；\n（2）当三角形中一个内角 是另一个内角 的两倍时,我们称 为此三角形的“特征角”,\n①当 D 在射线 AP 上,如果DAB 为 ABD 的特征角,求点 D 的坐标；\n②点 E 为第一象限内抛物线上一点,点 F 在 x 轴上, CE EF ,如果CEF 为 ECF 的特征角,求点\nE 的坐标.",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_虹口_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25,在 Rt ABC 中, ACB 90 , BC 4 , sin ABC 3 ,点 D 为射线 BC 上一点,联结 AD ,过\n5\n点 B 作 BE AD 分别交射线 AD , AC 于点 E , F ,联结 DF ,过点 A 作 AG / / BD ,交直线 BE 于点\nG .\n（1）当点 D 在 BC 的延长线上时,如果CD 2 ,求 tan FBC ；\n（2）当点 D 在 BC 的延长线上时,设 AG x , S\n定义域）；\n（3）如果 AG 8 ,求 DE 的长.\nADF y ,求 y 关于 x 的函数关系式（不需要写函数的",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_闵行_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "闵行",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18．如图,在等腰△ABC中,AB = AC = 4,BC = 6,点D在底边BC上,且∠DAC =∠ACD,将△ACD沿着AD所在直线翻折,使得点C落到点E处,联结BE,那么BE的长为 ▲ ．\n三,解答题：（本大题共7题,满分）\n19．（本题满分）\n已知二次函数图像的最高点是A（1,4）,且经过点B（0,3）,与轴交于C,D两点（点C在点D的左侧）．求△BCD的面积．\n20．（本题共2小题,第（1）小题,第（2）小题,满分）\n已知：在平行四边形ABCD中,AB︰BC = 3︰2．\n（1）根据条件画图：作∠BCD的平分线,交边AB于点E,取线段BE的中点F,联结DF交CE于点G．\n（2）设=,=,那么向量= ▲ ；（用向量,表示）,并在图中画出向量在向量和方向上的分向量．\n21．（本题共2小题,第（1）小题,第（2）小题,满分）\n如图,梯形ABCD中,AD∥BC,∠ADC=90º,AD= 2,BC= 4,．以AB为直径作⊙O,交边DC于E,F两点．\n（1）求证：DE=CF；\n（2）求：直径AB的长．\n22．（本题共2小题,第（1）小题,第（2）小题,满分）\n2019年第18号台风“米娜”于9月29日早晨5点整,由位于台湾省周边的B岛东南方约980千米的西北太平洋洋面上（A点）生成,向西北方向移动．并于9月30日20时到达B岛后风力增强且转向,一路向北于24小时后在浙江省舟山市登陆．\n“米娜”在登录后风力减弱且再一次转向,以每小时20千米的速度向北偏东30º的方向移动,距台风中心170千米的范围内是受台风影响的区域．已知上海位于舟山市北偏西7º方向,且距舟山市250千米．\n（1）台风中心从生成点（A点）到达B岛的速度是每小时多少千米？\n（2）10月2日上海受到“米娜”影响,那么上海遭受这次台风影响的时间有多长？\n（结果保留整数,参考数据：,；\n,．）\n23．（本题共2小题,每小题,满分）\n如图,在△ABC中,BD是AC边上的高,点E在边AB上,联结CE交BD于点O,且,AF是∠BAC的平分线,交BC于点F,交DE于点G．\n求证：（1）CE⊥AB；\n（2）．",
+    "tags": [],
+    "kps": [
+      "geo_circle_basic",
+      "geo_motion_rotation",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_闵行_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "闵行",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24．（本题共3题,每小题,满分）\n已知：在平面直角坐标系xOy中,对称轴为直线x = -2的抛物线经过点C（0,2）,与x轴交于A（-3,0）,B两点（点A在点B的左侧）．\n（1）求这条抛物线的表达式；\n（2）联结BC,求∠BCO的余切值；\n（3）如果过点C的直线,交x轴于点E,交抛物线于\n点P,且∠CEO =∠BCO,求点P的坐标．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func"
+    ]
+  },
+  {
+    "paper": "2020_闵行_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "闵行",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "25．（本题共3小题,第（1）小题,第（2）小题,第（3）小题,满分）\n已知：如图,在Rt△ABC和Rt△ACD中,AC=BC,∠ACB=90°,∠ADC=90°,CD=2,（点A,B分别在直线CD的左右两侧）,射线CD交边AB于点E,点G是Rt△ABC的重心,射线CG交边AB于点F,AD=x,CE=y.\n（1）求证：∠DAB=∠DCF；\n（2）当点E在边CD上时,求y关于x的函数关系式,并写出x的取值范围；\n（3）如果△CDG是以CG为腰的等腰三角形,试求AD的长.",
+    "tags": [],
+    "kps": [
+      "geo_proof"
+    ]
+  },
+  {
+    "paper": "2020_青浦_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "青浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18. 已知,在矩形纸片ABCD中,AB=5cm,点E,F分别是边AB,CD的中点,折叠矩形纸片ABCD,折痕BM交AD边于点M,在折叠的过程中,如果点A恰好落在线段EF上,那么边AD的长至少是______cm．\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. 计算：．\n20. 如图,在平行四边形ABCD中,E为DC上一点,AE与BD交于点F,\nDE∶EC=2∶3．\n（1）求BF∶DF的值；\n（2）如果,试用,表示向量．\n21. 如图,在Rt△ABC中,∠ACB=90º,AC=2,BC=3．点D为AC的中点,联结BD,过点C作CG⊥BD,交AC的垂线AG于点G,GC分别交BA,BD于点F,E．\n（1）求GA的长；\n（2）求△AFC的面积．\n22. 水城门位于淀浦河和漕港河三叉口,是环城水系公园淀浦河梦蝶岛区域重要的标志性景观．在课外实践活动中,某校九年级数学兴趣小组决定测量该水城门的高．他们的操作方法如下：如图,先在D处测得点A的仰角为20°,再往水城门的方向前进13米至C处,测得点A的仰角为31°（点D,C,B在一直线上）,求该水城门AB的高．（精确到0.1米）（参考数据：sin20°≈034,cos20°≈0.94,tan20°≈0.36,sin31°≈0.52,cos31°≈0.86,tan31°≈0.60）\n23. 已知：如图,在△ABC中,点D在边BC上,AE∥BC,BE与AD,AC分别相交于点F,G, ．\n（1）求证：△CAD∽△CBG；\n（2）联结DG,求证：．",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_青浦_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "青浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "24. 如图,在平面直角坐标系xOy中,抛物线与x轴交于A,B两点,与y轴交于点C,对称轴为直线x=2,点A的坐标为（1,0）．\n（1）求该抛物线的表达式及顶点坐标；\n（2）点P为抛物线上一点（不与点A重合）,联结PC．当∠PCB=∠ACB时,求点P的坐标；\n（3）在（2）的条件下,将抛物线沿平行于轴的方向向下平移,平移后的抛物线的顶点为点D,点P关于x轴的对应点为点Q,当OD⊥DQ时,求抛物线平移的距离．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func"
+    ]
+  },
+  {
+    "paper": "2020_青浦_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "青浦",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "25. 如图,在梯形ABCD中,AD∥BC,BC=BD=10,CD=4,AD=6．点P是线段BD上的动点,点E,Q分别是线段DA,BD上的点,且DE=DQ=BP,联结EP,EQ．\n（1）求证：EQ∥DC；\n（2）如果△EPQ是以EQ为腰的等腰三角形,求线段BP的长；\n（3）当BP=m（0<m<5）时,求∠PEQ的正切值．（用含m的式子表示）\nx\n…\n-2\n-1\n0\n1\n2\n…\ny\n…\n0\n4\n6\n6\n4\n…",
+    "tags": [],
+    "kps": [
+      "geo_proof"
+    ]
+  },
+  {
+    "paper": "2020_静安_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2020",
+    "difficulty": 0.7999999999999999,
+    "content": "18. 如图3,有一菱形纸片ABCD,∠A＝60°,将该菱形纸片折叠,使点A恰好与CD的中点E重合,折痕为·FG,点F,G分别在边AB,AD上,联结EF,那么cos∠EFB的值为 ▲ ．\n三,解答题：（本大题共7题,满分）\n19．（本题满分）\n先化简,再求值：,其中x=sin45°,y=cos60°．\n20．（本题满分, 其中第（1）小题,第（2）小题）\n如图4,在Rt△ABC中,∠ACB＝90°,AC=20, CD⊥AB,垂足为D．\n（1）求BD的长；\n（2）设, ,用,表示．\n21．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n已知在平面直角坐标系xOy中,抛物线（b为常数）的对称轴是直线x=1．\n（1）求该抛物线的表达式；\n（2）点A（8,m）在该抛物线上,它关于该抛物线对称轴对称的点为A',求点A'的坐标；\n（3）选取适当的数据填入下表,并在如图5所示的平面\n直角坐标系内描点,画出该抛物线．\n22．（本题满分,其中第（1）小题,第（2）小题）\n如图6,在东西方向的海岸线l上有长为300米的码头AB,在码头的最西端A处测得轮船M在它的北偏东45°方向上；同一时刻,在A点正东方向距离100米的C处测得轮船M在北偏东22°方向上．\n（1）求轮船M到海岸线l的距离；（结果精确到0.01米）\n（2）如果轮船M沿着南偏东30°的方向航行,那么该轮船\n能否行至码头AB靠岸？请说明理由．\n（参考数据：sin22°≈0.375,cos22°≈0.927,\ntan22°≈0.404,≈1.732．）\n23．（本题满分,其中第（1）小题,第（2）小题）\n如图7,在梯形ABCD中,AD//BC,AC与BD相交于点O,点E在线段OB上,AE的延长线与BC相交于点F,OD2 = OB·OE．\n（1）求证：四边形AFCD是平行四边形；\n（2）如果BC=BD,AE·AF=AD·BF,求证：△ABE∽△ACD．",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_similar_tri",
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_静安_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2020",
+    "difficulty": 0.6,
+    "content": "24．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n在平面直角坐标系中（如图8）,已知二次函数（其中a,b,c是常数,且a≠0）的图像经过点A（0,–3）,B（1,0）,C（3,0）,联结AB,AC．\n（1）求这个二次函数的解析式；\n（2）点D是线段AC上的一点,联结BD,如果,求tan∠DBC的值；\n（3）如果点E在该二次函数图像的对称轴上,当AC平分∠BAE时,求点E的坐标．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trig_ratio"
+    ]
+  },
+  {
+    "paper": "2020_静安_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n已知：如图9,在△ABC中,AB=AC,点D,E分别在边BC,DC上,AB2 =BE · DC ,DE:EC=3:1 ,F是边AC上的一点,DF与AE交于点G．\n（1）找出图中与△ACD相似的三角形,并说明理由；\n（2）当DF平分∠ADC时,求DG:DF的值；\n（3）如图10,当∠BAC=90°,且DF⊥AE时,求DG:DF的值．\n…\n…\n…\n…",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2020_黄浦_一模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "18．如图8,在△ABC中,AB=AC ,点D,E在边BC上,∠DAE=∠B=30°,且,那么的值是 ▲ ．\n三,解答题：（本大题共7题,满分）\n19．（本题满分）\n计算：\n20．（本题满分）\n已知,如图9,点E在平行四边形ABCD的边CD上,且,设,．\n（1）用,表示；（直接写出答案）\n（2）设,在答题卷中所给的图上画出的结果．\n21．（本题满分）\n某数学小组在郊外的水平空地上对无人机进行测高实验．如图10,两台测角仪分别放在A,B位置,且离地面高均为1米（即米）,两台测角仪相距50米（即AB=50米）．在某一时刻无人机位于点C (点C与点A,B在同一平面内）,A处测得其仰角为,B处测得其仰角为．（参考数据：,）\n（1）求该时刻无人机的离地高度；（单位：米,结果保留整数）\n（2）无人机沿水平方向向左飞行2秒后到达点F（点F与点A,B,C在同一平面内）,此时于A处测得无人机的仰角为,求无人机水平飞行的平均速度．（单位：米/秒,结果保留整数）\n22．（本题满分）\n在平面直角坐标系xOy中,已知抛物线,其顶点为A．\n（1）写出这条抛物线的开口方向,顶点A的坐标,并说明它的变化情况；\n（2）直线BC平行于x轴,交这条抛物线于B,C两点（点B在点C左侧）,且,求点B坐标．\n23．（本题满分）\n已知：如图11,在平行四边形ABCD中,过点C分别作AD,AB的垂线,交边AD,AB延长线于点E,F．\n（1）求证：；\n（2）联结AC,如果,求证：．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_黄浦_一模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "24．（本题满分）\n在平面直角坐标系中,平移一条抛物线,如果平移后的新抛物线经过原抛物线顶点,且新抛物线的对称轴是y轴,那么新抛物线称为原抛物线的“影子抛物线”．\n（1）已知原抛物线表达式是,求它的“影子抛物线”的表达式；\n（2）已知原抛物线经过点（1,0）,且它的“影子抛物线”的表达式是,求原抛物线的表达式；\n（3）小明研究后提出：“如果两条不重合的抛物线交y轴于同一点,且它们有相同的“影子抛物线”,那么这两条抛物线的顶点一定关于y轴对称．”你认为这个结论成立吗？请说明理由．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func"
+    ]
+  },
+  {
+    "paper": "2020_黄浦_一模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2020",
+    "difficulty": 0.7,
+    "content": "25．（本题满分）\n如图12,△ABC是边长为2的等边三角形,点D与点B分别位于直线AC的两侧,且AD=AC, 联结BD,CD,BD交直线AC于点E.\n（1）当∠CAD=90°时,求线段AE的长.\n（2）过点A作AH⊥CD,垂足为点H,直线AH交BD于点F,\n①当∠CAD<120°时,设,（其中表示△BCE的面积,表示△AEF的面积）,求y关于x的函数关系式,并写出x的取值范围；\n②当时,请直接写出线段AE的长.",
+    "tags": [],
+    "kps": [
+      "geo_similar_tri"
+    ]
+  },
+  {
+    "paper": "2022_黄浦_二模",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "year": "2022",
+    "difficulty": 0.7,
+    "content": "18．（）如图,在△ABC中,AD是BC边上的中线,∠ADC＝60°,BC＝3AD．将△ABD沿直线AD翻折,点B落在平面上的B′处,联结AB′交BC于点E,那么的值为 　 　．\n三,解答题：（本大题共7题,满分）\n19．（）计算：+|﹣2|+﹣（）﹣2．20．（）解不等式组：．\n21．（）如图,在Rt△ABC中,∠ACB＝90°,AC＝3,sin∠ABC＝,D是边AB上一点,且CD＝CA,BE⊥CD,垂足为点E．\n（1）求AD的长；\n（2）求∠EBC的正切值．\n22．（）一辆轿车和一辆货车分别从甲,乙两地同时出发,匀速相向而行,两车相遇时轿车比货车多行驶了90千米．设行驶的时间为t（小时）,两车之间的距离为s（千米）,图中线段AB表示从两车发车至两车相遇这一过程中s与t之间的函数关系,根据图象提供的信息回答下列问题：\n（1）求s关于t的函数关系式；（不必写出定义域）\n（2）求两车的速度．\n23．（）已知：如图,在梯形ABCD中,AD∥BC,∠B＝90°,E是AC的中点,DE的延长线交边BC于点F．\n（1）求证：四边形AFCD是平行四边形；\n（2）如果2AE2＝AD•BC,求证：四边形AFCD是菱形．",
+    "tags": [],
+    "kps": [
+      "geo_motion_rotation"
+    ]
+  },
+  {
+    "paper": "2022_黄浦_二模",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "year": "2022",
+    "difficulty": 0.7,
+    "content": "24．（）在平面直角坐标系xOy中,抛物线y＝﹣x2+mx+n经过点A（5,0）,顶点为点B,对称轴为直线x＝3,且对称轴与x轴交于点C．直线y＝kx+b经过点A,与线段BC交于点E．\n（1）求抛物线y＝﹣x2+mx+n的表达式；\n（2）联结BO,EO．当△BOE的面积为3时,求直线y＝kx+b的表达式；\n（3）在（2）的条件下,设点D为y轴上的一点,联结BD,AD．当BD＝EO时,求∠DAO的余切值．",
+    "tags": [],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func"
+    ]
+  },
+  {
+    "paper": "2022_黄浦_二模",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "year": "2022",
+    "difficulty": 0.7999999999999999,
+    "content": "25．（）如图,已知在△ABC中,BC＞AB,BD平分∠ABC,交边AC于点D,E是BC边上一点,且BE＝BA,过点A作AG∥DE,分别交BD,BC于点F,G,联结FE．\n（1）求证：四边形AFED是菱形；\n（2）求证：AB2＝BG•BC；\n（3）若AB＝AC,BG＝CE,联结AE,求的值．\n上海市黄浦区2021-2022学年九年级下学期期中检测（中考二模）数学试卷\n参考答案与试题解析\n一,选择题：（本大题共6题,每题,满分）\n1．（）下列二次根式中,最简二次根式是（　　）\nA．\tB．\tC．\tD．",
+    "tags": [],
+    "kps": [
+      "geo_proof"
+    ]
   }
 ]

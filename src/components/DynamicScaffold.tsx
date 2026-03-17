@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
 import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play, Layers, Edit2, Eraser, Trash2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 import { DemoStepData, StepLog, CognitiveBug } from '@/lib/types';
@@ -16,77 +18,139 @@ interface LogEntry {
     isCorrect?: boolean;
 }
 
-export const getDemoScript = (index: number) => {
+export const getDemoScript = (index: number | string) => {
     const scripts = [
         // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
         {
+            id: "2022_Pudong_Two_Mock_Q24",
             problem: "2022浦东Q24: 见图。抛物线与直线 y=-x+3 分别交于x轴、y轴（点B在x轴正半轴，点C在y轴上），抛物线经过B、C两点，且对称轴为直线 x=1。求抛物线解析式；若点D为顶点，求tan∠BCD。",
             problemImage: <img src="/problems/pudong_q24.png" alt="2022浦东Q24配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
                 { id: 'p2', type: 'student' as const, contentType: 'text' as const, text: '先求直线与坐标轴交点B、C，代入抛物线求a,c，再配方求顶点D。', label: '解题思路', message: '思路非常清晰！第一步先锁定交点。', isCorrect: true },
                 { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,3)', label: '交点计算', message: '非常准确，直线与轴的交点是解题基石。', isCorrect: true },
-                { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: 'c 是对的，但 a 的开口方向好像搞反了？对称轴在 x=1 情况下的 a 应该是多少？', isCorrect: false },
-                { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=-1, c=3', label: '求参', message: '解析式确定了：y = -x² + 2x + 3。', isCorrect: true },
+                { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'y=a(x-3)(x+x_0)', label: '方程设定', message: '由于对称轴是 x=1，且已有一个根 x=3，另一个根应该是多少？', isCorrect: false },
+                { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'y=a(x-3)(x+1)', label: '方程设定', message: '利用对称性求出另一个根 x=-1，设定交点式是最高效的。接下来代入点C求解 a。', isCorrect: true },
+                { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: '3=a(0-3)(0+1) \implies a=1', label: '求参计算', message: 'c 是对的（点C坐标），但 a 的开口方向搞反了？在 x=1 情况下的 a 应该是多少？', isCorrect: false },
+                { id: 'p7', type: 'student' as const, contentType: 'math' as const, latex: '3=a(0-3)(0+1) \implies a=-1', label: '求参计算', message: 'a=-1 是正确的。解析式确定了：y = -x² + 2x + 3。', isCorrect: true },
+                { id: 'p8', type: 'student' as const, contentType: 'math' as const, latex: 'y=-(x-1)^2+4 \implies D(1,4)', label: '顶点计算', message: '顶点坐标 D(1,4) 计算正确！接下来通过坐标计算 tan∠BCD。', isCorrect: true },
+                { id: 'p9', type: 'student' as const, contentType: 'math' as const, latex: 'tan\angle BCD = \frac{1}{2}', label: '最终推导', message: '完全正确！结合点 B, C, D 的几何位置，利用直角三角形比例得出结果。', isCorrect: true },
             ],
             kps: { 'alg_parabola_intercepts': 0.3, 'alg_parabola_undetermined_coeff': 0.4 },
             review: "学生初始未能充分利用直线截距确定交点，直接代入顶点。后续计算a值出现错误。最终在指导下完成，需提升条件分析和计算准确性。"
         },
         // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
         {
+            id: "2022_Xuhui_Two_Mock_Q18",
             problem: "2022徐汇Q18: 如图, 四个白色全等直角三角形与四个黑色全等直角三角形按如图方式摆放成“风车”型，黑色三角形的一个顶点E在白色直角三角形的斜边上。已知∠ABO=90°, OB=3, AB=4。若点A、E、D在同一直线上, 则OE的长为______。",
             problemImage: <img src="/problems/xuhui_q18.png" alt="2022徐汇Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
                 { id: 'x2', type: 'student' as const, contentType: 'text' as const, text: '以O为原点建立坐标系，确定A,B,C,D坐标，求出直线AD和OC解析式求交点E。', label: '解题思路', message: '非常棒的数形结合思想！', isCorrect: true },
                 { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3), D(3,0)', label: '坐标确定', message: '完全正确，数形结合的第一步。', isCorrect: true },
-                { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'OE=15/13', label: '计算交点', message: '这个比例关系代入直线方程验证了吗？注意 OE 是向量模长。', isCorrect: false },
-                { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=45/37', label: '最终结果', message: '计算非常严谨！这就是通过解析法求得的精确值。', isCorrect: true },
+                { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'OA: y = 3/4 x', label: '解析式', message: '坐标系中 OA 的方程斜率不对，再仔细看看点 A 的坐标。', isCorrect: false },
+                { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'AD: y = \frac{3}{7}x - \frac{9}{7}', label: '解析式', message: '求得直线 AD 解析式。接下来联立直线方程求交点。', isCorrect: true },
+                { id: 'x6', type: 'student' as const, contentType: 'math' as const, latex: 'OE=15/13', label: '计算交点', message: '这个比例关系代入直线方程验证了吗？注意 OE 是向量模长。', isCorrect: false },
+                { id: 'x7', type: 'student' as const, contentType: 'math' as const, latex: 'OE=45/37', label: '最终结果', message: '计算非常严谨！这就是通过解析法求得的精确值。', isCorrect: true },
             ],
             kps: { 'geo_windmill_geometry': 0.2, 'geo_windmill_coord_method': 0.45 },
             review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
         },
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
         {
+            id: "2022_Hongkou_Two_Mock_Q18",
             problem: "2022虹口Q18: 已知平行直线 l1、l2 之间的距离是 5cm，圆心 O 到直线 l1 的距离是 2cm，如果圆 O 与直线 l1、l2 有三个公共点，那么圆 O 的半径为______cm．",
             problemImage: <img src="/problems/hongkou_q18.png" alt="2022虹口Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },
                 { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：要求有三个公共点，说明圆与其中一条直线相切，与另一条相交。根据圆心位置分两种情况。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
-                { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个情况（圆心在两直线外侧）呢？', isCorrect: false },
-                { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
+                { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=2', label: '半径计算', message: '如果 r=2，与 l1 相切，那么此时到 l2 的距离是多少？是否相交？', isCorrect: false },
+                { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个情况（圆心在两直线外侧）呢？', isCorrect: false },
+                { id: 'h5', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
             ],
             kps: { 'geo_circle_line_relation': 0.5, 'geo_pythagorean_dist': 0.4 },
             review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全“圆心在两侧”与“圆心在同侧”两种情况并得出所有正确答案，理解力强。"
         }
     ];
-    return scripts[index % scripts.length];
+
+    if (typeof index === 'string') {
+        const found = scripts.find(s => s.id === index);
+        if (found) return found;
+        return null;
+    }
+    
+    const num = Number(index);
+    if (isNaN(num)) return null;
+    return scripts[num % scripts.length];
 };
 
 export default function DynamicScaffold() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center h-full text-white/20">Loading Tutor...</div>}>
+            <DynamicScaffoldInner />
+        </Suspense>
+    );
+}
+
+function DynamicScaffoldInner() {
+    const searchParams = useSearchParams();
+    const problemParam = searchParams.get('problem');
     const padRef = useRef<SignatureCanvas>(null);
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
     const [demoScriptIndex, setDemoScriptIndex] = useState(0);
+    const scrollEndRef = useRef<HTMLDivElement>(null);
 
-    // Resume demoScriptIndex from localStorage
+    // Resume demoScriptIndex or problemId from URL/localStorage
     useEffect(() => {
-        const saved = localStorage.getItem('demoScriptIndex');
-        if (saved) {
-            setDemoScriptIndex(parseInt(saved, 10));
+        if (problemParam) {
+            const script = getDemoScript(problemParam);
+            // If it's one of our hardcoded ones but via ID
+            if (script && script.id === problemParam) {
+                const ids = ["2022_Pudong_Two_Mock_Q24", "2022_Xuhui_Two_Mock_Q18", "2022_Hongkou_Two_Mock_Q18"];
+                const idx = ids.indexOf(problemParam);
+                if (idx !== -1) setDemoScriptIndex(idx);
+            } else {
+                // If not in hardcoded scripts, try to fetch its info
+                fetchQuestionInfo(problemParam);
+            }
+        } else {
+            const saved = localStorage.getItem('demoScriptIndex');
+            if (saved) {
+                setDemoScriptIndex(parseInt(saved, 10));
+            }
         }
-    }, []);
+    }, [problemParam]);
+
+    const fetchQuestionInfo = async (id: string) => {
+        try {
+            const res = await fetch(`/api/questions?id=${id}`);
+            const data = await res.json();
+            if (data.question) {
+                const q = data.question;
+                const displayContent = q.content || '[题干内容待完善]';
+                setProblemText(`${q.paper} Q${q.question}: ${displayContent}`);
+                addLog('info', `已加载题目: ${q.paper} Q${q.question}`);
+            }
+        } catch (e) {
+            console.error('Failed to fetch question info', e);
+        }
+    };
 
     const [problemText, setProblemText] = useState<string>("");
     const [problemImage, setProblemImage] = useState<React.ReactNode | null>(null);
 
-    // Sync problem text when demoScriptIndex changes
+    // Sync problem text when demo starts or index changes
     useEffect(() => {
-        const scriptData = getDemoScript(demoScriptIndex);
-        setProblemText(scriptData.problem);
-        setProblemImage(scriptData.problemImage || null);
-    }, [demoScriptIndex]);
+        if (!problemParam || ["2022_Pudong_Two_Mock_Q24", "2022_Xuhui_Two_Mock_Q18", "2022_Hongkou_Two_Mock_Q18"].includes(problemParam)) {
+            const scriptData = getDemoScript(demoScriptIndex);
+            if (scriptData) {
+                setProblemText(scriptData.problem);
+                setProblemImage(scriptData.problemImage || null);
+            }
+        }
+    }, [demoScriptIndex, problemParam]);
 
     // Strategy Phase States
     const [isStrategyApproved, setIsStrategyApproved] = useState(false);
@@ -123,6 +187,9 @@ export default function DynamicScaffold() {
         };
     }, []);
 
+    const [stepLogs, setStepLogs] = useState<StepLog[]>([]);
+    const [isDemoReadyToProcess, setIsDemoReadyToProcess] = useState(false);
+    const [isInputRevealing, setIsInputRevealing] = useState(false);
     // Debug Panel State
     const [showDebug, setShowDebug] = useState(false);
     const [activeTool, setActiveTool] = useState<'pen' | 'eraser'>('pen');
@@ -133,8 +200,15 @@ export default function DynamicScaffold() {
         setLogs(prev => [...prev, { time, type, message }]);
     };
 
-    // Dynamic Step Logs
-    const [stepLogs, setStepLogs] = useState<StepLog[]>([]);
+    // Auto-scroll to bottom when steps change
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (scrollEndRef.current) {
+                scrollEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [stepLogs]);
 
     const clearPad = () => {
         if (padRef.current) {
@@ -343,82 +417,208 @@ export default function DynamicScaffold() {
     };
 
     // 手动演示：点击识别画板时触发下一步
-    const handleDemoOcr = async () => {
-        if (!isManualDemo || manualDemoStep >= demoSteps.length) return;
-        
-        const currentStep = demoSteps[manualDemoStep];
-        
-        const processStep = async (step: DemoStepData) => {
-            const newStepLog: StepLog = {
-                id: Date.now().toString(),
-                type: 'student',
-                contentType: step.contentType,
-                latex: step.latex,
-                text: step.text,
-                label: step.label,
-                message: step.message,
-                isCorrect: step.isCorrect
-            };
-            setStepLogs(prev => [...prev, newStepLog]);
+    const handleDemoOcr = async (forceStep?: number, forcedSteps?: DemoStepData[]) => {
+        const stepToProcess = forceStep !== undefined ? forceStep : manualDemoStep;
+        const activeSteps = forcedSteps || demoSteps;
+        const activeIsManual = forceStep !== undefined ? true : isManualDemo;
 
-            if (step.contentType === 'text') {
-                setStrategyTranscript(step.text || '');
-                setStrategyFeedback({ isCorrect: step.isCorrect || false, feedback: step.message || '' });
-                if (step.isCorrect) {
-                    addLog('info', `✅ 思路正确: ${step.message}`);
-                    // Delay the approval so user sees the feedback message before it unmounts
-                    setTimeout(() => setIsStrategyApproved(true), 1500);
-                } else {
-                    addLog('error', `❌ 思路错误: ${step.message}`);
-                    setIsStrategyApproved(false);
+        if (!activeIsManual || stepToProcess >= activeSteps.length) return;
+        
+        const currentStep = activeSteps[stepToProcess];
+        
+        if (currentStep.contentType === 'math') {
+            setIsStrategyApproved(true);
+        }
+        
+        const processStep = (step: DemoStepData) => {
+            return new Promise<void>((resolve) => {
+                const logId = Date.now().toString();
+                const revealAnimationDuration = 2500;
+                const feedbackDelay = 300; // Buffer to ensure reveal finished
+
+                setIsInputRevealing(true);
+                
+                if (step.contentType === 'text') {
+                    setStrategyTranscript(step.text || '');
+
+                    setTimeout(() => {
+                        const newStepLog: StepLog = {
+                            id: logId,
+                            type: 'student',
+                            contentType: step.contentType,
+                            latex: '', 
+                            text: '',  
+                            label: step.label,
+                            message: step.message,
+                            isCorrect: step.isCorrect,
+                            isRevealed: true
+                        };
+                        
+                        // Delay AI feedback card appearance
+                        setTimeout(() => {
+                            setStepLogs(prev => [...prev, newStepLog]);
+                            setIsInputRevealing(false);
+
+                            if (!step.isCorrect) {
+                                const script = getDemoScript(demoScriptIndex);
+                                if (script) {
+                                    LTMMemory.addWrongProblem({
+                                        problemTitle: script.problem,
+                                        errorStepIndex: stepToProcess,
+                                        studentFlow: [...stepLogs, newStepLog],
+                                        correctStrategy: activeSteps.filter(s => s.isCorrect),
+                                        kpIds: Object.keys(script.kps),
+                                        isResolved: false
+                                    });
+                                }
+                            }
+
+                            if (step.isCorrect) {
+                                addLog('info', `✅ 思路分析已送达: ${step.message}`);
+                            } else {
+                                addLog('error', `❌ 判定错误: ${step.message}`);
+                                setIsStrategyApproved(false);
+                            }
+                            resolve();
+                        }, feedbackDelay);
+                    }, revealAnimationDuration);
+                } else { // contentType === 'math'
+                    setManualCalcInput(step.latex || '');
+
+                    setTimeout(() => {
+                        const newStepLog: StepLog = {
+                            id: logId,
+                            type: 'student',
+                            contentType: step.contentType,
+                            latex: '',
+                            text: '',
+                            label: step.label,
+                            message: step.message,
+                            isCorrect: step.isCorrect,
+                            isRevealed: true
+                        };
+
+                        setTimeout(() => {
+                            setStepLogs(prev => [...prev, newStepLog]);
+                            setIsInputRevealing(false);
+
+                            if (!step.isCorrect) {
+                                const script = getDemoScript(demoScriptIndex);
+                                if (script) {
+                                    LTMMemory.addWrongProblem({
+                                        problemTitle: script.problem,
+                                        errorStepIndex: stepToProcess,
+                                        studentFlow: [...stepLogs, newStepLog],
+                                        correctStrategy: activeSteps.filter(s => s.isCorrect),
+                                        kpIds: Object.keys(script.kps),
+                                        isResolved: false
+                                    });
+                                }
+                            }
+
+                            if (step.isCorrect) {
+                                addLog('info', `✅ 步骤反馈已送达: ${step.label}`);
+                                clearPad();
+                            } else {
+                                addLog('error', `❌ 计算判定: ${step.message}`);
+                            }
+                            resolve();
+                        }, feedbackDelay);
+                    }, revealAnimationDuration);
                 }
-            } else { // contentType === 'math'
-                setManualCalcInput(step.latex || '');
-                if (step.isCorrect) {
-                    addLog('info', `✅ 步骤判定正确: ${step.label}`);
-                    clearPad();
-                } else {
-                    addLog('error', `❌ 步骤判定错误: ${step.message}`);
-                }
-            }
-            if (!step.isCorrect) {
-                const script = getDemoScript(demoScriptIndex);
-                LTMMemory.addWrongProblem({
-                    problemTitle: script.problem,
-                    errorStepIndex: manualDemoStep,
-                    studentFlow: [...stepLogs, newStepLog],
-                    correctStrategy: script.steps.filter(s => s.isCorrect),
-                    kpIds: Object.keys(script.kps),
-                    isResolved: false
-                });
-            }
+            });
         };
 
         await processStep(currentStep);
 
-        setManualDemoStep(manualDemoStep + 1);
+        const nextStepIdx = stepToProcess + 1;
+        setManualDemoStep(nextStepIdx);
+
+        // Prepare for next step
+        if (nextStepIdx < activeSteps.length) {
+            const nextStep = activeSteps[nextStepIdx];
+            if (nextStep.contentType === 'text') {
+                setStrategyTranscript(''); // Clear to prepare for reveal
+                setStrategyFeedback(null);
+            } else {
+                setManualCalcInput('');
+            }
+        }
+
+        // Check if finished
+        if (nextStepIdx >= activeSteps.length) {
+            const script = getDemoScript(demoScriptIndex);
+            if (!script) return;
+            
+            setIsSolved(true);
+            setIsGeneratingReview(true);
+            
+            // Mimic automatic demo's completion logic
+            setTimeout(async () => {
+                setReviewSummary(script.review);
+                setIsGeneratingReview(false);
+                setShowPersonaModal(true);
+
+                // Update mastery and persona just like in startDemo
+                Object.entries(script.kps).forEach(([kp, score]) => {
+                    LTMMemory.updateMastery(kp, score);
+                });
+
+                const combinedPersona: StudentPersona = {
+                    ...persona,
+                    misconceptions: Array.from(new Set([
+                        ...(persona?.misconceptions || []),
+                        ...(script.review.includes('坐标') ? ['平面坐标系正负号混淆', '第三象限坐标判定'] : []),
+                        ...(script.review.includes('讨论') ? ['分情况讨论意识薄弱', '圆与直线的多解漏项'] : []),
+                        ...(script.review.includes('截距') ? ['直线方程项对应的几何意义模糊'] : [])
+                    ])),
+                    lastSessionSummary: script.review,
+                    last_session_summary: script.review,
+                    weak_areas: Array.from(new Set([...(persona?.weak_areas || []), ...Object.keys(script.kps)]))
+                };
+                
+                setPersona(combinedPersona);
+                LTMMemory.updatePersona(combinedPersona);
+                
+                // Fixed: Removed auto-increment to prevent jumping to next question unexpectedly
+                setIsDemoRunning(false);
+            }, 1000);
+        }
     };
 
-    const startManualDemo = () => {
+    const startManualDemo = async () => {
         const script = getDemoScript(demoScriptIndex);
+        if (!script) return;
+        
+        // Force sync problem text immediately
+        setProblemText(script.problem);
+        setProblemImage(script.problemImage || null);
+
+        // Reset states
         setDemoSteps(script.steps);
         setManualDemoStep(0);
         setStepLogs([]);
         setIsManualDemo(true);
         setIsDemoRunning(true);
         setIsSolved(false);
-        setProblemText(script.problem);
         setIsStrategyApproved(false);
-        setStrategyTranscript(script.steps[0].text || ''); // Pre-fill first strategy step
+        setStrategyTranscript(''); 
         setStrategyFeedback(null);
-        setManualCalcInput(''); // Clear math input
+        setManualCalcInput('');
         addLog('info', `🎬 启动手动演示: ${script.problem.substring(0, 30)}...`);
+
+        // Logical Fix: Pass steps directly to bypass state async lag
+        handleDemoOcr(0, script.steps);
     };
 
     const startDemo = async () => {
         if (isDemoRunning) return;
         setIsDemoRunning(true);
         const script = getDemoScript(demoScriptIndex);
+        if (!script) {
+            setIsDemoRunning(false);
+            return;
+        }
         addLog('info', `🚀 开始自动演示 [脚本 ${demoScriptIndex}]...`);
         
         setIsSolved(false);
@@ -570,6 +770,11 @@ export default function DynamicScaffold() {
                 })
             });
             const data = await res.json();
+            addLog('api', `Response body: ${JSON.stringify(data)}`);
+            if (!res.ok) {
+                addLog('error', `API错误: ${data.error || '未知错误'}`);
+                return null;
+            }
             setSessionId(data.sessionId);
             addLog('info', `✅ 会话已创建: ${data.sessionId}`);
             return data.sessionId;
@@ -602,6 +807,12 @@ export default function DynamicScaffold() {
                 })
             });
             const data = await res.json();
+            addLog('api', `Strategy response: ${JSON.stringify(data)}`);
+            if (!res.ok) {
+                addLog('error', `思路校验失败: ${data.error || '未知错误'}`);
+                setIsEvaluatingStrategy(false);
+                return;
+            }
             const evaluation = data.evaluation;
             
             setStrategyFeedback({
@@ -754,7 +965,7 @@ export default function DynamicScaffold() {
                         className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg shadow-lg disabled:opacity-50"
                     >
                         <Layers size={14} />
-                        {isManualDemo ? `第 ${stepLogs.length} / ${demoSteps.length} 步 (点击下一步)` : '手动演示'}
+                        {isManualDemo ? `第 ${manualDemoStep} / ${demoSteps.length} 步 (点击下一步)` : '手动演示'}
                     </button>
                     <button
                         type="button"
@@ -877,118 +1088,76 @@ export default function DynamicScaffold() {
                             </div>
                         )}
                         
-                        {/* 手动演示模式：只显示当前步骤卡片（精简版） */}
-                        {isManualDemo && (
+                        {(isManualDemo || stepLogs.length > 0) && (
                             <div className="flex flex-col gap-4 flex-1">
-                                <div className="flex items-center gap-3">
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            if (manualDemoStep > 0) {
-                                                const newStepIdx = manualDemoStep - 1;
-                                                setManualDemoStep(newStepIdx);
-                                                const newLogs = stepLogs.slice(0, newStepIdx);
-                                                setStepLogs(newLogs);
-                                                const currStep = demoSteps[newStepIdx];
-                                                if (!currStep) return;
-                                                if (currStep.contentType === 'text') {
-                                                    setIsStrategyApproved(false);
-                                                    setStrategyTranscript(currStep.text || '');
-                                                    const lastLog = newLogs.length > 0 ? newLogs[newLogs.length - 1] : null;
-                                                    if (lastLog && lastLog.contentType === 'text') {
-                                                        setStrategyFeedback({ isCorrect: lastLog.isCorrect || false, feedback: lastLog.message || '' });
-                                                    } else {
-                                                        setStrategyFeedback(null);
-                                                    }
-                                                } else {
-                                                    setIsStrategyApproved(true);
-                                                    setManualCalcInput(currStep.latex || '');
-                                                }
-                                            }
-                                        }}
-                                        disabled={manualDemoStep <= 0}
-                                        className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0"
-                                    >
-                                        <ChevronLeft size={16} />
-                                    </button>
-                                    <span className="text-white/50 text-xs font-mono flex-1 text-center">
-                                        {manualDemoStep} / {demoSteps.length}
-                                    </span>
-                                    <button
-                                        type="button"
-                                        onClick={handleDemoOcr}
-                                        disabled={manualDemoStep >= demoSteps.length}
-                                        className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0"
-                                    >
-                                        <ChevronRight size={16} />
-                                    </button>
-                                </div>
-                                {stepLogs.slice(-1).map((log) => (
-                                    <div 
-                                        key={log.id} 
-                                        className={`p-4 rounded-xl border flex flex-col gap-3 transition-all duration-300 shadow-lg animate-in fade-in slide-in-from-right-4 ${
-                                            log.isCorrect 
-                                                ? 'border-emerald-500/20 bg-emerald-500/5' 
-                                                : 'border-rose-500/20 bg-rose-500/5'
-                                        }`}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${
-                                                log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
-                                            }`}>
-                                                {stepLogs.length}
-                                            </div>
-                                            <div className="flex-1">
-                                                <div className="flex items-center justify-between">
-                                                    <span className="text-white/90 font-medium text-sm block">
-                                                        {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
-                                                    </span>
-                                                    {log.isCorrect ? <Check size={16} className="text-emerald-400" /> : <AlertTriangle size={16} className="text-rose-400" />}
+                                <AnimatePresence initial={false}>
+                                    {stepLogs.map((log, idx) => (
+                                        <motion.div 
+                                            key={log.id} 
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className={`p-4 rounded-xl border flex flex-col gap-3 transition-all duration-300 shadow-lg ${
+                                                log.isCorrect 
+                                                    ? 'border-emerald-500/20 bg-emerald-500/5' 
+                                                    : 'border-rose-500/20 bg-rose-500/5'
+                                            }`}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${
+                                                    log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+                                                }`}>
+                                                    {idx + 1}
+                                                </div>
+                                                <div className="flex-1">
+                                                    <div className="flex items-center justify-between">
+                                                        <span className="text-white/90 font-medium text-sm block">
+                                                            {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
+                                                        </span>
+                                                        {log.isCorrect ? <Check size={16} className="text-emerald-400" /> : <AlertTriangle size={16} className="text-rose-400" />}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {log.message && (
-                                            <div className="ml-11 text-xs text-white/70 leading-relaxed bg-black/20 p-2 rounded-lg">
-                                                {log.message}
+
+                                            <div className="ml-11 flex flex-col gap-3">
+                                                {/* AI Feedback - Simple Fade In */}
+                                                {log.message && (
+                                                    <motion.div 
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        className="text-xs text-white/70 leading-relaxed bg-black/20 p-2.5 rounded-lg border border-white/5"
+                                                    >
+                                                        {log.message}
+                                                    </motion.div>
+                                                )}
+
+                                                {/* Student Answer - HIDDEN in Manual Demo mode to avoid redundancy */}
+                                                {!isManualDemo && (
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-indigo-500/50" />
+                                                        {log.contentType === 'math' ? (
+                                                            <div className="bg-indigo-500/10 px-3 py-1.5 rounded-lg border border-indigo-500/20 text-indigo-300 text-sm shadow-inner overflow-x-auto">
+                                                                <InlineMath math={log.latex || ''} />
+                                                            </div>
+                                                        ) : (
+                                                            <div className="text-white/50 italic text-sm font-light uppercase tracking-tighter">
+                                                                “{log.text}”
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                )}
                                             </div>
-                                        )}
-                                    </div>
-                                ))}
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                                <div ref={scrollEndRef} className="h-4 w-full shrink-0" />
                             </div>
                         )}
                         
-                        {/* 非手动演示模式：显示各步骤反馈（精简版） */}
-                        {!isManualDemo && stepLogs.map((log, idx) => (
-                            <div 
-                                key={log.id} 
-                                className={`p-4 rounded-xl border flex flex-col gap-2 transition-all duration-300 shadow-sm ${
-                                    log.isCorrect 
-                                        ? 'border-emerald-500/20 bg-emerald-500/5' 
-                                        : 'border-rose-500/20 bg-rose-500/5'
-                                }`}
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                                        log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
-                                    }`}>
-                                        {idx + 1}
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-white/90 font-medium text-sm block">
-                                                {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
-                                            </span>
-                                            {log.isCorrect ? <Check size={14} className="text-emerald-400" /> : <AlertTriangle size={14} className="text-rose-400" />}
-                                        </div>
-                                    </div>
-                                </div>
-                                {log.message && (
-                                    <div className="ml-9 text-xs text-white/50 leading-relaxed">
-                                        {log.message}
-                                    </div>
-                                )}
+                        {!isManualDemo && stepLogs.length === 0 && (
+                            <div className="flex flex-col items-center justify-center py-10 opacity-30">
+                                <span className="text-white px-6 text-center text-sm">暂无解题记录。思路校验通过后，在下方画板开始第一步运算吧。</span>
                             </div>
-                        ))}
+                        )}
                     </div>
                 </div>
             </div>
@@ -1015,30 +1184,44 @@ export default function DynamicScaffold() {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">讲讲你的解题思路</h3>
 
-                            <div className="w-full max-w-lg space-y-4">
-                                <div className="relative group">
-                                    <textarea
-                                        value={strategyTranscript}
-                                        onChange={(e) => setStrategyTranscript(e.target.value)}
-                                        placeholder={isRecording && recordingTarget === 'strategy' ? "正在倾听..." : "在此输入或点击下方麦克风说出您的解题思路..."}
-                                        className="w-full min-h-[120px] p-4 bg-white/5 border border-white/10 rounded-2xl text-left text-white/80 transition-all focus:border-indigo-500/50 outline-none resize-none"
-                                    />
-                                    {isRecording && recordingTarget === 'strategy' && (
-                                        <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-rose-500/20 text-rose-400 text-[10px] font-bold rounded-full animate-pulse border border-rose-500/30">
-                                            <Mic size={10} /> REC
+                                <div className="w-full max-w-lg space-y-4">
+                                    <div className="relative">
+                                        <textarea
+                                            value={strategyTranscript}
+                                            onChange={(e) => setStrategyTranscript(e.target.value)}
+                                            placeholder={isRecording && recordingTarget === 'strategy' ? "正在倾听..." : "在此输入或点击下方麦克风说出您的解题思路..."}
+                                            className="w-full min-h-[120px] p-4 bg-[#18191d] border border-white/10 rounded-2xl text-left text-white/80 transition-all focus:border-indigo-500/50 outline-none resize-none"
+                                        />
+                                        {/* Reveal Mask for Demo */}
+                                        <AnimatePresence>
+                                            {isInputRevealing && (
+                                                <motion.div
+                                                    initial={{ clipPath: 'inset(0 0 0 0)' }}
+                                                    animate={{ 
+                                                        clipPath: 'inset(0 0 0 100%)' 
+                                                    }}
+                                                    transition={{ duration: 2.5, ease: "linear" }}
+                                                    className="absolute inset-0 bg-[#18191d] rounded-2xl z-10 pointer-events-none"
+                                                />
+                                            )}
+                                        </AnimatePresence>
+                                        {isRecording && recordingTarget === 'strategy' && (
+                                            <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-rose-500/20 text-rose-400 text-[10px] font-bold rounded-full animate-pulse border border-rose-500/30">
+                                                <Mic size={10} /> REC
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Redundant feedback only for real practice mode, hide in manual demo */}
+                                    {strategyFeedback && !isManualDemo && (
+                                        <div className={`p-4 rounded-xl text-left text-sm border ${strategyFeedback.isCorrect ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-400'}`}>
+                                            <div className="font-bold flex items-center gap-2 mb-1">
+                                                {strategyFeedback.isCorrect ? <Check size={14} /> : <AlertTriangle size={14} />}
+                                                {strategyFeedback.isCorrect ? "思路很棒！" : "思路还可以优化："}
+                                            </div>
+                                            {strategyFeedback.feedback}
                                         </div>
                                     )}
-                                </div>
-
-                                {strategyFeedback && (
-                                    <div className={`p-4 rounded-xl text-left text-sm border ${strategyFeedback.isCorrect ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-rose-500/10 border-rose-500/30 text-rose-400'}`}>
-                                        <div className="font-bold flex items-center gap-2 mb-1">
-                                            {strategyFeedback.isCorrect ? <Check size={14} /> : <AlertTriangle size={14} />}
-                                            {strategyFeedback.isCorrect ? "思路很棒！" : "思路还可以优化："}
-                                        </div>
-                                        {strategyFeedback.feedback}
-                                    </div>
-                                )}
 
                                 <div className="flex items-center justify-center gap-4 pt-4">
                                     <button
@@ -1098,6 +1281,8 @@ export default function DynamicScaffold() {
                                 </div>
                             </div>
 
+                            {/* Traditional Input Box for Calc - DELETED PER USER REQUEST */}
+
                             <SignatureCanvas
                                 ref={padRef}
                                 penColor={activeTool === 'eraser' ? "#0f1115" : "rgba(255,255,255,0.85)"}
@@ -1106,14 +1291,31 @@ export default function DynamicScaffold() {
                                 minWidth={activeTool === 'eraser' ? 20 : 1.5}
                                 maxWidth={activeTool === 'eraser' ? 30 : 2.5}
                             />
+
                             {/* Manual demo: show current step's formula on canvas */}
                             {isManualDemo && (() => {
                                 const currentDemoStep = demoSteps[manualDemoStep];
                                 if (!currentDemoStep || currentDemoStep.contentType !== 'math' || !currentDemoStep.latex) return null;
                                 return (
                                     <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-                                        <div className="text-3xl text-white/90 bg-black/30 backdrop-blur-sm px-8 py-6 rounded-2xl border border-white/10 shadow-2xl">
-                                            <InlineMath math={currentDemoStep.latex} />
+                                        <div className="relative overflow-hidden group">
+                                            <div className="text-3xl text-white/90 bg-black/40 backdrop-blur-md px-10 py-8 rounded-3xl border border-white/10 shadow-[0_0_50px_rgba(79,70,229,0.2)]">
+                                                <InlineMath math={currentDemoStep.latex} />
+                                            </div>
+                                            
+                                            {/* Waterfall Reveal Animation for huge LaTeX */}
+                                            <AnimatePresence>
+                                                {isInputRevealing && (
+                                                    <motion.div
+                                                        initial={{ clipPath: 'inset(0 0 0 0)' }}
+                                                        animate={{ 
+                                                            clipPath: 'inset(0 0 0 100%)' 
+                                                        }}
+                                                        transition={{ duration: 2.5, ease: "linear" }}
+                                                        className="absolute inset-0 bg-[#0f1115] z-10"
+                                                    />
+                                                )}
+                                            </AnimatePresence>
                                         </div>
                                     </div>
                                 );
@@ -1136,20 +1338,35 @@ export default function DynamicScaffold() {
                         <span className="pl-3 text-indigo-400 font-mono whitespace-nowrap text-sm">
                             推导 =
                         </span>
-                        <input
-                            id="manual-input"
-                            type="text"
-                            value={manualCalcInput}
-                            onChange={(e) => setManualCalcInput(e.target.value)}
-                            className="flex-1 bg-transparent text-white/90 outline-none px-2 text-sm font-mono"
-                            placeholder={isRecording && recordingTarget === 'calculation' ? "正在听取..." : "键盘输入或点击麦克风说出推导"}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
-                                    handleManualSubmit(manualCalcInput);
-                                    setManualCalcInput('');
-                                }
-                            }}
-                        />
+                        <div className="flex-1 relative">
+                            <input
+                                id="manual-input"
+                                type="text"
+                                value={manualCalcInput}
+                                onChange={(e) => setManualCalcInput(e.target.value)}
+                                className="w-full bg-transparent text-white/90 outline-none px-2 text-sm font-mono"
+                                placeholder={isRecording && recordingTarget === 'calculation' ? "正在听取..." : "键盘输入或点击麦克风说出推导"}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        handleManualSubmit(manualCalcInput);
+                                        setManualCalcInput('');
+                                    }
+                                }}
+                            />
+                            {/* Reveal Mask for Demo */}
+                            <AnimatePresence>
+                                {isInputRevealing && (
+                                    <motion.div
+                                        initial={{ clipPath: 'inset(0 0 0 0)' }}
+                                        animate={{ 
+                                            clipPath: 'inset(0 0 0 100%)' 
+                                        }}
+                                        transition={{ duration: 2.5, ease: "linear" }}
+                                        className="absolute inset-x-0 inset-y-[-4px] bg-[#1e212b] z-10 pointer-events-none"
+                                    />
+                                )}
+                            </AnimatePresence>
+                        </div>
                         <button
                             onClick={() => handleAuxCalculate()}
                             disabled={isAuxCalculating || isProcessingOcr}

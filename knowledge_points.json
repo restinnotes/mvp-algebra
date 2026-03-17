@@ -1,24 +1,23 @@
 {
-  "version": "3.0",
+  "version": "4.0",
   "source": "上海市初中数学学科教学基本要求",
+  "description": "基于上海市教育考试院官方考纲",
   "categories": [
     {
-      "id": "number_operations",
+      "id": "number",
       "name": "数与运算",
       "nodes": [
         {
           "id": "num_divisibility",
           "name": "数的整除",
           "level": 2,
-          "description": "理解因数、倍数、质数、合数的概念，掌握分解质因数的方法",
-          "prerequisites": []
+          "description": "因数、倍数、质数、合数、分解质因数、最大公因数、最小公倍数"
         },
         {
           "id": "num_real",
           "name": "实数",
           "level": 2,
-          "description": "理解实数概念，掌握实数的四则运算和科学记数法",
-          "prerequisites": ["num_divisibility"]
+          "description": "无理数、实数运算、科学记数法、近似计算"
         }
       ]
     },
@@ -28,135 +27,99 @@
       "nodes": [
         {
           "id": "alg_expression",
-          "name": "代数式与整式",
+          "name": "整式与代数式",
           "level": 2,
-          "description": "掌握代数式的求值、整式运算",
-          "prerequisites": []
+          "description": "代数式求值、整式运算、幂的运算"
         },
         {
           "id": "alg_fraction",
           "name": "分式",
           "level": 2,
-          "description": "理解分式有意义的条件，掌握分式运算",
-          "prerequisites": ["alg_expression"]
+          "description": "分式有意义的条件、分式运算"
         },
         {
-          "id": "alg_rational_root",
+          "id": "alg_radical",
           "name": "二次根式",
           "level": 2,
-          "description": "理解二次根式的概念，掌握运算方法",
-          "prerequisites": ["num_real"]
+          "description": "二次根式运算、根号内外的化简"
         },
         {
           "id": "alg_equation",
-          "name": "方程与方程组",
+          "name": "方程",
           "level": 2,
-          "description": "掌握一元一次方程、一元二次方程、分式方程的解法",
-          "prerequisites": ["alg_expression", "alg_fraction"]
+          "description": "一元一次方程、一元二次方程、二元一次方程组、分式方程"
         },
         {
           "id": "alg_inequality",
-          "name": "一元一次不等式",
+          "name": "不等式",
           "level": 2,
-          "description": "掌握不等式性质和解不等式",
-          "prerequisites": ["alg_equation"]
+          "description": "一元一次不等式、不等式组"
         },
         {
           "id": "alg_linear_func",
           "name": "一次函数",
           "level": 3,
-          "description": "理解一次函数概念、图像与性质",
-          "prerequisites": ["alg_equation", "alg_inequality"]
+          "description": "一次函数图像与性质、待定系数法"
         },
         {
           "id": "alg_inverse_func",
           "name": "反比例函数",
           "level": 3,
-          "description": "理解反比例函数概念、图像与性质",
-          "prerequisites": ["alg_linear_func"]
+          "description": "反比例函数图像与性质"
         },
         {
           "id": "alg_quadratic_func",
           "name": "二次函数",
           "level": 3,
-          "description": "掌握二次函数的图像与性质，会求解析式",
-          "prerequisites": ["alg_linear_func", "alg_equation"]
+          "description": "二次函数图像与性质、顶点式、解析式求解、与几何综合"
         }
       ]
     },
     {
       "id": "geometry",
-      "name": "几何",
+      "name": "图形与几何",
       "nodes": [
         {
-          "id": "geo_triangle_basic",
-          "name": "三角形基础",
+          "id": "geo_triangle",
+          "name": "三角形",
           "level": 2,
-          "description": "理解三角形内角和、外角性质",
-          "prerequisites": []
+          "description": "三角形性质、内角和、外角"
         },
         {
           "id": "geo_congruent_tri",
           "name": "全等三角形",
           "level": 3,
-          "description": "掌握SSS、SAS、ASA、AAS、HL判定方法",
-          "prerequisites": ["geo_triangle_basic"]
+          "description": "全等判定(SSS、SAS、ASA、AAS、HL)、性质"
         },
         {
           "id": "geo_similar_tri",
           "name": "相似三角形",
           "level": 3,
-          "description": "掌握相似三角形的判定与性质",
-          "prerequisites": ["geo_congruent_tri"]
+          "description": "相似判定、性质、位似"
         },
         {
-          "id": "geo_trig_ratio",
+          "id": "geo_trig",
           "name": "锐角三角比",
           "level": 3,
-          "description": "掌握sin、cos、tan的含义和计算",
-          "prerequisites": ["geo_triangle_basic"]
+          "description": "正弦、余弦、正切、解直角三角形"
         },
         {
-          "id": "geo_parallelogram",
-          "name": "平行四边形",
+          "id": "geo_quadrilateral",
+          "name": "四边形",
           "level": 2,
-          "description": "掌握平行四边形的性质与判定",
-          "prerequisites": ["geo_triangle_basic"]
+          "description": "平行四边形、矩形、菱形、正方形的性质与判定"
         },
         {
-          "id": "geo_rectangle",
-          "name": "矩形、菱形、正方形",
+          "id": "geo_circle",
+          "name": "圆",
           "level": 3,
-          "description": "掌握特殊平行四边形的性质与判定",
-          "prerequisites": ["geo_parallelogram"]
+          "description": "圆的基本性质、圆周角与圆心角、切线、弧长与扇形面积"
         },
         {
-          "id": "geo_circle_basic",
-          "name": "圆的基本性质",
-          "level": 2,
-          "description": "理解圆的基本概念、垂径定理、圆周角定理",
-          "prerequisites": ["geo_triangle_basic"]
-        },
-        {
-          "id": "geo_circle_relation",
-          "name": "圆与直线的位置关系",
+          "id": "geo_motion",
+          "name": "图形运动",
           "level": 3,
-          "description": "掌握切线的判定与性质",
-          "prerequisites": ["geo_circle_basic"]
-        },
-        {
-          "id": "geo_motion_fold",
-          "name": "翻折",
-          "level": 3,
-          "description": "理解翻折变换的性质，对应边角相等",
-          "prerequisites": ["geo_congruent_tri"]
-        },
-        {
-          "id": "geo_motion_rotation",
-          "name": "旋转",
-          "level": 3,
-          "description": "理解旋转的性质，旋转对应点关系",
-          "prerequisites": ["geo_congruent_tri"]
+          "description": "翻折、旋转、平移"
         }
       ]
     },
@@ -166,17 +129,15 @@
       "nodes": [
         {
           "id": "stat_data",
-          "name": "统计量",
+          "name": "数据统计",
           "level": 2,
-          "description": "理解平均数、中位数、众数、方差等统计量",
-          "prerequisites": []
+          "description": "平均数、中位数、众数、方差、统计图表"
         },
         {
           "id": "stat_probability",
           "name": "概率",
           "level": 2,
-          "description": "掌握概率的计算方法",
-          "prerequisites": []
+          "description": "概率概念、古典概型、列表法与树状图"
         }
       ]
     }

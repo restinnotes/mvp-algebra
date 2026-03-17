@@ -149,6 +149,12 @@ export function getAllPapers(): string[] {
   return [...new Set(mappings.map(m => m.paper))];
 }
 
+export function getQuestionById(id: string): QuestionMapping | undefined {
+  const mappings = loadMappings();
+  // ID format: paper_Qquestion (e.g., 2022_Xuhui_Two_Mock_Q18)
+  return mappings.find(m => `${m.paper}_Q${m.question}` === id);
+}
+
 export function getKPQuestionStats(): Record<string, number> {
   const mappings = loadMappings();
   const stats: Record<string, number> = {};

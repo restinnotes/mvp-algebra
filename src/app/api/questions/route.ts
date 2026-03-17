@@ -4,7 +4,8 @@ import {
   getAllPapers, 
   getKPQuestionStats, 
   getAllNodes, 
-  loadMappings 
+  loadMappings,
+  getQuestionById
 } from '@/lib/knowledge';
 
 export async function POST(request: NextRequest) {
@@ -78,7 +79,18 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  if (id) {
+    const question = getQuestionById(id);
+    if (question) {
+      return NextResponse.json({ question });
+    }
+    return NextResponse.json({ error: 'Question not found' }, { status: 404 });
+  }
+
   const stats = getKPQuestionStats();
   const papers = getAllPapers();
   const nodes = getAllNodes();

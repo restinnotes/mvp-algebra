@@ -237,4 +237,5 @@ export interface StepLog {
     label?: string;
     message?: string;
     isCorrect?: boolean;
+    isRevealed?: boolean;
 }
