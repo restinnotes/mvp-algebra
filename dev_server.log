@@ -1,0 +1,16 @@
+
+> mvp-algebra@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.12
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 12.6s (1538 modules)
+ GET /dashboard 200 in 14172ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.1s (1613 modules)
+ GET / 200 in 2735ms
