@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MindmapSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug } from 'lucide-react';
 import { LTMMemory, MemoryData } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
     const [studentData, setStudentData] = useState<MemoryData | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
     const router = useRouter();
 
     const refreshData = () => {
@@ -18,6 +19,7 @@ export default function DashboardPage() {
     };
 
     useEffect(() => {
+        setIsMounted(true);
         refreshData();
         const interval = setInterval(refreshData, 3000);
         window.addEventListener('focus', refreshData);
@@ -26,6 +28,8 @@ export default function DashboardPage() {
             window.removeEventListener('focus', refreshData);
         };
     }, []);
+
+    if (!isMounted) return <div className="min-h-screen bg-[#0d0f14]" />;
 
     const handleContinue = () => {
         // Go back to the main app to continue the next sequential problem
@@ -138,73 +142,91 @@ export default function DashboardPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0c10] text-white p-8 md:p-12 font-sans selection:bg-indigo-500/30 overflow-x-hidden">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <header className="mb-12 flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/5 pb-6 gap-6">
                     <div>
                         <div className="flex items-center gap-3">
                             <h1 className="text-3xl font-bold tracking-tight text-white/90">认知思维导图 (LTM)</h1>
                         </div>
-                        <p className="text-white/40 mt-2">基于最新AI融合系统的长期记忆与动态技能树模型。</p>
+                        <p className="text-white/40 mt-2 flex items-center gap-2">
+                            <BrainCircuit size={16} /> 硬核技能树与认知缺陷画像的解耦展示
+                        </p>
                     </div>
                     <div className="flex items-center gap-4">
                         <button 
                             onClick={handleReset}
                             className="px-4 py-2 rounded-lg border border-rose-500/30 text-rose-400 hover:bg-rose-500/10 transition-colors text-sm font-medium"
                         >
-                            清空重置记忆
+                            <RefreshCcw size={16} className="inline mr-2" /> 清空重置记忆
                         </button>
                         <button 
                             onClick={handleContinue}
                             className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl shadow-lg shadow-indigo-500/20 transition-all hover:-translate-y-1 font-bold"
                         >
-                            <span>继续下一题 ({new Date(studentData.lastUpdated).toLocaleTimeString()} 更新)</span>
+                            <span>继续下一题</span>
                             <ArrowRight size={18} />
                         </button>
                     </div>
                 </header>
 
-                {/* Persona Summary Card */}
-                <section className="mb-12 bg-gradient-to-br from-indigo-900/20 to-purple-900/10 border border-indigo-500/20 rounded-2xl p-6 shadow-2xl">
-                    <h2 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
-                        <BrainCircuit size={20} /> AI 综合学习画像
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 className="text-sm text-white/50 mb-2 uppercase tracking-wide">累计薄弱项 (由AI合成合并)</h3>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    {/* Left Column: Hard Skills Mindmap (Syllabus) */}
+                    <section className="lg:col-span-2 bg-[#12141a] border border-white/5 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
+                        
+                        <h2 className="text-xl font-bold text-white/90 mb-8 flex items-center justify-between gap-3">
+                            <span className="flex items-center gap-2"><Activity className="text-emerald-400" size={24} /> 考纲硬核技能树 (Hard Skills)</span>
+                            <span className="text-xs font-normal text-white/30 hidden md:inline">基于贝叶斯知识追踪 (BKT)</span>
+                        </h2>
+
+                        <div className="pl-2 space-y-6">
+                            {MindmapSyllabus.map(rootNode => renderMindmapNode(rootNode, 0))}
+                        </div>
+                    </section>
+
+                    {/* Right Column: Soft Skills Cognitive Profile */}
+                    <section className="lg:col-span-1 space-y-6 sticky top-8">
+                        {/* Cognitive Bugs (Misconceptions) */}
+                        <div className="bg-gradient-to-br from-indigo-900/40 to-purple-900/20 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl">
+                            <h2 className="text-lg font-bold text-indigo-300 mb-6 flex items-center gap-2">
+                                <UserCircle size={20} /> AI 认知习惯诊断 (Soft Skills)
+                            </h2>
+                            
+                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">高频认知行为漏洞</h3>
                             {studentData.persona.misconceptions.length > 0 ? (
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {studentData.persona.misconceptions.map((m, i) => (
-                                        <span key={i} className="bg-rose-500/20 border border-rose-500/30 text-rose-300 px-3 py-1.5 rounded-md text-sm">
-                                            {m}
+                                        <span key={i} className="bg-rose-500/20 border border-rose-500/40 text-rose-300 px-3 py-1.5 rounded-lg text-sm flex items-start gap-2 shadow-inner">
+                                            <Bug size={14} className="mt-0.5 shrink-0" /> {m}
                                         </span>
                                     ))}
                                 </div>
                             ) : (
-                                <div className="text-white/30 text-sm italic">当前为空，系统对您一无所知，请开始做题。</div>
+                                <div className="text-white/30 text-sm italic py-4 mb-6 border-l-2 border-white/10 pl-3">
+                                    当前未检测到明显的认知习惯漏洞。
+                                </div>
                             )}
-                        </div>
-                        <div>
-                            <h3 className="text-sm text-white/50 mb-2 uppercase tracking-wide">最新复盘洞察</h3>
-                            <p className="text-white/80 leading-relaxed text-sm bg-black/20 p-4 rounded-lg border border-white/5">
-                                {studentData.persona.lastSessionSummary || "期待您的第一次解题。"}
+
+                            {/* Learning Style */}
+                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">学习图式特征</h3>
+                            <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-200 text-sm leading-relaxed mb-6">
+                                {studentData.persona.learningStyle || studentData.persona.learning_style || "尚未进行充足的交互评估"}
+                            </div>
+
+                            {/* Last Session Review */}
+                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">最近一次切片洞察 ({new Date(studentData.lastUpdated).toLocaleTimeString().slice(0,5)})</h3>
+                            <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner italic">
+                                "{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}"
                             </p>
                         </div>
-                    </div>
-                </section>
-
-                {/* Mindmap Visualization */}
-                <section className="bg-[#12141a] border border-white/5 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-                    
-                    <h2 className="text-xl font-semibold text-white/80 mb-8 flex items-center gap-3">
-                        中考数学核心技能图谱
-                        <button onClick={refreshData} className="p-1 hover:bg-white/10 rounded-full text-white/40"><RefreshCcw size={14}/></button>
-                    </h2>
-
-                    <div className="pl-2">
-                        {MindmapSyllabus.map(rootNode => renderMindmapNode(rootNode, 0))}
-                    </div>
-                </section>
+                        
+                        {/* Meta Stat Card */}
+                        <div className="bg-[#12141a] border border-white/5 rounded-2xl p-6 shadow-xl text-center">
+                            <p className="text-xs text-white/40 mb-1">动态画像合并引擎状态</p>
+                            <p className="text-indigo-400 font-mono text-sm">Active (Gemini 3.1 Flash-Lite)</p>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     );

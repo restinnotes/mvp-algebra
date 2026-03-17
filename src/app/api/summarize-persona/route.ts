@@ -79,16 +79,17 @@ export async function POST(req: NextRequest) {
         });
 
         const prompt = `
-            You are an expert AI Education Psychologist. Review the current "Student Persona" and the latest "Session Logs" to update the student's digital portrait.
+            You are an expert AI Education Psychologist evaluating a student's cognitive learning process.
+            We strictly distinguish between "Hard Knowledge Points" (e.g., knowing the quadratic formula) and "Soft Cognitive Bugs" (e.g., skipping steps, symbol carelessness, lack of edge-case awareness).
             
             Current Persona: ${JSON.stringify(currentPersona)}
             Latest Session Logs: ${JSON.stringify(sessionLogs)}
             
             Tasks:
-            1. Identify if any new misconceptions appeared (e.g., wrong formula usage, logic gaps in strategy).
-            2. Refine the learning style description.
-            3. Write a concise summary of this session's progress.
-            4. Keep all descriptions in Chinese.
+            1. Identify ONLY new "Soft Cognitive Bugs / Habits" from the student's behavior (e.g., "符号漏写综合症", "缺乏分类讨论严谨性", "跳步心算易错"). DO NOT output hard math concepts (like "不知道判别式") here. Append these to the misconceptions array.
+            2. Refine the learning style description based on how they approached the problem (e.g., "直觉型但缺乏严谨", "依赖提示步步为营").
+            3. Write a very concise 1-sentence summary of this session's overall cognitive performance.
+            4. Keep all descriptions strictly in concise Chinese.
             5. Return the updated full Persona JSON.
         `;
 

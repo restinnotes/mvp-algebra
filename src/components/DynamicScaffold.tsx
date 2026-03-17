@@ -57,7 +57,7 @@ export const getDemoScript = (index: number) => {
                 { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
                 { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
             ],
-            kps: { 'ms_q18_001': 0.2, 'ms_q18_002': 0.45 },
+            kps: { 'ms_q18_001': 0.2, 'ms_shared_001': 0.45 },
             review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
         },
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
