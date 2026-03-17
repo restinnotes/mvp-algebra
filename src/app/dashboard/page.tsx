@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MindmapSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
+import { MindmapSyllabus } from '@/data/knowledgeGraph';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, X, AlertTriangle } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
@@ -232,7 +232,7 @@ export default function DashboardPage() {
         return <ShieldAlert size={16} />;
     };
 
-    const renderMindmapNode = (node: KnowledgeNode, depth: number = 0) => {
+    const renderMindmapNode = (node: typeof MindmapSyllabus[number], depth: number = 0) => {
         const isLeaf = !node.children || node.children.length === 0;
         
         // Leaf nodes have mastery. If missing, it means 0% or unassessed. We treat it as 0.01 for visualization.
