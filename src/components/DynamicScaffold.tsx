@@ -52,6 +52,7 @@ export default function DynamicScaffold() {
     // LTM States
     const [persona, setPersona] = useState<StudentPersona | null>(null);
     const [sessionId, setSessionId] = useState<string | null>(null);
+    const [showPersonaModal, setShowPersonaModal] = useState(false);
 
     // Initial LTM Load
     useEffect(() => {
@@ -318,7 +319,17 @@ export default function DynamicScaffold() {
                 } else {
                     setManualDemoStep(nextIdx);
                     setIsManualDemo(false);
-                    setIsDemoRunning(false);
+                    // End of demo reached. Show completion state.
+                    setIsSolved(true);
+                    setIsGeneratingReview(true);
+                    
+                    setTimeout(() => {
+                        const mockReview = `### 🎯 核心知识点\n- 韦达定理：x1+x2 = -b/a, x1x2 = c/a\n- 判别式Δ = b²-4ac ≥ 0（有两个实数根的前提）\n\n### 💡 关键反思\n- 这道题的"隐藏坑"在于：题目说"有两个实数根"，必须先满足Δ≥0\n- 很多学生直接用韦达定理求出m后就结束了，漏掉了判别式检验`;
+                        setReviewSummary(mockReview);
+                        setIsGeneratingReview(false);
+                        setIsDemoRunning(false);
+                        setShowPersonaModal(true); // Pop up the modal
+                    }, 1500);
                 }
             }, 800);
         } else {
@@ -623,7 +634,8 @@ export default function DynamicScaffold() {
         setIsGeneratingReview(false);
         addLog('info', '✅ 复盘总结已生成');
 
-        await new Promise(r => setTimeout(r, 3000));
+        await new Promise(r => setTimeout(r, 1000));
+        setShowPersonaModal(true); // Pop up modal for automatic demo too
 
         // ==================== Step 11: LTM更新 ====================
         addLog('info', '📝 步骤11：更新学生画像（LTM）...');
@@ -800,6 +812,7 @@ export default function DynamicScaffold() {
                 setPersona(updatedPersona);
                 LTMMemory.updatePersona(updatedPersona);
                 addLog('info', '✅ 学生画像已更新并持久化');
+                setShowPersonaModal(true);
             }
         } catch (e) {
             console.error('Failed to update session end data:', e);
@@ -974,33 +987,21 @@ export default function DynamicScaffold() {
                         <h2 className="font-semibold tracking-wide text-sm uppercase">解题进度</h2>
                     </div>
                     <div className="flex flex-col gap-2">
-                        {persona && (
-                            <div className="mb-4 p-4 bg-indigo-500/5 border border-indigo-500/20 rounded-2xl">
-                                <div className="flex items-center gap-2 text-indigo-400 mb-2">
-                                    <UserCircle size={14} />
-                                    <span className="text-xs font-bold uppercase tracking-wider">AI 导师数字画像</span>
+                        {isSolved && reviewSummary && !isGeneratingReview && (
+                            <div className="mb-4 p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex flex-col items-center gap-3">
+                                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                    <Check size={28} />
                                 </div>
-                                <p className="text-white/80 text-xs leading-relaxed italic mb-2">&quot;{persona.lastSessionSummary}&quot;</p>
-                                <div className="flex flex-wrap gap-1">
-                                    {persona.misconceptions.map((m, i) => (
-                                        <span key={i} className="px-2 py-0.5 bg-rose-500/10 text-rose-400 text-[10px] rounded-full border border-rose-500/20">
-                                            {m}
-                                        </span>
-                                    ))}
-                                </div>
+                                <h3 className="text-emerald-400 font-bold text-base tracking-wider">题目已通关！</h3>
+                                <button 
+                                    onClick={() => setShowPersonaModal(true)}
+                                    className="mt-2 px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]"
+                                >
+                                    查看专属学习画像
+                                </button>
                             </div>
                         )}
-                        {reviewSummary && (
-                            <div className="mb-6 p-5 bg-amber-500/10 border border-amber-500/30 rounded-2xl shadow-xl animate-in fade-in slide-in-from-top-4 duration-700">
-                                <div className="flex items-center gap-2 text-amber-500 mb-3">
-                                    <Target size={18} />
-                                    <h3 className="text-sm font-bold uppercase tracking-widest">总结与归纳 · Post-Session Review</h3>
-                                </div>
-                                <div className="prose prose-invert prose-sm max-w-none text-white/90 leading-relaxed whitespace-pre-wrap">
-                                    {reviewSummary}
-                                </div>
-                            </div>
-                        )}
+
                         {isGeneratingReview && (
                             <div className="mb-6 p-5 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center gap-3 animate-pulse">
                                 <RotateCcw className="animate-spin text-amber-500/50" />
@@ -1013,7 +1014,7 @@ export default function DynamicScaffold() {
                             </div>
                         )}
                         
-                        {/* 手动演示模式：只显示当前步骤的卡片 */}
+                        {/* 手动演示模式：只显示当前步骤卡片（精简版） */}
                         {isManualDemo && (
                             <div className="flex flex-col gap-4 flex-1">
                                 <div className="flex items-center gap-3">
@@ -1023,17 +1024,13 @@ export default function DynamicScaffold() {
                                             if (manualDemoStep > 0) {
                                                 const newStepIdx = manualDemoStep - 1;
                                                 setManualDemoStep(newStepIdx);
-
                                                 const newLogs = stepLogs.slice(0, newStepIdx);
                                                 setStepLogs(newLogs);
-
                                                 const currStep = demoSteps[newStepIdx];
                                                 if (!currStep) return;
-
                                                 if (currStep.contentType === 'text') {
                                                     setIsStrategyApproved(false);
                                                     setStrategyTranscript(currStep.text || '');
-                                                    // Find the last text step in new logs to restore feedback, or clear it if this is the first step
                                                     const lastLog = newLogs.length > 0 ? newLogs[newLogs.length - 1] : null;
                                                     if (lastLog && lastLog.contentType === 'text') {
                                                         setStrategyFeedback({ isCorrect: lastLog.isCorrect || false, feedback: lastLog.message || '' });
@@ -1066,112 +1063,65 @@ export default function DynamicScaffold() {
                                 {stepLogs.slice(-1).map((log) => (
                                     <div 
                                         key={log.id} 
-                                        className={`p-5 rounded-2xl border-2 flex flex-col gap-4 transition-all duration-300 shadow-lg animate-in fade-in slide-in-from-right-4 ${
+                                        className={`p-4 rounded-xl border flex flex-col gap-3 transition-all duration-300 shadow-lg animate-in fade-in slide-in-from-right-4 ${
                                             log.isCorrect 
-                                                ? 'border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-transparent' 
-                                                : 'border-rose-500/30 bg-gradient-to-br from-rose-500/10 to-transparent'
+                                                ? 'border-emerald-500/20 bg-emerald-500/5' 
+                                                : 'border-rose-500/20 bg-rose-500/5'
                                         }`}
                                     >
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center gap-3">
-                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg ${
-                                                    log.isCorrect ? 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white' : 'bg-gradient-to-br from-rose-500 to-rose-600 text-white'
-                                                }`}>
-                                                    {stepLogs.length}
-                                                </div>
-                                                <div>
-                                                    <span className="text-white/90 font-semibold text-sm block">
+                                        <div className="flex items-center gap-3">
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${
+                                                log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+                                            }`}>
+                                                {stepLogs.length}
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="flex items-center justify-between">
+                                                    <span className="text-white/90 font-medium text-sm block">
                                                         {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
                                                     </span>
-                                                    <span className="text-white/40 text-xs">{log.contentType === 'math' ? '数学推导' : '思路阐述'}</span>
-                                                </div>
-                                            </div>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                                                log.isCorrect 
-                                                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
-                                                    : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                                            }`}>
-                                                {log.isCorrect ? '✓ 正确' : '↻ 需优化'}
-                                            </span>
-                                        </div>
-                                        <div className="bg-black/40 rounded-xl p-4 text-white/90 border border-white/5">
-                                            {log.contentType === 'math' ? (
-                                                log.latex === "Parse Error" ? (
-                                                    <div className="flex items-center gap-2 text-rose-400/60 py-1">
-                                                        <Bug size={14} />
-                                                        <span className="text-xs">识别失败，请尝试更清晰的书写或输入</span>
-                                                    </div>
-                                                ) : log.latex ? <InlineMath math={log.latex} /> : <span className="text-white/30 italic">（未识别出明确的数学推导）</span>
-                                            ) : (
-                                                <p className="text-sm leading-relaxed">{log.text}</p>
-                                            )}
-                                        </div>
-                                        {log.message && (
-                                            <div className="text-sm bg-white/5 p-4 rounded-xl flex gap-3 border border-white/5">
-                                                <div className="shrink-0 mt-0.5">
                                                     {log.isCorrect ? <Check size={16} className="text-emerald-400" /> : <AlertTriangle size={16} className="text-rose-400" />}
                                                 </div>
-                                                <span className="text-white/70 leading-relaxed text-xs">{log.message}</span>
+                                            </div>
+                                        </div>
+                                        {log.message && (
+                                            <div className="ml-11 text-xs text-white/70 leading-relaxed bg-black/20 p-2 rounded-lg">
+                                                {log.message}
                                             </div>
                                         )}
                                     </div>
                                 ))}
-                                <div className="flex items-center justify-center gap-2 py-2">
-                                    <span className="text-white/40 text-xs">第 {stepLogs.length} / {demoSteps.length} 步</span>
-                                </div>
                             </div>
                         )}
                         
-                        {/* 非手动演示模式：显示所有步骤 */}
+                        {/* 非手动演示模式：显示各步骤反馈（精简版） */}
                         {!isManualDemo && stepLogs.map((log, idx) => (
                             <div 
                                 key={log.id} 
-                                className={`p-5 rounded-2xl border-2 flex flex-col gap-4 transition-all duration-300 shadow-lg ${
+                                className={`p-4 rounded-xl border flex flex-col gap-2 transition-all duration-300 shadow-sm ${
                                     log.isCorrect 
-                                        ? 'border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-transparent' 
-                                        : 'border-rose-500/30 bg-gradient-to-br from-rose-500/10 to-transparent'
-                                } ${isManualDemo && idx === manualDemoStep ? 'ring-2 ring-indigo-500 ring-offset-2 ring-offset-[#15171e] scale-[1.02]' : ''}`}
+                                        ? 'border-emerald-500/20 bg-emerald-500/5' 
+                                        : 'border-rose-500/20 bg-rose-500/5'
+                                }`}
                             >
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg ${
-                                            log.isCorrect ? 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white' : 'bg-gradient-to-br from-rose-500 to-rose-600 text-white'
-                                        }`}>
-                                            {idx + 1}
-                                        </div>
-                                        <div>
-                                            <span className="text-white/90 font-semibold text-sm block">
+                                <div className="flex items-center gap-3">
+                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                                        log.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+                                    }`}>
+                                        {idx + 1}
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-white/90 font-medium text-sm block">
                                                 {log.label || (log.isCorrect ? '有效步骤' : '尝试')}
                                             </span>
-                                            <span className="text-white/40 text-xs">{log.contentType === 'math' ? '数学推导' : '思路阐述'}</span>
+                                            {log.isCorrect ? <Check size={14} className="text-emerald-400" /> : <AlertTriangle size={14} className="text-rose-400" />}
                                         </div>
                                     </div>
-                                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                                        log.isCorrect 
-                                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
-                                            : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                                    }`}>
-                                        {log.isCorrect ? '✓ 正确' : '↻ 需优化'}
-                                    </span>
-                                </div>
-                                <div className="bg-black/40 rounded-xl p-4 text-white/90 border border-white/5">
-                                    {log.contentType === 'math' ? (
-                                        log.latex === "Parse Error" ? (
-                                            <div className="flex items-center gap-2 text-rose-400/60 py-1">
-                                                <Bug size={14} />
-                                                <span className="text-xs">识别失败，请尝试更清晰的书写或输入</span>
-                                            </div>
-                                        ) : log.latex ? <InlineMath math={log.latex} /> : <span className="text-white/30 italic">（未识别出明确的数学推导）</span>
-                                    ) : (
-                                        <p className="text-sm leading-relaxed">{log.text}</p>
-                                    )}
                                 </div>
                                 {log.message && (
-                                    <div className="text-sm bg-white/5 p-4 rounded-xl flex gap-3 border border-white/5">
-                                        <div className="shrink-0 mt-0.5">
-                                            {log.isCorrect ? <Check size={16} className="text-emerald-400" /> : <AlertTriangle size={16} className="text-rose-400" />}
-                                        </div>
-                                        <span className="text-white/70 leading-relaxed text-xs">{log.message}</span>
+                                    <div className="ml-9 text-xs text-white/50 leading-relaxed">
+                                        {log.message}
                                     </div>
                                 )}
                             </div>
@@ -1344,6 +1294,58 @@ export default function DynamicScaffold() {
                     </div>
                 )}
             </div>
+
+            {/* ===== PERSONA MODAL ===== */}
+            {showPersonaModal && persona && reviewSummary && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300">
+                    <div className="bg-[#15171e] w-full max-w-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                        <div className="flex items-center justify-between p-6 border-b border-white/5 bg-white/5">
+                            <div className="flex items-center gap-3">
+                                <UserCircle size={24} className="text-indigo-400" />
+                                <h2 className="text-lg font-bold text-white tracking-wide">AI 导师数字画像与复盘</h2>
+                            </div>
+                            <button onClick={() => setShowPersonaModal(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 transition-colors">
+                                ✕
+                            </button>
+                        </div>
+                        
+                        <div className="p-6 overflow-y-auto flex flex-col gap-6">
+                            {/* Review */}
+                            <div className="p-5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+                                <div className="flex items-center gap-2 text-amber-500 mb-3">
+                                    <Target size={18} />
+                                    <h3 className="text-sm font-bold uppercase tracking-widest">本轮解题报告</h3>
+                                </div>
+                                <div className="prose prose-invert prose-sm max-w-none text-white/90 leading-relaxed whitespace-pre-wrap">
+                                    {reviewSummary}
+                                </div>
+                            </div>
+                            
+                            {/* Persona */}
+                            <div className="p-5 bg-indigo-500/10 border border-indigo-500/20 rounded-xl">
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-indigo-400 mb-3">认知机制画像</h3>
+                                <p className="text-white/80 text-sm leading-relaxed italic mb-4">&quot;{persona.lastSessionSummary}&quot;</p>
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-xs text-white/40 uppercase tracking-wider">最新诊断出的薄弱点:</span>
+                                    <div className="flex flex-wrap gap-2 mt-1">
+                                        {persona.misconceptions.map((m, i) => (
+                                            <span key={i} className="px-3 py-1.5 bg-rose-500/10 text-rose-400 text-xs rounded-full border border-rose-500/20">
+                                                {m}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="p-4 border-t border-white/5 flex justify-end">
+                            <button onClick={() => setShowPersonaModal(false)} className="px-6 py-2.5 bg-indigo-500 hover:bg-indigo-600 focus:ring-2 focus:ring-indigo-500/50 outline-none text-white text-sm font-bold rounded-lg shadow-lg transition-all">
+                                关闭并返回
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
