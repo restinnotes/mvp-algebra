@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const APP_PASSWORD = process.env.NEXT_PUBLIC_APP_PASSWORD;
 
@@ -8,40 +8,31 @@ if (!APP_PASSWORD) {
   throw new Error('NEXT_PUBLIC_APP_PASSWORD 环境变量未设置，请先在 Railway 设置');
 }
 
+function getInitialVerified(): boolean {
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem('app_password_verified') === 'true';
+}
+
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified] = useState(getInitialVerified);
   const [inputPassword, setInputPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [localVerified, setLocalVerified] = useState(false);
 
-  useEffect(() => {
-    const stored = localStorage.getItem('app_password_verified');
-    if (stored === 'true') {
-      setIsVerified(true);
-    }
-    setIsLoading(false);
-  }, []);
+  const isActuallyVerified = isVerified || localVerified;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (inputPassword === APP_PASSWORD) {
       localStorage.setItem('app_password_verified', 'true');
-      setIsVerified(true);
+      setLocalVerified(true);
       setError('');
     } else {
       setError('密码错误，请重试');
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="h-screen bg-[#0f1115] flex items-center justify-center">
-        <div className="text-white/50">加载中...</div>
-      </div>
-    );
-  }
-
-  if (isVerified) {
+  if (isActuallyVerified) {
     return <>{children}</>;
   }
 
