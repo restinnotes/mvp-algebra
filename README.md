@@ -43,18 +43,35 @@ npm install && npm run dev
 - **沉浸式 PWA**：建议在 iPad Safari 中点击“分享” -> **“添加到主屏幕”**，以获得全屏 App 体验。
 - **手势锁定**：针对 Apple Pencil 优化，绘图时自动锁定页面滚动，防止漂移。
 
-## 🧠 长期记忆系统 (LTM)
-通过 `localStorage` 持久化，本项目会跨 Session 记录每个知识点的掌握概率（BKT）以及 AI 总结的个性化学习建议。
+## 🧠 认知外骨骼：双轨记忆系统 (LTM)
 
-## 📜 参考与致谢
-本项目在架构设计上参考了以下开源项目与技术：
-- **[feilaz/AI_Powered_Math_Tutoring](https://github.com/feilaz/AI_Powered_Math_Tutoring)**：在 LTM 画像与 Agent 调度逻辑上的重要启发。
-- **Gemini 3.1 系列模型**：由 Google DeepMind 提供的一流多模态推理能力。
+本项目实现了一种独特的**硬知识 (Hard Skills)** 与 **软认知 (Soft Skills)** 双轨解耦建模方案。
+
+### 1. 硬核考纲技能树 (Hard Skills Mindmap)
+- **底层引擎**: 基于**贝叶斯知识追踪 (BKT)** 算法。
+- **展现形式**: 递归嵌套的思维导图逻辑（`MindmapSyllabus`）。
+- **指标**: 实时计算每个原子的中考考点（如：二次函数求参、象限符号判定）的掌握率百分比。
+- **可视化**: 掌握程度通过颜色强度（翡翠绿 - 琥珀橙 - 玫瑰红）展现，未覆盖点显示为灰色虚线。
+
+### 2. AI 认知行为图谱 (Soft Skills Profile)
+- **底层引擎**: Gemini 3.1 Flash-Lite 动态诊断。
+- **核心逻辑**: 当学生走完解题流，AI 会复盘其交互全链路，提取出**跨学科的行为习惯缺陷**（Cognitive Bugs）。
+- **示例标签**: `符号漏写综合症`、`跳步心算易错`、`分类讨论意识薄弱`、`逻辑严密性欠缺`。
+- **解耦优势**: 避免将“粗心”等习惯混入考纲树，确保硬知识评估的精准度，同时给学生提供深刻的自我行为习惯反思。
 
 ---
 
-## �🔧 开发说明
-- `src/app/api/decompose`: 影子解题引擎 (Pro)
-- `src/app/api/evaluate-strategy`: 音频思路评估 (Flash Lite)
-- `src/app/api/recognize`: 手写识别与判定 (Flash Lite)
-- `src/components/DynamicScaffold.tsx`: 核心交互组件
+## 🛠️ 技术架构
+
+- **Frontend**: Next.js 14 (App Router), Tailwind CSS, Framer Motion (交互动画).
+- **Core Engine**:
+  - `src/app/api/decompose`: 影子解题引擎 (Pro)
+  - `src/app/api/summarize-persona`: 认知画像合并引擎 (Flash Lite) - 负责跨 Session 记忆融合。
+  - `src/lib/bkt.ts`: 贝叶斯知识追踪数学核心。
+- **Design System**: 针对 iPad Pro 优化的深色玻璃拟态 UI，支持高频手写交互与坐标系感知。
+
+---
+
+## 📜 参考与致谢
+- **[feilaz/AI_Powered_Math_Tutoring](https://github.com/feilaz/AI_Powered_Math_Tutoring)**：在 LTM 画像与 Agent 调度逻辑上的重要启发。
+- **Gemini 3.1 系列模型**：提供多模态推理与苏格拉底式对话能力.
