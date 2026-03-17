@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
         console.error('Decomposition Error:', error);
         return NextResponse.json({
             error: 'Failed to decompose problem',
-            details: error instanceof Error ? error.message : String(error)
+            details: 'An internal error occurred'
         }, { status: 500 });
     }
 }
