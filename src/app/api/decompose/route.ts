@@ -30,24 +30,21 @@ const responseSchema = {
     required: ["problemStatement", "steps"]
 };
 
-const MAX_PAYLOAD_SIZE = 4.5 * 1024 * 1024; // 4.5MB
-const MAX_IMAGE_BASE64_LENGTH = 4 * 1024 * 1024; // 4MB limit for base64 string
-
 export async function POST(req: NextRequest) {
     try {
-        const contentLength = req.headers.get('content-length');
-        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
-            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
-        }
-
         const { imageBase64 } = await req.json();
 
         if (!imageBase64) {
             return NextResponse.json({ error: 'No image provided' }, { status: 400 });
         }
 
-        if (typeof imageBase64 !== 'string' || imageBase64.length > MAX_IMAGE_BASE64_LENGTH) {
-            return NextResponse.json({ error: 'Image too large or invalid format' }, { status: 413 });
+        if (typeof imageBase64 !== 'string') {
+            return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
+        }
+
+        // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
+        if (imageBase64.length > 5 * 1024 * 1024) {
+            return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
         }
 
         const prompt = `
@@ -64,14 +61,14 @@ export async function POST(req: NextRequest) {
           Output the result in the specified JSON format.
         `;
 
-        const data = await generateFromImage(prompt, imageBase64, responseSchema as Record<string, unknown>);
+        const data = await generateFromImage(prompt, imageBase64, responseSchema as any);
 
         return NextResponse.json(data);
     } catch (error: unknown) {
         console.error('Decomposition Error:', error);
         return NextResponse.json({
             error: 'Failed to decompose problem',
-            details: error instanceof Error ? error.message : String(error)
+            details: 'An internal error occurred'
         }, { status: 500 });
     }
 }

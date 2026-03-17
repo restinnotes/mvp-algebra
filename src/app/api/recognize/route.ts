@@ -14,16 +14,8 @@ const ocrSchema = {
     required: ["latex", "isCorrect", "stepLabel", "feedback", "isSolved"]
 };
 
-const MAX_PAYLOAD_SIZE = 4.5 * 1024 * 1024; // 4.5MB
-const MAX_IMAGE_BASE64_LENGTH = 4 * 1024 * 1024; // 4MB limit for base64 string
-
 export async function POST(req: NextRequest) {
     try {
-        const contentLength = req.headers.get('content-length');
-        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
-            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
-        }
-
         const body = await req.json();
         const { imageBase64, problemContext, history, manualText } = body;
 
@@ -31,9 +23,20 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image or text data provided' }, { status: 400 });
         }
 
-        if (imageBase64 && (typeof imageBase64 !== 'string' || imageBase64.length > MAX_IMAGE_BASE64_LENGTH)) {
-            return NextResponse.json({ error: 'Image too large or invalid format' }, { status: 413 });
+        if (imageBase64) {
+            if (typeof imageBase64 !== 'string') {
+                return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
+            }
+
+            // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
+            if (imageBase64.length > 5 * 1024 * 1024) {
+                return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+            }
         }
+
+        const base64Data = imageBase64
+            ? imageBase64.replace(/^data:image\/(png|jpeg|webp);base64,/, '')
+            : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="; // 1px dummy
 
         const promptText = [
             'You are a "Deep Socratic Math Tutor" for Chinese students. Your goal is to guide them through a problem naturally, following THEIR logic, not a fixed script.',
@@ -58,9 +61,9 @@ export async function POST(req: NextRequest) {
             'Output the result in the specified JSON format.'
         ].join('\n');
 
-        const parsedData = await generateFromImage<Record<string, unknown>>(promptText, imageBase64 || "", ocrSchema as Record<string, unknown>, "ocr");
+        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", ocrSchema as any, "ocr");
 
-        if (typeof parsedData.latex === 'string') {
+        if (parsedData.latex) {
             parsedData.latex = parsedData.latex.replace(/\$/g, '');
         }
 
@@ -69,7 +72,7 @@ export async function POST(req: NextRequest) {
     } catch (error: unknown) {
         console.error('OCR API error:', error instanceof Error ? error.message : String(error));
         return NextResponse.json(
-            { latex: '', isCorrect: false, feedback: 'Server error: ' + (error instanceof Error ? error.message : 'unknown') },
+            { latex: '', isCorrect: false, feedback: 'Server error: Please try again later.' },
             { status: 200 }
         );
     }
