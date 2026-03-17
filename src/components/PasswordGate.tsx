@@ -4,10 +4,6 @@ import { useState } from 'react';
 
 const APP_PASSWORD = process.env.NEXT_PUBLIC_APP_PASSWORD;
 
-if (!APP_PASSWORD) {
-  throw new Error('NEXT_PUBLIC_APP_PASSWORD 环境变量未设置，请先在 Railway 设置');
-}
-
 function getInitialVerified(): boolean {
   if (typeof window === 'undefined') return false;
   return localStorage.getItem('app_password_verified') === 'true';
@@ -23,6 +19,10 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!APP_PASSWORD) {
+      setError('密码未配置，请联系管理员');
+      return;
+    }
     if (inputPassword === APP_PASSWORD) {
       localStorage.setItem('app_password_verified', 'true');
       setLocalVerified(true);
