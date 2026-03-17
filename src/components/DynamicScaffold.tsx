@@ -51,6 +51,7 @@ export default function DynamicScaffold() {
 
     // LTM States
     const [persona, setPersona] = useState<StudentPersona | null>(null);
+    const [sessionId, setSessionId] = useState<string | null>(null);
 
     // Initial LTM Load
     useEffect(() => {
@@ -694,24 +695,58 @@ export default function DynamicScaffold() {
         addLog('info', `开始录音 (${target === 'strategy' ? '解题思路' : '数学推导'})...`);
     };
 
-    const submitStrategy = async (overrideText?: string) => {
-        const textToSubmit = overrideText || strategyTranscript;
-        if (!textToSubmit) return;
-        setIsEvaluatingStrategy(true);
-        addLog('api', 'POST /api/evaluate-strategy | 校验解题思路...');
-
+    const startNewSession = async (problemTextInput: string) => {
         try {
-            const res = await fetch('/api/evaluate-strategy', {
+            addLog('api', 'POST /api/session | 开始新会话...');
+            const res = await fetch('/api/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    problemStatement: problemText,
-                    strategyText: textToSubmit
+                    action: 'start',
+                    studentId: 'default_student',
+                    problemText: problemTextInput
                 })
             });
             const data = await res.json();
-            setStrategyFeedback(data);
-            addLog('api', `思路结果: ${JSON.stringify(data)}`);
+            setSessionId(data.sessionId);
+            addLog('info', `✅ 会话已创建: ${data.sessionId}`);
+            return data.sessionId;
+        } catch (err: unknown) {
+            addLog('error', `创建会话失败: ${err instanceof Error ? err.message : String(err)}`);
+            return null;
+        }
+    };
+
+    const submitStrategy = async (overrideText?: string) => {
+        const textToSubmit = overrideText || strategyTranscript;
+        if (!textToSubmit) return;
+        
+        if (!sessionId) {
+            const newSessionId = await startNewSession(problemText);
+            if (!newSessionId) return;
+        }
+        
+        setIsEvaluatingStrategy(true);
+        addLog('api', 'POST /api/session | 校验解题思路...');
+
+        try {
+            const res = await fetch('/api/session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'strategy',
+                    sessionId: sessionId,
+                    strategy: textToSubmit
+                })
+            });
+            const data = await res.json();
+            const evaluation = data.evaluation;
+            
+            setStrategyFeedback({
+                isCorrect: evaluation.isOnTrack,
+                feedback: evaluation.feedback
+            });
+            addLog('api', `思路结果: ${JSON.stringify(evaluation)}`);
 
             const newLog: StepLog = {
                 id: Date.now().toString(),
@@ -719,12 +754,12 @@ export default function DynamicScaffold() {
                 contentType: 'text',
                 text: textToSubmit,
                 label: '解题思路',
-                message: data.feedback,
-                isCorrect: data.isCorrect
+                message: evaluation.feedback,
+                isCorrect: evaluation.isOnTrack
             };
             setStepLogs(prev => [...prev, newLog]);
 
-            if (data.isCorrect) {
+            if (evaluation.isOnTrack) {
                 addLog('info', '✅ 思路正确，载入解题轴');
 
                 // When strategy is approved, just clear the way
@@ -743,37 +778,27 @@ export default function DynamicScaffold() {
 
         setIsGeneratingReview(true);
         try {
-            // Use provided history, fallback to state
-            const effectiveHistory = finalHistory.length > 0 ? finalHistory : stepLogs;
-
-            // 1. Generate Review
-            const reviewRes = await fetch('/api/review', {
+            const reviewRes = await fetch('/api/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    problemContext: problemText,
-                    history: effectiveHistory.filter(log => log.isCorrect)
+                    action: 'review',
+                    sessionId: sessionId
                 })
             });
             const reviewData = await reviewRes.json();
-            if (reviewData.summary) {
-                setReviewSummary(reviewData.summary);
+            
+            if (reviewData.review) {
+                setReviewSummary(reviewData.review.overall_assessment);
                 addLog('info', '✅ 成功生成复盘总结');
-            }
-
-            // 2. Update Persona
-            const res = await fetch('/api/summarize-persona', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    currentPersona: persona,
-                    sessionLogs: logs.filter(l => l.type !== 'cheat').slice(-10) // Take last 10 meaningful logs
-                })
-            });
-            const updated = await res.json();
-            if (updated && !updated.error) {
-                setPersona(updated);
-                LTMMemory.updatePersona(updated);
+                
+                const updatedPersona = {
+                    ...persona,
+                    misconceptions: reviewData.review.cognitive_bugs_found.map((b: any) => `${b.bug_type}: ${b.description}`),
+                    lastSessionSummary: reviewData.review.overall_assessment
+                };
+                setPersona(updatedPersona);
+                LTMMemory.updatePersona(updatedPersona);
                 addLog('info', '✅ 学生画像已更新并持久化');
             }
         } catch (e) {
@@ -791,46 +816,50 @@ export default function DynamicScaffold() {
         addLog('info', `手动输入: "${value}"`);
         setIsProcessingOcr(true);
 
-        try {
-            const history = stepLogs
-                .filter(log => log.isCorrect && log.contentType === 'math')
-                .map(log => ({ latex: log.latex, label: log.label }));
-            const payload = {
-                manualText: value.trim(),
-                problemContext: problemText,
-                history: history
-            };
+        if (!sessionId) {
+            const newSessionId = await startNewSession(problemText);
+            if (!newSessionId) {
+                setIsProcessingOcr(false);
+                return;
+            }
+        }
 
-            const res = await fetch('/api/recognize', {
+        try {
+            const res = await fetch('/api/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    action: 'step',
+                    sessionId: sessionId,
+                    answer: value.trim()
+                })
             });
 
             const data = await res.json();
+            const checkResult = data.checkResult;
 
             // Override latex with manual value for log
             const finalLatex = value.trim();
 
-            if (data.isCorrect !== undefined) {
-                const newLog: StepLog = {
-                    id: Date.now().toString(),
-                    type: 'student',
-                    contentType: 'math',
-                    latex: finalLatex,
-                    label: data.stepLabel,
-                    message: data.feedback,
-                    isCorrect: data.isCorrect
-                };
+            const newLog: StepLog = {
+                id: Date.now().toString(),
+                type: 'student',
+                contentType: 'math',
+                latex: finalLatex,
+                label: checkResult.stepLabel || '计算步骤',
+                message: checkResult.feedback,
+                isCorrect: checkResult.correct
+            };
 
-                setStepLogs(prev => [...prev, newLog]);
+            setStepLogs(prev => [...prev, newLog]);
 
-                if (data.isCorrect) {
-                    addLog('info', `✅ 键盘输入正确: ${data.stepLabel}`);
-                    if (data.isSolved) handleSessionEnd([...stepLogs, newLog]);
-                } else {
-                    addLog('error', `❌ 键盘输入错误: ${data.feedback}`);
+            if (checkResult.correct) {
+                addLog('info', `✅ 键盘输入正确: ${checkResult.stepLabel || '计算步骤'}`);
+                if (data.ticketComplete || data.phase === 'completed') {
+                    handleSessionEnd([...stepLogs, newLog]);
                 }
+            } else {
+                addLog('error', `❌ 键盘输入错误: ${checkResult.feedback}`);
             }
         } catch (e: unknown) {
             addLog('error', `Manual fetch error: ${e instanceof Error ? e.message : String(e)}`);
