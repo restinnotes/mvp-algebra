@@ -1,39 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AlgebraSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
 import { BktEngine, BktParams } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, Skull } from 'lucide-react';
-
-// Mock Student Data
-const MOCK_STUDENTS = [
-    {
-        id: 's_001',
-        name: '小明',
-        history: {
-            'kp_001': { p_L: 0.95 }, // 极好
-            'kp_002': { p_L: 0.88 }, // 很好
-            'kp_003': { p_L: 0.60 }, // 勉强
-            'kp_004': { p_L: 0.35 }, // 薄弱 (分式通分)
-            'kp_005': { p_L: 0.40 }, // 薄弱 (取舍检验)
-        }
-    },
-    {
-        id: 's_002',
-        name: '小红',
-        history: {
-            'kp_001': { p_L: 0.45 }, // 薄弱 (判别式老忘)
-            'kp_002': { p_L: 0.90 }, // 很好
-            'kp_003': { p_L: 0.50 }, // 勉强
-            'kp_004': { p_L: 0.85 }, // 很好
-            'kp_005': { p_L: 0.20 }, // 极差
-        }
-    }
-];
+import { Activity, ShieldAlert, CheckCircle2, Skull, RefreshCcw } from 'lucide-react';
+import { LTMMemory, MemoryData } from '@/lib/memory';
 
 export default function DashboardPage() {
-    const [activeStudent, setActiveStudent] = useState(MOCK_STUDENTS[0]);
+    const [studentData, setStudentData] = useState<MemoryData | null>(null);
+
+    const refreshData = () => {
+        const data = LTMMemory.load('demo_student');
+        setStudentData(data);
+    };
+
+    useEffect(() => {
+        refreshData();
+        // Periodically refresh to catch updates from other tabs (the demo)
+        const interval = setInterval(refreshData, 3000);
+        
+        // Also refresh on window focus
+        window.addEventListener('focus', refreshData);
+        
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener('focus', refreshData);
+        };
+    }, []);
 
     const getStatusColor = (p_L: number) => {
         const status = BktEngine.getMasteryStatus(p_L);
@@ -49,28 +43,30 @@ export default function DashboardPage() {
         return <ShieldAlert size={18} />;
     };
 
+    if (!studentData) return <div className="min-h-screen bg-[#0a0c10] flex items-center justify-center text-white/50">Loading Memory Data...</div>;
+
     return (
         <div className="min-h-screen bg-[#0a0c10] text-white p-8 md:p-12 font-sans selection:bg-indigo-500/30">
 
             <div className="max-w-5xl mx-auto">
                 <header className="mb-12 flex items-center justify-between border-b border-white/5 pb-6">
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight text-white/90">学情雷达图谱 (BKT引擎)</h1>
-                        <p className="text-white/40 mt-2">实时分析学生对纳米级知识点的掌握概率</p>
+                        <div className="flex items-center gap-3">
+                            <h1 className="text-3xl font-bold tracking-tight text-white/90">学情雷达图谱 (BKT引擎)</h1>
+                        </div>
+                        <p className="text-white/40 mt-2">实时分析学生对纳米级知识点的掌握概率 — 当前正在分析: <span className="text-indigo-400 font-mono">demo_student</span></p>
                     </div>
-                    <div className="flex gap-2">
-                        {MOCK_STUDENTS.map(student => (
-                            <button
-                                key={student.id}
-                                onClick={() => setActiveStudent(student)}
-                                className={`px-4 py-2 rounded-lg font-medium transition-all ${activeStudent.id === student.id
-                                        ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/20'
-                                        : 'bg-white/5 text-white/50 hover:bg-white/10'
-                                    }`}
-                            >
-                                {student.name} 的认知地图
-                            </button>
-                        ))}
+                    <div className="flex gap-4 items-center">
+                        <div className="text-right hidden sm:block">
+                            <div className="text-xs text-white/30 uppercase tracking-widest font-bold mb-1">Last Update</div>
+                            <div className="text-sm font-mono text-white/60">{new Date(studentData.lastUpdated).toLocaleTimeString()}</div>
+                        </div>
+                        <button 
+                            onClick={refreshData}
+                            className="p-2 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-white/40 hover:text-white"
+                        >
+                            <RefreshCcw size={18} />
+                        </button>
                     </div>
                 </header>
 
@@ -84,7 +80,7 @@ export default function DashboardPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {AlgebraSyllabus.nodes.map((node, index) => {
-                            const p_L = activeStudent.history[node.id as keyof typeof activeStudent.history]?.p_L || 0.3;
+                            const p_L = studentData.mastery[node.id] || 0.3;
                             const colorClass = getStatusColor(p_L);
 
                             return (

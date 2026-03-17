@@ -33,7 +33,7 @@ export default function DynamicScaffold() {
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
-    const [problemText, setProblemText] = useState<string>("已知关于 x 的方程 x^2 - (2m+1)x + m^2 + m = 0 有两个实数根 x1, x2。若 1/x1 + 1/x2 = 3/2，求实数 m 的值。");
+    const [problemText, setProblemText] = useState<string>("2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD");
 
     // Strategy Phase States
     const [isStrategyApproved, setIsStrategyApproved] = useState(false);
@@ -285,7 +285,7 @@ export default function DynamicScaffold() {
         } catch {
             addLog('error', '辅助计算异常');
             return null;
-        } finally {
+    } finally {
             setIsAuxCalculating(false);
         }
     };
@@ -295,373 +295,236 @@ export default function DynamicScaffold() {
     const [isManualDemo, setIsManualDemo] = useState(false);
     const [manualDemoStep, setManualDemoStep] = useState(0);
     const [demoSteps, setDemoSteps] = useState<DemoStepData[]>([]);
+    const [demoScriptIndex, setDemoScriptIndex] = useState(0);
     
+    const getDemoScript = (index: number) => {
+        const scripts = [
+            // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
+            {
+                problem: "2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD",
+                steps: [
+                    { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
+                    { id: 'p2', type: 'student' as const, contentType: 'text' as const, text: '先求直线与坐标轴交点B、C，代入抛物线求a,c，再配方求顶点D。', label: '解题思路', message: '思路非常清晰！第一步先锁定交点。', isCorrect: true },
+                    { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,6)', label: '交点计算', message: '坐标算反了吧？再检查一下 y=-x+3 的截距。', isCorrect: false },
+                    { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'B(6,0), C(0,3)', label: '交点计算', message: '正确！', isCorrect: true },
+                    { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: '代入验证一下，a 的值似乎不对？', isCorrect: false },
+                    { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: 'a=1/4, c=3', label: '求参', message: '好，抛物线解析式确定了。', isCorrect: true },
+                ],
+                kps: { 'ms_q24_001': 0.3, 'ms_q24_002': 0.4 },
+                review: "本次演示重点展示了在处理抛物线综合题时，由于忽略直线截距导致的初始偏差，以及在代入求参时的计算失误。系统成功拦截了计算错误并引导修正。"
+            },
+            // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
+            {
+                problem: "2022徐汇Q18: 风车型直角三角形，OB=3, AB=4，求 OE 的长",
+                steps: [
+                    { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
+                    { id: 'x2', type: 'student' as const, contentType: 'text' as const, text: '以O为原点建立坐标系，确定A,B,C,D坐标，求出直线AD和OC解析式求交点E。', label: '解题思路', message: '非常棒的数形结合思想！', isCorrect: true },
+                    { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(4,3)', label: '坐标确定', message: '注意 A 点在第三象限。', isCorrect: false },
+                    { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
+                    { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
+                ],
+                kps: { 'ms_q18_001': 0.2, 'ms_q18_002': 0.45 },
+                review: "学生在处理风车模型时，坐标系象限判定出现典型错误（A点坐标正负号），且在关键计算步表现出跳步尝试，反映了坐标法应用不熟练。"
+            },
+            // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
+            {
+                problem: "2022虹口Q18: 圆O与两平行直线有三个公共点，求半径 r",
+                steps: [
+                    { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },
+                    { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：圆心在两直线之间或在同侧，根据切点数量确定r。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
+                    { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个呢？', isCorrect: false },
+                    { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
+                ],
+                kps: { 'ms_shared_001': 0.5, 'ms_q18_003': 0.4 },
+                review: "学生对分情况讨论的意识不足，初次尝试仅给出单一解。在系统提示位置关系后能快速反应，反映了知识储备尚可但解题习惯不严谨。"
+            }
+        ];
+        return scripts[index % scripts.length];
+    };
+
     // 手动演示：点击识别画板时触发下一步
-    const handleDemoOcr = () => {
+    const handleDemoOcr = async () => {
         if (!isManualDemo || manualDemoStep >= demoSteps.length) return;
         
         const currentStep = demoSteps[manualDemoStep];
         
-        const findNextMathStep = (startIdx: number) => {
-            for (let i = startIdx; i < demoSteps.length; i++) {
-                if (demoSteps[i].contentType === 'math') return demoSteps[i];
-            }
-            return null;
-        };
-        
-        if (currentStep.contentType === 'math') {
-            setManualCalcInput(currentStep.latex || '');
-            setTimeout(() => {
-                setStepLogs(prev => [...prev, currentStep]);
-                const nextIdx = manualDemoStep + 1;
-                if (nextIdx < demoSteps.length) {
-                    setManualDemoStep(nextIdx);
-                    const nextMath = findNextMathStep(nextIdx);
-                    setManualCalcInput(nextMath?.latex || '');
-                } else {
-                    setManualDemoStep(nextIdx);
-                    setIsManualDemo(false);
-                    // End of demo reached. Show completion state.
-                    setIsSolved(true);
-                    setIsGeneratingReview(true);
-                    
-                    setTimeout(() => {
-                        const mockReview = `### 🎯 核心知识点\n- 韦达定理：x1+x2 = -b/a, x1x2 = c/a\n- 判别式Δ = b²-4ac ≥ 0（有两个实数根的前提）\n\n### 💡 关键反思\n- 这道题的"隐藏坑"在于：题目说"有两个实数根"，必须先满足Δ≥0\n- 很多学生直接用韦达定理求出m后就结束了，漏掉了判别式检验`;
-                        setReviewSummary(mockReview);
-                        setIsGeneratingReview(false);
-                        setIsDemoRunning(false);
-                        setShowPersonaModal(true); // Pop up the modal
-                    }, 1500);
-                }
-            }, 800);
-        } else {
-            setStrategyTranscript(currentStep.text || '');
-            setStrategyFeedback({ isCorrect: currentStep.isCorrect || false, feedback: currentStep.message || '' });
-            setStepLogs(prev => [...prev, currentStep]);
+        const processStep = async (step: DemoStepData) => {
+            const newStepLog: StepLog = {
+                id: Date.now().toString(),
+                type: 'student',
+                contentType: step.contentType,
+                latex: step.latex,
+                text: step.text,
+                label: step.label,
+                message: step.message,
+                isCorrect: step.isCorrect
+            };
+            setStepLogs(prev => [...prev, newStepLog]);
 
-            const nextIdx = manualDemoStep + 1;
-            if (nextIdx < demoSteps.length) {
-                setManualDemoStep(nextIdx);
-                const nextStep = demoSteps[nextIdx];
-                if (nextStep.contentType === 'math') {
-                    setTimeout(() => {
-                        setIsStrategyApproved(true);
-                        setManualCalcInput(nextStep.latex || '');
-                    }, 1500);
-                } else if (nextStep.contentType === 'text') {
-                    setTimeout(() => {
-                        setStrategyTranscript(nextStep.text || '');
-                        setStrategyFeedback(null);
-                    }, 1500);
+            if (step.contentType === 'text') {
+                setStrategyTranscript(step.text || '');
+                setStrategyFeedback({ isCorrect: step.isCorrect || false, feedback: step.message || '' });
+                if (step.isCorrect) {
+                    addLog('info', `✅ 思路正确: ${step.message}`);
+                    // Delay the approval so user sees the feedback message before it unmounts
+                    setTimeout(() => setIsStrategyApproved(true), 1500);
+                } else {
+                    addLog('error', `❌ 思路错误: ${step.message}`);
+                    setIsStrategyApproved(false);
+                }
+            } else { // contentType === 'math'
+                setManualCalcInput(step.latex || '');
+                if (step.isCorrect) {
+                    addLog('info', `✅ 步骤判定正确: ${step.label}`);
+                    clearPad();
+                } else {
+                    addLog('error', `❌ 步骤判定错误: ${step.message}`);
+                }
+            }
+        };
+
+        await processStep(currentStep);
+
+        const nextIdx = manualDemoStep + 1;
+        if (nextIdx < demoSteps.length) {
+            setManualDemoStep(nextIdx);
+            const nextStep = demoSteps[nextIdx];
+            if (nextStep.contentType === 'math') {
+                // If next is math, pre-fill input for user to "submit".
+                // We delay this if we just transitioned from a text strategy step,
+                // so we don't overwrite manualCalcInput before the UI unmounts.
+                if (currentStep.contentType === 'text' && currentStep.isCorrect) {
+                    setTimeout(() => setManualCalcInput(nextStep.latex || ''), 1500);
+                } else {
+                    setManualCalcInput(nextStep.latex || '');
                 }
             } else {
-                setManualDemoStep(nextIdx);
-                setIsManualDemo(false);
-                setIsDemoRunning(false);
+                // If next is text, clear strategy input for user to "submit"
+                setStrategyTranscript(nextStep.text || '');
+                setStrategyFeedback(null);
             }
+        } else {
+            // End of demo reached
+            setManualDemoStep(nextIdx);
+            setIsManualDemo(false);
+            setIsDemoRunning(false);
+            setIsSolved(true);
+            setIsGeneratingReview(true);
+            
+            setTimeout(() => {
+                const script = getDemoScript(demoScriptIndex);
+                setReviewSummary(script.review);
+                setIsGeneratingReview(false);
+                setShowPersonaModal(true);
+                
+                Object.entries(script.kps).forEach(([kp, score]) => {
+                    LTMMemory.updateMastery(kp, score);
+                });
+                const updatedPersona: StudentPersona = {
+                    misconceptions: [
+                        ...(script.review.includes('坐标') ? ['平面坐标系正负号混淆', '第三象限坐标判定'] : []),
+                        ...(script.review.includes('讨论') ? ['分情况讨论意识薄弱', '圆与直线的多解漏项'] : []),
+                        ...(script.review.includes('截距') ? ['直线方程项对应的几何意义模糊'] : [])
+                    ],
+                    lastSessionSummary: script.review,
+                    weak_areas: Object.keys(script.kps)
+                };
+                LTMMemory.updatePersona(updatedPersona);
+                setDemoScriptIndex(prev => prev + 1);
+                addLog('info', `✨ 手动演示结束，长期记忆已同步。`);
+            }, 1500);
         }
     };
-    
+
     const startManualDemo = () => {
-        const steps: DemoStepData[] = [
-            { id: '1', type: 'student', contentType: 'text', text: '直接通分，然后代入韦达定理求出m的值，不需要检验判别式。', label: '解题思路', message: '你的思路漏了一个关键步骤：有两个实数根意味着什么？在使用韦达定理之前，是不是应该先检查判别式？', isCorrect: false },
-            { id: '2', type: 'student', contentType: 'text', text: '先通分化简，利用韦达定理建立关于m的方程，最后根据判别式Δ≥0检验结果。', label: '解题思路', message: '思路很棒！先通分化简再代入韦达定理，最后检验判别式，逻辑完整。', isCorrect: true },
-            { id: '3', type: 'student', contentType: 'math', latex: 'x_1+x_2=x_1x_2', label: '通分化简', message: '同学，通分是对的，但你需要先把x1+x2和x1x2用韦达定理表示出来，再代入计算。', isCorrect: false },
-            { id: '4', type: 'student', contentType: 'math', latex: 'x_1+x_2=\\frac{3}{2}', label: '通分化简', message: '你代入的式子是正确的，但接下来需要交叉相乘化简。', isCorrect: false },
-            { id: '5', type: 'student', contentType: 'math', latex: '\\frac{x_1+x_2}{x_1x_2}=\\frac{3}{2}', label: '通分化简', message: '很好！继续下一步', isCorrect: true },
-            { id: '6', type: 'student', contentType: 'math', latex: '\\frac{2m+1}{m^2+m}=\\frac{3}{2}', label: '代入韦达定理', message: '你代入的式子是正确的，但接下来需要交叉相乘化简。', isCorrect: true },
-            { id: '7', type: 'student', contentType: 'math', latex: '4m+2=3m^2+3m', label: '解方程', message: '化简后得到的是一元二次方程，可以用求根公式或因式分解。注意最后还要检验判别式！', isCorrect: true },
-            { id: '8', type: 'student', contentType: 'math', latex: 'm=1', label: '判别式检验', message: '你求出m=1和m=-2/3，但代入原方程检验过了吗？注意：题目要求有两个实数根！', isCorrect: true },
-        ];
-        setDemoSteps(steps);
+        const script = getDemoScript(demoScriptIndex);
+        setDemoSteps(script.steps);
         setManualDemoStep(0);
         setStepLogs([]);
         setIsManualDemo(true);
         setIsDemoRunning(true);
-        setProblemText("已知关于 x 的方程 x^2 - (2m+1)x + m^2 + m = 0 有两个实数根 x1, x2。若 1/x1 + 1/x2 = 3/2，求实数 m 的值。");
+        setIsSolved(false);
+        setProblemText(script.problem);
         setIsStrategyApproved(false);
-        setStrategyTranscript(steps[0].text || '');
+        setStrategyTranscript(script.steps[0].text || ''); // Pre-fill first strategy step
         setStrategyFeedback(null);
-        
-        addLog('info', '🎬 手动演示模式启动 - 点击"识别画板"进入下一步');
-    };
-    
-    // Mock API responses for demo mode
-    const mockStrategyEval = (text: string) => {
-        // 故意提交一个错误的思路
-        const isWrong = text.includes('直接代入公式') || text.includes('不需要检验');
-        return {
-            isCorrect: false,
-            feedback: isWrong 
-                ? '你的思路漏了一个关键步骤：有两个实数根意味着什么？在使用韦达定理之前，是不是应该先检查判别式？'
-                : '思路方向正确，但不够完整。这道题有一个容易被忽略的隐藏条件...',
-            suggestedNextActions: '先考虑判别式Δ≥0的条件'
-        };
-    };
-
-    const mockStepCheck = (answer: string, stepIndex: number) => {
-        // 模拟真实的学生错误场景
-        const scenarios = [
-            // Step 0: 通分化简
-            {
-                wrong: ['x1+x2=x1x2', 'x1+x2=3/2', '直接写1/x1+1/x2=3/2'],
-                correct: ['\\frac{x_1 + x_2}{x_1 x_2} = \\frac{3}{2}', '(x1+x2)/(x1x2)=3/2'],
-                feedback: '同学，通分是对的，但你需要先把x1+x2和x1x2用韦达定理表示出来，再代入计算。',
-                label: '通分化简'
-            },
-            // Step 1: 代入韦达定理
-            {
-                wrong: ['(2m+1)/(m^2+m)=3/2', '2m+1=3/2', 'm=1/2'],
-                correct: ['\\frac{2m+1}{m^2+m} = \\frac{3}{2}'],
-                feedback: '你代入的式子是正确的，但接下来需要交叉相乘化简。',
-                label: '代入韦达定理'
-            },
-            // Step 2: 解方程
-            {
-                wrong: ['m=1', 'm=-2/3', 'm=0'],
-                correct: ['4m+2=3m^2+3m', '3m^2-m-2=0'],
-                feedback: '化简后得到的是一元二次方程，可以用求根公式或因式分解。注意最后还要检验判别式！',
-                label: '解方程'
-            },
-            // Step 3: 判别式检验（故意触发meltdown）
-            {
-                wrong: ['m=1', 'm=-2/3'],
-                correct: ['m=1 (检验Δ≥0)', 'm=1'],
-                feedback: '你求出m=1和m=-2/3，但代入原方程检验过了吗？注意：题目要求有两个实数根！',
-                label: '判别式检验'
-            }
-        ];
-
-        const scenario = scenarios[stepIndex] || scenarios[0];
-        const isCorrect = scenario.correct.some(c => answer.includes(c.replace(/\\/g, '')));
-        
-        return {
-            isCorrect,
-            stepLabel: scenario.label,
-            feedback: isCorrect ? '很好！继续下一' : scenario.feedback,
-            isSolved: isCorrect && stepIndex === 3
-        };
+        setManualCalcInput(''); // Clear math input
+        addLog('info', `🎬 启动手动演示: ${script.problem.substring(0, 30)}...`);
     };
 
     const startDemo = async () => {
         if (isDemoRunning) return;
         setIsDemoRunning(true);
-        addLog('info', '🚀 开始"装蠢"演示流程...');
+        const script = getDemoScript(demoScriptIndex);
+        addLog('info', `🚀 开始自动演示 [脚本 ${demoScriptIndex}]...`);
         
-        // Reset state
-        setProblemText("已知关于 x 的方程 x^2 - (2m+1)x + m^2 + m = 0 有两个实数根 x1, x2。若 1/x1 + 1/x2 = 3/2，求实数 m 的值。");
+        setIsSolved(false);
+        setProblemText(script.problem);
         setStepLogs([]);
         setReviewSummary(null);
-        
-        // ==================== Step 1: 错误的思路 ====================
-        addLog('info', '📝 步骤1：提交错误的思路');
-        const wrongStrategy = '直接通分，然后代入韦达定理求出m的值，不需要检验判别式。';
-        setStrategyTranscript(wrongStrategy);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        // Mock API call
-        setIsEvaluatingStrategy(true);
-        await new Promise(r => setTimeout(r, 1500));
-        const strategyResult = mockStrategyEval(wrongStrategy);
-        setStrategyFeedback(strategyResult);
-        setIsEvaluatingStrategy(false);
-        
-        // Add to step logs
-        const strategyLog = {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'text' as const,
-            text: wrongStrategy,
-            label: '解题思路',
-            message: strategyResult.feedback,
-            isCorrect: strategyResult.isCorrect
-        };
-        setStepLogs([strategyLog]);
-        addLog('error', '❌ 思路被拦截：' + strategyResult.feedback.substring(0, 50) + '...');
-        
-        await new Promise(r => setTimeout(r, 3500));
-        
-        // ==================== Step 2: 修正思路 ====================
-        addLog('info', '📝 步骤2：提交正确的思路');
-        const correctStrategy = '先通分化简，利用韦达定理建立关于m的方程，最后根据判别式Δ≥0检验结果。';
-        setStrategyTranscript(correctStrategy);
-        
-        setIsEvaluatingStrategy(true);
-        await new Promise(r => setTimeout(r, 800));
-        setStrategyFeedback({ isCorrect: true, feedback: '思路很棒！先通分化简再代入韦达定理，最后检验判别式，逻辑完整。' });
-        setIsEvaluatingStrategy(false);
-        
-        setStepLogs(prev => [...prev, {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'text' as const,
-            text: correctStrategy,
-            label: '解题思路',
-            message: '思路很棒！',
-            isCorrect: true
-        }]);
-        
-        addLog('info', '✅ 思路通过！进入解题阶段');
-        setIsStrategyApproved(true);
-        
-        await new Promise(r => setTimeout(r, 3000));
+        setIsStrategyApproved(false);
 
-        // ==================== Step 3: 步骤1 - 故意写错 ====================
-        addLog('info', '📝 步骤3：步骤1 - 故意写错（第1次）');
-        const wrongStep1 = 'x1+x2=x1x2';
-        setManualCalcInput(wrongStep1);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        // Mock step check
-        const step1Result = mockStepCheck(wrongStep1, 0);
-        const step1Log = {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'math' as const,
-            latex: wrongStep1,
-            label: step1Result.stepLabel,
-            message: step1Result.feedback,
-            isCorrect: step1Result.isCorrect
-        };
-        setStepLogs(prev => [...prev, step1Log]);
-        addLog('error', '❌ 步骤错误：' + step1Result.feedback.substring(0, 50) + '...');
-        
-        await new Promise(r => setTimeout(r, 3000));
+        for (let i = 0; i < script.steps.length; i++) {
+            const step = script.steps[i];
+            addLog('info', `📝 步骤: ${step.label}`);
+            
+            if (step.contentType === 'text') {
+                setStrategyTranscript(step.text || '');
+                setIsEvaluatingStrategy(true);
+                await new Promise(r => setTimeout(r, 1200));
+                setStrategyFeedback({ isCorrect: step.isCorrect || false, feedback: step.message || '' });
+                setIsEvaluatingStrategy(false);
+            } else {
+                setManualCalcInput(step.latex || '');
+                await new Promise(r => setTimeout(r, 1000));
+            }
 
-        // ==================== Step 4: 步骤1 - 再错 ====================
-        addLog('info', '📝 步骤4：步骤1 - 再错（第2次）');
-        const wrongStep1_2 = 'x1+x2=3/2';
-        setManualCalcInput(wrongStep1_2);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        const step1Result2 = mockStepCheck(wrongStep1_2, 0);
-        setStepLogs(prev => [...prev, {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'math' as const,
-            latex: wrongStep1_2,
-            label: step1Result2.stepLabel,
-            message: step1Result2.feedback,
-            isCorrect: step1Result2.isCorrect
-        }]);
-        addLog('error', '❌ 再次错误：' + step1Result2.feedback.substring(0, 50) + '...');
-        
-        await new Promise(r => setTimeout(r, 3000));
-
-        // ==================== Step 5: 步骤1 - 第3次触发meltdown ====================
-        addLog('info', '📝 步骤5：步骤1 - 第3次错误，触发meltdown降级！');
-        const wrongStep1_3 = '1/x1 + 1/x2 = 3/2';
-        setManualCalcInput(wrongStep1_3);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        const step1Result3 = mockStepCheck(wrongStep1_3, 0);
-        setStepLogs(prev => [...prev, {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'math' as const,
-            latex: wrongStep1_3,
-            label: step1Result3.stepLabel,
-            message: step1Result3.feedback + ' [MELTDOWN TRIGGERED]',
-            isCorrect: step1Result3.isCorrect
-        }]);
-        addLog('error', '🔥 MELTDOWN触发！系统自动降级，提供更基础的引导...');
-        
-        await new Promise(r => setTimeout(r, 3500));
-
-        // ==================== Step 6: 步骤1 - 终于答对 ====================
-        addLog('info', '📝 步骤6：步骤1 - 正确！');
-        const correctStep1 = '(x1+x2)/(x1x2)=3/2';
-        setManualCalcInput(correctStep1);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        const step1Result4 = mockStepCheck(correctStep1, 0);
-        setStepLogs(prev => [...prev, {
-            id: Date.now().toString(),
-            type: 'student' as const,
-            contentType: 'math' as const,
-            latex: correctStep1,
-            label: step1Result4.stepLabel,
-            message: step1Result4.feedback,
-            isCorrect: true
-        }]);
-        addLog('info', '✅ 步骤正确！进入下一步');
-        
-        await new Promise(r => setTimeout(r, 3000));
-
-        // ==================== Step 7-9: 后续步骤快速通过 ====================
-        addLog('info', '📝 步骤7-9：后续步骤快速通过...');
-        
-        const steps = [
-            { input: '(2m+1)/(m^2+m)=3/2', idx: 1 },
-            { input: '4m+2=3m^2+3m', idx: 2 },
-            { input: 'm=1', idx: 3 }
-        ];
-        
-        for (const step of steps) {
-            setManualCalcInput(step.input);
-            await new Promise(r => setTimeout(r, 1800));
-            const result = mockStepCheck(step.input, step.idx);
-            setStepLogs(prev => [...prev, {
-                id: Date.now().toString(),
-                type: 'student' as const,
-                contentType: 'math' as const,
-                latex: step.input,
-                label: result.stepLabel,
-                message: result.feedback,
-                isCorrect: true
-            }]);
-            addLog('info', `✅ 步骤${step.idx + 1}正确`);
-            await new Promise(r => setTimeout(r, 2000));
+            const logEntry: StepLog = {
+                id: Date.now().toString() + i,
+                type: 'student',
+                contentType: step.contentType,
+                latex: step.latex,
+                text: step.text,
+                label: step.label,
+                message: step.message,
+                isCorrect: step.isCorrect
+            };
+            
+            setStepLogs(prev => [...prev, logEntry]);
+            if (!step.isCorrect) {
+                addLog('error', `❌ 错误: ${step.message}`);
+                await new Promise(r => setTimeout(r, 1500));
+            } else {
+                addLog('info', `✅ 正确`);
+                if (step.label === '解题思路') setIsStrategyApproved(true);
+                await new Promise(r => setTimeout(r, 1000));
+            }
         }
 
-        // ==================== Step 10: 复盘 ====================
-        addLog('info', '📝 步骤10：生成复盘总结...');
         setIsSolved(true);
         setIsGeneratingReview(true);
-        await new Promise(r => setTimeout(r, 2000));
-        
-        const mockReview = `### 🎯 核心知识点
-- 韦达定理：x1+x2 = -b/a, x1x2 = c/a
-- 判别式Δ = b²-4ac ≥ 0（有两个实数根的前提）
-
-### 💡 关键反思
-- 这道题的"隐藏坑"在于：题目说"有两个实数根"，必须先满足Δ≥0
-- 很多学生直接用韦达定理求出m后就结束了，漏掉了判别式检验
-
-### 🧠 思维闭环
-- 遇到"有两个实数根/两个交点"这类描述，第一反应应该是判别式≥0
-- 用韦达定理化简后，一定要代回原方程检验`;
-        
-        setReviewSummary(mockReview);
+        await new Promise(r => setTimeout(r, 1500));
+        setReviewSummary(script.review);
         setIsGeneratingReview(false);
-        addLog('info', '✅ 复盘总结已生成');
+        setShowPersonaModal(true);
 
-        await new Promise(r => setTimeout(r, 1000));
-        setShowPersonaModal(true); // Pop up modal for automatic demo too
+        Object.entries(script.kps).forEach(([kp, score]) => {
+            LTMMemory.updateMastery(kp, score);
+        });
 
-        // ==================== Step 11: LTM更新 ====================
-        addLog('info', '📝 步骤11：更新学生画像（LTM）...');
-        
-        const updatedPersona = {
+        const updatedPersona: StudentPersona = {
             misconceptions: [
-                '判别式漏检验：求出参数后忘记代回原方程验证Δ≥0',
-                '韦达定理形式记忆模糊：有时会混淆符号'
+                ...(script.review.includes('坐标') ? ['平面坐标系正负号混淆', '第三象限坐标判定'] : []),
+                ...(script.review.includes('讨论') ? ['分情况讨论意识薄弱', '圆与直线的多解漏项'] : []),
+                ...(script.review.includes('截距') ? ['直线方程项对应的几何意义模糊'] : [])
             ],
-            learningStyle: '视觉型',
-            learning_style: '视觉型',
-            lastSessionSummary: '本轮表现出对韦达定理的较好掌握，但在判别式检验环节存在明显薄弱点。连续3次在第一步通分后未及时代入韦达定理表达式的错误后，系统触发meltdown降级，最终在降级引导下完成求解。建议后续加强"有两个实数根⇔判别式≥0"的条件反射训练。',
-            last_session_summary: '本轮表现出对韦达定理的较好掌握，但在判别式检验环节存在明显薄弱点。连续3次在第一步通分后未及时代入韦达定理表达式的错误后，系统触发meltdown降级，最终在降级引导下完成求解。建议后续加强"有两个实数根⇔判别式≥0"的条件反射训练。',
-            weak_areas: ['韦达定理的应用', '判别式检验'],
-            strong_areas: ['一元二次方程通分']
+            lastSessionSummary: script.review,
+            weak_areas: Object.keys(script.kps)
         };
         
-        setPersona(updatedPersona);
         LTMMemory.updatePersona(updatedPersona);
-        addLog('info', '✅ LTM已更新！点击Debug面板查看画像变化');
-
+        setDemoScriptIndex(prev => prev + 1);
         setIsDemoRunning(false);
-        addLog('info', '✨ "装蠢"演示流程结束！');
-        addLog('info', '📊 总结：经历了错误思路→步骤错误→meltdown→正确→复盘→LTM更新 全流程');
     };
 
     // ========== SPEECH RECOGNITION & STRATEGY ==========
@@ -786,7 +649,7 @@ export default function DynamicScaffold() {
         }
     };
 
-    const handleSessionEnd = async (finalHistory: StepLog[] = []) => {
+    async function handleSessionEnd(finalHistory: StepLog[] = []) {
         setIsSolved(true);
         addLog('info', '🏁 关卡挑战成功！正在生成学习画像总结和复盘...');
 
@@ -891,12 +754,18 @@ export default function DynamicScaffold() {
                 <div className="flex gap-2">
                     <button
                         type="button"
-                        onClick={() => startManualDemo()}
+                        onClick={() => {
+                            if (isManualDemo) {
+                                handleDemoOcr();
+                            } else {
+                                startManualDemo();
+                            }
+                        }}
                         disabled={isDemoRunning && !isManualDemo}
                         className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg shadow-lg disabled:opacity-50"
                     >
                         <Layers size={14} />
-                        {isManualDemo ? `第 ${stepLogs.length} / ${demoSteps.length} 步` : '手动演示'}
+                        {isManualDemo ? `第 ${stepLogs.length} / ${demoSteps.length} 步 (点击下一步)` : '手动演示'}
                     </button>
                     <button
                         type="button"

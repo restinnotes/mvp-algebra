@@ -241,7 +241,15 @@ export class LTMMemory {
             targetNewP = newPOrKp as number;
         }
 
-        current.mastery[targetKp] = targetNewP;
+        // AGGREGATION LOGIC: Weighted moving average
+        // If it's a new KP, set directly. If existing, blend them.
+        const existingP = current.mastery[targetKp];
+        if (existingP !== undefined) {
+            // Give 60% weight to the new observation
+            current.mastery[targetKp] = Math.round((existingP * 0.4 + targetNewP * 0.6) * 100) / 100;
+        } else {
+            current.mastery[targetKp] = targetNewP;
+        }
         
         const categorySummary = calculateCategorySummary(current.mastery);
         const weakCategories = determineWeakCategories(categorySummary);
@@ -253,14 +261,28 @@ export class LTMMemory {
     }
 
     static updatePersona(studentIdOrPersona: string | StudentPersona, newPersona?: StudentPersona) {
-        const targetPersona = newPersona !== undefined ? newPersona : studentIdOrPersona as StudentPersona;
-        
+        const incomingPersona = newPersona !== undefined ? newPersona : studentIdOrPersona as StudentPersona;
         const current = this.load();
-        current.persona = {
+        
+        // FUSING LOGIC: Merge arrays, overwrite strings
+        const mergedPersona: StudentPersona = {
             ...current.persona,
-            ...targetPersona
+            ...incomingPersona,
+            misconceptions: Array.from(new Set([
+                ...(current.persona.misconceptions || []),
+                ...(incomingPersona.misconceptions || [])
+            ])),
+            weak_areas: Array.from(new Set([
+                ...(current.persona.weak_areas || []),
+                ...(incomingPersona.weak_areas || [])
+            ])),
+            strong_areas: Array.from(new Set([
+                ...(current.persona.strong_areas || []),
+                ...(incomingPersona.strong_areas || [])
+            ]))
         };
         
+        current.persona = mergedPersona;
         this.save({ persona: current.persona });
     }
 
