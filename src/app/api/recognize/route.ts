@@ -12,7 +12,15 @@ const ocrSchema = {
         isSolved: { type: SchemaType.BOOLEAN }
     },
     required: ["latex", "isCorrect", "stepLabel", "feedback", "isSolved"]
-};
+} as const;
+
+interface OcrResult {
+    latex: string;
+    isCorrect: boolean;
+    stepLabel: string;
+    feedback: string;
+    isSolved: boolean;
+}
 
 export async function POST(req: NextRequest) {
     try {
@@ -33,10 +41,6 @@ export async function POST(req: NextRequest) {
                 return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
             }
         }
-
-        const base64Data = imageBase64
-            ? imageBase64.replace(/^data:image\/(png|jpeg|webp);base64,/, '')
-            : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="; // 1px dummy
 
         const promptText = [
             'You are a "Deep Socratic Math Tutor" for Chinese students. Your goal is to guide them through a problem naturally, following THEIR logic, not a fixed script.',
@@ -61,7 +65,7 @@ export async function POST(req: NextRequest) {
             'Output the result in the specified JSON format.'
         ].join('\n');
 
-        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", ocrSchema as any, "ocr");
+        const parsedData = await generateFromImage<OcrResult>(promptText, imageBase64 || "", ocrSchema, "ocr");
 
         if (parsedData.latex) {
             parsedData.latex = parsedData.latex.replace(/\$/g, '');

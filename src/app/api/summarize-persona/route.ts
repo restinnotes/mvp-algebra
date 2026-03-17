@@ -20,34 +20,36 @@ const personaSchema = {
         }
     },
     required: ["misconceptions", "learningStyle", "lastSessionSummary"]
-};
+} as const;
 
 const MAX_PAYLOAD_SIZE = 100 * 1024; // 100KB
 const MAX_STRING_LENGTH = 2000;
 const MAX_ARRAY_LENGTH = 20;
 
-function validatePersona(persona: any) {
+function validatePersona(persona: Record<string, unknown> | null | undefined): boolean {
     if (!persona || typeof persona !== 'object') return false;
     if (persona.learningStyle && (typeof persona.learningStyle !== 'string' || persona.learningStyle.length > MAX_STRING_LENGTH)) return false;
     if (persona.lastSessionSummary && (typeof persona.lastSessionSummary !== 'string' || persona.lastSessionSummary.length > MAX_STRING_LENGTH)) return false;
-    if (persona.misconceptions && !Array.isArray(persona.misconceptions)) return false;
-    if (persona.misconceptions) {
-        if (persona.misconceptions.length > MAX_ARRAY_LENGTH) return false;
-        for (const m of persona.misconceptions) {
+    const misconceptions = persona.misconceptions as unknown as string[] | undefined;
+    if (misconceptions && !Array.isArray(misconceptions)) return false;
+    if (misconceptions) {
+        if (misconceptions.length > MAX_ARRAY_LENGTH) return false;
+        for (const m of misconceptions) {
             if (typeof m !== 'string' || m.length > MAX_STRING_LENGTH) return false;
         }
     }
     return true;
 }
 
-function validateLogs(logs: any) {
+function validateLogs(logs: unknown): boolean {
     if (!logs) return true; // Optional
     if (!Array.isArray(logs)) return false;
     if (logs.length > MAX_ARRAY_LENGTH) return false;
     for (const log of logs) {
         if (!log || typeof log !== 'object') return false;
-        if (log.message && (typeof log.message !== 'string' || log.message.length > MAX_STRING_LENGTH)) return false;
-        if (log.type && (typeof log.type !== 'string' || log.type.length > 50)) return false;
+        const logRecord = log as Record<string, unknown>;
+        if (logRecord.message && (typeof logRecord.message !== 'string' || logRecord.message.length > MAX_STRING_LENGTH)) return false;
+        if (logRecord.type && (typeof logRecord.type !== 'string' || logRecord.type.length > 50)) return false;
     }
     return true;
 }
@@ -83,7 +85,7 @@ export async function POST(req: NextRequest) {
             5. Return the updated full Persona JSON.
         `;
 
-        const updatedPersona = await generateJSON(prompt, personaSchema as any, "persona");
+        const updatedPersona = await generateJSON(prompt, personaSchema, "persona");
 
         return NextResponse.json(updatedPersona);
     } catch (error: unknown) {

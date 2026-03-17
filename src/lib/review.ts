@@ -41,7 +41,7 @@ export async function reviewSession(
   shadowSolve: ShadowSolveResult,
   stepAttempts: StepAttempt[],
 ): Promise<ReviewResult> {
-  const attributions = computeAttributions(stepAttempts, shadowSolve);
+  const attributions = computeAttributions(stepAttempts);
   const qualitative = await getQualitativeReview(problemText, shadowSolve, stepAttempts);
 
   const weakKPs = attributions
@@ -102,7 +102,6 @@ export async function reviewSession(
 
 function computeAttributions(
   stepAttempts: StepAttempt[],
-  shadowSolve: ShadowSolveResult,
 ): ReviewAttribution[] {
   const kpGroups = new Map<string, StepAttempt[]>();
   for (const attempt of stepAttempts) {
