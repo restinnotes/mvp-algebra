@@ -1,8 +1,6 @@
 import { test, describe, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert';
-import * as memoryModule from './memory.ts';
-
-const LTMMemory = (memoryModule as any).LTMMemory;
+import { LTMMemory } from './memory.ts';
 
 // Mock localStorage
 class MockLocalStorage {
@@ -16,30 +14,41 @@ const STORAGE_KEY = 'ai_tutor_ltm_v1';
 const DEFAULT_PERSONA = {
     misconceptions: [],
     learningStyle: "待评估",
-    lastSessionSummary: "欢迎开始学习"
+    learning_style: "待评估",
+    lastSessionSummary: "欢迎开始学习",
+    last_session_summary: "欢迎开始学习",
+    weak_areas: [],
+    strong_areas: [],
+    weak_categories: []
 };
 
 describe('LTMMemory', () => {
-  let originalWindow: any;
-  let originalLocalStorage: any;
+  let originalWindow: typeof global.window;
+  let originalLocalStorage: typeof global.localStorage;
 
   beforeEach(() => {
     originalWindow = global.window;
     originalLocalStorage = global.localStorage;
 
     // Default to having window and localStorage
-    (global as any).window = {};
-    (global as any).localStorage = new MockLocalStorage();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    global.window = {};
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    global.localStorage = new MockLocalStorage();
   });
 
   afterEach(() => {
-    (global as any).window = originalWindow;
-    (global as any).localStorage = originalLocalStorage;
+    global.window = originalWindow;
+    global.localStorage = originalLocalStorage;
   });
 
   describe('load()', () => {
     test('returns default data when window is undefined', () => {
-      delete (global as any).window;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      delete global.window;
       const data = LTMMemory.load();
       assert.strictEqual(data.mastery !== undefined, true);
       assert.deepStrictEqual(data.persona, DEFAULT_PERSONA);
@@ -57,7 +66,13 @@ describe('LTMMemory', () => {
       const mockData = {
         mastery: { 'kp1': 0.8 },
         persona: { ...DEFAULT_PERSONA, learningStyle: 'visual' },
-        lastUpdated: '2023-01-01T00:00:00.000Z'
+        lastUpdated: '2023-01-01T00:00:00.000Z',
+        student_id: 'default',
+        category_summary: {},
+        cognitive_bugs: [],
+        session_history: [],
+        wrong_problems: [],
+        last_updated: '2023-01-01T00:00:00.000Z'
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(mockData));
 
@@ -73,8 +88,16 @@ describe('LTMMemory', () => {
       localStorage.setItem(STORAGE_KEY, 'invalid json');
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data.persona, DEFAULT_PERSONA);
       assert.strictEqual(errorLogged, true);
+      assert.strictEqual(data.student_id, 'default');
+      assert.deepStrictEqual(data.mastery, {});
+      assert.deepStrictEqual(data.category_summary, {});
+      assert.deepStrictEqual(data.persona, DEFAULT_PERSONA);
+      assert.deepStrictEqual(data.cognitive_bugs, []);
+      assert.deepStrictEqual(data.session_history, []);
+      assert.deepStrictEqual(data.wrong_problems, []);
+      assert.ok(data.lastUpdated);
+      assert.ok(data.last_updated);
 
       console.error = originalConsoleError;
     });
@@ -101,7 +124,9 @@ describe('LTMMemory', () => {
     });
 
     test('does nothing when window is undefined', () => {
-      delete (global as any).window;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      delete global.window;
       LTMMemory.save({ mastery: { 'kp1': 1 } });
     });
   });
@@ -126,7 +151,10 @@ describe('LTMMemory', () => {
       LTMMemory.updatePersona(newPersona);
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data.persona, newPersona);
+      assert.deepStrictEqual(data.persona, {
+        ...DEFAULT_PERSONA,
+        ...newPersona
+      });
     });
   });
 });
