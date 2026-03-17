@@ -4,10 +4,248 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MindmapSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, ChevronRight } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, X, AlertTriangle, Sparkles, Layers } from 'lucide-react';
+import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
-import { WrongProblemModal } from '@/components/WrongProblemModal';
+import Link from 'next/link';
+
+// --- Wrong Problem Modal Component ---
+function WrongProblemModal({ problem, onClose, onResolve }: { problem: WrongProblem, onClose: () => void, onResolve: (boost: number) => void }) {
+    const [view, setView] = useState<'review' | 'solution' | 'retry'>('review');
+    const [retryInput, setRetryInput] = useState('');
+    const [retryFeedback, setRetryFeedback] = useState<{ isCorrect: boolean, message: string } | null>(null);
+
+    const handleRetry = () => {
+        const isCorrect = problem.correctStrategy.some(s => 
+            (s.latex && retryInput.includes(s.latex)) || 
+            (s.text && retryInput.toLowerCase().includes(s.text.toLowerCase()))
+        ) || retryInput.length > 5;
+
+        if (isCorrect) {
+            setRetryFeedback({ isCorrect: true, message: "太棒了！这次你完全掌握了该知识点。" });
+            onResolve(0.6);
+        } else {
+            setRetryFeedback({ isCorrect: false, message: "还差一点，再仔细想想？看看答案视图寻找灵感。" });
+        }
+    };
+
+    return (
+        <div className="fixed inset-0 z-[100] bg-[#0a0b0e] flex flex-col animate-in fade-in duration-300">
+            {/* Immersive Header */}
+            <div className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-black/40 backdrop-blur-xl">
+                <div className="flex items-center gap-4">
+                    <button onClick={onClose} className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white/70 group">
+                        <ChevronRight className="rotate-180 group-hover:-translate-x-0.5 transition-transform" size={24} />
+                    </button>
+                    <div>
+                        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                             错题深度复盘
+                        </h2>
+                        <p className="text-white/30 text-xs mt-0.5 tracking-wide max-w-md truncate">{problem.problemTitle}</p>
+                    </div>
+                </div>
+
+                {/* Tabs inside Header for more 'App-like' feel */}
+                <div className="flex bg-white/5 p-1 rounded-xl border border-white/5">
+                    {[
+                        { id: 'review', label: '犯错回放', icon: <History size={16}/> },
+                        { id: 'solution', label: '正确思路', icon: <Lightbulb size={16}/> },
+                        { id: 'retry', label: '再次挑战', icon: <PlayCircle size={16}/> }
+                    ].map(tab => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setView(tab.id as 'review' | 'solution' | 'retry')}
+                            className={`flex items-center justify-center gap-2 px-6 py-2 rounded-lg text-sm font-bold transition-all ${view === tab.id ? 'bg-indigo-600 text-white shadow-lg' : 'text-white/40 hover:text-white/60'}`}
+                        >
+                            {tab.icon} {tab.label}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="flex items-center gap-3">
+                    <div className="px-3 py-1 bg-rose-500/10 text-rose-400 text-[10px] font-bold rounded-full border border-rose-500/20 uppercase tracking-tighter">
+                        Status: UNRESOLVED
+                    </div>
+                </div>
+            </div>
+
+            {/* Immersive Content */}
+            <div className="flex-1 overflow-hidden flex flex-col lg:flex-row">
+                {/* Left Side Panel: Original Problem (Sticky) */}
+                <div className="lg:w-[380px] border-r border-white/5 bg-white/[0.02] overflow-y-auto p-6 custom-scrollbar shrink-0">
+                    <div className="space-y-6 animate-in slide-in-from-left duration-500">
+                        <section className="space-y-3">
+                            <div className="flex items-center gap-2 px-1">
+                                <BookOpen size={14} className="text-indigo-400" />
+                                <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">原题题干内容</span>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white/90 leading-relaxed text-sm shadow-inner relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-indigo-500/40" />
+                                <div className="relative z-10">
+                                    {problem.problemTitle}
+                                </div>
+                            </div>
+                        </section>
+                        
+                        {problem.problemImage && (
+                            <section className="space-y-3">
+                                <div className="flex items-center gap-2 px-1">
+                                    <Activity size={14} className="text-indigo-400" />
+                                    <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">题目关键配图</span>
+                                </div>
+                                <div className="bg-white/5 border border-white/10 rounded-2xl p-1.5 shadow-2xl overflow-hidden group">
+                                    <img 
+                                        src={problem.problemImage} 
+                                        alt="Problem Illustration" 
+                                        className="w-full h-auto rounded-xl object-contain bg-black/20 group-hover:scale-[1.05] transition-transform duration-700" 
+                                    />
+                                </div>
+                            </section>
+                        )}
+
+                        <div className="pt-4">
+                            <div className="flex items-start gap-4 p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl">
+                                <BrainCircuit className="text-indigo-400 shrink-0 mt-0.5" size={18} />
+                                <div>
+                                    <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-wider">复盘核心建议</p>
+                                    <p className="text-[11px] text-indigo-100/60 mt-1 leading-normal">
+                                        建议对比“犯错回放”中的步骤与“正确思路”，重点分析几何关系的变化。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Content Area */}
+                <div className="flex-1 overflow-y-auto custom-scrollbar bg-black/10">
+                    <div className="max-w-4xl mx-auto py-12 px-8">
+                        {view === 'review' && (
+                            <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
+                                <div className="flex items-start gap-4 p-6 bg-rose-500/5 border border-rose-500/10 rounded-2xl shadow-lg">
+                                    <ShieldAlert className="text-rose-500 shrink-0 mt-1" size={24} />
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold text-rose-200">故障诊断</h3>
+                                        <p className="text-rose-200/60 text-sm mt-1">系统记录：你在第 {problem.errorStepIndex + 1} 步出现了逻辑中断或计算偏差。</p>
+                                        
+                                        {/* AI 诊断总结展示 (用户要求增加的部分) */}
+                                        {problem.diagnosticAnalysis && (
+                                            <div className="mt-6 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl p-5 relative group overflow-hidden">
+                                                <div className="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                                    <BrainCircuit size={60} className="text-indigo-400" />
+                                                </div>
+                                                <h4 className="flex items-center gap-2 text-indigo-400 font-bold text-[10px] uppercase tracking-widest mb-2">
+                                                    <Sparkles size={12} />
+                                                    本题全过程复盘总结
+                                                </h4>
+                                                <div className="text-sm text-indigo-100/90 leading-relaxed italic">
+                                                    “{problem.diagnosticAnalysis}”
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <div className="grid gap-4">
+                                    {problem.studentFlow.map((log, idx) => (
+                                        <div key={idx} className={`relative flex gap-6 p-6 rounded-2xl border transition-all ${idx === problem.errorStepIndex ? 'bg-rose-500/5 border-rose-400/30 ring-1 ring-rose-400/20 shadow-2xl shadow-rose-500/10 scale-[1.02] z-10' : 'bg-white/[0.02] border-white/5 opacity-40 hover:opacity-100'}`}>
+                                            <div className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center font-bold text-sm ${idx === problem.errorStepIndex ? 'bg-rose-500/20 border-rose-400/40 text-rose-300' : 'bg-white/5 border-white/10 text-white/20'}`}>
+                                                {idx + 1}
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <span className={`font-bold text-base ${idx === problem.errorStepIndex ? 'text-rose-200' : 'text-white/60'}`}>{log.label}</span>
+                                                    {log.isCorrect ? <CheckCircle2 size={18} className="text-emerald-500" /> : <ShieldAlert size={18} className="text-rose-500" />}
+                                                </div>
+                                                <div className="bg-black/40 p-5 rounded-xl border border-white/5 text-lg text-white/90 font-mono shadow-inner">
+                                                    {log.contentType === 'math' ? <InlineMath math={log.latex || ''} /> : log.text}
+                                                </div>
+                                                {log.message && (
+                                                    <div className="mt-4 p-4 bg-white/5 rounded-xl text-sm text-white/40 leading-relaxed border-l-4 border-indigo-500/50">
+                                                        <span className="text-indigo-400 font-bold mr-2 uppercase text-[10px] tracking-widest">AI Tutor Feedback:</span>
+                                                        {log.message}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {view === 'solution' && (
+                            <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
+                                <div className="flex items-start gap-4 p-6 bg-emerald-500/5 border border-emerald-500/10 rounded-2xl shadow-lg">
+                                    <Lightbulb className="text-emerald-500 shrink-0 mt-1" size={24} />
+                                    <div>
+                                        <h3 className="text-lg font-bold text-emerald-200">标准解题路径</h3>
+                                        <p className="text-emerald-200/60 text-sm mt-1">这是影子老师建议的最优推导流程，建议重点关注你犯错的那一步对应的逻辑。</p>
+                                    </div>
+                                </div>
+
+                                <div className="grid gap-4">
+                                    {problem.correctStrategy.map((step, idx) => (
+                                        <div key={idx} className="flex gap-6 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all shadow-md">
+                                            <div className="shrink-0 w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center font-bold text-indigo-400">
+                                                {idx + 1}
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="font-bold text-white/80 text-base mb-3">{step.label}</div>
+                                                <div className="bg-black/60 p-5 rounded-xl border border-white/5 text-lg text-indigo-100 font-mono shadow-inner">
+                                                    {step.contentType === 'math' ? <InlineMath math={step.latex || ''} /> : step.text}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {view === 'retry' && (
+                            <div className="max-w-2xl mx-auto space-y-8 animate-in slide-in-from-bottom-4 duration-500">
+                                <div className="text-center space-y-2">
+                                    <h2 className="text-3xl font-bold text-white tracking-tight">重新挑战</h2>
+                                    <p className="text-white/30 text-base">模拟真实练习环境，请尝试补全该步骤。</p>
+                                </div>
+
+                                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-10 shadow-3xl space-y-8 backdrop-blur-sm">
+                                    <div className="space-y-4">
+                                        <label className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest pl-1">推导输入 (支持 LaTeX 或 文本描述)</label>
+                                        <textarea
+                                            value={retryInput}
+                                            onChange={(e) => setRetryInput(e.target.value)}
+                                            placeholder="请写下你的推导过程或最终结果..."
+                                            className="w-full bg-black/60 border border-white/10 rounded-2xl p-8 text-2xl text-white focus:border-indigo-500/80 outline-none transition-all resize-none min-h-[300px] font-mono shadow-2xl placeholder:text-white/10"
+                                        />
+                                    </div>
+                                    
+                                    {retryFeedback && (
+                                        <motion.div 
+                                            initial={{ scale: 0.95, opacity: 0 }}
+                                            animate={{ scale: 1, opacity: 1 }}
+                                            className={`p-6 rounded-2xl border flex items-center gap-4 ${retryFeedback.isCorrect ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300' : 'bg-rose-500/10 border-rose-500/30 text-rose-300'}`}
+                                        >
+                                            {retryFeedback.isCorrect ? <CheckCircle2 size={28} /> : <AlertTriangle size={28} />}
+                                            <span className="font-bold text-lg">{retryFeedback.message}</span>
+                                        </motion.div>
+                                    )}
+
+                                    <button
+                                        onClick={handleRetry}
+                                        className="w-full py-6 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xl rounded-2xl shadow-2xl shadow-indigo-500/40 transition-all hover:-translate-y-1 active:scale-[0.98]"
+                                    >
+                                        验证并同步掌握率
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function DashboardPage() {
     const [studentData, setStudentData] = useState<MemoryData | null>(null);
@@ -21,7 +259,6 @@ export default function DashboardPage() {
     };
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
         refreshData();
         const interval = setInterval(refreshData, 3000);
@@ -42,8 +279,10 @@ export default function DashboardPage() {
     const handleReset = () => {
         if (confirm('确定要清空所有认知记忆并从头开始演示吗？')) {
             LTMMemory.clear();
-            localStorage.setItem('demoScriptIndex', '0');
-            window.location.reload();
+            localStorage.clear(); // 彻底清除
+            sessionStorage.clear(); // 额外清除 session
+            setIsMounted(false);
+            window.location.href = '/?refresh=' + Date.now();
         }
     };
 
@@ -169,6 +408,13 @@ export default function DashboardPage() {
                             <span>继续下一题</span>
                             <ArrowRight size={18} />
                         </button>
+                        <Link 
+                            href="/practice"
+                            className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white/70 px-6 py-3 rounded-xl border border-white/10 transition-all hover:-translate-y-1 font-bold"
+                        >
+                            <Layers size={18} />
+                            <span>进入练习中心</span>
+                        </Link>
                     </div>
                 </header>
 
@@ -266,7 +512,7 @@ export default function DashboardPage() {
                             )}
 
                             {/* Learning Style */}
-                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">学习图式特征</h3>
+                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">认知能力综合评估</h3>
                             <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-200 text-sm leading-relaxed mb-6">
                                 {studentData.persona.learningStyle || studentData.persona.learning_style || "尚未进行充足的交互评估"}
                             </div>
@@ -274,7 +520,7 @@ export default function DashboardPage() {
                             {/* Last Session Review */}
                             <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">最近一次切片洞察 ({new Date(studentData.lastUpdated).toLocaleTimeString().slice(0,5)})</h3>
                             <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner italic">
-                                &quot;{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}&quot;
+                                "{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}"
                             </p>
                         </div>
                         
