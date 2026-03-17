@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
             }
         }
 
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const base64Data = imageBase64
             ? imageBase64.replace(/^data:image\/(png|jpeg|webp);base64,/, '')
             : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="; // 1px dummy
@@ -61,7 +62,9 @@ export async function POST(req: NextRequest) {
             'Output the result in the specified JSON format.'
         ].join('\n');
 
-        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", ocrSchema as any, "ocr");
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ocrSchema as any, "ocr");
 
         if (parsedData.latex) {
             parsedData.latex = parsedData.latex.replace(/\$/g, '');

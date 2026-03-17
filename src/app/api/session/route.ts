@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
                 if (!sessionId || answer === undefined) {
                     return NextResponse.json({ error: 'Missing sessionId or answer' }, { status: 400 });
                 }
-                const { state, checkResult, currentStep } = await submitStep(sessionId, answer, timeSpentMs || 0);
+                const { state, checkResult } = await submitStep(sessionId, answer, timeSpentMs || 0);
                 return NextResponse.json({
                     sessionId: state.session_id,
                     phase: state.phase,

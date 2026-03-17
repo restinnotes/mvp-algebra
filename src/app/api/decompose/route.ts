@@ -61,7 +61,8 @@ export async function POST(req: NextRequest) {
           Output the result in the specified JSON format.
         `;
 
-        const data = await generateFromImage(prompt, imageBase64, responseSchema as any);
+        const data = await generateFromImage(prompt, imageBase64, // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        responseSchema as any);
 
         return NextResponse.json(data);
     } catch (error: unknown) {

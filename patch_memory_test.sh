@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/lib/memory.test.ts
 import { test, describe, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert';
 import * as memoryModule from './memory.ts';
@@ -151,3 +152,4 @@ describe('LTMMemory', () => {
     });
   });
 });
+INNER_EOF

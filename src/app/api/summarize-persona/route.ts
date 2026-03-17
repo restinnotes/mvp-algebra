@@ -26,6 +26,7 @@ const MAX_PAYLOAD_SIZE = 100 * 1024; // 100KB
 const MAX_STRING_LENGTH = 2000;
 const MAX_ARRAY_LENGTH = 20;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function validatePersona(persona: any) {
     if (!persona || typeof persona !== 'object') return false;
     if (persona.learningStyle && (typeof persona.learningStyle !== 'string' || persona.learningStyle.length > MAX_STRING_LENGTH)) return false;
@@ -40,6 +41,7 @@ function validatePersona(persona: any) {
     return true;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function validateLogs(logs: any) {
     if (!logs) return true; // Optional
     if (!Array.isArray(logs)) return false;
@@ -83,7 +85,8 @@ export async function POST(req: NextRequest) {
             5. Return the updated full Persona JSON.
         `;
 
-        const updatedPersona = await generateJSON(prompt, personaSchema as any, "persona");
+        const updatedPersona = await generateJSON(prompt, // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        personaSchema as any, "persona");
 
         return NextResponse.json(updatedPersona);
     } catch (error: unknown) {

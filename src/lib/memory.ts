@@ -9,7 +9,7 @@ export interface StudentPersona {
     weak_categories?: string[];
 }
 
-import type { CognitiveBug, SessionSummary, StepLog, DemoStepData } from './types.ts';
+import { CognitiveBug, SessionSummary, StepLog, DemoStepData } from './types';
 
 export interface WrongProblem {
     id: string;
