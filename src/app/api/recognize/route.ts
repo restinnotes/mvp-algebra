@@ -14,8 +14,16 @@ const ocrSchema = {
     required: ["latex", "isCorrect", "stepLabel", "feedback", "isSolved"]
 };
 
+const MAX_PAYLOAD_SIZE = 4.5 * 1024 * 1024; // 4.5MB
+const MAX_IMAGE_BASE64_LENGTH = 4 * 1024 * 1024; // 4MB limit for base64 string
+
 export async function POST(req: NextRequest) {
     try {
+        const contentLength = req.headers.get('content-length');
+        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
         const body = await req.json();
         const { imageBase64, problemContext, history, manualText } = body;
 
@@ -23,9 +31,9 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image or text data provided' }, { status: 400 });
         }
 
-        const base64Data = imageBase64
-            ? imageBase64.replace(/^data:image\/(png|jpeg|webp);base64,/, '')
-            : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="; // 1px dummy
+        if (imageBase64 && (typeof imageBase64 !== 'string' || imageBase64.length > MAX_IMAGE_BASE64_LENGTH)) {
+            return NextResponse.json({ error: 'Image too large or invalid format' }, { status: 413 });
+        }
 
         const promptText = [
             'You are a "Deep Socratic Math Tutor" for Chinese students. Your goal is to guide them through a problem naturally, following THEIR logic, not a fixed script.',
@@ -50,9 +58,9 @@ export async function POST(req: NextRequest) {
             'Output the result in the specified JSON format.'
         ].join('\n');
 
-        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", ocrSchema as any, "ocr");
+        const parsedData = await generateFromImage<Record<string, unknown>>(promptText, imageBase64 || "", ocrSchema as Record<string, unknown>, "ocr");
 
-        if (parsedData.latex) {
+        if (typeof parsedData.latex === 'string') {
             parsedData.latex = parsedData.latex.replace(/\$/g, '');
         }
 
