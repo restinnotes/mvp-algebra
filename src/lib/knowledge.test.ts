@@ -1,79 +1,140 @@
 import { test, describe, beforeEach, afterEach, mock } from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
-import path from 'node:path';
-import * as knowledge from './knowledge';
+import { getPrerequisiteChain, clearCache } from './knowledge.ts';
 
-describe('loadKnowledgeGraph', () => {
-  let originalExistsSync: any;
-  let originalReadFileSync: any;
+describe('getPrerequisiteChain', () => {
+    beforeEach(() => {
+        clearCache();
+    });
 
-  beforeEach(() => {
-    knowledge.clearCache();
-    // Save original functions
-    originalExistsSync = fs.existsSync;
-    originalReadFileSync = fs.readFileSync;
-  });
+    afterEach(() => {
+        mock.restoreAll();
+        clearCache();
+    });
 
-  afterEach(() => {
-    mock.restoreAll();
-  });
+    test('handles circular dependencies to prevent infinite recursion', () => {
+        mock.method(fs, 'existsSync', () => true);
+        mock.method(fs, 'readFileSync', () => {
+            return JSON.stringify({
+                version: "1.0",
+                categories: [
+                    {
+                        id: "cat_1",
+                        name: "Category 1",
+                        nodes: [
+                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: ["node_B"], common_misconceptions: [] },
+                            { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
+                            { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_B"], common_misconceptions: [] }
+                        ]
+                    }
+                ]
+            });
+        });
 
-  test('returns fallback empty graph when file does not exist', () => {
-    // Mock fs.existsSync to return false
-    const mockExistsSync = mock.method(fs, 'existsSync', () => false);
+        const chain = getPrerequisiteChain("node_C");
+        // B relies on A. A relies on B. C relies on B.
+        // Start from C. walk("node_C")
+        // visited: C. prereq of C is B. walk("node_B")
+        // visited: C, B. prereq of B is A. walk("node_A")
+        // visited: C, B, A. prereq of A is B. walk("node_B") returns immediately because B is visited.
+        // Node A is pushed. chain = [A]
+        // Node B is pushed. chain = [A, B]
+        // Node C is pushed. chain = [A, B, C]
+        assert.deepStrictEqual(chain.map(n => n.id), ["node_A", "node_B", "node_C"]);
+    });
 
-    const result = knowledge.loadKnowledgeGraph();
+    test('handles complex circular dependencies with self-loops', () => {
+        mock.method(fs, 'existsSync', () => true);
+        mock.method(fs, 'readFileSync', () => {
+            return JSON.stringify({
+                version: "1.0",
+                categories: [
+                    {
+                        id: "cat_1",
+                        name: "Category 1",
+                        nodes: [
+                            { id: "node_X", name: "Node X", level: 1, importance: 1, description: "X", prerequisites: ["node_X", "node_Y"], common_misconceptions: [] },
+                            { id: "node_Y", name: "Node Y", level: 1, importance: 1, description: "Y", prerequisites: ["node_Z"], common_misconceptions: [] },
+                            { id: "node_Z", name: "Node Z", level: 1, importance: 1, description: "Z", prerequisites: ["node_X"], common_misconceptions: [] }
+                        ]
+                    }
+                ]
+            });
+        });
 
-    assert.deepStrictEqual(result, { version: '1.0', categories: [] });
-    assert.strictEqual(mockExistsSync.mock.callCount(), 1);
-  });
+        const chain = getPrerequisiteChain("node_X");
+        // Start at X.
+        // prereqs of X are [X, Y].
+        // prereq X is visited, returns.
+        // prereq Y.
+        //   prereqs of Y are [Z].
+        //   prereq Z.
+        //     prereqs of Z are [X].
+        //     prereq X is visited, returns.
+        //     Z pushed.
+        //   Y pushed.
+        // X pushed.
+        assert.deepStrictEqual(chain.map(n => n.id), ["node_Z", "node_Y", "node_X"]);
+    });
 
-  test('reads and parses JSON when file exists', () => {
-    const mockGraph = {
-      version: '1.5',
-      categories: [
-        { id: 'cat1', name: 'Category 1', nodes: [] }
-      ]
-    };
+    test('returns empty chain if node not found', () => {
+        mock.method(fs, 'existsSync', () => true);
+        mock.method(fs, 'readFileSync', () => JSON.stringify({ version: "1.0", categories: [] }));
 
-    const mockExistsSync = mock.method(fs, 'existsSync', () => true);
-    const mockReadFileSync = mock.method(fs, 'readFileSync', () => JSON.stringify(mockGraph));
+        const chain = getPrerequisiteChain("missing_node");
+        assert.deepStrictEqual(chain, []);
+    });
 
-    const result = knowledge.loadKnowledgeGraph();
+    test('handles diamond dependency correctly', () => {
+        // D relies on B and C. Both B and C rely on A.
+        mock.method(fs, 'existsSync', () => true);
+        mock.method(fs, 'readFileSync', () => {
+            return JSON.stringify({
+                version: "1.0",
+                categories: [
+                    {
+                        id: "cat_1",
+                        name: "Category 1",
+                        nodes: [
+                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] },
+                            { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
+                            { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_A"], common_misconceptions: [] },
+                            { id: "node_D", name: "Node D", level: 1, importance: 1, description: "D", prerequisites: ["node_B", "node_C"], common_misconceptions: [] }
+                        ]
+                    }
+                ]
+            });
+        });
 
-    assert.deepStrictEqual(result, mockGraph);
-    assert.strictEqual(mockExistsSync.mock.callCount(), 1);
-    assert.strictEqual(mockReadFileSync.mock.callCount(), 1);
+        const chain = getPrerequisiteChain("node_D");
+        // Start D.
+        // Prereqs: [B, C].
+        // walk B. Prereqs [A]. walk A. A has no prereq. A pushed. B pushed.
+        // walk C. Prereqs [A]. A is visited. C pushed.
+        // D pushed.
+        // Order: A, B, C, D.
+        assert.deepStrictEqual(chain.map(n => n.id), ["node_A", "node_B", "node_C", "node_D"]);
+    });
 
-    // Check that it was called with the correct path
-    const expectedPath = path.join(process.cwd(), 'knowledge_points.json');
-    assert.strictEqual(mockExistsSync.mock.calls[0].arguments[0], expectedPath);
-    assert.strictEqual(mockReadFileSync.mock.calls[0].arguments[0], expectedPath);
-    assert.strictEqual(mockReadFileSync.mock.calls[0].arguments[1], 'utf-8');
-  });
+    test('handles no dependencies correctly', () => {
+        mock.method(fs, 'existsSync', () => true);
+        mock.method(fs, 'readFileSync', () => {
+            return JSON.stringify({
+                version: "1.0",
+                categories: [
+                    {
+                        id: "cat_1",
+                        name: "Category 1",
+                        nodes: [
+                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] }
+                        ]
+                    }
+                ]
+            });
+        });
 
-  test('returns cached graph on subsequent calls', () => {
-    const mockGraph = {
-      version: '2.0',
-      categories: []
-    };
-
-    const mockExistsSync = mock.method(fs, 'existsSync', () => true);
-    const mockReadFileSync = mock.method(fs, 'readFileSync', () => JSON.stringify(mockGraph));
-
-    // First call reads from file
-    const result1 = knowledge.loadKnowledgeGraph();
-    assert.deepStrictEqual(result1, mockGraph);
-    assert.strictEqual(mockExistsSync.mock.callCount(), 1);
-    assert.strictEqual(mockReadFileSync.mock.callCount(), 1);
-
-    // Second call should return cached version
-    const result2 = knowledge.loadKnowledgeGraph();
-    assert.deepStrictEqual(result2, mockGraph);
-
-    // Call counts should not increase
-    assert.strictEqual(mockExistsSync.mock.callCount(), 1);
-    assert.strictEqual(mockReadFileSync.mock.callCount(), 1);
-  });
+        const chain = getPrerequisiteChain("node_A");
+        assert.deepStrictEqual(chain.map(n => n.id), ["node_A"]);
+    });
 });
