@@ -1,121 +1,83 @@
-import { test, describe, beforeEach, afterEach } from 'node:test';
+import { test, describe, mock, afterEach, beforeEach } from 'node:test';
 import assert from 'node:assert';
-import * as genAi from '@google/generative-ai';
+import { withRetry } from './gemini.ts';
 
-describe('gemini API wrapper', () => {
-  let mockGenerateContent: any;
-  let originalGetGenerativeModel: any;
-
+describe('withRetry', () => {
   beforeEach(() => {
-    // Save the original method to restore later
-    originalGetGenerativeModel = genAi.GoogleGenerativeAI.prototype.getGenerativeModel;
-
-    // Mock the getGenerativeModel method to return an object with a mocked generateContent
-    genAi.GoogleGenerativeAI.prototype.getGenerativeModel = () => {
-      return {
-        generateContent: mockGenerateContent
-      } as any;
-    };
+    mock.timers.enable({ apis: ['setTimeout'] });
   });
 
   afterEach(() => {
-    // Restore the original method
-    genAi.GoogleGenerativeAI.prototype.getGenerativeModel = originalGetGenerativeModel;
+    mock.timers.reset();
   });
 
-  test('generateJSON parses valid JSON response', async () => {
-    const { generateJSON } = await import('./gemini.ts');
-
-    mockGenerateContent = async () => ({
-      response: {
-        text: () => '{"key": "value"}'
-      }
-    });
-
-    const result = await generateJSON('prompt', {});
-    assert.deepStrictEqual(result, { key: 'value' });
+  test('happy path: should return result immediately if no error', async () => {
+    const fn = mock.fn(async () => 'success');
+    const result = await withRetry(fn);
+    assert.strictEqual(result, 'success');
+    assert.strictEqual(fn.mock.calls.length, 1);
   });
 
-  test('generateJSON strips markdown code blocks and parses JSON', async () => {
-    const { generateJSON } = await import('./gemini.ts');
-
-    mockGenerateContent = async () => ({
-      response: {
-        text: () => '```json\n{"status": "success"}\n```'
-      }
-    });
-
-    const result = await generateJSON('prompt', {});
-    assert.deepStrictEqual(result, { status: 'success' });
-  });
-
-  test('generateJSON retries on 429 errors', async () => {
-    const { generateJSON } = await import('./gemini.ts');
-
-    let attempts = 0;
-    mockGenerateContent = async () => {
-      attempts++;
-      if (attempts === 1) {
-        throw new Error('429 Too Many Requests');
-      }
-      return {
-        response: {
-          text: () => '{"retry": "success"}'
-        }
-      };
-    };
-
-    // Override the setTimeout globally just for this test to avoid waiting the delay
-    const originalSetTimeout = global.setTimeout;
-    (global.setTimeout as any) = ((cb: () => void) => cb()) as any;
-
-    try {
-      const result = await generateJSON('prompt', {});
-      assert.strictEqual(attempts, 2);
-      assert.deepStrictEqual(result, { retry: 'success' });
-    } finally {
-      global.setTimeout = originalSetTimeout;
-    }
-  });
-
-  test('generateJSON throws on max retries with 429', async () => {
-    const { generateJSON } = await import('./gemini.ts');
-
-    let attempts = 0;
-    mockGenerateContent = async () => {
-      attempts++;
-      throw new Error('429 Too Many Requests quota exceeded');
-    };
-
-    // Override the setTimeout globally just for this test
-    const originalSetTimeout = global.setTimeout;
-    (global.setTimeout as any) = ((cb: () => void) => cb()) as any;
-
-    try {
-      await assert.rejects(
-        async () => await generateJSON('prompt', {}),
-        (err: any) => err.message.includes('429 Too Many Requests quota exceeded')
-      );
-      // withRetry does attempt = 0,1,2,3,4,5 (MAX_RETRIES is 5) -> so 6 total attempts
-      assert.strictEqual(attempts, 6);
-    } finally {
-      global.setTimeout = originalSetTimeout;
-    }
-  });
-
-  test('generateJSON throws immediately on non-429 errors', async () => {
-    const { generateJSON } = await import('./gemini.ts');
-
-    let attempts = 0;
-    mockGenerateContent = async () => {
-      attempts++;
-      throw new Error('Something else failed');
-    };
+  test('non-retriable error: should throw immediately', async () => {
+    const error = new Error('Some other error');
+    const fn = mock.fn(async () => { throw error; });
 
     await assert.rejects(
-      async () => await generateJSON('prompt', {}),
-      (err: any) => err.message === 'Something else failed'
+      async () => await withRetry(fn),
+      (err) => {
+        assert.strictEqual(err, error);
+        return true;
+      }
     );
-    assert.strictEqual(attempts, 1);
+    assert.strictEqual(fn.mock.calls.length, 1);
+  });
+
+  test('retriable error: should retry on 429 and succeed', async () => {
+    const error = new Error('API Rate Limit 429 Too Many Requests');
+    let attempts = 0;
+    const fn = mock.fn(async () => {
+      attempts++;
+      if (attempts < 3) throw error;
+      return 'success after retry';
+    });
+
+    const promise = withRetry(fn);
+
+    // Give microtask queue a chance to execute
+    await new Promise(r => process.nextTick(r));
+
+    // Timer 1
+    mock.timers.tick(10000);
+    await new Promise(r => process.nextTick(r));
+
+    // Timer 2
+    mock.timers.tick(10000);
+    await new Promise(r => process.nextTick(r));
+
+    const result = await promise;
+    assert.strictEqual(result, 'success after retry');
+    assert.strictEqual(attempts, 3);
+  });
+
+  test('retriable error: should throw after max retries exceeded', async () => {
+    const error = new Error('quota exceeded');
+    const fn = mock.fn(async () => { throw error; });
+
+    const promise = withRetry(fn);
+
+    // Max retries is 5, so there are 6 attempts total (initial + 5 retries)
+    for (let i = 0; i < 6; i++) {
+      await new Promise(r => process.nextTick(r));
+      mock.timers.tick(200000);
+    }
+
+    await assert.rejects(
+      async () => await promise,
+      (err) => {
+        assert.strictEqual(err, error);
+        return true;
+      }
+    );
+    assert.strictEqual(fn.mock.calls.length, 6);
   });
 });

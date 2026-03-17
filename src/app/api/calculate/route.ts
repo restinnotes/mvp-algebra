@@ -10,6 +10,14 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No latex provided' }, { status: 400 });
         }
 
+        if (typeof latex !== 'string') {
+            return NextResponse.json({ error: 'Invalid input type for latex' }, { status: 400 });
+        }
+
+        if (latex.length > 1000) {
+            return NextResponse.json({ error: 'Latex input exceeds maximum allowed length' }, { status: 400 });
+        }
+
         const promptText = `
         You are a mathematical calculation assistant.
         Task: Simplify or expand the following LaTeX expression.

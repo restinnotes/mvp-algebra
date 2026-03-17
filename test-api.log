@@ -1,2 +1,2 @@
-SUCCESS (gemini-3.1-flash-lite-preview)
-hello world
+SETUP ERROR
+Error: ENOENT: no such file or directory, open '.env.local'
