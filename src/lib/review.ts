@@ -38,6 +38,7 @@ export async function reviewSession(
   sessionId: string,
   studentId: string,
   problemText: string,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   shadowSolve: ShadowSolveResult,
   stepAttempts: StepAttempt[],
 ): Promise<ReviewResult> {
@@ -102,6 +103,7 @@ export async function reviewSession(
 
 function computeAttributions(
   stepAttempts: StepAttempt[],
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   shadowSolve: ShadowSolveResult,
 ): ReviewAttribution[] {
   const kpGroups = new Map<string, StepAttempt[]>();
@@ -189,6 +191,7 @@ interface QualitativeResult {
 
 async function getQualitativeReview(
   problemText: string,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   shadowSolve: ShadowSolveResult,
   stepAttempts: StepAttempt[],
 ): Promise<QualitativeResult> {
