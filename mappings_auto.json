@@ -1,0 +1,272 @@
+[
+  {
+    "paper": "2022_Xuhui_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": ["翻折", "全等", "坐标法"],
+    "kps": ["geo_motion_rotation", "geo_congruent_tri", "alg_quadratic_func", "alg_expression"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "徐汇"
+  },
+  {
+    "paper": "2022_Xuhui_Two_Mock",
+    "question": "24",
+    "difficulty": 0.75,
+    "tags": ["二次函数", "坐标", "角度"],
+    "kps": ["alg_quadratic_func", "alg_linear_func", "geo_trig_ratio"],
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "徐汇"
+  },
+  {
+    "paper": "2022_Xuhui_Two_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["相似", "全等", "正方形"],
+    "kps": ["geo_similar_tri", "geo_congruent_tri", "geo_rectangle"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "徐汇"
+  },
+  {
+    "paper": "2022_Pudong_Two_Mock",
+    "question": "18",
+    "difficulty": 0.65,
+    "tags": ["圆", "直线", "范围"],
+    "kps": ["geo_circle_basic", "geo_circle_relation", "alg_inequality"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "浦东"
+  },
+  {
+    "paper": "2022_Pudong_Two_Mock",
+    "question": "24",
+    "difficulty": 0.8,
+    "tags": ["二次函数", "三角函数", "存在性"],
+    "kps": ["alg_quadratic_func", "geo_trig_ratio", "alg_equation"],
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "浦东"
+  },
+  {
+    "paper": "2022_Pudong_Two_Mock",
+    "question": "25",
+    "difficulty": 0.9,
+    "tags": ["相似", "圆相切", "分类讨论"],
+    "kps": ["geo_similar_tri", "geo_circle_relation", "geo_rectangle"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "浦东"
+  },
+  {
+    "paper": "2022_Changning_Two_Mock",
+    "question": "18",
+    "difficulty": 0.6,
+    "tags": ["圆", "旋转"],
+    "kps": ["geo_circle_basic", "geo_motion_rotation"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "长宁"
+  },
+  {
+    "paper": "2022_Changning_Two_Mock",
+    "question": "24",
+    "difficulty": 0.75,
+    "tags": ["二次函数", "圆相切"],
+    "kps": ["alg_quadratic_func", "geo_circle_relation"],
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "长宁"
+  },
+  {
+    "paper": "2022_Changning_Two_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["相似", "梯形"],
+    "kps": ["geo_similar_tri", "geo_parallelogram"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "长宁"
+  },
+  {
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.65,
+    "tags": ["圆", "动点"],
+    "kps": ["geo_circle_basic", "geo_circle_relation"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "青浦"
+  },
+  {
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.7,
+    "tags": ["全等", "相似"],
+    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "青浦"
+  },
+  {
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": ["相似", "三角函数", "旋转"],
+    "kps": ["geo_similar_tri", "geo_trig_ratio", "geo_motion_rotation"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.8,
+    "tags": ["二次函数", "面积最值"],
+    "kps": ["alg_quadratic_func", "alg_expression"],
+    "question_type": "Q24",
+    "exam_type": "二模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["全等", "相似"],
+    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": ["三角函数", "旋转"],
+    "kps": ["geo_trig_ratio", "geo_motion_rotation"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "普陀"
+  },
+  {
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["全等", "相似"],
+    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "普陀"
+  },
+  {
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "18",
+    "difficulty": 0.6,
+    "tags": ["圆与直线"],
+    "kps": ["geo_circle_basic", "geo_circle_relation"],
+    "question_type": "Q18",
+    "exam_type": "二模",
+    "district": "虹口"
+  },
+  {
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["全等", "相似"],
+    "kps": ["geo_congruent_tri", "geo_similar_tri"],
+    "question_type": "Q25",
+    "exam_type": "二模",
+    "district": "虹口"
+  },
+  {
+    "paper": "2020_Huangpu_One_Mock",
+    "question": "18",
+    "difficulty": 0.65,
+    "tags": ["翻折", "矩形"],
+    "kps": ["geo_motion_fold", "geo_rectangle"],
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2020_Huangpu_One_Mock",
+    "question": "24",
+    "difficulty": 0.75,
+    "tags": ["二次函数", "平行四边形"],
+    "kps": ["alg_quadratic_func", "geo_parallelogram"],
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2020_Huangpu_One_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["相似", "梯形", "中位线"],
+    "kps": ["geo_similar_tri", "geo_parallelogram"],
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "黄浦"
+  },
+  {
+    "paper": "2020_Jingan_One_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": ["圆", "角度"],
+    "kps": ["geo_circle_basic", "geo_trig_ratio"],
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "paper": "2020_Jingan_One_Mock",
+    "question": "24",
+    "difficulty": 0.75,
+    "tags": ["二次函数", "角度"],
+    "kps": ["alg_quadratic_func", "geo_trig_ratio"],
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "paper": "2020_Jingan_One_Mock",
+    "question": "25",
+    "difficulty": 0.9,
+    "tags": ["相似", "菱形", "黄金分割"],
+    "kps": ["geo_similar_tri", "geo_rectangle"],
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "paper": "2020_Minhang_One_Mock",
+    "question": "18",
+    "difficulty": 0.65,
+    "tags": ["旋转", "全等"],
+    "kps": ["geo_motion_rotation", "geo_congruent_tri"],
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "paper": "2020_Minhang_One_Mock",
+    "question": "24",
+    "difficulty": 0.8,
+    "tags": ["二次函数", "面积", "相切"],
+    "kps": ["alg_quadratic_func", "geo_circle_relation"],
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "paper": "2020_Minhang_One_Mock",
+    "question": "25",
+    "difficulty": 0.85,
+    "tags": ["相似", "圆相切"],
+    "kps": ["geo_similar_tri", "geo_circle_relation"],
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "闵行"
+  }
+]

@@ -26,6 +26,10 @@ export interface QuestionMapping {
   steps: StepMapping[];
   difficulty: number;
   tags: string[];
+  kps: string[];
+  exam_type?: string;   // "一模" | "二模" | "中考"
+  district?: string;    // "徐汇" | "浦东" etc.
+  question_type?: string; // "Q18" | "Q24" | "Q25"
 }
 
 export interface StepMapping {
