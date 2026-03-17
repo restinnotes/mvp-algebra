@@ -396,7 +396,63 @@ export default function DynamicScaffold() {
 
         await processStep(currentStep);
 
-        setManualDemoStep(manualDemoStep + 1);
+        const nextIdx = manualDemoStep + 1;
+        if (nextIdx < demoSteps.length) {
+            setManualDemoStep(nextIdx);
+            const nextStep = demoSteps[nextIdx];
+            if (nextStep.contentType === 'math') {
+                // If next is math, pre-fill input for user to "submit".
+                // We delay this if we just transitioned from a text strategy step,
+                // so we don't overwrite manualCalcInput before the UI unmounts.
+                if (currentStep.contentType === 'text' && currentStep.isCorrect) {
+                    setTimeout(() => setManualCalcInput(nextStep.latex || ''), 1500);
+                } else {
+                    setManualCalcInput(nextStep.latex || '');
+                }
+            } else {
+                // If next is text, clear strategy input for user to "submit"
+                setStrategyTranscript(nextStep.text || '');
+                setStrategyFeedback(null);
+            }
+        } else {
+            // End of demo reached
+            setManualDemoStep(nextIdx);
+            setIsManualDemo(false);
+            setIsDemoRunning(false);
+            setIsSolved(true);
+            setIsGeneratingReview(true);
+            
+            setTimeout(() => {
+                const script = getDemoScript(demoScriptIndex);
+                setReviewSummary(script.review);
+                setIsGeneratingReview(false);
+                setShowPersonaModal(true);
+                
+                Object.entries(script.kps).forEach(([kp, score]) => {
+                    LTMMemory.updateMastery(kp, score);
+                });
+                const combinedPersona: StudentPersona = {
+                    ...persona,
+                    misconceptions: Array.from(new Set([
+                        ...(persona?.misconceptions || []),
+                        ...(script.review.includes('坐标') ? ['象限坐标符号混淆', '缺乏代数严谨性'] : []),
+                        ...(script.review.includes('讨论') ? ['分类讨论意识不足', '思维缜密性欠缺'] : []),
+                        ...(script.review.includes('截距') ? ['条件分析不全面', '计算易出错'] : [])
+                    ])),
+                    lastSessionSummary: script.review,
+                    last_session_summary: script.review,
+                    weak_areas: Array.from(new Set([...(persona?.weak_areas || []), ...Object.keys(script.kps)]))
+                };
+                setPersona(combinedPersona);
+                LTMMemory.updatePersona(combinedPersona);
+                setDemoScriptIndex(prev => {
+                    const next = prev + 1;
+                    localStorage.setItem('demoScriptIndex', next.toString());
+                    return next;
+                });
+                addLog('info', `✨ 手动演示结束，长期记忆已同步。`);
+            }, 1500);
+        }
     };
 
     const startManualDemo = () => {
