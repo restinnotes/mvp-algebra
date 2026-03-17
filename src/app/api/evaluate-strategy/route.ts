@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+import { SchemaType } from "@google/generative-ai";
+import { generateJSON } from '@/lib/gemini';
 
 const responseSchema = {
     description: "Evaluation of student's strategy",
@@ -22,15 +21,6 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Missing problem statement or strategy text' }, { status: 400 });
         }
 
-        const model = genAI.getGenerativeModel({
-            model: "gemini-3.1-flash-lite-preview",
-            generationConfig: {
-                responseMimeType: "application/json",
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                responseSchema: responseSchema as any,
-            },
-        });
-
         const prompt = `
             You are a Socratic math tutor. A student is explaining their strategy to solve a math problem.
             
@@ -44,9 +34,7 @@ export async function POST(req: NextRequest) {
             4. Respond in Chinese. Keep it encouraging but rigorous.
         `;
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const data = JSON.parse(response.text());
+        const data = await generateJSON(prompt, responseSchema as any, "reasoning");
 
         return NextResponse.json(data);
     } catch (error: unknown) {

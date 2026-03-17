@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: '认知外骨骼 试验场',
+  title: 'AI 影子老师·同步练习',
   description: 'AI 驱动的中考数学单点爆破',
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-indigo-500/50`}>
         {children}
       </body>

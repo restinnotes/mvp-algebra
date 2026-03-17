@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { InlineMath } from 'react-katex';
 import SignatureCanvas from 'react-signature-canvas';
-import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play, Layers } from 'lucide-react';
+import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play, Layers, Edit2, Eraser, Trash2 } from 'lucide-react';
 
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 
@@ -48,7 +48,7 @@ export const getDemoScript = (index: number) => {
         },
         // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
         {
-            problem: "2022徐汇Q18: 风车型直角三角形，OB=3, AB=4，求 OE 的长",
+            problem: "2022徐汇Q18: 如图，四个白色全等直角三角形与四个黑色全等三角形按如所示方式摆放成“风车”型，且黑色三角形的顶点E、F、G、H分别在白色直角三角形的斜边上，已知∠ABO＝90°，OB＝3，AB＝4，若点A、E、D在同一直线上，则OE的长为______．",
             problemImage: <img src="/problems/xuhui_q18.png" alt="2022徐汇Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
@@ -62,16 +62,16 @@ export const getDemoScript = (index: number) => {
         },
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
         {
-            problem: "2022虹口Q18: 圆O与两平行直线有三个公共点，求半径 r",
+            problem: "2022虹口Q18: 已知平行直线 l1、l2 之间的距离是 5cm，圆心 O 到直线 l1 的距离是 2cm，如果圆 O 与直线 l1、l2 有三个公共点，那么圆 O 的半径为______cm．",
             problemImage: <img src="/problems/hongkou_q18.png" alt="2022虹口Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },
-                { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：圆心在两直线之间或在同侧，根据切点数量确定r。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
-                { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个呢？', isCorrect: false },
+                { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：要求有三个公共点，说明圆与其中一条直线相切，与另一条相交。根据圆心位置分两种情况。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
+                { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个情况（圆心在两直线外侧）呢？', isCorrect: false },
                 { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
             ],
             kps: { 'ms_shared_001': 0.5, 'ms_q18_003': 0.4 },
-            review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全情况并得出所有正确答案，理解力强。"
+            review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全“圆心在两侧”与“圆心在同侧”两种情况并得出所有正确答案，理解力强。"
         }
     ];
     return scripts[index % scripts.length];
@@ -139,6 +139,7 @@ export default function DynamicScaffold() {
 
     // Debug Panel State
     const [showDebug, setShowDebug] = useState(false);
+    const [activeTool, setActiveTool] = useState<'pen' | 'eraser'>('pen');
     const [logs, setLogs] = useState<LogEntry[]>([]);
 
     const addLog = (type: LogEntry['type'], message: string) => {
@@ -1055,10 +1056,7 @@ export default function DynamicScaffold() {
                             <div className="w-16 h-16 bg-indigo-500/10 rounded-full flex items-center justify-center text-indigo-400 mb-6 animate-pulse">
                                 <MessageSquare size={32} />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-2">先讲讲你的解题思路吧</h3>
-                            <p className="text-white/50 text-sm mb-8 max-w-md">
-                                在动笔之前，先口述一下你打算怎么解这道题。思路对了，效率更高！
-                            </p>
+                            <h3 className="text-xl font-bold text-white mb-2">讲讲你的解题思路</h3>
 
                             <div className="w-full max-w-lg space-y-4">
                                 <div className="relative group">
@@ -1112,13 +1110,44 @@ export default function DynamicScaffold() {
                         </div>
                     ) : (
                         <>
+                            {/* Whiteboard Toolbar */}
+                            <div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
+                                <div className="p-1 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 flex flex-col gap-1 shadow-2xl">
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTool('pen')}
+                                        className={`p-2.5 rounded-lg transition-all ${activeTool === 'pen' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
+                                        title="画笔"
+                                    >
+                                        <Edit2 size={18} />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTool('eraser')}
+                                        className={`p-2.5 rounded-lg transition-all ${activeTool === 'eraser' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
+                                        title="橡皮擦"
+                                    >
+                                        <Eraser size={18} />
+                                    </button>
+                                    <div className="h-[1px] bg-white/10 mx-2 my-0.5" />
+                                    <button
+                                        type="button"
+                                        onClick={() => padRef.current?.clear()}
+                                        className="p-2.5 rounded-lg text-white/40 hover:text-rose-400 hover:bg-rose-500/10 transition-all"
+                                        title="清空画布"
+                                    >
+                                        <Trash2 size={18} />
+                                    </button>
+                                </div>
+                            </div>
+
                             <SignatureCanvas
                                 ref={padRef}
-                                penColor="rgba(255,255,255,0.85)"
+                                penColor={activeTool === 'eraser' ? "#0f1115" : "rgba(255,255,255,0.85)"}
                                 canvasProps={{ className: 'w-full h-full border-none outline-none' }}
                                 backgroundColor="rgba(0,0,0,0)"
-                                minWidth={1.5}
-                                maxWidth={2.5}
+                                minWidth={activeTool === 'eraser' ? 20 : 1.5}
+                                maxWidth={activeTool === 'eraser' ? 30 : 2.5}
                             />
                             {/* Manual demo: show current step's formula on canvas */}
                             {isManualDemo && (() => {

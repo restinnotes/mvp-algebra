@@ -18,11 +18,8 @@ export default function Home() {
           
           <div className="text-center opacity-80">
             <h1 className="text-xl md:text-2xl font-bold mb-1 tracking-tight text-white/90">
-              认知外骨骼 试验场
+              AI 影子老师·同步练习
             </h1>
-            <p className="text-xs md:text-sm text-white/50">
-              代数综合：判别式与韦达定理的变形应用
-            </p>
           </div>
         </div>
 

@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+import { generateText } from '@/lib/gemini';
 
 export async function POST(req: NextRequest) {
     try {
@@ -24,12 +22,10 @@ export async function POST(req: NextRequest) {
         4. If it's an equation, solve it if possible, otherwise simplify it.
         `;
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-        const result = await model.generateContent(promptText);
-        const response = await result.response;
-        const text = response.text().trim().replace(/\$/g, '').replace(/```latex|```/g, '').trim();
+        const text = await generateText(promptText, "fast");
+        const cleaned = text.trim().replace(/\$/g, '').replace(/```latex|```/g, '').trim();
 
-        return NextResponse.json({ result: text });
+        return NextResponse.json({ result: cleaned });
 
     } catch (error: unknown) {
         console.error('Calculation API error:', error);

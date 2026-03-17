@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
+import { SchemaType } from "@google/generative-ai";
+import { generateFromImage } from '@/lib/gemini';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
-
-// Define the schema for the output to ensure Gemini returns exactly what we need
 const responseSchema = {
     description: "Scaffolding steps for a math problem",
+    // ... (rest of schema)
     type: SchemaType.OBJECT,
     properties: {
         problemStatement: {
@@ -39,50 +38,21 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image provided' }, { status: 400 });
         }
 
-        // Use Gemini 3.1 Pro for the strongest reasoning (Decomposition)
-        const model = genAI.getGenerativeModel({
-            model: "gemini-3.1-pro",
-            generationConfig: {
-                responseMimeType: "application/json",
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                responseSchema: responseSchema as any,
-            },
-        });
-
-        const base64Data = imageBase64.split(',')[1] || imageBase64;
-
         const prompt = `
-      You are a professional math tutor and expert in the Chinese middle school math curriculum.
-      Your task is to "Shadow Solve" the math problem in the provided image and decompose it into a "Dynamic Scaffolding" tasks for a student.
-      
-      RULES:
-      1. Correctness First: Solve the problem perfectly yourself before decomposing.
-      2. Scaffolding Pattern: Break the problem into 3-5 logical steps. Do not give the answer immediately.
-      3. Knowledge Mapping: Refer to the following Knowledge Points (KP) and tag each step with the most relevant one:
-         - kp_001: Discriminant Condition (Δ ≥ 0)
-         - kp_002: Vieta's Theorem (Sum and Product x1+x2=-b/a, x1x2=c/a)
-         - kp_003: Symmetric form transformation (Perfect square)
-         - kp_004: Fraction/Rational expression transformation (1/x1 + 1/x2)
-         - kp_005: Global root verification (Plugging back to discriminant)
-      4. LaTeX: Use standard LaTeX for expressions.
-      5. Expected Result: The 'expectedResult' should be a simplified string that the student is likely to write at the end of that step.
-      
-      Output the result in the specified JSON format.
-    `;
+          You are a professional math tutor and expert in the Chinese middle school math curriculum.
+          Your task is to "Shadow Solve" the math problem in the provided image and decompose it into a "Dynamic Scaffolding" tasks for a student.
+          
+          RULES:
+          1. Correctness First: Solve the problem perfectly yourself before decomposing.
+          2. Scaffolding Pattern: Break the problem into 3-5 logical steps. Do not give the answer immediately.
+          3. Knowledge Mapping: Refer to the following Knowledge Points (KP) and tag each step with the most relevant one...
+          4. LaTeX: Use standard LaTeX for expressions.
+          5. Expected Result: The 'expectedResult' should be a simplified string that the student is likely to write at the end of that step.
+          
+          Output the result in the specified JSON format.
+        `;
 
-        const result = await model.generateContent([
-            prompt,
-            {
-                inlineData: {
-                    data: base64Data,
-                    mimeType: "image/png"
-                }
-            }
-        ]);
-
-        const response = await result.response;
-        const jsonStr = response.text();
-        const data = JSON.parse(jsonStr);
+        const data = await generateFromImage(prompt, imageBase64, responseSchema as any);
 
         return NextResponse.json(data);
     } catch (error: unknown) {

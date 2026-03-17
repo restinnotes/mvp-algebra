@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+import { generateText } from '@/lib/gemini';
 
 export async function POST(req: NextRequest) {
         try {
@@ -36,10 +34,8 @@ export async function POST(req: NextRequest) {
         Output ONLY the markdown text.
         `;
 
-                const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-                const result = await model.generateContent(promptText);
-                const response = await result.response;
-                return NextResponse.json({ summary: response.text().trim() });
+                const summary = await generateText(promptText, "fast");
+                return NextResponse.json({ summary: summary.trim() });
 
         } catch (error: unknown) {
                 console.error('Review API error:', error);

@@ -11,7 +11,16 @@ if (!apiKey) {
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const MODELS = {
+  // 核心推理与算力角色
   reasoning: "gemini-3.1-flash-lite-preview",
+  
+  // 记忆与画像分析角色
+  persona: "gemini-3.1-flash-lite-preview",
+  
+  // OCR 与视觉理解角色
+  ocr: "gemini-3.1-flash-lite-preview",
+  
+  // 通用/快速响应角色
   fast: "gemini-3.1-flash-lite-preview",
 } as const;
 

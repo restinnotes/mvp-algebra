@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+import { SchemaType } from "@google/generative-ai";
+import { generateJSON } from '@/lib/gemini';
 
 const personaSchema = {
     type: SchemaType.OBJECT,
@@ -69,15 +68,6 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Invalid input format or content exceeded limits' }, { status: 400 });
         }
 
-        const model = genAI.getGenerativeModel({
-            model: "gemini-3.1-flash-lite-preview",
-            generationConfig: {
-                responseMimeType: "application/json",
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                responseSchema: personaSchema as any,
-            },
-        });
-
         const prompt = `
             You are an expert AI Education Psychologist evaluating a student's cognitive learning process.
             We strictly distinguish between "Hard Knowledge Points" (e.g., knowing the quadratic formula) and "Soft Cognitive Bugs" (e.g., skipping steps, symbol carelessness, lack of edge-case awareness).
@@ -93,9 +83,7 @@ export async function POST(req: NextRequest) {
             5. Return the updated full Persona JSON.
         `;
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const updatedPersona = JSON.parse(response.text());
+        const updatedPersona = await generateJSON(prompt, personaSchema as any, "persona");
 
         return NextResponse.json(updatedPersona);
     } catch (error: unknown) {

@@ -38,6 +38,27 @@ npm install && npm run dev
 
 ---
 
+## 🤖 模型配置与角色分化 (Model Configuration)
+
+本系统采用 **全链路统一模型管理**。所有核心任务（OCR、解题分解、画像总结）的模型选择已集中在 `src/lib/gemini.ts` 中，方便一键切换至国产模型或进行针对性调优。
+
+- **核心要求**：必须使用支持 **多模态 (Multimodal)** 的模型，以实现视觉 OCR 与影子解题。
+- **配置中心**: [src/lib/gemini.ts](file:///c:/Users/zuoyi/Desktop/交配/mvp-algebra-fixed/src/lib/gemini.ts)
+
+### 如何修改角色模型?
+修改 `MODELS` 常量中的对应角色即可：
+
+```typescript
+const MODELS = {
+  reasoning: "gemini-3.1-flash-lite-preview", // 影子解题、策略评估
+  persona: "gemini-3.1-flash-lite-preview",   // 长短期画像合并
+  ocr: "gemini-3.1-flash-lite-preview",       // 手写画布 OCR 与反馈
+  fast: "gemini-3.1-flash-lite-preview",      // 快速代数运算
+} as const;
+```
+
+---
+
 ## 📱 iPad 适配与 PWA 安装
 为了提供最佳的手写体验，本项目针对 iPad 进行了深度优化：
 - **沉浸式 PWA**：建议在 iPad Safari 中点击“分享” -> **“添加到主屏幕”**，以获得全屏 App 体验。

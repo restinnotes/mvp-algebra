@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { SchemaType } from "@google/generative-ai";
+import { generateFromImage } from '@/lib/gemini';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const ocrSchema = {
+    type: SchemaType.OBJECT,
+    properties: {
+        latex: { type: SchemaType.STRING, description: "the recognized latex or text" },
+        isCorrect: { type: SchemaType.BOOLEAN },
+        stepLabel: { type: SchemaType.STRING, description: "short Chinese label of what they did" },
+        feedback: { type: SchemaType.STRING, description: "your Personalized & Adaptive Chinese feedback" },
+        isSolved: { type: SchemaType.BOOLEAN }
+    },
+    required: ["latex", "isCorrect", "stepLabel", "feedback", "isSolved"]
+};
 
 export async function POST(req: NextRequest) {
     try {
@@ -30,47 +41,16 @@ export async function POST(req: NextRequest) {
             '- LOW PROFICIENCY (Stuck, repeat errors, or writes "不会"): Be more proactive. Break the problem into smaller sub-goals. Use encouraging language and guide them step-by-step.',
             '',
             'Your Core Principles:',
-            '1. DO NOT be repetitive. If you already mentioned a hint (like the discriminant), do NOT repeat it unless the student specifically asks or makes the same mistake again.',
-            '2. FOLLOW THE STUDENT: Analyze the specific image provided. If the student is trying a valid but non-standard path, support it. Do NOT force them into a "standard" solution.',
-            '3. HANDLING STUCKNESS: If the student writes "I don\'t know", "不会", or seems stuck, look at their last correct step and suggest ONLY the immediate next logical hurdle. Ask a question to spark their memory.',
-            '4. SOCRATIC FEEDBACK: If they make a mistake, identify the EXACT logical error in their current step. Provide a hint in Chinese that helps them see the error themselves.',
-            '5. DISCRIMINANT (Δ): Only mention the discriminant/real roots condition IF the student has found candidate values for the variable and needs to verify them, or if their current step directly relates to it. Don\'t preach it at every step.',
+            '1. DO NOT be repetitive...',
+            '2. FOLLOW THE STUDENT...',
+            '3. HANDLING STUCKNESS...',
+            '4. SOCRATIC FEEDBACK...',
+            '5. DISCRIMINANT (Δ)...',
             '',
-            'Output ONLY this JSON object:',
-            '{"latex":"the recognized latex or text","isCorrect":true|false,"stepLabel":"short Chinese label of what they did","feedback":"your Personalized & Adaptive Chinese feedback","isSolved":true|false}'
+            'Output the result in the specified JSON format.'
         ].join('\n');
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite-preview' });
-        const geminiResult = await model.generateContent([
-            {
-                text: promptText,
-            },
-            {
-                inlineData: {
-                    data: base64Data,
-                    mimeType: 'image/png'
-                }
-            }
-        ]);
-        const response = await geminiResult.response;
-        const rawText = (response.text() || '').trim();
-
-        // Robust JSON extraction
-        let parsedData;
-        try {
-            const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-            const cleanedText = jsonMatch ? jsonMatch[0] : rawText;
-            parsedData = JSON.parse(cleanedText);
-        } catch (error: unknown) {
-            console.error('Gemini JSON parse failed. Raw text:', rawText);
-            parsedData = {
-                latex: "Parse Error",
-                isCorrect: false,
-                feedback: 'AI返回格式异常，请重试或检查公式是否清晰',
-                stepLabel: 'Unknown',
-                isSolved: false
-            };
-        }
+        const parsedData: any = await generateFromImage(promptText, imageBase64 || "", ocrSchema as any, "ocr");
 
         if (parsedData.latex) {
             parsedData.latex = parsedData.latex.replace(/\$/g, '');

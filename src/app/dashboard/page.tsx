@@ -40,7 +40,7 @@ export default function DashboardPage() {
         if (confirm('确定要清空所有认知记忆并从头开始演示吗？')) {
             LTMMemory.clear();
             localStorage.setItem('demoScriptIndex', '0');
-            refreshData();
+            window.location.reload();
         }
     };
 
@@ -146,7 +146,7 @@ export default function DashboardPage() {
                 <header className="mb-12 flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/5 pb-6 gap-6">
                     <div>
                         <div className="flex items-center gap-3">
-                            <h1 className="text-3xl font-bold tracking-tight text-white/90">认知思维导图 (LTM)</h1>
+                            <h1 className="text-3xl font-bold tracking-tight text-white/90">AI 影子老师画像 (LTM)</h1>
                         </div>
                         <p className="text-white/40 mt-2 flex items-center gap-2">
                             <BrainCircuit size={16} /> 硬核技能树与认知缺陷画像的解耦展示
