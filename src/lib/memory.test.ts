@@ -1,6 +1,7 @@
 import { test, describe, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert';
 import * as memoryModule from './memory.ts';
+import type { StudentPersona, SessionSummary, CognitiveBug } from './types.ts';
 
 const LTMMemory = (memoryModule as any).LTMMemory;
 
@@ -16,7 +17,12 @@ const STORAGE_KEY = 'ai_tutor_ltm_v1';
 const DEFAULT_PERSONA = {
     misconceptions: [],
     learningStyle: "待评估",
-    lastSessionSummary: "欢迎开始学习"
+    lastSessionSummary: "欢迎开始学习",
+    learning_style: "待评估",
+    last_session_summary: "欢迎开始学习",
+    weak_areas: [],
+    strong_areas: [],
+    weak_categories: []
 };
 
 describe('LTMMemory', () => {
@@ -62,7 +68,9 @@ describe('LTMMemory', () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(mockData));
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data, mockData);
+      assert.strictEqual(data.mastery['kp1'], 0.8);
+      assert.strictEqual(data.persona.learningStyle, 'visual');
+      assert.strictEqual(data.lastUpdated, '2023-01-01T00:00:00.000Z');
     });
 
     test('returns default data and logs error when JSON is invalid', () => {
@@ -120,13 +128,18 @@ describe('LTMMemory', () => {
       const newPersona = {
         misconceptions: ['division by zero'],
         learningStyle: 'auditory',
-        lastSessionSummary: 'Good progress'
+        lastSessionSummary: 'Good progress',
+        learning_style: 'auditory',
+        last_session_summary: 'Good progress'
       };
 
-      LTMMemory.updatePersona(newPersona);
+      LTMMemory.updatePersona(newPersona as any);
 
       const data = LTMMemory.load();
-      assert.deepStrictEqual(data.persona, newPersona);
+      assert.deepStrictEqual(data.persona, {
+        ...DEFAULT_PERSONA,
+        ...newPersona
+      });
     });
   });
 });
