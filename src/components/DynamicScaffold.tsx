@@ -25,15 +25,82 @@ interface DemoStepData {
 interface LogEntry {
     time: string;
     type: 'info' | 'error' | 'api' | 'cheat';
-    message: string;
+    message?: string;
+    isCorrect?: boolean;
 }
+
+export const getDemoScript = (index: number) => {
+    const scripts = [
+        // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
+        {
+            problem: "2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD",
+            problemImage: <img src="/problems/pudong_q24.png" alt="2022浦东Q24配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
+            steps: [
+                { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
+                { id: 'p2', type: 'student' as const, contentType: 'text' as const, text: '先求直线与坐标轴交点B、C，代入抛物线求a,c，再配方求顶点D。', label: '解题思路', message: '思路非常清晰！第一步先锁定交点。', isCorrect: true },
+                { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,6)', label: '交点计算', message: '坐标算反了吧？再检查一下 y=-x+3 的截距。', isCorrect: false },
+                { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'B(6,0), C(0,3)', label: '交点计算', message: '正确！', isCorrect: true },
+                { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: '代入验证一下，a 的值似乎不对？', isCorrect: false },
+                { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: 'a=1/4, c=3', label: '求参', message: '好，抛物线解析式确定了。', isCorrect: true },
+            ],
+            kps: { 'ms_q24_001': 0.3, 'ms_q24_002': 0.4 },
+            review: "学生初始未能充分利用直线截距确定交点，直接代入顶点。后续计算a值出现错误。最终在指导下完成，需提升条件分析和计算准确性。"
+        },
+        // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
+        {
+            problem: "2022徐汇Q18: 风车型直角三角形，OB=3, AB=4，求 OE 的长",
+            problemImage: <img src="/problems/xuhui_q18.png" alt="2022徐汇Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
+            steps: [
+                { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
+                { id: 'x2', type: 'student' as const, contentType: 'text' as const, text: '以O为原点建立坐标系，确定A,B,C,D坐标，求出直线AD和OC解析式求交点E。', label: '解题思路', message: '非常棒的数形结合思想！', isCorrect: true },
+                { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(4,3)', label: '坐标确定', message: '注意 A 点在第三象限。', isCorrect: false },
+                { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
+                { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
+            ],
+            kps: { 'ms_q18_001': 0.2, 'ms_q18_002': 0.45 },
+            review: "学生初步能想到建系解决风车模型，但在象限坐标符号判定上出错。且缺乏代数方程组求解的严谨性，企图蒙答案。"
+        },
+        // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
+        {
+            problem: "2022虹口Q18: 圆O与两平行直线有三个公共点，求半径 r",
+            problemImage: <img src="/problems/hongkou_q18.png" alt="2022虹口Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
+            steps: [
+                { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },
+                { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：圆心在两直线之间或在同侧，根据切点数量确定r。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
+                { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个呢？', isCorrect: false },
+                { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
+            ],
+            kps: { 'ms_shared_001': 0.5, 'ms_q18_003': 0.4 },
+            review: "学生初次解答忽略了圆与两平行线位置关系的分类讨论。经提示后能迅速补全情况并得出所有正确答案，理解力强。"
+        }
+    ];
+    return scripts[index % scripts.length];
+};
 
 export default function DynamicScaffold() {
     const padRef = useRef<SignatureCanvas>(null);
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
-    const [problemText, setProblemText] = useState<string>("2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD");
+    const [demoScriptIndex, setDemoScriptIndex] = useState(0);
+
+    // Resume demoScriptIndex from localStorage
+    useEffect(() => {
+        const saved = localStorage.getItem('demoScriptIndex');
+        if (saved) {
+            setDemoScriptIndex(parseInt(saved, 10));
+        }
+    }, []);
+
+    const [problemText, setProblemText] = useState<string>("");
+    const [problemImage, setProblemImage] = useState<React.ReactNode | null>(null);
+
+    // Sync problem text when demoScriptIndex changes
+    useEffect(() => {
+        const scriptData = getDemoScript(demoScriptIndex);
+        setProblemText(scriptData.problem);
+        setProblemImage(scriptData.problemImage || null);
+    }, [demoScriptIndex]);
 
     // Strategy Phase States
     const [isStrategyApproved, setIsStrategyApproved] = useState(false);
@@ -54,11 +121,9 @@ export default function DynamicScaffold() {
     const [sessionId, setSessionId] = useState<string | null>(null);
     const [showPersonaModal, setShowPersonaModal] = useState(false);
 
-    // Initial LTM Load with fixed demo student
+    // Initial LTM Load
     useEffect(() => {
-        const DEMO_STUDENT_ID = 'demo_student';
-        LTMMemory.initializeWithStudentId(DEMO_STUDENT_ID);
-        const mem = LTMMemory.load(DEMO_STUDENT_ID);
+        const mem = LTMMemory.load('demo_student');
         setPersona(mem.persona);
     }, []);
 
@@ -295,51 +360,9 @@ export default function DynamicScaffold() {
     const [isManualDemo, setIsManualDemo] = useState(false);
     const [manualDemoStep, setManualDemoStep] = useState(0);
     const [demoSteps, setDemoSteps] = useState<DemoStepData[]>([]);
-    const [demoScriptIndex, setDemoScriptIndex] = useState(0);
     
-    const getDemoScript = (index: number) => {
-        const scripts = [
-            // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
-            {
-                problem: "2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD",
-                steps: [
-                    { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
-                    { id: 'p2', type: 'student' as const, contentType: 'text' as const, text: '先求直线与坐标轴交点B、C，代入抛物线求a,c，再配方求顶点D。', label: '解题思路', message: '思路非常清晰！第一步先锁定交点。', isCorrect: true },
-                    { id: 'p3', type: 'student' as const, contentType: 'math' as const, latex: 'B(3,0), C(0,6)', label: '交点计算', message: '坐标算反了吧？再检查一下 y=-x+3 的截距。', isCorrect: false },
-                    { id: 'p4', type: 'student' as const, contentType: 'math' as const, latex: 'B(6,0), C(0,3)', label: '交点计算', message: '正确！', isCorrect: true },
-                    { id: 'p5', type: 'student' as const, contentType: 'math' as const, latex: 'a=1, c=3', label: '求参', message: '代入验证一下，a 的值似乎不对？', isCorrect: false },
-                    { id: 'p6', type: 'student' as const, contentType: 'math' as const, latex: 'a=1/4, c=3', label: '求参', message: '好，抛物线解析式确定了。', isCorrect: true },
-                ],
-                kps: { 'ms_q24_001': 0.3, 'ms_q24_002': 0.4 },
-                review: "本次演示重点展示了在处理抛物线综合题时，由于忽略直线截距导致的初始偏差，以及在代入求参时的计算失误。系统成功拦截了计算错误并引导修正。"
-            },
-            // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
-            {
-                problem: "2022徐汇Q18: 风车型直角三角形，OB=3, AB=4，求 OE 的长",
-                steps: [
-                    { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
-                    { id: 'x2', type: 'student' as const, contentType: 'text' as const, text: '以O为原点建立坐标系，确定A,B,C,D坐标，求出直线AD和OC解析式求交点E。', label: '解题思路', message: '非常棒的数形结合思想！', isCorrect: true },
-                    { id: 'x3', type: 'student' as const, contentType: 'math' as const, latex: 'A(4,3)', label: '坐标确定', message: '注意 A 点在第三象限。', isCorrect: false },
-                    { id: 'x4', type: 'student' as const, contentType: 'math' as const, latex: 'A(-4,-3)', label: '坐标确定', message: '正确。', isCorrect: true },
-                    { id: 'x5', type: 'student' as const, contentType: 'math' as const, latex: 'OE=5', label: '最终结果', message: '这个结果太草率了，没有严谨的解析式计算过程。', isCorrect: false },
-                ],
-                kps: { 'ms_q18_001': 0.2, 'ms_q18_002': 0.45 },
-                review: "学生在处理风车模型时，坐标系象限判定出现典型错误（A点坐标正负号），且在关键计算步表现出跳步尝试，反映了坐标法应用不熟练。"
-            },
-            // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
-            {
-                problem: "2022虹口Q18: 圆O与两平行直线有三个公共点，求半径 r",
-                steps: [
-                    { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },
-                    { id: 'h2', type: 'student' as const, contentType: 'text' as const, text: '分情况讨论：圆心在两直线之间或在同侧，根据切点数量确定r。', label: '解题思路', message: '逻辑很严密。', isCorrect: true },
-                    { id: 'h3', type: 'student' as const, contentType: 'math' as const, latex: 'r=3', label: '半径计算', message: '这只是其中一个解，另一个呢？', isCorrect: false },
-                    { id: 'h4', type: 'student' as const, contentType: 'math' as const, latex: 'r=3 或 r=7', label: '完整求解', message: '恭喜！考虑全面。', isCorrect: true },
-                ],
-                kps: { 'ms_shared_001': 0.5, 'ms_q18_003': 0.4 },
-                review: "学生对分情况讨论的意识不足，初次尝试仅给出单一解。在系统提示位置关系后能快速反应，反映了知识储备尚可但解题习惯不严谨。"
-            }
-        ];
-        return scripts[index % scripts.length];
+    const getDemoScriptInner = (index: number) => {
+        return getDemoScript(index);
     };
 
     // 手动演示：点击识别画板时触发下一步
@@ -422,15 +445,19 @@ export default function DynamicScaffold() {
                 });
                 const updatedPersona: StudentPersona = {
                     misconceptions: [
-                        ...(script.review.includes('坐标') ? ['平面坐标系正负号混淆', '第三象限坐标判定'] : []),
-                        ...(script.review.includes('讨论') ? ['分情况讨论意识薄弱', '圆与直线的多解漏项'] : []),
-                        ...(script.review.includes('截距') ? ['直线方程项对应的几何意义模糊'] : [])
+                        ...(script.review.includes('坐标') ? ['象限坐标符号混淆', '缺乏代数严谨性'] : []),
+                        ...(script.review.includes('讨论') ? ['分类讨论意识不足', '思维缜密性欠缺'] : []),
+                        ...(script.review.includes('截距') ? ['条件分析不全面', '计算易出错'] : [])
                     ],
                     lastSessionSummary: script.review,
                     weak_areas: Object.keys(script.kps)
                 };
                 LTMMemory.updatePersona(updatedPersona);
-                setDemoScriptIndex(prev => prev + 1);
+                setDemoScriptIndex(prev => {
+                    const next = prev + 1;
+                    localStorage.setItem('demoScriptIndex', next.toString());
+                    return next;
+                });
                 addLog('info', `✨ 手动演示结束，长期记忆已同步。`);
             }, 1500);
         }
@@ -523,7 +550,11 @@ export default function DynamicScaffold() {
         };
         
         LTMMemory.updatePersona(updatedPersona);
-        setDemoScriptIndex(prev => prev + 1);
+        setDemoScriptIndex(prev => {
+            const next = prev + 1;
+            localStorage.setItem('demoScriptIndex', next.toString());
+            return next;
+        });
         setIsDemoRunning(false);
     };
 
@@ -846,7 +877,10 @@ export default function DynamicScaffold() {
                                 <p className="text-sm font-light">正在运用 Gemini 3.1 Pro 拆解题目逻辑...</p>
                             </div>
                         ) : (
-                            problemText
+                            <>
+                                <div>{problemText}</div>
+                                {problemImage}
+                            </>
                         )}
                     </div>
                 </div>
