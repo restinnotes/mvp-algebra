@@ -6,20 +6,7 @@ import SignatureCanvas from 'react-signature-canvas';
 import { Pen, RotateCcw, Check, BrainCircuit, Target, AlertTriangle, Bug, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, SkipForward, Mic, MicOff, MessageSquare, UserCircle, Play, Layers, Edit2, Eraser, Trash2 } from 'lucide-react';
 
 import { LTMMemory, StudentPersona } from '@/lib/memory';
-
-
-// Demo Steps Data - for PPT-style navigation
-interface DemoStepData {
-    id: string;
-    type: 'student' | 'ai';
-    contentType: 'math' | 'text';
-    latex?: string;
-    text?: string;
-    label?: string;
-    message?: string;
-    isCorrect?: boolean;
-    delay?: number;
-}
+import { DemoStepData, StepLog, CognitiveBug } from '@/lib/types';
 
 
 interface LogEntry {
@@ -148,16 +135,6 @@ export default function DynamicScaffold() {
     };
 
     // Dynamic Step Logs
-    interface StepLog {
-        id: string;
-        type: 'student' | 'ai';
-        contentType: 'math' | 'text';
-        latex?: string;
-        text?: string;
-        label?: string;
-        message?: string;
-        isCorrect?: boolean;
-    }
     const [stepLogs, setStepLogs] = useState<StepLog[]>([]);
 
     const clearPad = () => {
@@ -405,6 +382,17 @@ export default function DynamicScaffold() {
                     addLog('error', `❌ 步骤判定错误: ${step.message}`);
                 }
             }
+            if (!step.isCorrect) {
+                const script = getDemoScript(demoScriptIndex);
+                LTMMemory.addWrongProblem({
+                    problemTitle: script.problem,
+                    errorStepIndex: manualDemoStep,
+                    studentFlow: [...stepLogs, newStepLog],
+                    correctStrategy: script.steps.filter(s => s.isCorrect),
+                    kpIds: Object.keys(script.kps),
+                    isResolved: false
+                });
+            }
         };
 
         await processStep(currentStep);
@@ -518,7 +506,21 @@ export default function DynamicScaffold() {
                 isCorrect: step.isCorrect
             };
             
-            setStepLogs(prev => [...prev, logEntry]);
+            setStepLogs(prev => {
+                const updatedLogs = [...prev, logEntry];
+                if (!step.isCorrect) {
+                    LTMMemory.addWrongProblem({
+                        problemTitle: script.problem,
+                        errorStepIndex: i,
+                        studentFlow: updatedLogs,
+                        correctStrategy: script.steps.filter(s => s.isCorrect),
+                        kpIds: Object.keys(script.kps),
+                        isResolved: false
+                    });
+                }
+                return updatedLogs;
+            });
+
             if (!step.isCorrect) {
                 addLog('error', `❌ 错误: ${step.message}`);
                 await new Promise(r => setTimeout(r, 1500));
@@ -681,7 +683,7 @@ export default function DynamicScaffold() {
         }
     };
 
-    async function handleSessionEnd(finalHistory: StepLog[] = []) {
+    async function handleSessionEnd(_finalHistory: StepLog[] = []) {
         setIsSolved(true);
         addLog('info', '🏁 关卡挑战成功！正在生成学习画像总结和复盘...');
 
@@ -703,7 +705,7 @@ export default function DynamicScaffold() {
                 
                 const updatedPersona = {
                     ...persona,
-                    misconceptions: reviewData.review.cognitive_bugs_found.map((b: any) => `${b.bug_type}: ${b.description}`),
+                    misconceptions: (reviewData.review.cognitive_bugs_found as CognitiveBug[]).map(b => `${b.bug_type}: ${b.description}`),
                     lastSessionSummary: reviewData.review.overall_assessment
                 };
                 setPersona(updatedPersona);

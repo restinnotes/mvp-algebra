@@ -9,7 +9,19 @@ export interface StudentPersona {
     weak_categories?: string[];
 }
 
-import { CognitiveBug, SessionSummary } from './types';
+import { CognitiveBug, SessionSummary, StepLog, DemoStepData } from './types';
+
+export interface WrongProblem {
+    id: string;
+    problemTitle: string;
+    problemImage?: string;
+    errorStepIndex: number;
+    studentFlow: StepLog[];
+    correctStrategy: DemoStepData[];
+    kpIds: string[];
+    isResolved: boolean;
+    timestamp: string;
+}
 
 export interface MemoryData {
     student_id: string;
@@ -23,6 +35,7 @@ export interface MemoryData {
     persona: StudentPersona;
     cognitive_bugs: CognitiveBug[];
     session_history: SessionSummary[];
+    wrong_problems: WrongProblem[];
     lastUpdated: string;
     last_updated: string;
 }
@@ -106,6 +119,7 @@ export class LTMMemory {
                 persona: DEFAULT_PERSONA,
                 cognitive_bugs: [],
                 session_history: [],
+                wrong_problems: [],
                 lastUpdated: '',
                 last_updated: ''
             };
@@ -120,6 +134,7 @@ export class LTMMemory {
                 persona: DEFAULT_PERSONA,
                 cognitive_bugs: [],
                 session_history: [],
+                wrong_problems: [],
                 lastUpdated: new Date().toISOString(),
                 last_updated: new Date().toISOString()
             };
@@ -132,6 +147,7 @@ export class LTMMemory {
                 student_id: studentId || parsed.student_id || 'default',
                 cognitive_bugs: parsed.cognitive_bugs || [],
                 session_history: parsed.session_history || [],
+                wrong_problems: parsed.wrong_problems || [],
                 category_summary: parsed.category_summary || {},
                 last_updated: parsed.lastUpdated || new Date().toISOString()
             };
@@ -144,6 +160,7 @@ export class LTMMemory {
                 persona: DEFAULT_PERSONA,
                 cognitive_bugs: [],
                 session_history: [],
+                wrong_problems: [],
                 lastUpdated: new Date().toISOString(),
                 last_updated: new Date().toISOString()
             };
@@ -184,6 +201,7 @@ export class LTMMemory {
             persona: updatedPersona,
             cognitive_bugs: mergedBugs,
             session_history: mergedHistory,
+            wrong_problems: data.wrong_problems || current.wrong_problems || [],
             lastUpdated: new Date().toISOString()
         };
         
@@ -310,6 +328,35 @@ export class LTMMemory {
         }
         
         this.save({ cognitive_bugs: current.cognitive_bugs });
+    }
+
+    static addWrongProblem(problem: Omit<WrongProblem, 'id' | 'timestamp'>) {
+        const current = this.load();
+        
+        const newProblem: WrongProblem = {
+            ...problem,
+            id: Math.random().toString(36).substring(2, 9),
+            timestamp: new Date().toISOString()
+        };
+        
+        const updatedWrongProblems = [newProblem, ...current.wrong_problems].slice(0, 50);
+        this.save({ wrong_problems: updatedWrongProblems });
+    }
+
+    static resolveWrongProblem(problemId: string, masteryBoost: number = 0.5) {
+        const current = this.load();
+        const problemIndex = current.wrong_problems.findIndex(p => p.id === problemId);
+        
+        if (problemIndex !== -1 && !current.wrong_problems[problemIndex].isResolved) {
+            current.wrong_problems[problemIndex].isResolved = true;
+            this.save({ wrong_problems: current.wrong_problems });
+            
+            // Boost BKT mastery for associated KPs upon successful retry
+            const kpIds = current.wrong_problems[problemIndex].kpIds || [];
+            kpIds.forEach(kpId => {
+                this.updateMastery(kpId, masteryBoost);
+            });
+        }
     }
 
     static getCategorySummary() {

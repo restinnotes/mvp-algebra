@@ -210,3 +210,27 @@ export interface ReferenceAnswer {
     expectedAnswer: string;
   }[];
 }
+
+// UI Interaction Types
+export interface DemoStepData {
+    id: string;
+    type: 'student' | 'ai';
+    contentType: 'math' | 'text';
+    latex?: string;
+    text?: string;
+    label?: string;
+    message?: string;
+    isCorrect?: boolean;
+    delay?: number;
+}
+
+export interface StepLog {
+    id: string;
+    type: 'student' | 'ai';
+    contentType: 'math' | 'text';
+    latex?: string;
+    text?: string;
+    label?: string;
+    message?: string;
+    isCorrect?: boolean;
+}
