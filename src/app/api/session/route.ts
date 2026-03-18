@@ -5,6 +5,7 @@ import { LTMMemory } from '@/lib/memory';
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
+        console.log('[session API] request body:', JSON.stringify(body, null, 2));
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {

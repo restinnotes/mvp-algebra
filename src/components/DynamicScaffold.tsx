@@ -81,6 +81,17 @@ function DynamicScaffoldInner() {
     // Initial sync from problemParam
     useEffect(() => {
         if (problemParam) {
+            // Reset state for new problem
+            setSessionId(null);
+            sessionCreatingRef.current = null;
+            setStepLogs([]);
+            setIsSolved(false);
+            setIsStrategyApproved(false);
+            setStrategyTranscript('');
+            setStrategyFeedback(null);
+            setReviewSummary(null);
+            setLogs([]);
+            
             fetchQuestionInfo(problemParam);
         }
     }, [problemParam]);
@@ -98,6 +109,7 @@ function DynamicScaffoldInner() {
     const [isGeneratingReview, setIsGeneratingReview] = useState(false);
     const [recordingTarget, setRecordingTarget] = useState<'strategy' | 'calculation' | null>(null);
     const recognitionRef = useRef<{ stop: () => void } | null>(null);
+    const sessionCreatingRef = useRef<Promise<string | null> | null>(null);
 
     // LTM States
     const [persona, setPersona] = useState<StudentPersona | null>(null);
@@ -301,6 +313,10 @@ function DynamicScaffoldInner() {
             setIsStrategyApproved(false);
             setStrategyTranscript('');
             setStrategyFeedback(null);
+            setSessionId(null);
+            sessionCreatingRef.current = null;
+            setStepLogs([]);
+            setIsSolved(false);
         }
     };
 
@@ -412,40 +428,53 @@ function DynamicScaffoldInner() {
     };
 
     const startNewSession = async (problemTextInput: string) => {
-        try {
-            const res = await fetch('/api/session', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'start',
-                    studentId: 'default_student',
-                    problemText: problemTextInput
-                })
-            });
-            const data = await res.json();
-            if (!res.ok) {
-                addLog('error', `API错误: ${data.error || '未知错误'}`);
+        // Dedup session creation
+        if (sessionCreatingRef.current) return sessionCreatingRef.current;
+
+        sessionCreatingRef.current = (async () => {
+            try {
+                const res = await fetch('/api/session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'start',
+                        studentId: 'default_student',
+                        problemText: problemTextInput
+                    })
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    addLog('error', `API错误: ${data.error || '未知错误'}`);
+                    return null;
+                }
+                setSessionId(data.sessionId);
+                addLog('info', `✅ 会话已创建: ${data.sessionId}`);
+                return data.sessionId as string;
+            } catch (err: unknown) {
+                addLog('error', `创建会话失败: ${err instanceof Error ? err.message : String(err)}`);
                 return null;
+            } finally {
+                sessionCreatingRef.current = null;
             }
-            setSessionId(data.sessionId);
-            addLog('info', `✅ 会话已创建: ${data.sessionId}`);
-            return data.sessionId;
-        } catch (err: unknown) {
-            addLog('error', `创建会话失败: ${err instanceof Error ? err.message : String(err)}`);
-            return null;
-        }
+        })();
+
+        return sessionCreatingRef.current;
     };
 
     const submitStrategy = async (overrideText?: string) => {
         const textToSubmit = overrideText || strategyTranscript;
         if (!textToSubmit) return;
-        
-        if (!sessionId) {
-            const newSessionId = await startNewSession(problemText);
-            if (!newSessionId) return;
-        }
-        
+
         setIsEvaluatingStrategy(true);
+
+        let currentSessionId = sessionId;
+        if (!currentSessionId) {
+            currentSessionId = await startNewSession(problemText);
+            if (!currentSessionId) {
+                setIsEvaluatingStrategy(false);
+                return;
+            }
+        }
 
         try {
             const res = await fetch('/api/session', {
@@ -453,7 +482,7 @@ function DynamicScaffoldInner() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     action: 'strategy',
-                    sessionId: sessionId,
+                    sessionId: currentSessionId,
                     strategy: textToSubmit
                 })
             });
@@ -464,7 +493,6 @@ function DynamicScaffoldInner() {
                 return;
             }
             const evaluation = data.evaluation;
-            
             setStrategyFeedback({
                 isCorrect: evaluation.isOnTrack,
                 feedback: evaluation.feedback
@@ -540,9 +568,10 @@ function DynamicScaffoldInner() {
         addLog('info', `手动输入: "${value}"`);
         setIsProcessingOcr(true);
 
-        if (!sessionId) {
-            const newSessionId = await startNewSession(problemText);
-            if (!newSessionId) {
+        let currentSessionId = sessionId;
+        if (!currentSessionId) {
+            currentSessionId = await startNewSession(problemText);
+            if (!currentSessionId) {
                 setIsProcessingOcr(false);
                 return;
             }
@@ -554,7 +583,7 @@ function DynamicScaffoldInner() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     action: 'step',
-                    sessionId: sessionId,
+                    sessionId: currentSessionId,
                     answer: value.trim()
                 })
             });
