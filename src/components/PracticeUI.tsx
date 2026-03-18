@@ -92,7 +92,22 @@ export default function PracticeUI() {
         setStudentData(data);
         fetchKPs();
         fetchFilterOptions();
-        fetchQuestionsWithFilter('all', 'all', [], 1);
+
+        // Handle URL Params for navigation from Dashboard
+        const params = new URLSearchParams(window.location.search);
+        const kpParam = params.get('kp');
+        const searchParam = params.get('search');
+        
+        let initialKPs: string[] = [];
+        if (kpParam) {
+            initialKPs = [kpParam];
+            setSelectedKPs(initialKPs);
+        }
+        if (searchParam) {
+            setSearchQuery(searchParam);
+        }
+
+        fetchQuestionsWithFilter('all', 'all', initialKPs, 1);
     }, []);
 
     const fetchKPs = async () => {

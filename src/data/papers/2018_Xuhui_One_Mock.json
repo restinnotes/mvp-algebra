@@ -1,0 +1,354 @@
+[
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q1",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [],
+    "content": "已知$\\frac{x}{y}=\\frac{3}{4}$，那么下列等式中，不成立的是（　　）\nA. $\\frac{x}{x+y}=\\frac{3}{7}$\nB. $\\frac{x-y}{y}=\\frac{1}{4}$\nC. $\\frac{x+3}{y+4}=\\frac{3}{4}$\nD. $4x=3y$",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q1"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q2",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [],
+    "content": "在比例尺是1：40000的地图上，若某条道路长约为5cm，则它的实际长度约为（　　）\nA. 0.2km\nB. 2km\nC. 20km\nD. 200km",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q2"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [],
+    "content": "在$\\triangle ABC$中，点D、E分别在边AB、AC上，如果AD=1，BD=3，那么由下列条件能够判断DE$\\parallel$BC的是（　　）\nA. $\\frac{DE}{BC}=\\frac{1}{3}$\nB. $\\frac{DE}{BC}=\\frac{1}{4}$\nC. $\\frac{AE}{AC}=\\frac{1}{3}$\nD. $\\frac{AE}{AC}=\\frac{1}{4}$",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q3"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q4",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [],
+    "content": "在Rt$\\triangle ABC$中，$\\angle C=90^\\circ$，a、b、c分别是$\\angle A$、$\\angle B$、$\\angle C$的对边，下列等式中，正确的是（　　）\nA. $\\sin A=\\frac{b}{c}$\nB. $\\cos B=\\frac{c}{a}$\nC. $\\tan A=\\frac{a}{b}$\nD. $\\cot B=\\frac{b}{a}$",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q4"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q5",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [],
+    "content": "下列关于向量的说法中，不正确的是（　　）\nA. $3(\\vec{a}-\\vec{b})=3\\vec{a}-3\\vec{b}$\nB. 若$|\\vec{a}|=3|\\vec{b}|$，则$\\vec{a}=3\\vec{b}$或$\\vec{a}=-3\\vec{b}$\nC. $3|\\vec{a}|=|3\\vec{a}|$\nD. $m(n\\vec{a})=(mn)\\vec{a}$",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q5"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q6",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [],
+    "content": "对于抛物线$y=-(x+2)^2+3$，下列结论中正确结论的个数为（　　）\n①抛物线的开口向下； ②对称轴是直线x=-2； ③图象不经过第一象限； ④当x>2时，y随x的增大而减小．\nA. 4\nB. 3\nC. 2\nD. 1",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q6"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q7",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [],
+    "content": "如果线段b是线段a、c的比例中项，且a=2，c=8，则b=_____．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q7"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q8",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [],
+    "content": "计算：$3(2\\vec{a}-4\\vec{b})-5(\\vec{a}-\\vec{b})=$_____．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q8"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q9",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [],
+    "content": "若点P是线段AB的黄金分割点，AB=10cm，则较长线段AP的长是_____cm．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q9"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q10",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在梯形ABCD中，AD$\\parallel$BC，E、F分别为AB、DC上的点，若CF=4，且EF$\\parallel$AD，AE：BE=2：3，则CD的长等于_____．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q10.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q10"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q11",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在梯形ABCD中，AD$\\parallel$BC，AD=2，BC=6，若$\\triangle AOB$的面积等于6，则$\\triangle AOD$的面积等于_____．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q11.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q11"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q12",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在平行四边形ABCD中，对角线AC和BD相交于点O，若$\\vec{AB}=\\vec{a}$，$\\vec{BC}=\\vec{b}$，则$\\vec{OD}$用$\\vec{a}$、$\\vec{b}$可表示为_____．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q12.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q12"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q13",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [],
+    "content": "已知抛物线C的顶点坐标为(1，3)，如果平移后能与抛物线$y=\\frac{1}{2}x^2+2x+3$重合，那么抛物线C的表达式是_____．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q13"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q14",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [],
+    "content": "$\\sin 60^\\circ \\cdot \\tan 45^\\circ - \\cos 60^\\circ \\cdot \\cot 30^\\circ =$_____．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q14"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q15",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [],
+    "content": "如果抛物线$y=ax^2-2ax+c$与x轴的一个交点为(5，0)，那么与x轴的另一个交点的坐标是_____．",
+    "images": [],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q15"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q16",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在$\\triangle ABC$中，AB=AC，BE、AD分别是边AC、BC上的高，CD=2，AC=6，那么CE=_____．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q16.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q16"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q17",
+    "difficulty": 0.55,
+    "tags": [],
+    "kps": [],
+    "content": "如图，是将一正方体货物沿坡面AB装进汽车货厢的平面示意图，已知长方体货厢的高度BC为2.6米，斜坡AB的坡比为1：2.4，现把图中的货物继续向前平移，当货物顶点D与C重合时，仍可把货物放平装进货厢，则货物的高度BD不能超过_____米．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q17.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q17"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q18",
+    "difficulty": 0.75,
+    "tags": [],
+    "kps": [],
+    "content": "在$\\triangle ABC$中，$\\angle C=90^\\circ$，AC=3，BC=4（如图），将$\\triangle ACB$绕点A顺时针方向旋转得$\\triangle ADE$（点C、B的对应点分别为D、E），点D恰好落在直线BE上和直线AC交于点F，则线段AF的长为_____．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q18.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q18"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在$\\triangle ABC$中，$\\angle ACD=\\angle B$，AD=4，DB=5．\n（1）求AC的长；\n（2）若设$\\vec{CA}=\\vec{a}$，$\\vec{CB}=\\vec{b}$，试用$\\vec{a}$、$\\vec{b}$的线性组合表示向量$\\vec{CD}$．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q19.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q19"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q20",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [],
+    "content": "已知一个二次函数的图象经过A(0，-6)、B(4,-6)、C(6,0)三点．\n（1）求这个二次函数的解析式；\n（2）分别联结AC、BC，求$\\tan \\angle ACB$．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q20.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q20"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q21",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [],
+    "content": "如图所示，巨型广告牌AB背后有一看台CD，台阶每层高0.3米，且AC=17米，现有一只小狗睡在台阶的FG这，层上晒太阳，设太阳光线与水平地面的夹角为$\\alpha$，当$\\alpha=60^\\circ$时，测得广告牌AB在地面上的影长AE=10米，过了一会，当$\\alpha=45^\\circ$，问小狗在FG这层是否还能晒到太阳？请说明理由（$\\sqrt{3}$取1.73）．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q21.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q21"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q22",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在$\\triangle ABC$中，AB=AC，BC=12，$\\sin C=\\frac{4}{5}$，点G是$\\triangle ABC$的重心，线段BG的延长线交AC于点D，求$\\angle CBD$的余弦值．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q22.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q22"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q23",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [],
+    "content": "如图在$\\triangle ABC$中，AB=AC，点D、E、F分别在边BC、AB、AC上，且$\\angle ADE=\\angle B$，$\\angle ADF=\\angle C$，线段EF交线段AD于点G．\n（1）求证：AE=AF；\n（2）若$\\frac{DF}{DE}=\\frac{CF}{AE}$，求证：四边形EBDF是平行四边形．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q23.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q23"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q24",
+    "difficulty": 0.85,
+    "tags": [],
+    "kps": [],
+    "content": "如图，在平面直角坐标系xOy中，直线$y=kx$（$k\\neq 0$）沿着y轴向上平移3个单位长度后，与x轴交于点B(3，0)，与y轴交于点C，抛物线$y=x^2+bx+c$过点B、C且与x轴的另一个交点为A．\n（1）求直线BC及该抛物线的表达式；\n（2）设该抛物线的顶点为D，求$\\triangle DBC$的面积；\n（3）如果点F在y轴上，且$\\angle CDF=45^\\circ$，求点F的坐标．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q24.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q24"
+  },
+  {
+    "paper": "2018_Xuhui_One_Mock",
+    "question": "Q25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [],
+    "content": "已知，在梯形ABCD中，AD$\\parallel$BC，$\\angle A=90^\\circ$，AD=2，AB=4，BC=5，在射线BC任取一点M，联结DM，作$\\angle MDN=\\angle BDC$，$\\angle MDN$的另一边DN交直线BC于点N（点N在点M的左侧）．\n（1）当BM的长为10时，求证：BD$\\perp$DM；\n（2）如图（1），当点N在线段BC上时，设BN=x，BM=y，求y关于x的函数关系式，并写出它的定义域；\n（3）如果$\\triangle DMN$是等腰三角形，求BN的长．",
+    "images": [
+      "/problems/2018_Xuhui_One_Mock/Q25_1.png",
+      "/problems/2018_Xuhui_One_Mock/Q25_2.png"
+    ],
+    "year": "2018",
+    "exam_type": "一模",
+    "district": "徐汇",
+    "question_type": "Q25"
+  }
+]
