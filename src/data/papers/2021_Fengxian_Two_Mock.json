@@ -1,0 +1,530 @@
+[
+  {
+    "id": "2021_Fengxian_Two_Mock_Q01",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "1",
+    "content": "计算 $3a \\cdot 2a$ 的结果是 ( )\nA. $6a$\nB. $6a^2$\nC. $5a$\nD. $5a^2$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "单项式乘法"
+    ],
+    "kps": [
+      "alg_monomial_mul"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q02",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "2",
+    "content": "在下列各试中, 二次根式 $\\sqrt{a}+\\sqrt{b}$ 的有理化因式是 ( )\nA. $\\sqrt{a}+\\sqrt{b}$\nB. $\\sqrt{a}-\\sqrt{b}$\nC. $\\sqrt{a+b}$\nD. $\\sqrt{a-b}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次根式",
+      "有理化"
+    ],
+    "kps": [
+      "alg_radical_rationalize"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q03",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "3",
+    "content": "某校对进校学生进行体温检测, 在某一时段测得 6 名学生的体温分别为 $36.8^\\circ C, 36.9^\\circ C, 36.5^\\circ C, 36.6^\\circ C, 36.9^\\circ C, 36.5^\\circ C$, 那么这 6 名学生体温的平均数与中位数分别是 ( )\nA. $36.7^\\circ C, 36.7^\\circ C$\nB. $36.6^\\circ C, 36.8^\\circ C$\nC. $36.8^\\circ C, 36.7^\\circ C$\nD. $36.7^\\circ C, 36.8^\\circ C$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "平均数",
+      "中位数"
+    ],
+    "kps": [
+      "stat_mean",
+      "stat_median"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q04",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "4",
+    "content": "下列函数中, $y$ 随 $x$ 的增大而减小的是 ( )\nA. $y=2x$\nB. $y=\\frac{2}{x}$\nC. $y=-2x$\nD. $y=-\\frac{2}{x}$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "正比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q05",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "5",
+    "content": "如图, 在梯形 $ABCD$ 中, $AB // DC$, 对角线 $AC, BD$ 交于点 $O$, 下列条件中, 不一定能判断梯形 $ABCD$ 是等腰梯形的是 ( )\nA. $AD=BC$\nB. $\\angle ABC = \\angle BAD$\nC. $AB=2DC$\nD. $\\angle OAB = \\angle OBA$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "等腰梯形",
+      "判定"
+    ],
+    "kps": [
+      "geo_quad_judge"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q5_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q06",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "6",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle C=90^\\circ, BC=18, AC=24$, 点 $O$ 在边 $AB$ 上, 且 $BO=2OA$. 以点 $O$ 为圆心, $r$ 为半径作圆, 如果 $\\odot O$ 与 $Rt\\triangle ABC$ 的边有 3 个公共点, 那么下列各值中, 半径 $r$ 不可以取的是 ( )\nA. 6\nB. 10\nC. 15\nD. 16",
+    "difficulty": 0.4,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "直线与圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q6_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q07",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "7",
+    "content": "9 的平方根是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "平方根"
+    ],
+    "kps": [
+      "alg_square_root"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q08",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "8",
+    "content": "函数 $y = \\frac{x}{x-1}$ 的定义域是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "定义域"
+    ],
+    "kps": [
+      "alg_func_domain"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q09",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "9",
+    "content": "如果抛物线 $y = ax^2+bx+c$ 在对称轴左侧呈上升趋势, 那么 $a$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_axis",
+      "alg_func_quadratic_vertex"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q10",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "10",
+    "content": "如果一元二次方程 $x^2 - px + 3 = 0$ 有两个相等实数根, 那么 $p$ 的值是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q11",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "11",
+    "content": "将 $\\pi, \\frac{2}{3}, \\sqrt{2}, 0, -1$ 这 5 个数分别写在 5 张相同卡片上, 字面朝下随意放在桌上, 任取一张, 取到无理数的概率为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "无理数"
+    ],
+    "kps": [
+      "prob_basic",
+      "alg_irrational_num"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q12",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "12",
+    "content": "某小区一天收集各类垃圾共 2.4 吨, 绘制成各类垃圾收集量的扇形图, 其中湿垃圾在扇形图中对应的圆心角为 $135^\\circ$, 那么该小区这一天湿垃圾共收集了 __________ 吨.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "扇形图"
+    ],
+    "kps": [
+      "stat_pie_chart"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q13",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "13",
+    "content": "某品牌汽车公司大力推进技术革新, 新款汽车油耗从每百公里 8 升下降到每百公里 6.8 升, 那么该汽车油耗的下降率为 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "百分数",
+      "增长率"
+    ],
+    "kps": [
+      "alg_pct_growth"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q14",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "14",
+    "content": "如图, $\\triangle ABC$ 中, 点 $D$ 在 $BC$ 上, 且 $CD=2BD$. 设 $\\vec{AB}=\\vec{a}, \\vec{AC}=\\vec{b}$, 那么 $\\vec{AD}=$ __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "分点"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q14_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q15",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "15",
+    "content": "已知传送带和水平面所成斜坡的坡度 $i=1:\\sqrt{3}$, 如果物体在传送带上经过的路程是 30 米, 那么该物体上升的高度是 __________ 米 (结果保留根号).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "坡度",
+      "解直角三角形"
+    ],
+    "kps": [
+      "geo_slope",
+      "geo_trig_ratio_app"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q16",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "16",
+    "content": "如图, $\\odot O$ 的半径为 6, 如果弦 $AB$ 是 $\\odot O$ 内接正方形的一边, 弦 $AC$ 是 $\\odot O$ 内接正十二边形的一边, 那么弦 $BC$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "正多边形"
+    ],
+    "kps": [
+      "geo_circle_regular_poly"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q16_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q17",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "17",
+    "content": "我们把反比例函数图象上到原点距离相等的点叫做反比例函数图象上的等距点. 如果第一象限内点 $A(2, 4)$ 与点 $B$ 是某反比例函数图象上的等距点, 那么点 $A, B$ 之间的距离是 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "新定义",
+      "距离公式"
+    ],
+    "kps": [
+      "alg_func_inverse",
+      "alg_func_inverse_image",
+      "alg_distance_formula"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q18",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "18",
+    "content": "如图, 在 $\\triangle ABC$ 中, $AD$ 是 $BC$ 边上的中线, $\\angle ADC=60^\\circ, BC=3AD$. 将 $\\triangle ABD$ 沿直线 $AD$ 翻折, 点 $B$ 落在平面上的 $B'$ 处, 联结 $AB'$ 交 $BC$ 于点 $E$, 那么 $\\frac{CE}{BE}$ 的值为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "三角形中线",
+      "比例"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_tri_median"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q18_0_fix.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q19",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{4x}{x^2-2x-3} - \\frac{x}{x-3} + \\frac{2x}{x+1}$, 其中 $x=\\sqrt{3}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "分式化简"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q20",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} \\frac{1}{2}x-3 < 2x \\\\ \\frac{2x-1}{3} \\leq \\frac{x+1}{2} \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q20_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q21",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "21",
+    "content": "如图, 已知, 在 $Rt\\triangle ABC$ 中, $\\angle C=90^\\circ, AB=4, BC=2$, 点 $D$ 是 $AC$ 的中点, 联结 $BD$ 并延长至点 $E$, 使 $\\angle E = \\angle BAC$.\n(1) 求 $\\sin \\angle ABE$ 的值;\n(2) 求点 $E$ 到直线 $BC$ 的距离.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q22",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "22",
+    "content": "为了预防“诺如病毒”, 某校对专用教室采取“药熏”消毒. 从开始消毒到结束, 室内含药量 $y$ (毫克/立方米) 与时间 $x$ (分) 这两个变量之间的关系如图中折线 $OA-AB$ 所示.\n(1) 求 20 分钟至 60 分钟时间段之间 含药量 $y$ 与时间 $x$ 的函数解析式 (不要求写定义域);\n(2) 开始消毒后, 消毒人员在某一时刻对该专用教室的含药量进行第一次检测, 时隔半小时进行了第二次跟踪检测, 发现室内含药量比第一次检测时的含药量下降了 2 毫克/立方米, 求第一次检测时的含药量.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "分段函数",
+      "应用题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q22_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q23",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "23",
+    "content": "如图, 已知, 在平行四边形 $ABCD$ 中, $E$ 为射线 $CB$ 上一点, 联结 $DE$ 交对角线 $AC$ 于点 $F, \\angle ADE = \\angle BAC$.\n(1) 求证: $CF \\cdot CA = CB \\cdot CE$;\n(2) 如果 $AC=DE$, 求证: 四边形 $ABCD$ 是菱形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "平行四边形",
+      "菱形判定"
+    ],
+    "kps": [
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property",
+      "geo_quad_judge"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q24",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "24",
+    "content": "如图, 在平面直角坐标系 $xOy$ 中, 已知 $B(0, 2), C(1, -\\frac{3}{2})$, 点 $A$ 在 $x$ 轴正半轴上, 且 $OA=2OB$, 抛物线 $y = ax^2 + bx \\ (a \\neq 0)$ 经过点 $A, C$.\n(1) 求这条抛物线的表达式;\n(2) 将抛物线先向右平移 $m$ 个单位, 再向上平移 1 个单位, 此点 $C$ 恰好落在直线 $AB$ 上的点 $C'$ 处, 求 $m$ 的值;\n(3) 设点 $B$ 关于原抛物线对称轴 对称点为 $B'$, 联结 $AC$, 如果点 $F$ 在直线 $AB'$ 上, $\\angle ACF = \\angle BAO$, 求点 $F$ 的坐标.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q24_0.png"
+    ]
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q25",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知扇形 $AOB$ 的半径 $OA=4, \\angle AOB=90^\\circ$, 点 $C, D$ 分别在半径 $OA, OB$ 上 (点 $C$ 不与点 $A$ 重合), 联结 $CD$. 点 $P$ 是弧 $AB$ 上一点, $PC=PD$.\n(1) 当 $\\cot \\angle ODC = \\frac{3}{4}$, 以 $CD$ 为半径的圆 $D$ 与圆 $O$ 相切时, 求 $CD$ 的长;\n(2) 当点 $D$ 与点 $B$ 重合, 点 $P$ 为弧 $AB$ 的中点时, 求 $\\angle OCD$ 的度数;\n(3) 如果 $OC=2$, 且四边形 $ODPC$ 是梯形, 求 $\\frac{S_{\\triangle PCD}}{S_{\\triangle OCD}}$ 的值.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "扇形",
+      "圆相切",
+      "梯形"
+    ],
+    "kps": [
+      "geo_sector",
+      "geo_circle_pos",
+      "geo_circle_tangent",
+      "geo_trapezoid"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q25_0.png",
+      "/problems/2021_Fengxian_Two_Mock/q25_1.png",
+      "/problems/2021_Fengxian_Two_Mock/q25_2.png"
+    ]
+  }
+]

@@ -1,0 +1,541 @@
+[
+  {
+    "id": "2021_Jingan_Two_Mock_Q01",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "1",
+    "content": "下列计算正确的是 ( )\nA. $1^{-1}=-1$\nB. $1^0=0$\nC. $(-1)^{-1}=1$\nD. $(-1)^0=1$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "实数运算",
+      "负指数",
+      "零指数"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q02",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "2",
+    "content": "如果关于 $x$ 的方程 $x^2-6x+m=0$ 有实数根, 那么 $m$ 的取值范围是 ( )\nA. $m>9$\nB. $m \\geq 9$\nC. $m \\leq 9$\nD. $m<9$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q03",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "3",
+    "content": "一次函数 $y=3x-2$ 的图像不经过的象限是 ( )\nA. 第一象限\nB. 第二象限\nC. 第三象限\nD. 第四象限",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "象限"
+    ],
+    "kps": [
+      "alg_linear_func_quadrant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q04",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "4",
+    "content": "对于等边三角形, 下列说法正确的为 ( )\nA. 既是中心对称图形, 又是轴对称图形\nB. 是轴对称图形, 但不是中心对称图形\nC. 是中心对称图形, 但不是轴对称图形\nD. 既不是中心对称图形, 又不是轴对称图形",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等边三角形",
+      "对称性"
+    ],
+    "kps": [
+      "geo_symmetry"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q05",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "5",
+    "content": "某厂对一个班组生产的零件进行调查, 该组在 8 天中每天所出的次品数如下 (单位: 个) : 3, 3, 0, 2, 2, 3, 0, 3, 那么该班组在 8 天中出的次品数的中位数与方差分别是 ( )\nA. 2.5与1.5\nB. 2与1.5\nC. 2.5与$\\frac{\\sqrt{6}}{2}$\nD. 2与$\\frac{\\sqrt{6}}{2}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "方差"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_variance"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q06",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "6",
+    "content": "对于命题: ①如果一个圆上所有的点都在另一个圆的内部, 那么这个圆内含; ②如果一个圆上所有的点都在另一个圆的外部, 那么这个圆外离. 下列判断正确的是 ( )\nA. ①是真命题, ②是假命题\nB. ①是假命题, ②是真命题\nC. ①、②都是真命题\nD. ①、②都是假命题",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "真假命题",
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_circle_pos",
+      "geo_circle_tangent"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q07",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "7",
+    "content": "化简: $|\\sqrt{3}-2| =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "实数"
+    ],
+    "kps": [
+      "alg_abs_value_calc"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q08",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "8",
+    "content": "计算: $x \\div (x^2-x) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q09",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "9",
+    "content": "函数 $f(x) = \\frac{x-1}{3-2x}$ 定义域为 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "定义域"
+    ],
+    "kps": [
+      "alg_func_domain"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q10",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "10",
+    "content": "如果正比例函数的图像经过第二、四象限, 那么函数值 $y$ 随 $x$ 的增大而 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "正比例函数",
+      "增减性"
+    ],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q11",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "11",
+    "content": "方程组 $\\begin{cases} x^2-y^2=3 \\\\ x-y=1 \\end{cases}$ 的解为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q12",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "12",
+    "content": "从 1, 2, 3 这三个数中任选两个组成两位数, 在组成的所有数中任意抽取一个数, 这个数恰好能被 3 整除的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "整除"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q13",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "13",
+    "content": "为了了解学生用于阅读课外书籍 时间的情况, 某校在 300 名九年级学生中随机对 40 名学生每周阅读课外书籍所用的时间进行统计. 根据调查结果画出频率分布直方图, 如图所示 (每个小组可包括最小值, 不包括最大值), 由此可以估计该校九年级学生阅读课外书籍的时间在 6 小时及以上的人数约为 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "频率分布直方图",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_freq_histogram",
+      "stat_sample_estimate"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q13_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q14",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "14",
+    "content": "如图, 在 $\\triangle ABC$ 中, 点 $D$ 在边 $AB$ 上, $\\angle ACD = \\angle B$, $AD=2, AC=\\sqrt{6}$, 设 $\\vec{BA}=\\vec{a}, \\vec{BC}=\\vec{b}$, 那么 $\\vec{CD} =$ __________. (用向量 $\\vec{a}, \\vec{b}$ 的式子表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q14_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q15",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "15",
+    "content": "如果 $\\odot O_1$ 与 $\\odot O_2$ 相交, $\\odot O_1$ 的半径是 5, $O_1O_2=3$, 那么 $\\odot O_2$ 的半径 $r$ 的取值范围是 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_pos",
+      "geo_circle_tangent"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q16",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "16",
+    "content": "如图, 已知在梯形 $ABCD$ 中, $AD // BC, AB=CD$, 矩形 $DEFG$ 的顶点 $E、F、G$ 分别在边 $AB、BC、CD$ 上, 如果 $DE=5$, $\\tan C = \\frac{5}{2}$, 那么 $AE$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等腰梯形",
+      "矩形",
+      "相似三角形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_quad_property",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q16_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q17",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "17",
+    "content": "已知矩形纸片 $ABCD$ 的边 $AB=10, BC=12$ (如图), 将它折叠后, 点 $D$ 落在边 $AB$ 的中点处, 那么折痕的长为 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "矩形",
+      "勾股定理"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q17_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q18",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "18",
+    "content": "在一个三角形中, 如果一个内角是另一内角的 $n$ 倍 ($n$ 为整数), 那么我们称这个三角形为 $n$ 倍三角形. 如果一个三角形既是 2 倍三角形, 又是 3 倍三角形, 那么这个三角形最小的内角度数为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "新定义",
+      "三角形内角和",
+      "分类讨论"
+    ],
+    "kps": [
+      "geo_tri_angles"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q19",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{x+2}{x^2-x} - \\frac{x-1}{x^2+x} - \\frac{4}{x^2-1}$. 其中 $x=\\sqrt{2}+1$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q20",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "20",
+    "content": "已知点 $A(2, m+3)$ 在双曲线 $y = \\frac{m}{x}$ 上.\n(1) 求此双曲线表达式与点 $A$ 的坐标;\n(2) 如果点 $B(a, 5-a)$ 在此双曲线上, 图像经过点 $A、B$ 的一次函数的函数值 $y$ 随 $x$ 的增大而增大, 求此一次函数的解析式.",
+    "difficulty": 0.4,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "一次函数",
+      "待定系数法"
+    ],
+    "kps": [
+      "alg_func_inverse",
+      "alg_func_inverse_image",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q21",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "21",
+    "content": "已知: 如图, 在 $\\triangle ABC$ 中, $AB=AC, AE \\perp BC$, 垂足为 $E$. $DC \\perp BC, DC=BC=2, \\angle ADB=90^\\circ, BD$ 与 $AE、AC$ 分别相交于点 $F、G$.\n求: (1) $AF$ 长;\n(2) $AG$ 的长.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等腰三角形",
+      "直角三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_isosceles_tri",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q22",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "22",
+    "content": "小丽的叔叔先用 900 元从甲批发部购进一种商品, 后发现同样的商品乙批发部比甲批发部每件便宜 3 元, 又用 1200 元钱从乙批发部购进了同样的商品, 且比从甲批发部购进数量多了 40 件. 问: 乙批发部的这种商品每件几元?",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式方程应用题",
+      "行程/工程问题"
+    ],
+    "kps": [
+      "alg_rational_eq_app"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q23",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "23",
+    "content": "已知: 如图, 在梯形 $ABCD$ 中, $AD // BC, \\angle B=90^\\circ, E$ 是 $AC$ 的中点, $DE$ 的延长线交边 $BC$ 于点 $F$.\n(1) 求证: 四边形 $AFCD$ 是平行四边形;\n(2) 如果 $2AE^2 = AD \\cdot BC$, 求证四边形 $AFCD$ 是菱形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "梯形",
+      "平行四边形判定",
+      "菱形判定",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_quad_judge",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q24",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中, 点 $A$ 的坐标为 $(5, 0)$ (如图), 经过点 $A$ 的抛物线 $y=x^2+bx+5$ 与 $y$ 轴相交于点 $B$, 顶点为点 $C$.\n(1) 求此抛物线表达式与顶点 $C$ 的坐标;\n(2) 求 $\\angle ABC$ 的正弦值;\n(3) 将此抛物线向上平移, 所得新抛物线的顶点为 $D$, 且 $\\triangle DCA$ 与 $\\triangle ABC$ 相似, 求平移后的新抛物线的表达式.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q24_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q25",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知半圆 $O$ 的直径 $AB=4$, 点 $P$ 在线段 $OA$ 上, 半圆 $P$ 与半圆 $O$ 相切于点 $A$, 点 $C$ 在半圆 $P$ 上, $CO \\perp AB$, $AC$ 的延长线与半圆 $O$ 相交于点 $D$, $OD$ 与 $BC$ 相交于点 $E$.\n(1) 求证: $AD \\cdot AP = OD \\cdot AC$;\n(2) 设半圆 $P$ 的半径为 $x$, 线段 $CD$ 的长为 $y$, 求 $y$ 与 $x$ 之间的函数解析式, 并写出定义域;\n(3) 当点 $E$ 在半圆 $P$ 上时, 求半圆 $P$ 的半径.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "相切",
+      "相似三角形",
+      "函数解析式"
+    ],
+    "kps": [
+      "geo_circle_pos",
+      "geo_circle_tangent",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q25_0.png"
+    ]
+  }
+]

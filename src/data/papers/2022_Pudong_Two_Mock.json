@@ -1,0 +1,386 @@
+[
+  {
+    "id": "q1",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 1,
+    "text": "下列二次根式中，$\\sqrt{2}$ 的同类二次根式是（ ）",
+    "options": [
+      "(A) $\\sqrt{4}$",
+      "(B) $\\sqrt{2x}$",
+      "(C) $\\sqrt{\\frac{2}{9}}$",
+      "(D) $\\sqrt{12}$"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "同类二次根式"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q2",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 2,
+    "text": "如果关于 $x$ 的一元二次方程 $x^2-2x+k=0$ 有两个不相等的实数根，那么 $k$ 的取值范围是（ ）",
+    "options": [
+      "(A) $k < 1$",
+      "(B) $k < 1$ 且 $k \\neq 0$",
+      "(C) $k > 1$",
+      "(D) $k > 1$ 且 $k \\neq 0$"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "一元二次方程根的判别式"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q3",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 3,
+    "text": "如果将抛物线向右平移 2 个单位后得到 $y=x^2$，那么原抛物线的表达式是（ ）",
+    "options": [
+      "(A) $y=x^2+2$",
+      "(B) $y=x^2-2$",
+      "(C) $y=(x+2)^2$",
+      "(D) $y=(x-2)^2$"
+    ],
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "二次函数的平移"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q4",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 4,
+    "text": "如图，是某中学九 (3) 班学生外出方式 (乘车、步行、骑车) 的不完整频数 (人数) 分布直方图. 如果乘车的频率是 0.4，那么步行的频率为（ ）",
+    "options": [
+      "(A) 0.4",
+      "(B) 0.36",
+      "(C) 0.3",
+      "(D) 0.24"
+    ],
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q4.png"
+    ],
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "频数分布直方图",
+      "频率"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q5",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 5,
+    "text": "下列命题中，真命题的个数有（ ）\n① 长度相等的两条弧是等弧;\n② 不共线的三点确定一个圆;\n③ 相等的圆心角所对的弧相等;\n④ 平分弦的直径必垂直于这条弦.",
+    "options": [
+      "(A) 1 个",
+      "(B) 2 个",
+      "(C) 3 个",
+      "(D) 4 个"
+    ],
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "真命题与假命题",
+      "圆的基本性质"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q6",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 6,
+    "text": "如图，在矩形 $ABCD$ 中，点 $E$ 是 $CD$ 中点，联结 $BE$, 如果 $AB=6, BC=4$, 那么分别以 $AD、BE$ 为直径的 $\\odot M$ 与 $\\odot N$ 的位置关系是（ ）",
+    "options": [
+      "(A) 外离",
+      "(B) 外切",
+      "(C) 相交",
+      "(D) 内切"
+    ],
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q6.png"
+    ],
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "圆与圆的位置关系",
+      "矩形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q7",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 7,
+    "text": "计算: $(-a^6) \\div (-a)^2 =$ ______.",
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "幂的运算"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q8",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 8,
+    "text": "在北京冬奥会 火炬传递活动中，火炬传递的总里程大约为 137000 公里，用科学记数法可表示为 ______ 公里.",
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "科学记数法"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q9",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 9,
+    "text": "不等式组 $\\begin{cases} -x > 1 \\\\ 2x \\le 4 \\end{cases}$ 的解集是 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "一元一次不等式组的解法"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q10",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 10,
+    "text": "方程 $\\sqrt{-x+2}=x$ 的解为 ______.",
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "无理方程"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q11",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 11,
+    "text": "已知反比例函数 $y=\\frac{3-a}{x}$，如果在每个象限内，$y$ 随自变量 $x$ 增大而增大，那么 $a$ 的取值范围是 ______.",
+    "difficulty": 0.3,
+    "knowledgePoints": [
+      "反比例函数的性质"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q12",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 12,
+    "text": "请写出一个图像的对称轴为 $y$ 轴，开口向下，且经过点 $(1, -2)$ 的二次函数解析式，这个二次函数的解析式可以是 ______.",
+    "difficulty": 0.3,
+    "knowledgePoints": [
+      "待定系数法求二次函数解析式"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q13",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 13,
+    "text": "在形状为等腰三角形、圆、矩形、菱形、直角梯形的 5 张纸片中随机抽取一张，抽到中心对称图形的概率是 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "中心对称图形",
+      "概率公式"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q14",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 14,
+    "text": "在植树节当天，某校一个班的学生分成 10 个小组参加植树造林活动，如果 10 个小组植树的株数情况见下表：\n\n| 植树株数 | 5 | 6 | 7 |\n| :--- | :--- | :--- | :--- |\n| 小组个数 | 3 | 4 | 3 |\n\n那么这 10 个小组植树株数的平均数是 ______ 株.",
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "加权平均数"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q15",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 15,
+    "text": "如图，一个高 $BE$ 为 $\\sqrt{3}$ 米的长方体木箱沿坡比为 $1:\\sqrt{3}$ 的斜面下滑，当木箱滑至如图位置时，$AB=3$ 米，则木箱端点 $E$ 距地面 $AC$ 的高度 $EF$ 为 ______ 米.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q15.png"
+    ],
+    "difficulty": 0.45,
+    "knowledgePoints": [
+      "坡度坡角问题",
+      "相似三角形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q16",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 16,
+    "text": "如图，在 $\\square ABCD$ 中，对角线 $AC$ 与 $BD$ 相交于点 $O$，如果 $\\vec{AC}=\\vec{a}, \\vec{AB}=\\vec{b}$，那么用 $\\vec{a}, \\vec{b}$ 表示 $\\vec{BD}$ 是 ______.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q16.png"
+    ],
+    "difficulty": 0.4,
+    "knowledgePoints": [
+      "向量的线性运算",
+      "平行四边形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q17",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 17,
+    "text": "一个正 $n$ 边形的一个内角等于它的中心角的 2 倍，则 $n=$ ______.",
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "正多边形的内角与中心角"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q18",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 18,
+    "text": "如图，在 $Rt\\triangle ABC$ 中，$\\angle ACB=90^\\circ, \\cos A = \\frac{4}{5}, CD$ 为 $AB$ 边上的中线，$CD=5$，以点 $B$ 为圆心，$r$ 为半径作 $\\odot B$. 如果 $\\odot B$ 与中线 $CD$ 有且只有一个公共点，那么 $\\odot B$ 的半径 $r$ 的取值范围为 ______.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q18.png"
+    ],
+    "difficulty": 0.75,
+    "knowledgePoints": [
+      "直线与圆的位置关系",
+      "解直角三角形",
+      "直角三角形斜边上的中线"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q19",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 19,
+    "text": "先化简，再求值: $(a-1-\\frac{3}{a+1}) \\div \\frac{a^2-4a+4}{a+1}$，其中 $a=\\sqrt{3}$.",
+    "difficulty": 0.4,
+    "knowledgePoints": [
+      "分式的化简求值"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q20",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 20,
+    "text": "解方程组: $\\begin{cases} x^2-4xy+4y^2=4 \\\\ x+2y=6 \\end{cases}$",
+    "difficulty": 0.5,
+    "knowledgePoints": [
+      "二元二次方程组"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q21",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 21,
+    "text": "如图，在 $\\triangle ABC$ 中, $\\sin B=\\frac{4}{5}$, 点 $F$ 在 $BC$ 上, $AB=AF=5$, 过点 $F$ 作 $EF \\perp CB$ 交 $AC$ 于点 $E$, 且 $AE:EC=3:5$, 求 $BF$ 的长与 $\\cot C$ 的值.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q21.png"
+    ],
+    "difficulty": 0.65,
+    "knowledgePoints": [
+      "相似三角形的判定与性质",
+      "解直角三角形"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q22",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 22,
+    "text": "甲、乙两车需运输一批货物到 600 公里外 某地，原计划甲车的速度比乙车每小时多 10 千米，这样甲车将比乙车早到 2 小时. 实际甲车以原计划的速度行驶了 4 小时后，以较低速度继续行驶，结果甲、乙两车同时到达.\n(1) 求甲车原计划的速度;\n(2) 如图是甲车行驶的路程 $y$ (千米) 与时间 $x$ (小时) 的不完整函数图像，那么点 $A$ 的坐标为 ______, 点 $B$ 的坐标为 ______, 4 小时后的 $y$ 与 $x$ 的函数关系式为 ______.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q22.png"
+    ],
+    "difficulty": 0.65,
+    "knowledgePoints": [
+      "分式方程的应用",
+      "一次函数的应用"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q23",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 23,
+    "text": "如图，在四边形 $ABCD$ 中, $AD // BC$, $E$ 在 $BC$ 的延长线上, 联结 $AE$ 分别交 $BD, CD$ 于点 $G, F$, 且 $\\frac{AD}{BE} = \\frac{GF}{AG}$.\n(1) 求证: $AB // CD$;\n(2) 若 $BC^2 = GD \\cdot BD, BG=GE$, 求证: 四边形 $ABCD$ 是菱形.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q23.png"
+    ],
+    "difficulty": 0.8,
+    "knowledgePoints": [
+      "相似三角形的判定与性质",
+      "平行四边形的判定",
+      "菱形的判定"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q24",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 24,
+    "text": "如图，在平面直角坐标系 $xOy$ 中, 抛物线 $y=ax^2-2x+c$ 与直线 $y=-\\frac{1}{2}x+3$ 分别交于 $x$ 轴、 $y$ 轴上的 $B, C$ 两点，抛物线的顶点为点 $D$，联结 $CD$ 交 $x$ 轴于点 $E$.\n(1) 求抛物线的解析式以及点 $D$ 的坐标;\n(2) 求 $\\tan \\angle BCD$;\n(3) 点 $P$ 在直线 $BC$ 上，若 $\\angle PEB = \\angle BCD$, 求点 $P$ 的坐标.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q24.png"
+    ],
+    "difficulty": 0.9,
+    "knowledgePoints": [
+      "二次函数的综合应用",
+      "待定系数法",
+      "相似三角形的应用"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "q25",
+    "paper": "2022_Pudong_Two_Mock",
+    "qIndex": 25,
+    "text": "如图，已知 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, BC=2, AC=3$, 以点 $C$ 为圆心、 $CB$ 为半径的圆交 $AB$ 于点 $D$, 过点 $A$ 作 $AE // CD$, 交 $BC$ 延长线于点 $E$.\n(1) 求 $CE$ 的长;\n(2) $P$ 是 $CE$ 延长线上一点, 直线 $AP, CD$ 交于点 $Q$.\n① 如果 $\\triangle ACQ \\sim \\triangle CPQ$, 求 $CP$ 的长;\n② 如果以点 $A$ 为圆心, $AQ$ 为半径的圆与 $\\odot C$ 相切, 求 $CP$ 的长.",
+    "images": [
+      "/problems/2022_Pudong_Two_Mock/fig_q25_1.png",
+      "/problems/2022_Pudong_Two_Mock/fig_q25_2.png"
+    ],
+    "difficulty": 0.95,
+    "knowledgePoints": [
+      "圆的性质",
+      "相似三角形的判定与性质",
+      "圆与圆的位置关系",
+      "几何动点问题"
+    ],
+    "exam_type": "一模",
+    "district": "浦东"
+  }
+]

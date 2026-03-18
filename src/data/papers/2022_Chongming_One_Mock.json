@@ -1,0 +1,454 @@
+[
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "图像平移"
+    ],
+    "kps": [],
+    "content": "将抛物线  = 2x^2$ 向上平移 $ 个单位后所得抛物线的表达式是 ( )",
+    "options": [
+      " = 2x^2 + 3$",
+      " = 2(x+3)^2$",
+      " = 2(x-3)^2$",
+      " = 2x^2 - 3$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "相似三角形",
+      "周长比与中线比"
+    ],
+    "kps": [],
+    "content": "如果两个相似三角形的周长比为  : 4$，那么这两个三角形的对应中线的比为 ( )",
+    "options": [
+      " : 2$",
+      " : 4$",
+      " : 8$",
+      " : 16$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "3",
+    "difficulty": 0.15,
+    "tags": [
+      "平面向量",
+      "共线向量"
+    ],
+    "kps": [],
+    "content": "如果向量 $\\\\vec{a}$ 与向量 $\\\\vec{b}$ 方向相反，且 $|\\\\vec{a}| = \\\\frac{1}{3}|\\\\vec{b}|$，那么向量 $\\\\vec{a}$ 用向量 $\\\\vec{b}$ 表示为 ( )",
+    "options": [
+      "$\\\\vec{a} = 3\\\\vec{b}$",
+      "$\\\\vec{a} = -3\\\\vec{b}$",
+      "$\\\\vec{a} = \\\\frac{1}{3}\\\\vec{b}$",
+      "$\\\\vec{a} = -\\\\frac{1}{3}\\\\vec{b}$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "4",
+    "difficulty": 0.15,
+    "tags": [
+      "锐角三角比",
+      "余弦"
+    ],
+    "kps": [],
+    "content": "在 \\\\triangle ABC$ 中，$\\\\angle C = 90^\\\\circ$， = 2$， = 1$，那么 $\\\\cos B$ 的值是 ( )",
+    "options": [
+      "$\\\\frac{\\\\sqrt{2}}{2}$",
+      "$\\\\frac{\\\\sqrt{3}}{2}$",
+      "$\\\\frac{1}{2}$",
+      "$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "相似三角形",
+      "判定定理"
+    ],
+    "kps": [],
+    "content": "下列各组条件中，一定能推得 $\\\\triangle ABC$ 与 $\\\\triangle DEF$ 相似的是 ( )",
+    "options": [
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\angle D = \\\\angle F$",
+      "$\\\\angle A = \\\\angle B$ 且 $\\\\angle D = \\\\angle F$",
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\frac{AB}{AC} = \\\\frac{EF}{ED}$",
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\frac{AB}{BC} = \\\\frac{FD}{DE}$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "6",
+    "difficulty": 0.25,
+    "tags": [
+      "二次函数",
+      "图像与系数的关系"
+    ],
+    "kps": [],
+    "content": "已知二次函数  = ax^2 + bx + c$ ( \\\\ne 0$) 的图像如图所示，那么下列结论中正确的是 ( )",
+    "options": [
+      " > 0$",
+      "当  > -1$ 时， > 0$",
+      " = 2a$",
+      " + 3b + c = 0$"
+    ],
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q6.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "7",
+    "difficulty": 0.15,
+    "tags": [
+      "比例式"
+    ],
+    "kps": [],
+    "content": "如果 $\\\\frac{x-y}{y} = \\\\frac{2}{3}$，那么 $\\\\frac{x}{y} =$ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "8",
+    "difficulty": 0.15,
+    "tags": [
+      "平面向量",
+      "线性运算"
+    ],
+    "kps": [],
+    "content": "计算：(3\\\\vec{a} + 2\\\\vec{b}) - 5\\\\vec{a} =$ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "黄金分割"
+    ],
+    "kps": [],
+    "content": "已知线段  = 8cm$，点 $ 是 $ 的黄金分割点，且  > BC$，那么线段 $ 的长为 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "开口方向"
+    ],
+    "kps": [],
+    "content": "如果抛物线 $y = (k-2)x^2$ 的开口向上，那么 $k$ 的取值范围是 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "11",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "过原点"
+    ],
+    "kps": [],
+    "content": "如果抛物线 $y = -x^2 + 3x - 1 + m$ 经过原点，那么 $m = $ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "12",
+    "difficulty": 0.3,
+    "tags": [
+      "二次函数",
+      "对称性"
+    ],
+    "kps": [],
+    "content": "已知二次函数 $y = ax^2 + bx + c$ ($a \\ne 0$) 自变量 $x$ 的值和它对应的函数值 $y$ 如下表所示：\n| $x$ | $\\cdots$ | $-1$ | $0$ | $1$ | $2$ | $3$ | $\\cdots$ |\n| $y$ | $\\cdots$ | $0$ | $3$ | $4$ | $3$ | $m$ | $\\cdots$ |\n那么上表中 $m$ 的值为 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": [
+      "解直角三角形",
+      "坡比"
+    ],
+    "kps": [],
+    "content": "某滑雪运动员沿着坡比为 $1 : \\sqrt{3}$ 的斜坡向下滑行了 $100$ 米，那么运动员下降的垂直高度为 _______ 米.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "14",
+    "difficulty": 0.4,
+    "tags": [
+      "平行线分线段成比例"
+    ],
+    "kps": [],
+    "content": "如图，直线 $AD \\parallel BE \\parallel CF$，如果 $\\frac{AB}{BC} = \\frac{1}{3}$，$AD = 2$，$CF = 6$，那么线段 $BE$ 的长是 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q14.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "15",
+    "difficulty": 0.45,
+    "tags": [
+      "平面向量",
+      "几何应用"
+    ],
+    "kps": [],
+    "content": "如图，在平行四边形 $ABCD$ 中，点 $M$ 是边 $CD$ 中点，点 $N$ 是边 $BC$ 的中点，设 $\\vec{AB} = \\vec{a}$，$\\vec{BC} = \\vec{b}$，那么 $\\vec{MN}$ 可用 $\\vec{a} , \\vec{b}$ 表示为 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q15.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "16",
+    "difficulty": 0.5,
+    "tags": [
+      "相似三角形",
+      "矩形内接"
+    ],
+    "kps": [],
+    "content": "如图，已知正方形 $DEFG$ 的顶点 $D$、$E$ 在 $\\triangle ABC$ 的边 $BC$ 上，顶点 $G$、$F$ 分别在边 $AB$、$AC$ 上，如果 $BC = 4$，$\\triangle ABC$ 的面积为 $6$，那么这个正方形的边长是 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q16.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [
+      "解直角三角形",
+      "新定义几何"
+    ],
+    "kps": [],
+    "content": "定义：有一组对边相等而另一组对边不相等的凸四边形叫做“对等四边形”，如图，在 $Rt\\triangle PBC$ 中，$\\angle PCB = 90^\\circ$，点 $A$ 在边 $BP$ 上，点 $D$ 在边 $CP$ 上，如果 $BC = 11$，$\\tan \\angle PBC = \\frac{12}{5}$，$AB = 13$，四边形 $ABCD$ 为“对等四边形”，那么 $CD$ 的长为 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q17.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q17"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [
+      "几何变换",
+      "折叠问题",
+      "解直角三角形"
+    ],
+    "kps": [],
+    "content": "如图所示，在三角形纸片 $\\triangle ABC$ 中，$AB=9$，$BC=6$，$\\angle ACB=2\\angle A$，如果将 $\\triangle ABC$ 沿过点 $C$ 的直线折叠，使点 $B$ 落在边 $AC$ 上的点 $D$ 处，折痕为 $CM$，那么 $\\cos \\angle DMA =$ _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q18.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q18"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "锐角三角比",
+      "特殊角的三角比"
+    ],
+    "kps": [],
+    "content": "计算：$3\\tan 30^\\circ + 2\\cos 45^\\circ - 2\\sin 60^\\circ \\times \\cot 45^\\circ$",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "20",
+    "difficulty": 0.45,
+    "tags": [
+      "相似三角形",
+      "重心",
+      "平面向量"
+    ],
+    "kps": [],
+    "content": "如图，在 $\\triangle ABC$ 中，点 $F$ 为 $\\triangle ABC$ 的重心，联结 $AF$ 并延长交 $BC$ 于点 $D$，联结 $BF$ 并延长交 $AC$ 于点 $E$.\n(1) 求 $\\frac{S_{\\triangle DEF}}{S_{\\triangle ABF}}$ 的值；\n(2) 如果 $\\vec{AB} = \\vec{a}$，$\\vec{AC} = \\vec{b}$，用 $\\vec{a}$，$\\vec{b}$ 表示 $\\vec{BE}$ 和 $\\vec{AF}$.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q20.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "21",
+    "difficulty": 0.5,
+    "tags": [
+      "解直角三角形",
+      "等腰三角形"
+    ],
+    "kps": [],
+    "content": "如图，在 $\\triangle ABC$ 中，$AB = AC = \\sqrt{5}$，$\\sin B = \\frac{2\\sqrt{5}}{5}$.\n(1) 求边 $BC$ 的长度；\n(2) 求 $\\cos A$ 的值.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q21.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "22",
+    "difficulty": 0.55,
+    "tags": [
+      "解直角三角形",
+      "仰角俯角问题"
+    ],
+    "kps": [],
+    "content": "如图，小明同学在学习了解直角三角形及其应用的知识后，尝试利用无人机测量他所住小区的楼房 $BC$ 的高度，当无人机在地面 $A$ 点处时，测得小区楼房 $BC$ 顶端点 $C$ 处的仰角为 $30^\\circ$，当无人机垂直向上飞行到距地面 $60$ 米的 $D$ 点处时，测得小区楼房 $BC$ 顶端点 $C$ 处的俯角为 $45^\\circ$.\n(1) 求小区楼房 $BC$ 的高度；\n(2) 若无人机保持现有高度沿平行于 $AB$ 的方向，并以 $5$ 米/秒的速度继续向前匀速飞行，问：经过多少秒后，无人机无法观察到地面上点 $A$ 的位置（计算结果保留根号）",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q22.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "23",
+    "difficulty": 0.65,
+    "tags": [
+      "相似三角形",
+      "几何证明"
+    ],
+    "kps": [],
+    "content": "已知：如图，在 $Rt\\triangle ABC$ 中，$\\angle ACB = 90^\\circ$，$CD \\perp AB$，垂足为点 $D$，$E$ 为边 $AC$ 上一点，联结 $BE$ 交 $CD$ 于点 $F$，并满足 $BC^2 = CD \\cdot BE$.\n求证：(1) $\\triangle BCE \\sim \\triangle CDB$；\n(2) 过点 $C$ 作 $CM \\perp BE$，交 $BE$ 于点 $G$，交 $AB$ 于点 $M$，求证：$BE \\cdot CM = AB \\cdot CF$.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q23.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "24",
+    "difficulty": 0.85,
+    "tags": [
+      "二次函数与几何综合",
+      "相似三角形",
+      "动点问题"
+    ],
+    "kps": [],
+    "content": "如图，抛物线 $y = -\\frac{3}{4}x^2 + bx + c$ 与 $x$ 轴交于点 $A(4, 0)$，与 $y$ 轴交于点 $B(0, 3)$，点 $M(m, 0)$ 为线段 $OA$ 上一动点，过点 $M$ 且垂直于 $x$ 轴的直线与直线 $AB$ 及抛物线分别交于点 $P$、$N$.\n(1) 求抛物线的解析式，并写出此抛物线的对称轴和顶点坐标；\n(2) 如果以点 $P$、$N$、$B$、$O$ 为顶点的四边形为平行四边形，求 $m$ 的值；\n(3) 如果以 $B$、$P$、$N$ 为顶点的三角形与 $\\triangle AOB$ 相似，求点 $M$ 的坐标.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q24.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q24"
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "几何综合",
+      "旋转性质",
+      "动点与函数"
+    ],
+    "kps": [],
+    "content": "已知：如图，正方形的边长为 $1$，在射线 $AB$ 上取一点 $E$，联结 $DE$，将 $\\triangle ADE$ 绕点 $D$ 逆时针旋转 $90^\\circ$，$E$ 点落在点 $F$ 处，联结 $EF$，与对角线 $BD$ 所在的直线交于点 $M$，与射线 $DC$ 交于点 $N$.\n(1) 当 $AE = \\frac{1}{3}$ 时，求 $\\tan \\angle EDB$ 的值；\n(2) 当点 $E$ 在线段 $AB$ 上，如果 $AE = x$，$FM = y$，求 $y$ 关于 $x$ 的函数解析式，并写出定义域；\n(3) 联结 $AM$，直线 $AM$ 与直线 $BC$ 交于点 $G$，当 $BG = \\frac{1}{3}$ 时，求 $AE$ 的值.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q25.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q25"
+  }
+]

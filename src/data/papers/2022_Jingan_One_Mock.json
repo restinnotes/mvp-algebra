@@ -1,0 +1,272 @@
+[
+  {
+    "id": "2022_Jingan_One_Mock_Q01",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 1,
+    "content": "$\\frac{2}{3}$ 的相反数是 (A) $-\\frac{2}{3}$; (B) $\\frac{2}{3}$; (C) $-\\frac{3}{2}$; (D) $\\frac{3}{2}$.",
+    "difficulty": 0.1,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q02",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 2,
+    "content": "下列单项式中, 与 $a^2b$ 是同类项的是 (A) $ab^2$; (B) $2a^2b$; (C) $a^2c$; (D) $3ab$.",
+    "difficulty": 0.1,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q03",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 3,
+    "content": "如果将抛物线 $y = x^2$ 向下平移 2 个单位, 那么平移后所得新抛物线的表达式是 (A) $y = x^2+2$; (B) $y = x^2-2$; (C) $y = (x+2)^2$; (D) $y = (x-2)^2$.",
+    "difficulty": 0.15,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q04",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 4,
+    "content": "已知在 Rt$\\triangle ABC$ 中, $\\angle C = 90^{\\circ}$, $AB = c$, $BC = a$, 那么 $\\cos A$ 等于 (A) $\\frac{a}{c}$; (B) $\\frac{c}{a}$; (C) $\\frac{\\sqrt{c^2-a^2}}{c}$; (D) $\\frac{\\sqrt{c^2-a^2}}{a}$.",
+    "difficulty": 0.15,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q05",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 5,
+    "content": "已知 $\\vec{a}$、$\\vec{b}$ 是两个单位向量, 下列结论中正确的是 (A) $\\vec{a} = \\vec{b}$; (B) $\\vec{a} \\cdot \\vec{b} = 1$; (C) $|\\vec{a}| = |\\vec{b}|$; (D) $\\vec{a} // \\vec{b}$.",
+    "difficulty": 0.2,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q06",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 6,
+    "content": "如图1, 在梯形 $ABCD$ 中, $AD // BC$, 对角线 $AC$ 与 $BD$ 相交于点 $O$, 如果 $S_{\\triangle AOD} : S_{\\triangle BOC} = 1 : 4$, 那么 $S_{\\triangle AOD} : S_{\\triangle ABD}$ 等于 (A) $1:2$; (B) $1:3$; (C) $1:4$; (D) $1:5$.",
+    "difficulty": 0.3,
+    "images": [
+      "2022_Jingan_One_Mock_Fig1.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q07",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 7,
+    "content": "如果 $\\frac{x}{y} = \\frac{3}{4}$, 那么 $\\frac{x+y}{y} = $ ____.",
+    "difficulty": 0.1,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q08",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 8,
+    "content": "计算: $(a^2)^3 \\div a^4 = $ ____.",
+    "difficulty": 0.1,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q09",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 9,
+    "content": "方程 $\\sqrt{x+1} = 2$ 的解是 ____.",
+    "difficulty": 0.15,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q10",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 10,
+    "content": "已知 $f(x) = \\frac{2}{x-1}$, 那么 $f(3) = $ ____.",
+    "difficulty": 0.15,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q11",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 11,
+    "content": "如果关于 $x$ 的方程 $x^2 - 2x + k = 0$ 有两个相等的实数根, 那么 $k = $ ____.",
+    "difficulty": 0.2,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q12",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 12,
+    "content": "如图2, 已知在 $\\triangle ABC$ 中, 点 $D$、$E$ 分别在边 $AB$、$AC$ 上, $DE // BC$, $AD = 4$, $DB = 2$, 那么 $S_{\\triangle ADE} : S_{\\triangle ABC} = $ ____.",
+    "difficulty": 0.4,
+    "images": [
+      "2022_Jingan_One_Mock_Fig2.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q13",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 13,
+    "content": "在一个不透明的布袋中装有 2 个白球和 3 个黄球, 它们除颜色外完全相同. 如果从布袋中任意摸出一个球, 那么摸出的球是白球的概率是 ____.",
+    "difficulty": 0.2,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q14",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 14,
+    "content": "某校为了了解九年级学生每周课外阅读的时间, 随机调查了 40 名学生, 得到他们在某一周内课外阅读时间的数据, 并绘制成如图3所示的频数分布直方图. 根据图中提供的信息, 课外阅读时间在 $6 \\sim 8$ 小时范围内的学生有 ____ 人.",
+    "difficulty": 0.4,
+    "images": [
+      "2022_Jingan_One_Mock_Fig3.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q15",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 15,
+    "content": "如果正多边形的中心角等于 $36^{\\circ}$, 那么这个正多边形的边数是 ____.",
+    "difficulty": 0.3,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q16",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 16,
+    "content": "如图4, 在 $\\triangle ABC$ 中, $\\angle C = 90^{\\circ}$, $AC = 3$, $BC = 4$, $G$ 是 $\\triangle ABC$ 的重心, 那么 $\\vec{AG}$ 在 $\\vec{AC}$ 方向上的分向量是 ____ (用 $\\vec{AC}$ 表示).",
+    "difficulty": 0.5,
+    "images": [
+      "2022_Jingan_One_Mock_Fig4.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q17",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 17,
+    "content": "如图5, 已知点 $D$ 在 $\\triangle ABC$ 的边 $BC$ 上, $\\angle CAD = \\angle B$, 如果 $AC = \\sqrt{6}$, $BC = 3$, 那么 $CD = $ ____.",
+    "difficulty": 0.5,
+    "images": [
+      "2022_Jingan_One_Mock_Fig5.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q18",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 18,
+    "content": "定义: 如果一个三角形有一边上的中线等于这条边的一半, 那么称这个三角形为“直角型三角形”. 如图6, 在 $\\triangle ABC$ 中, $AB = AC = 5$, $\\cos B = \\frac{3}{5}$, 点 $D$ 是边 $BC$ 上的动点, 如果 $\\triangle ABD$ 是“直角型三角形”, 那么 $AD$ 的长为 ____.",
+    "difficulty": 0.75,
+    "images": [
+      "2022_Jingan_One_Mock_Fig6.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q19",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 19,
+    "content": "计算: $|1-\\sqrt{3}| + \\sqrt{12} - \\tan 60^{\\circ} + (2022-\\pi)^0$.",
+    "difficulty": 0.25,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q20",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 20,
+    "content": "解不等式组: $\\begin{cases} 2x-1 < 3(x+1) \\\\ \\frac{x+1}{2} \\ge \\frac{x-1}{3} + 1 \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.3,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q21",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 21,
+    "content": "如图7, 在平面直角坐标系 $xOy$ 中, 直线 $y = \\frac{1}{2}x + 2$ 与 $x$ 轴相交于点 $A$, 与 $y$ 轴相交于点 $B$, 抛物线 $y = ax^2 + bx + c$ 经过 $A$、$B$ 两点, 且对称轴是直线 $x = 1$.\n(1) 求这条抛物线的表达式;\n(2) 如果点 $P$ 在直线 $AB$ 上, 且 $\\angle POB = \\angle OAB$, 求点 $P$ 的坐标.",
+    "difficulty": 0.65,
+    "images": [
+      "2022_Jingan_One_Mock_Fig7.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q22",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 22,
+    "content": "如图8, 某大楼的楼顶上建有一个广告牌 $BC$, 它的高度是 6 米. 某人站在距离大楼 24 米的 $D$ 处（即 $AD = 24$ 米）, 测得广告牌顶端 $B$ 的仰角为 $37^{\\circ}$.\n(1) 求大楼 $AC$ 的高度 (结果精确到 0.1 米);\n(2) 求此人站在 $D$ 处看广告牌的视角 $\\angle BDC$ 的大小 (结果精确到 $1^{\\circ}$). (参考数据: $\\sin 37^{\\circ} \\approx 0.60, \\cos 37^{\\circ} \\approx 0.80, \\tan 37^{\\circ} \\approx 0.75$)",
+    "difficulty": 0.65,
+    "images": [
+      "2022_Jingan_One_Mock_Fig8.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q23",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 23,
+    "content": "如图9, 已知在四边形 $ABCD$ 中, $AD // BC$, $\\angle ADC = 90^{\\circ}$, 对角线 $AC \\perp AB$, $AD = 4$, $BC = 9$.\n(1) 求证: $\\triangle ADC \\sim \\triangle CAB$;\n(2) 求 $AC$ 和 $CD$ 的长.",
+    "difficulty": 0.85,
+    "images": [
+      "2022_Jingan_One_Mock_Fig9.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q24",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 24,
+    "content": "在平面直角坐标系 $xOy$ 中, 已知抛物线 $y = x^2 - 2mx + m^2 - 4$ (其中 $m$ 是常数).\n(1) 当 $m = 1$ 时, 求该抛物线的顶点坐标;\n(2) 该抛物线与 $x$ 轴相交于 $A$、$B$ 两点 (点 $A$ 在点 $B$ 的左侧), 与 $y$ 轴相交于点 $C$, 且 $\\triangle ABC$ 的面积等于 4, 求 $m$ 的值;\n(3) 在第 (2) 小题的条件下, 如果点 $P$ 在抛物线上, 且 $\\angle PAB = \\angle ACO$, 求点 $P$ 的坐标.",
+    "difficulty": 0.9,
+    "images": [],
+    "exam_type": "一模",
+    "district": "静安"
+  },
+  {
+    "id": "2022_Jingan_One_Mock_Q25",
+    "paper": "2022_Jingan_One_Mock",
+    "number": 25,
+    "content": "如图10, 已知在半圆 $O$ 中, $AB$ 是直径, $C$ 是半圆上的一点, $OD \\perp AC$, 垂足为点 $D$, $OD$ 的延长线与半圆 $O$ 相交于点 $E$, 连接 $BE$ 与 $AC$ 相交于点 $F$.\n(1) 求证: $BE$ 平分 $\\angle ABC$;\n(2) 如果 $BC = 6, \\cos \\angle ABC = \\frac{3}{5}$, 求 $DF$ 的长;\n(3) 如果点 $G$ 在 $AB$ 的延长线上, $EG // AC$, 且 $EG = AC$, 求 $\\tan \\angle EGB$ 的值.",
+    "difficulty": 0.95,
+    "images": [
+      "2022_Jingan_One_Mock_Fig10.png"
+    ],
+    "exam_type": "一模",
+    "district": "静安"
+  }
+]

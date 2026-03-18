@@ -10,9 +10,15 @@
     ],
     "kps": [
       "geo_motion_rotation",
-      "geo_congruent_tri",
-      "alg_quadratic_func",
-      "alg_expression"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_expr_concept",
+      "alg_expr_eval",
+      "alg_expr_calc"
     ],
     "question_type": "Q18",
     "exam_type": "二模",
@@ -29,9 +35,15 @@
       "角度"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ],
     "question_type": "Q24",
     "exam_type": "二模",
@@ -47,9 +59,14 @@
       "正方形"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_congruent_tri",
-      "geo_rectangle"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_quad_property",
+      "geo_quad_judge"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -67,7 +84,8 @@
     ],
     "kps": [
       "geo_circle_basic",
-      "geo_circle_relation",
+      "geo_circle_pos",
+      "geo_circle_tangent",
       "alg_inequality"
     ],
     "question_type": "Q18",
@@ -84,9 +102,14 @@
       "存在性"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio",
-      "alg_equation"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app",
+      "alg_eq_linear",
+      "alg_eq_quadratic"
     ],
     "question_type": "Q24",
     "exam_type": "二模",
@@ -102,9 +125,13 @@
       "分类讨论"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_circle_relation",
-      "geo_rectangle"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_circle_pos",
+      "geo_circle_tangent",
+      "geo_quad_property",
+      "geo_quad_judge"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -136,8 +163,11 @@
       "圆相切"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "geo_circle_relation"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_circle_pos",
+      "geo_circle_tangent"
     ],
     "question_type": "Q24",
     "exam_type": "二模",
@@ -153,8 +183,10 @@
       "梯形"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_parallelogram"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -171,7 +203,8 @@
     ],
     "kps": [
       "geo_circle_basic",
-      "geo_circle_relation"
+      "geo_circle_pos",
+      "geo_circle_tangent"
     ],
     "question_type": "Q18",
     "exam_type": "二模",
@@ -187,8 +220,12 @@
       "相似"
     ],
     "kps": [
-      "geo_congruent_tri",
-      "geo_similar_tri"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ],
     "question_type": "Q24",
     "exam_type": "二模",
@@ -205,8 +242,12 @@
       "旋转"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_trig_ratio",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app",
       "geo_motion_rotation"
     ],
     "question_type": "Q18",
@@ -223,8 +264,12 @@
       "面积最值"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "alg_expression"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_expr_concept",
+      "alg_expr_eval",
+      "alg_expr_calc"
     ],
     "question_type": "Q24",
     "exam_type": "二模",
@@ -240,8 +285,12 @@
       "相似"
     ],
     "kps": [
-      "geo_congruent_tri",
-      "geo_similar_tri"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -257,7 +306,9 @@
       "旋转"
     ],
     "kps": [
-      "geo_trig_ratio",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app",
       "geo_motion_rotation"
     ],
     "question_type": "Q18",
@@ -273,8 +324,12 @@
       "相似"
     ],
     "kps": [
-      "geo_congruent_tri",
-      "geo_similar_tri"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -289,7 +344,8 @@
     ],
     "kps": [
       "geo_circle_basic",
-      "geo_circle_relation"
+      "geo_circle_pos",
+      "geo_circle_tangent"
     ],
     "question_type": "Q18",
     "exam_type": "二模",
@@ -304,8 +360,12 @@
       "相似"
     ],
     "kps": [
-      "geo_congruent_tri",
-      "geo_similar_tri"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ],
     "question_type": "Q25",
     "exam_type": "二模",
@@ -321,7 +381,8 @@
     ],
     "kps": [
       "geo_motion_fold",
-      "geo_rectangle"
+      "geo_quad_property",
+      "geo_quad_judge"
     ],
     "question_type": "Q18",
     "exam_type": "一模",
@@ -336,8 +397,10 @@
       "平行四边形"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "geo_parallelogram"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_quad_property"
     ],
     "question_type": "Q24",
     "exam_type": "一模",
@@ -353,8 +416,10 @@
       "中位线"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_parallelogram"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property"
     ],
     "question_type": "Q25",
     "exam_type": "一模",
@@ -370,7 +435,9 @@
     ],
     "kps": [
       "geo_circle_basic",
-      "geo_trig_ratio"
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ],
     "question_type": "Q18",
     "exam_type": "一模",
@@ -385,8 +452,12 @@
       "角度"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ],
     "question_type": "Q24",
     "exam_type": "一模",
@@ -402,8 +473,11 @@
       "黄金分割"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_rectangle"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property",
+      "geo_quad_judge"
     ],
     "question_type": "Q25",
     "exam_type": "一模",
@@ -419,7 +493,9 @@
     ],
     "kps": [
       "geo_motion_rotation",
-      "geo_congruent_tri"
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv"
     ],
     "question_type": "Q18",
     "exam_type": "一模",
@@ -435,8 +511,11 @@
       "相切"
     ],
     "kps": [
-      "alg_quadratic_func",
-      "geo_circle_relation"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_circle_pos",
+      "geo_circle_tangent"
     ],
     "question_type": "Q24",
     "exam_type": "一模",
@@ -451,8 +530,11 @@
       "圆相切"
     ],
     "kps": [
-      "geo_similar_tri",
-      "geo_circle_relation"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_circle_pos",
+      "geo_circle_tangent"
     ],
     "question_type": "Q25",
     "exam_type": "一模",
@@ -484,7 +566,9 @@
     "content": "24．（本题满分,每小题）\n在平面直角坐标系中,将点定义为点的“关联点”.\n已知：点在函数的图像上（如图9所示）,点的“关联点”是点.\n（1）请在图9的基础上画出函数的图像,简要说明画图方法；\n（2）如果点在函数的图像上,求点的坐标；\n（3）将点称为点的“待定关联点”（其中,）.如果点的“待定关联点”在函数的图像上,试用含的代数式表示点的坐标.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -498,7 +582,9 @@
     "content": "25.（本题满分,其中第（1）小题,第（2）,（3）小题各）\n已知：点在内,且满足（如图10）,.\n（1）求证：∽；\n（2）如果,求的值；\n（3）如果, 且是等腰三角形,\n试求的值.",
     "tags": [],
     "kps": [
-      "geo_similar_tri",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
       "geo_proof"
     ]
   },
@@ -528,8 +614,12 @@
     "content": "24. （本题满分,每小题各）\n如图10,在平面直角坐标系中,抛物线经过点和点,顶点为.\n（1）求这条抛物线的表达式和顶点的坐标；\n（2）点关于抛物线对称轴的对应点为点,联结,求的正切值；\n（3）将抛物线向上平移个单位,使顶点落在点处,点落在点处,如果,求的值.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ]
   },
   {
@@ -543,8 +633,11 @@
     "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图11,已知平行四边形中,点在射线上,过点作,垂足为点,交射线于点,交射线于点,联结,设.\n（1）当点在边上时,\n①求的面积；（用含的代数式表示）\n②当时,求的值；\n（2）当点在边的延长线上时,如果与相似,求的值.\n……\n0\n1\n3\n4\n5\n……\n……\n–5\n–\n–\n–5\n–\n……\nx\n……\n……\ny\n……\n……",
     "tags": [],
     "kps": [
-      "geo_similar_tri",
-      "geo_rectangle"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property",
+      "geo_quad_judge"
     ]
   },
   {
@@ -560,7 +653,9 @@
     "kps": [
       "geo_circle_basic",
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -574,8 +669,12 @@
     "content": "24. （本题满分,每小题）\n在平面直角坐标系内,反比例函数和二次函数 y a x2 x 1的图像交于点 A1, a和点 B 1, a .\n（1）求直线 AB 与 y 轴的交点坐标；\n（2）要使上述反比例函数和二次函数在某一区域都是 y 随着 x 的增大而增大,求 a 应满足的条件以及 x 的取值范围；\n（3）设二次函数的图像的顶点为 Q,当 Q 在以 AB 为直径的圆上时,求 a 的值.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ]
   },
   {
@@ -589,7 +688,9 @@
     "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,OC 是△ABC 中 AB 边的中线,∠ABC=36°,点 D 为 OC 上一点,如果OD k OC ,过 D 作DE // CA 交于 BA 点 E,点 M 是 DE 的中点,将△ODE绕点 O 顺时针旋转 度（其中0 180）后,射线 OM 交直线 BC 于点 N.\n（1）如果△ABC 的面积为 26,求△ODE的面积（用 k 的代数式表示）；\n（2）当 N 和 B 不重合时,请探究∠ONB 的度数 y 与旋转角 的度数之间的函数关系式；\n（3）写出当△ONB 为等腰三角形时,旋转角 的度数.",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -618,8 +719,12 @@
     "content": "24. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,抛物线与轴相交于点,点,与轴交于点,点是抛物线上一动点, 联结交线段于点．\n（1）求这条抛物线的解析式,并写出顶点坐标；\n（2）求的正切值；\n（3）当与相似时,求点的坐标．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ]
   },
   {
@@ -648,7 +753,9 @@
     "tags": [],
     "kps": [
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -662,7 +769,9 @@
     "content": "24. （本题满分）\n如图,将抛物线平移后,新抛物线经过原抛物线的顶点,新抛物线与轴正半轴交于点,联结,设新抛物线与轴的另一交点是,新抛物线的顶点是.\n（1）求点的坐标；\n（2）设点在新抛物线上,联结,如果平分,求点的坐标；\n（3）在（2）的条件下,将抛物线沿轴左右平移,点的对应点为,当和相似时,请直接写出平移后得到抛物线的表达式.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -676,7 +785,9 @@
     "content": "25. （本题满分）\n如图,在中,点是边上的动点（点不与点重合）,点在边的延长线上,与边交于点.\n（1）求的值；\n（2）当时,求的长；\n（3）点在边上运动的过程中,的值是否会发生变化？如果不变化,请求的值；如果变化,请说明理由.\n……\n0\n1\n2\n3\n4\n……\n……\n3\n0\n–1\n0\n……",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -704,7 +815,9 @@
     "content": "24. （本题满分）\n在平面直角坐标系中（如图12）,已知抛物线经过点,与轴交于点,抛物线的顶点为点,对称轴与轴交于点.\n（1）求抛物线的表达式及点的坐标；\n（2）点是轴正半轴上的一点,如果,求点的坐标；\n（3）在（2）的条件下,点是位于轴左侧抛物线上的一点,如果是以为直角边的直角三角形,求点的坐标.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -718,7 +831,9 @@
     "content": "25. （本题满分）\n如图13,在梯形中,点在边上,点是射线上一个动点（不与点,重合）,联结交射线于点,设,.\n（1）求的长；\n（2）当动点在线段上时,试求与之间的函数解析式,并写出函数的定义域；\n（3）当动点运动时,直线与直线的夹角等于,请直接写出这时线段的长.",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -733,7 +848,9 @@
     "tags": [],
     "kps": [
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -747,8 +864,12 @@
     "content": "24. （本题满分,每小题各）\n已知在平面直角坐标系xOy中,抛物线y = mx2 2mx + 4（m ≠ 0）与轴交于点 A,B（点A在点B的左侧）,且AB=6.\n（1） 求这条抛物线的对称轴及表达式；\n（2） 在y轴上取点E（0,2）,点F为第一象限内抛物线上一点,联结BF,EF,如果S四边形OEFB = 10,求点F的坐标；\n（3） 在第（2）小题的条件下,点F在抛物线对称轴右侧,点P在x轴上且在点B左侧,如果直线PF与y轴的夹角等于∠EBF,求点P的坐标.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ]
   },
   {
@@ -762,7 +883,9 @@
     "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n已知在菱形ABCD中,AB=4,∠BAD=120°,点P是直线AB上任意一点,联结PC,在∠PCD 内部作射线CQ与对角线BD交于点Q（与 B,D 不重合）,且∠PCQ=30°.\n（1） 如图,当点P在边AB上时,如果BP = 3,求线段PC的长；\n（2） 当点P在射线BA上时,设BP = x,CQ = y,求y关于x的函数解析式及定义域；\n（3） 联结PQ,直线PQ与直线BC交于点E,如果△QCE与△BCP相似,求线段BP的长.\nx\n…\n3\n2\n1\n0\n1\n…\ny\n…\n4\n1\n0\n1\n4\n…",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -777,7 +900,9 @@
     "tags": [],
     "kps": [
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -791,7 +916,9 @@
     "content": "24. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n如图,已知抛物线y＝x2＋bx＋c过点A(3, 0),点B(0, 3)．点M(m, 0)在线段OA上（与点A,O不重合）,过点M作x轴的垂线与线段AB交于点P,与抛物线交于点Q,联结BQ．\n（1）求抛物线表达式；\n（2）联结OP,当∠BOP＝∠PBQ时,求PQ的长度；\n（3）当△PBQ为等腰三角形时,求m的值．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -805,8 +932,11 @@
     "content": "25. （本题满分,第（1）小题,第（2）小题,第（3）小题）\n已知tan∠MON=2,矩形ABCD的边AB在射线OM上,AD=2,AB=m,CF⊥ON,垂足为点F.\n（1）如图（1）,作AE⊥ON,垂足为点E. 当m=2时,求线段EF的长度；\n（2）如图（2）,联结OC,当m=2,且CD平分∠FCO时,求∠COF的正弦值；\n（3）如图（3）,当△AFD与△CDF相似时,求m的值.",
     "tags": [],
     "kps": [
-      "geo_similar_tri",
-      "geo_rectangle"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property",
+      "geo_quad_judge"
     ]
   },
   {
@@ -834,8 +964,12 @@
     "content": "24．（本题满分,其中每小题各）\n如图,在平面直角坐标系 xOy 中,抛物线 y = x2 + bx + c 与 x 轴的两个交点分别为 A (1, 0),B (3, 0),与 y 轴相交于点 C.\n（1）求抛物线的表达式；\n（2）联结 AC,BC,求∠ACB 的正切值；\n（3）点 P 在抛物线上,且∠PAB=∠ACB,求点 P 的坐标.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ]
   },
   {
@@ -849,7 +983,9 @@
     "content": "25．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n在 Rt△ABC 中,∠A=90°,AB=4,AC=3,D 为 AB 边上一动点（点 D 与点 A,B 不重合）,联结 CD,过点 D 作 DE⊥DC 交边 BC 于点 E.\n（1）如图,当 ED=EB 时,求 AD 的长；\n（2）设 AD = x,BE = y ,求 y 关于 x 的函数解析式并写出函数定义域；\n（3）把△BCD 沿直线 CD 翻折得△CDB ',联结 AB ',当△CAB '是等腰三角形时,直接写出 AD 的长.\nx\n…\n0\n1\n2\n3\n4\n…\ny ax2 bx c\n…\n3\n0\n1\n0\n3\n…",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -864,7 +1000,9 @@
     "tags": [],
     "kps": [
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -878,7 +1016,9 @@
     "content": "24,在平面直角坐标系中,抛物线 y x2 bx c 与 x 轴交于 A1, 0 ,B 两点,与 y 轴交于点C 0,3 ,\n点 P 在该抛物线的对称轴上,且纵坐标为 2 3 .\n（1）求抛物线的表达式以及点 P 的坐标；\n（2）当三角形中一个内角 是另一个内角 的两倍时,我们称 为此三角形的“特征角”,\n①当 D 在射线 AP 上,如果DAB 为 ABD 的特征角,求点 D 的坐标；\n②点 E 为第一象限内抛物线上一点,点 F 在 x 轴上, CE EF ,如果CEF 为 ECF 的特征角,求点\nE 的坐标.",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -892,7 +1032,9 @@
     "content": "25,在 Rt ABC 中, ACB 90 , BC 4 , sin ABC 3 ,点 D 为射线 BC 上一点,联结 AD ,过\n5\n点 B 作 BE AD 分别交射线 AD , AC 于点 E , F ,联结 DF ,过点 A 作 AG / / BD ,交直线 BE 于点\nG .\n（1）当点 D 在 BC 的延长线上时,如果CD 2 ,求 tan FBC ；\n（2）当点 D 在 BC 的延长线上时,设 AG x , S\n定义域）；\n（3）如果 AG 8 ,求 DE 的长.\nADF y ,求 y 关于 x 的函数关系式（不需要写函数的",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -908,7 +1050,9 @@
     "kps": [
       "geo_circle_basic",
       "geo_motion_rotation",
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -922,8 +1066,12 @@
     "content": "24．（本题共3题,每小题,满分）\n已知：在平面直角坐标系xOy中,对称轴为直线x = -2的抛物线经过点C（0,2）,与x轴交于A（-3,0）,B两点（点A在点B的左侧）．\n（1）求这条抛物线的表达式；\n（2）联结BC,求∠BCO的余切值；\n（3）如果过点C的直线,交x轴于点E,交抛物线于\n点P,且∠CEO =∠BCO,求点P的坐标．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ]
   },
   {
@@ -951,7 +1099,9 @@
     "content": "18. 已知,在矩形纸片ABCD中,AB=5cm,点E,F分别是边AB,CD的中点,折叠矩形纸片ABCD,折痕BM交AD边于点M,在折叠的过程中,如果点A恰好落在线段EF上,那么边AD的长至少是______cm．\n三,解答题（本大题共7题,满分） [请将解题过程填入答题纸的相应位置]\n19. 计算：．\n20. 如图,在平行四边形ABCD中,E为DC上一点,AE与BD交于点F,\nDE∶EC=2∶3．\n（1）求BF∶DF的值；\n（2）如果,试用,表示向量．\n21. 如图,在Rt△ABC中,∠ACB=90º,AC=2,BC=3．点D为AC的中点,联结BD,过点C作CG⊥BD,交AC的垂线AG于点G,GC分别交BA,BD于点F,E．\n（1）求GA的长；\n（2）求△AFC的面积．\n22. 水城门位于淀浦河和漕港河三叉口,是环城水系公园淀浦河梦蝶岛区域重要的标志性景观．在课外实践活动中,某校九年级数学兴趣小组决定测量该水城门的高．他们的操作方法如下：如图,先在D处测得点A的仰角为20°,再往水城门的方向前进13米至C处,测得点A的仰角为31°（点D,C,B在一直线上）,求该水城门AB的高．（精确到0.1米）（参考数据：sin20°≈034,cos20°≈0.94,tan20°≈0.36,sin31°≈0.52,cos31°≈0.86,tan31°≈0.60）\n23. 已知：如图,在△ABC中,点D在边BC上,AE∥BC,BE与AD,AC分别相交于点F,G, ．\n（1）求证：△CAD∽△CBG；\n（2）联结DG,求证：．",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -965,8 +1115,12 @@
     "content": "24. 如图,在平面直角坐标系xOy中,抛物线与x轴交于A,B两点,与y轴交于点C,对称轴为直线x=2,点A的坐标为（1,0）．\n（1）求该抛物线的表达式及顶点坐标；\n（2）点P为抛物线上一点（不与点A重合）,联结PC．当∠PCB=∠ACB时,求点P的坐标；\n（3）在（2）的条件下,将抛物线沿平行于轴的方向向下平移,平移后的抛物线的顶点为点D,点P关于x轴的对应点为点Q,当OD⊥DQ时,求抛物线平移的距离．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ]
   },
   {
@@ -995,8 +1149,12 @@
     "tags": [],
     "kps": [
       "geo_motion_rotation",
-      "geo_similar_tri",
-      "alg_quadratic_func"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -1010,8 +1168,12 @@
     "content": "24．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n在平面直角坐标系中（如图8）,已知二次函数（其中a,b,c是常数,且a≠0）的图像经过点A（0,–3）,B（1,0）,C（3,0）,联结AB,AC．\n（1）求这个二次函数的解析式；\n（2）点D是线段AC上的一点,联结BD,如果,求tan∠DBC的值；\n（3）如果点E在该二次函数图像的对称轴上,当AC平分∠BAE时,求点E的坐标．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "geo_trig_ratio"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app"
     ]
   },
   {
@@ -1025,7 +1187,9 @@
     "content": "25．（本题满分,其中第（1）小题,第（2）小题,第（3）小题）\n已知：如图9,在△ABC中,AB=AC,点D,E分别在边BC,DC上,AB2 =BE · DC ,DE:EC=3:1 ,F是边AC上的一点,DF与AE交于点G．\n（1）找出图中与△ACD相似的三角形,并说明理由；\n（2）当DF平分∠ADC时,求DG:DF的值；\n（3）如图10,当∠BAC=90°,且DF⊥AE时,求DG:DF的值．\n…\n…\n…\n…",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -1039,7 +1203,9 @@
     "content": "18．如图8,在△ABC中,AB=AC ,点D,E在边BC上,∠DAE=∠B=30°,且,那么的值是 ▲ ．\n三,解答题：（本大题共7题,满分）\n19．（本题满分）\n计算：\n20．（本题满分）\n已知,如图9,点E在平行四边形ABCD的边CD上,且,设,．\n（1）用,表示；（直接写出答案）\n（2）设,在答题卷中所给的图上画出的结果．\n21．（本题满分）\n某数学小组在郊外的水平空地上对无人机进行测高实验．如图10,两台测角仪分别放在A,B位置,且离地面高均为1米（即米）,两台测角仪相距50米（即AB=50米）．在某一时刻无人机位于点C (点C与点A,B在同一平面内）,A处测得其仰角为,B处测得其仰角为．（参考数据：,）\n（1）求该时刻无人机的离地高度；（单位：米,结果保留整数）\n（2）无人机沿水平方向向左飞行2秒后到达点F（点F与点A,B,C在同一平面内）,此时于A处测得无人机的仰角为,求无人机水平飞行的平均速度．（单位：米/秒,结果保留整数）\n22．（本题满分）\n在平面直角坐标系xOy中,已知抛物线,其顶点为A．\n（1）写出这条抛物线的开口方向,顶点A的坐标,并说明它的变化情况；\n（2）直线BC平行于x轴,交这条抛物线于B,C两点（点B在点C左侧）,且,求点B坐标．\n23．（本题满分）\n已知：如图11,在平行四边形ABCD中,过点C分别作AD,AB的垂线,交边AD,AB延长线于点E,F．\n（1）求证：；\n（2）联结AC,如果,求证：．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -1053,7 +1219,9 @@
     "content": "24．（本题满分）\n在平面直角坐标系中,平移一条抛物线,如果平移后的新抛物线经过原抛物线顶点,且新抛物线的对称轴是y轴,那么新抛物线称为原抛物线的“影子抛物线”．\n（1）已知原抛物线表达式是,求它的“影子抛物线”的表达式；\n（2）已知原抛物线经过点（1,0）,且它的“影子抛物线”的表达式是,求原抛物线的表达式；\n（3）小明研究后提出：“如果两条不重合的抛物线交y轴于同一点,且它们有相同的“影子抛物线”,那么这两条抛物线的顶点一定关于y轴对称．”你认为这个结论成立吗？请说明理由．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo"
     ]
   },
   {
@@ -1067,7 +1235,9 @@
     "content": "25．（本题满分）\n如图12,△ABC是边长为2的等边三角形,点D与点B分别位于直线AC的两侧,且AD=AC, 联结BD,CD,BD交直线AC于点E.\n（1）当∠CAD=90°时,求线段AE的长.\n（2）过点A作AH⊥CD,垂足为点H,直线AH交BD于点F,\n①当∠CAD<120°时,设,（其中表示△BCE的面积,表示△AEF的面积）,求y关于x的函数关系式,并写出x的取值范围；\n②当时,请直接写出线段AE的长.",
     "tags": [],
     "kps": [
-      "geo_similar_tri"
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
     ]
   },
   {
@@ -1095,8 +1265,12 @@
     "content": "24．（）在平面直角坐标系xOy中,抛物线y＝﹣x2+mx+n经过点A（5,0）,顶点为点B,对称轴为直线x＝3,且对称轴与x轴交于点C．直线y＝kx+b经过点A,与线段BC交于点E．\n（1）求抛物线y＝﹣x2+mx+n的表达式；\n（2）联结BO,EO．当△BOE的面积为3时,求直线y＝kx+b的表达式；\n（3）在（2）的条件下,设点D为y轴上的一点,联结BD,AD．当BD＝EO时,求∠DAO的余切值．",
     "tags": [],
     "kps": [
-      "alg_quadratic_func",
-      "alg_linear_func"
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ]
   },
   {

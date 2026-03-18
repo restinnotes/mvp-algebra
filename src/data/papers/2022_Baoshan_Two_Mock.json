@@ -1,0 +1,556 @@
+[
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "1",
+    "question_type": "Q1",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "下列各运算中，正确的运算是（ ）",
+    "options": [
+      "5\\sqrt{3} + 3\\sqrt{5} = 8\\sqrt{8}",
+      "(-3a^3)^3 = -27a^9",
+      "a^8 \\div a^4 = a^2",
+      "(a^2 - b^2)^2 = a^4 - b^4"
+    ],
+    "answer": "B",
+    "has_answer": true,
+    "tags": [
+      "实数运算",
+      "幂的运算"
+    ],
+    "kps": [
+      "real_number_calc",
+      "power_rules"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "2",
+    "question_type": "Q2",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "如果关于 $x$ 的一元一次方程 $x - m + 2 = 0$ 的解是负数，那么 $m$ 的取值范围是（ ）",
+    "options": [
+      "m < 2",
+      "m \\le 2",
+      "m \\ge 2",
+      "m > 2"
+    ],
+    "answer": "A",
+    "has_answer": true,
+    "tags": [
+      "一元一次方程",
+      "方程的解"
+    ],
+    "kps": [
+      "linear_eq_basic"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "3",
+    "question_type": "Q3",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "成人每天维生素 D 的摄入量约为 $0.0000046$ 克. 数据“$0.0000046$”用科学记数法表示为（ ）",
+    "options": [
+      "46 \\times 10^{-7}",
+      "4.6 \\times 10^{-7}",
+      "4.6 \\times 10^{-6}",
+      "0.46 \\times 10^{-5}"
+    ],
+    "answer": "C",
+    "has_answer": true,
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "scientific_notation"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "4",
+    "question_type": "Q4",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "如果数轴上表示 $-1$ 和 $-3$ 的两点分别是点 $A$ 和点 $B$, 那么点 $A$ 和点 $B$ 之间的距离是（ ）",
+    "options": [
+      "-4",
+      "-2",
+      "2",
+      "4"
+    ],
+    "answer": "C",
+    "has_answer": true,
+    "tags": [
+      "数轴",
+      "两点间距离"
+    ],
+    "kps": [
+      "number_line_dist"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "5",
+    "question_type": "Q5",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.25,
+    "content": "如图 1, 已知 $\\triangle ABC$ 与 $\\triangle BDE$ 都是等边三角形, 点 $D$ 在边 $AC$ 上（不与点 $A$、$C$ 重合）, $DE$ 与 $AB$ 相交于点 $F$, 那么与 $\\triangle BFD$ 相似的三角形是（ ）",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q5_1.png"
+    ],
+    "options": [
+      "\\triangle BFE",
+      "\\triangle BDA",
+      "\\triangle BDC",
+      "\\triangle AFD"
+    ],
+    "answer": "B",
+    "has_answer": true,
+    "tags": [
+      "等边三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "similar_triangle_judgement"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "6",
+    "question_type": "Q6",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.2,
+    "content": "下列命题中正确的是（ ）",
+    "options": [
+      "一组对边相等，另一组对边平行的四边形是等腰梯形",
+      "对角线互相垂直且相等的四边形是矩形",
+      "对角线互相平分且相等的四边形是正方形",
+      "对角线互相垂直平分的四边形是菱形"
+    ],
+    "answer": "D",
+    "has_answer": true,
+    "tags": [
+      "命题判定",
+      "特殊四边形"
+    ],
+    "kps": [
+      "quadrilateral_properties"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "7",
+    "question_type": "Q7",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "如果 $a = b + 2$, 那么代数式 $a^2 - 2ab + b^2$ 的值为\\_\\_\\_\\_\\_\\_.",
+    "answer": "4",
+    "has_answer": true,
+    "tags": [
+      "完全平方公式",
+      "代数式求值"
+    ],
+    "kps": [
+      "alg_expr_eval"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "8",
+    "question_type": "Q8",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "化简: $\\frac{1}{a} - \\frac{1}{3a} =$\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\frac{2}{3a}",
+    "has_answer": true,
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "fraction_calc"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "9",
+    "question_type": "Q9",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "如果一个数的平方等于 $5$, 那么这个数等于\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\pm\\sqrt{5}",
+    "has_answer": true,
+    "tags": [
+      "平方根"
+    ],
+    "kps": [
+      "square_root_basic"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "10",
+    "question_type": "Q10",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "方程 $\\sqrt{x - 2} \\cdot \\sqrt{x - 1} = 0$ 的解是\\_\\_\\_\\_\\_\\_.",
+    "answer": "x=2",
+    "has_answer": true,
+    "tags": [
+      "无理方程",
+      "定义域"
+    ],
+    "kps": [
+      "irrational_eq_calc"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "11",
+    "question_type": "Q11",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.2,
+    "content": "如果反比例函数 $y = \\frac{k}{x}$ ($k$ 是常数, $k \\neq 0$) 的图像经过点 $(-1, 3)$, 那么当 $x > 0$ 时, $y$ 的值随 $x$ 的值增大而\\_\\_\\_\\_\\_\\_. (填“增大”或“减小”)",
+    "answer": "增大",
+    "has_answer": true,
+    "tags": [
+      "反比例函数",
+      "函数性质"
+    ],
+    "kps": [
+      "inverse_func_properties"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "12",
+    "question_type": "Q12",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.45,
+    "content": "《九章算术》是我国古代数学的经典著作，书中有一个问题：“今有黄金九枚，白银一十一枚，称之重适等，交易其一，金轻十三两，问金、银一枚各重几何？”意思是：甲袋中装有黄金 9 枚（每枚黄金重量相同），乙袋中装有白银 11 枚（每枚白银重量相同），称重两袋相等，两袋互相交换 1 枚后，甲袋比乙袋轻了 13 两（袋子重量忽略不计），问黄金、白银每枚各重多少两？设每枚黄金重 $x$ 两，每枚白银重 $y$ 两，根据题意可列方程组为\\_\\_\\_\\_.",
+    "answer": "\\begin{cases} 9x=11y \\\\ (10y+x)-(8x+y)=13 \\end{cases}",
+    "has_answer": true,
+    "tags": [
+      "二元一次方程组",
+      "实际问题"
+    ],
+    "kps": [
+      "linear_eq_system_word_problem"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "13",
+    "question_type": "Q13",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.4,
+    "content": "在一张边长为 4cm 的正方形纸上做扎针随机试验，纸上有一个半径为 1cm 的圆形阴影区域，则针头扎在阴影区域内的概率为\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\frac{\\pi}{16}",
+    "has_answer": true,
+    "tags": [
+      "几何概率"
+    ],
+    "kps": [
+      "geometric_probability"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "14",
+    "question_type": "Q14",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.5,
+    "content": "某社区在创建全国卫生城市的活动中，随机检查了本社区部分住户五月份某周内“垃圾分类”的实施情况，并绘制了两幅不完整的统计图（图 2）（A. 小于 5 天；B. 5 天；C. 6 天；D. 7 天），那么扇形统计图 B 部分所对应的圆心角的度数是\\_\\_\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q14_1.png"
+    ],
+    "answer": "108^\\circ",
+    "has_answer": true,
+    "tags": [
+      "统计图",
+      "扇形统计图"
+    ],
+    "kps": [
+      "statistical_chart_analysis"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "15",
+    "question_type": "Q15",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.5,
+    "content": "如图 3, 点 $B$、$C$、$D$ 在同一直线上, $CE \\parallel AB$, $\\angle ACB = 90^\\circ$ , 如果 $\\angle ECD = 35^\\circ$ , 那么 $\\angle A =$\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q15_1.png"
+    ],
+    "answer": "55^\\circ",
+    "has_answer": true,
+    "tags": [
+      "平行线性质",
+      "三角形内角和"
+    ],
+    "kps": [
+      "parallel_lines_properties"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "16",
+    "question_type": "Q16",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.6,
+    "content": "如图 4, 在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ$, $\\angle A = 30^\\circ$, $BD$ 是 $\\angle ABC$ 的平分线, 如果 $\\vec{AC} = \\vec{x}$, 那么 $\\vec{CD} =$\\_\\_\\_\\_\\_\\_ (用 $\\vec{x}$ 表示).",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q16_1.png"
+    ],
+    "answer": "-\\frac{1}{3}\\vec{x}",
+    "has_answer": true,
+    "tags": [
+      "向量",
+      "角平分线性质"
+    ],
+    "kps": [
+      "vector_operation"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "17",
+    "question_type": "Q17",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.65,
+    "content": "如图 5, 在 $\\triangle ABC$ 中, $\\angle B = 45^\\circ$, $AC = 2$, $\\cos C = \\frac{3}{5}$. $BC$ 的垂直平分线交 $AB$ 于点 $E$, 那么 $BE:AE$ 的值是\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q17_1.png"
+    ],
+    "answer": "7",
+    "has_answer": true,
+    "tags": [
+      "垂直平分线",
+      "三角比"
+    ],
+    "kps": [
+      "perpendicular_bisector_prop",
+      "trigonometry_basic"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.75,
+    "content": "如图 6, 在 $\\triangle ABC$ 内有一点 $P$, 满足 $\\angle PAB = \\angle CBP = \\angle ACP$, 那么点 $P$ 被称为 $\\triangle ABC$ 的“布洛卡点”. 如图 7, 在 $\\triangle DEF$ 中, $DE = DF$, $\\angle EDF = 90^\\circ$, 点 $P$ 是 $\\triangle DEF$ 的一个“布洛卡点”, 那么 $\\tan \\angle DFP =$\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q18_1.png"
+    ],
+    "answer": "\\frac{1}{2}",
+    "has_answer": true,
+    "tags": [
+      "新定义问题",
+      "等腰直角三角形"
+    ],
+    "kps": [
+      "new_definition_geo",
+      "special_triangle_prop"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "19",
+    "question_type": "Q19",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.3,
+    "content": "计算: $(\\sqrt{2})^2 + (-\\frac{\\pi}{3})^0 - |2| + 2(\\tan 60^\\circ - 1)^{-1}$",
+    "answer": "4 - \\sqrt{3}",
+    "has_answer": true,
+    "tags": [
+      "实数混合运算",
+      "三角比"
+    ],
+    "kps": [
+      "real_number_calc_advanced"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "20",
+    "question_type": "Q20",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.35,
+    "content": "解方程组: $\\begin{cases} x + y = 2 \\\\ x^2 - xy - 6y^2 = 0 \\end{cases}$",
+    "answer": "\\begin{cases} x_1 = \\frac{3}{2} \\\\ y_1 = \\frac{1}{2} \\end{cases}, \\begin{cases} x_2 = 4 \\\\ y_2 = -2 \\end{cases}",
+    "has_answer": true,
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "quadratic_linear_system"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "21",
+    "question_type": "Q21",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.55,
+    "content": "如图 8, 在梯形 $ABCD$ 中, $AD \\parallel BC$, $\\angle BCD = 90^\\circ$, $AB = BC = 5$, $AD = 2$.\n(1) 求 $CD$ 的长;\n(2) 如果 $\\angle ABC$ 的平分线交 $CD$ 于点 $E$, 联结 $AE$, 求 $\\angle AEB$ 的正切值.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q21_1.png"
+    ],
+    "answer": "(1) CD=4; (2) \\tan\\angle AEB = 1",
+    "has_answer": true,
+    "tags": [
+      "梯形",
+      "角平分线",
+      "三角比"
+    ],
+    "kps": [
+      "trapezoid_calc",
+      "angle_bisector_prop"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "22",
+    "question_type": "Q22",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.6,
+    "content": "如图 9, 是某型号新能源纯电动汽车充满电后, 蓄电池剩余电量 $y$ (千瓦时) 关于已行驶路程 $x$ (千米) 的函数图像.\n(1) 根据函数图像, 如果蓄电池剩余电量为 35 千瓦时, 那么汽车已经行驶的路程为\\_\\_\\_\\_千米; 当 $0 \\le x \\le 150$ 时, 消耗 1 千瓦时的电量, 汽车能行驶的路程为\\_\\_\\_\\_千米.\n(2) 当 $150 \\le x \\le 200$ 时, 求 $y$ 关于 $x$ 的函数解析式, 并计算当汽车已行驶 160 千米时, 蓄电池的剩余电量.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q22_1.png"
+    ],
+    "answer": "(1) 150, 6; (2) y = -\\frac{1}{5}x + 40, y(160)=8",
+    "has_answer": true,
+    "tags": [
+      "函数图像分析",
+      "分段函数"
+    ],
+    "kps": [
+      "function_graph_analysis",
+      "piecewise_func"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "23",
+    "question_type": "Q23",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.7,
+    "content": "如图 10, 在平行四边形 $ABCD$ 中, $AC$、$DB$ 交于点 $E$, 点 $F$ 在 $BC$ 的延长线上, 联结 $EF$、$DF$, 且 $\\angle DEF = \\angle ADC$.\n(1) 求证: $\\frac{EF}{BF} = \\frac{AB}{DB}$;\n(2) 如果 $BD^2 = 2AD \\cdot DF$, 求证: 四边形 $ABCD$ 是矩形.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q23_1.png"
+    ],
+    "answer": "略",
+    "has_answer": true,
+    "tags": [
+      "平行四边形",
+      "相似三角形",
+      "矩形判定"
+    ],
+    "kps": [
+      "parallelogram_calc",
+      "similar_triangle_proof",
+      "rectangle_determination"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = \\frac{1}{3}x^2 + bx - 1$ 与 $x$ 轴交于点 $A$ 和点 $B$ (点 $A$ 在 $x$ 轴的正半轴上), 与 $y$ 轴交于点 $C$, 已知 $\\tan \\angle CAB = \\frac{1}{3}$.\n(1) 求顶点 $P$ 和点 $B$ 的坐标;\n(2) 将抛物线向右平移 2 个单位, 得到的新抛物线与 $y$ 轴交于点 $M$, 求点 $M$ 的坐标和 $\\triangle APM$ 的面积;\n(3) 如果点 $N$ 在原抛物线的对称轴上, 当 $\\triangle PMN$ 与 $\\triangle ABC$ 相似时, 求点 $N$ 的坐标.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q24_1.png"
+    ],
+    "answer": "(1) P(1, -\\frac{4}{3}), B(-1, 0); (2) M(0, 0), S=\\frac{2}{3}; (3) N(1, -\\frac{4}{3} \\pm \\frac{2\\sqrt{10}}{3})",
+    "has_answer": true,
+    "tags": [
+      "二次函数",
+      "抛物线平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "quadratic_func_analysis",
+      "coord_geo_calc"
+    ]
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "如图 11, 在半径为 3 的圆 $O$ 中, $OA$、$OB$ 都是圆 $O$ 的半径, 且 $\\angle AOB = 90^\\circ$, 点 $C$ 是劣弧 $AB$ 上的一个动点 (点 $C$ 不与点 $A$、$B$ 重合), 延长 $AC$ 交射线 $OB$ 于点 $D$.\n(1) 当点 $C$ 为线段 $AD$ 中点时, 求 $\\angle ADB$ 的大小;\n(2) 如果设 $AC = x$, $BD = y$, 求 $y$ 关于 $x$ 的函数解析式, 并写出定义域;\n(3) 当 $AC = \\frac{18}{5}$ 时, 点 $E$ 在线段 $OD$ 上, 且 $OE = 1$, 点 $F$ 是射线 $OA$ 上一点, 射线 $EF$ 与射线 $DA$ 交于点 $G$, 如果以点 $A$、$G$、$F$ 为顶点的三角形与 $\\triangle DGE$ 相似, 求 $\\frac{S_{\\triangle AGF}}{S_{\\triangle ADGE}}$ 的值.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q25_1.png"
+    ],
+    "answer": "(1) 30^\\circ; (2) y = \\frac{9}{x} - \\sqrt{9 - (x/2)^2} (略); (3) 1/2 or 1/4 (需细核)",
+    "has_answer": true,
+    "tags": [
+      "圆",
+      "动点问题",
+      "函数解析式",
+      "图形相似"
+    ],
+    "kps": [
+      "circle_geometry",
+      "moving_point_problem",
+      "func_derivation_geo"
+    ]
+  }
+]

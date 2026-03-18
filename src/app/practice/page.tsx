@@ -11,7 +11,7 @@ export default function PracticePage() {
         <div className="shrink-0 relative flex items-center justify-center p-6 border-b border-white/5 bg-[#0f1115]">
           {/* Dashboard Return Button */}
           <Link 
-            href="/dashboard" 
+            href="/" 
             className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-4 py-2 text-white/50 hover:text-white/90 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-sm font-bold"
           >
             <ChevronLeft size={18} /> 返回控制台
@@ -22,7 +22,7 @@ export default function PracticePage() {
                 <BrainCircuit size={24} />
              </div>
              <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white/90 uppercase">
-                同步练习中心 <span className="text-indigo-500">Practice Hub</span>
+                同步练习中心 <span className="text-indigo-500">题库概览</span>
              </h1>
           </div>
         </div>

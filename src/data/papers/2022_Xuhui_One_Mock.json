@@ -1,0 +1,321 @@
+[
+  {
+    "id": "2022_Xuhui_One_Mock_Q01",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 1,
+    "type": "choice",
+    "difficulty": 0.15,
+    "content": "如果 $2x=3y$ ($y \\neq 0$), 那么下列比例式中正确的是",
+    "options": [
+      "$\\frac{x}{y}=\\frac{2}{3}$",
+      "$\\frac{x}{3}=\\frac{y}{2}$",
+      "$\\frac{x}{2}=\\frac{y}{3}$",
+      "$\\frac{y}{x}=\\frac{3}{2}$"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q02",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 2,
+    "type": "choice",
+    "difficulty": 0.15,
+    "content": "在比例尺为 $1:500000$ 的地图上, 量得 $A, B$ 两地的距离为 $3$ 厘米, 则 $A, B$ 两地的实际距离是",
+    "options": [
+      "$1.5$ 千米",
+      "$15$ 千米",
+      "$150$ 千米",
+      "$1500$ 千米"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q03",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 3,
+    "type": "choice",
+    "difficulty": 0.15,
+    "content": "下列抛物线中, 与抛物线 $y=x^2-2x+3$ 开口方向相同且形状相等的是",
+    "options": [
+      "$y=x^2$",
+      "$y=-x^2$",
+      "$y=2x^2$",
+      "$y=\\frac{1}{2}x^2$"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q04",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 4,
+    "type": "choice",
+    "difficulty": 0.15,
+    "content": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ$, $AC=12$, $BC=5$, 那么 $\\sin A$ 的值是",
+    "options": [
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{5}$",
+      "$\\frac{5}{13}$",
+      "$\\frac{12}{13}$"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q05",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 5,
+    "type": "choice",
+    "difficulty": 0.2,
+    "content": "已知 $\\vec{a}$ 是非零向量, $\\vec{e}$ 是单位向量, 下列各式中正确的是",
+    "options": [
+      "$\\vec{a} = |\\vec{a}| \\vec{e}$",
+      "$\\vec{a} = - |\\vec{a}| \\vec{e}$",
+      "$|\\vec{a}| \\vec{e} = \\pm \\vec{a}$",
+      "$\\vec{a} = |\\vec{a}| \\cdot \\frac{\\vec{a}}{|\\vec{a}|}$"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q06",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 6,
+    "type": "choice",
+    "difficulty": 0.25,
+    "content": "如图, $AD // EF // BC$, 如果 $AE:EB = 2:3$, $AD=2$, $BC=7$, 那么 $EF$ 的长是",
+    "options": [
+      "$4$",
+      "$4.5$",
+      "$5$",
+      "$6$"
+    ],
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q6.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q07",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 7,
+    "type": "fill",
+    "difficulty": 0.15,
+    "content": "已知线段 $a=2$ 厘米, $b=8$ 厘米, 那么线段 $a, b$ 的比例中项等于 ____ 厘米.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q08",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 8,
+    "type": "fill",
+    "difficulty": 0.15,
+    "content": "抛物线 $y = -(x+1)^2-2$ 的顶点坐标是 ____.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q09",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 9,
+    "type": "fill",
+    "difficulty": 0.2,
+    "content": "已知 $\\vec{a}, \\vec{b}$ 互为相反向量, 且 $|\\vec{a}|=2$, 那么 $2\\vec{a}+\\vec{b}$ 的模等于 ____.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q10",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 10,
+    "type": "fill",
+    "difficulty": 0.25,
+    "content": "在 $\\triangle ABC$ 中, $G$ 是重心, $D$ 是 $BC$ 的中点, $\\vec{AG} = k \\vec{AD}$, 那么 $k = ____$.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q11",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 11,
+    "type": "fill",
+    "difficulty": 0.25,
+    "content": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ$, $BC=2$, $AB=3$, 那么 $\\cot A = ____$.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q12",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 12,
+    "type": "fill",
+    "difficulty": 0.4,
+    "content": "已知在 $\\triangle ABC$ 和 $\\triangle DEF$ 中, $\\angle A = \\angle D = 70^\\circ$, $AB=3, AC=4, DE=6$, 当 $DF = ____$ 时, $\\triangle ABC \\sim \\triangle DEF$.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q13",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 13,
+    "type": "fill",
+    "difficulty": 0.4,
+    "content": "某坡面的坡度 $i = 1 : \\sqrt{3}$, 则该坡面的坡角为 ____ 度.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q14",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 14,
+    "type": "fill",
+    "difficulty": 0.45,
+    "content": "如图, 已知 $AD$ 是 $\\triangle ABC$ 的中线, $G$ 是重心, 如果 $\\vec{GA} = \\vec{a}, \\vec{GB} = \\vec{b}$, 那么 $\\vec{BC} = ____$ (用 $\\vec{a}, \\vec{b}$ 表示).",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q14.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q15",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 15,
+    "type": "fill",
+    "difficulty": 0.45,
+    "content": "如果抛物线 $y = ax^2 + bx + c$ ($a \\neq 0$) 的对称轴是直线 $x=1$, 且经过点 $(3, 0)$, 那么 $a+b+c = ____$.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q16",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 16,
+    "type": "fill",
+    "difficulty": 0.5,
+    "content": "如图, 在 $\\triangle ABC$ 中, $\\angle ACB = 90^\\circ$, $CD \\perp AB$, 垂足为 $D$. 如果 $AD = 4, BD = 1$, 那么 $\\tan A = ____$.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q16.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q17",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 17,
+    "type": "fill",
+    "difficulty": 0.55,
+    "content": "如图, 正方形 $ABCD$ 的边长为 $4$, $E$ 是 $BC$ 的中点, 点 $F$ 在 $CD$ 上, 且 $\\angle AEF = 90^\\circ$, 那么 $CF$ 的长为 ____.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q17.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q18",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 18,
+    "type": "fill",
+    "difficulty": 0.75,
+    "content": "如图, 在 $\\triangle ABC$ 中, $AB=AC=5$, $\\cos B = \\frac{3}{5}$. 将 $\\triangle ABC$ 绕点 $B$ 顺时针旋转, 得到 $\\triangle A'BC'$, 点 $A, C$ 的对应点分别是 $A', C'$. 当点 $C'$ 落在边 $AC$ 上时, $AA' = ____$.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q18.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q19",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 19,
+    "type": "solve",
+    "difficulty": 0.2,
+    "content": "计算: $\\frac{\\tan 60^\\circ - \\cos 30^\\circ}{\\sin 60^\\circ} + \\cot 45^\\circ$.",
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q20",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 20,
+    "type": "solve",
+    "difficulty": 0.3,
+    "content": "如图, 在 $\\triangle ABC$ 中, 点 $D, E$ 分别在边 $AB, AC$ 上, $DE // BC$, $AD = 4$, $DB = 2$.\n(1) 如果 $BC = 9$, 求 $DE$ 的长;\n(2) 如果 $\\vec{AB} = \\vec{a}, \\vec{AC} = \\vec{b}$, 请用 $\\vec{a}, \\vec{b}$ 表示 $\\vec{DE}$.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q20.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q21",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 21,
+    "type": "solve",
+    "difficulty": 0.5,
+    "content": "如图, 在 $\\triangle ABC$ 中, $AB=AC=10, BC=12$, $AD \\perp BC$ 于点 $D$, 点 $E$ 在 $AC$ 上, $ED \\perp AC$ 于点 $E$.\n(1) 求 $\\sin \\angle C$ 的值;\n(2) 求 $ED$ 的长.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q21.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q22",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 22,
+    "type": "solve",
+    "difficulty": 0.6,
+    "content": "如图, 某无人机于空中 $A$ 处测得某楼顶部 $B$ 的仰角为 $30^\\circ$, 测得该楼底部 $C$ 的俯角为 $45^\\circ$. 已知无人机距离地面的高度 $AD$ 为 $60$ 米 ($A, B, C, D$ 在同一平面内), 且点 $D, C$ 在同一水平直线上.\n(1) 求楼 $BC$ 的高度 (结果保留根号);\n(2) 求点 $B$ 到直线 $AD$ 的距离.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q22.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q23",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 23,
+    "type": "solve",
+    "difficulty": 0.75,
+    "content": "如图, 在梯形 $ABCD$ 中, $AD // BC$, $\\angle B = 90^\\circ$, $AD=2, BC=5, \\tan C = \\frac{4}{3}$. 点 $P$ 在边 $BC$ 上, $\\triangle ABP$ 与 $\\triangle DPC$ 相似.\n(1) 求 $AB$ 的长;\n(2) 求 $BP$ 的长.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q23.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q24",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 24,
+    "type": "solve",
+    "difficulty": 0.85,
+    "content": "已知在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2 + bx + 3$ 与 $x$ 轴交于点 $A(-1, 0)$ 和点 $B(3, 0)$, 与 $y$ 轴交于点 $C$.\n(1) 求该抛物线的表达式;\n(2) 点 $D$ 在该抛物线的对称轴上, 且 $CD // AB$, 求 $\\triangle BCD$ 的面积;\n(3) 如果点 $P$ 是该抛物线上的一点, 且 $\\angle PCB = \\angle ABC$, 求点 $P$ 的坐标.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q24.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  },
+  {
+    "id": "2022_Xuhui_One_Mock_Q25",
+    "paper": "2022_Xuhui_One_Mock",
+    "number": 25,
+    "type": "solve",
+    "difficulty": 0.95,
+    "content": "如图, 在 $\\triangle ABC$ 中, $AB=AC$, $\\angle BAC = 90^\\circ$, $D$ 是 $BC$ 边的中点. 点 $E$ 在射线 $AB$ 上, $EF \\perp CE$ 交射线 $AC$ 于点 $F$, $EF$ 与 $BC$ 交于点 $G$.\n(1) 如果点 $E$ 在边 $AB$ 上 (点 $E$ 不与点 $A, B$ 重合), 求证: $CE = EF$;\n(2) 当 $BE = \\frac{1}{3} AB$ 时, 求 $\\frac{CG}{GB}$ 的值;\n(3) 连接 $DF, DE$, 当 $\\triangle DEF$ 是等腰三角形时, 求 $\\frac{AE}{AB}$ 的值.",
+    "images": [
+      "problems/2022_Xuhui_One_Mock/q25.png"
+    ],
+    "exam_type": "一模",
+    "district": "徐汇"
+  }
+]

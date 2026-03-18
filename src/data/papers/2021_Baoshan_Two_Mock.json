@@ -1,0 +1,530 @@
+[
+  {
+    "id": "2021_Baoshan_Two_Mock_Q01",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "1",
+    "content": "下列运算正确的是 ( )\nA. $a^2+a^2=a^4$\nB. $a^3-a^2=a$\nC. $a^3 \\cdot a^2 = a^6$\nD. $a^6 \\div a^3 = a^3$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q02",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "2",
+    "content": "我国脱贫攻坚战取得了全面胜利. 12.8万个贫困村全部出列, 区域性整体贫困得到解决, 完成了消灭绝对贫困的艰巨任务, 把“12.8万”用科学记数法表示应是 ( )\nA. $12.8 \\times 10^4$\nB. $1.28 \\times 10^5$\nC. $12.8 \\times 10^5$\nD. $1.28 \\times 10^6$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "num_scientific"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q03",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "3",
+    "content": "如果直线 $y=2x+m$ 的图象一定经过第二象限, 那么 $m$ 的取值范围是 ( )\nA. $m>0$\nB. $m \\geq 0$\nC. $m<0$\nD. $m \\leq 0$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "图象性质"
+    ],
+    "kps": [
+      "alg_func_linear_image"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q04",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "4",
+    "content": "正多边形的一个内角为 $144^\\circ$, 那么该正多边形的边数为 ( )\nA. 8\nB. 9\nC. 10\nD. 11",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "多边形",
+      "内角和"
+    ],
+    "kps": [
+      "geo_polygon_angles"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q05",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "5",
+    "content": "学校组织朗诵比赛, 有 11 位同学晋级决赛, 每位选手得分各不相同. 如果小杰想要确定自己是否进入前 6 名, 那么除了自己的得分以外, 他还要了解这 11 名同学得分的 ( )\nA. 平均数\nB. 中位数\nC. 众数\nD. 方差",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数"
+    ],
+    "kps": [
+      "stat_median"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q06",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "6",
+    "content": "如图, 在 $\\square ABCD$ 中, 如果点 $E$ 是边 $AD$ 的中点, 且 $\\angle A = \\angle AEC$, 那么下列结论不正确的是 ( )\nA. $CE=CD$\nB. $BF=2DF$\nC. $AB = \\frac{5}{2} EF$\nD. $S_{\\text{四边形} ABFE} = 5 S_{\\triangle DEF}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "平行四边形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_quad_property",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q6_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q07",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "7",
+    "content": "因式分解: $m^2 - n^2 =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "因式分解",
+      "平方差公式"
+    ],
+    "kps": [
+      "alg_factoring_square_diff"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q08",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "8",
+    "content": "方程 $\\sqrt{3x+4}=x$ 的根是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q09",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "9",
+    "content": "已知一元二次方程 $\\frac{1}{2}x^2 - 2x - m = 0$ 有实数根, 那么 $m$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q10",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "10",
+    "content": "不透明的布袋里有 2 个黄球、4 个红球、3 个白球, 它们除颜色外其它都相同, 那么从布袋中任意摸出一个球恰好为红球的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q11",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "11",
+    "content": "为了了解六年级学生掌握游泳技能的情况, 在全区六年级 7200 名学生中, 随机抽取了 600 名学生, 结果有 240 名学生会游泳, 那么估计该区会游泳的六年级学生数约为 __________ 人.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q12",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "12",
+    "content": "已知点 $A(-3, y_1)$ 和点 $B(-\\frac{2}{3}, y_2)$ 都在二次函数 $y=ax^2 - 2ax + m \\ (a>0)$ 的图象上, 那么 $y_1 - y_2$ __________ 0 (结果用 $>$, $<$, $=$ 表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_axis",
+      "alg_func_quadratic_vertex"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q13",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "13",
+    "content": "《九章算术》记载了这样一个问题: “今有善田一亩, 价三百; 恶田七亩, 价五百. 今并买一顷, 价钱一万, 问善田几何?” 意思是: 当下良田 1 亩, 价值 300 钱; 薄田 7 亩, 价值 500 钱. 现在共买 1 顷, 价值 10000 钱. 根据条件, 良田买了 __________ 亩. (注: 1顷=100亩)",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "应用题",
+      "二元一次方程组"
+    ],
+    "kps": [
+      "alg_linear_eq_system_app"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q14",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "14",
+    "content": "如图, $AC // BD$, $\\angle C = 72^\\circ$, $\\angle ABC = 70^\\circ$, 那么 $\\angle ABD$ 的度数为 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "平行线",
+      "角度计算"
+    ],
+    "kps": [
+      "geo_parallel_lines"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q14_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q15",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "15",
+    "content": "如图, 已知等腰梯形 $ABCD$ 中, $AD // BC, BC=3AD$, 如果 $\\vec{BC}=\\vec{a}, \\vec{BD}=\\vec{b}$, 那么 $\\vec{AB}=$ __________. (结果用 $\\vec{a}, \\vec{b}$ 表示)",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "梯形"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q15_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q16",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "16",
+    "content": "如图, $AB$ 是圆 $O$ 的直径, $\\widehat{AD} = \\widehat{DC} = \\widehat{CB}$, $AC$ 与 $OD$ 交于点 $E$. 如果 $AC=3$, 那么 $DE$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "弧度",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_circle_arc",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q16_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q17",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "17",
+    "content": "我们把直角坐标平面内横、纵坐标互相交换的两个点称为“关联点对”, 如点 $A(2, 3)$ 和点 $B(3, 2)$ 为一对“关联点对”. 如果反比例函数 $y = \\frac{10}{x}$ 在第一象限内的图象上有一对“关联点对”, 且这两个点之间的距离为 $3\\sqrt{2}$, 那么这对“关联点对”中, 距离 $x$ 轴较近的点的坐标为 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "新定义",
+      "距离公式"
+    ],
+    "kps": [
+      "alg_func_inverse",
+      "alg_func_inverse_image",
+      "alg_distance_formula"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q18",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "18",
+    "content": "如图, 矩形 $ABCD$ 中, $AB=2, AD=5$, 点 $E$ 是 $BC$ 边上一点, 联结 $AE$, 将 $AE$ 绕点 $E$ 顺时针旋转 $90^\\circ$, 点 $A$ 的对应点记为点 $F$, 如果点 $F$ 在对角线 $BD$ 上, 那么 $\\frac{BF}{DF} =$ __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "相似三角形",
+      "矩形"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q18_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q19",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "19",
+    "content": "计算: $(\\frac{1}{2})^{-2} + \\frac{1}{2-\\sqrt{3}} - 27^{\\frac{2}{3}} + |\\sqrt{3}-2|$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real_calc"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q20",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} 5x > 3x-8 \\\\ \\frac{x+2}{4} \\geq x-1 \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q21",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "21",
+    "content": "已知直线 $y=x+m$ 经过点 $A(2, 3)$, 且与 $x$ 轴交于点 $B$.\n(1) 求点 $B$ 的坐标;\n(2) 如果一个反比例函数的图象与线段 $BA$ 的延长线交于点 $D$, 且 $BA:AD = 3:2$, 求这个反比例函数的解析式.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "反比例函数",
+      "待定系数法"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property",
+      "alg_func_inverse",
+      "alg_func_inverse_image"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q22",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "22",
+    "content": "图 1 是某地摩天轮的图片, 图 2 是示意图. 已知线段 $BC$ 经过圆心 $D$ 且垂直于地面, 垂足为点 $C$, 当座舱在点 $A$ 时, 测得摩天轮顶端点 $B$ 的仰角为 $15^\\circ$, 同时测得点 $C$ 的俯角为 $76^\\circ$, 又知摩天轮的半径为 10 米, 求摩天轮顶端 $B$ 与地面的距离. (精确到 1 米)\n参考数据: $\\sin 15^\\circ \\approx 0.26, \\cos 15^\\circ \\approx 0.96, \\tan 15^\\circ \\approx 0.27, \\sin 76^\\circ \\approx 0.97, \\cos 76^\\circ \\approx 0.24, \\tan 76^\\circ \\approx 4.01$.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "应用题"
+    ],
+    "kps": [
+      "geo_trig_ratio_app"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q22_0.png",
+      "/problems/2021_Baoshan_Two_Mock/q22_1.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q23",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "23",
+    "content": "如图, 在 $\\square ABCD$ 中, $\\angle BAD$ 的平分线交边 $BC$ 于点 $E$, 交 $DC$ 的延长线于点 $F$, 点 $G$ 在 $AE$ 上, 联结 $GD, \\angle GDF = \\angle F$.\n(1) 求证: $AD^2 = DG \\cdot AF$;\n(2) 联结 $BG$, 如果 $BG \\perp AE$, 且 $AB=6, AD=9$, 求 $AF$ 的长.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "平行四边形",
+      "角平分线"
+    ],
+    "kps": [
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_quad_property",
+      "geo_angle_bisector"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q24",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2 + bx - 1 \\ (a \\neq 0)$ 经过点 $A(-2, 0), B(1, 0)$ 和点 $D(-3, n)$, 与 $y$ 轴交于点 $C$.\n(1) 求该抛物线的表达式及点 $D$ 的坐标;\n(2) 将抛物线平移, 使点 $C$ 落在点 $B$处, 点 $D$ 落在点 $E$ 处, 求 $\\triangle ODE$ 的面积;\n(3) 如果点 $P$ 在 $y$ 轴上, $\\triangle PCD$ 与 $\\triangle ABC$ 相似, 求点 $P$ 的坐标.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q24_0.png"
+    ]
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q25",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知 $AB \\perp BC, DC \\perp BC$, 垂足分别为点 $B, C, AC$ 与 $BD$ 交于点 $P$.\n(1) 如果 $AB=3, CD=5$, 以点 $P$ 为圆心作圆, 圆 $P$ 与直线 $BC$ 相切.\n① 求圆 $P$ 的半径长;\n② 又 $BC=8$, 以 $BC$ 为直径作圆 $O$, 试判断圆 $O$ 与圆 $P$ 的位置关系, 并说明理由.\n(2) 如果分别以 $AB, CD$ 为直径的两圆外切, 求证: $\\triangle ABC$ 与 $\\triangle BCD$ 相似.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "位置关系",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_circle_pos",
+      "geo_circle_tangent",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q25_0.png"
+    ]
+  }
+]

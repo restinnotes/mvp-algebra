@@ -1,0 +1,516 @@
+[
+  {
+    "id": "2021_Jiading_Two_Mock_Q01",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "1",
+    "content": "下列四个选项中的数, 不是分数的是 ( )\nA. 80%\nB. $\\frac{\\sqrt{3}}{3}$\nC. $2\\frac{1}{3}$\nD. $\\frac{22}{7}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "分数",
+      "无理数"
+    ],
+    "kps": [
+      "alg_rational_num"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q02",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "2",
+    "content": "已知: $a \\neq 0$, 下列四个算式中, 正确的是 ( )\nA. $a^2+a^3=a^5$\nB. $a^2 \\cdot a^3 = a^6$\nC. $(a^2)^3 = a^8$\nD. $a^2 \\div a^3 = a^{-1}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q03",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "3",
+    "content": "下列四个函数解析式中, 其函数图像经过原点的是 ( )\nA. $y = \\frac{1}{2}x+1$\nB. $y = -\\frac{2}{x}$\nC. $y = x^2+2x$\nD. $y = (x-1)^2$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "函数性质",
+      "截距"
+    ],
+    "kps": [
+      "alg_func_graph_origin"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q04",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "4",
+    "content": "下列各统计量中, 表示一组数据波动程度的量是 ( )\nA. 平均数\nB. 众数\nC. 方差\nD. 频率",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "方差"
+    ],
+    "kps": [
+      "stat_variance"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q05",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "5",
+    "content": "下列四个命题中, 真命题是 ( )\nA. 对角线互相平分 四边形是平行四边形\nB. 对角线互相垂直的四边形是菱形\nC. 以一条对角线为对称轴的四边形是菱形\nD. 对称轴互相垂直的四边形是矩形",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "真命题",
+      "几何判定"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_quad_judge"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q06",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "6",
+    "content": "如果两圆的圆心距为 3, 其中一个圆的半径长为 3, 那么这两个圆的位置关系不可能是 ( )\nA. 两圆内切\nB. 两圆内含\nC. 两圆外离\nD. 两圆相交",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_pos",
+      "geo_circle_tangent"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q07",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "7",
+    "content": "$|1-\\sqrt{2}| =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "实数"
+    ],
+    "kps": [
+      "alg_abs_value_calc"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q08",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "8",
+    "content": "计算: $(x+1)(x-2) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "整式乘法"
+    ],
+    "kps": [
+      "alg_poly_mul"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q09",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "9",
+    "content": "如果点 $P(3, b)$ 在函数 $y = \\frac{1}{x+1}$ 的图象上, 那么 $b$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "函数性质"
+    ],
+    "kps": [
+      "alg_func_point_belong"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q10",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "10",
+    "content": "如果关于 $x$ 的方程 $x^2 - 6x + m = 0$ 有两个相等的实数根, 那么 $m$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q11",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "11",
+    "content": "无理方程 $\\sqrt{2x+3}=-x$ 实数解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q12",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "12",
+    "content": "从一副去掉大小王的扑克牌中随机抽取一张, 抽到数字为 “6” 的扑克牌的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q13",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "13",
+    "content": "如果点 $A(x_1, y_1)$ 和 $B(x_2, y_2)$ 在反比例函数 $y = \\frac{k}{x}$ ($k<0$) 的图象上, 且 $0 < x_1 < x_2$, 那么 $y_1$ 与 $y_2$ 的大小关系为: $y_1$ __________ $y_2$. (填 “$<$” 或 “$=$” 或 “$>$”)",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "单调性"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q14",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "14",
+    "content": "为了估计某个鱼塘里的鱼的数量, 养殖工人网住了 50 条鱼, 在每条鱼的尾巴上做个记号后, 又将鱼放回鱼塘. 等鱼游散后再随机撒网, 网住 60 条鱼, 发现其中有 2 条鱼的尾巴上有记号. 设该鱼塘里有 $x$ 条鱼, 依据题意, 可以列出方程: __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "样本估计总体",
+      "列方程"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q15",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "15",
+    "content": "已知 $AD$ 是 $\\triangle ABC$ 的中线, 设向量 $\\vec{AB}=\\vec{a}$, 向量 $\\vec{AD}=\\vec{b}$, 那么向量 $\\vec{AC}=$ __________ (用向量 $\\vec{a}、\\vec{b}$ 的线性组合表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "中线"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q16",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "16",
+    "content": "如果一个正三角形外接圆半径长为 2, 那么这个三角形的边长为 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "等边三角形",
+      "外接圆"
+    ],
+    "kps": [
+      "geo_tri_circumcircle"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q17",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "17",
+    "content": "已知直角三角形的直角边长为 $a、b$, 斜边长为 $c$, 将满足 $a^2+b^2=c^2$ 的一组正整数称为 “勾股数组”, 记为 $(a, b, c)$, 其中 $a \\leq b < c$. 事实上, 早在公元前十一世纪, 中国古代数学家商高就发现了 “勾三、股四、弦五”, 我们将其简记为 $(3, 4, 5)$. 类似的勾股数组还有很多…… 例如: $(5, 12, 13)$, $(7, 24, 25)$, $(9, 40, 41)$, $(11, 60, 61)$, $(13, 84, 85)$, …… 如果 $a=2n+1$ ($n$ 为正整数), 那么 $b+c=$ __________. (用含 $n$ 的代数式表示)",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "勾股数",
+      "归纳猜想"
+    ],
+    "kps": [
+      "alg_induction_patterns"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q18",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "18",
+    "content": "在矩形 $ABCD$ 中, $AB=6, BC=4$ (如图), 点 $E$ 是边 $AB$ 的中点, 联结 $DE$. 将 $\\triangle DAE$ 沿直线 $DE$ 翻折, 点 $A$ 的对应点为 $A'$, 那么点 $A'$ 到直线 $BC$ 的距离为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "矩形",
+      "相似三角形",
+      "点到直线距离"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q18_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q19",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{1}{x+1} + \\frac{1}{x-1} - \\frac{x^2+1}{x^2-1}$, 其中, $x=\\sqrt{2}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q20",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} x^2-5xy-6y^2=0 \\\\ x^2-4xy+4y^2=1 \\end{cases}$",
+    "difficulty": 0.4,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q21",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "21",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=6, \\cos A = \\frac{3}{5}$. $D$ 是 $AB$ 边的中点, 过点 $D$ 作直线 $CD$ 的垂线, 与边 $BC$ 相交于点 $E$.\n(1) 求线段 $CE$ 的长;\n(2) 求 $\\sin \\angle BDE$ 的值.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "相似三角形",
+      "直角三角形性质"
+    ],
+    "kps": [
+      "geo_trig_def",
+      "geo_trig_calc",
+      "geo_trig_app",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q22",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "22",
+    "content": "张先生准备租一处房屋开一家公司. 现有甲、乙两家房屋出租, 甲家房屋已装修好, 每月租金 3000 元; 乙家房屋没有装修, 每月租金 2000 元, 但要装修成甲家房屋的模样, 需要花费 40000 元. 请你自行定义变量, 建立函数, 并利用与函数有关的知识帮助张先生设计一个租房方案 (备注: 只从最省钱的角度设计租房方案, 写出具体的解题过程).",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "一次函数应用",
+      "最优方案"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q23",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "23",
+    "content": "已知: 四边形 $ABCD$ 是正方形, 点 $E$ 是 $BC$ 边中点, 点 $F$ 在边 $AB$ 上, 联结 $DE、EF$.\n(1) 如图 1, 如果 $\\tan \\angle BEF = \\frac{1}{2}$, 求证: $EF \\perp DE$;\n(2) 如图 2, 如果 $\\tan \\angle BEF = \\frac{3}{4}$, 求证: $\\angle DEF = 3\\angle CDE$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "正方形",
+      "相似三角形",
+      "锐角三角比",
+      "角度证明"
+    ],
+    "kps": [
+      "geo_quad_property",
+      "geo_quad_judge",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv",
+      "geo_angle_calc"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q23_0.png",
+      "/problems/2021_Jiading_Two_Mock/q23_1.png"
+    ]
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q24",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ (如图) 中, 二次函数 $f(x) = ax^2 - 2ax + a-1$ (其中 $a$ 是常数, 且 $a \\neq 0$) 的图象是开口向上的抛物线.\n(1) 求该抛物线的顶点 $P$ 的坐标;\n(2) 我们将横、纵坐标都是整数的点叫做 “整点”, 将抛物线 $f(x) = ax^2 - 2ax + a-1$ 与 $y$ 轴的交点记为 $A$, 如果线段 $OA$ 上的 “整点” 的个数小于 4, 试求 $a$ 的取值范围;\n(3) 如果 $f(-1)、f(0)、f(3)、f(4)$ 这四个函数值中有且只有一个值大于 0, 试写出符合题意的一个函数解析式; 结合函数图象, 求 $a$ 的取值范围.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "顶点",
+      "新定义",
+      "不等式"
+    ],
+    "kps": [
+      "alg_func_quadratic",
+      "alg_func_quadratic_image",
+      "alg_func_quadratic_geo",
+      "alg_inequality_system"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q24_0.png"
+    ]
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q25",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "25",
+    "content": "已知: $\\odot O$ 的半径长度是 5, $AB$ 是 $\\odot O$ 的直径, $CD$ 是 $\\odot O$ 的弦. 分别过点 $A、B$ 向直线 $CD$ 作垂线, 垂足分别为 $E、F$.\n(1) 如图 1, 当点 $A、B$ 位于直线 $CD$ 同侧, 求证: $CF=DE$;\n(2) 如图 2, 当点 $A、B$ 位于直线 $CD$ 两侧, $\\angle BAE = 30^\\circ$, 且 $AE=2BF$, 求弦 $CD$ 的长;\n(3) 设弦 $CD$ 的长度为 $l$, 线段 $AE$ 的长度为 $m$, 线段 $BF$ 的长度为 $n$, 探究 $l$ 与 $m、n$ 之间的数量关系, 并用含 $m、n$ 的代数式表示 $l$.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "垂线",
+      "全等三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_circle_chord",
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_congruent_adv",
+      "geo_similar_judge",
+      "geo_similar_prop",
+      "geo_similar_adv"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q25_0.png",
+      "/problems/2021_Jiading_Two_Mock/q25_1.png",
+      "/problems/2021_Jiading_Two_Mock/q25_2.png"
+    ]
+  }
+]

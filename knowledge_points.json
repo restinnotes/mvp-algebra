@@ -1,144 +1,54 @@
 {
-  "version": "4.0",
-  "source": "上海市初中数学学科教学基本要求",
-  "description": "基于上海市教育考试院官方考纲",
+  "version": "10.1",
+  "source": "上海市初中数学考纲平衡版 (基础骨架 + 压轴专项)",
+  "description": "2级标题覆盖全考纲，3级标签用于压轴题爆破",
   "categories": [
     {
       "id": "number",
-      "name": "数与运算",
+      "name": "数与运算 (Numbers)",
       "nodes": [
-        {
-          "id": "num_divisibility",
-          "name": "数的整除",
-          "level": 2,
-          "description": "因数、倍数、质数、合数、分解质因数、最大公因数、最小公倍数"
-        },
-        {
-          "id": "num_real",
-          "name": "实数",
-          "level": 2,
-          "description": "无理数、实数运算、科学记数法、近似计算"
-        }
+        {"id": "num_real", "name": "实数概念与运算", "level": 1, "importance": 5, "description": "实数、数轴、科学记数法及基础四则混合运算。", "prerequisites": [], "common_misconceptions": ["符号错误", "零次幂底数问题"]},
+        {"id": "num_divisibility", "name": "数的可除性", "level": 1, "importance": 3, "description": "因数、倍数、素数及最大公约数。", "prerequisites": [], "common_misconceptions": ["合数素数混淆"]}
       ]
     },
     {
       "id": "algebra",
-      "name": "代数",
+      "name": "方程与代数 (Algebra)",
       "nodes": [
-        {
-          "id": "alg_expression",
-          "name": "整式与代数式",
-          "level": 2,
-          "description": "代数式求值、整式运算、幂的运算"
-        },
-        {
-          "id": "alg_fraction",
-          "name": "分式",
-          "level": 2,
-          "description": "分式有意义的条件、分式运算"
-        },
-        {
-          "id": "alg_radical",
-          "name": "二次根式",
-          "level": 2,
-          "description": "二次根式运算、根号内外的化简"
-        },
-        {
-          "id": "alg_equation",
-          "name": "方程",
-          "level": 2,
-          "description": "一元一次方程、一元二次方程、二元一次方程组、分式方程"
-        },
-        {
-          "id": "alg_inequality",
-          "name": "不等式",
-          "level": 2,
-          "description": "一元一次不等式、不等式组"
-        },
-        {
-          "id": "alg_linear_func",
-          "name": "一次函数",
-          "level": 3,
-          "description": "一次函数图像与性质、待定系数法"
-        },
-        {
-          "id": "alg_inverse_func",
-          "name": "反比例函数",
-          "level": 3,
-          "description": "反比例函数图像与性质"
-        },
-        {
-          "id": "alg_quadratic_func",
-          "name": "二次函数",
-          "level": 3,
-          "description": "二次函数图像与性质、顶点式、解析式求解、与几何综合"
-        }
+        {"id": "alg_expr_calc", "name": "代数式整式运算", "level": 1, "importance": 6, "description": "整式、分式运算及因式分解。", "prerequisites": [], "common_misconceptions": ["去括号变号", "分式漏乘"]},
+        {"id": "alg_eq_linear", "name": "一元方程与不等式", "level": 1, "importance": 6, "description": "一元一次方程、不等式组及分式方程。", "prerequisites": ["alg_expr_calc"], "common_misconceptions": ["不等式变号", "分式方程漏验根"]},
+        {"id": "alg_eq_quadratic", "name": "一元二次方程", "level": 2, "importance": 8, "description": "解法、判别式及基本应用。", "prerequisites": ["alg_expr_calc"], "common_misconceptions": ["忘记判别式判断"]},
+        {"id": "alg_eq_vieta", "name": "★ 韦达定理综合 (Q24/25)", "level": 3, "importance": 9, "description": "压轴题常用：根与系数关系及参数讨论。", "prerequisites": ["alg_eq_quadratic"], "common_misconceptions": ["忽视Delta>=0", "符号错误"]}
+      ]
+    },
+    {
+      "id": "function",
+      "name": "函数与分析 (Functions)",
+      "nodes": [
+        {"id": "func_linear_inverse", "name": "一次与反比例函数", "level": 2, "importance": 8, "description": "图像性质、待定系数法及k的几何意义。", "prerequisites": ["alg_eq_linear"], "common_misconceptions": ["k的符号与象限", "待定系数代错点"]},
+        {"id": "func_quadratic_basic", "name": "二次函数基础", "level": 2, "importance": 8, "description": "三种解析式、开口、对称轴及顶点坐标。", "prerequisites": ["alg_eq_quadratic"], "common_misconceptions": ["配方法出错", "对称轴公式记反"]},
+        {"id": "func_quadratic_area", "name": "★ 铅垂线面积 (Q24)", "level": 3, "importance": 10, "description": "压轴必考：动点背景下的割补法与铅垂高面积计算。", "prerequisites": ["func_quadratic_basic"], "common_misconceptions": ["点在曲线上下的顺序错误"]},
+        {"id": "func_quadratic_existence", "name": "★ 几何存在性 (Q24)", "level": 3, "importance": 10, "description": "压轴必考：等腰、直角、平行四边形存在性讨论。", "prerequisites": ["func_quadratic_basic", "geo_triangle_prop"], "common_misconceptions": ["漏掉分类讨论情况"]}
       ]
     },
     {
       "id": "geometry",
-      "name": "图形与几何",
+      "name": "图形与几何 (Geometry)",
       "nodes": [
-        {
-          "id": "geo_triangle",
-          "name": "三角形",
-          "level": 2,
-          "description": "三角形性质、内角和、外角"
-        },
-        {
-          "id": "geo_congruent_tri",
-          "name": "全等三角形",
-          "level": 3,
-          "description": "全等判定(SSS、SAS、ASA、AAS、HL)、性质"
-        },
-        {
-          "id": "geo_similar_tri",
-          "name": "相似三角形",
-          "level": 3,
-          "description": "相似判定、性质、位似"
-        },
-        {
-          "id": "geo_trig",
-          "name": "锐角三角比",
-          "level": 3,
-          "description": "正弦、余弦、正切、解直角三角形"
-        },
-        {
-          "id": "geo_quadrilateral",
-          "name": "四边形",
-          "level": 2,
-          "description": "平行四边形、矩形、菱形、正方形的性质与判定"
-        },
-        {
-          "id": "geo_circle",
-          "name": "圆",
-          "level": 3,
-          "description": "圆的基本性质、圆周角与圆心角、切线、弧长与扇形面积"
-        },
-        {
-          "id": "geo_motion",
-          "name": "图形运动",
-          "level": 3,
-          "description": "翻折、旋转、平移"
-        }
+        {"id": "geo_triangle_prop", "name": "三角形与全等", "level": 1, "importance": 7, "description": "基本性质、垂直平分线、角平分线及全等判定。", "prerequisites": [], "common_misconceptions": ["对应边找错"]},
+        {"id": "geo_quad_prop", "name": "四边形与多边形", "level": 2, "importance": 7, "description": "特殊四边形性质判定及中位线应用。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["判定条件不充分"]},
+        {"id": "geo_similar_basic", "name": "相似三角形基础", "level": 2, "importance": 8, "description": "平行线分线段成比例及相似判定性质。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["比例式列错"]},
+        {"id": "geo_similar_k_model", "name": "★ K字型/一线三等角 (Q25)", "level": 3, "importance": 9, "description": "压轴模型：坐标系或几何图形中的一线三等角相似。", "prerequisites": ["geo_similar_basic"], "common_misconceptions": ["对应角识别错误"]},
+        {"id": "geo_motion_rotation_hand", "name": "★ 手拉手旋转模型 (Q25)", "level": 3, "importance": 9, "description": "压轴模型：共顶点等腰三角形产生的旋转全等/相似。", "prerequisites": ["geo_congruent"], "common_misconceptions": ["旋转中心识别错误"]},
+        {"id": "geo_circle_prop", "name": "圆的性质与切线", "level": 2, "importance": 8, "description": "垂径定理、圆周角及切线判定与性质。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["忽视多解性（圆心在两侧）"]},
+        {"id": "geo_trig_vector", "name": "三角比与向量", "level": 2, "importance": 6, "description": "锐角三角比、解直角三角形应用及平面向量。", "prerequisites": ["geo_similar_basic"], "common_misconceptions": ["坡度定义记反"]}
       ]
     },
     {
       "id": "statistics",
-      "name": "统计与概率",
+      "name": "统计与概率 (Stats)",
       "nodes": [
-        {
-          "id": "stat_data",
-          "name": "数据统计",
-          "level": 2,
-          "description": "平均数、中位数、众数、方差、统计图表"
-        },
-        {
-          "id": "stat_probability",
-          "name": "概率",
-          "level": 2,
-          "description": "概率概念、古典概型、列表法与树状图"
-        }
+        {"id": "stat_prob", "name": "统计图表与概率", "level": 1, "importance": 6, "description": "平均数/众数/方差、树状图与列表求概率。", "prerequisites": [], "common_misconceptions": ["重复计数或漏计"]}
       ]
     }
   ]

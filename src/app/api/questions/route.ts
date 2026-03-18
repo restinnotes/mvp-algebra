@@ -5,13 +5,16 @@ import {
   getKPQuestionStats, 
   getAllNodes, 
   loadMappings,
-  getQuestionById
+  getQuestionById,
+  clearCache
 } from '@/lib/knowledge';
 
 export async function POST(request: NextRequest) {
   try {
+    // Force cache clear for development/data updates
+    clearCache();
     const body = await request.json();
-    const { action, kps, excludePapers, maxResults, district, examType } = body;
+    const { action, kps, excludePapers, maxResults, district, examType, page = 1, pageSize = 10 } = body;
 
     if (action === 'search') {
       let questions = loadMappings();
@@ -26,7 +29,7 @@ export async function POST(request: NextRequest) {
       
       if (kps && kps.length > 0) {
         questions = questions.filter(q => 
-          q.kps.some(kp => kps.includes(kp))
+          q.kps && Array.isArray(q.kps) && q.kps.some(kp => kps.includes(kp))
         );
       }
       
@@ -34,20 +37,30 @@ export async function POST(request: NextRequest) {
         questions = questions.filter(q => !excludePapers.includes(q.paper));
       }
       
-      questions = questions.slice(0, maxResults || 5);
+      const total = questions.length;
+      const start = (page - 1) * (maxResults || pageSize);
+      const end = start + (maxResults || pageSize);
       
-      return NextResponse.json({ questions, count: questions.length });
+      const paginatedQuestions = questions.slice(start, end);
+      
+      return NextResponse.json({ 
+        questions: paginatedQuestions, 
+        count: paginatedQuestions.length,
+        total,
+        page,
+        totalPages: Math.ceil(total / (maxResults || pageSize))
+      });
     }
 
     if (action === 'districts') {
       const questions = loadMappings();
-      const districts = [...new Set(questions.map(q => q.district))];
+      const districts = [...new Set(questions.map(q => q.district).filter(d => d && d.trim() !== ''))];
       return NextResponse.json({ districts });
     }
 
     if (action === 'examTypes') {
       const questions = loadMappings();
-      const examTypes = [...new Set(questions.map(q => q.exam_type))];
+      const examTypes = [...new Set(questions.map(q => q.exam_type).filter(e => e && e.trim() !== ''))];
       return NextResponse.json({ examTypes });
     }
 

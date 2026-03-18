@@ -1,0 +1,396 @@
+[
+  {
+    "id": "q1",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 1,
+    "text": "在 $Rt\\triangle ABC$ 中，各边的长度都扩大 4 倍，那么锐角 $B$ 的正切值（ ）",
+    "options": [
+      "(A) 扩大 4 倍",
+      "(B) 扩大 2 倍",
+      "(C) 保持不变",
+      "(D) 缩小 4 倍"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "锐角三角比的定义"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q2",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 2,
+    "text": "在 $Rt\\triangle ABC$ 中，$\\angle C=90^\\circ, BC=4, AC=3$，那么 $\\angle A$ 的三角比值为 $\\frac{3}{5}$ 的是（ ）",
+    "options": [
+      "(A) $\\sin A$",
+      "(B) $\\cos A$",
+      "(C) $\\tan A$",
+      "(D) $\\cot A$"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q3",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 3,
+    "text": "下列二次函数与抛物线 $y=-x^2+2x-3$ 的对称轴相同的函数是（ ）",
+    "options": [
+      "(A) $y=-x^2+4x-3$",
+      "(B) $y=-2x^2-3x$",
+      "(C) $y=3x^2+6x-7$",
+      "(D) $y=\\frac{1}{2}x^2-x+5$"
+    ],
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "二次函数的性质",
+      "对称轴"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q4",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 4,
+    "text": "如图，已知在 $\\triangle ABC$ 中，点 $D$ 在边 $AB$ 上，那么下列条件中不能判定 $\\triangle ABC \\sim \\triangle ACD$ 的是（ ）",
+    "options": [
+      "(A) $\\frac{AC}{CD} = \\frac{AB}{BC}$",
+      "(B) $AC^2 = AD \\cdot AB$",
+      "(C) $\\angle B = \\angle ACD$",
+      "(D) $\\angle ADC = \\angle ACB$"
+    ],
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q4.png"
+    ],
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "相似三角形的判定"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q5",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 5,
+    "text": "如果 $\\vec{a}+\\vec{b}=\\vec{c}, \\vec{a}-\\vec{b}=3\\vec{c}$，且 $\\vec{c} \\neq \\vec{0}$，那么下列结论正确的是（ ）",
+    "options": [
+      "(A) $|\\vec{a}|=|\\vec{b}|$",
+      "(B) $\\vec{a}+2\\vec{b}=0$",
+      "(C) $\\vec{a}$ 与 $\\vec{b}$ 方向相同",
+      "(D) $\\vec{a}$ 与 $\\vec{b}$ 方向相反"
+    ],
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "向量的运算"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q6",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 6,
+    "text": "二次函数 $y=ax^2+bx+c (a \\neq 0)$ 的图像如图所示，现有以下结论：(1) $b>0$; (2) $abc<0$; (3) $a-b+c>0$; (4) $a+b+c>0$; (5) $b^2-4ac>0$; 其中正确的结论有（ ）",
+    "options": [
+      "(A) 2 个",
+      "(B) 3 个",
+      "(C) 4 个",
+      "(D) 5 个"
+    ],
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q6.png"
+    ],
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "二次函数的图像与系数的关系"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q7",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 7,
+    "text": "如果 $x:y=5:2$，那么 $(x+y):y$ 的值为 ______.",
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "比例的性质"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q8",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 8,
+    "text": "已知线段 $AB$ 的长度为 2 厘米，点 $P$ 是线段 $AB$ 的黄金分割点，那么较长线段 $AP$ 的长度是 ______ 厘米.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "黄金分割"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q9",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 9,
+    "text": "在 $Rt\\triangle ABC$ 中，$\\angle C=90^\\circ, BC=4, \\sin A = \\frac{2}{3}$，那么 $AB$ 的长度是 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q10",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 10,
+    "text": "两个相似三角形的面积之比是 $9:25$，其中较大的三角形一边上的高是 5 厘米，那么另一个三角形对应边上的高为 ______ 厘米.",
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "相似三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q11",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 11,
+    "text": "$\\vec{e}$ 为单位向量，$\\vec{a}$ 与 $\\vec{e}$ 的方向相同，且长度为 2，那么 $\\vec{a}=$ ______ $\\vec{e}$.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "向量的概念",
+      "单位向量"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q12",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 12,
+    "text": "如果抛物线 $y=x^2+m+1$ 的顶点是坐标轴的原点，那么 $m$ 的值是 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "二次函数的图像与性质",
+      "顶点坐标"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q13",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 13,
+    "text": "已知二次函数 $f(x) = \\frac{1}{2}x^2+bx+c$ 图像的对称轴为直线 $x=4$，那么 $f(1) ______ f(3)$. (填\">\"或\"<\"或\"=\")",
+    "difficulty": 0.3,
+    "knowledgePoints": [
+      "二次函数的性质",
+      "单调性"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q14",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 14,
+    "text": "如图所示，用手电筒测量古城墙高度，将水平的平面镜放置在点 $P$ 处，光线从点 $A$ 出发，经过平面镜反射后，光线刚好照到古城墙 $CD$ 的顶端 $C$ 处. 如果 $AB \\perp BD, CD \\perp BD, AB=1.5$ 米, $BP=1.8$ 米, $PD=12$ 米, 那么该古城墙的高度是 ______ 米.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q14.png"
+    ],
+    "difficulty": 0.4,
+    "knowledgePoints": [
+      "相似三角形的应用"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q15",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 15,
+    "text": "如图，某幢楼的楼梯每一级台阶的高度为 20 厘米，宽度为 30 厘米，那么斜面 $AB$ 的坡度为 ______.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q15.png"
+    ],
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "坡度坡角问题"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q16",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 16,
+    "text": "如图，已知在 $Rt\\triangle ABC$ 中，$\\angle ACB=90^\\circ, \\angle B=30^\\circ, AC=1, D$ 是 $AB$ 边上一点，将 $\\triangle ACD$ 沿 $CD$ 翻折，点 $A$ 恰好落在边 $BC$ 上的点 $E$处，那么 $AD=$ ______.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q16.png"
+    ],
+    "difficulty": 0.5,
+    "knowledgePoints": [
+      "翻折变换",
+      "解直角三角形"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q17",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 17,
+    "text": "如图，在平面直角坐标系中，已知点 $A$ 的坐标为 $(a, 3) (a>4)$，射线 $OA$ 与反比例函数 $y=\\frac{12}{x}$ 的图像交于点 $P$，过点 $A$ 作 $x$ 轴的垂线交双曲线于点 $B$，过点 $A$ 作 $y$ 轴的垂线交双曲线于点 $C$，联结 $BP, CP$，那么 $\\frac{S_{\\triangle ABP}}{S_{\\triangle ACP}}$ 的值是 ______.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q17.png"
+    ],
+    "difficulty": 0.65,
+    "knowledgePoints": [
+      "反比例函数的几何意义",
+      "三角形的面积"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q18",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 18,
+    "text": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C=90^\\circ, AC=8, BC=6$, 点 $P$ 是 $AC$ 边上一点，将 $\\triangle ACB$ 沿着过点 $P$ 的一条直线翻折，使得点 $A$ 落在边 $AB$ 上的点 $Q$ 处，联结 $PQ$，如果 $\\angle CQB = \\angle APQ$，那么 $AQ$ 的长为 ______.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q18.png"
+    ],
+    "difficulty": 0.75,
+    "knowledgePoints": [
+      "翻折变换",
+      "相似三角形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q19",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 19,
+    "text": "计算：$\\tan 45^\\circ + (\\sqrt{3}-1)^0 - (\\frac{1}{2})^{-1} + \\frac{4}{\\sqrt{3}+1}$.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "实数的运算",
+      "特殊角的三角比"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q20",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 20,
+    "text": "如图，$AD, BE$ 是 $\\triangle ABC$ 的中线，交于点 $G$，且 $\\vec{AB}=\\vec{a}, \\vec{BC}=\\vec{b}$.\n(1) 直接写出向量 $\\vec{AG}$ 关于 $\\vec{a}, \\vec{b}$ 的分解式, $\\vec{AG}=$ ______;\n(2) 在图中画出向量 $\\vec{BG}$ 在向量 $\\vec{a}$ 和 $\\vec{b}$ 方向上的分向量. (不要求写作法，但要保留作图痕迹，并写明结论)",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q20.png"
+    ],
+    "difficulty": 0.45,
+    "knowledgePoints": [
+      "三角形的重心",
+      "向量的线性运算",
+      "分向量"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q21",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 21,
+    "text": "如图，已知在 $Rt\\triangle ABC$ 中，$\\angle ACB=90^\\circ, \\tan \\angle CAB=2$，点 $A$ 的坐标为 $(-1, 0)$，点 $B$ 在 $x$ 轴正半轴上，点 $C$ 在 $y$ 轴正半轴上.\n(1) 求经过 $B, C$ 两点的直线的表达式;\n(2) 求图像经过 $A, B, C$ 三点的二次函数的解析式.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q21.png"
+    ],
+    "difficulty": 0.55,
+    "knowledgePoints": [
+      "待定系数法求一次函数解析式",
+      "待定系数法求二次函数解析式"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q22",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 22,
+    "text": "为了维护南海的主权，我国对相关区域进行海空常态化立体巡航. 如图，在一次巡航中，预警机沿 $AE$ 方向飞行，驱护舰沿 $BP$ 方向航行，且航向相同 ($AE // BP$). 当预警机飞行到 $A$ 处时，测得航行到 $B$ 处的驱护舰的俯角为 $45^\\circ$，此时 $B$ 距离相关岛屿 $P$ 恰为 60 千米; 当预警机飞行到 $C$ 处时，驱护舰恰好航行到预警机正下方 $D$ 处，此时 $CD=10$ 千米，当预警机飞行到 $E$ 处时，驱护舰到达相关岛屿 $P$，且测得 $E$ 处的预警机的仰角为 $22^\\circ$. 求预警机的飞行距离 $AE$. (结果保留整数) (参考数据: $\\sin 22^\\circ \\approx 0.37, \\cos 22^\\circ \\approx 0.93, \\tan 22^\\circ \\approx 0.40$.)",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q22.png"
+    ],
+    "difficulty": 0.65,
+    "knowledgePoints": [
+      "解直角三角形的应用",
+      "仰角俯角问题"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q23",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 23,
+    "text": "如图，在等腰 $\\triangle ABC$ 中，$AB=AC$，点 $D$ 是边 $BC$ 上的中点，过点 $C$ 作 $CE \\perp BC$，交 $BA$ 的延长线于点 $E$, 过点 $B$ 作 $BH \\perp AC$, 交 $AD$ 于点 $F$, 交 $AC$ 于点 $H$, 交 $CE$ 于点 $G$.\n求证: (1) $BC \\cdot BH = CH \\cdot EC$; (2) $BC^2 = 4DF \\cdot DA$.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q23.png"
+    ],
+    "difficulty": 0.8,
+    "knowledgePoints": [
+      "等腰三角形的性质",
+      "相似三角形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q24",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 24,
+    "text": "如图，在平面直角坐标系 $xOy$ 中，直线 $y=-x+5$ 与 $x$ 轴交于点 $A$, 与 $y$ 轴交于点 $B$. 点 $C$ 为抛物线 $y=ax^2-2a^2x+a^3+\\frac{1}{2}a$ 的顶点.\n(1) 用含 $a$ 的代数式表示顶点 $C$ 的坐标;\n(2) 当顶点 $C$ 在 $\\triangle AOB$ 内部，且 $S_{\\triangle AOC} = \\frac{5}{2}$ 时，求抛物线的表达式;\n(3) 如果将抛物线向右平移一个单位，再向下平移 $\\frac{1}{2}$ 个单位后，平移后的抛物线的顶点 $P$ 仍在 $\\triangle AOB$ 内，求 $a$ 的取值范围.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q24.png"
+    ],
+    "difficulty": 0.9,
+    "knowledgePoints": [
+      "二次函数的综合应用",
+      "抛物线的顶点坐标",
+      "三角形的面积"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  },
+  {
+    "id": "q25",
+    "paper": "2022_Minhang_One_Mock",
+    "qIndex": 25,
+    "text": "已知四边形 $ABCD$ 是菱形，$AB=4$，点 $E$ 在射线 $CB$ 上，点 $F$ 在射线 $CD$ 上，且 $\\angle EAF = \\angle BAD$.\n(1) 如图①，如果 $\\angle BAD=90^\\circ$，求证: $AE=AF$;\n(2) 如图②，当点 $E$ 在 $CB$ 的延长线上时，如果 $\\angle ABC = 60^\\circ$，设 $DF=x, \\frac{AF}{AE}=y$，试建立 $y$ 与 $x$ 的函数关系式，并写出 $x$ 的取值范围;\n(3) 联结 $AC, BE=2$，当 $\\triangle AEC$ 是等腰三角形时，请直接写出 $DF$ 的长.",
+    "images": [
+      "/problems/2022_Minhang_One_Mock/fig_q25_1.png",
+      "/problems/2022_Minhang_One_Mock/fig_q25_2.png",
+      "/problems/2022_Minhang_One_Mock/fig_q25_3.png"
+    ],
+    "difficulty": 0.95,
+    "knowledgePoints": [
+      "菱形的性质",
+      "相似三角形的判定与性质",
+      "几何动点问题"
+    ],
+    "exam_type": "一模",
+    "district": "闵行"
+  }
+]

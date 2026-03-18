@@ -1,0 +1,394 @@
+[
+  {
+    "id": "q1",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 1,
+    "text": "在平面直角坐标系 $xOy$ 中，已知点 $P(1,2)$，点 $P$ 与原点 $O$ 的连线与 $x$ 轴正半轴的夹角为 $\\alpha (0^\\circ < \\alpha < 90^\\circ)$，那么 $\\tan \\alpha$ 的值是（ ）",
+    "options": [
+      "(A) 2",
+      "(B) $\\frac{1}{2}$",
+      "(C) $\\frac{\\sqrt{5}}{2}$",
+      "(D) $\\sqrt{5}$"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "直角坐标系中的三角比"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q2",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 2,
+    "text": "在比例尺为 $1:50$ 的图纸上，长度为 $10cm$ 的线段实际长为（ ）",
+    "options": [
+      "(A) $50cm$",
+      "(B) $500cm$",
+      "(C) $\\frac{1}{50}cm$",
+      "(D) $\\frac{1}{500}cm$"
+    ],
+    "difficulty": 0.15,
+    "knowledgePoints": [
+      "比例尺"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q3",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 3,
+    "text": "已知单位向量 $\\vec{e}$ 与非零向量 $\\vec{a}, \\vec{b}$，下列四个选项中，正确的是（ ）",
+    "options": [
+      "(A) $|\\vec{a}|\\vec{e} = \\vec{a}$",
+      "(B) $|\\vec{e}|\\vec{b} = \\vec{b}$",
+      "(C) $\\frac{1}{|\\vec{a}|}\\vec{a} = \\frac{1}{|\\vec{b}|}\\vec{b}$",
+      "(D) $\\frac{1}{|\\vec{a}|}\\vec{a} = \\vec{e}$"
+    ],
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "向量的概念",
+      "单位向量"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q4",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 4,
+    "text": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C=90^\\circ, AC=6, BC=3, DE // BC$, 且 $AD=2CD$，那么以点 $C$ 为圆心、$DC$ 长为半径的圆 $C$ 和以点 $E$ 为圆心、$EB$ 长为半径的圆 $E$ 的位置关系是（ ）",
+    "options": [
+      "(A) 外离",
+      "(B) 外切",
+      "(C) 相交",
+      "(D) 不能确定"
+    ],
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q4.png"
+    ],
+    "difficulty": 0.3,
+    "knowledgePoints": [
+      "圆与圆的位置关系",
+      "相似三角形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q5",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 5,
+    "text": "如图，已知抛物线 $y=ax^2+bx+c$ 经过点 $(-1,0)$，与 $y$ 轴交于 $(0,2)$，且顶点在第一象限，那么下列结论：① $a+c=b$; ② $x=-1$ 是方程 $ax^2+bx+c=0$ 的解; ③ $abc>0$; ④ $c-a>2$，其中正确的结论为（ ）",
+    "options": [
+      "(A) ①②③",
+      "(B) ②③④",
+      "(C) ①②④",
+      "(D) ①②③④"
+    ],
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q5.png"
+    ],
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "二次函数的图像与系数的关系"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q6",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 6,
+    "text": "一次数学作业共有 10 道题，某小组 8 位学生正确解答题目数的情况如下表：\n\n| 正确解答题目数 | 6 | 7 | 8 | 9 | 10 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 学生人数 | 1 | 1 | 2 | 3 | 1 |\n\n那么这 8 位学生正确解答题目数的众数和中位数分别是（ ）",
+    "options": [
+      "(A) 3 和 2",
+      "(B) 3 和 1",
+      "(C) 9 和 8",
+      "(D) 9 和 8.5"
+    ],
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "众数",
+      "中位数"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q7",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 7,
+    "text": "已知 $Rt\\triangle ABC$ 中，$\\angle C=90^\\circ$，如果 $BC:AB=3:4$，那么 $\\cos A$ 的值为 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q8",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 8,
+    "text": "已知一组数据 10、3、a、5 的平均数为 5，那么 $a$ 为 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "平均数"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q9",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 9,
+    "text": "已知 $\\triangle ABC$ 的两条中线 $BD, CE$ 相交于点 $P, PE=2$，那么 $CP$ 的长度为 ______.",
+    "difficulty": 0.3,
+    "knowledgePoints": [
+      "三角形的重心"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q10",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 10,
+    "text": "已知一个斜坡的坡度 $i=1:\\sqrt{3}$，那么该斜坡坡角的度数是 ______.",
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "坡度坡角问题"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q11",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 11,
+    "text": "正五边形的中心角等于 ______ 度.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "正多边形"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q12",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 12,
+    "text": "已知圆 $O$ 的半径为 5，点 $A$ 在圆 $O$ 外，如果线段 $OA$ 的长度为 $d$，那么 $d$ 的取值范围是 ______.",
+    "difficulty": 0.2,
+    "knowledgePoints": [
+      "点与圆的位置关系"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q13",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 13,
+    "text": "二次函数 $y=(x+1)^2-3$ 的图像与 $y$ 轴的交点坐标为 ______.",
+    "difficulty": 0.25,
+    "knowledgePoints": [
+      "二次函数与坐标轴的交点"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q14",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 14,
+    "text": "如图，在平行四边形 $ABCD$ 中，点 $E$ 是 $CD$ 边的中点，如果 $\\vec{AB}=\\vec{a}, \\vec{AD}=\\vec{b}$，用含 $\\vec{a}, \\vec{b}$ 的式子表示向量 $\\vec{AE}=$ ______.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q14.png"
+    ],
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "向量的线性运算",
+      "平行四边形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q15",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 15,
+    "text": "如果抛物线 $y=ax^2+bx+c (a \\neq 0)$ 的对称轴是直线 $x=1$，那么 $2a+b$ 的值为 ______.",
+    "difficulty": 0.35,
+    "knowledgePoints": [
+      "二次函数的性质",
+      "对称轴"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q16",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 16,
+    "text": "如图，正方形 $AFEB$ 和正方形 $BEDC$ 的边长相等，点 $A, B, C$ 在同一条直线上. 联结 $AD, BD$，那么 $\\cot \\angle ADB$ 的值为 ______.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q16.png"
+    ],
+    "difficulty": 0.45,
+    "knowledgePoints": [
+      "正方形的性质",
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q17",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 17,
+    "text": "如图，已知在 $\\triangle ABC$ 中，$\\angle ACB=90^\\circ, AB=5, \\sin A = \\frac{3}{5}$，把 $\\triangle ABC$ 绕着点 $C$ 按顺时针方向旋转，将点 $A, B$ 的对应点分别记为点 $A', B'$，如果 $B'A \\perp AA'$，那么点 $A$ 与点 $A'$ 的距离为 ______.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q17.png"
+    ],
+    "difficulty": 0.65,
+    "knowledgePoints": [
+      "旋转变换",
+      "相似三角形的判定与性质",
+      "解直角三角形"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q18",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 18,
+    "text": "已知抛物线 $y=x^2+2x-3$ 与 $x$ 轴交于 $A, B$ 两点 (点 $A$ 在点 $B$ 的左侧)，将这条抛物线向右平移 $m (m>0)$ 个单位，平移后的抛物线与 $x$ 轴交于 $C, D$ 两点 (点 $C$ 在点 $D$ 的左侧)，若 $B, C$ 是 $AD$ 的三等分点，则 $m$ 的值为 ______.",
+    "difficulty": 0.75,
+    "knowledgePoints": [
+      "二次函数的平移",
+      "一元二次方程的根",
+      "线段的等分点"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q19",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 19,
+    "text": "先化简，再求值: $\\frac{2}{x^2-x} \\div (1+\\frac{x+1}{x^2-1})$，其中 $x$ 是不等式组 $\\begin{cases} 2(x-1)<x+1 \\\\ 5x+3 \\ge 2x \\end{cases}$ 的整数解.",
+    "difficulty": 0.4,
+    "knowledgePoints": [
+      "分式的化简求值",
+      "一元一次不等式组的整数解"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q20",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 20,
+    "text": "在一块等腰直角三角形铁皮上截一块矩形铁皮. 如图，已有的铁皮是等腰直角三角形 $ABC$，它的底边 $AB$ 长 20 厘米. 要截得的矩形 $EFGD$ 的边 $FG$ 在 $AB$ 上，顶点 $E, D$ 分别在边 $CA, CB$ 上. 设 $EF$ 的长为 $x$ 厘米，矩形 $EFGD$ 的面积为 $y$ 平方厘米，试写出 $y$ 关于 $x$ 的函数解析式及定义域，并求当 $EF$ 的长为 4 厘米时所截得的矩形的面积.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q20.png"
+    ],
+    "difficulty": 0.5,
+    "knowledgePoints": [
+      "二次函数的应用",
+      "等腰直角三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q21",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 21,
+    "text": "如图，已知 $\\triangle ABC$ 中，$\\angle B=45^\\circ, AB=4\\sqrt{2}, \\tan C=2, \\odot O$ 过点 $A, C$，交 $BC$ 边于点 $D$，且 $AD=AC$，求 $CD$ 点长.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q21.png"
+    ],
+    "difficulty": 0.6,
+    "knowledgePoints": [
+      "圆的性质",
+      "相似三角形的判定与性质",
+      "解直角三角形"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q22",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 22,
+    "text": "如图，在平面直角坐标系中，$OA \\perp OB, AB \\perp x$ 轴于点 $C$，点 $A(\\sqrt{3}, 1)$ 在反比例函数 $y=\\frac{k}{x}$ 的图像上.\n(1) 求反比例函数 $y=\\frac{k}{x}$ 的表达式;\n(2) 求 $\\triangle AOB$ 的面积;\n(3) 在坐标轴上是否存在一点 $P$，使得以 $O, B, P$ 三点为顶点的三角形是等腰三角形，若存在，请直接写出所有符合条件的点 $P$ 的坐标; 若不存在，简述你的理由.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q22.png"
+    ],
+    "difficulty": 0.75,
+    "knowledgePoints": [
+      "反比例函数",
+      "待定系数法",
+      "等腰三角形的判定"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q23",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 23,
+    "text": "如图1, 在 $\\triangle ABC$ 中, 点 $E$ 在 $AC$ 的延长线上, 且 $\\angle E=\\angle ABC$.\n(1) 求证: $AB^2 = AC \\cdot AE$;\n(2) 如图2, $D$ 在 $BC$ 上, 且 $BD=3CD$, 延长 $AD$ 交 $BE$ 于 $F$, 若 $\\frac{AB}{AC}=\\frac{3}{2}$, 求 $\\frac{CD}{EF}$ 的值.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q23_1.png",
+      "/problems/2022_Yangpu_Two_Mock/fig_q23_2.png"
+    ],
+    "difficulty": 0.8,
+    "knowledgePoints": [
+      "相似三角形的判定与性质",
+      "比例线段"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q24",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 24,
+    "text": "已知一个二次函数的图像经过 $A(1,0), B(3,0), C(0,-3)$ 三点，顶点为 $D$.\n(1) 求这个二次函数的解析式;\n(2) 求经过 $A, D$ 两点的直线的表达式;\n(3) 设 $P$ 为直线 $AD$ 上一点，且以 $A, P, C, B$ 为顶点的四边形是平行四边形，求点 $P$ 的坐标.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q24.png"
+    ],
+    "difficulty": 0.9,
+    "knowledgePoints": [
+      "二次函数的解析式",
+      "一次函数",
+      "平行四边形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": "q25",
+    "paper": "2022_Yangpu_Two_Mock",
+    "qIndex": 25,
+    "text": "已知: $AB$ 是 $\\odot O$ 的直径，弦 $CD \\perp AB$，垂足为点 $H, AH=5, CD=4\\sqrt{5}$，点 $E$ 在 $\\odot O$ 上，射线 $AE$ 与射线 $CD$ 相交于点 $F$，设 $AE=x, DF=y$.\n(1) 求 $\\odot O$ 的半径;\n(2) 如图所示，当点 $E$ 在弧 $AD$ 上时，求 $y$ 与 $x$ 之间的函数解析式，并写出函数的定义域;\n(3) 如果 $EF = \\frac{3}{2}$，求 $DF$ 的长.",
+    "images": [
+      "/problems/2022_Yangpu_Two_Mock/fig_q25.png"
+    ],
+    "difficulty": 0.95,
+    "knowledgePoints": [
+      "圆的性质",
+      "垂径定理",
+      "相似三角形的判定与性质",
+      "几何动点问题"
+    ],
+    "exam_type": "一模",
+    "district": "杨浦"
+  }
+]

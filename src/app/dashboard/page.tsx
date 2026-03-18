@@ -272,8 +272,8 @@ export default function DashboardPage() {
     if (!isMounted) return <div className="min-h-screen bg-[#0d0f14]" />;
 
     const handleContinue = () => {
-        // Go back to the main app to continue the next sequential problem
-        router.push('/?refresh=true');
+        // Go back to the practice hub to choose the next problem
+        router.push('/practice');
     };
 
     const handleReset = () => {

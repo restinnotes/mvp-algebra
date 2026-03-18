@@ -3,7 +3,7 @@ import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const MAPPINGS_PATH = path.join(process.cwd(), 'mappings_auto.json');
+const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
 
 let _graphCache: KnowledgeGraph | null = null;
 let _nodesCache: KnowledgeNode[] | null = null;
@@ -75,12 +75,29 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(MAPPINGS_PATH)) {
+  if (!fs.existsSync(PAPERS_DIR)) {
     return [];
   }
 
-  const raw = fs.readFileSync(MAPPINGS_PATH, 'utf-8');
-  _mappingsCache = JSON.parse(raw) as QuestionMapping[];
+  const files = fs.readdirSync(PAPERS_DIR);
+  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  
+  const allMappings: QuestionMapping[] = [];
+  
+  for (const file of jsonFiles) {
+    try {
+      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
+      const data = JSON.parse(raw);
+      const qs = Array.isArray(data) ? data : [data];
+      // Only include questions that have at least one knowledge point
+      const validQs = qs.filter(q => q.kps && Array.isArray(q.kps) && q.kps.length > 0);
+      allMappings.push(...validQs);
+    } catch (e) {
+      console.error(`Error loading paper data from ${file}:`, e);
+    }
+  }
+
+  _mappingsCache = allMappings;
   return _mappingsCache;
 }
 
