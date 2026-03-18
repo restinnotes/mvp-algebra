@@ -1,6 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { GoogleGenAI } = require("@google/genai");
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyCakoM7mAgR2JqA4zCprS-qCJdigLtOOH8" });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function generate() {
     console.log("Generating for Script 0...");
