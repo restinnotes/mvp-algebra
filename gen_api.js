@@ -1,9 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { GoogleGenAI } = require("@google/genai");
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY || "";
 
 async function generate() {
+    if (!apiKey) {
+        console.warn("Skipping generation: GEMINI_API_KEY is not set.");
+        return;
+    }
+    const ai = new GoogleGenAI({ apiKey });
     console.log("Generating for Script 0...");
     const prompt0 = `你是一位严谨的AI数学导师，正在辅导中考数学。
 学生刚刚完成了一道题：“2022浦东Q24: 抛物线 y=ax²-2x+c 与直线 y=-x+3 分别交于x轴、y轴... 求顶点D坐标及tan∠BCD”
