@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle, Sparkles, Layers, ChevronDown, Flame } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle, Sparkles, Layers, ChevronDown, Flame, Target } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
@@ -310,7 +310,11 @@ export default function DashboardPage() {
         }
 
         return (
-            <div key={node.id} className={`p-4 rounded-xl border relative transition-all duration-300 ${nodeClass} flex flex-col justify-between`}>
+            <Link 
+                key={node.id} 
+                href={`/practice?kp=${node.id}`}
+                className={`p-4 rounded-xl border relative transition-all duration-300 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98] cursor-pointer ${nodeClass} flex flex-col justify-between`}
+            >
                 {isHardcore && (
                     <div className="absolute -top-2 -right-2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-lg z-10">
                         <Flame size={10} /> 压轴核心
@@ -341,10 +345,10 @@ export default function DashboardPage() {
                     </div>
                 ) : (
                     <div className="mt-4 text-[10px] text-white/30 uppercase tracking-widest bg-black/20 text-center py-1 rounded">
-                        未评估 (Pending)
+                        去挑战 (Start)
                     </div>
                 )}
-            </div>
+            </Link>
         );
     };
 
@@ -534,63 +538,107 @@ export default function DashboardPage() {
 
                     {/* Right Column: Soft Skills Cognitive Profile */}
                     <section className="lg:col-span-1 space-y-6 sticky top-8">
-                        {/* Cognitive Bugs (Misconceptions) */}
-                        <div className="bg-gradient-to-br from-indigo-900/40 to-purple-900/20 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl">
+                        {/* Cognitive Radar (Structural) */}
+                        <div className="bg-gradient-to-br from-indigo-900/40 to-purple-900/20 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+                            <div className="absolute -right-10 -top-10 w-40 h-40 bg-indigo-500/10 blur-3xl rounded-full" />
+                            
                             <h2 className="text-lg font-bold text-indigo-300 mb-6 flex items-center gap-2">
-                                <UserCircle size={20} /> AI 认知雷达 (Soft Skills)
+                                <BrainCircuit size={20} /> 认知素养雷达
                             </h2>
                             
-                            <h3 className="text-sm text-white/50 mb-4 uppercase tracking-wide flex items-center justify-between">
-                                <span>高频认知行为漏洞</span>
-                                <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded">基于最近归因</span>
-                            </h3>
-                            {sortedMisconceptions.length > 0 ? (
-                                <div className="space-y-4 mb-6">
-                                    {sortedMisconceptions.map(([m, count]: any, i) => {
-                                        const severityColor = count >= 3 ? 'text-rose-400 bg-rose-500/10 border-rose-500/30' : count == 2 ? 'text-amber-400 bg-amber-500/10 border-amber-500/30' : 'text-indigo-300 bg-indigo-500/10 border-indigo-500/30';
-                                        const barColor = count >= 3 ? 'bg-rose-500' : count == 2 ? 'bg-amber-500' : 'bg-indigo-500';
-                                        const width = Math.min(100, (count / 5) * 100); // Max out at 5 hits
-                                        
-                                        return (
-                                            <div key={i} className="space-y-2">
+                            {(() => {
+                                const dimensions = [
+                                    { id: 'Translation', name: '转化力', color: 'bg-blue-500', icon: <RefreshCcw size={12}/> },
+                                    { id: 'Pattern', name: '模型识别', color: 'bg-purple-500', icon: <Target size={12}/> },
+                                    { id: 'Logic', name: '逻辑推理', color: 'bg-emerald-500', icon: <Layers size={12}/> },
+                                    { id: 'Rigor', name: '严谨度', color: 'bg-rose-500', icon: <ShieldAlert size={12}/> },
+                                    { id: 'Computation', name: '运算力', color: 'bg-amber-500', icon: <Activity size={12}/> }
+                                ];
+
+                                const rawBugs = studentData?.persona?.misconceptions || [];
+                                const stats = dimensions.map(d => {
+                                    const count = rawBugs.filter(b => b.startsWith(`${d.id}:`)).length;
+                                    const specificBugs = rawBugs
+                                        .filter(b => b.startsWith(`${d.id}:`))
+                                        .map(b => b.split(':')[1].trim());
+                                    return { ...d, count, specificBugs };
+                                });
+
+                                const maxCount = Math.max(...stats.map(s => s.count), 1);
+
+                                return (
+                                    <div className="space-y-5">
+                                        {stats.map(s => (
+                                            <div key={s.id} className="space-y-1.5">
                                                 <div className="flex justify-between items-end">
-                                                    <span className="text-sm font-bold text-white/90 flex items-center gap-1.5">
-                                                        <Bug size={14} className={count >= 3 ? 'text-rose-500 animate-pulse' : 'text-white/40'} /> 
-                                                        {m}
-                                                    </span>
-                                                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border ${severityColor}`}>
-                                                        {count} 次触发
-                                                    </span>
+                                                    <div className="flex items-center gap-2">
+                                                        <span className={`p-1 rounded ${s.color}/20 text-white/80`}>{s.icon}</span>
+                                                        <span className="text-xs font-bold text-white/70">{s.name}</span>
+                                                    </div>
+                                                    <span className="text-[10px] font-mono text-white/30">{s.count} 次异常记录</span>
                                                 </div>
                                                 <div className="h-1.5 bg-black/40 rounded-full overflow-hidden w-full">
                                                     <motion.div 
                                                         initial={{ width: 0 }} 
-                                                        animate={{ width: `${width}%` }} 
-                                                        className={`h-full ${barColor} rounded-full`}
+                                                        animate={{ width: `${(s.count / (maxCount + 2)) * 100}%` }} 
+                                                        className={`h-full ${s.color} rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]`}
                                                     />
                                                 </div>
                                             </div>
-                                        )
-                                    })}
-                                </div>
-                            ) : (
-                                <div className="text-white/30 text-sm italic py-6 mb-6 border-l-2 border-white/10 pl-4 bg-white/5 rounded-r-xl">
-                                    当前未检测到明显的跨模块认知漏洞。
-                                </div>
-                            )}
+                                        ))}
 
-                            {/* Learning Style */}
-                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">综合评估诊断报告</h3>
-                            <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-200 text-sm leading-relaxed mb-6 italic">
-                                {studentData.persona.learningStyle || studentData.persona.learning_style || "尚未进行充足的交互评估。完成第一道压轴题后生成系统级诊断。"}
-                            </div>
-
-                            {/* Last Session Review */}
-                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">最近一次切片洞察 ({new Date(studentData.lastUpdated).toLocaleTimeString().slice(0,5)})</h3>
-                            <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner">
-                                {studentData.persona.lastSessionSummary || "期待您的第一次解题。"}
-                            </p>
+                                        {/* Smart Diagnostic Summary */}
+                                        <div className="mt-8 pt-6 border-t border-white/5">
+                                            <h3 className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                                <Sparkles size={12} /> 核心病灶定性分析
+                                            </h3>
+                                            {rawBugs.length > 0 ? (
+                                                <div className="space-y-3">
+                                                    {stats.filter(s => s.count > 0).sort((a,b) => b.count - a.count).slice(0, 2).map(s => (
+                                                        <Link 
+                                                            key={s.id} 
+                                                            href={`/practice?search=${encodeURIComponent(s.specificBugs[0])}`}
+                                                            className="block bg-white/5 border border-white/5 rounded-xl p-3 hover:bg-white/10 hover:border-indigo-500/30 transition-all group/bug active:scale-[0.98] cursor-pointer"
+                                                        >
+                                                            <div className="flex items-center gap-2 mb-1">
+                                                                <Bug size={12} className="text-rose-400" />
+                                                                <span className="text-xs font-bold text-rose-200">关键异常：{s.name}缺失</span>
+                                                            </div>
+                                                            <p className="text-[11px] text-white/50 leading-relaxed italic group-hover:text-white/80 transition-colors">
+                                                                典型表现：{s.specificBugs[0]}
+                                                            </p>
+                                                            <div className="mt-2 text-[9px] text-indigo-400 font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                去定点爆破此陷阱 <ArrowRight size={10} />
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <p className="text-xs text-white/20 italic">尚无足够的练习数据进行定性分析...</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            })()}
                         </div>
+
+                        {/* Professional Diagnosis Card */}
+                        <div className="bg-[#12141a] border border-white/5 rounded-2xl p-6 shadow-xl relative group">
+                            <div className="flex items-center gap-2 mb-4 text-purple-400">
+                                <UserCircle size={18} />
+                                <span className="text-xs font-bold uppercase tracking-wider">系统级综合评估</span>
+                            </div>
+                            <div className="text-sm text-white/80 leading-relaxed mb-4">
+                                {studentData.persona.learningStyle || studentData.persona.learning_style || "初始化评估中..."}
+                            </div>
+                            <div className="p-3 bg-black/40 rounded-xl border border-white/5">
+                                <p className="text-[10px] text-white/30 uppercase font-bold mb-2">最近一次会话洞察</p>
+                                <p className="text-xs text-indigo-200/70 italic line-clamp-3">
+                                    "{studentData.persona.lastSessionSummary || "期待您的第一次影子挑战。"}"
+                                </p>
+                            </div>
+                        </div>
+
                         
                         {/* Meta Stat Card */}
                         <div className="bg-[#12141a] border border-white/5 rounded-2xl p-6 shadow-xl text-center">

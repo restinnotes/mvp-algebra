@@ -6,7 +6,8 @@ import {
   getAllNodes, 
   loadMappings,
   getQuestionById,
-  clearCache
+  clearCache,
+  formatPaperName
 } from '@/lib/knowledge';
 
 export async function POST(request: NextRequest) {
@@ -14,11 +15,25 @@ export async function POST(request: NextRequest) {
     // Force cache clear for development/data updates
     clearCache();
     const body = await request.json();
-    const { action, kps, excludePapers, maxResults, district, examType, page = 1, pageSize = 10 } = body;
+    const { 
+      action, 
+      kps, 
+      excludePapers, 
+      maxResults, 
+      district, 
+      examType, 
+      searchQuery,
+      page = 1, 
+      pageSize = 10 
+    } = body;
 
     if (action === 'search') {
       let questions = loadMappings();
       
+      // Get all nodes for KP name lookup
+      const allNodes = getAllNodes();
+      const nodeMap = new Map(allNodes.map(n => [n.id, n]));
+
       if (district && district !== 'all') {
         questions = questions.filter(q => q.district === district);
       }
@@ -35,6 +50,23 @@ export async function POST(request: NextRequest) {
       
       if (excludePapers && excludePapers.length > 0) {
         questions = questions.filter(q => !excludePapers.includes(q.paper));
+      }
+
+      if (searchQuery && searchQuery.trim() !== '') {
+        const query = searchQuery.toLowerCase();
+        const queryParts = query.split(/\s+/).filter(p => p.length > 0);
+        
+        questions = questions.filter(q => {
+          const searchableText = [
+            formatPaperName(q.paper).toLowerCase(),
+            formatPaperName(q.district).toLowerCase(),
+            (q.exam_type || '').toLowerCase(),
+            q.question.toLowerCase(),
+            ...q.kps.map(kpId => (nodeMap.get(kpId)?.name || '').toLowerCase())
+          ].join(' ');
+
+          return queryParts.every(part => searchableText.includes(part));
+        });
       }
       
       const total = questions.length;

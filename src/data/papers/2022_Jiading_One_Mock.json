@@ -1,361 +1,320 @@
 [
   {
-    "id": "q1",
+    "id": "2022_Jiading_One_Mock_Q01",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 1,
-    "text": "下列函数中是二次函数的是（ ）",
-    "options": [
-      "(A) $y=x-1$",
-      "(B) $y=\\frac{1}{x^2}$",
-      "(C) $y=(x-2)^2-x^2$",
-      "(D) $y=x(x-1)$"
-    ],
-    "difficulty": 0.15,
-    "knowledgePoints": [
-      "二次函数的定义"
-    ],
-    "exam_type": "一模"
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": ["函数概念", "二次函数"],
+    "kps": ["func_quadratic_basic"],
+    "content": "下列函数中是二次函数的是 ( )",
+    "options": ["(A) $y = x - 1$", "(B) $y = \\frac{1}{x^2}$", "(C) $y = (x-2)^2 - x^2$", "(D) $y = x(x-1)$"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q2",
+    "id": "2022_Jiading_One_Mock_Q02",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 2,
-    "text": "已知抛物线 $y=(a-1)x^2+2$ 的顶点是此抛物线的最低点，那么 $a$ 的取值范围是（ ）",
-    "options": [
-      "(A) $a \\neq 0$",
-      "(B) $a \\neq 1$",
-      "(C) $a > 1$",
-      "(D) $a < 1$"
-    ],
+    "question": "2",
     "difficulty": 0.15,
-    "knowledgePoints": [
-      "二次函数的图像与性质",
-      "抛物线的开口方向"
-    ],
-    "exam_type": "一模"
+    "tags": ["抛物线", "顶点"],
+    "kps": ["func_quadratic_basic"],
+    "content": "已知抛物线 $y = (a-1)x^2 + 2$ 的顶点是此抛物线的最低点, 那么 $a$ 的取值范围是 ( )",
+    "options": ["(A) $a \\ne 0$", "(B) $a \\ne 1$", "(C) $a > 1$", "(D) $a < 1$"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q3",
+    "id": "2022_Jiading_One_Mock_Q03",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 3,
-    "text": "在 $\\triangle ABC$ 中，$\\angle C=90^\\circ$，$AC=6, BC=2$，那么下列各式中正确的是（ ）",
-    "options": [
-      "(A) $\\tan A = \\frac{1}{3}$",
-      "(B) $\\cot A = \\frac{1}{3}$",
-      "(C) $\\sin A = \\frac{1}{3}$",
-      "(D) $\\cos A = \\frac{1}{3}$"
-    ],
-    "difficulty": 0.15,
-    "knowledgePoints": [
-      "锐角三角比"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q4",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 4,
-    "text": "在 $\\triangle ABC$ 中，$AB=AC=10, \\cos B=\\frac{2}{5}$，那么 $BC$ 的长是（ ）",
-    "options": [
-      "(A) 4",
-      "(B) 8",
-      "(C) $2\\sqrt{21}$",
-      "(D) $4\\sqrt{21}$"
-    ],
+    "question": "3",
     "difficulty": 0.2,
-    "knowledgePoints": [
-      "等腰三角形的性质",
-      "解直角三角形"
-    ],
-    "exam_type": "一模"
+    "tags": ["直角三角形", "三角比"],
+    "kps": ["geo_trig_vector"],
+    "content": "在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, AC = 6, BC = 2$, 那么下列各式中正确的是 ( )",
+    "options": ["(A) $\\tan A = \\frac{1}{3}$", "(B) $\\cot A = \\frac{1}{3}$", "(C) $\\sin A = \\frac{1}{3}$", "(D) $\\cos A = \\frac{1}{3}$"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q5",
+    "id": "2022_Jiading_One_Mock_Q04",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 5,
-    "text": "已知一个单位向量 $\\vec{e}$，设 $\\vec{a}, \\vec{b}$ 是非零向量，那么下列等式中一定正确的是（ ）",
-    "options": [
-      "(A) $|\\vec{e}|\\vec{a} = \\vec{a}$",
-      "(B) $|\\vec{a}|\\vec{e} = \\vec{b}$",
-      "(C) $\\frac{1}{|\\vec{b}|}\\vec{b} = \\vec{e}$",
-      "(D) $\\frac{1}{|\\vec{a}|}\\vec{a} = \\frac{1}{|\\vec{b}|}\\vec{b}$"
-    ],
-    "difficulty": 0.2,
-    "knowledgePoints": [
-      "向量的概念",
-      "单位向量"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q6",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 6,
-    "text": "如图1，已知 $AB // CD // EF, AC:AE=3:5$，那么下列结论正确的是（ ）",
-    "options": [
-      "(A) $BD:DF=2:3$",
-      "(B) $AB:CD=2:3$",
-      "(C) $CD:EF=3:5$",
-      "(D) $DF:BF=2:5$"
-    ],
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q6.png"
-    ],
+    "question": "4",
     "difficulty": 0.25,
-    "knowledgePoints": [
-      "平行线分线段成比例"
-    ],
-    "exam_type": "一模"
+    "tags": ["等腰三角形", "余弦", "三边计算"],
+    "kps": ["geo_triangle_prop", "geo_trig_vector"],
+    "content": "在 $\\triangle ABC$ 中, $AB = AC = 10, \\cos B = \\frac{2}{5}$, 那么 $BC$ 的长是 ( )",
+    "options": ["(A) 4", "(B) 8", "(C) $2\\sqrt{21}$", "(D) $4\\sqrt{21}$"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q7",
+    "id": "2022_Jiading_One_Mock_Q05",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 7,
-    "text": "抛物线 $y=ax^2+2$ 经过点 $(-2,6)$，那么 $a=$ ______.",
+    "question": "5",
     "difficulty": 0.2,
-    "knowledgePoints": [
-      "待定系数法求二次函数解析式"
-    ],
-    "exam_type": "一模"
+    "tags": ["平面向量", "单位向量"],
+    "kps": ["geo_trig_vector"],
+    "content": "已知一个单位向量 $\\vec{e}$, 设 $\\vec{a}, \\vec{b}$ 是非零向量, 那么下列等式中一定正确的是 ( )",
+    "options": ["(A) $|\\vec{e}|\\vec{a} = \\vec{a}$", "(B) $|\\vec{b}|\\vec{e} = \\vec{b}$", "(C) $\\frac{1}{|\\vec{b}|}\\vec{b} = \\vec{e}$", "(D) $\\frac{1}{|\\vec{a}|}\\vec{a} = \\frac{1}{|\\vec{b}|}\\vec{b}$"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q8",
+    "id": "2022_Jiading_One_Mock_Q06",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 8,
-    "text": "抛物线 $y=-x^2-2x+1$ 的对称轴是 ______.",
-    "difficulty": 0.2,
-    "knowledgePoints": [
-      "二次函数的性质",
-      "对称轴"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q9",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 9,
-    "text": "抛物线 $y=(m+3)x^2+x-1$ 在对称轴右侧的部分是上升的，那么 $m$ 的取值范围是 ______.",
+    "question": "6",
     "difficulty": 0.3,
-    "knowledgePoints": [
-      "二次函数的性质",
-      "单调性"
-    ],
-    "exam_type": "一模"
+    "tags": ["平行线分线段成比例"],
+    "kps": ["geo_similar_basic"],
+    "content": "如图 1, 已知 $AB \\parallel CD \\parallel EF$, $AC:AE = 3:5$, 那么下列结论正确的是 ( )",
+    "options": ["(A) $BD:DF = 2:3$", "(B) $AB:CD = 2:3$", "(C) $CD:EF = 3:5$", "(D) $DF:BF = 2:5$"],
+    "images": ["/problems/2022_Jiading_One_Mock/q6_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q10",
+    "id": "2022_Jiading_One_Mock_Q07",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 10,
-    "text": "将抛物线 $y=x^2-2x$ 向左平移 2 个单位，得到一条新抛物线，这条新抛物线的表达式是 ______.",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": ["抛物线", "待定系数法"],
+    "kps": ["func_quadratic_basic"],
+    "content": "抛物线 $y = ax^2 + 2$ 经过点 $(-2, 6)$, 那么 $a = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q08",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": ["抛物线", "对称轴"],
+    "kps": ["func_quadratic_basic"],
+    "content": "抛物线 $y = -x^2 - 2x + 1$ 的对称轴是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q09",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": ["二次函数", "增减性"],
+    "kps": ["func_quadratic_basic"],
+    "content": "抛物线 $y = (m+3)x^2 + x - 1$ 在对称轴右侧的部分是上升的, 那么 $m$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q10",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": ["抛物线", "平移"],
+    "kps": ["func_quadratic_basic"],
+    "content": "将抛物线 $y = x^2 - 2x$ 向左平移 2 个单位, 得到一条新抛物线, 这条新抛物线的表达式是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q11",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "11",
     "difficulty": 0.25,
-    "knowledgePoints": [
-      "二次函数的图像变换"
-    ],
-    "exam_type": "一模"
+    "tags": ["直角三角形", "三角比"],
+    "kps": ["geo_trig_vector"],
+    "content": "在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, \\cos B = \\frac{1}{4}, BC = 4$, 那么 $AB = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q11",
+    "id": "2022_Jiading_One_Mock_Q12",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 11,
-    "text": "在 $\\triangle ABC$ 中，$\\angle C=90^\\circ, \\cos B=\\frac{1}{4}, BC=4$，那么 $AB=$ ______.",
-    "difficulty": 0.2,
-    "knowledgePoints": [
-      "锐角三角比"
-    ],
-    "exam_type": "一模"
+    "question": "12",
+    "difficulty": 0.25,
+    "tags": ["菱形", "对角线", "正弦"],
+    "kps": ["geo_quad_prop", "geo_trig_vector"],
+    "content": "在菱形 $ABCD$ 中, 对角线 $AC$ 与 $BD$ 之比是 3:4, 那么 $\\sin \\angle BAC = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q12",
+    "id": "2022_Jiading_One_Mock_Q13",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 12,
-    "text": "在菱形 $ABCD$ 中，对角线 $AC$ 与 $BD$ 之比是 $3:4$，那么 $\\sin \\angle BAC=$ ______.",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": ["俯角", "几何计算"],
+    "kps": ["geo_trig_vector"],
+    "content": "如图 2, 飞机在目标 $B$ 的正上方 $A$ 处, 飞行员测得地面目标 $C$ 的俯角 $\\alpha = 30^\\circ$, 如果地面目标 $B, C$ 之间的距离为 6 千米, 那么飞机离地面的高度 $AB$ 等于 $\\dots$ 千米. (结果保留根号)",
+    "images": ["/problems/2022_Jiading_One_Mock/q13_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q14",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "14",
+    "difficulty": 0.15,
+    "tags": ["比例计算"],
+    "kps": ["alg_expr_calc"],
+    "content": "已知 $x:y = 2:3$, 那么 $(x+y):y = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q15",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": ["平面向量"],
+    "kps": ["geo_trig_vector"],
+    "content": "已知向量 $\\vec{a}, \\vec{b}, \\vec{x}$ 满足 $2(\\vec{a}-\\vec{x}) = 3(\\vec{b}-\\vec{x})$, 试用向量 $\\vec{a}, \\vec{b}$ 表示向量 $\\vec{x}$, 那么 $\\vec{x} = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q16",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "16",
     "difficulty": 0.4,
-    "knowledgePoints": [
-      "菱形的性质",
-      "锐角三角比"
-    ],
-    "exam_type": "一模"
+    "tags": ["相似三角形", "比例线段"],
+    "kps": ["geo_similar_basic"],
+    "content": "如图 3, 在 $\\triangle ABC$ 中, $DE \\parallel BC, DF \\parallel AC$, $AD=3, BD=2$, 那么 $BF:DE$ 的值是 $\\dots$.",
+    "images": ["/problems/2022_Jiading_One_Mock/q16_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q13",
+    "id": "2022_Jiading_One_Mock_Q17",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 13,
-    "text": "如图2，飞机在目标 $B$ 的正上方 $A$ 处，飞行员测得地面目标 $C$ 的俯角 $\\alpha=30^\\circ$，如果地面目标 $B, C$ 之间的距离为 6 千米，那么飞机离地面的高度 $AB$ 等于 ______ 千米. (结果保留根号)",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q13.png"
-    ],
-    "difficulty": 0.4,
-    "knowledgePoints": [
-      "解直角三角形的应用",
-      "仰角俯角问题"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q14",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 14,
-    "text": "已知 $x:y=2:3$，那么 $(x+y):y=$ ______.",
-    "difficulty": 0.3,
-    "knowledgePoints": [
-      "比例的性质"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q15",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 15,
-    "text": "已知向量 $\\vec{a}, \\vec{b}, \\vec{x}$ 满足 $2(\\vec{a}-\\vec{x})=3(\\vec{b}-\\vec{x})$，试用向量 $\\vec{a}, \\vec{b}$ 表示向量 $\\vec{x}$，那么 $\\vec{x}=$ ______.",
-    "difficulty": 0.4,
-    "knowledgePoints": [
-      "向量的线性运算"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q16",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 16,
-    "text": "如图3，在 $\\triangle ABC$ 中，$DE // BC, DF // AC, AD=3, BD=2$，那么 $BF:DE$ 的值是 ______.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q16.png"
-    ],
+    "question": "17",
     "difficulty": 0.45,
-    "knowledgePoints": [
-      "平行线分线段成比例",
-      "相似三角形的判定与性质"
-    ],
-    "exam_type": "一模"
+    "tags": ["等腰梯形", "面积"],
+    "kps": ["geo_quad_prop"],
+    "content": "在梯形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC$ 与 $BD$ 相交于点 $O$, 如果 $S_{\\triangle AOD}, S_{\\triangle BOC}$ 的面积分别是 $1cm^2, 4cm^2$, 那么梯形 $ABCD$ 的面积等于 $\\dots cm^2$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q17",
+    "id": "2022_Jiading_One_Mock_Q18",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 17,
-    "text": "在梯形 $ABCD$ 中，$AD // BC$，对角线 $AC$ 与 $BD$ 相交于点 $O$，如果 $\\triangle AOD, \\triangle BOC$ 的面积分别是 $1cm^2, 4cm^2$，那么梯形 $ABCD$ 的面积等于 ______ $cm^2$.",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": ["直角三角形", "角度计算", "比例线段", "压轴填空"],
+    "kps": ["geo_triangle_prop", "geo_similar_basic"],
+    "content": "如图 4, 在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, BC = 2, AB = 2\\sqrt{5}$, 点 $D$ 在边 $AC$ 上, $CD:AD = 1:3$, 联结 $BD$, 点 $E$ 在线段 $BD$ 上, 如果 $\\angle BCE = \\angle A$, 那么 $CE = \\dots$.",
+    "images": ["/problems/2022_Jiading_One_Mock/q18_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q18"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q19",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": ["三角比计算"],
+    "kps": ["geo_trig_vector"],
+    "content": "计算: $\\tan 60^\\circ \\cdot \\cot 30^\\circ + \\frac{\\tan 45^\\circ}{\\cot 45^\\circ + 2\\sin 45^\\circ} + 2|\\cos 60^\\circ - 1|$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q20",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": ["梯形", "相似", "计算线段"],
+    "kps": ["geo_quad_prop", "geo_similar_basic"],
+    "content": "如图 5, 在梯形 $ABCD$ 中, $AD \\parallel BC$, 点 $E$ 在线段 $AD$ 上, $CE$ 与 $BD$ 相交于点 $H$, $CE$ 与 $BA$ 的延长线相交于点 $G$, 已知 $DE:AE = 2:3, BC = 4DE, CE = 10$. 求 $EH, GE$ 的长.",
+    "images": ["/problems/2022_Jiading_One_Mock/q20_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q21",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "21",
+    "difficulty": 0.5,
+    "tags": ["二次函数", "解析式", "顶点"],
+    "kps": ["func_quadratic_basic"],
+    "content": "已知二次函数 $y = ax^2 + bx + c$ 的图像经过点 $A(3, -2), B(2, -3), C(0, 1)$.\n(1) 求这个二次函数的解析式;\n(2) 用配方法求出这个二次函数图像的顶点坐标.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q22",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "22",
     "difficulty": 0.6,
-    "knowledgePoints": [
-      "梯形的性质",
-      "相似三角形的性质",
-      "三角形的面积"
-    ],
-    "exam_type": "一模"
+    "tags": ["解直角三角形", "应用题", "航行"],
+    "kps": ["geo_trig_vector"],
+    "content": "如图 6, 在航线 $l$ 的两侧分别有两个灯塔 $A$ 和 $B$, 灯塔 $A$ 到航线 $l$ 的距离为 $AC = 3$ 千米, 灯塔 $B$ 到航线 $l$ 的距离为 $BD = 4$ 千米, 灯塔 $B$ 位于灯塔 $A$ 南偏东 $60^\\circ$ 方向. 现有一艘轮船从位于灯塔 $B$ 北偏西 $53^\\circ$ 方向的 $N$ (在航线 $l$ 上) 处, 正沿该航线自东向西航行, 10 分钟后该轮船行至灯塔 $A$ 正南方向的点 $C$ (在航线 $l$ 上) 处.\n(1) 求两个灯塔 $A$ 和 $B$ 之间的距离;\n(2) 求该轮船航行的速度 (结果精确到 0.1 千米/小时). (参考数据: $\\sqrt{3} \\approx 1.73, \\sin 53^\\circ \\approx 0.80, \\cos 53^\\circ \\approx 0.60, \\tan 53^\\circ \\approx 1.33$)",
+    "images": ["/problems/2022_Jiading_One_Mock/q22_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q18",
+    "id": "2022_Jiading_One_Mock_Q23",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 18,
-    "text": "如图4，在 $\\triangle ABC$ 中，$\\angle C=90^\\circ, BC=2, AB=2\\sqrt{5}$，点 $D$ 在边 $AC$ 上，$CD:AD=1:3$，联结 $BD$，点 $E$ 在线段 $BD$ 上，如果 $\\angle BCE=\\angle A$，那么 $CE=$ ______.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q18.png"
-    ],
+    "question": "23",
     "difficulty": 0.75,
-    "knowledgePoints": [
-      "相似三角形的判定与性质",
-      "解直角三角形"
-    ],
-    "exam_type": "一模"
+    "tags": ["正方形", "相似", "证明"],
+    "kps": ["geo_similar_basic", "geo_quad_prop"],
+    "content": "如图 7, 已知正方形 $ABCD$ 和正方形 $BEFG$, 点 $E$ 在边 $BC$ 上, 点 $G$ 在边 $AB$ 的延长线上, 联结 $AE$, 并延长 $AE$ 交 $CG$ 于点 $K$.\n(1) 求证: $\\triangle ABE \\sim \\triangle CKE$;\n(2) 如果 $CG$ 与 $EF$ 交于点 $H$, 求证: $BE^2 = FH \\cdot AB$.",
+    "images": ["/problems/2022_Jiading_One_Mock/q23_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定"
   },
   {
-    "id": "q19",
+    "id": "2022_Jiading_One_Mock_Q24",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 19,
-    "text": "计算：$\\tan 60^\\circ \\cdot \\cot 30^\\circ + \\frac{\\tan 45^\\circ}{\\cot 45^\\circ + 2 \\sin 45^\\circ} + 2|\\cos 60^\\circ - 1|$.",
-    "difficulty": 0.2,
-    "knowledgePoints": [
-      "实数的运算",
-      "特殊角的三角比"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q20",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 20,
-    "text": "如图5，在梯形 $ABCD$ 中，$AD // BC$，点 $E$ 在线段 $AD$ 上，$CE$ 与 $BD$ 相交于点 $H$，$CE$ 与 $BA$ 的延长线相交于点 $G$，已知 $DE:AE=2:3, BC=4DE, CE=10$. 求 $EH, GE$ 的长.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q20.png"
-    ],
-    "difficulty": 0.5,
-    "knowledgePoints": [
-      "梯形的性质",
-      "相似三角形的判定与性质"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q21",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 21,
-    "text": "已知二次函数 $y=ax^2+bx+c$ 的图像经过点 $A(3,-2), B(2,-3), C(0,1)$.\n(1) 求这个二次函数的解析式;\n(2) 用配方法求出这个二次函数图像的顶点坐标.",
-    "difficulty": 0.5,
-    "knowledgePoints": [
-      "待定系数法求二次函数解析式",
-      "二次函数的顶点坐标"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q22",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 22,
-    "text": "如图6，在航线 $l$ 的两侧分别有两个灯塔 $A$ 和 $B$，灯塔 $A$ 到航线 $l$ 的距离为 $AC=3$ 千米，灯塔 $B$ 到航线 $l$ 的距离为 $BD=4$ 千米，灯塔 $B$ 位于灯塔 $A$ 南偏东 $60^\\circ$ 方向. 现有一艘轮船从位于灯塔 $B$ 北偏西 $53^\\circ$ 方向的 $N$ (在航线 $l$ 上) 处，正沿该航线自东向西航行，10 分钟后该轮船行至灯塔 $A$ 正南方向的点 $C$ (在航线 $l$ 上) 处.\n(1) 求两个灯塔 $A$ 和 $B$ 之间的距离;\n(2) 求该轮船航行的速度. (结果精确到 0.1 千米/小时). (参考数据：$\\sqrt{3} \\approx 1.73, \\sin 53^\\circ \\approx 0.80, \\cos 53^\\circ \\approx 0.60, \\tan 53^\\circ \\approx 1.33$)",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q22.png"
-    ],
-    "difficulty": 0.65,
-    "knowledgePoints": [
-      "解直角三角形的应用",
-      "方位角问题"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q23",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 23,
-    "text": "如图7，已知正方形 $ABCD$ 和正方形 $BEFG$，点 $E$ 在边 $BC$ 上，点 $G$ 在边 $AB$ 的延长线上，联结 $AE$，并延长 $AE$ 交 $CG$ 于点 $K$.\n(1) 求证：$\\triangle ABE \\sim \\triangle CKE$;\n(2) 如果 $CG$ 与 $EF$ 交于点 $H$，求证：$BE^2 = FH \\cdot AB$.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q23.png"
-    ],
-    "difficulty": 0.8,
-    "knowledgePoints": [
-      "正方形的性质",
-      "相似三角形的判定与性质"
-    ],
-    "exam_type": "一模"
-  },
-  {
-    "id": "q24",
-    "paper": "2022_Jiading_One_Mock",
-    "qIndex": 24,
-    "text": "在平面直角坐标系 $xOy$ 中，点 $A, B$ 两点在直线 $y=\\frac{1}{2}x$ 上，如图8. 二次函数 $y=ax^2+bx-2$ 的图像也经过点 $A, B$ 两点，并与 $y$ 轴相交于点 $C$，如果 $BC // x$ 轴，点 $A$ 的横坐标是 2.\n(1) 求这个二次函数的解析式;\n(2) 设这个二次函数图像的对称轴与 $BC$ 交于点 $D$，点 $E$ 在 $x$ 轴的负半轴上，如果以点 $E, O, B$ 所组成的三角形与 $\\triangle OBD$ 相似，且相似比不为 1，求点 $E$ 的坐标;\n(3) 设这个二次函数图像的顶点是 $M$，求 $\\tan \\angle AMC$ 的值.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q24.png"
-    ],
+    "question": "24",
     "difficulty": 0.9,
-    "knowledgePoints": [
-      "二次函数的综合应用",
-      "相似三角形的应用"
-    ],
-    "exam_type": "一模"
+    "tags": ["二次函数", "相似三角形", "压轴大题"],
+    "kps": ["func_quadratic_basic", "geo_similar_basic"],
+    "content": "在平面直角坐标系 $xOy$ 中, 点 $A, B$ 两点在直线 $y = \\frac{1}{2}x$ 上, 如图 8. 二次函数 $y = ax^2 + bx - 2$ 的图像也经过点 $A, B$ 两点, 并与 $y$ 轴相交于点 $C$, 如果 $BC \\parallel x$ 轴, 点 $A$ 的横坐标是 2.\n(1) 求这个二次函数的解析式;\n(2) 设这个二次函数图像的对称轴与 $BC$ 交于点 $D$, 点 $E$ 在 $x$ 轴的负半轴上, 如果以点 $E, O, B$ 所组成的三角形与 $\\triangle OBD$ 相似, 且相似比不为 1, 求点 $E$ 的坐标;\n(3) 设这个二次函数图像的顶点是 $M$, 求 $\\tan \\angle AMC$ 的值.",
+    "images": ["/problems/2022_Jiading_One_Mock/q24_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q24"
   },
   {
-    "id": "q25",
+    "id": "2022_Jiading_One_Mock_Q25",
     "paper": "2022_Jiading_One_Mock",
-    "qIndex": 25,
-    "text": "在平行四边形 $ABCD$ 中，对角线 $AC$ 与边 $CD$ 垂直，$\\frac{AB}{AC}=\\frac{3}{4}$，四边形 $ABCD$ 的周长是 16，点 $E$ 是在 $AD$ 延长线上的一点，点 $F$ 是在射线 $AB$ 上的一点，$\\angle CED = \\angle CDF$.\n(1) 如图9，如果点 $F$ 与点 $B$ 重合，求 $\\angle AFD$ 的余切值;\n(2) 如图10，点 $F$ 在边 $AB$ 上的一点. 设 $AE=x, BF=y$，求 $y$ 关于 $x$ 的函数关系式并写出它的定义域;\n(3) 如果 $BF:FA=1:2$，求 $\\triangle CDE$ 的面积.",
-    "images": [
-      "/problems/2022_Jiading_One_Mock/fig_q25_1.png",
-      "/problems/2022_Jiading_One_Mock/fig_q25_2.png",
-      "/problems/2022_Jiading_One_Mock/fig_q25_3.png"
-    ],
+    "question": "25",
     "difficulty": 0.95,
-    "knowledgePoints": [
-      "平行四边形的性质",
-      "相似三角形的判定与性质",
-      "几何动点问题"
-    ],
-    "exam_type": "一模"
+    "tags": ["平行四边形", "三角比", "几何综合", "压轴大题"],
+    "kps": ["geo_quad_prop", "geo_trig_vector", "geo_similar_basic"],
+    "content": "在平行四边形 $ABCD$ 中, 对角线 $AC$ 与 $CD$ 垂直, $\\frac{AB}{AC} = \\frac{3}{4}$, 四边形 $ABCD$ 的周长是 16, 点 $E$ 是在 $AD$ 延长线上的一点, 点 $F$ 是在射线 $AB$ 上的一点, $\\angle CED = \\angle CDF$.\n(1) 如图 9, 如果点 $F$ 与点 $B$ 重合, 求 $\\angle AFD$ 的余切值;\n(2) 如图 10, 点 $F$ 在边 $AB$ 上的一点. 设 $AE = x, BF = y$, 求 $y$ 关于 $x$ 的函数关系式并写出它的定义域;\n(3) 如果 $BF:FA = 1:2$, 求 $\\triangle CDE$ 的面积.",
+    "images": ["/problems/2022_Jiading_One_Mock/q25_0.png"],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q25"
   }
 ]

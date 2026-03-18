@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { QuestionMapping } from '@/lib/types';
+import { formatPaperName, PAPER_NAME_MAP } from '@/lib/format';
 import Link from 'next/link';
 
 interface KP {
@@ -27,45 +28,6 @@ interface KP {
     name: string;
     level: number;
     importance: number;
-}
-
-// 论文/试卷名称精细化汉化映射
-const PAPER_NAME_MAP: Record<string, string> = {
-    'Chongming': '崇明',
-    'Fengxian': '奉贤',
-    'Baoshan': '宝山',
-    'Hongkou': '虹口',
-    'Huangpu': '黄浦',
-    'Pudong': '浦东',
-    'Putuo': '普陀',
-    'Xuhui': '徐汇',
-    'One_Mock': '一模',
-    'Two_Mock': '二模',
-    'One Mock': '一模',
-    'Two Mock': '二模',
-    'Mock': '一模' // 默认还原为一模
-};
-
-function formatPaperName(raw: string | null | undefined) {
-    if (!raw || raw.trim() === '') return '通用';
-    
-    let formatted = raw;
-    
-    // 1. 优先处理复合词，防止被拆分翻译
-    if (/one_?mock/i.test(formatted)) formatted = formatted.replace(/one_?mock/gi, '一模');
-    if (/two_?mock/i.test(formatted)) formatted = formatted.replace(/two_?mock/gi, '二模');
-
-    // 2. 依次翻译其他区域词
-    Object.entries(PAPER_NAME_MAP).forEach(([en, cn]) => {
-        // 如果已经包含了中文的一模/二模，就不再处理 Mock 这个词
-        if (en === 'Mock' && (formatted.includes('一模') || formatted.includes('二模'))) {
-            return;
-        }
-        formatted = formatted.replace(new RegExp(en, 'gi'), cn);
-    });
-    
-    // 3. 清理格式：移除下划线，合并多余空格，移除多余的“第 X 题”这种标识（如果存在于卷名中）
-    return formatted.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 export default function PracticeUI() {
@@ -92,7 +54,24 @@ export default function PracticeUI() {
         setStudentData(data);
         fetchKPs();
         fetchFilterOptions();
-        fetchQuestionsWithFilter('all', 'all', [], 1);
+
+        // Handle URL Params for navigation from Dashboard
+        const params = new URLSearchParams(window.location.search);
+        const kpParam = params.get('kp');
+        const searchParam = params.get('search');
+        
+        let initialKPs: string[] = [];
+        if (kpParam) {
+            initialKPs = [kpParam];
+            setSelectedKPs(initialKPs);
+        }
+        let initialSearch = '';
+        if (searchParam) {
+            initialSearch = searchParam;
+            setSearchQuery(searchParam);
+        }
+
+        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
     }, []);
 
     const fetchKPs = async () => {
@@ -156,11 +135,19 @@ export default function PracticeUI() {
     const handlePageChange = (newPage: number) => {
         if (newPage >= 1 && newPage <= totalPages) {
             setPage(newPage);
-            fetchQuestionsWithFilter(selectedDistrict, selectedExamType, selectedKPs, newPage);
+            fetchQuestionsWithFilter(selectedDistrict, selectedExamType, selectedKPs, newPage, searchQuery);
         }
     };
 
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number) => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setPage(1);
+            fetchQuestionsWithFilter(selectedDistrict, selectedExamType, selectedKPs, 1, searchQuery);
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [searchQuery]);
+
+    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
         setLoading(true);
         try {
             const res = await fetch('/api/questions', {
@@ -171,6 +158,7 @@ export default function PracticeUI() {
                     kps: kps.length > 0 ? kps : undefined,
                     district: district !== 'all' ? district : undefined,
                     examType: examType !== 'all' ? examType : undefined,
+                    searchQuery: query || undefined,
                     maxResults: pageSize,
                     page: targetPage
                 })

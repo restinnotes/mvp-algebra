@@ -1,9 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
 const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+
+export { formatPaperName, PAPER_NAME_MAP };
 
 let _graphCache: KnowledgeGraph | null = null;
 let _nodesCache: KnowledgeNode[] | null = null;

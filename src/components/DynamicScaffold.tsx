@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 import { StepLog, CognitiveBug } from '@/lib/types';
+import { formatPaperName } from '@/lib/format';
 
 
 interface LogEntry {
@@ -47,7 +48,8 @@ function DynamicScaffoldInner() {
                 const displayContent = q.content || '[题干内容待完善]';
                 
                 // 处理 LaTeX 渲染
-                let fullContent = `${q.paper} Q${q.question}: ${displayContent}`;
+                const formattedPaper = formatPaperName(q.paper);
+                let fullContent = `${formattedPaper} Q${q.question}: ${displayContent}`;
                 if (q.options && q.options.length > 0) {
                     fullContent += "\n\n" + q.options.join("    ");
                 }
@@ -71,7 +73,7 @@ function DynamicScaffoldInner() {
                     setProblemImage(null);
                 }
                 
-                addLog('info', `已加载题目: ${q.paper} Q${q.question}`);
+                addLog('info', `已加载题目: ${formattedPaper} Q${q.question}`);
             }
         } catch (e) {
             console.error('Failed to fetch question info', e);
