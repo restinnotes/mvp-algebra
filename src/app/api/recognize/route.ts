@@ -24,6 +24,12 @@ interface OcrResult {
 
 export async function POST(req: NextRequest) {
     try {
+        // Prevent memory exhaustion DoS attacks
+        const contentLength = req.headers.get('content-length');
+        if (contentLength && parseInt(contentLength, 10) > 4.5 * 1024 * 1024) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
         const body = await req.json();
         const { imageBase64, problemContext, history, manualText } = body;
 
@@ -36,8 +42,8 @@ export async function POST(req: NextRequest) {
                 return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
             }
 
-            // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
-            if (imageBase64.length > 5 * 1024 * 1024) {
+            // Limit base64 length to ~4MB to prevent memory exhaustion (DoS)
+            if (imageBase64.length > 4 * 1024 * 1024) {
                 return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
             }
         }
