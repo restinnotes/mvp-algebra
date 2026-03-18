@@ -1,0 +1,265 @@
+[
+  {
+    "id": "2022_Pudong_One_Mock_Q01",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如果 $2x=3y$ ($xy \\neq 0$), 那么下列比例式中正确的是 ( )",
+    "options": [
+      "\\frac{x}{3}=\\frac{y}{2}",
+      "\\frac{x}{2}=\\frac{y}{3}",
+      "\\frac{x}{y}=\\frac{2}{3}",
+      "\\frac{x-y}{y}=\\frac{1}{3}"
+    ],
+    "difficulty": 0.1,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q02",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如果 $\\vec{a}=2\\vec{b}$ ($\\vec{b} \\neq \\vec{0}$), 那么下列结论中正确的是 ( )",
+    "options": [
+      "\\vec{a} // \\vec{b}",
+      "\\vec{a} = \\vec{b}",
+      "|\\vec{a}| = |\\vec{b}|",
+      "\\vec{a} + 2\\vec{b} = \\vec{0}"
+    ],
+    "difficulty": 0.12,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q03",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "在 $\\triangle ABC$ 中, 点 $D, E$ 分别在 $AB, AC$ 上, 如果 $AD=2, BD=3$, 那么下列条件中能判断 $DE // BC$ 的是 ( )",
+    "options": [
+      "\\frac{AE}{EC} = \\frac{2}{3}",
+      "\\frac{AE}{AC} = \\frac{2}{3}",
+      "\\frac{DE}{BC} = \\frac{2}{3}",
+      "\\frac{DE}{BC} = \\frac{2}{5}"
+    ],
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q04",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ$, $\\angle A=\\alpha$, $AB=c$, 那么 $BC$ 等于 ( )",
+    "options": [
+      "c \\sin \\alpha",
+      "c \\cos \\alpha",
+      "c \\tan \\alpha",
+      "\\frac{c}{\\sin \\alpha}"
+    ],
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q05",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "已知点 $C$ 是线段 $AB$ 的黄金分割点, 且 $AC > BC$, 下列结论中正确的是 ( )",
+    "options": [
+      "AC^2 = AB \\cdot BC",
+      "BC^2 = AB \\cdot AC",
+      "AC = \\frac{\\sqrt{5}-1}{2} AB",
+      "BC = \\frac{\\sqrt{5}-1}{2} AB"
+    ],
+    "difficulty": 0.18,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q06",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "下列命题中, 错误的是 ( )",
+    "options": [
+      "所有的等边三角形都相似",
+      "所有的等腰直角三角形都相似",
+      "所有的矩形都相似",
+      "所有的正方形都相似"
+    ],
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q07",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "已知线段 $a=2, b=8$, 则线段 $a, b$ 的比例中项为 ______.",
+    "difficulty": 0.1,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q08",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "在 $\\triangle ABC$ 中, $G$ 是重心, $D$ 是 $BC$ 的中点, 则 $AG:GD = $ ______.",
+    "difficulty": 0.12,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q09",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "已知 $\\triangle ABC$ 与 $\\triangle DEF$ 相似, 且面积比为 $4:9$, 则它们的对应高的比为 ______.",
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q10",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如果两个相似三角形的周长分别为 10 和 15, 其中较小三角形的一边长为 2, 则较大三角形的对应边长为 ______.",
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q11",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, AC=2, AB=3$, 则 $\\cos B = $ ______.",
+    "difficulty": 0.18,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q12",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 已知 $AD // BE // CF$, 它们依次交直线 $l_1, l_2$ 于点 $A, B, C$ 和点 $D, E, F$. 如果 $AB:BC=2:3, EF=6$, 则 $DF = $ ______.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q12.png"
+    ],
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q13",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "计算: $2(\\vec{a}-\\vec{b}) + 3\\vec{b} = $ ______.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q14",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, AB=10, \\sin A = 0.6$, 则 $AC = $ ______.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q15",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在平行四边形 $ABCD$ 中, $E$ 是 $AB$ 延长线上一点, $DE$ 交 $BC$ 于点 $F$. 如果 $BF:FC=1:2$, 那么 $AB:BE = $ ______.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q15.png"
+    ],
+    "difficulty": 0.35,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q16",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "已知抛物线 $y = ax^2 + bx + c$ 与 $x$ 轴交于点 $A(-1, 0)$ 和 $B(3, 0)$, 则该抛物线的对称轴是直线 ______.",
+    "difficulty": 0.35,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q17",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "将抛物线 $y=x^2$ 先向右平移 1 个单位, 再向下平移 2 个单位, 所得抛物线的表达式为 ______.",
+    "difficulty": 0.4,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q18",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $AB=AC=10, \\sin B = \\frac{4}{5}$, 点 $D$ 在 $BC$ 上, $BD=6$, 点 $E$ 在 $AC$ 上, 且 $\\angle ADE = \\angle B$, 则 $AE = $ ______.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q18.png"
+    ],
+    "difficulty": 0.6,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q19",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "计算: $\\sin^2 45^\\circ + \\cos 60^\\circ - \\tan 60^\\circ \\cdot \\cot 30^\\circ$.",
+    "difficulty": 0.3,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q20",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=BC=2$, 将 $\\triangle ABC$ 绕点 $A$ 顺时针旋转后得到 $\\triangle ADE$, 点 $B$ 的对应点 $D$ 恰好落在 $BC$ 边上, $DE$ 交 $AC$ 于点 $F$. 求 $AF$ 的长.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q20.png"
+    ],
+    "difficulty": 0.55,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q21",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在梯形 $ABCD$ 中, $AD // BC, \\angle B=90^\\circ, AB=4, AD=3, BC=6$, 点 $E$ 在 $AB$ 上, 且 $AE=1$.\n(1) 求 $\\sin \\angle DEC$ 的值;\n(2) 设 $\\vec{AB} = \\vec{a}, \\vec{AD} = \\vec{b}$, 请直接写出向量 $\\vec{EC}$ (用 $\\vec{a}, \\vec{b}$ 表示).",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q21.png"
+    ],
+    "difficulty": 0.65,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q22",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $\\vec{AB}=\\vec{a}, \\vec{AC}=\\vec{b}$.\n(1) 如果点 $P$ 在边 $BC$ 上, 且 $BP:PC=2:1$, 求向量 $\\vec{AP}$ (用 $\\vec{a}, \\vec{b}$ 表示);\n(2) 如果 $\\vec{AQ} = \\frac{1}{2}\\vec{a} + \\frac{1}{2}\\vec{b}$, 在图中画出向量 $\\vec{AQ}$, 并指出点 $Q$ 是 $\\triangle ABC$ 的什么点.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q22.png"
+    ],
+    "difficulty": 0.6,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q23",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "已知二次函数 $y = ax^2 + bx - 4$ 的图像经过点 $A(-1, 0)$ 和点 $B(4, 0)$, 且与 $y$ 轴交于点 $C$.\n(1) 求这个二次函数的表达式及点 $C$ 的坐标;\n(2) 如果点 $P$ 在该二次函数图像的对称轴上, 且 $\\triangle BCP$ 是以 $BC$ 为直角边的直角三角形, 求点 $P$ 的坐标.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q23.png"
+    ],
+    "difficulty": 0.75,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q24",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=BC=4$, 点 $D$ 是 $BC$ 的中点, $DE \\perp AB$ 于点 $E$, $DE$ 的延长线交 $AC$ 的延长线于点 $F$.\n(1) 求 $AF$ 的长;\n(2) 如果点 $G$ 是线段 $AF$ 上一点, 且 $AG=BC$, 联结 $EG, DG$, 求 $\\angle DGE$ 的正切值.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q24.png"
+    ],
+    "difficulty": 0.85,
+    "exam_type": "一模",
+    "district": "浦东"
+  },
+  {
+    "id": "2022_Pudong_One_Mock_Q25",
+    "paper": "2022_Pudong_One_Mock",
+    "question": "如图, 在平行四边形 $ABCD$ 中, $AB=6, AD=10, \\cos B = \\frac{1}{5}$.\n(1) 求平行四边形 $ABCD$ 的面积;\n(2) 如果点 $P$ 是边 $AD$ 上一动点, $\\angle CPQ = \\angle B$, 射线 $PQ$ 交边 $AB$ 于点 $Q$, 设 $AP=x, AQ=y$, 求 $y$ 关于 $x$ 的函数关系式, 并写出 $x$ 的取值范围;\n(3) 在 (2) 的条件下, 当 $\\triangle CPQ$ 是等腰三角形时, 求 $AP$ 的长.",
+    "images": [
+      "problems/2022_Pudong_One_Mock/q25.png"
+    ],
+    "difficulty": 0.95,
+    "exam_type": "一模",
+    "district": "浦东"
+  }
+]

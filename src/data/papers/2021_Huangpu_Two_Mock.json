@@ -1,0 +1,519 @@
+[
+  {
+    "id": "2021_Huangpu_Two_Mock_Q01",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "1",
+    "content": "绝对值小于 3 的整数有 ( )\nA. 2个\nB. 3个\nC. 5个\nD. 6个",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "整数"
+    ],
+    "kps": [
+      "alg_abs_value"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q02",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "2",
+    "content": "化简 $(a^2)^3$ 的结果为 ( )\nA. $a^5$\nB. $a^6$\nC. $a^8$\nD. $a^9$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q03",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "3",
+    "content": "下列图形中, 是轴对称图形, 但不是中心对称图形的是 ( )\nA. 圆\nB. 正六边形\nC. 菱形\nD. 等边三角形",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "轴对称",
+      "中心对称"
+    ],
+    "kps": [
+      "geo_symmetry"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q04",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "4",
+    "content": "对数据: 1、1, 1、2、2、3、4, 下列判断正确的是 ( )\nA. 中位数和众数相等\nB. 中位数和平均数相等\nC. 众数和平均数相等\nD. 中位数、众数和平均数都不相等",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "众数",
+      "平均数"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_mode",
+      "stat_mean"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q05",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "5",
+    "content": "“利用描点法画函数图象, 进而探究函数的一些简单性质”是初中阶段研究函数的主要方式, 请试着画函数 $y = -\\frac{1}{x^2}$, 其图象位于 ( )\nA. 第一、二象限\nB. 第三、四象限\nC. 第一、三象限\nD. 第二、四象限",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "函数图象",
+      "象限"
+    ],
+    "kps": [
+      "alg_func_image_quadrant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q06",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "6",
+    "content": "如图, 正六边形 $ABCDEF$ 中, 记 $\\vec{AB}=\\vec{a}, \\vec{BC}=\\vec{b}$, 则 $\\vec{a}-\\vec{b}$ 是 ( )\nA. $\\vec{CD}$\nB. $\\vec{DE}$\nC. $\\vec{EF}$\nD. $\\vec{FA}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "正六边形"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_regular_hexagon"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q6_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q07",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "7",
+    "content": "计算: $\\sqrt{1+2^3} =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q08",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "8",
+    "content": "分解因式: $x^2-9=$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_square_diff"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q09",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "9",
+    "content": "方程 $\\sqrt{2-\\frac{1}{x}}=1$ 的解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "分式方程",
+      "无理方程"
+    ],
+    "kps": [
+      "alg_rational_eq",
+      "alg_irrational_eq"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q10",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "10",
+    "content": "已知关于 $x$ 的方程 $x^2 - 6x + k = 0$ 有两个相等的实数根, 那么 $k$ 的值是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q11",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "11",
+    "content": "如果反比例函数 $y = \\frac{2-k}{x}$ ($k$ 为正整数), 在每个象限内, 当自变量 $x$ 的值逐渐增大时, $y$ 的值随着逐渐减小, 那么正整数 $k$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q12",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "12",
+    "content": "直线 $y=2x+6$ 与两坐标轴围成的三角形面积是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "三角形面积"
+    ],
+    "kps": [
+      "alg_linear_func_area"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q13",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "13",
+    "content": "掷两枚骰子, 两者朝上面点数之和只可能是 2、3、4、5、6、7、8、9、10、11 和 12, 共 11 种可能, 所以小明认为“掷两枚骰子, 出现两者朝上面点数之和为 2”的概率是 $\\frac{1}{11}$. 你同意小明的观点吗? 答: __________, 理由是 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "基本概念"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q14",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "14",
+    "content": "为了了解某区初中学生暑假中阅读课外读物的情况, 小杰和小丽随机调查了该区内 60 名初中学生, 并将调查数据整理成下面的条形图 (如图). 如果该区共有初中学生 15000 人, 那么估计该区在暑假中阅读了 4 本课外读物的初中学生有 __________ 人.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q14_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q15",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "15",
+    "content": "如图, 某水库水坝的坝高为 24 米, 如果迎水坡 $AB$ 的坡度为 $1:0.75$, 那么该水库迎水坡 $AB$ 的长度为 __________ 米.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "坡度"
+    ],
+    "kps": [
+      "geo_slope"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q15_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q16",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "16",
+    "content": "已知在 $\\triangle ABC$ 中, $AC=3, BC=4, AB=5$, 点 $D$ 位于边 $AB$ 上, 过点 $D$ 作边 $BC$ 的平行线交边 $AC$ 于点 $E$, 过点 $D$ 作边 $AC$ 的平行线交边 $BC$ 于点 $F$ (如图), 设 $AD=x$, 四边形 $CEDF$ 的面积为 $y$, 则 $y$ 关于 $x$ 的函数关系式是 __________ (不必写定义域).",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "几何图形面积",
+      "平行四边形"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q16_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q17",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "17",
+    "content": "在平面直角坐标系内, 已知点 $A(3, 4)$, 如果圆 $A$ 与两坐标轴共有且只有 3 个公共点, 那么圆 $A$ 的半径长是 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "直线与圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q18",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "18",
+    "content": "如图, 在等腰梯形 $ABCD$ 中, $AD // BC$. 将 $\\triangle ABD$ 沿对角线 $BD$ 翻折, 点 $A$ 的对应点 $E$ 恰好位于边 $BC$ 上, 且 $BE:EC=3:2$, 则 $\\angle C$ 的余切值是 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "等腰梯形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_trig_def",
+      "geo_quad_property",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q18_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q19",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "19",
+    "content": "计算: $(\\pi - 3)^0 + \\frac{4}{\\sqrt{5}-\\sqrt{3}} - 4\\sin^2 30^\\circ - \\sqrt{20}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q20",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} x^2+y^2=5, & ① \\\\ x^2-4y^2=0. & ② \\end{cases}$",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q21",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "21",
+    "content": "如图, $AB$ 是圆 $O$ 的直径, 点 $C、D$ 为圆 $O$ 上的点, 满足: $\\widehat{AC}=\\widehat{CD}$, $AD$ 交 $OC$ 于点 $E$. 已知 $OE=3, EC=2$.\n(1) 求弦 $AD$ 的长;\n(2) 请过点 $C$ 作 $AB$ 的平行线交弦 $AD$ 于点 $F$, 求线段 $EF$ 的长.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "弦长",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_circle_chord"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q22",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "22",
+    "content": "某款轿车每行驶 100 千米的耗油量 $y$ 升与其行驶速度 $x$ 千米/小时之间的函数关系图象如图所示, 其中线段 $AB$ 的表达式为 $y = -\\frac{1}{25}x+13$ ($25 \\leq x \\leq 100$), 点 $C$ 的坐标为 (140, 14), 即行驶速度为 140 千米/小时时该轿车每行驶 100 千米的耗油量是 14 升.\n(1) 求线段 $BC$ 的表达式;\n(2) 如果从甲地到乙地全程为 260 千米, 其中有 60 千米限速 50 千米/小时的省道和 200 千米限速 120 千米/小时的高速公路, 那么在不考虑其他因素的情况下, 这款轿车从甲地行驶到乙地至少需要耗油多少升?",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "分段函数",
+      "应用题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q22_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q23",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "23",
+    "content": "如图, $CD$ 是直角 $\\triangle ABC$ 斜边 $AB$ 上的中线, 点 $E$ 位于边 $AC$ 上, 且 $\\angle ADE = \\angle B - \\angle A$.\n(1) 求证: $\\triangle CDE \\sim \\triangle ABC$;\n(2) 当 $DA:EA = \\sqrt{6}:1$ 时, 求 $\\triangle CDE$ 与 $\\triangle ABC$ 的面积比.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "直角三角形中线"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_tri_median",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q24",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "24",
+    "content": "如果抛物线 $C_1: y=ax^2+bx+c$ 与抛物线 $C_2: y=-ax^2+dx+e$ 的开口方向相反, 顶点相同, 我们称抛物线 $C_2$ 是 $C_1$ 的“对顶”抛物线.\n(1) 求抛物线 $y=x^2-4x+7$ 的“对顶”抛物线的表达式;\n(2) 将抛物线 $y=x^2-4x+7$ 的“对顶”抛物线沿其对称轴平移, 使所得抛物线与原抛物线 $y=x^2-4x+7$ 形成两个交点 $M、N$, 记平移前后两抛物线的顶点分别为 $A、B$, 当四边形 $AMBN$ 是正方形时, 求正方形 $AMBN$ 的面积.\n(3) 某同学在探究“对顶”抛物线时发现: 如果抛物线 $C_1$ 与 $C_2$ 的顶点位于 $x$ 轴上, 那么系数 $b$ 与 $d$, $c$ 与 $e$ 之间的关系是确定的, 请写出它们之间的关系.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "新定义",
+      "平移",
+      "正方形"
+    ],
+    "kps": [
+      "geo_quad_judge",
+      "func_quadratic_basic",
+      "geo_quad_property"
+    ],
+    "images": []
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q25",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "25",
+    "content": "如图, $AD$ 是 $\\triangle ABC$ 的角平分线, 过点 $C$ 作 $AD$ 的垂线交边 $AB$ 于点 $E$, 垂足为点 $O$, 连接 $DE$.\n(1) 求证: $DE=DC$;\n(2) 当 $\\angle ACB=90^\\circ$, 且 $\\triangle BDE$ 与 $\\triangle ABC$ 的面积比为 $1:3$ 时, 求 $CE:AD$ 的值;\n(3) 是否存在 $\\triangle ABC$ 能使 $CE$ 为 $\\triangle ABC$ 边 $AB$ 上的中线, 且 $CE=AD$? 如果能, 请用 $\\angle CAB$ 的某个三角比的值来表示它此时的大小; 如果不能, 请说明理由.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "角平分线",
+      "相似三角形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_angle_bisector",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q25_0.png"
+    ]
+  }
+]

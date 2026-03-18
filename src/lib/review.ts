@@ -199,7 +199,14 @@ async function getQualitativeReview(
     })
     .join('\n');
 
-  const prompt = `你是教育质量评估专家。分析以下辅导环节。
+  const prompt = `你是教育质量评估专家。分析以下辅导环节，精准识别学生的认知漏洞。
+
+核心维度定义：
+1. Translation (转化力): 读不懂题、无法将文字/图形条件转化为代数方程或几何符号。
+2. Pattern (模型识别): 看不出经典模型（如K字型、手拉手、铅垂线），辅助线构造无头绪。
+3. Logic (逻辑推理): 推导过程逻辑断层、因果倒置、证明不严密。
+4. Rigor (严谨度): 漏掉分类讨论、忽视定义域边界、忽视判别式 Delta >= 0。
+5. Computation (运算力): 纯代数计算错误、移项变号错误、公式代入失误。
 
 原题: ${problemText}
 核心思路: ${shadowSolve.coreIdea}
@@ -209,8 +216,10 @@ async function getQualitativeReview(
 ${attemptLog}
 
 任务:
-1. overall_assessment: 2-3句话中文总结
-2. cognitive_bugs: 识别0-3个认知漏洞
+1. overall_assessment: 2-3句话中文总结（专业且硬核）。
+2. cognitive_bugs: 识别0-3个认知漏洞。
+   - bug_type 必须是上述 5 个维度之一（英文名）。
+   - description 是一句话中文具体描述。
 
 输出: JSON格式。`;
 

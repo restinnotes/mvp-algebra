@@ -1,0 +1,415 @@
+[
+  {
+    "id": "2021_Songjiang_Two_Mock_Q01",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列二次根式中,最简二次根式是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $\\sqrt{8}$",
+      "(B) $\\sqrt{6}$",
+      "(C) $\\sqrt{\\frac{1}{2}}$",
+      "(D) $\\sqrt{0.2}$"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q02",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "将抛物线 $y = (x-2)^2 + 1$ 向上平移 3 个单位, 得到新抛物线的顶点坐标是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $(2, 4)$",
+      "(B) $(-1, 1)$",
+      "(C) $(5, 1)$",
+      "(D) $(2, -2)$"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q03",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "关于 $x$ 的一元二次方程 $kx^2 - 4x + 1 = 0$ 有两个实数根, 则 $k$ 的取值范围是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $k > 4$",
+      "(B) $k \\le 4$",
+      "(C) $k < 4$ 且 $k \\ne 0$",
+      "(D) $k \\le 4$ 且 $k \\ne 0$"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q04",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "4",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "下列统计量中, 表示一组数据波动程度的量是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) 平均数",
+      "(B) 众数",
+      "(C) 方差",
+      "(D) 频率"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q05",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "5",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "已知三角形两边的长分别是 4 和 9, 则此三角形第三边的长可以是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) 4",
+      "(B) 5",
+      "(C) 10",
+      "(D) 15"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q06",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知 $\\odot O$ 半径 $OA$ 长为 3, 点 $B$ 在线段 $OA$ 上, 且 $OB = 2$, 如果 $\\odot B$ 与 $\\odot O$ 有公共点, 那么 $\\odot B$ 的半径 $r$ 的取值范围是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $r \\ge 1$",
+      "(B) $r \\le 5$",
+      "(C) $1 < r < 5$",
+      "(D) $1 \\le r \\le 5$"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q07",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $8^{-\\frac{1}{3}} = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q08",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "分解因式: $a^2 - 4b^2 = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q09",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程 $\\sqrt{2x-3} = 1$ 的解是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q10",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "10",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "数 0.00035 用科学记数法表示 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q11",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "11",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "用换元法解方程 $\\frac{x-1}{x} + \\frac{2x}{x-1} = 3$ 时, 设 $\\frac{x-1}{x} = y$, 那么原方程化成关于 $y$ 的整式方程是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q12",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "已知反比例函数 $y = \\frac{k-2}{x}$ 的图像在每个象限内 $y$ 的值随 $x$ 的值增大而减小, 则 $k$ 的取值范围是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q13",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "13",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "布袋中装有 4 个红球和 5 个白球, 它们除颜色不同外其他都相同. 如果从布袋中随机摸出一个球, 那么摸到的球恰好为红球的概率是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q14",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "一次数学测试后, 某班 40 名学生按成绩分成 5 组, 第 1、2、3、4 组的频数分别为 13、10、6、7, 则第 5 组的频率为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q15",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "15",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知 $\\square ABCD$, $E$ 是边 $CD$ 的中点, 联结 $AE$ 并延长, 与 $BC$ 的延长线交于点 $F$. 设 $\\vec{AB} = \\vec{a}, \\vec{AD} = \\vec{b}$, 用 $\\vec{a}, \\vec{b}$ 表示 $\\vec{AF}$ 为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q15_0.png"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q16",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知正三角形 $ABC$ 外接圆的半径为 2, 那么正三角形 $ABC$ 的面积为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q17",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 某人在山坡坡脚 $A$ 处测得电视塔塔尖 $P$ 的仰角为 $60^\\circ$, 沿山坡向上走 200 米到达 $B$ 处, 在 $B$ 处测得点 $P$ 的仰角为 $15^\\circ$. 已知山坡 $AB$ 的坡度 $i = 1 : \\sqrt{3}$, 且 $H, A, B, P$ 在同一平面内, 那么电视塔的高度 $PH$ 为 $\\dots$ 米. (结果保留根号形式)",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q17_0.png"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q18",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知 $Rt\\triangle ABC$ 中, $\\angle ACB = 90^\\circ, AC = 6, BC = 8$. 将 $\\triangle ABC$ 翻折, 使点 $C$ 落在 $AB$ 边上的点 $D$处, 折痕 $EF$ 交边 $AC$ 于点 $E$, 交边 $BC$ 于点 $F$, 如果 $DE \\parallel BC$, 则线段 $EF$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q18_0.png"
+    ],
+    "question_type": "Q18"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q19",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "先化简, 再求值: $\\frac{2x-6}{x+2} \\div (x-2 - \\frac{5}{x+2})$, 其中 $x = -\\frac{1}{2}$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q20",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "20",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程组: $\\begin{cases} x + 3y = 4 \\\\ x^2 + 4xy - 5y^2 = 0 \\end{cases}$",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q21",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知 $Rt\\triangle ABC$ 中, $\\angle ACB = 90^\\circ, \\cot \\angle BAC = 2, BC = 4$, 以边 $AC$ 上一点 $O$ 为圆心, $OA$ 为半径 $\\odot O$ 经过点 $B$.\n(1) 求 $\\odot O$ 的半径;\n(2) 点 $P$ 是劣弧 $AB$ 的中点, 求 $\\tan \\angle PAB$ 的值.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q22",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "一辆轿车和一辆货车分别从甲、乙两地同时出发, 匀速相向而行, 两车相遇时轿车比货车多行驶了 90 千米. 设行驶的时间为 $t$ (小时), 两车之间的距离为 $s$ (千米), 图中线段 $AB$ 表示从两车出发至两车相遇这一过程中 $s$ 与 $t$ 之间的函数关系, 根据图象提供的信息回答下列问题:\n(1) 求 $s$ 关于 $t$ 的函数关系式; (不必写出定义域)\n(2) 求两车速度.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q22_0.png"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q23",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知在直角梯形 $ABCD$ 中, $AD \\parallel BC, \\angle ABC = 90^\\circ, AE \\perp BD$, 垂足为 $E$, 联结 $CE$, 作 $EF \\perp CE$, 交边 $AB$ 于点 $F$.\n(1) 求证: $\\triangle AEF \\sim \\triangle BEC$;\n(2) 若 $AB = BC$, 求证: $AF = AD$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q24",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中, 直线 $y = 3x + 3$ 与 $x$ 轴、 $y$ 轴分别交于点 $A, B$, 抛物线 $y = ax^2 + bx - 5a$ 经过点 $A$. 将点 $B$ 向右平移 5 个单位长度, 得到点 $C$.\n(1) 求点 $C$ 的坐标;\n(2) 求抛物线的对称轴;\n(3) 若抛物线的顶点在 $\\triangle OBC$ 的内部, 求 $a$ 的取值范围.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q24_0.png"
+    ],
+    "question_type": "Q24"
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q25",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知在 $\\triangle ABC$ 中, $BC > AB, BD$ 平分 $\\angle ABC$, 交边 $AC$ 于点 $D$, $E$ 是 $BC$ 边上一点, 且 $BE = BA$, 过点 $A$ 作 $AG \\parallel DE$, 分别交 $BD, BC$ 于点 $F, G$, 联结 $FE$.\n(1) 求证: 四边形 $AFED$ 是菱形;\n(2) 求证: $AB^2 = BG \\cdot BC$;\n(3) 若 $AB = AC, BG = CE$, 联结 $AE$, 求 $\\frac{S_{\\triangle ADE}}{S_{\\triangle ABC}}$ 值.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q25_0.png"
+    ],
+    "question_type": "Q25"
+  }
+]

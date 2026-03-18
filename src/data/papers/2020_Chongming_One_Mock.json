@@ -1,0 +1,412 @@
+[
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "下列各组图形一定相似的是（ ）",
+    "options": [
+      "A. 两个菱形",
+      "B. 两个矩形",
+      "C. 两个直角梯形",
+      "D. 两个正方形"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "2",
+    "difficulty": 0.18,
+    "tags": [],
+    "kps": [
+      "geo_trig_def"
+    ],
+    "content": "在 $Rt \\triangle ABC$ 中，$\\angle C = 90^\\circ$，如果 $AC=8$，$BC=6$，那么 $\\angle B$ 的余切值为（ ）",
+    "options": [
+      "A. \\frac{3}{4}",
+      "B. \\frac{4}{3}",
+      "C. \\frac{3}{5}",
+      "D. \\frac{4}{5}"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = -3(x+1)^2 + 2$ 的顶点坐标是（ ）",
+    "options": [
+      "A. (1, 2)",
+      "B. (1, -2)",
+      "C. (-1, 2)",
+      "D. (-1, -2)"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "4",
+    "difficulty": 0.22,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "alg_expr_concept"
+    ],
+    "content": "已知 $\\vec{c}$ 为非零向量，$\\vec{a} = 3\\vec{c}$，$\\vec{b} = -2\\vec{c}$，那么下列结论中错误的是（ ）",
+    "options": [
+      "A. \\vec{a} // \\vec{b}",
+      "B. |\\vec{a}| = \\frac{3}{2} |\\vec{b}|",
+      "C. \\vec{a} 与 \\vec{b} 方向相同",
+      "D. \\vec{a} 与 \\vec{b} 方向相反"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "5",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图，在 $5 \\times 5$ 正方形网格中，一条圆弧经过 A、B、C 三点，那么这条圆弧所在的圆的圆心为图中的（ ）",
+    "options": [
+      "A. M",
+      "B. P",
+      "C. Q",
+      "D. R"
+    ],
+    "images": [
+      "/problems/2020_Chongming_Mock/q5.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "6",
+    "difficulty": 0.28,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，点 D、E 分别在 $AB$ 和 $AC$ 边上且 $DE // BC$，点 M 为 $BC$ 边上一点（不与点 B、C 重合），联结 $AM$ 交 $DE$ 于点 N，下列比例式一定成立的是（ ）",
+    "options": [
+      "A. \\frac{AD}{AN} = \\frac{AN}{AE}",
+      "B. \\frac{DN}{NE} = \\frac{BM}{CM}",
+      "C. \\frac{DN}{BM} = \\frac{AE}{EC}",
+      "D. \\frac{DN}{MC} = \\frac{NE}{BM}"
+    ],
+    "images": [
+      "/problems/2020_Chongming_Mock/q6.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "已知 $\\frac{x}{y} = \\frac{2}{3}$，那么 $\\frac{x+y}{x} =$ ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "8",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop"
+    ],
+    "content": "已知线段 $AB=8\\text{cm}$，点 C 在线段 $AB$ 上，且 $AC^2 = BC \\cdot AB$，那么线段 $AC$ 的长 ________ $\\text{cm}$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "9",
+    "difficulty": 0.22,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop"
+    ],
+    "content": "如果两个三角形相似，其中一个三角形的两个内角分别为 $50^\\circ$ 和 $60^\\circ$，那么另一个三角形的最大角为 ________ 度.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "10",
+    "difficulty": 0.28,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "小杰沿坡比为 $1:2.4$ 的山坡向上走了 130 米，那么他沿着垂直方向升高了 ________ 米.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_similar_k_model"
+    ],
+    "content": "在某一时刻，测得一根高为 $1.8\\text{m}$ 的竹竿的影长为 $3\\text{m}$，同时同地测得一栋楼的影长为 $90\\text{m}$，则这栋楼的高度为 ________ $\\text{m}$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "12",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_triangle_prop"
+    ],
+    "content": "如果将抛物线 $y = x^2 + 2x - 1$ 先向右平移 2 个单位，再向上平移 3 个单位，那么所得的新抛物线的顶点坐标为 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "13",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "二次函数的性质"
+    ],
+    "content": "如果二次函数 $y = ax^2 + bx + c$ 图像上部分点的横坐标 $x$ 与纵坐标 $y$ 的对应值如下表所示，那么它的图像与 $x$ 轴的另一个交点坐标是 ________.\n\n| x | ... | -1 | 0 | 1 | 2 | ... |\n|---|---|---|---|---|---|---|\n| y | ... | 0 | 3 | 4 | 3 | ... |",
+    "images": [
+      "/problems/2020_Chongming_Mock/q13_table.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "14",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_quad_property"
+    ],
+    "content": "正五边形的中心角的度数是 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "15",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "两圆的半径之比为 $3:1$，当它们外切时，圆心距为 4，那么当它们内切时，圆心距为 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "16",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如果梯形两底分别为 4 和 6，高为 2，那么两腰延长线的交点到这个梯形的较大底边的距离是 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_prop"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，点 D 在 $BC$ 上，且 $BD = BA$，$\\angle ABC$ 的平分线 $BE$ 交 $AD$ 于点 E，点 F 是 $AC$ 中点，连结 $EF$. 若四边形 DCFE 和 $\\triangle BDE$ 的面积都为 3，则 $\\triangle ABC$ 的面积为 ________.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q17.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [],
+    "kps": [
+      "相似三角形",
+      "geo_trig_vector",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ$，$AB=10$，$AC=8$，点 D 是 $AC$ 的中点，点 E 在边 $AB$ 上，将 $\\triangle ADE$ 沿 $DE$ 翻折，使得点 A 落在点 $A'$ 处，当 $A'E \\perp AB$ 时，那么 $A'A$ 的长为 ________.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q18.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "19",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "计算：$\\tan^2 60^\\circ + \\frac{\\cot 60^\\circ + 2 \\tan 30^\\circ}{2 \\sin 30^\\circ} - \\sin^2 45^\\circ$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "20",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "geo_similar_prop"
+    ],
+    "content": "如图，在梯形 $ABCD$ 中，$AD // BC$，$BC = 2AD$，对角线 $AC$、$BD$ 相交于点 O，设 $\\vec{AD} = \\vec{a}$，$\\vec{AB} = \\vec{b}$. 试用 $\\vec{a}$、$\\vec{b}$ 的式子表示向量 $\\vec{AO}$.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q20.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "21",
+    "difficulty": 0.55,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图，$AC$ 是 $\\odot O$ 的直径，弦 $BD \\perp AO$ 于 E，连接 $BC$，过点 O 作 $OF \\perp BC$ 于 F，若 $BD=8\\text{cm}$，$AE=2\\text{cm}$，\n(1) 求 $\\odot O$ 的半径；\n(2) 求 O 到弦 $BC$ 的距离.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q21.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图 1，为放置在水平桌面 $l$ 上的台灯，底座的高 $AB$ 为 $5\\text{cm}$. 长度均为 $20\\text{cm}$ 的连杆 $BC$，$CD$ 与 $AB$ 始终在同一水平面上.\n(1) 旋转连杆 $BC$，$CD$，使 $\\angle BCD$ 成平角，$\\angle ABC = 150^\\circ$，如图 2，求连杆端点 D 离桌面 $l$ 的高度 $DE$.\n(2) 将 (1) 中的连杆 $CD$ 绕点 C 逆时针旋转，使 $\\angle BCD = 165^\\circ$，如图 3，问此时连杆端点 D 离桌面 $l$ 的高度是增加了还是减少了？增加或减少了多少？（精确到 $0.1\\text{cm}$，参考数据：$\\sqrt{2} \\approx 1.41, \\sqrt{3} \\approx 1.73$）",
+    "images": [
+      "/problems/2020_Chongming_Mock/q22.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "23",
+    "difficulty": 0.85,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，$\\triangle ABC$ 中，$AD \\perp BC$，$E$ 是 $AD$ 边上一点，联结 $BE$，过点 $D$ 作 $DF \\perp BE$，垂足为 $F$，且 $AE \\cdot DF = EF \\cdot CD$，联结 $AF$、$CF$，$CF$ 与边 $AD$ 交于点 O.\n求证：(1) $\\angle EAF = \\angle DCF$；\n(2) $AF \\cdot BD = AC \\cdot DF$.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q23.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "func_quadratic_basic",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，抛物线与 $x$ 轴相交于点 $A(-3, 0)$、$B(1, 0)$，与 $y$ 轴交于点 $C(0, 3)$，点 $D$ 是抛物线上一动点，联结 $OD$ 交线段 $AC$ 于点 E.\n(1) 求这条抛物线的解析式，并写出顶点坐标；\n(2) 求 $\\angle ACB$ 的正切值；\n(3) 当 $\\triangle AOE$ 与 $\\triangle ABC$ 相似时，求点 $D$ 的坐标.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q24.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_trig_def",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，$AB = AC = 10$，$BC = 16$，点 D 为 $BC$ 边上的一个动点（点 D 不与点 B、点 C 重合）. 以 D 为顶点作 $\\angle ADE = \\angle B$，射线 $DE$ 交 $AC$ 边于点 E，过点 A 作 $AF \\perp AD$ 交射线 $DE$ 于点 F.\n(1) 求证：$AB \\cdot CE = BD \\cdot CD$；\n(2) 当 $DF$ 平分 $\\angle ADC$ 时，求 $AE$ 的长；\n(3) 当 $\\triangle AEF$ 是等腰三角形时，求 $BD$ 的长.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q25.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模"
+  }
+]

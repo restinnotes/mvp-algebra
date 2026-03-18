@@ -1,0 +1,315 @@
+[
+  {
+    "id": "2022_Putuo_One_Mock_Q01",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 1,
+    "type": "choice",
+    "content": "$\\frac{1}{2}$ 的倒数是",
+    "options": [
+      "2",
+      "-2",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$"
+    ],
+    "difficulty": 0.1,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q02",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 2,
+    "type": "choice",
+    "content": "下列单项式中，与 $a^2b$ 是同类项的是",
+    "options": [
+      "$2ab^2$",
+      "$a^2b^2$",
+      "$ab$",
+      "$3ba^2$"
+    ],
+    "difficulty": 0.12,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q03",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 3,
+    "type": "choice",
+    "content": "如果 $x:y=1:2$，那么下列各式中正确的是",
+    "options": [
+      "$2x=y$",
+      "$x=2y$",
+      "$x+y=2$",
+      "$x-y=1$"
+    ],
+    "difficulty": 0.14,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q04",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 4,
+    "type": "choice",
+    "content": "在 $\\triangle ABC$ 中，$\\angle C=90^\\circ$，$\\angle A=\\alpha$，$AC=3$，那么 $BC$ 等于",
+    "options": [
+      "$3\\sin \\alpha$",
+      "$3\\cos \\alpha$",
+      "$3\\tan \\alpha$",
+      "$3\\cot \\alpha$"
+    ],
+    "difficulty": 0.16,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q05",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 5,
+    "type": "choice",
+    "content": "已知 $\\vec{a}$，$\\vec{b}$ 是两个非零向量，$\\vec{c}=2\\vec{a}$，$\\vec{d}=-3\\vec{b}$，那么下列说法正确的是",
+    "options": [
+      "$\\vec{c} // \\vec{d}$",
+      "$\\vec{c}$ 与 $\\vec{d}$ 方向相同",
+      "$|\\vec{c}|=2|\\vec{a}|$",
+      "$\\vec{c}+\\vec{d}=2\\vec{a}-3\\vec{b}$"
+    ],
+    "difficulty": 0.18,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q06",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 6,
+    "type": "choice",
+    "content": "如图1，在 $\\triangle ABC$ 中，$DE // BC$，$AD=2$，$DB=3$，那么 $S_{\\triangle ADE} : S_{梯形BCED}$ 等于",
+    "options": [
+      "2:3",
+      "4:9",
+      "4:21",
+      "4:25"
+    ],
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig1.png"
+    ],
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q07",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 7,
+    "type": "fill",
+    "content": "计算：$a^2 \\cdot a^3 =$ ______.",
+    "difficulty": 0.1,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q08",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 8,
+    "type": "fill",
+    "content": "在比例尺为 $1:1000000$ 的地图上，某两地间的距离为 2 厘米，那么这两地间的实际距离为 ______ 千米.",
+    "difficulty": 0.12,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q09",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 9,
+    "type": "fill",
+    "content": "已知线段 $AB=4$，$P$ 是线段 $AB$ 的黄金分割点，且 $AP>BP$，那么线段 $AP$ 的长为 ______.",
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q10",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 10,
+    "type": "fill",
+    "content": "如图2，$AB // CD // EF$，$AC=2$，$AE=6$，$BD=3$，那么 $BF$ 的长为 ______.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig2.png"
+    ],
+    "difficulty": 0.18,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q11",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 11,
+    "type": "fill",
+    "content": "已知 $\\triangle ABC \\sim \\triangle DEF$，且 $\\triangle ABC$ 与 $\\triangle DEF$ 的相似比为 1:2，如果 $BC=3$，那么 $EF$ 的长为 ______.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q12",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 12,
+    "type": "fill",
+    "content": "在 $\\triangle ABC$ 中，$\\angle C=90^\\circ$，$BC=2$，$AC=3$，那么 $\\cot A =$ ______.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q13",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 13,
+    "type": "fill",
+    "content": "已知 $\\vec{a}$，$\\vec{b}$ 互为相反向量，那么 $\\vec{a}+\\vec{b}=$ ______.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q14",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 14,
+    "type": "fill",
+    "content": "已知抛物线 $y=ax^2+c$ 经过点 $A(0, 1)$ 和 $B(1, 2)$，那么这个抛物线的表达式为 ______.",
+    "difficulty": 0.3,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q15",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 15,
+    "type": "fill",
+    "content": "如果将抛物线 $y=x^2-2x+3$ 向左平移 1 个单位，那么平移后所得新抛物线的顶点坐标是 ______.",
+    "difficulty": 0.35,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q16",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 16,
+    "type": "fill",
+    "content": "如图3，在离地面高度为 5 米的 $A$ 处引拉线固定电线杆，拉线和地面所成的角为 $\\alpha$，那么拉线 $AB$ 的长为 ______ 米 (用含 $\\alpha$ 的三角比表示).",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig3.png"
+    ],
+    "difficulty": 0.4,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q17",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 17,
+    "type": "fill",
+    "content": "如图4，在 $\\triangle ABC$ 中，$G$ 是重心，$DE // BC$ 且经过点 $G$，$DE$ 分别交 $AB$，$AC$ 于点 $D$，$E$，那么 $S_{\\triangle ADE} : S_{\\triangle ABC} =$ ______.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig4.png"
+    ],
+    "difficulty": 0.5,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q18",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 18,
+    "type": "fill",
+    "content": "如图5，在 $\\triangle ABC$ 中，$AB=AC=5$，$\\cos B = \\frac{4}{5}$，如果 $\\triangle ABC$ 绕点 $C$ 旋转，使点 $B$ 落在 $AB$ 边上的点 $B'$ 处，点 $A$ 落在点 $A'$ 处，那么 $AA'$ 的长为 ______.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig5.png"
+    ],
+    "difficulty": 0.75,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q19",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 19,
+    "type": "answer",
+    "content": "计算：$2\\cos 45^\\circ + \\tan 60^\\circ \\cdot \\cos 30^\\circ - \\frac{\\sqrt{2}-1}{\\sqrt{2}}$.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q20",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 20,
+    "type": "answer",
+    "content": "解方程：$\\frac{2x}{x-2} - \\frac{x+2}{x} = 1$.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q21",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 21,
+    "type": "answer",
+    "content": "如图6，在 $\\triangle ABC$ 中，$AB=AC$，$AD$ 是高，$E$ 是 $AC$ 的中点，$BE$ 交 $AD$ 于点 $F$.\n(1) 求证：$\\triangle AEF \\sim \\triangle BDF$;\n(2) 如果 $BF=6$，$\\cos C = \\frac{4}{5}$，求 $AD$ 的长.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig6.png"
+    ],
+    "difficulty": 0.55,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q22",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 22,
+    "type": "answer",
+    "content": "某商场销售某种商品，进价为 20 元/件，当售价为 30 元/件时，每天可售出 400 件. 市场调查发现，若每件商品售价每上涨 1 元，每天的销售量就减少 20 件. 设每件商品售价上涨 $x$ 元 ($x$ 为正整数)，每天的销售利润为 $y$ 元.\n(1) 求 $y$ 与 $x$ 之间的函数关系式;\n(2) 如果商场规定该商品的售价不能超过进价的 2 倍，那么每件商品售价定为多少元时，每天的销售利润最大？最大利润是多少元？",
+    "difficulty": 0.65,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q23",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 23,
+    "type": "answer",
+    "content": "如图7，在四边形 $ABCD$ 中，$AD // BC$，$\\angle ABC=90^\\circ$，$AB=BC=4$，$AD=3$，点 $E$ 在射线 $BC$ 上，$AE \\perp BD$，垂足为 $F$.\n(1) 求 $BE$ 的长;\n(2) 联结 $DE$，求 $\\angle CED$ 的正切值.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig7.png"
+    ],
+    "difficulty": 0.75,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q24",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 24,
+    "type": "answer",
+    "content": "在平面直角坐标系 $xOy$ 中，抛物线 $y=ax^2+bx+3$ 经过点 $A(-1, 0)$ 和 $B(3, 0)$，与 $y$ 轴交于点 $C$.\n(1) 求抛物线的表达式及点 $C$ 的坐标;\n(2) 联结 $BC$，点 $P$ 是线段 $BC$ 上一点 (不与点 $B$，$C$ 重合)，过点 $P$ 作 $PQ \\perp x$ 轴，垂足为 $Q$，$PQ$ 交抛物线于点 $R$，如果 $PR=RQ$，求点 $P$ 的坐标;\n(3) 在 (2) 的条件下，点 $M$ 在 $x$ 轴上，如果 $\\triangle MRQ$ 是等腰三角形，请直接写出所有符合条件的点 $M$ 的坐标.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig8.png"
+    ],
+    "difficulty": 0.85,
+    "exam_type": "一模",
+    "district": "普陀"
+  },
+  {
+    "id": "2022_Putuo_One_Mock_Q25",
+    "paper": "2022_Putuo_One_Mock",
+    "number": 25,
+    "type": "answer",
+    "content": "如图9，在 $\\triangle ABC$ 中，$\\angle C=90^\\circ$，$AC=3$，$BC=4$，点 $D$ 是边 $BC$ 上一点，$DE \\perp AB$，垂足为 $E$，联结 $AD$.\n(1) 如果 $DE=1$，求 $AD$ 的长;\n(2) 设 $CD=x$，$\\triangle ADE$ 的周长为 $y$，求 $y$ 与 $x$ 之间的函数关系式;\n(3) 如果点 $F$ 在 $AC$ 上，$AF=CD$，联结 $EF$，当 $EF // AD$ 时，求 $CD$ 的长.",
+    "images": [
+      "/problems/2022_Putuo_One_Mock/fig9.png"
+    ],
+    "difficulty": 0.95,
+    "exam_type": "一模",
+    "district": "普陀"
+  }
+]

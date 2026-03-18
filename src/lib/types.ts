@@ -22,10 +22,20 @@ export interface KnowledgeGraph {
 export interface QuestionMapping {
   paper: string;
   question: string;
-  source_file: string;
-  steps: StepMapping[];
   difficulty: number;
   tags: string[];
+  kps: string[];
+  content: string;
+  options?: string[];
+  answer?: string;
+  images?: string[];
+  has_answer?: boolean;
+  year?: string;
+  exam_type?: string;   // "一模" | "二模" | "中考"
+  district?: string;    // "徐汇" | "浦东" etc.
+  question_type?: string; // "Q18" | "Q24" | "Q25"
+  source_file?: string;
+  steps?: StepMapping[];
 }
 
 export interface StepMapping {
@@ -233,4 +243,5 @@ export interface StepLog {
     label?: string;
     message?: string;
     isCorrect?: boolean;
+    isRevealed?: boolean;
 }

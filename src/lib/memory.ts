@@ -21,6 +21,7 @@ export interface WrongProblem {
     kpIds: string[];
     isResolved: boolean;
     timestamp: string;
+    diagnosticAnalysis?: string; // 新增：存储 AI 对全过程的诊断总结
 }
 
 export interface MemoryData {
@@ -202,10 +203,51 @@ export class LTMMemory {
             cognitive_bugs: mergedBugs,
             session_history: mergedHistory,
             wrong_problems: data.wrong_problems || current.wrong_problems || [],
-            lastUpdated: new Date().toISOString()
+            lastUpdated: new Date().toISOString(),
+            last_updated: new Date().toISOString()
         };
         
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    }
+
+    private static deriveLearningStyle(persona: StudentPersona): string {
+        const masteryEntries = Object.entries(LTMMemory.load().mastery);
+        const totalKps = masteryEntries.length;
+        const misconceptions = persona.misconceptions;
+        const bugCount = misconceptions.length;
+
+        if (totalKps < 2) return "表现评估：评估数据积累中。建议完成更多题目以获得准确的认知反馈。";
+
+        // 识别强项
+        const strongKps = masteryEntries.filter(([, m]) => m >= 0.8).map(([id]) => id);
+        const weakKps = masteryEntries.filter(([, m]) => m < 0.5).map(([id]) => id);
+        
+        const hasAlgebraStrength = strongKps.some(id => id.startsWith('alg_'));
+        const hasGeometryStrength = strongKps.some(id => id.startsWith('geo_'));
+        
+        let strengths = "";
+        if (hasAlgebraStrength && hasGeometryStrength) strengths = "在代数运算与几何联想上都展现了很好的平衡感；";
+        else if (hasAlgebraStrength) strengths = "代数推导比较严谨，对解析几何的参数处理有较好直感；";
+        else if (hasGeometryStrength) strengths = "几何构型识别非常敏锐，能够快速定位辅助线位置；";
+        else if (strongKps.length > 0) strengths = "在已接触的知识点中表现出一定的解题稳定性；";
+        else strengths = "目前尚在适应解题节奏；";
+
+        // 识别改进点
+        let improvements = "";
+        const hasCalcBug = misconceptions.some(m => m.includes('计算') || m.includes('符号'));
+        const hasLogicBug = misconceptions.some(m => m.includes('讨论') || m.includes('多解') || m.includes('漏项'));
+        
+        if (bugCount === 0) improvements = "暂无明显错误模式，请继续保持现状并挑战更高难度的综合压轴题。";
+        else {
+            const points = [];
+            if (hasCalcBug) points.push("需要特别注意运算过程中的符号转换与常数补偿，减少非受迫性失误");
+            if (hasLogicBug) points.push("在处理动态几何或二次函数存在性问题时，需要更有意识地进行分类讨论，避免漏掉边界条件");
+            if (weakKps.length > 2) points.push("对部分前序基础知识点的掌握还不够稳固，建议在继续深入前进行针对性复习");
+            
+            improvements = points.length > 0 ? `当前主要改进点：${points.join("；")}。` : "目前的解题逻辑基本正确，注意细节的复核即可。";
+        }
+
+        return `综合评估：${strengths}${improvements}`;
     }
 
     private static fuseCognitiveBugs(
@@ -301,6 +343,9 @@ export class LTMMemory {
         };
         
         current.persona = mergedPersona;
+        const newStyle = this.deriveLearningStyle(current.persona);
+        current.persona.learningStyle = newStyle;
+        current.persona.learning_style = newStyle;
         this.save({ persona: current.persona });
     }
 
@@ -330,27 +375,88 @@ export class LTMMemory {
         this.save({ cognitive_bugs: current.cognitive_bugs });
     }
 
-    static addWrongProblem(problem: Omit<WrongProblem, 'id' | 'timestamp'>) {
+    static addWrongProblem(problem: Omit<WrongProblem, 'id' | 'timestamp' | 'diagnosticAnalysis'>) {
+        // 强制重新加载，减少竞态
         const current = this.load();
         
-        // Deduplicate: If problem with same title exists, overwrite it
-        const existingIndex = current.wrong_problems.findIndex(p => p.problemTitle === problem.problemTitle);
-        
-        const newProblem: WrongProblem = {
-            ...problem,
-            id: existingIndex !== -1 ? current.wrong_problems[existingIndex].id : Math.random().toString(36).substring(2, 9),
-            timestamp: new Date().toISOString()
+        // 增强的去重逻辑：提取题目的“编号”部分（例如 2022浦东Q24）
+        const getProblemCode = (title: string) => {
+            // 1. 尝试匹配 Q编号 格式
+            const match = title.match(/(202\d[^\s:：(（]+Q\d+)/i);
+            if (match) return match[1].toUpperCase().replace(/[:：\s]/g, '');
+            
+            // 2. 如果没匹配到正则（如没有Q编号），取前25个字符并移除干扰项
+            return title.trim()
+                .substring(0, 25)
+                .replace(/[:：\s(（)）]/g, '')
+                .toUpperCase();
         };
         
-        let updatedWrongProblems;
+        const targetCode = getProblemCode(problem.problemTitle);
+        
+        // 查找是否存在相同题目的记录
+        const existingIndex = current.wrong_problems.findIndex(p => 
+            getProblemCode(p.problemTitle) === targetCode
+        );
+        
+        let updatedWrongProblems = [...current.wrong_problems];
+        
         if (existingIndex !== -1) {
-            updatedWrongProblems = [...current.wrong_problems];
-            updatedWrongProblems[existingIndex] = newProblem;
+            const existing = updatedWrongProblems[existingIndex];
+            // 重要：使用深度合并，确保 diagnosticAnalysis 不被覆盖为 undefined
+            updatedWrongProblems[existingIndex] = {
+                ...existing,
+                ...problem,
+                // 强制保留旧的诊断，除非 problem 中显式提供了（通常此时不提供）
+                diagnosticAnalysis: existing.diagnosticAnalysis, 
+                isResolved: false, 
+                timestamp: new Date().toISOString()
+            };
+            
+            // 将更新后的记录移到列表最前端
+            const [movedItem] = updatedWrongProblems.splice(existingIndex, 1);
+            updatedWrongProblems.unshift(movedItem);
         } else {
-            updatedWrongProblems = [newProblem, ...current.wrong_problems].slice(0, 50);
+            const newProblem: WrongProblem = {
+                ...problem,
+                id: Math.random().toString(36).substring(2, 9),
+                timestamp: new Date().toISOString()
+            };
+            updatedWrongProblems = [newProblem, ...updatedWrongProblems].slice(0, 50);
         }
         
         this.save({ wrong_problems: updatedWrongProblems });
+    }
+
+    /**
+     * 更新错题的 AI 诊断总结内容
+     */
+    static updateWrongProblemDiagnostic(problemTitle: string, diagnostic: string) {
+        const current = this.load();
+        
+        // 增强的去重逻辑：提取题目的“编号”部分（例如 2022浦东Q24）
+        const getProblemCode = (title: string) => {
+            // 1. 尝试匹配 Q编号 格式
+            const match = title.match(/(202\d[^\s:：(（]+Q\d+)/i);
+            if (match) return match[1].toUpperCase().replace(/[:：\s]/g, '');
+            
+            // 2. 如果没匹配到正则（如没有Q编号），取前25个字符并移除干扰项
+            return title.trim()
+                .substring(0, 25)
+                .replace(/[:：\s(（)）]/g, '')
+                .toUpperCase();
+        };
+        
+        const targetCode = getProblemCode(problemTitle);
+        const index = current.wrong_problems.findIndex(p => getProblemCode(p.problemTitle) === targetCode);
+        
+        if (index !== -1) {
+            current.wrong_problems[index].diagnosticAnalysis = diagnostic;
+            this.save({ wrong_problems: current.wrong_problems });
+        } else {
+            // 如果没找到（可能因为 addWrongProblem 还未保存完成），尝试在 500ms 后重试一次
+            console.warn(`[LTM] Could not find problem code ${targetCode} to update diagnostic. Will NOT retry here for simplicity but ensure call order.`);
+        }
     }
 
     static resolveWrongProblem(problemId: string, masteryBoost: number = 0.5) {

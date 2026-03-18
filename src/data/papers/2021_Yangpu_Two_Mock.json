@@ -1,0 +1,415 @@
+[
+  {
+    "id": "2021_Yangpu_Two_Mock_Q01",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列各数中无理数是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $\\frac{\\pi}{2}$",
+      "(B) $\\frac{22}{7}$",
+      "(C) $\\sqrt{4}$",
+      "(D) $\\sqrt[3]{27}$"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q02",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "下列说法不一定成立的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 若 $a > b$, 则 $a + c > b + c$",
+      "(B) 若 $a + c > b + c$, 则 $a > b$",
+      "(C) 若 $a > b$, 则 $ac^2 > bc^2$",
+      "(D) 若 $ac^2 > bc^2$, 则 $a > b$"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q03",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "下列方程中, 有实数根的方程是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $x^4 + 1 = 0$",
+      "(B) $\\sqrt{x+2} = -1$",
+      "(C) $\\sqrt{x+2} = -x$",
+      "(D) $\\frac{x}{x^2-1} = \\frac{1}{x^2-1}$"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q04",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "已知 $A(x_1, y_1)$ 和 $B(x_2, y_2)$ 是双曲线 $y = -\\frac{2}{x}$ 上的两个点, 如果 $x_1 < x_2$, 那么 $y_1$ 和 $y_2$ 的大小关系正确的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $y_1 > y_2$",
+      "(B) $y_1 < y_2$",
+      "(C) $y_1 = y_2$",
+      "(D) 无法判断"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q05",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "5",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "为了了解某校九年级 400 名学生的体重情况, 从中抽取 50 名学生的体重进行分析. 在这项调查中, 样本是指 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 400 名学生",
+      "(B) 被抽取的 50 名学生",
+      "(C) 400 名学生的体重",
+      "(D) 被抽取的 50 名学生的体重"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q06",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "6",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "下列命题中, 真命题是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 平分弦的直径垂直于弦",
+      "(B) 垂直平分弦的直线平分这条弦所对的弧",
+      "(C) 在同圆中, 相等的弦所对的弧也相等",
+      "(D) 经过半径一端且垂直于这条半径的直线是圆的切线"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q07",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $a^3 \\cdot a^{-1} = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q08",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "分解因式: $x^2 - 4x = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q09",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "在函数 $y = \\frac{x}{2x+3}$ 中, 自变量 $x$ 的取值范围是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q10",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "不等式组 $\\begin{cases} 3x - 15 \\le 0 \\\\ \\frac{3-x}{2} > 1 \\end{cases}$ 的解集是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q11",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "已知关于 $x$ 的一元二次方程 $x^2 - 6x + m - 1 = 0$ 有两个相等的实数根, 那么 $m$ 的值为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q12",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "一个射箭运动员连续射靶 5 次, 所得环数分别是: 8, 6, 10, 7, 9, 则这个运动员所得环数的标准差为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q13",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "13",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "在一个布袋中, 装有除颜色外其他完全相同的 2 个红球和 2 个白球, 如果从中随机摸出两个球, 那么摸到的两个球颜色相同的概率是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q14",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "14",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "已知点 $G$ 是 $\\triangle ABC$ 的重心, 如果 $\\vec{AB} = \\vec{a}, \\vec{AC} = \\vec{b}$, 那么向量 $\\vec{AG}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q15",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知一个正六边形的边心距为 $\\sqrt{3}$, 则它的半径为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q16",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知在正方形网格中, 点 $A, B, C, D$ 在小正方形的顶点上, 线段 $AB$ 与线段 $CD$ 相交于点 $O$, 那么 $\\tan \\angle AOC = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q16_0.png"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q17",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "17",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如果一条直线把一个平面图形的面积分成相等的两部分, 那么我们把这条直线叫做这个平面图形的面积等分线. 已知在菱形 $ABCD$ 中, $AB = 6, \\angle B = 60^\\circ$, 点 $E$ 在边 $AD$ 上, 且 $AE = 2$, 过点 $E$ 的面积等分线与菱形的另一条边交于点 $F$, 那么线段 $EF$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q17_0.png"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q18",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, \\angle B = 30^\\circ, AC = 2$, 点 $D$ 是边 $BC$ 的中点, 点 $E$ 是边 $AB$ 上一点, 将 $\\triangle BDE$ 沿直线 $DE$ 翻折, 点 $B$ 落在 $B'$ 处, 联结 $AB'$, 如果 $\\angle AB'D = 90^\\circ$, 那么线段 $AE$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q18_0.png"
+    ],
+    "question_type": "Q18"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q19",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $\\sqrt{8} - \\frac{1}{\\sqrt{3}-2} - (\\frac{1}{3})^{-1} \\div \\sqrt{3} + (1-\\sqrt{2})^2$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q20",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "20",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程: $\\frac{4x}{x^2-9} = 1 + \\frac{2}{x-3} - \\frac{2}{x+3}$",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q21",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知正比例函数 $y = kx$ 的图像与反比例函数 $y = \\frac{6}{x} (x > 0)$ 的图像经过点 $A(a, 3)$, 点 $B$ 为 $x$ 轴正半轴上一点, 过点 $B$ 作 $BD \\perp x$ 轴, 交反比例函数的图像于点 $C$, 交正比例函数的图像于点 $D$.\n(1) 求 $a, k$ 的值;\n(2) 联结 $AC$, 如果 $BD = 6$, 求 $\\triangle ACD$ 面积.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q21_0.png"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q22",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "22",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "如图 1 是一种手机平板支架, 由底座、支撑板和托板构成, 手机放置在托板上, 如图 2 是其侧面示意图, 量得底座长 $AB = 11cm$, 支撑板长 $BC = 8cm$, 托板长 $CD = 6cm$, 托板 $CD$ 固定在支撑板顶端点 $C$ 处, 托板 $CD$ 可绕点 $C$ 旋转, 支撑板 $BC$ 可绕点 $B$ 转动.\n(1) 如果 $\\angle ABC = 60^\\circ, \\angle BCD = 70^\\circ$, 求点 $D$ 到直线 $AB$ 的距离 (精确到 $0.1cm$);\n(2) 在第 (1) 小题的条件下, 如果把线段 $CD$ 绕点 $C$ 顺时针旋转 $20^\\circ$ 后, 再将线段 $BC$ 绕点 $B$ 逆时针旋转, 使点 $D$ 落在直线 $AB$ 上, 求线段 $BC$ 旋转的角度.\n(参考数据: $\\sin 40^\\circ \\approx 0.64, \\cos 40^\\circ \\approx 0.77, \\tan 40^\\circ \\approx 0.84, \\sin 37^\\circ \\approx 0.60, \\cos 37^\\circ \\approx 0.80, \\tan 37^\\circ \\approx 0.75, \\sqrt{3} \\approx 1.73$)",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q22_0.png"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q23",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知: 如图, $AB$ 是半圆 $O$ 直径, $C$ 是半圆上一点 (不与点 $A, B$ 重合), 过点 $A$ 作 $AD \\parallel OC$ 交半圆于点 $D$, $E$ 是直径 $AB$ 上一点, 且 $AE = AD$, 联结 $CE, CD$.\n(1) 求证: $CE = CD$;\n(2) 如果 $AD = 3CD$, 延长 $EC$ 与弦 $AD$ 的延长线交于点 $F$, 联结 $OD$, 求证: 四边形 $OCFD$ 是菱形.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q23_0.png"
+    ]
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q24",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如图, 已知在平面直角坐标系 $xOy$ 中, 直线 $y = x - 5$ 与 $x$ 轴相交于点 $A$, 与 $y$ 轴相交于点 $B$, 抛物线 $y = ax^2 + 6x + c$ 经过 $A, B$ 两点.\n(1) 求这条抛物线的表达式;\n(2) 设抛物线与 $x$ 轴的另一个交点为 $C$, 点 $P$ 是抛物线上一点, 点 $Q$ 是直线 $AB$ 上一点, 当四边形 $BCPQ$ 是平行四边形时, 求点 $Q$ 的坐标;\n(3) 在第 (2) 小题的条件下, 联结 $QC$, 在 $\\angle QCB$ 内作射线 $CD$ 与抛物线的对称轴相交于点 $D$, 使得 $\\angle QCD = \\angle ABC$, 求线段 $DQ$ 的长.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q24_0.png"
+    ],
+    "question_type": "Q24"
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q25",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知 $Q$ 是 $\\angle BAC$ 的边 $AC$ 上一点, $AQ = 15, \\cot \\angle BAC = \\frac{3}{4}$, 点 $P$ 是射线 $AB$ 上一点, 联结 $PQ$, $\\odot O$ 经过点 $A$ 且与 $QP$ 相切于点 $P$, 与边 $AC$ 相交于另一点 $D$.\n(1) 当圆心 $O$ 在射线 $AB$ 上时, 求 $\\odot O$ 的半径;\n(2) 当圆心 $O$ 到直线 $AB$ 的距离为 $\\frac{3}{4}$ 时, 求线段 $AP$ 的长;\n(3) 试讨论以线段 $PQ$ 长为半径的 $\\odot P$ 与 $\\odot O$ 的位置关系, 并写出相应的线段 $AP$ 取值范围.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q25_0.png"
+    ],
+    "question_type": "Q25"
+  }
+]

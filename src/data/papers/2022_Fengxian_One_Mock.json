@@ -1,0 +1,423 @@
+[
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "alg_expr_eval"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中，下列函数的图像过点 (-1, 1) 的是（ ）",
+    "options": [
+      "A. $y = x - 1$",
+      "B. $y = -x + 1$",
+      "C. $y = \\frac{1}{x}$",
+      "D. $y = x^2$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "2",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop",
+      "对称轴"
+    ],
+    "content": "从图形运动的角度研究抛物线，有利于我们认识新的抛物线的特征. 如果将抛物线 $y = x^2 + 2$ 绕着原点旋转 $180^\\circ$，那么关于旋转后所得新抛物线与原抛物线之间的关系，下列正确的是（ ）",
+    "options": [
+      "A. 它们的开口方向相同",
+      "B. 它们的对称轴相同",
+      "C. 它们的变化情况相同",
+      "D. 它们的顶点坐标相同"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_trig_def"
+    ],
+    "content": "如果直线 $y = 2x$ 与 $x$ 轴正半轴的夹角为锐角 $\\alpha$，那么下列各式正确的是（ ）",
+    "options": [
+      "A. $\\sin \\alpha = \\frac{1}{2}$",
+      "B. $\\cos \\alpha = \\frac{1}{2}$",
+      "C. $\\tan \\alpha = \\frac{1}{2}$",
+      "D. $\\cot \\alpha = \\frac{1}{2}$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知 D 是 $\\triangle ABC$ 边 AB 上的一点，如果 $\\angle BCD = \\angle A$，那么下列结论中正确的是（ ）",
+    "options": [
+      "A. $AC^2 = AD \\cdot AB$",
+      "B. $BC^2 = BD \\cdot AB$",
+      "C. $CD^2 = AD \\cdot BD$",
+      "D. $AD^2 = BD \\cdot CD$"
+    ],
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q4.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "5",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_aux_line",
+      "geo_similar_basic"
+    ],
+    "content": "已知线段 AB. 按以下步骤作图：\n(1) 作以 A 为端点的射线 AP (不与线段 AB 所在直线重合);\n(2) 在射线 AP 上顺次截取 AC = CD = DE;\n(3) 联结 BE, 过点 D 作 DF // BE, 交线段 AB 于点 F.\n根据上述作图过程，下列结论中正确的是（ ）",
+    "options": [
+      "A. AF:AB = 1:2",
+      "B. AF:AB = 1:3",
+      "C. AF:AB = 2:3",
+      "D. AF:AB = 2:1"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "6",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_congruent_judge",
+      "解直角三角形"
+    ],
+    "content": "在 $\\triangle ABC$ 中，$AB = 2\\sqrt{3}, \\angle BAC = 30^\\circ$. 下列线段 BC 的长度不能使 $\\triangle ABC$ 的形状和大小都确定的是（ ）",
+    "options": [
+      "A. 2",
+      "B. 4",
+      "C. $\\sqrt{3}$",
+      "D. $2\\sqrt{3}$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "7",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "如果 $\\frac{x}{2} = \\frac{y}{3} = \\frac{z}{5} \\neq 0$，那么 $\\frac{y-x}{z} = $ ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_fraction_concept"
+    ],
+    "content": "函数 $y = \\frac{x}{x+1}$ 的定义域是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算：$2(\\vec{a}-2\\vec{b}) + 3(\\vec{a}+\\vec{b}) = $ ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "content": "如果函数 $y=kx$ ($k \\neq 0$) 的图像经过第二、四象限，那么 $y$ 的值随 $x$ 的值增大而 ________. (填“增大”或“减小”)",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "11",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如果抛物线 $y = (x-2)^2 + k$ 不经过第三象限，那么 $k$ 的值可以是 ________. (只需写一个)",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "12",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "二次函数的对称性",
+      "func_quadratic_basic"
+    ],
+    "content": "用描点法画二次函数的图像需要经过列表、描点、连线三个步骤. 以下是小明画二次函数 $y = ax^2 + bx + c$ 图像时所列的表格：\n\n| x | ... | -4 | -3 | -2 | 0 | 2 | ... |\n|---|---|---|---|---|---|---|---|\n| y | ... | 3 | 0 | -1 | 3 | 15 | ... |\n\n根据表格可以知道该二次函数图像的顶点坐标是 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q12_table.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "13",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知 $AD // BE // CF$，它们依次交直线 $l_1, l_2$ 于点 A、B、C 和点 D、E、F. 如果 $5AB = 2AC, DE = 6$，那么线段 EF 的长是 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q13.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "解直角三角形"
+    ],
+    "content": "已知在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ, \\sin A = \\frac{3}{4}, BC = 6$，则 AB 的长是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "15",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_prop"
+    ],
+    "content": "联结三角形各边中点，所得的三角形的周长与原三角形周长的比是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "16",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_quad_property",
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知菱形 ABCD，E、F 分别为 $\\triangle ABD$ 和 $\\triangle BCD$ 的重心，如果边 $AB=5$，对角线 $BD=6$，那么 EF 的长为 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q16.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "content": "《九章算术》是我国古代的数学名著，书中有一个问题：“今有邑方不知大小，各中开门，出北门一百步立一表，出西门二百二十五步适可见之，问邑方几何？”它的意思是：如图，M、N 分别是正方形 ABCD 的边 AD, AB 的中点，$ME \\perp AD, NF \\perp AB, EF$ 过点 A，且 $ME = 100$ 步，$NF = 225$ 步，那么该正方形城邑边长 AD 约为 ________ 步.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q17_1.png",
+      "/problems/2022_Fengxian_One_Mock/q17_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [],
+    "kps": [
+      "解直角三角形",
+      "相似三角形",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ, \\sin B = \\frac{3}{5}, D$ 是边 BC 的中点，点 E 在边 AB 上，将 $\\triangle BDE$ 沿直线 DE 翻折，使得点 B 落在同一平面内的点 F 处. 如果射线 FD 交边 AB 于点 G，当 $FD \\perp AB$ 时，AE:BE 的值为 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q18.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "19",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "计算：$\\frac{2\\sin^2 60^\\circ - \\frac{1}{2}\\cot 45^\\circ}{\\tan^2 60^\\circ + 4\\sin 30^\\circ}$.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "func_linear_inverse",
+      "geo_quad_property"
+    ],
+    "content": "如图，在平面直角坐标系 $xOy$ 中，矩形 ABCD 的顶点 A(4,0) 和 B 在 x 轴的正半轴上，反比例函数 $y = \\frac{k}{x}$ 在第一象限内的图像经过点 D，交 BC 于点 E, CE = 2BE, $\\tan \\angle AOD = \\frac{3}{4}$.\n(1) 求反比例函数的解析式；\n(2) 联结 OC, 求 $\\angle BOC$ 的正切值.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q20.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "解直角三角形"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，AC = 5, $\\cot A = 2, \\cot B = 3, D$ 是 AB 边上的一点，$\\angle BDC = 45^\\circ$.\n(1) 求线段 BD 的长；\n(2) 如果设 $\\vec{CA} = \\vec{a}, \\vec{CB} = \\vec{b}$，那么用含 $\\vec{a}, \\vec{b}$ 的式子表示向量 $\\vec{CD}$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q21.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图是位于奉贤南桥镇解放东路 866 号的“奉贤电视发射塔”，它建于 1996 年，在长达二十几年的时间里它一直是奉贤区最高建筑物，该记录一直保持到 2017 年，历了 25 年风雨的电视塔锋刻了一代奉贤人的记忆. 某数学活动小组在学习了“解直角三角形的应用”后，开展了测量“奉贤电视发射塔的高度”的实践活动. 测量方案：如图，在电视塔附近的高楼楼顶 C 处测量塔顶 A 处的仰角和塔底 B 处的俯角. 数据收集：这幢高楼共 12 层，每层高约 2.8 米，在高楼楼顶 C 处测得塔顶 A 处的仰角为 $58^\\circ$，塔底 B 处的俯角为 $22^\\circ$. 问题解决：求奉贤电视发射塔 AB 的高度 (结果精确到 1 米). 参考数据：$\\sin 22^\\circ \\approx 0.37, \\cos 22^\\circ \\approx 0.93, \\tan 22^\\circ \\approx 0.40, \\sin 58^\\circ \\approx 0.85, \\cos 58^\\circ \\approx 0.53, \\tan 58^\\circ \\approx 1.60$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q22.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "23",
+    "difficulty": 0.85,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_k_model"
+    ],
+    "content": "根据相似形定义可以知道，如果一个四边形的四个角与另一个四边形的四个角对应相等，且它们各有的四边对应成比例，那么这两个四边形叫做相似四边形. 对应相等的角的顶点叫做这两个相似四边形的对应顶点，以对应顶点为端点的边是这两个相似四边形的对应边，对应边的比叫做这两个相似多边形的相似比. (我们研究的四边形都是指凸四边形)\n(1) 某学习小组在探究相似四边形的判定时，得到如下两个命题，请判断它们是真命题还是假命题 (直接在横线上填写“真”或“假”)：\n① 梯形的中位线将原梯形分成的两个小的梯形相似; ________ 命题\n② 有一个内角对应相等的两个菱形相似; ________ 命题\n(2) 已知：如图 1, $\\triangle ABC$ 是以 BC 为斜边的等腰直角三角形，以 BC 为直角边作等腰直角三角形 BCD, 再以 BD 为直角边作等腰直角三角形 BDE. 求证：四边形 ABDC 与四边形 CBED 相似.\n(3) 已知：如图 2, 在 $\\triangle ABC$ 中，点 D、E 分别在边 AB、AC 上，BE、CD 相交于点 F，点 G 在 AF 的延长线上，联结 BG、CG. 如果四边形 ADFE 与四边形 ABGC 相似，且点 A、D、F、E 分别对应 A、B、G、C. 求证：$AF \\cdot BF = AG \\cdot EF$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q23_1.png",
+      "/problems/2022_Fengxian_One_Mock/q23_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "func_linear_inverse",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在平面直角坐标系 $xOy$ 中，抛物线 $y = ax^2 + bx + 3$ 与 x 轴交于点 A(-1, 0) 和点 B(3, 0)，与 y 轴交于点 C，顶点为 D.\n(1) 求该抛物线的表达式的顶点 D 的坐标；\n(2) 将抛物线沿 y 轴上下平移，平移后所得新抛物线顶点为 M，点 C 的对应点为 E.\n① 如果点 M 落在直线 BC 上，求 $\\angle DBE$ 的度数；\n② 设直线 ME 与 x 轴正半轴交于点 P，与线段 BC 交于点 Q，当 PE = 2PQ 时，求平移后新抛物线的表达式.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q24.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "content": "如图 1, 已知锐角 $\\triangle ABC$ 的高 AD、BE 相交于点 F，延长 AD 至 G，使 DG=FD, 连接 BG, CG.\n(1) 求证：$BD \\cdot AC = AD \\cdot BG$；\n(2) 如果 BC = 10, 设 $\\tan \\angle ABC = m$.\n① 如图 2, 当 $\\angle ABG = 90^\\circ$ 时，用含 m 的代数式表示 $\\triangle BFG$ 的面积；\n② 当 AB = 8, 且四边形 BGCE 是梯形时，求 m 的值.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q25_1.png",
+      "/problems/2022_Fengxian_One_Mock/q25_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模"
+  }
+]

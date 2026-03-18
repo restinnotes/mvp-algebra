@@ -2,8 +2,15 @@ import DynamicScaffold from '@/components/DynamicScaffold';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import PasswordGate from '@/components/PasswordGate';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ problem?: string }> }) {
+  const params = await searchParams;
+  
+  if (!params.problem) {
+    redirect('/dashboard');
+  }
+
   return (
     <PasswordGate>
       <main className="h-[100dvh] bg-[#0f1115] text-white flex flex-col items-center py-4 px-4 selection:bg-indigo-500/30 overflow-hidden">

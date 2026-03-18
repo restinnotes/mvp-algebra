@@ -1,0 +1,259 @@
+[
+  {
+    "id": 1,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如果 $2a=3b$ ($a,b \\neq 0$), 那么下列比例式中正确的是 ( )",
+    "options": [
+      "(A) $\\frac{a}{3}=\\frac{b}{2}$",
+      "(B) $\\frac{a}{b}=\\frac{2}{3}$",
+      "(C) $\\frac{a}{2}=\\frac{b}{3}$",
+      "(D) $\\frac{b}{a}=\\frac{3}{2}$"
+    ],
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 2,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "在比例尺为 $1:10000$ 的地图上, 如果两地间的距离是 $5\\text{cm}$, 那么两地间的实际距离是 ( )",
+    "options": [
+      "(A) $500\\text{m}$",
+      "(B) $5000\\text{m}$",
+      "(C) $50\\text{m}$",
+      "(D) $5\\text{km}$"
+    ],
+    "difficulty": 0.15,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 3,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "下列抛物线中, 与抛物线 $y=x^2-1$ 具有相同对称轴的是 ( )",
+    "options": [
+      "(A) $y=x^2+2x-1$",
+      "(B) $y=x^2-2x-1$",
+      "(C) $y=(x-1)^2+1$",
+      "(D) $y=2x^2+1$"
+    ],
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 4,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如果在 $Rt\\triangle ABC$ 中, $\\angle C=90^{\\circ}$, $BC=3$, $AC=4$, 那么 $\\cos A$ 的值是 ( )",
+    "options": [
+      "(A) $\\frac{3}{4}$",
+      "(B) $\\frac{4}{3}$",
+      "(C) $\\frac{3}{5}$",
+      "(D) $\\frac{4}{5}$"
+    ],
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 5,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知 $\\vec{a}$ 是非零向量, 下列判断正确的是 ( )",
+    "options": [
+      "(A) $|-\\vec{a}| = \\vec{a}$",
+      "(B) $\\vec{a}$ 与 $-\\vec{a}$ 方向相同",
+      "(C) $\\frac{1}{|\\vec{a}|}\\vec{a}$ 是单位向量",
+      "(D) $|-2\\vec{a}| = -2|\\vec{a}|$"
+    ],
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 6,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知 $M$、$N$ 两个点都在反比例函数 $y=\\frac{k}{x}$ ($k<0$) 的图像上, 点 $M$ 的坐标为 $(x_1, y_1)$, 点 $N$ 的坐标为 $(x_2, y_2)$. 如果 $x_1 < x_2 < 0$, 那么下列关系式中正确的是 ( )",
+    "options": [
+      "(A) $y_1 < y_2 < 0$",
+      "(B) $y_2 < y_1 < 0$",
+      "(C) $0 < y_1 < y_2$",
+      "(D) $0 < y_2 < y_1$"
+    ],
+    "difficulty": 0.3,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 7,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "抛物线 $y=x^2-4x+5$ 的顶点坐标是 __________.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 8,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知线段 $AB=4\\text{cm}$, 点 $P$ 是线段 $AB$ 的黄金分割点, 且 $AP>BP$, 那么 $AP=$ __________ $\\text{cm}$.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 9,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知两个相似三角形的相似比为 $1:2$, 那么它们的面积比为 __________.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 10,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "计算: $2(\\vec{a}-\\vec{b}) + 3\\vec{b} =$ __________.",
+    "difficulty": 0.2,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 11,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如果抛物线 $y=ax^2+bx+c$ 经过点 $(1,0)$ 和 $(3,0)$, 那么这条抛物线的对称轴是直线 __________.",
+    "difficulty": 0.25,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 12,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如果将抛物线 $y=x^2+1$ 向上平移 $2$ 个单位, 那么所得抛物线的表达式是 __________.",
+    "difficulty": 0.3,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 13,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "某人沿着坡比为 $1:\\sqrt{3}$ 的斜坡前进了 $10\\text{m}$, 那么他上升的高度为 __________ $\\text{m}$.",
+    "difficulty": 0.35,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 14,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $DE // BC$, $\\frac{AD}{DB} = \\frac{1}{2}$, 那么 $\\frac{S_{\\triangle ADE}}{S_{\\triangle ABC}} =$ __________.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q14.png"
+    ],
+    "difficulty": 0.4,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 15,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $\\angle C=90^{\\circ}$, $AB=13$, $AC=12$, $G$ 是 $\\triangle ABC$ 的重心, 那么 $AG=$ __________.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q15.png"
+    ],
+    "difficulty": 0.45,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 16,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "在平面直角坐标系 $xOy$ 中, 如果抛物线 $y=ax^2+bx+c$ ($a \\neq 0$) 的图像过一、二、三象限, 那么 $a$ ______ $0$, $c$ ______ $0$. (填“>”或“<”)",
+    "difficulty": 0.5,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 17,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在矩形 $ABCD$ 中, 对角线 $AC$、$BD$ 相交于点 $O$, $E$ 是 $OC$ 的中点, $\\vec{AD}=\\vec{a}$, $\\vec{AB}=\\vec{b}$, 那么 $\\vec{OE} =$ __________. (用 $\\vec{a}$、$\\vec{b}$ 表示)",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q17.png"
+    ],
+    "difficulty": 0.55,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 18,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "定义: 在平面直角坐标系中, 如果某个点到 $x$ 轴的距离是它到 $y$ 轴距离的 $k$ 倍, 那么称这个点为“$k$ 倍轴距点”. 例如, 点 $(1,2)$ 为“$2$ 倍轴距点”. 如果点 $P(a+1, a-3)$ 在反比例函数 $y=-\\frac{3}{x}$ 的图像上, 且点 $P$ 为“$k$ 倍轴距点”, 那么 $k=$ __________.",
+    "difficulty": 0.7,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 19,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "计算: $\\sin^2 45^{\\circ} + \\sqrt{3} \\tan 30^{\\circ} - \\cos 60^{\\circ}$.",
+    "difficulty": 0.3,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 20,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知反比例函数 $y=\\frac{k}{x}$ ($k \\neq 0$) 的图像经过点 $A(2, 3)$.\n(1) 求这个反比例函数的表达式;\n(2) 如果点 $B(m, y_1)$ 和点 $C(m+2, y_2)$ 都在这个反比例函数的图像上, 且 $y_1-y_2 = 2$, 求 $m$ 的值.",
+    "difficulty": 0.4,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 21,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $AB=AC=10$, $BC=12$.\n(1) 求 $\\angle B$ 的余弦值;\n(2) 如果点 $D$ 在边 $BC$ 上, $BD=3$, 过点 $D$ 作 $DE \\perp AB$, 垂足为 $E$, 求线段 $AE$ 的长.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q21.png"
+    ],
+    "difficulty": 0.6,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 22,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在梯形 $ABCD$ 中, $AD // BC$, $AB \\perp BC$, $AD=2$, $BC=6$, $AB=4$.\n(1) 求 $\\angle C$ 的正切值;\n(2) 如果点 $P$ 在 $AB$ 上, 且 $\\angle CPD = 90^{\\circ}$, 求 $AP$ 的长.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q22.png"
+    ],
+    "difficulty": 0.65,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 23,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 已知在 $\\triangle ABC$ 中, $AD$ 是 $BC$ 边上的高, $\\cot B = \\frac{3}{4}$, $\\sin C = \\frac{12}{13}$, $BC=14$.\n(1) 求 $AD$ 的长;\n(2) 如果点 $E$ 在 $AC$ 边上, $DE // AB$, 求 $\\frac{AE}{AC}$ 的值.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q23.png"
+    ],
+    "difficulty": 0.75,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 24,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "已知在平面直角坐标系 $xOy$ 中, 抛物线 $y=ax^2+bx-3$ 经过点 $A(-1, 0)$ 和 $B(3, 0)$, 顶点为点 $C$.\n(1) 求这条抛物线的表达式及点 $C$ 的坐标;\n(2) 点 $D$ 在抛物线的对称轴上, 且位于 $x$ 轴上方, 如果 $\\triangle ABD$ 与 $\\triangle ABC$ 相似, 求点 $D$ 的坐标;\n(3) 在 (2) 的条件下, 直线 $BD$ 与 $y$ 轴相交于点 $E$, $F$ 是抛物线上的一点, 且 $\\triangle BEF$ 是以 $BE$ 为腰的等腰三角形, 求点 $F$ 的坐标.",
+    "difficulty": 0.85,
+    "exam_type": "一模",
+    "district": "杨浦"
+  },
+  {
+    "id": 25,
+    "paper": "2022_Yangpu_One_Mock",
+    "question": "如图, 在 $\\triangle ABC$ 中, $AB=AC=5$, $\\cos A = \\frac{7}{25}$, $P$ 是边 $AB$ 上的一动点 (点 $P$ 与点 $A$、 $B$ 不重合), 过点 $P$ 作 $PD // AC$ 交边 $BC$ 于点 $D$, 以 $PD$ 为边作等边 $\\triangle PDE$ (点 $E$ 与点 $A$ 在 $BC$ 同侧).\n(1) 当 $PD=3$ 时, 求 $BC$ 的长;\n(2) 设 $AP=x$, $\\triangle PDE$ 与 $\\triangle ABC$ 重叠部分的面积为 $y$, 求 $y$ 关于 $x$ 的函数关系式, 并写出 $x$ 的取值范围;\n(3) 当 $\\triangle PDE$ 的顶点 $E$ 恰好落在 $\\triangle ABC$ 的某一条中线上时, 求 $AP$ 的长.",
+    "images": [
+      "/problems/2022_Yangpu_One_Mock/q25.png"
+    ],
+    "difficulty": 0.95,
+    "exam_type": "一模",
+    "district": "杨浦"
+  }
+]

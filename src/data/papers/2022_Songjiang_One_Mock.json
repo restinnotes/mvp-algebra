@@ -1,0 +1,387 @@
+[
+  {
+    "id": "2022_Songjiang_One_Mock_Q01",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 1,
+    "difficulty": 0.1,
+    "content": "如果 $2x=3y$ ($y \\neq 0$), 那么下列比例式中正确的是 ( )",
+    "options": [
+      "(A) $\\frac{x}{2} = \\frac{y}{3}$",
+      "(B) $\\frac{x}{3} = \\frac{y}{2}$",
+      "(C) $\\frac{x}{y} = \\frac{2}{3}$",
+      "(D) $\\frac{y}{x} = \\frac{3}{2}$"
+    ],
+    "image": null,
+    "knowledgePoints": [
+      "比例线段"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q02",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 2,
+    "difficulty": 0.15,
+    "content": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ$, $BC=2$, $AC=3$, 那么 $\\tan B$ 的值是 ( )",
+    "options": [
+      "(A) $\\frac{2}{3}$",
+      "(B) $\\frac{3}{2}$",
+      "(C) $\\frac{2}{\\sqrt{13}}$",
+      "(D) $\\frac{3}{\\sqrt{13}}$"
+    ],
+    "image": null,
+    "knowledgePoints": [
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q03",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 3,
+    "difficulty": 0.15,
+    "content": "已知 $\\vec{a}$ 是单位向量, $\\vec{b} = 2\\vec{a}$, 那么下列结论中正确的是 ( )",
+    "options": [
+      "(A) $|\\vec{b}|=2$",
+      "(B) $\\vec{b}=2$",
+      "(C) $\\vec{a} \\parallel \\vec{b}$",
+      "(D) $\\vec{b}$ 的方向与 $\\vec{a}$ 的方向相同"
+    ],
+    "image": null,
+    "knowledgePoints": [
+      "向量"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q04",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 4,
+    "difficulty": 0.2,
+    "content": "将抛物线 $y=x^2$ 向右平移 2 个单位, 那么所得抛物线的表达式是 ( )",
+    "options": [
+      "(A) $y=x^2+2$",
+      "(B) $y=x^2-2$",
+      "(C) $y=(x+2)^2$",
+      "(D) $y=(x-2)^2$"
+    ],
+    "image": null,
+    "knowledgePoints": [
+      "二次函数图象与性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q05",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 5,
+    "difficulty": 0.25,
+    "content": "如图1, 在 $\\triangle ABC$ 中, 点 $D$、$E$ 分别在边 $AB$、$AC$ 上, $DE \\parallel BC$, $AD:DB=1:2$, 那么 $S_{\\triangle ADE}:S_{\\triangle ABC}$ 等于 ( )",
+    "options": [
+      "(A) $1:2$",
+      "(B) $1:3$",
+      "(C) $1:4$",
+      "(D) $1:9$"
+    ],
+    "image": "fig1.png",
+    "knowledgePoints": [
+      "相似三角形的判定与性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q06",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 6,
+    "difficulty": 0.3,
+    "content": "如图2, 在梯形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC$ 与 $BD$ 相交于点 $O$, 下列比例式中正确的是 ( )",
+    "options": [
+      "(A) $\\frac{AD}{BC} = \\frac{OA}{OC}$",
+      "(B) $\\frac{AD}{BC} = \\frac{OB}{OC}$",
+      "(C) $\\frac{AD}{BC} = \\frac{OA}{OD}$",
+      "(D) $\\frac{AD}{BC} = \\frac{AB}{CD}$"
+    ],
+    "image": "fig2.png",
+    "knowledgePoints": [
+      "相似三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q07",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 7,
+    "difficulty": 0.1,
+    "content": "已知线段 $a=2$ 厘米, $b=8$ 厘米, 那么线段 $a,b$ 的比例中项等于 $\\underline{\\quad}$ 厘米.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "比例线段"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q08",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 8,
+    "difficulty": 0.15,
+    "content": "计算: $2(\\vec{a}-\\vec{b}) + 3\\vec{b} = \\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "向量运算"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q09",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 9,
+    "difficulty": 0.2,
+    "content": "已知点 $P$ 是线段 $AB$ 的黄金分割点, 且 $AP > BP$, $AB=2$, 那么 $AP$ 的长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "黄金分割"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q10",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 10,
+    "difficulty": 0.1,
+    "content": "如果两个相似三角形的相似比为 $1:4$, 那么这两个相似三角形周长的比为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "相似三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q11",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 11,
+    "difficulty": 0.2,
+    "content": "已知抛物线 $y = -(x-1)^2 - 2$, 那么它的顶点坐标是 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "二次函数的顶点"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q12",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 12,
+    "difficulty": 0.3,
+    "content": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, AB=5, \\sin A = \\frac{4}{5}$, 那么 $AC$ 的长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "锐角三角比"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q13",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 13,
+    "difficulty": 0.35,
+    "content": "如果抛物线 $y = (m-1)x^2 + m$ 的开口向上, 那么 $m$ 的取值范围是 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "二次函数图象与系数的关系"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q14",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 14,
+    "difficulty": 0.4,
+    "content": "如图3, $\\triangle ABC$ 中, $\\angle C=90^\\circ, G$ 是重心, $BC=8, AC=6$, 那么 $AG$ 的长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": "fig3.png",
+    "knowledgePoints": [
+      "三角形的重心"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q15",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 15,
+    "difficulty": 0.4,
+    "content": "已知点 $A(-1, y_1)$ 和点 $B(2, y_2)$ 都在抛物线 $y=x^2-2x+c$ 上, 那么 $y_1 \\underline{\\quad} y_2$ (填“>”, “<”或“=”).",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "二次函数图象上点的坐标特征"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q16",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 16,
+    "difficulty": 0.45,
+    "content": "如果 $\\triangle ABC \\sim \\triangle DEF$, 且 $\\triangle ABC$ 的三边长分别为 $3, 4, 5$, $\\triangle DEF$ 的最长边长为 $15$, 那么 $\\triangle DEF$ 的周长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "相似三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q17",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 17,
+    "difficulty": 0.5,
+    "content": "如图4, 正方形 $DEFG$ 的边 $EF$ 在 $BC$ 上, 顶点 $D, G$ 分别在 $AB, AC$ 上, $BC=10$, $\\triangle ABC$ 的高 $AH=15$, 那么正方形 $DEFG$ 的边长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": "fig4.png",
+    "knowledgePoints": [
+      "相似三角形的应用"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q18",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 18,
+    "difficulty": 0.7,
+    "content": "如图5, 在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, BC=4, AC=3$. 将 $\\triangle ABC$ 绕点 $A$ 顺时针旋转后, 点 $B, C$ 分别落在点 $B', C'$ 处, 且点 $C'$ 落在 $AB$ 边上, 那么 $BB'$ 的长为 $\\underline{\\quad}$.",
+    "options": null,
+    "image": "fig5.png",
+    "knowledgePoints": [
+      "几何变换-旋转"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q19",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 19,
+    "difficulty": 0.3,
+    "content": "计算: $2 \\cos 30^\\circ + \\cot^2 45^\\circ - \\tan 60^\\circ \\cdot \\sin 60^\\circ$.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "实数的运算",
+      "特殊角的三角函数值"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q20",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 20,
+    "difficulty": 0.4,
+    "content": "如图6, 在 $\\triangle ABC$ 中, 点 $D, E$ 分别在边 $AB, AC$ 上, $DE \\parallel BC, AD=2, BD=4$.\n(1) 如果 $BC=9$, 求 $DE$ 的长;\n(2) 设 $\\vec{AB} = \\vec{a}, \\vec{AC} = \\vec{b}$, 请用向量 $\\vec{a}, \\vec{b}$ 表示 $\\vec{DE}$.",
+    "options": null,
+    "image": "fig6.png",
+    "knowledgePoints": [
+      "相似三角形的性质",
+      "向量"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q21",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 21,
+    "difficulty": 0.5,
+    "content": "如图7, 在 $\\triangle ABC$ 中, $\\angle B=45^\\circ, \\angle C=30^\\circ, AB=4\\sqrt{2}$. 求 $\\triangle ABC$ 的面积.",
+    "options": null,
+    "image": "fig7.png",
+    "knowledgePoints": [
+      "解直角三角形"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q22",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 22,
+    "difficulty": 0.6,
+    "content": "如图8, 某大楼的顶部竖有一块广告牌 $CD$. 小李在山坡的坡脚 $A$ 处测得广告牌底部 $D$ 的仰角为 $60^\\circ$, 沿坡面 $AB$ 向上走到 $B$ 处测得广告牌顶部 $C$ 的仰角为 $45^\\circ$. 已知山坡 $AB$ 的坡度 $i=1:\\sqrt{3}$, $AB=10$ 米, $AE \\perp CE$ 于点 $E, AE=30$ 米. (结果保留根号)\n(1) 求点 $B$ 离地面 $AE$ 的高度;\n(2) 求广告牌 $CD$ 的高度.",
+    "options": null,
+    "image": "fig8.png",
+    "knowledgePoints": [
+      "解直角三角形的应用-坡度坡角问题"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q23",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 23,
+    "difficulty": 0.75,
+    "content": "如图9, 在平行四边形 $ABCD$ 中, 点 $E$ 在边 $BC$ 上, 联结 $AE$, $F$ 是 $AE$ 上一点, 且 $\\angle CFE = \\angle B$.\n(1) 求证: $\\triangle ADF \\sim \\triangle EAB$;\n(2) 如果 $AE=BC$, 求证: $AD^2 = AF \\cdot AE$.",
+    "options": null,
+    "image": "fig9.png",
+    "knowledgePoints": [
+      "相似三角形的判定与性质",
+      "平行四边形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q24",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 24,
+    "difficulty": 0.85,
+    "content": "已知抛物线 $y = ax^2 + bx + 3$ 与 $x$ 轴交于点 $A(-1, 0)$ 和点 $B(3, 0)$, 与 $y$ 轴交于点 $C$.\n(1) 求抛物线的表达式及点 $C$ 的坐标;\n(2) 联结 $BC$, 点 $D$ 在 $x$ 轴上, 如果 $\\triangle BCD$ 是以 $BC$ 为腰的等腰三角形, 求点 $D$ 的坐标;\n(3) 如果点 $P$ 是抛物线上一点, 且 $\\angle PAB = \\angle ABC$, 求点 $P$ 的坐标.",
+    "options": null,
+    "image": null,
+    "knowledgePoints": [
+      "二次函数的综合应用"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  },
+  {
+    "id": "2022_Songjiang_One_Mock_Q25",
+    "paper": "2022_Songjiang_One_Mock",
+    "qNumber": 25,
+    "difficulty": 0.95,
+    "content": "如图10, 在 $\\triangle ABC$ 中, $AB=AC, BC=12, \\cos B = \\frac{3}{5}$. 点 $D, E$ 分别在边 $BC, AC$ 上, $BD=x, CE=y$.\n(1) 求 $AB$ 的长;\n(2) 如果 $\\angle ADE = \\angle B$, 求 $y$ 关于 $x$ 的函数关系式, 并写出定义域;\n(3) 当 $\\triangle ADE$ 是等腰三角形时, 求 $x$ 的值.",
+    "options": null,
+    "image": "fig10.png",
+    "knowledgePoints": [
+      "相似三角形的判定与性质",
+      "二次函数的综合应用",
+      "等腰三角形的性质"
+    ],
+    "exam_type": "一模",
+    "district": "松江"
+  }
+]

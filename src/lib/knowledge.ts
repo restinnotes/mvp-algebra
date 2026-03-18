@@ -1,9 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const MAPPINGS_PATH = path.join(process.cwd(), 'mappings_auto.json');
+const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+
+export { formatPaperName, PAPER_NAME_MAP };
 
 let _graphCache: KnowledgeGraph | null = null;
 let _nodesCache: KnowledgeNode[] | null = null;
@@ -75,12 +78,71 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(MAPPINGS_PATH)) {
+  if (!fs.existsSync(PAPERS_DIR)) {
     return [];
   }
 
-  const raw = fs.readFileSync(MAPPINGS_PATH, 'utf-8');
-  _mappingsCache = JSON.parse(raw) as QuestionMapping[];
+  const files = fs.readdirSync(PAPERS_DIR);
+  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  
+  const allMappings: QuestionMapping[] = [];
+  
+  for (const file of jsonFiles) {
+    try {
+      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
+      const data = JSON.parse(raw);
+      const qs = Array.isArray(data) ? data : [data];
+      
+      // Extract year from filename if possible (e.g., 2022_Songjiang...)
+      const yearMatch = file.match(/^(\d{4})/);
+      const fileYear = yearMatch ? yearMatch[1] : '2022';
+
+      const processedQs = qs.map(q => {
+        // Standardize question number
+        const questionNum = q.question || q.questionNumber || q.qNumber || q.question_type?.replace(/^Q/, '') || '';
+        
+        // Standardize KPs
+        let kps = q.kps || [];
+        if (q.knowledgePoints && Array.isArray(q.knowledgePoints)) {
+          kps = [...new Set([...kps, ...q.knowledgePoints])];
+        }
+        
+        // Standardize District
+        let district = q.district || '';
+        if (!district || district === 'all') {
+          // Try to extract from filename: 2022_Baoshan_...
+          const parts = file.split('_');
+          if (parts.length > 1) district = parts[1];
+        }
+        district = formatPaperName(district); // Use our mapper to get Chinese name
+
+        // Standardize Exam Type
+        let examType = q.exam_type || '';
+        if (!examType) {
+            if (file.includes('One_Mock')) examType = '一模';
+            else if (file.includes('Two_Mock')) examType = '二模';
+        }
+
+        return {
+          ...q,
+          question: questionNum.toString(),
+          kps,
+          district,
+          exam_type: examType,
+          year: q.year || fileYear,
+          paper: q.paper || file.replace('.json', '')
+        };
+      });
+
+      // Only include questions that have at least one knowledge point or tag
+      const validQs = processedQs.filter(q => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
+      allMappings.push(...validQs);
+    } catch (e) {
+      console.error(`Error loading paper data from ${file}:`, e);
+    }
+  }
+
+  _mappingsCache = allMappings;
   return _mappingsCache;
 }
 
@@ -108,4 +170,62 @@ export function clearCache(): void {
   _nodesCache = null;
   _nodesMapCache = null;
   _mappingsCache = null;
+}
+
+// ─── Question Search APIs ──────────────────────────────────────────────
+
+export function getQuestionsByKPs(kpIds: string[]): QuestionMapping[] {
+  const mappings = loadMappings();
+  return mappings.filter(m => 
+    m.kps.some(kp => kpIds.includes(kp))
+  );
+}
+
+export function getQuestionsForWeakPoints(
+  weakKPs: string[], 
+  excludePapers: string[] = [],
+  maxResults: number = 5
+): QuestionMapping[] {
+  const mappings = loadMappings();
+  
+  const scored = mappings
+    .filter(m => !excludePapers.includes(m.paper))
+    .map(m => {
+      const weakKPCoverage = m.kps.filter(kp => weakKPs.includes(kp)).length;
+      const matchRatio = weakKPCoverage / m.kps.length; // How much of this question matches selected KPs
+      return { 
+        mapping: m, 
+        score: weakKPCoverage * 10 * matchRatio + (1 - Math.abs(m.difficulty - 0.7)),
+        matchRatio 
+      };
+    })
+    .filter(s => s.score > 0 && s.matchRatio >= 0.3) // Require at least 30% KP overlap
+    .sort((a, b) => b.score - a.score);
+  
+  return scored.slice(0, maxResults).map(s => s.mapping);
+}
+
+
+export function getAllPapers(): string[] {
+  const mappings = loadMappings();
+  return [...new Set(mappings.map(m => m.paper))];
+}
+
+export function getQuestionById(id: string): QuestionMapping | undefined {
+  const mappings = loadMappings();
+  // ID format: paper_Qquestion (e.g., paper_Q18)
+  return mappings.find(m => `${m.paper}_Q${m.question}` === id);
+}
+
+export function getKPQuestionStats(): Record<string, number> {
+  const mappings = loadMappings();
+  const stats: Record<string, number> = {};
+  
+  for (const m of mappings) {
+    for (const kp of m.kps) {
+      stats[kp] = (stats[kp] || 0) + 1;
+    }
+  }
+  
+  return stats;
 }
