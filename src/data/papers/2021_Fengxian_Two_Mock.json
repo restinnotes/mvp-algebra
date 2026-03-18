@@ -170,9 +170,7 @@
       "性质"
     ],
     "kps": [
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_axis",
-      "alg_func_quadratic_vertex"
+      "func_quadratic_basic"
     ],
     "images": []
   },
@@ -332,9 +330,9 @@
       "距离公式"
     ],
     "kps": [
-      "alg_func_inverse",
-      "alg_func_inverse_image",
-      "alg_distance_formula"
+      "alg_distance_formula",
+      "func_linear_inverse",
+      "alg_func_inverse_image"
     ],
     "images": []
   },
@@ -414,12 +412,11 @@
       "相似三角形"
     ],
     "kps": [
+      "geo_similar_k_model",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Fengxian_Two_Mock/q21_0.png"
@@ -463,11 +460,11 @@
       "菱形判定"
     ],
     "kps": [
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_quad_property",
-      "geo_quad_judge"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Fengxian_Two_Mock/q23_0.png"
@@ -489,12 +486,10 @@
       "相似三角形"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "func_quadratic_basic",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Fengxian_Two_Mock/q24_0.png"
@@ -516,9 +511,8 @@
       "梯形"
     ],
     "kps": [
+      "geo_circle_prop",
       "geo_sector",
-      "geo_circle_pos",
-      "geo_circle_tangent",
       "geo_trapezoid"
     ],
     "images": [

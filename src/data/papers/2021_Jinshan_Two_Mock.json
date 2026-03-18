@@ -108,8 +108,7 @@
       "圆的位置关系"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent"
+      "geo_circle_prop"
     ],
     "images": []
   },
@@ -323,11 +322,10 @@
       "锐角三角比"
     ],
     "kps": [
-      "geo_motion_rotation",
-      "geo_isosceles_tri",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app"
+      "geo_isosceles_tri",
+      "geo_trig_vector",
+      "geo_triangle_prop"
     ],
     "images": [
       "/problems/2021_Jinshan_Two_Mock/q17_0.png"
@@ -349,10 +347,10 @@
       "垂直"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Jinshan_Two_Mock/q18_0.png"
@@ -372,7 +370,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -452,10 +450,10 @@
       "梯形"
     ],
     "kps": [
-      "geo_quad_judge",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Jinshan_Two_Mock/q23_0.png"
@@ -478,13 +476,11 @@
       "解直角三角形"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
       "alg_func_linear",
+      "func_quadratic_basic",
+      "geo_trig_ratio_app",
       "alg_func_linear_image",
-      "alg_func_linear_property",
-      "geo_trig_ratio_app"
+      "alg_func_linear_property"
     ],
     "images": [
       "/problems/2021_Jinshan_Two_Mock/q24_0.png"
@@ -507,10 +503,10 @@
       "旋转"
     ],
     "kps": [
-      "geo_isosceles_tri",
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv",
+      "geo_similar_basic",
+      "geo_isosceles_tri",
       "geo_golden_ratio"
     ],
     "images": [

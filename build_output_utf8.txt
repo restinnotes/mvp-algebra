@@ -1,6 +1,0 @@
-﻿   ▲ Next.js 15.5.12
-   - Environments: .env.local
-
-   Creating an optimized production build ...
- ✓ Compiled successfully in 1741ms
-   Linting and checking validity of types ...

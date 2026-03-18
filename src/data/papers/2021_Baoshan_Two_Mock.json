@@ -31,7 +31,7 @@
       "科学记数法"
     ],
     "kps": [
-      "num_scientific"
+      "num_real"
     ],
     "images": []
   },
@@ -107,10 +107,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q6_0.png"
@@ -224,9 +224,7 @@
       "性质"
     ],
     "kps": [
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_axis",
-      "alg_func_quadratic_vertex"
+      "func_quadratic_basic"
     ],
     "images": []
   },
@@ -309,9 +307,9 @@
     ],
     "kps": [
       "geo_circle_arc",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q16_0.png"
@@ -333,9 +331,9 @@
       "距离公式"
     ],
     "kps": [
-      "alg_func_inverse",
-      "alg_func_inverse_image",
-      "alg_distance_formula"
+      "alg_distance_formula",
+      "func_linear_inverse",
+      "alg_func_inverse_image"
     ],
     "images": []
   },
@@ -355,10 +353,10 @@
       "矩形"
     ],
     "kps": [
-      "geo_motion_rotation",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_triangle_prop"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q18_0.png"
@@ -378,7 +376,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -417,10 +415,10 @@
     ],
     "kps": [
       "alg_func_linear",
+      "func_linear_inverse",
+      "alg_func_inverse_image",
       "alg_func_linear_image",
-      "alg_func_linear_property",
-      "alg_func_inverse",
-      "alg_func_inverse_image"
+      "alg_func_linear_property"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q21_0.png"
@@ -464,11 +462,11 @@
       "角平分线"
     ],
     "kps": [
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_quad_property",
-      "geo_angle_bisector"
+      "geo_similar_basic",
+      "geo_angle_bisector",
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q23_0.png"
@@ -490,12 +488,10 @@
       "相似三角形"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "func_quadratic_basic",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q24_0.png"
@@ -517,11 +513,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent",
-      "geo_similar_judge",
+      "geo_circle_prop",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Baoshan_Two_Mock/q25_0.png"

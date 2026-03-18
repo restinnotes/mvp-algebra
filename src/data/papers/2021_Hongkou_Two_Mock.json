@@ -223,9 +223,7 @@
       "性质"
     ],
     "kps": [
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_axis",
-      "alg_func_quadratic_vertex"
+      "func_quadratic_basic"
     ],
     "images": []
   },
@@ -346,11 +344,11 @@
     ],
     "kps": [
       "geo_motion_folding",
-      "geo_quad_property",
-      "geo_quad_judge",
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Hongkou_Two_Mock/q18_0.png"
@@ -370,7 +368,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -407,10 +405,9 @@
       "三角形中线"
     ],
     "kps": [
+      "geo_tri_median",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app",
-      "geo_tri_median"
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Hongkou_Two_Mock/q21_0.png"
@@ -453,11 +450,11 @@
       "等腰梯形判定"
     ],
     "kps": [
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_quad_property",
-      "geo_quad_judge"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Hongkou_Two_Mock/q23_1.png"
@@ -480,11 +477,11 @@
     ],
     "kps": [
       "alg_func_linear",
-      "alg_func_linear_image",
-      "alg_func_linear_property",
-      "alg_func_inverse",
+      "func_linear_inverse",
       "alg_func_inverse_image",
-      "geo_quad_property"
+      "alg_func_linear_image",
+      "geo_quad_property",
+      "alg_func_linear_property"
     ],
     "images": [
       "/problems/2021_Hongkou_Two_Mock/q24_0.png"
@@ -506,13 +503,12 @@
       "相似三角形"
     ],
     "kps": [
+      "geo_similar_k_model",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app",
-      "geo_circle_line_relation",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_trig_vector",
+      "geo_similar_basic",
+      "geo_circle_line_relation"
     ],
     "images": [
       "/problems/2021_Hongkou_Two_Mock/q25_0.png",

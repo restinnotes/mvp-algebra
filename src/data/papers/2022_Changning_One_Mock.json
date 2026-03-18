@@ -37,9 +37,9 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ]
   },
   {
@@ -224,7 +224,7 @@
       "反比例函数"
     ],
     "kps": [
-      "alg_func_inverse",
+      "func_linear_inverse",
       "alg_func_inverse_image"
     ]
   },
@@ -309,10 +309,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
     ]
   },
   {
@@ -360,9 +360,9 @@
     ],
     "kps": [
       "geo_rt_triangle",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ]
   },
   {
@@ -404,7 +404,7 @@
       "实数计算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ]
   },
   {
@@ -450,9 +450,9 @@
       "面积比"
     ],
     "kps": [
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ]
   },
   {
@@ -498,10 +498,10 @@
       "比例线段"
     ],
     "kps": [
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_rt_triangle"
+      "geo_rt_triangle",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ]
   },
   {
@@ -524,9 +524,7 @@
       "等腰三角形"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
+      "func_quadratic_basic",
       "geo_isosceles"
     ]
   },
@@ -551,12 +549,12 @@
       "动点问题"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_quad_judge",
-      "geo_similar_judge",
+      "geo_similar_k_model",
+      "geo_dynamic_point",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_dynamic_point"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
     ]
   }
 ]

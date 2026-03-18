@@ -112,9 +112,8 @@
       "圆的位置关系"
     ],
     "kps": [
-      "geo_logic_statements",
-      "geo_circle_pos",
-      "geo_circle_tangent"
+      "geo_circle_prop",
+      "geo_logic_statements"
     ],
     "images": []
   },
@@ -267,11 +266,11 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_vector_concept",
+      "geo_similar_k_model",
       "geo_vector_calc",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_vector_concept",
+      "geo_similar_basic"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q14_0.png"
@@ -291,8 +290,7 @@
       "圆的位置关系"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent"
+      "geo_circle_prop"
     ],
     "images": []
   },
@@ -313,13 +311,12 @@
       "锐角三角比"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_similar_judge",
-      "geo_similar_prop",
-      "geo_similar_adv",
+      "geo_similar_k_model",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app"
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q16_0.png"
@@ -402,9 +399,9 @@
       "待定系数法"
     ],
     "kps": [
-      "alg_func_inverse",
-      "alg_func_inverse_image",
       "alg_func_linear",
+      "func_linear_inverse",
+      "alg_func_inverse_image",
       "alg_func_linear_image",
       "alg_func_linear_property"
     ],
@@ -426,10 +423,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_isosceles_tri",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_isosceles_tri"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q21_0.png"
@@ -471,10 +468,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_quad_judge",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q23_0.png"
@@ -497,15 +494,12 @@
       "锐角三角比"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
-      "geo_similar_judge",
-      "geo_similar_prop",
-      "geo_similar_adv",
+      "func_quadratic_basic",
+      "geo_similar_k_model",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app"
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q24_0.png"
@@ -528,11 +522,10 @@
       "函数解析式"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent",
-      "geo_similar_judge",
+      "geo_circle_prop",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Jingan_Two_Mock/q25_0.png"

@@ -134,7 +134,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -310,7 +310,7 @@
       "平行四边形"
     ],
     "kps": [
-      "alg_func_quadratic_area",
+      "func_quadratic_basic",
       "geo_quad_property"
     ],
     "images": [
@@ -353,10 +353,9 @@
     ],
     "kps": [
       "geo_motion_folding",
-      "geo_quad_property",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app"
+      "geo_quad_property",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Huangpu_Two_Mock/q18_0.png"
@@ -376,7 +375,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -414,10 +413,10 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_circle_chord",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_circle_chord"
     ],
     "images": [
       "/problems/2021_Huangpu_Two_Mock/q21_0.png"
@@ -460,10 +459,10 @@
       "直角三角形中线"
     ],
     "kps": [
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_tri_median"
+      "geo_tri_median",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Huangpu_Two_Mock/q23_0.png"
@@ -486,11 +485,9 @@
       "正方形"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
-      "geo_quad_property",
-      "geo_quad_judge"
+      "geo_quad_judge",
+      "func_quadratic_basic",
+      "geo_quad_property"
     ],
     "images": []
   },
@@ -510,10 +507,10 @@
       "面积比"
     ],
     "kps": [
-      "geo_angle_bisector",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_angle_bisector",
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Huangpu_Two_Mock/q25_0.png"

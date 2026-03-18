@@ -108,8 +108,7 @@
       "圆的位置关系"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent"
+      "geo_circle_prop"
     ],
     "images": []
   },
@@ -337,9 +336,9 @@
     ],
     "kps": [
       "geo_motion_folding",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Jiading_Two_Mock/q18_0.png"
@@ -397,12 +396,11 @@
       "直角三角形性质"
     ],
     "kps": [
+      "geo_similar_k_model",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Jiading_Two_Mock/q21_0.png"
@@ -444,12 +442,12 @@
       "角度证明"
     ],
     "kps": [
-      "geo_quad_property",
-      "geo_quad_judge",
-      "geo_similar_judge",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv",
-      "geo_angle_calc"
+      "geo_quad_judge",
+      "geo_angle_calc",
+      "geo_similar_basic",
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Jiading_Two_Mock/q23_0.png",
@@ -473,10 +471,8 @@
       "不等式"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
-      "alg_inequality_system"
+      "alg_inequality_system",
+      "func_quadratic_basic"
     ],
     "images": [
       "/problems/2021_Jiading_Two_Mock/q24_0.png"
@@ -499,13 +495,13 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_circle_chord",
-      "geo_congruent_judge",
-      "geo_congruent_prop",
       "geo_congruent_adv",
-      "geo_similar_judge",
+      "geo_circle_chord",
+      "geo_similar_k_model",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_congruent_judge",
+      "geo_congruent_prop"
     ],
     "images": [
       "/problems/2021_Jiading_Two_Mock/q25_0.png",

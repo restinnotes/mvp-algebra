@@ -1,14 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { MindmapSyllabus, KnowledgeNode } from '@/data/knowledgeGraph';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BktEngine } from '@/lib/bkt';
-import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, X, AlertTriangle, Sparkles, Layers } from 'lucide-react';
+import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle, Sparkles, Layers, ChevronDown, Flame } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+
+// Import real syllabus directly
+import kpDataRaw from '../../../knowledge_points.json';
+const syllabusData = kpDataRaw as any;
 
 // --- Wrong Problem Modal Component ---
 function WrongProblemModal({ problem, onClose, onResolve }: { problem: WrongProblem, onClose: () => void, onResolve: (boost: number) => void }) {
@@ -129,7 +132,7 @@ function WrongProblemModal({ problem, onClose, onResolve }: { problem: WrongProb
                                         <h3 className="text-lg font-bold text-rose-200">故障诊断</h3>
                                         <p className="text-rose-200/60 text-sm mt-1">系统记录：你在第 {problem.errorStepIndex + 1} 步出现了逻辑中断或计算偏差。</p>
                                         
-                                        {/* AI 诊断总结展示 (用户要求增加的部分) */}
+                                        {/* AI 诊断总结展示 */}
                                         {problem.diagnosticAnalysis && (
                                             <div className="mt-6 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl p-5 relative group overflow-hidden">
                                                 <div className="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -251,6 +254,7 @@ export default function DashboardPage() {
     const [studentData, setStudentData] = useState<MemoryData | null>(null);
     const [isMounted, setIsMounted] = useState(false);
     const [selectedProblem, setSelectedProblem] = useState<WrongProblem | null>(null);
+    const [expandedCategories, setExpandedCategories] = useState<string[]>(['algebra', 'function', 'geometry']);
     const router = useRouter();
 
     const refreshData = () => {
@@ -272,115 +276,154 @@ export default function DashboardPage() {
     if (!isMounted) return <div className="min-h-screen bg-[#0d0f14]" />;
 
     const handleContinue = () => {
-        // Go back to the practice hub to choose the next problem
         router.push('/practice');
     };
 
     const handleReset = () => {
         if (confirm('确定要清空所有认知记忆并从头开始演示吗？')) {
             LTMMemory.clear();
-            localStorage.clear(); // 彻底清除
-            sessionStorage.clear(); // 额外清除 session
+            localStorage.clear();
+            sessionStorage.clear();
             setIsMounted(false);
             window.location.href = '/?refresh=' + Date.now();
         }
     };
 
-    const getStatusColor = (p_L: number) => {
-        const status = BktEngine.getMasteryStatus(p_L);
-        if (status === 'green') return 'text-emerald-400 border-emerald-500/50 bg-emerald-500/10';
-        if (status === 'yellow') return 'text-amber-400 border-amber-500/50 bg-amber-500/10';
-        return 'text-rose-400 border-rose-500/50 bg-rose-500/10';
+    const toggleCategory = (id: string) => {
+        setExpandedCategories(prev => prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]);
     };
 
-    const getStatusIcon = (p_L: number) => {
-        const status = BktEngine.getMasteryStatus(p_L);
-        if (status === 'green') return <CheckCircle2 size={16} />;
-        if (status === 'yellow') return <Activity size={16} />;
-        return <ShieldAlert size={16} />;
-    };
+    const renderNode = (node: any) => {
+        const p_L = studentData?.mastery[node.id] || 0;
+        const isAssessed = p_L > 0;
+        const isHardcore = node.name.includes('★');
+        
+        let nodeClass = "bg-white/5 border-white/10 text-white/60";
+        if (isAssessed) {
+            if (p_L >= 0.85) nodeClass = "bg-emerald-500/10 border-emerald-500/30 text-emerald-400";
+            else if (p_L >= 0.6) nodeClass = "bg-amber-500/10 border-amber-500/30 text-amber-400";
+            else nodeClass = "bg-rose-500/10 border-rose-500/30 text-rose-400";
+        }
 
-    const renderMindmapNode = (node: KnowledgeNode, depth: number = 0) => {
-        const isLeaf = !node.children || node.children.length === 0;
-        
-        // Leaf nodes have mastery. If missing, it means 0% or unassessed. We treat it as 0.01 for visualization.
-        const p_L = isLeaf && studentData ? (studentData.mastery[node.id] || 0.00) : null;
-        
-        let nodeClass = "border-white/10 text-white/80 bg-[#1a1d24]";
-        if (isLeaf && p_L !== null) {
-            if (p_L === 0.0) {
-                // Not yet encountered
-                nodeClass = "border-white/10 text-white/40 bg-[#12141a] border-dashed";
-            } else {
-                nodeClass = getStatusColor(p_L);
-            }
+        if (isHardcore) {
+            nodeClass += " ring-1 ring-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.15)]";
         }
 
         return (
-            <motion.div 
-                key={node.id} 
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                className={`relative ${depth > 0 ? 'ml-8 mt-4' : 'mt-6'}`}
-            >
-                {/* Visual connecting line to parent */}
-                {depth > 0 && (
-                    <div className="absolute -left-8 top-6 w-8 h-[2px] bg-white/10" />
+            <div key={node.id} className={`p-4 rounded-xl border relative transition-all duration-300 ${nodeClass} flex flex-col justify-between`}>
+                {isHardcore && (
+                    <div className="absolute -top-2 -right-2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-lg z-10">
+                        <Flame size={10} /> 压轴核心
+                    </div>
                 )}
-                {/* Vertical connecting line for children */}
-                {!isLeaf && (
-                    <div className="absolute left-6 top-14 bottom-0 w-[2px] bg-white/10" />
-                )}
-
-                <div className={`p-4 rounded-xl border-2 ${nodeClass} shadow-lg max-w-lg transition-all duration-300 relative z-10`}>
-                    <div className="flex items-center justify-between gap-4">
-                        <div>
-                            <div className="flex items-center gap-2 mb-1">
-                                {isLeaf && p_L !== null && p_L > 0 && getStatusIcon(p_L)}
-                                {!isLeaf && <BrainCircuit size={16} className="text-indigo-400" />}
-                                <h3 className={`font-bold ${depth === 0 ? 'text-xl text-white' : depth === 1 ? 'text-lg text-white/90' : 'text-md'}`}>
-                                    {node.name}
-                                </h3>
-                            </div>
-                            <p className="text-sm opacity-70 mt-1">{node.description}</p>
-                        </div>
-                        
-                        {isLeaf && p_L !== null && p_L > 0 && (
-                            <div className="text-right shrink-0">
-                                <div className="text-2xl font-mono font-bold">{(p_L * 100).toFixed(0)}%</div>
-                                <div className="text-[10px] uppercase tracking-wider opacity-60">Mastery</div>
-                            </div>
-                        )}
-                        {isLeaf && p_L === 0 && (
-                            <div className="text-right shrink-0 text-white/30 text-xs font-mono border border-white/10 px-2 py-1 rounded">
-                                未评估
-                            </div>
+                
+                <div>
+                    <div className="flex items-center justify-between mb-2">
+                        <h4 className={`font-bold ${isHardcore ? 'text-indigo-300 text-base' : 'text-sm'}`}>
+                            {node.name.replace('★ ', '')}
+                        </h4>
+                        {isAssessed && (
+                            <span className="font-mono text-xs font-bold bg-black/40 px-2 py-0.5 rounded">
+                                {(p_L * 100).toFixed(0)}%
+                            </span>
                         )}
                     </div>
-                    
-                    {/* BKT Progress bar for leaf nodes */}
-                    {isLeaf && p_L !== null && p_L > 0 && (
-                        <div className="mt-4 w-full h-1.5 bg-black/40 rounded-full overflow-hidden">
-                            <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: `${p_L * 100}%` }}
-                                className={`h-full rounded-full ${p_L >= 0.85 ? 'bg-emerald-500' : p_L >= 0.5 ? 'bg-amber-500' : 'bg-rose-500'}`}
-                            />
-                        </div>
-                    )}
+                    <p className="text-xs opacity-70 line-clamp-2 leading-relaxed">{node.description}</p>
                 </div>
-
-                {/* Render Children Recursively */}
-                {node.children && (
-                    <div className="pl-6 pb-2">
-                        {node.children.map(child => renderMindmapNode(child, depth + 1))}
+                
+                {isAssessed ? (
+                    <div className="mt-4 w-full h-1.5 bg-black/40 rounded-full overflow-hidden">
+                        <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: `${p_L * 100}%` }}
+                            className={`h-full rounded-full ${p_L >= 0.85 ? 'bg-emerald-500' : p_L >= 0.6 ? 'bg-amber-500' : 'bg-rose-500'}`}
+                        />
+                    </div>
+                ) : (
+                    <div className="mt-4 text-[10px] text-white/30 uppercase tracking-widest bg-black/20 text-center py-1 rounded">
+                        未评估 (Pending)
                     </div>
                 )}
-            </motion.div>
+            </div>
         );
     };
 
-    if (!studentData) return <div className="min-h-screen bg-[#0a0c10] flex items-center justify-center text-white/50">Loading Memory Data...</div>;
+    const renderCategory = (category: any) => {
+        const isExpanded = expandedCategories.includes(category.id);
+        
+        const nodes = category.nodes || [];
+        let totalMastery = 0;
+        let assessedCount = 0;
+        nodes.forEach((node: any) => {
+            const p_L = studentData?.mastery[node.id];
+            if (p_L !== undefined && p_L > 0) {
+                totalMastery += p_L;
+                assessedCount++;
+            }
+        });
+        
+        const avgMastery = assessedCount > 0 ? totalMastery / assessedCount : 0;
+        const progressColor = avgMastery >= 0.85 ? 'bg-emerald-500' : avgMastery >= 0.6 ? 'bg-amber-500' : 'bg-rose-500';
+
+        return (
+            <div key={category.id} className="bg-[#1a1d24] border border-white/10 rounded-2xl overflow-hidden shadow-lg transition-all">
+                {/* Accordion Header */}
+                <button 
+                    onClick={() => toggleCategory(category.id)}
+                    className="w-full flex items-center justify-between p-5 hover:bg-white/[0.02] transition-colors group"
+                >
+                    <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                            <h3 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">{category.name}</h3>
+                            <div className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-white/40 tracking-wider font-bold">
+                                {nodes.length} 考点
+                            </div>
+                        </div>
+                        {/* Big Progress Bar */}
+                        <div className="flex items-center gap-4">
+                            <div className="flex-1 h-1.5 bg-black/40 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${avgMastery * 100}%` }}
+                                    className={`h-full rounded-full ${progressColor}`}
+                                />
+                            </div>
+                            <div className={`w-10 text-right text-xs font-mono font-bold ${assessedCount > 0 ? 'text-white/70' : 'text-white/20'}`}>
+                                {(avgMastery * 100).toFixed(0)}%
+                            </div>
+                        </div>
+                    </div>
+                    <div className="ml-6 p-2 bg-white/5 rounded-xl text-white/40 group-hover:text-white transition-colors">
+                        <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                    </div>
+                </button>
+
+                {/* Accordion Content */}
+                <AnimatePresence>
+                    {isExpanded && (
+                        <motion.div 
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="border-t border-white/5 bg-black/20"
+                        >
+                            <div className="p-5 grid grid-cols-1 xl:grid-cols-2 gap-4">
+                                {nodes.map((node: any) => renderNode(node))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        );
+    };
+
+    // Process misconceptions to frequency
+    const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: any, curr: string) => {
+        acc[curr] = (acc[curr] || 0) + 1;
+        return acc;
+    }, {});
+    
+    const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: any, b: any) => b[1] - a[1]);
 
     return (
         <div className="min-h-screen bg-[#0a0c10] text-white p-8 md:p-12 font-sans selection:bg-indigo-500/30 overflow-x-hidden">
@@ -391,7 +434,7 @@ export default function DashboardPage() {
                             <h1 className="text-3xl font-bold tracking-tight text-white/90">AI 影子老师画像 (LTM)</h1>
                         </div>
                         <p className="text-white/40 mt-2 flex items-center gap-2">
-                            <BrainCircuit size={16} /> 硬核技能树与认知缺陷画像的解耦展示
+                            <BrainCircuit size={16} /> 考纲技能树与认知缺陷雷达的解耦展示
                         </p>
                     </div>
                     <div className="flex items-center gap-4">
@@ -419,18 +462,18 @@ export default function DashboardPage() {
                 </header>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start pb-12">
-                    {/* Left Column: Hard Skills Mindmap (Syllabus) */}
+                    {/* Left Column: Hard Skills Syllabus */}
                     <div className="lg:col-span-2 space-y-8">
                         <section className="bg-[#12141a] border border-white/5 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
                             
-                            <h2 className="text-xl font-bold text-white/90 mb-8 flex items-center justify-between gap-3">
+                            <h2 className="text-xl font-bold text-white/90 mb-8 flex items-center justify-between gap-3 relative z-10">
                                 <span className="flex items-center gap-2"><Activity className="text-emerald-400" size={24} /> 考纲硬核技能树 (Hard Skills)</span>
                                 <span className="text-xs font-normal text-white/30 hidden md:inline">基于贝叶斯知识追踪 (BKT)</span>
                             </h2>
 
-                            <div className="pl-2 space-y-6">
-                                {MindmapSyllabus.map(rootNode => renderMindmapNode(rootNode, 0))}
+                            <div className="space-y-4 relative z-10">
+                                {(syllabusData?.categories || []).map((category: any) => renderCategory(category))}
                             </div>
                         </section>
 
@@ -456,6 +499,7 @@ export default function DashboardPage() {
                                                             kp.startsWith('geo_') ? '几何' : 
                                                             kp.startsWith('alg_') ? '代数' : 
                                                             kp.startsWith('num_') ? '运算' : 
+                                                            kp.startsWith('func_') ? '函数' :
                                                             kp.startsWith('stat_') ? '统计' : '综合'
                                                         ))).slice(0, 2).map(catName => (
                                                             <span key={catName} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-white/40 font-bold tracking-wider">
@@ -493,41 +537,71 @@ export default function DashboardPage() {
                         {/* Cognitive Bugs (Misconceptions) */}
                         <div className="bg-gradient-to-br from-indigo-900/40 to-purple-900/20 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl">
                             <h2 className="text-lg font-bold text-indigo-300 mb-6 flex items-center gap-2">
-                                <UserCircle size={20} /> AI 认知习惯诊断 (Soft Skills)
+                                <UserCircle size={20} /> AI 认知雷达 (Soft Skills)
                             </h2>
                             
-                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">高频认知行为漏洞</h3>
-                            {studentData.persona.misconceptions.length > 0 ? (
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {studentData.persona.misconceptions.map((m, i) => (
-                                        <span key={i} className="bg-rose-500/20 border border-rose-500/40 text-rose-300 px-3 py-1.5 rounded-lg text-sm flex items-start gap-2 shadow-inner">
-                                            <Bug size={14} className="mt-0.5 shrink-0" /> {m}
-                                        </span>
-                                    ))}
+                            <h3 className="text-sm text-white/50 mb-4 uppercase tracking-wide flex items-center justify-between">
+                                <span>高频认知行为漏洞</span>
+                                <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded">基于最近归因</span>
+                            </h3>
+                            {sortedMisconceptions.length > 0 ? (
+                                <div className="space-y-4 mb-6">
+                                    {sortedMisconceptions.map(([m, count]: any, i) => {
+                                        const severityColor = count >= 3 ? 'text-rose-400 bg-rose-500/10 border-rose-500/30' : count == 2 ? 'text-amber-400 bg-amber-500/10 border-amber-500/30' : 'text-indigo-300 bg-indigo-500/10 border-indigo-500/30';
+                                        const barColor = count >= 3 ? 'bg-rose-500' : count == 2 ? 'bg-amber-500' : 'bg-indigo-500';
+                                        const width = Math.min(100, (count / 5) * 100); // Max out at 5 hits
+                                        
+                                        return (
+                                            <div key={i} className="space-y-2">
+                                                <div className="flex justify-between items-end">
+                                                    <span className="text-sm font-bold text-white/90 flex items-center gap-1.5">
+                                                        <Bug size={14} className={count >= 3 ? 'text-rose-500 animate-pulse' : 'text-white/40'} /> 
+                                                        {m}
+                                                    </span>
+                                                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border ${severityColor}`}>
+                                                        {count} 次触发
+                                                    </span>
+                                                </div>
+                                                <div className="h-1.5 bg-black/40 rounded-full overflow-hidden w-full">
+                                                    <motion.div 
+                                                        initial={{ width: 0 }} 
+                                                        animate={{ width: `${width}%` }} 
+                                                        className={`h-full ${barColor} rounded-full`}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             ) : (
-                                <div className="text-white/30 text-sm italic py-4 mb-6 border-l-2 border-white/10 pl-3">
-                                    当前未检测到明显的认知习惯漏洞。
+                                <div className="text-white/30 text-sm italic py-6 mb-6 border-l-2 border-white/10 pl-4 bg-white/5 rounded-r-xl">
+                                    当前未检测到明显的跨模块认知漏洞。
                                 </div>
                             )}
 
                             {/* Learning Style */}
-                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">认知能力综合评估</h3>
-                            <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-200 text-sm leading-relaxed mb-6">
-                                {studentData.persona.learningStyle || studentData.persona.learning_style || "尚未进行充足的交互评估"}
+                            <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">综合评估诊断报告</h3>
+                            <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-200 text-sm leading-relaxed mb-6 italic">
+                                {studentData.persona.learningStyle || studentData.persona.learning_style || "尚未进行充足的交互评估。完成第一道压轴题后生成系统级诊断。"}
                             </div>
 
                             {/* Last Session Review */}
                             <h3 className="text-sm text-white/50 mb-3 uppercase tracking-wide">最近一次切片洞察 ({new Date(studentData.lastUpdated).toLocaleTimeString().slice(0,5)})</h3>
-                            <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner italic">
-                                "{studentData.persona.lastSessionSummary || "期待您的第一次解题。"}"
+                            <p className="text-white/80 leading-relaxed text-sm bg-black/40 p-4 rounded-xl border border-white/10 shadow-inner">
+                                {studentData.persona.lastSessionSummary || "期待您的第一次解题。"}
                             </p>
                         </div>
                         
                         {/* Meta Stat Card */}
                         <div className="bg-[#12141a] border border-white/5 rounded-2xl p-6 shadow-xl text-center">
-                            <p className="text-xs text-white/40 mb-1">动态画像合并引擎状态</p>
-                            <p className="text-indigo-400 font-mono text-sm">Active (Gemini 3.1 Flash-Lite)</p>
+                            <p className="text-xs text-white/40 mb-1">动态画像引擎追踪状态</p>
+                            <p className="text-emerald-400 font-mono text-sm flex items-center justify-center gap-2">
+                                <span className="relative flex h-2 w-2">
+                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                LTM Connected
+                            </p>
                         </div>
                     </section>
                 </div>

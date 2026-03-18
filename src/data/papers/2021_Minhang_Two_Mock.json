@@ -113,8 +113,7 @@
       "圆的位置关系"
     ],
     "kps": [
-      "geo_circle_pos",
-      "geo_circle_tangent"
+      "geo_circle_prop"
     ],
     "images": [
       "/problems/2021_Minhang_Two_Mock/q6_0.png"
@@ -135,7 +134,7 @@
       "倒数"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -302,9 +301,9 @@
       "相似三角形"
     ],
     "kps": [
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_basic",
+      "geo_similar_k_model"
     ],
     "images": [
       "/problems/2021_Minhang_Two_Mock/q16_0.png"
@@ -371,7 +370,7 @@
       "实数运算"
     ],
     "kps": [
-      "num_real_calc"
+      "num_real"
     ],
     "images": []
   },
@@ -411,9 +410,8 @@
     ],
     "kps": [
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app",
-      "geo_quad_property"
+      "geo_quad_property",
+      "geo_trig_vector"
     ],
     "images": [
       "/problems/2021_Minhang_Two_Mock/q21_0.png"
@@ -455,13 +453,13 @@
       "角平分线"
     ],
     "kps": [
-      "geo_quad_property",
+      "geo_congruent_adv",
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_similar_basic",
       "geo_congruent_judge",
       "geo_congruent_prop",
-      "geo_congruent_adv",
-      "geo_similar_judge",
-      "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_quad_property"
     ],
     "images": [
       "/problems/2021_Minhang_Two_Mock/q23_0.png"
@@ -484,15 +482,12 @@
       "三角比"
     ],
     "kps": [
-      "alg_func_quadratic",
-      "alg_func_quadratic_image",
-      "alg_func_quadratic_geo",
       "alg_func_linear",
-      "alg_func_linear_image",
-      "alg_func_linear_property",
+      "func_quadratic_basic",
       "geo_trig_def",
-      "geo_trig_calc",
-      "geo_trig_app"
+      "geo_trig_vector",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
     ],
     "images": []
   },
@@ -513,10 +508,10 @@
       "直角三角形"
     ],
     "kps": [
-      "geo_circle_line_relation",
-      "geo_similar_judge",
       "geo_similar_prop",
-      "geo_similar_adv"
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_circle_line_relation"
     ],
     "images": [
       "/problems/2021_Minhang_Two_Mock/q25_0.png"
