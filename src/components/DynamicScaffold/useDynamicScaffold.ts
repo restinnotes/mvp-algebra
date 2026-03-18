@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { LTMMemory, StudentPersona } from '@/lib/memory';
 import { DemoStepData, StepLog, CognitiveBug } from '@/lib/types';
@@ -70,10 +70,10 @@ export function useDynamicScaffold() {
     const [activeTool, setActiveTool] = useState<'pen' | 'eraser'>('pen');
     const [logs, setLogs] = useState<LogEntry[]>([]);
 
-    const addLog = (type: LogEntry['type'], message: string) => {
+    const addLog = useCallback((type: LogEntry['type'], message: string) => {
         const time = new Date().toLocaleTimeString('zh-CN');
         setLogs(prev => [...prev, { time, type, message }]);
-    };
+    }, []);
 
     // Dynamic Step Logs
     const [stepLogs, setStepLogs] = useState<StepLog[]>([]);
@@ -168,7 +168,7 @@ export function useDynamicScaffold() {
         }
     };
 
-    const handleProblemUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleProblemUpload = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
 
@@ -206,7 +206,7 @@ export function useDynamicScaffold() {
             setStrategyTranscript('');
             setStrategyFeedback(null);
         }
-    };
+    }, [addLog]);
 
     const handleAuxCalculate = async (overrideLatex?: string): Promise<string | null> => {
         let sourceLatex = overrideLatex || manualCalcInput.trim();

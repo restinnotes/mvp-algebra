@@ -8,7 +8,7 @@ interface ProblemDisplayProps {
     problemImage: React.ReactNode | null;
 }
 
-export function ProblemDisplay({
+export const ProblemDisplay = React.memo(function ProblemDisplay({
     handleProblemUpload,
     isDecomposing,
     problemText,
@@ -42,4 +42,4 @@ export function ProblemDisplay({
             </div>
         </div>
     );
-}
+});
