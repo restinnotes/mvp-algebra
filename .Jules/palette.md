@@ -1,0 +1,3 @@
+## 2024-03-18 - Full Keyboard/Screen Reader Support for Icon Buttons
+**Learning:** This app extensively uses icon-only buttons for critical actions (e.g., Whiteboard tools like Pen, Eraser, Trash, Mic). While they often have `title` attributes for mouse users, they frequently lack `aria-label` for screen readers, `aria-pressed` for state toggles, and `focus-visible` styles for keyboard navigation, making the interface less accessible for non-mouse users.
+**Action:** When working on toolbars or icon-heavy interfaces in this app, proactively verify and add `aria-label`, `aria-pressed` (where applicable), and ensure clear keyboard focus indicators using `focus-visible:ring-2` utility classes to improve overall accessibility.
