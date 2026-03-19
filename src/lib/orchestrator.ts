@@ -21,7 +21,7 @@ const MELTDOWN_THRESHOLD = 3;
 
 export function createSession(studentId: string, problemText: string): SessionState {
   return {
-    session_id: `ses_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    session_id: `ses_${Date.now()}_${crypto.randomUUID()}`,
     student_id: studentId,
     phase: 'input',
     original_problem: problemText,
