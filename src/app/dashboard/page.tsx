@@ -11,6 +11,7 @@ import Link from 'next/link';
 
 // Import real syllabus directly
 import kpDataRaw from '../../../knowledge_points.json';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const syllabusData = kpDataRaw as any;
 
 // --- Wrong Problem Modal Component ---
@@ -294,6 +295,7 @@ export default function DashboardPage() {
         setExpandedCategories(prev => prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderNode = (node: any) => {
         const p_L = studentData?.mastery[node.id] || 0;
         const isAssessed = p_L > 0;
@@ -353,12 +355,14 @@ export default function DashboardPage() {
         );
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderCategory = (category: any) => {
         const isExpanded = expandedCategories.includes(category.id);
         
         const nodes = category.nodes || [];
         let totalMastery = 0;
         let assessedCount = 0;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         nodes.forEach((node: any) => {
             const p_L = studentData?.mastery[node.id];
             if (p_L !== undefined && p_L > 0) {
@@ -413,7 +417,7 @@ export default function DashboardPage() {
                             className="border-t border-white/5 bg-black/20"
                         >
                             <div className="p-5 grid grid-cols-1 xl:grid-cols-2 gap-4">
-                                {nodes.map((node: any) => renderNode(node))}
+                                {nodes.map((node: Record<string, unknown>) => renderNode(node))}
                             </div>
                         </motion.div>
                     )}
@@ -423,12 +427,13 @@ export default function DashboardPage() {
     };
 
     // Process misconceptions to frequency
-    const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: any, curr: string) => {
+    const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: Record<string, number>, curr: string) => {
         acc[curr] = (acc[curr] || 0) + 1;
         return acc;
-    }, {});
+    }, {} as Record<string, number>);
     
-    const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: any, b: any) => b[1] - a[1]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: [string, number], b: [string, number]) => b[1] - a[1]);
 
     return (
         <div className="min-h-screen bg-[#0a0c10] text-white p-8 md:p-12 font-sans selection:bg-indigo-500/30 overflow-x-hidden">
@@ -478,7 +483,7 @@ export default function DashboardPage() {
                             </h2>
 
                             <div className="space-y-4 relative z-10">
-                                {(syllabusData?.categories || []).map((category: any) => renderCategory(category))}
+                                {(syllabusData?.categories || []).map((category: Record<string, unknown>) => renderCategory(category))}
                             </div>
                         </section>
 
@@ -490,9 +495,9 @@ export default function DashboardPage() {
 
                             {studentData?.wrong_problems && studentData.wrong_problems.length > 0 ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {studentData.wrong_problems.map((problem: Record<string, unknown>) => (
+                                    {studentData.wrong_problems.map((problem: WrongProblem) => (
                                         <div 
-                                            key={String(problem.id)}
+                                            key={problem.id}
                                             onClick={() => setSelectedProblem(problem)}
                                             className="group p-5 bg-white/5 border border-white/10 rounded-2xl hover:border-indigo-500/40 hover:bg-white/[0.08] transition-all cursor-pointer relative"
                                         >
@@ -500,7 +505,7 @@ export default function DashboardPage() {
                                                 <div className="flex-1">
                                                     <h3 className="font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-1">{problem.problemTitle}</h3>
                                                     <div className="flex flex-wrap gap-2 mt-2">
-                                                        {Array.from(new Set((problem.kpIds as string[]).map((kp: string) =>
+                                                        {Array.from(new Set((problem.kpIds || []).map((kp: string) =>
                                                             kp.startsWith('geo_') ? '几何' : 
                                                             kp.startsWith('alg_') ? '代数' : 
                                                             kp.startsWith('num_') ? '运算' : 
@@ -635,7 +640,7 @@ export default function DashboardPage() {
                             <div className="p-3 bg-black/40 rounded-xl border border-white/5">
                                 <p className="text-[10px] text-white/30 uppercase font-bold mb-2">最近一次会话洞察</p>
                                 <p className="text-xs text-indigo-200/70 italic line-clamp-3">
-                                    "{studentData?.persona?.lastSessionSummary || "期待您的第一次影子挑战。"}"
+                                    &quot;{studentData?.persona?.lastSessionSummary || "期待您的第一次影子挑战。"}&quot;
                                 </p>
                             </div>
                         </div>
