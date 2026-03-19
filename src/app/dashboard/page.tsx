@@ -11,6 +11,7 @@ import Link from 'next/link';
 
 // Import real syllabus directly
 import kpDataRaw from '../../../knowledge_points.json';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const syllabusData = kpDataRaw as any;
 
 // --- Wrong Problem Modal Component ---
@@ -294,6 +295,7 @@ export default function DashboardPage() {
         setExpandedCategories(prev => prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderNode = (node: any) => {
         const p_L = studentData?.mastery[node.id] || 0;
         const isAssessed = p_L > 0;
@@ -353,12 +355,14 @@ export default function DashboardPage() {
         );
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderCategory = (category: any) => {
         const isExpanded = expandedCategories.includes(category.id);
         
         const nodes = category.nodes || [];
         let totalMastery = 0;
         let assessedCount = 0;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         nodes.forEach((node: any) => {
             const p_L = studentData?.mastery[node.id];
             if (p_L !== undefined && p_L > 0) {
@@ -413,6 +417,7 @@ export default function DashboardPage() {
                             className="border-t border-white/5 bg-black/20"
                         >
                             <div className="p-5 grid grid-cols-1 xl:grid-cols-2 gap-4">
+                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                 {nodes.map((node: any) => renderNode(node))}
                             </div>
                         </motion.div>
@@ -423,11 +428,13 @@ export default function DashboardPage() {
     };
 
     // Process misconceptions to frequency
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: any, curr: string) => {
         acc[curr] = (acc[curr] || 0) + 1;
         return acc;
     }, {});
     
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: any, b: any) => b[1] - a[1]);
 
     return (
@@ -478,6 +485,7 @@ export default function DashboardPage() {
                             </h2>
 
                             <div className="space-y-4 relative z-10">
+                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                 {(syllabusData?.categories || []).map((category: any) => renderCategory(category))}
                             </div>
                         </section>
@@ -488,7 +496,7 @@ export default function DashboardPage() {
                                 <BookOpen className="text-rose-400" size={24} /> 知识点挂钩错题本 (Wrong Problem Book)
                             </h2>
 
-                            {studentData.wrong_problems.length > 0 ? (
+                            {studentData?.wrong_problems && studentData.wrong_problems.length > 0 ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {studentData.wrong_problems.map(problem => (
                                         <div 
@@ -630,12 +638,12 @@ export default function DashboardPage() {
                                 <span className="text-xs font-bold uppercase tracking-wider">系统级综合评估</span>
                             </div>
                             <div className="text-sm text-white/80 leading-relaxed mb-4">
-                                {studentData.persona.learningStyle || studentData.persona.learning_style || "初始化评估中..."}
+                                {studentData?.persona?.learningStyle || studentData?.persona?.learning_style || "初始化评估中..."}
                             </div>
                             <div className="p-3 bg-black/40 rounded-xl border border-white/5">
                                 <p className="text-[10px] text-white/30 uppercase font-bold mb-2">最近一次会话洞察</p>
                                 <p className="text-xs text-indigo-200/70 italic line-clamp-3">
-                                    "{studentData.persona.lastSessionSummary || "期待您的第一次影子挑战。"}"
+                                    &quot;{studentData?.persona?.lastSessionSummary || "期待您的第一次影子挑战。"}&quot;
                                 </p>
                             </div>
                         </div>

@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
 
       if (searchQuery && searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase();
-        const queryParts = query.split(/\s+/).filter(p => p.length > 0);
+        const queryParts = query.split(/\s+/).filter((p: string) => p.length > 0);
         
         questions = questions.filter(q => {
           const searchableText = [
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
             ...q.kps.map(kpId => (nodeMap.get(kpId)?.name || '').toLowerCase())
           ].join(' ');
 
-          return queryParts.every(part => searchableText.includes(part));
+          return queryParts.every((part: string) => searchableText.includes(part));
         });
       }
       
