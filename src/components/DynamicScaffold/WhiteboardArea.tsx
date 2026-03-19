@@ -71,7 +71,7 @@ export const WhiteboardArea = React.memo(function WhiteboardArea({
             </div>
 
             <div className="absolute top-3 right-4 z-10 flex gap-2">
-                <button onClick={clearPad} className="p-1.5 bg-white/5 hover:bg-white/10 text-white/50 rounded-lg transition-colors" title="清空画板">
+                <button onClick={clearPad} className="p-1.5 bg-white/5 hover:bg-white/10 text-white/50 rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-white/50" title="清空画板" aria-label="清空画板">
                     <RotateCcw size={14} />
                 </button>
             </div>
@@ -113,7 +113,9 @@ export const WhiteboardArea = React.memo(function WhiteboardArea({
                             <div className="flex items-center justify-center gap-4 pt-4">
                                 <button
                                     onClick={() => toggleRecording('strategy')}
-                                    className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${isRecording && recordingTarget === 'strategy' ? 'bg-rose-500 animate-pulse text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
+                                    className={`w-14 h-14 rounded-full flex items-center justify-center transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${isRecording && recordingTarget === 'strategy' ? 'bg-rose-500 animate-pulse text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
+                                    aria-label={isRecording && recordingTarget === 'strategy' ? "停止录音" : "开始录音思路"}
+                                    aria-pressed={isRecording && recordingTarget === 'strategy'}
                                 >
                                     {isRecording && recordingTarget === 'strategy' ? <MicOff size={24} /> : <Mic size={24} />}
                                 </button>
@@ -143,16 +145,20 @@ export const WhiteboardArea = React.memo(function WhiteboardArea({
                                 <button
                                     type="button"
                                     onClick={() => setActiveTool('pen')}
-                                    className={`p-2.5 rounded-lg transition-all ${activeTool === 'pen' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
+                                    className={`p-2.5 rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${activeTool === 'pen' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
                                     title="画笔"
+                                    aria-label="使用画笔"
+                                    aria-pressed={activeTool === 'pen'}
                                 >
                                     <Edit2 size={18} />
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => setActiveTool('eraser')}
-                                    className={`p-2.5 rounded-lg transition-all ${activeTool === 'eraser' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
+                                    className={`p-2.5 rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${activeTool === 'eraser' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30' : 'text-white/40 hover:text-white/70 hover:bg-white/5'}`}
                                     title="橡皮擦"
+                                    aria-label="使用橡皮擦"
+                                    aria-pressed={activeTool === 'eraser'}
                                 >
                                     <Eraser size={18} />
                                 </button>
@@ -160,8 +166,9 @@ export const WhiteboardArea = React.memo(function WhiteboardArea({
                                 <button
                                     type="button"
                                     onClick={() => padRef.current?.clear()}
-                                    className="p-2.5 rounded-lg text-white/40 hover:text-rose-400 hover:bg-rose-500/10 transition-all"
+                                    className="p-2.5 rounded-lg text-white/40 hover:text-rose-400 hover:bg-rose-500/10 transition-all outline-none focus-visible:ring-2 focus-visible:ring-rose-500/50"
                                     title="清空画布"
+                                    aria-label="清空画布"
                                 >
                                     <Trash2 size={18} />
                                 </button>
@@ -223,15 +230,18 @@ export const WhiteboardArea = React.memo(function WhiteboardArea({
                     <button
                         onClick={() => handleAuxCalculate()}
                         disabled={isAuxCalculating || isProcessingOcr}
-                        className={`p-2 rounded-lg transition-all ${isAuxCalculating ? 'bg-indigo-500/20 text-indigo-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
+                        className={`p-2 rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${isAuxCalculating ? 'bg-indigo-500/20 text-indigo-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
                         title="辅助计算 (AI代算当前内容)"
+                        aria-label="辅助计算"
                     >
                         <BrainCircuit size={16} />
                     </button>
                     <button
                         onClick={() => toggleRecording('calculation')}
-                        className={`p-2 rounded-lg transition-all ${isRecording && recordingTarget === 'calculation' ? 'bg-rose-500/20 text-rose-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
+                        className={`p-2 rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${isRecording && recordingTarget === 'calculation' ? 'bg-rose-500/20 text-rose-400 animate-pulse' : 'text-white/30 hover:bg-white/5 hover:text-white/60'}`}
                         title="语音输入推导"
+                        aria-label={isRecording && recordingTarget === 'calculation' ? "停止语音输入推导" : "开始语音输入推导"}
+                        aria-pressed={isRecording && recordingTarget === 'calculation'}
                     >
                         {isRecording && recordingTarget === 'calculation' ? <MicOff size={16} /> : <Mic size={16} />}
                     </button>

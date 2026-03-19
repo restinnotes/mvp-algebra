@@ -419,7 +419,7 @@ export class LTMMemory {
         } else {
             const newProblem: WrongProblem = {
                 ...problem,
-                id: Math.random().toString(36).substring(2, 9),
+                id: crypto.randomUUID(),
                 timestamp: new Date().toISOString()
             };
             updatedWrongProblems = [newProblem, ...updatedWrongProblems].slice(0, 50);

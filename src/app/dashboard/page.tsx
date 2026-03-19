@@ -417,8 +417,7 @@ export default function DashboardPage() {
                             className="border-t border-white/5 bg-black/20"
                         >
                             <div className="p-5 grid grid-cols-1 xl:grid-cols-2 gap-4">
-                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                                {nodes.map((node: any) => renderNode(node))}
+                                {nodes.map((node: Record<string, unknown>) => renderNode(node))}
                             </div>
                         </motion.div>
                     )}
@@ -428,14 +427,13 @@ export default function DashboardPage() {
     };
 
     // Process misconceptions to frequency
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: any, curr: string) => {
+    const misconceptionCounts = (studentData?.persona?.misconceptions || []).reduce((acc: Record<string, number>, curr: string) => {
         acc[curr] = (acc[curr] || 0) + 1;
         return acc;
-    }, {});
+    }, {} as Record<string, number>);
     
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-    const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: any, b: any) => b[1] - a[1]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const sortedMisconceptions = Object.entries(misconceptionCounts).sort((a: [string, number], b: [string, number]) => b[1] - a[1]);
 
     return (
         <div className="min-h-screen bg-[#0a0c10] text-white p-8 md:p-12 font-sans selection:bg-indigo-500/30 overflow-x-hidden">
@@ -485,8 +483,7 @@ export default function DashboardPage() {
                             </h2>
 
                             <div className="space-y-4 relative z-10">
-                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                                {(syllabusData?.categories || []).map((category: any) => renderCategory(category))}
+                                {(syllabusData?.categories || []).map((category: Record<string, unknown>) => renderCategory(category))}
                             </div>
                         </section>
 
@@ -498,8 +495,7 @@ export default function DashboardPage() {
 
                             {studentData?.wrong_problems && studentData.wrong_problems.length > 0 ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                                    {studentData.wrong_problems.map((problem: any) => (
+                                    {studentData.wrong_problems.map((problem: WrongProblem) => (
                                         <div 
                                             key={problem.id}
                                             onClick={() => setSelectedProblem(problem)}
@@ -509,14 +505,13 @@ export default function DashboardPage() {
                                                 <div className="flex-1">
                                                     <h3 className="font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-1">{problem.problemTitle}</h3>
                                                     <div className="flex flex-wrap gap-2 mt-2">
-                                                        {Array.from(new Set(problem.kpIds.map((kp: string) =>
+                                                        {Array.from(new Set((problem.kpIds || []).map((kp: string) =>
                                                             kp.startsWith('geo_') ? '几何' : 
                                                             kp.startsWith('alg_') ? '代数' : 
                                                             kp.startsWith('num_') ? '运算' : 
                                                             kp.startsWith('func_') ? '函数' :
                                                             kp.startsWith('stat_') ? '统计' : '综合'
-                                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                                        ))).slice(0, 2).map((catName: any) => (
+                                                        ))).slice(0, 2).map((catName: string) => (
                                                             <span key={catName} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-white/40 font-bold tracking-wider">
                                                                 {catName}
                                                             </span>
