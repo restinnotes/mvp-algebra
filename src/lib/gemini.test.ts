@@ -1,6 +1,6 @@
 import { test, describe, mock, afterEach, beforeEach } from 'node:test';
 import assert from 'node:assert';
-import { withRetry } from './gemini.ts';
+import { withRetry } from './gemini';
 
 describe('withRetry', () => {
   beforeEach(() => {

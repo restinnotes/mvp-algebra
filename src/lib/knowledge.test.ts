@@ -1,7 +1,7 @@
 import { test, describe, beforeEach, afterEach, mock } from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
-import { getPrerequisiteChain, clearCache } from './knowledge.ts';
+import { getPrerequisiteChain, clearCache } from './knowledge';
 
 describe('getPrerequisiteChain', () => {
     beforeEach(() => {
