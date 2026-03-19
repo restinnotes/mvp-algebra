@@ -19,7 +19,7 @@ interface DebugPanelProps {
     setLogs: (logs: LogEntry[]) => void;
 }
 
-export function DebugPanel({
+export const DebugPanel = React.memo(function DebugPanel({
     isManualDemo,
     isDemoRunning,
     stepLogsLength,
@@ -108,4 +108,4 @@ export function DebugPanel({
             )}
         </div>
     );
-}
+});

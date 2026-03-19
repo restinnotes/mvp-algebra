@@ -21,7 +21,7 @@ interface ProgressPanelProps {
     handleDemoOcr: () => void;
 }
 
-export function ProgressPanel({
+export const ProgressPanel = React.memo(function ProgressPanel({
     isSolved,
     reviewSummary,
     isGeneratingReview,
@@ -224,4 +224,4 @@ export function ProgressPanel({
             </div>
         </div>
     );
-}
+});

@@ -9,7 +9,7 @@ interface PersonaModalProps {
     setShowPersonaModal: (show: boolean) => void;
 }
 
-export function PersonaModal({
+export const PersonaModal = React.memo(function PersonaModal({
     showPersonaModal,
     persona,
     reviewSummary,
@@ -67,4 +67,4 @@ export function PersonaModal({
             </div>
         </div>
     );
-}
+});

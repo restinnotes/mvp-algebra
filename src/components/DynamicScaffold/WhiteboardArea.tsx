@@ -34,7 +34,7 @@ interface WhiteboardAreaProps {
     stepLogsLength: number;
 }
 
-export function WhiteboardArea({
+export const WhiteboardArea = React.memo(function WhiteboardArea({
     padRef,
     activeTool,
     setActiveTool,
@@ -256,4 +256,4 @@ export function WhiteboardArea({
             )}
         </div>
     );
-}
+});
