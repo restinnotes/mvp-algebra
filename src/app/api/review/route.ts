@@ -1,13 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
 
+const MAX_PAYLOAD_SIZE = 500 * 1024; // 500KB
+
 export async function POST(req: NextRequest) {
         try {
+                const contentLength = req.headers.get('content-length');
+                if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
+                        return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+                }
+
                 const body = await req.json();
                 const { problemContext, history } = body;
 
+                if (!problemContext || !history || !Array.isArray(history)) {
+                        return NextResponse.json({ error: 'Missing or invalid problemContext or history' }, { status: 400 });
+                }
+
+                if (typeof problemContext !== 'string' || problemContext.length > 5000) {
+                        return NextResponse.json({ error: 'Invalid problemContext length or type' }, { status: 400 });
+                }
+
+                if (history.length > 200) {
+                        return NextResponse.json({ error: 'History too long' }, { status: 400 });
+                }
+
                 const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {
-                        const content = log.contentType === 'math' ? `Math: ${log.latex}` : `Text: ${log.text}`;
+                        if (log.contentType !== 'math' && log.contentType !== 'text') {
+                                return `[Step ${i + 1}] Unknown Content`;
+                        }
+                        if (log.latex && (typeof log.latex !== 'string' || log.latex.length > 1000)) return `[Step ${i + 1}] Invalid Math Content`;
+                        if (log.text && (typeof log.text !== 'string' || log.text.length > 1000)) return `[Step ${i + 1}] Invalid Text Content`;
+
+                        const content = log.contentType === 'math' ? `Math: ${log.latex || ''}` : `Text: ${log.text || ''}`;
                         return `[Step ${i + 1}] ${log.type === 'student' ? 'Student' : 'Tutor'}: ${content}`;
                 }).join('\n');
 
