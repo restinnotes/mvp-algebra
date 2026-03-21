@@ -39,7 +39,12 @@ function WrongProblemModal({ problem, onClose, onResolve }: { problem: WrongProb
             {/* Immersive Header */}
             <div className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-black/40 backdrop-blur-xl">
                 <div className="flex items-center gap-4">
-                    <button onClick={onClose} className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white/70 group">
+                    <button
+                        onClick={onClose}
+                        className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white/70 group outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
+                        aria-label="关闭"
+                        title="关闭"
+                    >
                         <ChevronRight className="rotate-180 group-hover:-translate-x-0.5 transition-transform" size={24} />
                     </button>
                     <div>
