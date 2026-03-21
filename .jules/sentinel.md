@@ -2,3 +2,8 @@
 **Vulnerability:** Insecure use of `Math.random()` to generate critical unique identifiers like `session_id` in `src/lib/orchestrator.ts` and problem `id`s in `src/lib/memory.ts`.
 **Learning:** This codebase uses `Math.random()` to generate IDs, which is predictable and insecure for things like session IDs or database primary keys. A malicious user could potentially predict session IDs or problem IDs, leading to insecure direct object references (IDOR) or session hijacking.
 **Prevention:** Always use cryptographically secure methods like `crypto.randomUUID()` for generating unique identifiers.
+
+## 2024-05-31 - [Missing Payload Size Limits on API Routes]
+**Vulnerability:** Several API routes (e.g., `src/app/api/session/route.ts`) lack robust payload size limits and type validation on inputs like `history`, leaving them susceptible to Denial of Service (DoS) attacks via memory exhaustion or unhandled exceptions.
+**Learning:** This codebase frequently parses JSON from incoming requests using `await req.json()` without first validating the `Content-Length` header. This allows malicious actors to send excessively large payloads, potentially crashing the server or exhausting resources.
+**Prevention:** Always implement `Content-Length` checks and strict type validation before parsing JSON payloads, especially for data structures like arrays or long strings.

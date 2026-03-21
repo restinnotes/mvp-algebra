@@ -2,8 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
 
+const MAX_PAYLOAD_SIZE = 1024 * 1024; // 1MB
+
 export async function POST(req: NextRequest) {
     try {
+        const contentLength = req.headers.get('content-length');
+        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
         const body = await req.json();
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
