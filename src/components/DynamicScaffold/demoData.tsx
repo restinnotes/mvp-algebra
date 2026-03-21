@@ -3,6 +3,7 @@ export const getDemoScript = (index: number) => {
         // Script 0: 2022 浦东 Q24 (Algebra/Parabola)
         {
             problem: "2022浦东Q24: 见图。抛物线与直线 y=-x+3 分别交于x轴、y轴（点B在x轴正半轴，点C在y轴上），抛物线经过B、C两点，且对称轴为直线 x=1。求抛物线解析式；若点D为顶点，求tan∠BCD。",
+            // eslint-disable-next-line @next/next/no-img-element
             problemImage: <img src="/problems/pudong_q24.png" alt="2022浦东Q24配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'p1', type: 'student' as const, contentType: 'text' as const, text: '直接用顶点公式，不需要管直线。', label: '解题思路', message: '漏掉关键信息了！抛物线和直线的交点决定了 a 和 c。先求 B, C 点坐标。', isCorrect: false },
@@ -17,6 +18,7 @@ export const getDemoScript = (index: number) => {
         // Script 1: 2022 徐汇 Q18 (Geometry/Windmill)
         {
             problem: "2022徐汇Q18: 如图, 四个白色全等直角三角形与四个黑色全等直角三角形按如图方式摆放成“风车”型，黑色三角形的一个顶点E在白色直角三角形的斜边上。已知∠ABO=90°, OB=3, AB=4。若点A、E、D在同一直线上, 则OE的长为______。",
+            // eslint-disable-next-line @next/next/no-img-element
             problemImage: <img src="/problems/xuhui_q18.png" alt="2022徐汇Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'x1', type: 'student' as const, contentType: 'text' as const, text: '画辅助线，直接勾股定理求OE。', label: '解题思路', message: '这题直接画辅助线很难求出准确值。考虑一下建立平面直角坐标系？', isCorrect: false },
@@ -31,6 +33,7 @@ export const getDemoScript = (index: number) => {
         // Script 2: 2022 虹口 Q18 (Parallel Lines/Circles)
         {
             problem: "2022虹口Q18: 已知平行直线 l1、l2 之间的距离是 5cm，圆心 O 到直线 l1 的距离是 2cm，如果圆 O 与直线 l1、l2 有三个公共点，那么圆 O 的半径为______cm．",
+            // eslint-disable-next-line @next/next/no-img-element
             problemImage: <img src="/problems/hongkou_q18.png" alt="2022虹口Q18配图" className="w-full max-w-sm mx-auto mt-4 rounded-lg bg-white/90 p-2 object-contain" />,
             steps: [
                 { id: 'h1', type: 'student' as const, contentType: 'text' as const, text: '半径就是直线距离，r=5。', label: '解题思路', message: '只考虑了一种情况。圆心是在两直线中间，还是在同侧？', isCorrect: false },

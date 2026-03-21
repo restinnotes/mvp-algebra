@@ -1,20 +1,11 @@
 import fs from 'fs';
-import path from 'path';
 
 const MD_PATH = 'consolidated_surgical.md';
 const JSON_PATH = 'mappings_auto.json';
 
-function normalizeId(id) {
-    return id.toLowerCase().replace(/_/g, '').trim();
-}
-
 async function run() {
     const md = fs.readFileSync(MD_PATH, 'utf8');
     const questions = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
-
-    // Improved Parser
-    // Sections look like: ### Question 18\n 18. [Text]
-    const sections = md.split(/### Question \d+/);
     
     // Attempt to match paper + question
     // File: .\2022\2022年上海市徐汇区中考二模数学试题（含解析）.docx
@@ -58,7 +49,6 @@ async function run() {
 
     // Merge into JSON
     const updated = questions.map(q => {
-        const typeMap = { "一模": "One_Mock", "二模": "Two_Mock" };
         const districtEn = {
             "徐汇": "Xuhui", "浦东": "Pudong", "虹口": "Hongkou", "静安": "Jingan", 
             "普陀": "Putuo", "长宁": "Changning", "闵行": "Minhang", "杨浦": "Yangpu",
