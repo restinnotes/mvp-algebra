@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson } from '@/lib/api-utils';
 
 const personaSchema = {
     type: SchemaType.OBJECT,
@@ -56,13 +57,13 @@ function validateLogs(logs: unknown): boolean {
 
 export async function POST(req: NextRequest) {
     try {
-        // 1. Payload size limit
-        const contentLength = req.headers.get('content-length');
-        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
-            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        // 1. Payload size limit handled by stream reader
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const body = await parseSafeJson<any>(req, MAX_PAYLOAD_SIZE);
+        if (!body) {
+            return NextResponse.json({ error: 'Empty request body' }, { status: 400 });
         }
 
-        const body = await req.json();
         const { currentPersona, sessionLogs } = body;
 
         // 2. Input validation

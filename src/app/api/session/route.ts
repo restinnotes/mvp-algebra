@@ -1,35 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
+import { parseSafeJson } from '@/lib/api-utils';
 
 const MAX_PAYLOAD_SIZE = 1024 * 1024; // 1MB
 
 export async function POST(req: NextRequest) {
     try {
-        if (!req.body) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const body = await parseSafeJson<any>(req, MAX_PAYLOAD_SIZE);
+        if (!body) {
             return NextResponse.json({ error: 'Empty request body' }, { status: 400 });
         }
 
-        const reader = req.body.getReader();
-        const decoder = new TextDecoder();
-        let bodyText = '';
-        let bytesRead = 0;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-
-            if (value) {
-                bytesRead += value.length;
-                if (bytesRead > MAX_PAYLOAD_SIZE) {
-                    return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
-                }
-                bodyText += decoder.decode(value, { stream: true });
-            }
-        }
-        bodyText += decoder.decode();
-
-        const body = JSON.parse(bodyText);
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {
