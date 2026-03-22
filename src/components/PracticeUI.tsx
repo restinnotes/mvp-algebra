@@ -10,7 +10,6 @@ import {
     Star, 
     Clock, 
     CheckCircle2, 
-    AlertCircle, 
     ArrowRight,
     BrainCircuit,
     Layers,
@@ -20,7 +19,7 @@ import {
 } from 'lucide-react';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { QuestionMapping } from '@/lib/types';
-import { formatPaperName, PAPER_NAME_MAP } from '@/lib/format';
+import { formatPaperName } from '@/lib/format';
 import Link from 'next/link';
 
 interface KP {
@@ -145,6 +144,7 @@ export default function PracticeUI() {
             fetchQuestionsWithFilter(selectedDistrict, selectedExamType, selectedKPs, 1, searchQuery);
         }, 300);
         return () => clearTimeout(timer);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchQuery]);
 
     const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
@@ -173,8 +173,6 @@ export default function PracticeUI() {
             setLoading(false);
         }
     };
-
-    const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
@@ -388,7 +386,9 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
+                                    aria-label="上一页"
+                                    title="上一页"
                                 >
                                     <ChevronLeft size={18} />
                                 </button>
@@ -401,7 +401,9 @@ export default function PracticeUI() {
                                                 <button
                                                     key={p}
                                                     onClick={() => handlePageChange(p)}
-                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+                                                    aria-label={`第 ${p} 页`}
+                                                    aria-current={page === p ? 'page' : undefined}
                                                 >
                                                     {p}
                                                 </button>
@@ -416,7 +418,9 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
+                                    aria-label="下一页"
+                                    title="下一页"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
@@ -431,12 +435,6 @@ export default function PracticeUI() {
 
 function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
     const formattedTitle = formatPaperName(question.paper);
-    
-    const examTypeStyle = question.exam_type === '一模' 
-        ? 'bg-amber-500/15 text-amber-400 border-amber-500/30' 
-        : question.exam_type === '二模'
-        ? 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30'
-        : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30';
 
     return (
         <div className="group bg-[#1a1d24] border border-white/5 rounded-2xl p-6 hover:border-indigo-500/40 transition-all hover:bg-[#1e222b] shadow-lg">
