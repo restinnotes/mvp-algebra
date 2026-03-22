@@ -12,8 +12,10 @@ import {
 
 export async function POST(request: NextRequest) {
   try {
-    // Force cache clear for development/data updates
-    clearCache();
+    if (process.env.NODE_ENV === 'development') {
+      // Force cache clear for development/data updates
+      clearCache();
+    }
     const body = await request.json();
     const { 
       action, 
