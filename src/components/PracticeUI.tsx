@@ -386,6 +386,7 @@ export default function PracticeUI() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <button
+                                    aria-label="上一页"
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
@@ -414,6 +415,7 @@ export default function PracticeUI() {
                                     })}
                                 </div>
                                 <button
+                                    aria-label="下一页"
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
