@@ -1,10 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
+import { parseSafeJson } from '@/lib/api-utils';
+
+const MAX_PAYLOAD_SIZE = 1024 * 1024; // 1MB
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const body = await parseSafeJson<any>(req, MAX_PAYLOAD_SIZE);
+        if (!body) {
+            return NextResponse.json({ error: 'Empty request body' }, { status: 400 });
+        }
+
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {
