@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson } from '@/lib/api-utils';
 
 const responseSchema = {
     description: "Evaluation of student's strategy",
@@ -15,7 +16,7 @@ const responseSchema = {
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        const body = await parseSafeJson(req);
         const { problemStatement, strategyText } = body;
 
         if (!strategyText || !problemStatement) {
