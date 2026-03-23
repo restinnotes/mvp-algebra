@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
+import { parseSafeJson } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        const body = await parseSafeJson(req, 1048576);
         const { latex } = body;
 
         if (!latex) {
