@@ -1,4 +1,3 @@
-import DynamicScaffold from '@/components/DynamicScaffold';
 import PracticeUI from '@/components/PracticeUI';
 import Link from 'next/link';
 import { ChevronLeft, BrainCircuit } from 'lucide-react';
