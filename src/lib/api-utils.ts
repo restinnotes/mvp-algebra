@@ -30,6 +30,7 @@ export async function parseSafeJson(req: NextRequest, maxSize: number = 1048576)
             if (value) {
                 totalSize += value.length;
                 if (totalSize > maxSize) {
+                    await reader.cancel('Payload too large');
                     throw new Error('Payload too large');
                 }
                 result += decoder.decode(value, { stream: true });
