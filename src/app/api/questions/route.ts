@@ -13,7 +13,11 @@ import {
 export async function POST(request: NextRequest) {
   try {
     // Force cache clear for development/data updates
-    clearCache();
+    // ⚡ Bolt: Restrict clearCache to development environment to prevent
+    // redundant disk I/O and severe performance regressions in production.
+    if (process.env.NODE_ENV === 'development') {
+      clearCache();
+    }
     const body = await request.json();
     const { 
       action, 
