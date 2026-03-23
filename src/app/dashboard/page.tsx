@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BktEngine } from '@/lib/bkt';
 import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle, Sparkles, Layers, ChevronDown, Flame, Target } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
@@ -99,6 +98,7 @@ function WrongProblemModal({ problem, onClose, onResolve }: { problem: WrongProb
                                     <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">题目关键配图</span>
                                 </div>
                                 <div className="bg-white/5 border border-white/10 rounded-2xl p-1.5 shadow-2xl overflow-hidden group">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img 
                                         src={problem.problemImage} 
                                         alt="Problem Illustration" 
@@ -264,7 +264,6 @@ export default function DashboardPage() {
     };
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
         refreshData();
         const interval = setInterval(refreshData, 3000);
