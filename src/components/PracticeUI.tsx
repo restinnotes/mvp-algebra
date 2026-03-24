@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -48,6 +48,15 @@ export default function PracticeUI() {
     const [totalPages, setTotalPages] = useState(1);
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
+
+    // Performance Optimization: $O(1)$ KP lookup
+    const kpMap = useMemo(() => {
+        const map: Record<string, KP> = {};
+        for (const kp of allKPs) {
+            map[kp.id] = kp;
+        }
+        return map;
+    }, [allKPs]);
 
     useEffect(() => {
         const data = LTMMemory.load('demo_student');
@@ -338,13 +347,13 @@ export default function PracticeUI() {
                                                     formatPaperName(q.district).toLowerCase(),
                                                     (q.exam_type || '').toLowerCase(),
                                                     q.question, // 题号
-                                                    ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
+                                                    ...q.kps.map(kpId => (kpMap[kpId]?.name || '').toLowerCase())
                                                 ].join(' ');
 
                                                 // 必须满足所有搜索片段 (AND 逻辑)
                                                 return queryParts.every(part => searchableText.includes(part));
                                             }).map((q, i) => (
-                                                <QuestionCard key={i} question={q} allKPs={allKPs} />
+                                                <QuestionCard key={i} question={q} kpMap={kpMap} />
                                             ))}
                                         </div>
                                     ) : (
@@ -364,7 +373,7 @@ export default function PracticeUI() {
                                     {studentData?.wrong_problems && studentData.wrong_problems.length > 0 ? (
                                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                                             {studentData.wrong_problems.map((wp) => (
-                                                <WrongProblemCard key={wp.id} problem={wp} allKPs={allKPs} />
+                                                <WrongProblemCard key={wp.id} problem={wp} kpMap={kpMap} />
                                             ))}
                                         </div>
                                     ) : (
@@ -429,7 +438,7 @@ export default function PracticeUI() {
     );
 }
 
-function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
+function QuestionCard({ question, kpMap }: { question: QuestionMapping, kpMap: Record<string, KP> }) {
     const formattedTitle = formatPaperName(question.paper);
     
     const examTypeStyle = question.exam_type === '一模' 
@@ -449,7 +458,7 @@ function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs:
                         {(() => {
                             // 1. Filter out unknown KPs
                             const knownKPs = question.kps
-                                .map(kpId => allKPs.find(k => k.id === kpId))
+                                .map(kpId => kpMap[kpId])
                                 .filter((kp): kp is KP => kp !== undefined);
                             
                             // 2. Sort to prioritize hardcore tags (★)
@@ -496,7 +505,7 @@ function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs:
     );
 }
 
-function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: KP[] }) {
+function WrongProblemCard({ problem, kpMap }: { problem: WrongProblem, kpMap: Record<string, KP> }) {
     return (
         <div className="group bg-[#1a1d2b] border border-rose-500/10 rounded-2xl p-6 hover:border-rose-500/40 transition-all hover:bg-[#202330] shadow-lg relative overflow-hidden">
             {problem.isResolved && (
@@ -520,7 +529,7 @@ function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: 
                 <div className="flex flex-wrap gap-2">
                     {(() => {
                         const knownKPs = problem.kpIds
-                            .map(kpId => allKPs.find(k => k.id === kpId))
+                            .map(kpId => kpMap[kpId])
                             .filter((kp): kp is KP => kp !== undefined);
                         
                         knownKPs.sort((a, b) => {
