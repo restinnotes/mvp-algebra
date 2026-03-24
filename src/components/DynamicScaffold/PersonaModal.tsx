@@ -25,7 +25,7 @@ export const PersonaModal = React.memo(function PersonaModal({
                         <UserCircle size={24} className="text-indigo-400" />
                         <h2 className="text-lg font-bold text-white tracking-wide">AI 导师数字画像与复盘</h2>
                     </div>
-                    <button onClick={() => setShowPersonaModal(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 transition-colors">
+                    <button onClick={() => setShowPersonaModal(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50" aria-label="关闭数字画像">
                         ✕
                     </button>
                 </div>
