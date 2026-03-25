@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { parseSafeJson } from '@/lib/api-utils';
 import { generateText } from '@/lib/gemini';
 
 export async function POST(req: NextRequest) {
         try {
-                const body = await req.json();
+                const body = await parseSafeJson(req);
                 const { problemContext, history } = body;
 
                 const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {

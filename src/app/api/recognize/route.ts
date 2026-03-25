@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { parseSafeJson } from '@/lib/api-utils';
 import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
 
@@ -24,7 +25,7 @@ interface OcrResult {
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        const body = await parseSafeJson(req);
         const { imageBase64, problemContext, history, manualText } = body;
 
         if (!imageBase64 && !manualText) {
