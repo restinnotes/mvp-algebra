@@ -1,0 +1,3 @@
+## 2024-05-24 - [Avoid Nested Array Lookups O(N×M) in React Components]
+**Learning:** In large list rendering (like `PracticeUI.tsx`), performing `array.find()` inside loops like `filter` or `map` creates $O(N \times M)$ complexity. This becomes a performance bottleneck when filtering hundreds of items against a secondary list of metadata.
+**Action:** Replace nested `array.find()` with a pre-calculated `Map` or dictionary object ($O(1)$ lookup) outside the loop or inside a `useMemo`. This reduces the complexity to $O(N + M)$ and significantly improves filtering speed and reduces main thread blocking.
