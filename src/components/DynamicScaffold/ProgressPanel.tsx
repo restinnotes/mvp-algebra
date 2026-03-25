@@ -102,7 +102,9 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                                     }
                                 }}
                                 disabled={manualDemoStep <= 0}
-                                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0"
+                                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0 focus-visible:ring-2 focus-visible:ring-indigo-500/50 outline-none"
+                                aria-label="上一步"
+                                title="上一步"
                             >
                                 <ChevronLeft size={16} />
                             </button>
@@ -113,7 +115,9 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                                 type="button"
                                 onClick={handleDemoOcr}
                                 disabled={manualDemoStep >= demoSteps.length}
-                                className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0"
+                                className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0 focus-visible:ring-2 focus-visible:ring-indigo-500/50 outline-none"
+                                aria-label="下一步"
+                                title="下一步"
                             >
                                 <ChevronRight size={16} />
                             </button>
