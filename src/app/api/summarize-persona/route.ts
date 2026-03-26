@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const personaSchema = {
     type: SchemaType.OBJECT,
@@ -56,16 +57,11 @@ function validateLogs(logs: unknown): boolean {
 
 export async function POST(req: NextRequest) {
     try {
-        // 1. Payload size limit
-        const contentLength = req.headers.get('content-length');
-        if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_SIZE) {
-            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
-        }
-
-        const body = await req.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const body = await parseSafeJson<{ currentPersona: any, sessionLogs: any }>(req, MAX_PAYLOAD_SIZE);
         const { currentPersona, sessionLogs } = body;
 
-        // 2. Input validation
+        // 1. Input validation
         if (!validatePersona(currentPersona) || !validateLogs(sessionLogs)) {
             return NextResponse.json({ error: 'Invalid input format or content exceeded limits' }, { status: 400 });
         }
@@ -90,6 +86,9 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(updatedPersona);
     } catch (error: unknown) {
         console.error('Persona Summarization Error:', error);
+        if (error instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
         return NextResponse.json({ error: 'Failed' }, { status: 500 });
     }
 }
