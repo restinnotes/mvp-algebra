@@ -1,0 +1,3 @@
+## 2024-03-22 - [React Performance: O(N*M) Array lookups in Render]
+**Learning:** In `PracticeUI.tsx`, the `QuestionCard` and `WrongProblemCard` components perform `O(N*M)` array lookups inside the render loop using `allKPs.find(k => k.id === kpId)`. When filtering or mapping large arrays, replacing nested lookups with a `Map` or object lookup (`O(N + M)`) pre-calculated via `useMemo` yields significant performance gains.
+**Action:** Use `useMemo` to create a `kpMap` (Map or Object) from `allKPs` and pass this map to child components instead of the array, changing lookup from `O(N)` to `O(1)` per item.
