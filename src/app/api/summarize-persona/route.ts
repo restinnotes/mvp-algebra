@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const personaSchema = {
     type: SchemaType.OBJECT,
@@ -62,7 +63,8 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
         }
 
-        const body = await req.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const body = await parseSafeJson<{ currentPersona?: any, sessionLogs?: any }>(req, 1048576);
         const { currentPersona, sessionLogs } = body;
 
         // 2. Input validation
@@ -89,6 +91,9 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json(updatedPersona);
     } catch (error: unknown) {
+        if (error instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
         console.error('Persona Summarization Error:', error);
         return NextResponse.json({ error: 'Failed' }, { status: 500 });
     }
