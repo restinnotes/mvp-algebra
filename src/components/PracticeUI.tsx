@@ -388,7 +388,8 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2"
+                                    aria-label="上一页"
                                 >
                                     <ChevronLeft size={18} />
                                 </button>
@@ -416,7 +417,8 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2"
+                                    aria-label="下一页"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
