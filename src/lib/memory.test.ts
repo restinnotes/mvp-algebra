@@ -31,11 +31,9 @@ describe('LTMMemory', () => {
     originalLocalStorage = global.localStorage;
 
     // Default to having window and localStorage
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    // @ts-expect-error Mocking global window object for test
     global.window = {};
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    // @ts-expect-error Mocking global window object for test
     global.localStorage = new MockLocalStorage();
   });
 
@@ -46,8 +44,7 @@ describe('LTMMemory', () => {
 
   describe('load()', () => {
     test('returns default data when window is undefined', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error Mocking global window object for test
       delete global.window;
       const data = LTMMemory.load();
       assert.strictEqual(data.mastery !== undefined, true);
@@ -124,8 +121,7 @@ describe('LTMMemory', () => {
     });
 
     test('does nothing when window is undefined', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error Mocking global window object for test
       delete global.window;
       LTMMemory.save({ mastery: { 'kp1': 1 } });
     });
