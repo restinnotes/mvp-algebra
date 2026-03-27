@@ -49,6 +49,7 @@ export default function PracticeUI() {
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
+    // ⚡ Bolt: Using a Map (O(1) lookup) instead of array.find (O(N)) to prevent O(N*M) complexity when filtering/rendering.
     const allKPsMap = useMemo(() => new Map(allKPs.map(kp => [kp.id, kp])), [allKPs]);
 
     useEffect(() => {
