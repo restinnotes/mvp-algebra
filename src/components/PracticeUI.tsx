@@ -388,7 +388,8 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="上一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
                                 >
                                     <ChevronLeft size={18} />
                                 </button>
@@ -401,7 +402,9 @@ export default function PracticeUI() {
                                                 <button
                                                     key={p}
                                                     onClick={() => handlePageChange(p)}
-                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+                                                    aria-label={`第 ${p} 页`}
+                                                    aria-current={page === p ? 'page' : undefined}
+                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
                                                 >
                                                     {p}
                                                 </button>
@@ -416,7 +419,8 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="下一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
