@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        let body: any;
+        try {
+            body = await parseSafeJson(req);
+        } catch (err) {
+            if (err instanceof PayloadTooLargeError) {
+                return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+            }
+            throw err;
+        }
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {
