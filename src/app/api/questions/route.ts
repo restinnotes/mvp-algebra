@@ -9,12 +9,22 @@ import {
   clearCache,
   formatPaperName
 } from '@/lib/knowledge';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
   try {
     // Force cache clear for development/data updates
     clearCache();
-    const body = await request.json();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let body: any;
+    try {
+        body = await parseSafeJson(request);
+    } catch (err) {
+        if (err instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+        throw err;
+    }
     const { 
       action, 
       kps, 

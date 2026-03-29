@@ -1,9 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
         try {
-                const body = await req.json();
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                let body: any;
+                try {
+                    body = await parseSafeJson(req);
+                } catch (err) {
+                    if (err instanceof PayloadTooLargeError) {
+                        return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+                    }
+                    throw err;
+                }
                 const { problemContext, history } = body;
 
                 const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {

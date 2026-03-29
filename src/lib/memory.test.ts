@@ -46,8 +46,7 @@ describe('LTMMemory', () => {
 
   describe('load()', () => {
     test('returns default data when window is undefined', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error mock window
       delete global.window;
       const data = LTMMemory.load();
       assert.strictEqual(data.mastery !== undefined, true);
@@ -124,8 +123,7 @@ describe('LTMMemory', () => {
     });
 
     test('does nothing when window is undefined', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error mock window
       delete global.window;
       LTMMemory.save({ mastery: { 'kp1': 1 } });
     });
