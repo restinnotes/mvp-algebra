@@ -1,0 +1,3 @@
+## 2024-03-20 - Pagination Accessibility
+**Learning:** Pagination controls (like previous/next buttons and page numbers) must be wrapped in a semantic `<nav aria-label="Pagination Navigation">` element instead of generic `<div>` wrappers. Individual icon-only buttons need explicit `aria-label` attributes, and the currently active page must denote state using `aria-current="page"`. Focus visible styles are critical for keyboard navigation (`focus-visible:ring-2`).
+**Action:** Always verify semantic tags for navigational groupings and ensure proper ARIA states are applied to icon-only components.
