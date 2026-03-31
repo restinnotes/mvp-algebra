@@ -1,0 +1,3 @@
+## 2024-05-24 - Semantic Pagination Navigation
+**Learning:** Custom pagination controls built with generic `div` and `button` elements lack context for screen readers. Using semantic `<nav aria-label="分页导航">` and `aria-current="page"` significantly improves navigational clarity for assistive technologies.
+**Action:** Always wrap pagination components in semantic `<nav>` elements and explicitly mark the active page to ensure full accessibility compliance in complex list views.
