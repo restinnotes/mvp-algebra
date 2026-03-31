@@ -36,7 +36,12 @@ export async function parseSafeJson<T = unknown>(req: NextRequest, maxSizeInByte
     reader.releaseLock();
   }
 
-  const bodyString = Buffer.concat(chunks).toString("utf-8");
+  const decoder = new TextDecoder("utf-8");
+  let bodyString = "";
+  for (const chunk of chunks) {
+    bodyString += decoder.decode(chunk, { stream: true });
+  }
+  bodyString += decoder.decode();
 
   if (!bodyString) {
       // Return empty object for empty body string instead of JSON.parse error.
