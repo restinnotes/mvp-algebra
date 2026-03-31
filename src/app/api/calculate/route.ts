@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        const body = await parseSafeJson<{ latex: string }>(req);
         const { latex } = body;
 
         if (!latex) {
@@ -37,6 +38,9 @@ export async function POST(req: NextRequest) {
 
     } catch (error: unknown) {
         console.error('Calculation API error:', error);
+        if (error instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
         return NextResponse.json({ error: 'Failed to calculate' }, { status: 500 });
     }
 }
