@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const responseSchema = {
     description: "Scaffolding steps for a math problem",
@@ -32,19 +33,19 @@ const responseSchema = {
 
 export async function POST(req: NextRequest) {
     try {
-        const { imageBase64 } = await req.json();
-
-        if (!imageBase64) {
-            return NextResponse.json({ error: 'No image provided' }, { status: 400 });
+        let imageBase64: string;
+        try {
+            const body = await parseSafeJson<{ imageBase64: string }>(req, 5242880);
+            imageBase64 = body.imageBase64;
+        } catch (err) {
+            if (err instanceof PayloadTooLargeError) {
+                return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+            }
+            throw err;
         }
 
-        if (typeof imageBase64 !== 'string') {
-            return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
-        }
-
-        // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
-        if (imageBase64.length > 5 * 1024 * 1024) {
-            return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+        if (!imageBase64 || typeof imageBase64 !== 'string') {
+            return NextResponse.json({ error: 'Invalid or missing image' }, { status: 400 });
         }
 
         const prompt = `
