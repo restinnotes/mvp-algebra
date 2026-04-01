@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const ocrSchema = {
     type: SchemaType.OBJECT,
@@ -24,7 +25,17 @@ interface OcrResult {
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        let body: { imageBase64?: string, problemContext?: string, history?: any[], manualText?: string };
+        try {
+            body = await parseSafeJson(req, 5242880);
+        } catch (err) {
+            if (err instanceof PayloadTooLargeError) {
+                return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
+            }
+            throw err;
+        }
+
         const { imageBase64, problemContext, history, manualText } = body;
 
         if (!imageBase64 && !manualText) {
@@ -34,11 +45,6 @@ export async function POST(req: NextRequest) {
         if (imageBase64) {
             if (typeof imageBase64 !== 'string') {
                 return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
-            }
-
-            // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
-            if (imageBase64.length > 5 * 1024 * 1024) {
-                return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
             }
         }
 
