@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { parseSafeJson } from '@/lib/api-utils';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
 
@@ -62,7 +63,7 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
         }
 
-        const body = await req.json();
+        const body = await parseSafeJson(req);
         const { currentPersona, sessionLogs } = body;
 
         // 2. Input validation
