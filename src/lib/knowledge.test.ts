@@ -1,36 +1,35 @@
 import { test, describe, beforeEach, afterEach, mock } from 'node:test';
 import assert from 'node:assert';
-import fs from 'node:fs';
-import { getPrerequisiteChain, clearCache } from './knowledge';
+import { getPrerequisiteChain, clearCache, __injectMockKnowledgeGraph } from './knowledge';
 
 describe('getPrerequisiteChain', () => {
     beforeEach(() => {
         clearCache();
+        __injectMockKnowledgeGraph(null);
     });
 
     afterEach(() => {
         mock.restoreAll();
         clearCache();
+        __injectMockKnowledgeGraph(null);
     });
 
     test('handles circular dependencies to prevent infinite recursion', () => {
-        mock.method(fs, 'existsSync', () => true);
-        mock.method(fs, 'readFileSync', () => {
-            return JSON.stringify({
-                version: "1.0",
-                categories: [
-                    {
-                        id: "cat_1",
-                        name: "Category 1",
-                        nodes: [
-                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: ["node_B"], common_misconceptions: [] },
-                            { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
-                            { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_B"], common_misconceptions: [] }
-                        ]
-                    }
-                ]
-            });
-        });
+        __injectMockKnowledgeGraph({
+            version: "1.0",
+            categories: [
+                {
+                    id: "cat_1",
+                    name: "Category 1",
+                    nodes: [
+                        { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: ["node_B"], common_misconceptions: [] },
+                        { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
+                        { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_B"], common_misconceptions: [] }
+                    ]
+                }
+            ]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as unknown as any);
 
         const chain = getPrerequisiteChain("node_C");
         // B relies on A. A relies on B. C relies on B.
@@ -45,23 +44,21 @@ describe('getPrerequisiteChain', () => {
     });
 
     test('handles complex circular dependencies with self-loops', () => {
-        mock.method(fs, 'existsSync', () => true);
-        mock.method(fs, 'readFileSync', () => {
-            return JSON.stringify({
-                version: "1.0",
-                categories: [
-                    {
-                        id: "cat_1",
-                        name: "Category 1",
-                        nodes: [
-                            { id: "node_X", name: "Node X", level: 1, importance: 1, description: "X", prerequisites: ["node_X", "node_Y"], common_misconceptions: [] },
-                            { id: "node_Y", name: "Node Y", level: 1, importance: 1, description: "Y", prerequisites: ["node_Z"], common_misconceptions: [] },
-                            { id: "node_Z", name: "Node Z", level: 1, importance: 1, description: "Z", prerequisites: ["node_X"], common_misconceptions: [] }
-                        ]
-                    }
-                ]
-            });
-        });
+        __injectMockKnowledgeGraph({
+            version: "1.0",
+            categories: [
+                {
+                    id: "cat_1",
+                    name: "Category 1",
+                    nodes: [
+                        { id: "node_X", name: "Node X", level: 1, importance: 1, description: "X", prerequisites: ["node_X", "node_Y"], common_misconceptions: [] },
+                        { id: "node_Y", name: "Node Y", level: 1, importance: 1, description: "Y", prerequisites: ["node_Z"], common_misconceptions: [] },
+                        { id: "node_Z", name: "Node Z", level: 1, importance: 1, description: "Z", prerequisites: ["node_X"], common_misconceptions: [] }
+                    ]
+                }
+            ]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as unknown as any);
 
         const chain = getPrerequisiteChain("node_X");
         // Start at X.
@@ -79,8 +76,8 @@ describe('getPrerequisiteChain', () => {
     });
 
     test('returns empty chain if node not found', () => {
-        mock.method(fs, 'existsSync', () => true);
-        mock.method(fs, 'readFileSync', () => JSON.stringify({ version: "1.0", categories: [] }));
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        __injectMockKnowledgeGraph({ version: "1.0", categories: [] } as unknown as any);
 
         const chain = getPrerequisiteChain("missing_node");
         assert.deepStrictEqual(chain, []);
@@ -88,24 +85,22 @@ describe('getPrerequisiteChain', () => {
 
     test('handles diamond dependency correctly', () => {
         // D relies on B and C. Both B and C rely on A.
-        mock.method(fs, 'existsSync', () => true);
-        mock.method(fs, 'readFileSync', () => {
-            return JSON.stringify({
-                version: "1.0",
-                categories: [
-                    {
-                        id: "cat_1",
-                        name: "Category 1",
-                        nodes: [
-                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] },
-                            { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
-                            { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_A"], common_misconceptions: [] },
-                            { id: "node_D", name: "Node D", level: 1, importance: 1, description: "D", prerequisites: ["node_B", "node_C"], common_misconceptions: [] }
-                        ]
-                    }
-                ]
-            });
-        });
+        __injectMockKnowledgeGraph({
+            version: "1.0",
+            categories: [
+                {
+                    id: "cat_1",
+                    name: "Category 1",
+                    nodes: [
+                        { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] },
+                        { id: "node_B", name: "Node B", level: 1, importance: 1, description: "B", prerequisites: ["node_A"], common_misconceptions: [] },
+                        { id: "node_C", name: "Node C", level: 1, importance: 1, description: "C", prerequisites: ["node_A"], common_misconceptions: [] },
+                        { id: "node_D", name: "Node D", level: 1, importance: 1, description: "D", prerequisites: ["node_B", "node_C"], common_misconceptions: [] }
+                    ]
+                }
+            ]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as unknown as any);
 
         const chain = getPrerequisiteChain("node_D");
         // Start D.
@@ -118,21 +113,19 @@ describe('getPrerequisiteChain', () => {
     });
 
     test('handles no dependencies correctly', () => {
-        mock.method(fs, 'existsSync', () => true);
-        mock.method(fs, 'readFileSync', () => {
-            return JSON.stringify({
-                version: "1.0",
-                categories: [
-                    {
-                        id: "cat_1",
-                        name: "Category 1",
-                        nodes: [
-                            { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] }
-                        ]
-                    }
-                ]
-            });
-        });
+        __injectMockKnowledgeGraph({
+            version: "1.0",
+            categories: [
+                {
+                    id: "cat_1",
+                    name: "Category 1",
+                    nodes: [
+                        { id: "node_A", name: "Node A", level: 1, importance: 1, description: "A", prerequisites: [], common_misconceptions: [] }
+                    ]
+                }
+            ]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as unknown as any);
 
         const chain = getPrerequisiteChain("node_A");
         assert.deepStrictEqual(chain.map(n => n.id), ["node_A"]);

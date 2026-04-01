@@ -1,10 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+// Static imports to avoid Node.js fs/path dependencies in Edge Runtime
+import KP_DATA from '../../knowledge_points.json';
+import ALL_PAPERS from '../data/all_papers.json';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -13,15 +12,21 @@ let _nodesCache: KnowledgeNode[] | null = null;
 let _nodesMapCache: Map<string, KnowledgeNode> | null = null;
 let _mappingsCache: QuestionMapping[] | null = null;
 
+// Helper to allow tests to inject mocked raw data without fs/path
+let _mockedKnowledgeGraph: KnowledgeGraph | null = null;
+export function __injectMockKnowledgeGraph(graph: KnowledgeGraph | null) {
+  _mockedKnowledgeGraph = graph;
+  clearCache();
+}
+
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
 
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
+  if (_mockedKnowledgeGraph) {
+    _graphCache = _mockedKnowledgeGraph;
+  } else {
+    _graphCache = KP_DATA as KnowledgeGraph;
   }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
   return _graphCache;
 }
 
@@ -78,26 +83,22 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
-  
   const allMappings: QuestionMapping[] = [];
   
-  for (const file of jsonFiles) {
+  // Cast ALL_PAPERS to be indexable by string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const papersData = ALL_PAPERS as Record<string, any>;
+
+  for (const [file, data] of Object.entries(papersData)) {
     try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
       const qs = Array.isArray(data) ? data : [data];
       
       // Extract year from filename if possible (e.g., 2022_Songjiang...)
       const yearMatch = file.match(/^(\d{4})/);
       const fileYear = yearMatch ? yearMatch[1] : '2022';
 
-      const processedQs = qs.map(q => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const processedQs = qs.map((q: any) => {
         // Standardize question number
         const questionNum = q.question || q.questionNumber || q.qNumber || q.question_type?.replace(/^Q/, '') || '';
         
@@ -135,7 +136,8 @@ export function loadMappings(): QuestionMapping[] {
       });
 
       // Only include questions that have at least one knowledge point or tag
-      const validQs = processedQs.filter(q => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const validQs = processedQs.filter((q: any) => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
       allMappings.push(...validQs);
     } catch (e) {
       console.error(`Error loading paper data from ${file}:`, e);
