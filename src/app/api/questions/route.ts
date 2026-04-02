@@ -10,11 +10,16 @@ import {
   formatPaperName
 } from '@/lib/knowledge';
 
+import { parseSafeJson } from '@/lib/api-utils';
+
 export async function POST(request: NextRequest) {
   try {
     // Force cache clear for development/data updates
-    clearCache();
-    const body = await request.json();
+    if (process.env.NODE_ENV === 'development') {
+      clearCache();
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const body = await parseSafeJson<any>(request);
     const { 
       action, 
       kps, 
