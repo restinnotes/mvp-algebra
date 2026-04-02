@@ -4,10 +4,10 @@ import { ChevronLeft } from 'lucide-react';
 import PasswordGate from '@/components/PasswordGate';
 import { redirect } from 'next/navigation';
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ problem?: string }> }) {
-  const params = await searchParams;
+export default async function Home(props: { searchParams: Promise<{ problem?: string }> }) {
+  const searchParams = await props.searchParams;
   
-  if (!params.problem) {
+  if (!searchParams?.problem) {
     redirect('/dashboard');
   }
 
