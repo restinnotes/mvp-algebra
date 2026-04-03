@@ -9,12 +9,14 @@ import {
   clearCache,
   formatPaperName
 } from '@/lib/knowledge';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
   try {
     // Force cache clear for development/data updates
     clearCache();
-    const body = await request.json();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const body = await parseSafeJson<any>(request, 1024 * 1024); // 1MB limit for questions
     const { 
       action, 
       kps, 
@@ -119,6 +121,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ error: 'Unknown action' }, { status: 400 });
   } catch (error) {
+    if (error instanceof PayloadTooLargeError) {
+      return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+    }
     console.error('Question bank API error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
