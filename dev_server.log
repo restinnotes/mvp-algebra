@@ -1,33 +1,16 @@
 
-> mvp-algebra@0.1.0 dev /app
+> mvp-algebra@0.1.0 dev
 > next dev
 
-   ▲ Next.js 15.5.14
+   ▲ Next.js 15.5.12
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
 
  ✓ Starting...
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
-
- ✓ Ready in 2s
- ○ Compiling / ...
- ✓ Compiled / in 6.9s (885 modules)
- GET / 307 in 7649ms
+ ✓ Ready in 2.1s
  ○ Compiling /dashboard ...
- ✓ Compiled /dashboard in 5.2s (1624 modules)
- GET /dashboard 200 in 5890ms
- ○ Compiling /practice ...
- ✓ Compiled /practice in 770ms (1632 modules)
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /practice 200 in 1311ms
- ○ Compiling /api/questions ...
- ✓ Compiled /api/questions in 580ms (1655 modules)
- POST /api/questions 200 in 1081ms
- POST /api/questions 200 in 1080ms
- POST /api/questions 200 in 1075ms
- POST /api/questions 200 in 687ms
- POST /api/questions 200 in 1083ms
- ✓ Compiled in 356ms (738 modules)
+ ✓ Compiled /dashboard in 12.6s (1538 modules)
+ GET /dashboard 200 in 14172ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.1s (1613 modules)
+ GET / 200 in 2735ms
