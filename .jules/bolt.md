@@ -1,0 +1,3 @@
+## 2024-04-03 - [Initial Performance Profiling]
+**Learning:** `PracticeUI.tsx` filters unknown KPs inside the map iteration of questions: `knownKPs = question.kps.map(kpId => allKPs.find(k => k.id === kpId)).filter(...)`. This turns a O(N) iteration over questions into O(N * M * K), where M is number of KPs on a question and K is the total number of KPs. `allKPs.find` inside a loop is inefficient when `allKPs` size is large (K > 100).
+**Action:** Replace `allKPs.find` with a pre-calculated `Map` or an object lookup `kpMap = useMemo(() => new Map(allKPs.map(kp => [kp.id, kp])), [allKPs])` to reduce complexity.

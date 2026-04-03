@@ -1,16 +1,67 @@
 
-> mvp-algebra@0.1.0 dev
+> mvp-algebra@0.1.0 dev /app
 > next dev
 
-   ▲ Next.js 15.5.12
+   ▲ Next.js 15.5.14
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
 
  ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
  ✓ Ready in 2.1s
- ○ Compiling /dashboard ...
- ✓ Compiled /dashboard in 12.6s (1538 modules)
- GET /dashboard 200 in 14172ms
- ○ Compiling / ...
- ✓ Compiled / in 2.1s (1613 modules)
- GET / 200 in 2735ms
+ ○ Compiling /practice ...
+ ✓ Compiled /practice in 10.5s (1580 modules)
+ GET /practice 200 in 11794ms
+ GET /practice 200 in 255ms
+ ○ Compiling /api/questions ...
+ ✓ Compiled /api/questions in 1801ms (1511 modules)
+Question bank API error: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at POST (src/app/api/questions/route.ts:17:32)
+  15 |     // Force cache clear for development/data updates
+  16 |     clearCache();
+> 17 |     const body = await request.json();
+     |                                ^
+  18 |     const {
+  19 |       action,
+  20 |       kps,
+Question bank API error: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at POST (src/app/api/questions/route.ts:17:32)
+  15 |     // Force cache clear for development/data updates
+  16 |     clearCache();
+> 17 |     const body = await request.json();
+     |                                ^
+  18 |     const {
+  19 |       action,
+  20 |       kps,
+Question bank API error: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at POST (src/app/api/questions/route.ts:17:32)
+  15 |     // Force cache clear for development/data updates
+  16 |     clearCache();
+> 17 |     const body = await request.json();
+     |                                ^
+  18 |     const {
+  19 |       action,
+  20 |       kps,
+Question bank API error: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at POST (src/app/api/questions/route.ts:17:32)
+  15 |     // Force cache clear for development/data updates
+  16 |     clearCache();
+> 17 |     const body = await request.json();
+     |                                ^
+  18 |     const {
+  19 |       action,
+  20 |       kps,
+ POST /api/questions 200 in 1397ms
+ POST /api/questions 200 in 1395ms
+ POST /api/questions 200 in 1395ms
+ POST /api/questions 200 in 1395ms
+ POST /api/questions 200 in 873ms
+ GET /practice 200 in 998ms
