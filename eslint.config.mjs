@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "scripts/prebuild-knowledge.js",
+    "src/lib/knowledge_data.ts"
   ]),
 ]);
 

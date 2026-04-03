@@ -1,0 +1,14686 @@
+// AUTO-GENERATED FILE. DO NOT EDIT DIRECTLY.
+export const _graphCache = {
+  "version": "10.1",
+  "source": "上海市初中数学考纲平衡版 (基础骨架 + 压轴专项)",
+  "description": "2级标题覆盖全考纲，3级标签用于压轴题爆破",
+  "categories": [
+    {
+      "id": "number",
+      "name": "数与运算 (Numbers)",
+      "nodes": [
+        {"id": "num_real", "name": "实数概念与运算", "level": 1, "importance": 5, "description": "实数、数轴、科学记数法及基础四则混合运算。", "prerequisites": [], "common_misconceptions": ["符号错误", "零次幂底数问题"]},
+        {"id": "num_divisibility", "name": "数的可除性", "level": 1, "importance": 3, "description": "因数、倍数、素数及最大公约数。", "prerequisites": [], "common_misconceptions": ["合数素数混淆"]}
+      ]
+    },
+    {
+      "id": "algebra",
+      "name": "方程与代数 (Algebra)",
+      "nodes": [
+        {"id": "alg_expr_calc", "name": "代数式整式运算", "level": 1, "importance": 6, "description": "整式、分式运算及因式分解。", "prerequisites": [], "common_misconceptions": ["去括号变号", "分式漏乘"]},
+        {"id": "alg_eq_linear", "name": "一元方程与不等式", "level": 1, "importance": 6, "description": "一元一次方程、不等式组及分式方程。", "prerequisites": ["alg_expr_calc"], "common_misconceptions": ["不等式变号", "分式方程漏验根"]},
+        {"id": "alg_eq_quadratic", "name": "一元二次方程", "level": 2, "importance": 8, "description": "解法、判别式及基本应用。", "prerequisites": ["alg_expr_calc"], "common_misconceptions": ["忘记判别式判断"]},
+        {"id": "alg_eq_vieta", "name": "★ 韦达定理综合 (Q24/25)", "level": 3, "importance": 9, "description": "压轴题常用：根与系数关系及参数讨论。", "prerequisites": ["alg_eq_quadratic"], "common_misconceptions": ["忽视Delta>=0", "符号错误"]}
+      ]
+    },
+    {
+      "id": "function",
+      "name": "函数与分析 (Functions)",
+      "nodes": [
+        {"id": "func_linear_inverse", "name": "一次与反比例函数", "level": 2, "importance": 8, "description": "图像性质、待定系数法及k的几何意义。", "prerequisites": ["alg_eq_linear"], "common_misconceptions": ["k的符号与象限", "待定系数代错点"]},
+        {"id": "func_quadratic_basic", "name": "二次函数基础", "level": 2, "importance": 8, "description": "三种解析式、开口、对称轴及顶点坐标。", "prerequisites": ["alg_eq_quadratic"], "common_misconceptions": ["配方法出错", "对称轴公式记反"]},
+        {"id": "func_quadratic_area", "name": "★ 铅垂线面积 (Q24)", "level": 3, "importance": 10, "description": "压轴必考：动点背景下的割补法与铅垂高面积计算。", "prerequisites": ["func_quadratic_basic"], "common_misconceptions": ["点在曲线上下的顺序错误"]},
+        {"id": "func_quadratic_existence", "name": "★ 几何存在性 (Q24)", "level": 3, "importance": 10, "description": "压轴必考：等腰、直角、平行四边形存在性讨论。", "prerequisites": ["func_quadratic_basic", "geo_triangle_prop"], "common_misconceptions": ["漏掉分类讨论情况"]}
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "图形与几何 (Geometry)",
+      "nodes": [
+        {"id": "geo_triangle_prop", "name": "三角形与全等", "level": 1, "importance": 7, "description": "基本性质、垂直平分线、角平分线及全等判定。", "prerequisites": [], "common_misconceptions": ["对应边找错"]},
+        {"id": "geo_quad_prop", "name": "四边形与多边形", "level": 2, "importance": 7, "description": "特殊四边形性质判定及中位线应用。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["判定条件不充分"]},
+        {"id": "geo_similar_basic", "name": "相似三角形基础", "level": 2, "importance": 8, "description": "平行线分线段成比例及相似判定性质。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["比例式列错"]},
+        {"id": "geo_similar_k_model", "name": "★ K字型/一线三等角 (Q25)", "level": 3, "importance": 9, "description": "压轴模型：坐标系或几何图形中的一线三等角相似。", "prerequisites": ["geo_similar_basic"], "common_misconceptions": ["对应角识别错误"]},
+        {"id": "geo_motion_rotation_hand", "name": "★ 手拉手旋转模型 (Q25)", "level": 3, "importance": 9, "description": "压轴模型：共顶点等腰三角形产生的旋转全等/相似。", "prerequisites": ["geo_congruent"], "common_misconceptions": ["旋转中心识别错误"]},
+        {"id": "geo_circle_prop", "name": "圆的性质与切线", "level": 2, "importance": 8, "description": "垂径定理、圆周角及切线判定与性质。", "prerequisites": ["geo_triangle_prop"], "common_misconceptions": ["忽视多解性（圆心在两侧）"]},
+        {"id": "geo_trig_vector", "name": "三角比与向量", "level": 2, "importance": 6, "description": "锐角三角比、解直角三角形应用及平面向量。", "prerequisites": ["geo_similar_basic"], "common_misconceptions": ["坡度定义记反"]}
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "统计与概率 (Stats)",
+      "nodes": [
+        {"id": "stat_prob", "name": "统计图表与概率", "level": 1, "importance": 6, "description": "平均数/众数/方差、树状图与列表求概率。", "prerequisites": [], "common_misconceptions": ["重复计数或漏计"]}
+      ]
+    }
+  ]
+}
+;
+export const _mappingsCache = [
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "下列各组图形一定相似的是（ ）",
+    "options": [
+      "A. 两个菱形",
+      "B. 两个矩形",
+      "C. 两个直角梯形",
+      "D. 两个正方形"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "2",
+    "difficulty": 0.18,
+    "tags": [],
+    "kps": [
+      "geo_trig_def"
+    ],
+    "content": "在 $Rt \\triangle ABC$ 中，$\\angle C = 90^\\circ$，如果 $AC=8$，$BC=6$，那么 $\\angle B$ 的余切值为（ ）",
+    "options": [
+      "A. \\frac{3}{4}",
+      "B. \\frac{4}{3}",
+      "C. \\frac{3}{5}",
+      "D. \\frac{4}{5}"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = -3(x+1)^2 + 2$ 的顶点坐标是（ ）",
+    "options": [
+      "A. (1, 2)",
+      "B. (1, -2)",
+      "C. (-1, 2)",
+      "D. (-1, -2)"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "4",
+    "difficulty": 0.22,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "alg_expr_concept"
+    ],
+    "content": "已知 $\\vec{c}$ 为非零向量，$\\vec{a} = 3\\vec{c}$，$\\vec{b} = -2\\vec{c}$，那么下列结论中错误的是（ ）",
+    "options": [
+      "A. \\vec{a} // \\vec{b}",
+      "B. |\\vec{a}| = \\frac{3}{2} |\\vec{b}|",
+      "C. \\vec{a} 与 \\vec{b} 方向相同",
+      "D. \\vec{a} 与 \\vec{b} 方向相反"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "5",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图，在 $5 \\times 5$ 正方形网格中，一条圆弧经过 A、B、C 三点，那么这条圆弧所在的圆的圆心为图中的（ ）",
+    "options": [
+      "A. M",
+      "B. P",
+      "C. Q",
+      "D. R"
+    ],
+    "images": [
+      "/problems/2020_Chongming_Mock/q5.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "6",
+    "difficulty": 0.28,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，点 D、E 分别在 $AB$ 和 $AC$ 边上且 $DE // BC$，点 M 为 $BC$ 边上一点（不与点 B、C 重合），联结 $AM$ 交 $DE$ 于点 N，下列比例式一定成立的是（ ）",
+    "options": [
+      "A. \\frac{AD}{AN} = \\frac{AN}{AE}",
+      "B. \\frac{DN}{NE} = \\frac{BM}{CM}",
+      "C. \\frac{DN}{BM} = \\frac{AE}{EC}",
+      "D. \\frac{DN}{MC} = \\frac{NE}{BM}"
+    ],
+    "images": [
+      "/problems/2020_Chongming_Mock/q6.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "已知 $\\frac{x}{y} = \\frac{2}{3}$，那么 $\\frac{x+y}{x} =$ ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "8",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop"
+    ],
+    "content": "已知线段 $AB=8\\text{cm}$，点 C 在线段 $AB$ 上，且 $AC^2 = BC \\cdot AB$，那么线段 $AC$ 的长 ________ $\\text{cm}$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "9",
+    "difficulty": 0.22,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop"
+    ],
+    "content": "如果两个三角形相似，其中一个三角形的两个内角分别为 $50^\\circ$ 和 $60^\\circ$，那么另一个三角形的最大角为 ________ 度.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "10",
+    "difficulty": 0.28,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "小杰沿坡比为 $1:2.4$ 的山坡向上走了 130 米，那么他沿着垂直方向升高了 ________ 米.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_similar_k_model"
+    ],
+    "content": "在某一时刻，测得一根高为 $1.8\\text{m}$ 的竹竿的影长为 $3\\text{m}$，同时同地测得一栋楼的影长为 $90\\text{m}$，则这栋楼的高度为 ________ $\\text{m}$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "12",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_triangle_prop"
+    ],
+    "content": "如果将抛物线 $y = x^2 + 2x - 1$ 先向右平移 2 个单位，再向上平移 3 个单位，那么所得的新抛物线的顶点坐标为 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "13",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "二次函数的性质"
+    ],
+    "content": "如果二次函数 $y = ax^2 + bx + c$ 图像上部分点的横坐标 $x$ 与纵坐标 $y$ 的对应值如下表所示，那么它的图像与 $x$ 轴的另一个交点坐标是 ________.\n\n| x | ... | -1 | 0 | 1 | 2 | ... |\n|---|---|---|---|---|---|---|\n| y | ... | 0 | 3 | 4 | 3 | ... |",
+    "images": [
+      "/problems/2020_Chongming_Mock/q13_table.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "14",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_quad_property"
+    ],
+    "content": "正五边形的中心角的度数是 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "15",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "两圆的半径之比为 $3:1$，当它们外切时，圆心距为 4，那么当它们内切时，圆心距为 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "16",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如果梯形两底分别为 4 和 6，高为 2，那么两腰延长线的交点到这个梯形的较大底边的距离是 ________.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_prop"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，点 D 在 $BC$ 上，且 $BD = BA$，$\\angle ABC$ 的平分线 $BE$ 交 $AD$ 于点 E，点 F 是 $AC$ 中点，连结 $EF$. 若四边形 DCFE 和 $\\triangle BDE$ 的面积都为 3，则 $\\triangle ABC$ 的面积为 ________.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q17.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [],
+    "kps": [
+      "相似三角形",
+      "geo_trig_vector",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ$，$AB=10$，$AC=8$，点 D 是 $AC$ 的中点，点 E 在边 $AB$ 上，将 $\\triangle ADE$ 沿 $DE$ 翻折，使得点 A 落在点 $A'$ 处，当 $A'E \\perp AB$ 时，那么 $A'A$ 的长为 ________.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q18.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "19",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "计算：$\\tan^2 60^\\circ + \\frac{\\cot 60^\\circ + 2 \\tan 30^\\circ}{2 \\sin 30^\\circ} - \\sin^2 45^\\circ$.",
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "20",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "geo_similar_prop"
+    ],
+    "content": "如图，在梯形 $ABCD$ 中，$AD // BC$，$BC = 2AD$，对角线 $AC$、$BD$ 相交于点 O，设 $\\vec{AD} = \\vec{a}$，$\\vec{AB} = \\vec{b}$. 试用 $\\vec{a}$、$\\vec{b}$ 的式子表示向量 $\\vec{AO}$.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q20.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "21",
+    "difficulty": 0.55,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图，$AC$ 是 $\\odot O$ 的直径，弦 $BD \\perp AO$ 于 E，连接 $BC$，过点 O 作 $OF \\perp BC$ 于 F，若 $BD=8\\text{cm}$，$AE=2\\text{cm}$，\n(1) 求 $\\odot O$ 的半径；\n(2) 求 O 到弦 $BC$ 的距离.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q21.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图 1，为放置在水平桌面 $l$ 上的台灯，底座的高 $AB$ 为 $5\\text{cm}$. 长度均为 $20\\text{cm}$ 的连杆 $BC$，$CD$ 与 $AB$ 始终在同一水平面上.\n(1) 旋转连杆 $BC$，$CD$，使 $\\angle BCD$ 成平角，$\\angle ABC = 150^\\circ$，如图 2，求连杆端点 D 离桌面 $l$ 的高度 $DE$.\n(2) 将 (1) 中的连杆 $CD$ 绕点 C 逆时针旋转，使 $\\angle BCD = 165^\\circ$，如图 3，问此时连杆端点 D 离桌面 $l$ 的高度是增加了还是减少了？增加或减少了多少？（精确到 $0.1\\text{cm}$，参考数据：$\\sqrt{2} \\approx 1.41, \\sqrt{3} \\approx 1.73$）",
+    "images": [
+      "/problems/2020_Chongming_Mock/q22.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "23",
+    "difficulty": 0.85,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，$\\triangle ABC$ 中，$AD \\perp BC$，$E$ 是 $AD$ 边上一点，联结 $BE$，过点 $D$ 作 $DF \\perp BE$，垂足为 $F$，且 $AE \\cdot DF = EF \\cdot CD$，联结 $AF$、$CF$，$CF$ 与边 $AD$ 交于点 O.\n求证：(1) $\\angle EAF = \\angle DCF$；\n(2) $AF \\cdot BD = AC \\cdot DF$.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q23.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "func_quadratic_basic",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，抛物线与 $x$ 轴相交于点 $A(-3, 0)$、$B(1, 0)$，与 $y$ 轴交于点 $C(0, 3)$，点 $D$ 是抛物线上一动点，联结 $OD$ 交线段 $AC$ 于点 E.\n(1) 求这条抛物线的解析式，并写出顶点坐标；\n(2) 求 $\\angle ACB$ 的正切值；\n(3) 当 $\\triangle AOE$ 与 $\\triangle ABC$ 相似时，求点 $D$ 的坐标.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q24.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2020_Chongming_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_trig_def",
+      "geo_similar_k_model"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，$AB = AC = 10$，$BC = 16$，点 D 为 $BC$ 边上的一个动点（点 D 不与点 B、点 C 重合）. 以 D 为顶点作 $\\angle ADE = \\angle B$，射线 $DE$ 交 $AC$ 边于点 E，过点 A 作 $AF \\perp AD$ 交射线 $DE$ 于点 F.\n(1) 求证：$AB \\cdot CE = BD \\cdot CD$；\n(2) 当 $DF$ 平分 $\\angle ADC$ 时，求 $AE$ 的长；\n(3) 当 $\\triangle AEF$ 是等腰三角形时，求 $BD$ 的长.",
+    "images": [
+      "/problems/2020_Chongming_Mock/q25.png"
+    ],
+    "year": "2020",
+    "district": "崇明",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q01",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "1",
+    "content": "下列运算正确的是 ( )\nA. $a^2+a^2=a^4$\nB. $a^3-a^2=a$\nC. $a^3 \\cdot a^2 = a^6$\nD. $a^6 \\div a^3 = a^3$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q02",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "2",
+    "content": "我国脱贫攻坚战取得了全面胜利. 12.8万个贫困村全部出列, 区域性整体贫困得到解决, 完成了消灭绝对贫困的艰巨任务, 把“12.8万”用科学记数法表示应是 ( )\nA. $12.8 \\times 10^4$\nB. $1.28 \\times 10^5$\nC. $12.8 \\times 10^5$\nD. $1.28 \\times 10^6$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q03",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "3",
+    "content": "如果直线 $y=2x+m$ 的图象一定经过第二象限, 那么 $m$ 的取值范围是 ( )\nA. $m>0$\nB. $m \\geq 0$\nC. $m<0$\nD. $m \\leq 0$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "图象性质"
+    ],
+    "kps": [
+      "alg_func_linear_image"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q04",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "4",
+    "content": "正多边形的一个内角为 $144^\\circ$, 那么该正多边形的边数为 ( )\nA. 8\nB. 9\nC. 10\nD. 11",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "多边形",
+      "内角和"
+    ],
+    "kps": [
+      "geo_polygon_angles"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q05",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "5",
+    "content": "学校组织朗诵比赛, 有 11 位同学晋级决赛, 每位选手得分各不相同. 如果小杰想要确定自己是否进入前 6 名, 那么除了自己的得分以外, 他还要了解这 11 名同学得分的 ( )\nA. 平均数\nB. 中位数\nC. 众数\nD. 方差",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数"
+    ],
+    "kps": [
+      "stat_median"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q06",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "6",
+    "content": "如图, 在 $\\square ABCD$ 中, 如果点 $E$ 是边 $AD$ 的中点, 且 $\\angle A = \\angle AEC$, 那么下列结论不正确的是 ( )\nA. $CE=CD$\nB. $BF=2DF$\nC. $AB = \\frac{5}{2} EF$\nD. $S_{\\text{四边形} ABFE} = 5 S_{\\triangle DEF}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "平行四边形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q07",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "7",
+    "content": "因式分解: $m^2 - n^2 =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "因式分解",
+      "平方差公式"
+    ],
+    "kps": [
+      "alg_factoring_square_diff"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q08",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "8",
+    "content": "方程 $\\sqrt{3x+4}=x$ 的根是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q09",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "9",
+    "content": "已知一元二次方程 $\\frac{1}{2}x^2 - 2x - m = 0$ 有实数根, 那么 $m$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q10",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "10",
+    "content": "不透明的布袋里有 2 个黄球、4 个红球、3 个白球, 它们除颜色外其它都相同, 那么从布袋中任意摸出一个球恰好为红球的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q11",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "11",
+    "content": "为了了解六年级学生掌握游泳技能的情况, 在全区六年级 7200 名学生中, 随机抽取了 600 名学生, 结果有 240 名学生会游泳, 那么估计该区会游泳的六年级学生数约为 __________ 人.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q12",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "12",
+    "content": "已知点 $A(-3, y_1)$ 和点 $B(-\\frac{2}{3}, y_2)$ 都在二次函数 $y=ax^2 - 2ax + m \\ (a>0)$ 的图象上, 那么 $y_1 - y_2$ __________ 0 (结果用 $>$, $<$, $=$ 表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "性质"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q13",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "13",
+    "content": "《九章算术》记载了这样一个问题: “今有善田一亩, 价三百; 恶田七亩, 价五百. 今并买一顷, 价钱一万, 问善田几何?” 意思是: 当下良田 1 亩, 价值 300 钱; 薄田 7 亩, 价值 500 钱. 现在共买 1 顷, 价值 10000 钱. 根据条件, 良田买了 __________ 亩. (注: 1顷=100亩)",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "应用题",
+      "二元一次方程组"
+    ],
+    "kps": [
+      "alg_linear_eq_system_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q14",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "14",
+    "content": "如图, $AC // BD$, $\\angle C = 72^\\circ$, $\\angle ABC = 70^\\circ$, 那么 $\\angle ABD$ 的度数为 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "平行线",
+      "角度计算"
+    ],
+    "kps": [
+      "geo_parallel_lines"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q15",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "15",
+    "content": "如图, 已知等腰梯形 $ABCD$ 中, $AD // BC, BC=3AD$, 如果 $\\vec{BC}=\\vec{a}, \\vec{BD}=\\vec{b}$, 那么 $\\vec{AB}=$ __________. (结果用 $\\vec{a}, \\vec{b}$ 表示)",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "梯形"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q16",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "16",
+    "content": "如图, $AB$ 是圆 $O$ 的直径, $\\widehat{AD} = \\widehat{DC} = \\widehat{CB}$, $AC$ 与 $OD$ 交于点 $E$. 如果 $AC=3$, 那么 $DE$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "弧度",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_circle_arc",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q17",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "17",
+    "content": "我们把直角坐标平面内横、纵坐标互相交换的两个点称为“关联点对”, 如点 $A(2, 3)$ 和点 $B(3, 2)$ 为一对“关联点对”. 如果反比例函数 $y = \\frac{10}{x}$ 在第一象限内的图象上有一对“关联点对”, 且这两个点之间的距离为 $3\\sqrt{2}$, 那么这对“关联点对”中, 距离 $x$ 轴较近的点的坐标为 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "新定义",
+      "距离公式"
+    ],
+    "kps": [
+      "alg_distance_formula",
+      "func_linear_inverse",
+      "alg_func_inverse_image"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q18",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "18",
+    "content": "如图, 矩形 $ABCD$ 中, $AB=2, AD=5$, 点 $E$ 是 $BC$ 边上一点, 联结 $AE$, 将 $AE$ 绕点 $E$ 顺时针旋转 $90^\\circ$, 点 $A$ 的对应点记为点 $F$, 如果点 $F$ 在对角线 $BD$ 上, 那么 $\\frac{BF}{DF} =$ __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "相似三角形",
+      "矩形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_triangle_prop"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q19",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "19",
+    "content": "计算: $(\\frac{1}{2})^{-2} + \\frac{1}{2-\\sqrt{3}} - 27^{\\frac{2}{3}} + |\\sqrt{3}-2|$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q20",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} 5x > 3x-8 \\\\ \\frac{x+2}{4} \\geq x-1 \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q21",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "21",
+    "content": "已知直线 $y=x+m$ 经过点 $A(2, 3)$, 且与 $x$ 轴交于点 $B$.\n(1) 求点 $B$ 的坐标;\n(2) 如果一个反比例函数的图象与线段 $BA$ 的延长线交于点 $D$, 且 $BA:AD = 3:2$, 求这个反比例函数的解析式.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "反比例函数",
+      "待定系数法"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "func_linear_inverse",
+      "alg_func_inverse_image",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q22",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "22",
+    "content": "图 1 是某地摩天轮的图片, 图 2 是示意图. 已知线段 $BC$ 经过圆心 $D$ 且垂直于地面, 垂足为点 $C$, 当座舱在点 $A$ 时, 测得摩天轮顶端点 $B$ 的仰角为 $15^\\circ$, 同时测得点 $C$ 的俯角为 $76^\\circ$, 又知摩天轮的半径为 10 米, 求摩天轮顶端 $B$ 与地面的距离. (精确到 1 米)\n参考数据: $\\sin 15^\\circ \\approx 0.26, \\cos 15^\\circ \\approx 0.96, \\tan 15^\\circ \\approx 0.27, \\sin 76^\\circ \\approx 0.97, \\cos 76^\\circ \\approx 0.24, \\tan 76^\\circ \\approx 4.01$.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "应用题"
+    ],
+    "kps": [
+      "geo_trig_ratio_app"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q22_0.png",
+      "/problems/2021_Baoshan_Two_Mock/q22_1.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q23",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "23",
+    "content": "如图, 在 $\\square ABCD$ 中, $\\angle BAD$ 的平分线交边 $BC$ 于点 $E$, 交 $DC$ 的延长线于点 $F$, 点 $G$ 在 $AE$ 上, 联结 $GD, \\angle GDF = \\angle F$.\n(1) 求证: $AD^2 = DG \\cdot AF$;\n(2) 联结 $BG$, 如果 $BG \\perp AE$, 且 $AB=6, AD=9$, 求 $AF$ 的长.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "平行四边形",
+      "角平分线"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_angle_bisector",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q24",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2 + bx - 1 \\ (a \\neq 0)$ 经过点 $A(-2, 0), B(1, 0)$ 和点 $D(-3, n)$, 与 $y$ 轴交于点 $C$.\n(1) 求该抛物线的表达式及点 $D$ 的坐标;\n(2) 将抛物线平移, 使点 $C$ 落在点 $B$处, 点 $D$ 落在点 $E$ 处, 求 $\\triangle ODE$ 的面积;\n(3) 如果点 $P$ 在 $y$ 轴上, $\\triangle PCD$ 与 $\\triangle ABC$ 相似, 求点 $P$ 的坐标.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "func_quadratic_basic",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Baoshan_Two_Mock_Q25",
+    "paper": "2021_Baoshan_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知 $AB \\perp BC, DC \\perp BC$, 垂足分别为点 $B, C, AC$ 与 $BD$ 交于点 $P$.\n(1) 如果 $AB=3, CD=5$, 以点 $P$ 为圆心作圆, 圆 $P$ 与直线 $BC$ 相切.\n① 求圆 $P$ 的半径长;\n② 又 $BC=8$, 以 $BC$ 为直径作圆 $O$, 试判断圆 $O$ 与圆 $P$ 的位置关系, 并说明理由.\n(2) 如果分别以 $AB, CD$ 为直径的两圆外切, 求证: $\\triangle ABC$ 与 $\\triangle BCD$ 相似.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "位置关系",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Baoshan_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q01",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "$-8$ 的倒数是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) $-8$",
+      "(B) $8$",
+      "(C) $-\\frac{1}{8}$",
+      "(D) $\\frac{1}{8}$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q02",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "2",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "下列运算正确的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) $(a^2)^3 = a^5$",
+      "(B) $a^4 \\cdot a^2 = a^8$",
+      "(C) $a^6 \\div a^3 = a^2$",
+      "(D) $(ab)^3 = a^3b^3$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q03",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "3",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "一家鞋店对上周某品牌女鞋的销售量统计如下:\n尺寸 (码): 35, 36, 37, 38, 39\n销售量 (双): 2, 4, 11, 7, 3\n这家鞋店决定本周进该品牌女鞋时多进一些尺寸为 37 码的鞋, 影响鞋店决策的统计量是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) 平均数",
+      "(B) 众数",
+      "(C) 中位数",
+      "(D) 方差"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q04",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "4",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "下列方程中, 有实数解的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) $x^2 - x + 1 = 0$",
+      "(B) $x^2 + 1 = 0$",
+      "(C) $\\frac{1}{x-1} = \\frac{2}{x^2-1}$",
+      "(D) $\\sqrt{x-1} = 1 - x$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q05",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "下列命题中, 假命题是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) 对角线互相垂直的矩形是正方形",
+      "(B) 对角线相等的菱形是正方形",
+      "(C) 对角线互相垂直平分的四边形是正方形",
+      "(D) 对角线互相垂直且相等的平行四边形是正方形"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q06",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "6",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如果两个圆相交, 且其中一个圆的圆心在另一个圆的圆内时, 我们称两圆的位置关系为 “内相交”. 如图 1, 已知 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, AC = 4, BC = 3$, 点 $O$ 在边 $AC$ 上. 如果 $\\odot O$ 与直线 $AB$ 相切, 以 $OA$ 为半径的 $\\odot O$ 与 $\\odot C$ “内相交”, 那么 $OA$ 的长度可以是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "options": [
+      "(A) $\\frac{16}{5}$",
+      "(B) $\\frac{12}{5}$",
+      "(C) $\\frac{8}{5}$",
+      "(D) $\\frac{4}{5}$"
+    ],
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q07",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $a(a+1) = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q08",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "函数 $y = \\sqrt{x-2}$ 定义域是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q09",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程组 $\\begin{cases} x + 2y = 3 \\\\ x^2 - y^2 = 0 \\end{cases}$ 的解是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q10",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "正多边形一个外角等于 $20^\\circ$, 则这个正多边形的边数是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q11",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "如果抛物线 $y = (m+1)x^2$ 的最高点是坐标轴的原点, 那么 $m$ 的取值范围是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q12",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "观察反比例函数 $y = \\frac{2}{x}$ 的图像, 当 $0 < x < 1$ 时, $y$ 的取值范围是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q13",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "13",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "从 $\\frac{2}{9}, \\sqrt{2}, \\pi$ 这三个数中任选一个数, 选出的这个数是有理数的概率为 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q14",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "14",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "某校为了了解本校学生每周阅读课外书籍的时间, 对本校全体学生进行了调查, 并绘制如图所示的频率分布直方图, 那么图中 $m$ 的值为 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q15",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "15",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 在 $\\triangle ABC$ 中, $AB = AC = 12, DC = 4$, 过点 $C$ 作 $CE \\parallel AB$ 交 $BD$ 的延长线于点 $E, \\vec{AB} = \\vec{a}, \\vec{BC} = \\vec{b}$, 那么 $\\vec{BE}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q16",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "16",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "我国古代数学著作《九章算术》中有这样一个问题: “今有池方一丈, 葭生其中央, 出水一尺. 引葭赴岸, 适与岸齐, 问水深几何?” (注: 丈, 尺是长度单位, $1 丈 = 10 尺$) 这段话的意思是: 有一水池一丈见方, 池中央生有一棵芦苇, 露出水面一尺. 如把它引向岸边, 正好与岸边齐. 问水有多深? 即如图所示的截面图中, $AB = 1$ 丈, $CD$ 垂直平分 $AB, DE = 1$ 尺, $CD = CB$, 那么水的深度 $CE$ 是 \\dots 尺.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q17",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知 $\\odot O_1$ 与 $\\odot O_2$ 相交于 $A, B$ 两点, 圆心 $O_1, O_2$ 在公共弦 $AB$ 的两侧, $AB = O_1O_2 = 4, \\sin \\angle AO_1B = \\frac{12}{13}$, 那么 $O_2A$ 的长是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q18",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, AB = 6, CD$ 是斜边 $AB$ 的中线. 将 $\\triangle ABC$ 绕点 $A$ 旋转, 点 $B, C$ 分别落在点 $B', C'$ 处, 且 $B'$ 在射线 $CD$ 上, 边 $AC'$ 与射线 $CD$ 交于点 $E$. 如果 $\\frac{AE}{EC'} = 3$, 那么线段 $CE$ 的长是 \\dots.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q18_0.png"
+    ],
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q19",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $27^{\\frac{1}{3}} + (\\sqrt{2}-1)^2 - (\\frac{1}{2})^{-1} + \\frac{2}{\\sqrt{2}-1}$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q20",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "20",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解不等式组: $\\begin{cases} 6(\\frac{2}{3}x - 2) < x - 3 \\\\ \\frac{1-x}{2} \\le x \\end{cases}$, 并求出它的正整数解.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q21",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知梯形 $ABCD$ 中, $AD \\parallel BC, \\angle B = 90^\\circ, CD = 15, BC = 16, AB = 12$, 点 $E$ 是边 $BC$ 上的一点, 联结 $DE$, 且 $DE = CE$.\n(1) 求梯形 $ABCD$ 面积;\n(2) 求 $\\angle DEC$ 的正切值.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q22",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "22",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "某商店销售一种商品. 经过市场调查发现: 该产品的销售单价需定在 50 元到 110 元之间较为合理, 每月销售量 $y$ (万件) 与销售单价 $x$ (元/件) 存在如图所示的一次函数关系. 根据图象提供的信息, 解答下列问题:\n(1) 求这种商品的每月销售量 $y$ (万件) 关于销售单价 $x$ (元/件) ($50 \\le x \\le 110$) 的函数解析式;\n(2) 已知六月份、八月份这种商品的销售单价分别为 95 元/件和 84 元/件, 且每月销售量的增长率是相同的, 求这个增长率.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q23",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知四边形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC, BD$ 相交于点 $O$, $AC$ 平分 $\\angle BAD, BD$ 平分 $\\angle ABC$, 点 $E$ 在边 $BC$ 的延长线上, 联结 $OE$, 交边 $CD$ 于点 $F$.\n(1) 求证: 四边形 $ABCD$ 菱形;\n(2) 如果 $OE \\perp CD$, 求证: $CE \\cdot OF = CF \\cdot OE$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q24",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如图, 已知在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2 - \\frac{16}{3}x + c$ 经过点 $A(1, 0), B(3, 0)$, 且与 $y$ 轴交于点 $C$.\n(1) 求抛物线的表达式;\n(2) 如果将抛物线向左平移 $m (m > 0)$ 个单位长度, 联结 $AC, BC$, 当抛物线与 $\\triangle ABC$ 的三边有且只有一个公共点时, 求 $m$ 的值;\n(3) 如果点 $P$ 是抛物线上一动点, 且在点 $B$ 的右侧, 联结 $PC$, 直线 $PA$ 交 $y$ 轴于点 $E$, 当 $\\angle PCE = \\angle PEC$ 时, 求点 $P$ 的坐标.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q24_0.png"
+    ],
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Changning_Two_Mock_Q25",
+    "paper": "2021_Changning_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知半圆 $O$ 的直径 $AB = 4$, 点 $C, D$ 在半圆 $O$ 上 (点 $C$ 与点 $D$ 不重合), $\\angle COB = \\angle DBO$, 弦 $BD$ 与半径 $OC$ 相交于点 $E, CH \\perp AB$, 垂足为点 $H, CH$ 交弦 $BD$ 于点 $F$.\n(1) 如图 1, 当点 $D$ 是 $\\overparen{AC}$ 的中点时, 求 $\\angle COB$ 的度数;\n(2) 如图 2, 设 $OH = x, \\frac{CF}{CE} = y$, 求 $y$ 关于 $x$ 函数解析式, 并写出定义域;\n(3) 联结 $OD, OF$, 如果 $\\triangle DOF$ 是等腰三角形, 求线段 $OH$ 的长.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "长宁",
+    "images": [
+      "/problems/2021_Changning_Two_Mock/q25_0.png"
+    ],
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q01",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "1",
+    "content": "计算 $3a \\cdot 2a$ 的结果是 ( )\nA. $6a$\nB. $6a^2$\nC. $5a$\nD. $5a^2$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "单项式乘法"
+    ],
+    "kps": [
+      "alg_monomial_mul"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q02",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "2",
+    "content": "在下列各试中, 二次根式 $\\sqrt{a}+\\sqrt{b}$ 的有理化因式是 ( )\nA. $\\sqrt{a}+\\sqrt{b}$\nB. $\\sqrt{a}-\\sqrt{b}$\nC. $\\sqrt{a+b}$\nD. $\\sqrt{a-b}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次根式",
+      "有理化"
+    ],
+    "kps": [
+      "alg_radical_rationalize"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q03",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "3",
+    "content": "某校对进校学生进行体温检测, 在某一时段测得 6 名学生的体温分别为 $36.8^\\circ C, 36.9^\\circ C, 36.5^\\circ C, 36.6^\\circ C, 36.9^\\circ C, 36.5^\\circ C$, 那么这 6 名学生体温的平均数与中位数分别是 ( )\nA. $36.7^\\circ C, 36.7^\\circ C$\nB. $36.6^\\circ C, 36.8^\\circ C$\nC. $36.8^\\circ C, 36.7^\\circ C$\nD. $36.7^\\circ C, 36.8^\\circ C$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "平均数",
+      "中位数"
+    ],
+    "kps": [
+      "stat_mean",
+      "stat_median"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q04",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "4",
+    "content": "下列函数中, $y$ 随 $x$ 的增大而减小的是 ( )\nA. $y=2x$\nB. $y=\\frac{2}{x}$\nC. $y=-2x$\nD. $y=-\\frac{2}{x}$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "正比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q05",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "5",
+    "content": "如图, 在梯形 $ABCD$ 中, $AB // DC$, 对角线 $AC, BD$ 交于点 $O$, 下列条件中, 不一定能判断梯形 $ABCD$ 是等腰梯形的是 ( )\nA. $AD=BC$\nB. $\\angle ABC = \\angle BAD$\nC. $AB=2DC$\nD. $\\angle OAB = \\angle OBA$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "等腰梯形",
+      "判定"
+    ],
+    "kps": [
+      "geo_quad_judge"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q5_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q06",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "6",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle C=90^\\circ, BC=18, AC=24$, 点 $O$ 在边 $AB$ 上, 且 $BO=2OA$. 以点 $O$ 为圆心, $r$ 为半径作圆, 如果 $\\odot O$ 与 $Rt\\triangle ABC$ 的边有 3 个公共点, 那么下列各值中, 半径 $r$ 不可以取的是 ( )\nA. 6\nB. 10\nC. 15\nD. 16",
+    "difficulty": 0.4,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "直线与圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q07",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "7",
+    "content": "9 的平方根是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "平方根"
+    ],
+    "kps": [
+      "alg_square_root"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q08",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "8",
+    "content": "函数 $y = \\frac{x}{x-1}$ 的定义域是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "定义域"
+    ],
+    "kps": [
+      "alg_func_domain"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q09",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "9",
+    "content": "如果抛物线 $y = ax^2+bx+c$ 在对称轴左侧呈上升趋势, 那么 $a$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "性质"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q10",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "10",
+    "content": "如果一元二次方程 $x^2 - px + 3 = 0$ 有两个相等实数根, 那么 $p$ 的值是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q11",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "11",
+    "content": "将 $\\pi, \\frac{2}{3}, \\sqrt{2}, 0, -1$ 这 5 个数分别写在 5 张相同卡片上, 字面朝下随意放在桌上, 任取一张, 取到无理数的概率为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "无理数"
+    ],
+    "kps": [
+      "prob_basic",
+      "alg_irrational_num"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q12",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "12",
+    "content": "某小区一天收集各类垃圾共 2.4 吨, 绘制成各类垃圾收集量的扇形图, 其中湿垃圾在扇形图中对应的圆心角为 $135^\\circ$, 那么该小区这一天湿垃圾共收集了 __________ 吨.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "扇形图"
+    ],
+    "kps": [
+      "stat_pie_chart"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q13",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "13",
+    "content": "某品牌汽车公司大力推进技术革新, 新款汽车油耗从每百公里 8 升下降到每百公里 6.8 升, 那么该汽车油耗的下降率为 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "百分数",
+      "增长率"
+    ],
+    "kps": [
+      "alg_pct_growth"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q14",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "14",
+    "content": "如图, $\\triangle ABC$ 中, 点 $D$ 在 $BC$ 上, 且 $CD=2BD$. 设 $\\vec{AB}=\\vec{a}, \\vec{AC}=\\vec{b}$, 那么 $\\vec{AD}=$ __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "分点"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q15",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "15",
+    "content": "已知传送带和水平面所成斜坡的坡度 $i=1:\\sqrt{3}$, 如果物体在传送带上经过的路程是 30 米, 那么该物体上升的高度是 __________ 米 (结果保留根号).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "坡度",
+      "解直角三角形"
+    ],
+    "kps": [
+      "geo_slope",
+      "geo_trig_ratio_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q16",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "16",
+    "content": "如图, $\\odot O$ 的半径为 6, 如果弦 $AB$ 是 $\\odot O$ 内接正方形的一边, 弦 $AC$ 是 $\\odot O$ 内接正十二边形的一边, 那么弦 $BC$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "正多边形"
+    ],
+    "kps": [
+      "geo_circle_regular_poly"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q17",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "17",
+    "content": "我们把反比例函数图象上到原点距离相等的点叫做反比例函数图象上的等距点. 如果第一象限内点 $A(2, 4)$ 与点 $B$ 是某反比例函数图象上的等距点, 那么点 $A, B$ 之间的距离是 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "新定义",
+      "距离公式"
+    ],
+    "kps": [
+      "alg_distance_formula",
+      "func_linear_inverse",
+      "alg_func_inverse_image"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q18",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "18",
+    "content": "如图, 在 $\\triangle ABC$ 中, $AD$ 是 $BC$ 边上的中线, $\\angle ADC=60^\\circ, BC=3AD$. 将 $\\triangle ABD$ 沿直线 $AD$ 翻折, 点 $B$ 落在平面上的 $B'$ 处, 联结 $AB'$ 交 $BC$ 于点 $E$, 那么 $\\frac{CE}{BE}$ 的值为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "三角形中线",
+      "比例"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_tri_median"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q18_0_fix.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q19",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{4x}{x^2-2x-3} - \\frac{x}{x-3} + \\frac{2x}{x+1}$, 其中 $x=\\sqrt{3}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "分式化简"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q20",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} \\frac{1}{2}x-3 < 2x \\\\ \\frac{2x-1}{3} \\leq \\frac{x+1}{2} \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q20_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q21",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "21",
+    "content": "如图, 已知, 在 $Rt\\triangle ABC$ 中, $\\angle C=90^\\circ, AB=4, BC=2$, 点 $D$ 是 $AC$ 的中点, 联结 $BD$ 并延长至点 $E$, 使 $\\angle E = \\angle BAC$.\n(1) 求 $\\sin \\angle ABE$ 的值;\n(2) 求点 $E$ 到直线 $BC$ 的距离.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_trig_def",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q22",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "22",
+    "content": "为了预防“诺如病毒”, 某校对专用教室采取“药熏”消毒. 从开始消毒到结束, 室内含药量 $y$ (毫克/立方米) 与时间 $x$ (分) 这两个变量之间的关系如图中折线 $OA-AB$ 所示.\n(1) 求 20 分钟至 60 分钟时间段之间 含药量 $y$ 与时间 $x$ 的函数解析式 (不要求写定义域);\n(2) 开始消毒后, 消毒人员在某一时刻对该专用教室的含药量进行第一次检测, 时隔半小时进行了第二次跟踪检测, 发现室内含药量比第一次检测时的含药量下降了 2 毫克/立方米, 求第一次检测时的含药量.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "分段函数",
+      "应用题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q23",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "23",
+    "content": "如图, 已知, 在平行四边形 $ABCD$ 中, $E$ 为射线 $CB$ 上一点, 联结 $DE$ 交对角线 $AC$ 于点 $F, \\angle ADE = \\angle BAC$.\n(1) 求证: $CF \\cdot CA = CB \\cdot CE$;\n(2) 如果 $AC=DE$, 求证: 四边形 $ABCD$ 是菱形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "平行四边形",
+      "菱形判定"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q24",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "24",
+    "content": "如图, 在平面直角坐标系 $xOy$ 中, 已知 $B(0, 2), C(1, -\\frac{3}{2})$, 点 $A$ 在 $x$ 轴正半轴上, 且 $OA=2OB$, 抛物线 $y = ax^2 + bx \\ (a \\neq 0)$ 经过点 $A, C$.\n(1) 求这条抛物线的表达式;\n(2) 将抛物线先向右平移 $m$ 个单位, 再向上平移 1 个单位, 此点 $C$ 恰好落在直线 $AB$ 上的点 $C'$ 处, 求 $m$ 的值;\n(3) 设点 $B$ 关于原抛物线对称轴 对称点为 $B'$, 联结 $AC$, 如果点 $F$ 在直线 $AB'$ 上, $\\angle ACF = \\angle BAO$, 求点 $F$ 的坐标.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "func_quadratic_basic",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Fengxian_Two_Mock_Q25",
+    "paper": "2021_Fengxian_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知扇形 $AOB$ 的半径 $OA=4, \\angle AOB=90^\\circ$, 点 $C, D$ 分别在半径 $OA, OB$ 上 (点 $C$ 不与点 $A$ 重合), 联结 $CD$. 点 $P$ 是弧 $AB$ 上一点, $PC=PD$.\n(1) 当 $\\cot \\angle ODC = \\frac{3}{4}$, 以 $CD$ 为半径的圆 $D$ 与圆 $O$ 相切时, 求 $CD$ 的长;\n(2) 当点 $D$ 与点 $B$ 重合, 点 $P$ 为弧 $AB$ 的中点时, 求 $\\angle OCD$ 的度数;\n(3) 如果 $OC=2$, 且四边形 $ODPC$ 是梯形, 求 $\\frac{S_{\\triangle PCD}}{S_{\\triangle OCD}}$ 的值.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "奉贤",
+    "year": "2021",
+    "tags": [
+      "扇形",
+      "圆相切",
+      "梯形"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_sector",
+      "geo_trapezoid"
+    ],
+    "images": [
+      "/problems/2021_Fengxian_Two_Mock/q25_0.png",
+      "/problems/2021_Fengxian_Two_Mock/q25_1.png",
+      "/problems/2021_Fengxian_Two_Mock/q25_2.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q01",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "1",
+    "content": "下列各数中, 2 的相反数是 ( )\nA. 2\nB. -2\nC. $\\frac{1}{2}$\nD. $-\\frac{1}{2}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "相反数"
+    ],
+    "kps": [
+      "alg_opposite_num"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q02",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "2",
+    "content": "当 $x \\neq 0$ 时, 下列运算正确的是 ( )\nA. $x^4+x^2=x^6$\nB. $x^4-x^2=x^2$\nC. $x^4 \\cdot x^2 = x^8$\nD. $x^4 \\div x^2 = x^2$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q03",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "3",
+    "content": "把抛物线 $y=2x^2$ 向左平移 1 个单位, 则所得抛物线的解析式是 ( )\nA. $y=2(x-1)^2$\nB. $y=2(x+1)^2$\nC. $y=2x^2-1$\nD. $y=2x^2+1$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移"
+    ],
+    "kps": [
+      "alg_quadratic_func_shift"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q04",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "4",
+    "content": "某校足球队 16 名队员的年龄情况如表, 这些队员年龄的中位数和众数分别是 ( )\n\n| 年龄(岁) | 14 | 15 | 16 | 17 |\n| :--- | :--- | :--- | :--- | :--- |\n| 人数 | 3 | 5 | 5 | 3 |\n\nA. 15, 15\nB. 15.5, 15\nC. 15.5, 16\nD. 16, 16",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "众数"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_mode"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q05",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "5",
+    "content": "如图, 在 $\\triangle ABC$ 中, 点 $D, E$ 分别是边 $BC, AC$ 的中点, $AD$ 和 $BE$ 交于点 $G$, 设 $\\vec{AB}=\\vec{a}, \\vec{AE}=\\vec{b}$, 那么向量 $\\vec{BG}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 ( )\nA. $-\\frac{2}{3}\\vec{a} + \\frac{2}{3}\\vec{b}$\nB. $\\frac{2}{3}\\vec{a} + \\frac{2}{3}\\vec{b}$\nC. $-\\frac{1}{2}\\vec{a} + \\frac{1}{2}\\vec{b}$\nD. $\\frac{1}{2}\\vec{a} + \\frac{1}{2}\\vec{b}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "重心"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_tri_centroid"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q5_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q06",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "6",
+    "content": "在四边形 $ABCD$ 中, $AD // BC$, 下列选项中, 不能判定四边形 $ABCD$ 为矩形的是 ( )\nA. $AD=BC$ 且 $AC=BD$\nB. $AD=BC$ 且 $\\angle A = \\angle B$\nC. $AB=CD$ 且 $\\angle A = \\angle C$\nD. $AB=CD$ 且 $\\angle A = \\angle B$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "矩形",
+      "判定"
+    ],
+    "kps": [
+      "geo_quad_judge"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q07",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "7",
+    "content": "计算: $(3a)^2 =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q08",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "8",
+    "content": "分解因式: $x^2 - 4x =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_common"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q09",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "9",
+    "content": "方程 $\\sqrt{x+3}=3$ 的解是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q10",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "10",
+    "content": "不等式组 $\\begin{cases} x-1 < 0 \\\\ 2x+3 > x \\end{cases}$ 的解集是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q11",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "11",
+    "content": "关于 $x$ 的方程 $x^2 - 2x + k = 0$ 有两个不相等的实数根, 则实数 $k$ 的取值范围 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q12",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "12",
+    "content": "已知点 $A(1, y_1)$、点 $B(2, y_2)$ 在抛物线 $y=ax^2-2$ 上, 且 $y_1 < y_2$, 那么 $a$ 取值范围是 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "性质"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q13",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "13",
+    "content": "一个不透明的盒子中装有 $n$ 个小球, 其中红球有 4 个, 小球除颜色不同外其它都相同. 如果设计一个游戏, 从盒中任意摸出一个球, 使得摸出红球的概率是 0.2, 那么 $n=$ __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q14",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "14",
+    "content": "为了了解学生们零用钱的使用情况, 某校从全校 800 名学生中随机抽取了 40 名学生进行调查, 并将这部分学生平均每月使用零用钱的金额绘制成了频率分布直方图 (如图). 请估计该校学生中平均每月使用零用钱的金额小于 200 元的约有 __________ 名.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "频率分布直方图"
+    ],
+    "kps": [
+      "stat_freq_histogram"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q15",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "15",
+    "content": "如果正六边形的半径是 1, 那么它的边心距是 _________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "正六边形",
+      "边心距"
+    ],
+    "kps": [
+      "geo_regular_poly_apothem"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q16",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "16",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle C=90^\\circ, AB=9, BC=6, DE // BC$, 且 $CD=2AD$, 以点 $C$ 为圆心, $r$ 为半径作 $\\odot C$. 如果 $\\odot C$ 与线段 $BE$ 有两个交点, 那么 $\\odot C$ 的半径 $r$ 的取值范围是 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "位置关系"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q17",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "17",
+    "content": "当一个凸四边形的一条对角线把原四边形分割成两个等腰三角形时, 我们称这个四边形为“等腰四边形”, 其中这条对角线称为这个四边形的“等腰线”. 如果凸四边形 $ABCD$ 是“等腰四边形”, 对角线 $BD$ 是该四边形的“等腰线”, 其中 $\\angle ABC = 90^\\circ, AB=BC=CD \\neq AD$, 那么 $\\angle BAD$ 的度数为 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "新定义",
+      "等腰三角形",
+      "四边形"
+    ],
+    "kps": [
+      "geo_isosceles_tri",
+      "geo_quadrilateral"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q18",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "18",
+    "content": "如图, 正方形 $ABCD$ 的边长为 4, 点 $M$ 在边 $DC$ 上, 将 $\\triangle BCM$ 沿直线 $BM$ 翻折, 使得点 $C$ 落在同一平面内的点 $C'$ 处, 联结 $DC'$ 并延长交正方形 $ABCD$ 一边于点 $N$. 当 $BN=DM$ 时, $CM$ 的长为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "正方形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q19",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "19",
+    "content": "计算: $|1-\\sqrt{2}| - (\\sqrt{3})^0 + \\frac{4}{\\sqrt{3}-1} - (\\frac{\\sqrt{2}}{2})^{-1}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q20",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "20",
+    "content": "解方程: $\\frac{6}{x^2-9} + 1 = \\frac{1}{x-3}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "分式方程"
+    ],
+    "kps": [
+      "alg_rational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q21",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "21",
+    "content": "如图, 在 $\\triangle ABC$ 中, $\\angle ACB = 45^\\circ, \\cot B = \\frac{3}{2}, BC=10$.\n(1) 求 $AB$ 的长;\n(2) 如果 $CD$ 为边 $AB$ 上的中线, 求 $\\angle DCB$ 的正切值.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "三角形中线"
+    ],
+    "kps": [
+      "geo_tri_median",
+      "geo_trig_def",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q22",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "22",
+    "content": "一辆汽车从甲地出发前往相距 350 千米的乙地, 在行驶了 100 千米后, 因降雨, 汽车每行驶 1 千米的耗油量比降雨前多 0.02 升. 如图中的折线 $ABC$ 反映了该汽车行驶过程中, 油箱中剩余的油量 $y$ (升) 与行驶的路程 $x$ (千米) 之间的函数关系.\n(1) 当 $0 \\leq x \\leq 100$ 时, 求 $y$ 关于 $x$ 函数解析式 (不需要写出定义域);\n(2) 当汽车到达乙地时, 求油箱中的剩余油量.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "应用题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q23",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "23",
+    "content": "如图, 在 $\\square ABCD$ 中, 点 $G$ 边 $BC$ 延长线上一点, 联结 $AG$ 分别交 $BD$ 和 $CD$ 于点 $E$ 和 $F$, 联结 $DG$.\n(1) 求证: $AE^2 = EF \\cdot EG$;\n(2) 如果 $\\angle ABD = \\angle AGD$, 求证: 四边形 $ABGD$ 是等腰梯形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "平行四边形",
+      "等腰梯形判定"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q23_1.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q24",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "24",
+    "content": "如图, 在平面直角坐标系 $xOy$ 中, 直线 $l: y = \\frac{3}{4}x+b$ 与 $x$ 轴、$y$ 轴分别交于点 $A、B$, 与双曲线 $H: y = \\frac{k}{x}$ 交于点 $P(2, \\frac{9}{2})$, 直线 $x=m$ 分别与直线 $l$ 和双曲线 $H$ 交于点 $E、D$.\n(1) 求 $k$ 和 $b$ 的值;\n(2) 当点 $E$ 在线段 $AB$ 上时, 如果 $ED=BO$, 求 $m$ 的值;\n(3) 点 $C$ 是 $y$ 轴上一点, 如果四边形 $BCDE$ 是菱形, 求点 $C$ 的坐标.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "反比例函数",
+      "菱形"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "func_linear_inverse",
+      "alg_func_inverse_image",
+      "alg_func_linear_image",
+      "geo_quad_property",
+      "alg_func_linear_property"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Hongkou_Two_Mock_Q25",
+    "paper": "2021_Hongkou_Two_Mock",
+    "question": "25",
+    "content": "在 $Rt\\triangle ABC$ 中, $\\angle ABC = 90^\\circ, \\tan A = \\frac{3}{4}, AC=5$, 点 $M$ 是射线 $AB$ 上一点, 以 $MC$ 为半径的 $\\odot M$ 交直线 $AC$ 于点 $D$.\n(1) 如图, 当 $MC=AC$ 时, 求 $CD$ 的长;\n(2) 当点 $D$ 在线段 $AC$ 的延长线上时, 设 $BM=x$, 四边形 $CBMD$ 的面积为 $y$, 求 $y$ 关于 $x$ 的函数解析式, 并写出它的定义域;\n(3) 如果直线 $MD$ 与射线 $BC$ 相交于点 $E$, 且 $\\triangle ECD$ 与 $\\triangle EMC$ 相似, 求线段 $BM$ 长.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "虹口",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "圆",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_trig_def",
+      "geo_similar_prop",
+      "geo_trig_vector",
+      "geo_similar_basic",
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Hongkou_Two_Mock/q25_0.png",
+      "/problems/2021_Hongkou_Two_Mock/q25_1.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q01",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "1",
+    "content": "绝对值小于 3 的整数有 ( )\nA. 2个\nB. 3个\nC. 5个\nD. 6个",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "整数"
+    ],
+    "kps": [
+      "alg_abs_value"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q02",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "2",
+    "content": "化简 $(a^2)^3$ 的结果为 ( )\nA. $a^5$\nB. $a^6$\nC. $a^8$\nD. $a^9$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q03",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "3",
+    "content": "下列图形中, 是轴对称图形, 但不是中心对称图形的是 ( )\nA. 圆\nB. 正六边形\nC. 菱形\nD. 等边三角形",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "轴对称",
+      "中心对称"
+    ],
+    "kps": [
+      "geo_symmetry"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q04",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "4",
+    "content": "对数据: 1、1, 1、2、2、3、4, 下列判断正确的是 ( )\nA. 中位数和众数相等\nB. 中位数和平均数相等\nC. 众数和平均数相等\nD. 中位数、众数和平均数都不相等",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "众数",
+      "平均数"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_mode",
+      "stat_mean"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q05",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "5",
+    "content": "“利用描点法画函数图象, 进而探究函数的一些简单性质”是初中阶段研究函数的主要方式, 请试着画函数 $y = -\\frac{1}{x^2}$, 其图象位于 ( )\nA. 第一、二象限\nB. 第三、四象限\nC. 第一、三象限\nD. 第二、四象限",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "函数图象",
+      "象限"
+    ],
+    "kps": [
+      "alg_func_image_quadrant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q06",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "6",
+    "content": "如图, 正六边形 $ABCDEF$ 中, 记 $\\vec{AB}=\\vec{a}, \\vec{BC}=\\vec{b}$, 则 $\\vec{a}-\\vec{b}$ 是 ( )\nA. $\\vec{CD}$\nB. $\\vec{DE}$\nC. $\\vec{EF}$\nD. $\\vec{FA}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "正六边形"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_regular_hexagon"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q07",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "7",
+    "content": "计算: $\\sqrt{1+2^3} =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q08",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "8",
+    "content": "分解因式: $x^2-9=$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_square_diff"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q09",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "9",
+    "content": "方程 $\\sqrt{2-\\frac{1}{x}}=1$ 的解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "分式方程",
+      "无理方程"
+    ],
+    "kps": [
+      "alg_rational_eq",
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q10",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "10",
+    "content": "已知关于 $x$ 的方程 $x^2 - 6x + k = 0$ 有两个相等的实数根, 那么 $k$ 的值是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q11",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "11",
+    "content": "如果反比例函数 $y = \\frac{2-k}{x}$ ($k$ 为正整数), 在每个象限内, 当自变量 $x$ 的值逐渐增大时, $y$ 的值随着逐渐减小, 那么正整数 $k$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q12",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "12",
+    "content": "直线 $y=2x+6$ 与两坐标轴围成的三角形面积是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "三角形面积"
+    ],
+    "kps": [
+      "alg_linear_func_area"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q13",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "13",
+    "content": "掷两枚骰子, 两者朝上面点数之和只可能是 2、3、4、5、6、7、8、9、10、11 和 12, 共 11 种可能, 所以小明认为“掷两枚骰子, 出现两者朝上面点数之和为 2”的概率是 $\\frac{1}{11}$. 你同意小明的观点吗? 答: __________, 理由是 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "基本概念"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q14",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "14",
+    "content": "为了了解某区初中学生暑假中阅读课外读物的情况, 小杰和小丽随机调查了该区内 60 名初中学生, 并将调查数据整理成下面的条形图 (如图). 如果该区共有初中学生 15000 人, 那么估计该区在暑假中阅读了 4 本课外读物的初中学生有 __________ 人.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q15",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "15",
+    "content": "如图, 某水库水坝的坝高为 24 米, 如果迎水坡 $AB$ 的坡度为 $1:0.75$, 那么该水库迎水坡 $AB$ 的长度为 __________ 米.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "坡度"
+    ],
+    "kps": [
+      "geo_slope"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q16",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "16",
+    "content": "已知在 $\\triangle ABC$ 中, $AC=3, BC=4, AB=5$, 点 $D$ 位于边 $AB$ 上, 过点 $D$ 作边 $BC$ 的平行线交边 $AC$ 于点 $E$, 过点 $D$ 作边 $AC$ 的平行线交边 $BC$ 于点 $F$ (如图), 设 $AD=x$, 四边形 $CEDF$ 的面积为 $y$, 则 $y$ 关于 $x$ 的函数关系式是 __________ (不必写定义域).",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "几何图形面积",
+      "平行四边形"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q17",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "17",
+    "content": "在平面直角坐标系内, 已知点 $A(3, 4)$, 如果圆 $A$ 与两坐标轴共有且只有 3 个公共点, 那么圆 $A$ 的半径长是 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "直线与圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q18",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "18",
+    "content": "如图, 在等腰梯形 $ABCD$ 中, $AD // BC$. 将 $\\triangle ABD$ 沿对角线 $BD$ 翻折, 点 $A$ 的对应点 $E$ 恰好位于边 $BC$ 上, 且 $BE:EC=3:2$, 则 $\\angle C$ 的余切值是 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "等腰梯形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_trig_def",
+      "geo_quad_property",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q19",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "19",
+    "content": "计算: $(\\pi - 3)^0 + \\frac{4}{\\sqrt{5}-\\sqrt{3}} - 4\\sin^2 30^\\circ - \\sqrt{20}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q20",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} x^2+y^2=5, & ① \\\\ x^2-4y^2=0. & ② \\end{cases}$",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q21",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "21",
+    "content": "如图, $AB$ 是圆 $O$ 的直径, 点 $C、D$ 为圆 $O$ 上的点, 满足: $\\widehat{AC}=\\widehat{CD}$, $AD$ 交 $OC$ 于点 $E$. 已知 $OE=3, EC=2$.\n(1) 求弦 $AD$ 的长;\n(2) 请过点 $C$ 作 $AB$ 的平行线交弦 $AD$ 于点 $F$, 求线段 $EF$ 的长.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "弦长",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_circle_chord"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q22",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "22",
+    "content": "某款轿车每行驶 100 千米的耗油量 $y$ 升与其行驶速度 $x$ 千米/小时之间的函数关系图象如图所示, 其中线段 $AB$ 的表达式为 $y = -\\frac{1}{25}x+13$ ($25 \\leq x \\leq 100$), 点 $C$ 的坐标为 (140, 14), 即行驶速度为 140 千米/小时时该轿车每行驶 100 千米的耗油量是 14 升.\n(1) 求线段 $BC$ 的表达式;\n(2) 如果从甲地到乙地全程为 260 千米, 其中有 60 千米限速 50 千米/小时的省道和 200 千米限速 120 千米/小时的高速公路, 那么在不考虑其他因素的情况下, 这款轿车从甲地行驶到乙地至少需要耗油多少升?",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "分段函数",
+      "应用题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q23",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "23",
+    "content": "如图, $CD$ 是直角 $\\triangle ABC$ 斜边 $AB$ 上的中线, 点 $E$ 位于边 $AC$ 上, 且 $\\angle ADE = \\angle B - \\angle A$.\n(1) 求证: $\\triangle CDE \\sim \\triangle ABC$;\n(2) 当 $DA:EA = \\sqrt{6}:1$ 时, 求 $\\triangle CDE$ 与 $\\triangle ABC$ 的面积比.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "直角三角形中线"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_tri_median",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q24",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "24",
+    "content": "如果抛物线 $C_1: y=ax^2+bx+c$ 与抛物线 $C_2: y=-ax^2+dx+e$ 的开口方向相反, 顶点相同, 我们称抛物线 $C_2$ 是 $C_1$ 的“对顶”抛物线.\n(1) 求抛物线 $y=x^2-4x+7$ 的“对顶”抛物线的表达式;\n(2) 将抛物线 $y=x^2-4x+7$ 的“对顶”抛物线沿其对称轴平移, 使所得抛物线与原抛物线 $y=x^2-4x+7$ 形成两个交点 $M、N$, 记平移前后两抛物线的顶点分别为 $A、B$, 当四边形 $AMBN$ 是正方形时, 求正方形 $AMBN$ 的面积.\n(3) 某同学在探究“对顶”抛物线时发现: 如果抛物线 $C_1$ 与 $C_2$ 的顶点位于 $x$ 轴上, 那么系数 $b$ 与 $d$, $c$ 与 $e$ 之间的关系是确定的, 请写出它们之间的关系.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "新定义",
+      "平移",
+      "正方形"
+    ],
+    "kps": [
+      "geo_quad_judge",
+      "func_quadratic_basic",
+      "geo_quad_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Huangpu_Two_Mock_Q25",
+    "paper": "2021_Huangpu_Two_Mock",
+    "question": "25",
+    "content": "如图, $AD$ 是 $\\triangle ABC$ 的角平分线, 过点 $C$ 作 $AD$ 的垂线交边 $AB$ 于点 $E$, 垂足为点 $O$, 连接 $DE$.\n(1) 求证: $DE=DC$;\n(2) 当 $\\angle ACB=90^\\circ$, 且 $\\triangle BDE$ 与 $\\triangle ABC$ 的面积比为 $1:3$ 时, 求 $CE:AD$ 的值;\n(3) 是否存在 $\\triangle ABC$ 能使 $CE$ 为 $\\triangle ABC$ 边 $AB$ 上的中线, 且 $CE=AD$? 如果能, 请用 $\\angle CAB$ 的某个三角比的值来表示它此时的大小; 如果不能, 请说明理由.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "黄浦",
+    "year": "2021",
+    "tags": [
+      "角平分线",
+      "相似三角形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_angle_bisector",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Huangpu_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q01",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "1",
+    "content": "下列四个选项中的数, 不是分数的是 ( )\nA. 80%\nB. $\\frac{\\sqrt{3}}{3}$\nC. $2\\frac{1}{3}$\nD. $\\frac{22}{7}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "分数",
+      "无理数"
+    ],
+    "kps": [
+      "alg_rational_num"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q02",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "2",
+    "content": "已知: $a \\neq 0$, 下列四个算式中, 正确的是 ( )\nA. $a^2+a^3=a^5$\nB. $a^2 \\cdot a^3 = a^6$\nC. $(a^2)^3 = a^8$\nD. $a^2 \\div a^3 = a^{-1}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q03",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "3",
+    "content": "下列四个函数解析式中, 其函数图像经过原点的是 ( )\nA. $y = \\frac{1}{2}x+1$\nB. $y = -\\frac{2}{x}$\nC. $y = x^2+2x$\nD. $y = (x-1)^2$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "函数性质",
+      "截距"
+    ],
+    "kps": [
+      "alg_func_graph_origin"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q04",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "4",
+    "content": "下列各统计量中, 表示一组数据波动程度的量是 ( )\nA. 平均数\nB. 众数\nC. 方差\nD. 频率",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "方差"
+    ],
+    "kps": [
+      "stat_variance"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q05",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "5",
+    "content": "下列四个命题中, 真命题是 ( )\nA. 对角线互相平分 四边形是平行四边形\nB. 对角线互相垂直的四边形是菱形\nC. 以一条对角线为对称轴的四边形是菱形\nD. 对称轴互相垂直的四边形是矩形",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "真命题",
+      "几何判定"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_quad_judge"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q06",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "6",
+    "content": "如果两圆的圆心距为 3, 其中一个圆的半径长为 3, 那么这两个圆的位置关系不可能是 ( )\nA. 两圆内切\nB. 两圆内含\nC. 两圆外离\nD. 两圆相交",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q07",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "7",
+    "content": "$|1-\\sqrt{2}| =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "实数"
+    ],
+    "kps": [
+      "alg_abs_value_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q08",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "8",
+    "content": "计算: $(x+1)(x-2) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "整式乘法"
+    ],
+    "kps": [
+      "alg_poly_mul"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q09",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "9",
+    "content": "如果点 $P(3, b)$ 在函数 $y = \\frac{1}{x+1}$ 的图象上, 那么 $b$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "函数性质"
+    ],
+    "kps": [
+      "alg_func_point_belong"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q10",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "10",
+    "content": "如果关于 $x$ 的方程 $x^2 - 6x + m = 0$ 有两个相等的实数根, 那么 $m$ 的值为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q11",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "11",
+    "content": "无理方程 $\\sqrt{2x+3}=-x$ 实数解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q12",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "12",
+    "content": "从一副去掉大小王的扑克牌中随机抽取一张, 抽到数字为 “6” 的扑克牌的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q13",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "13",
+    "content": "如果点 $A(x_1, y_1)$ 和 $B(x_2, y_2)$ 在反比例函数 $y = \\frac{k}{x}$ ($k<0$) 的图象上, 且 $0 < x_1 < x_2$, 那么 $y_1$ 与 $y_2$ 的大小关系为: $y_1$ __________ $y_2$. (填 “$<$” 或 “$=$” 或 “$>$”)",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "单调性"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q14",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "14",
+    "content": "为了估计某个鱼塘里的鱼的数量, 养殖工人网住了 50 条鱼, 在每条鱼的尾巴上做个记号后, 又将鱼放回鱼塘. 等鱼游散后再随机撒网, 网住 60 条鱼, 发现其中有 2 条鱼的尾巴上有记号. 设该鱼塘里有 $x$ 条鱼, 依据题意, 可以列出方程: __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "样本估计总体",
+      "列方程"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q15",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "15",
+    "content": "已知 $AD$ 是 $\\triangle ABC$ 的中线, 设向量 $\\vec{AB}=\\vec{a}$, 向量 $\\vec{AD}=\\vec{b}$, 那么向量 $\\vec{AC}=$ __________ (用向量 $\\vec{a}、\\vec{b}$ 的线性组合表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "中线"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q16",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "16",
+    "content": "如果一个正三角形外接圆半径长为 2, 那么这个三角形的边长为 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "等边三角形",
+      "外接圆"
+    ],
+    "kps": [
+      "geo_tri_circumcircle"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q17",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "17",
+    "content": "已知直角三角形的直角边长为 $a、b$, 斜边长为 $c$, 将满足 $a^2+b^2=c^2$ 的一组正整数称为 “勾股数组”, 记为 $(a, b, c)$, 其中 $a \\leq b < c$. 事实上, 早在公元前十一世纪, 中国古代数学家商高就发现了 “勾三、股四、弦五”, 我们将其简记为 $(3, 4, 5)$. 类似的勾股数组还有很多…… 例如: $(5, 12, 13)$, $(7, 24, 25)$, $(9, 40, 41)$, $(11, 60, 61)$, $(13, 84, 85)$, …… 如果 $a=2n+1$ ($n$ 为正整数), 那么 $b+c=$ __________. (用含 $n$ 的代数式表示)",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "勾股数",
+      "归纳猜想"
+    ],
+    "kps": [
+      "alg_induction_patterns"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q18",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "18",
+    "content": "在矩形 $ABCD$ 中, $AB=6, BC=4$ (如图), 点 $E$ 是边 $AB$ 的中点, 联结 $DE$. 将 $\\triangle DAE$ 沿直线 $DE$ 翻折, 点 $A$ 的对应点为 $A'$, 那么点 $A'$ 到直线 $BC$ 的距离为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "矩形",
+      "相似三角形",
+      "点到直线距离"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q19",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{1}{x+1} + \\frac{1}{x-1} - \\frac{x^2+1}{x^2-1}$, 其中, $x=\\sqrt{2}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q20",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} x^2-5xy-6y^2=0 \\\\ x^2-4xy+4y^2=1 \\end{cases}$",
+    "difficulty": 0.4,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q21",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "21",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=6, \\cos A = \\frac{3}{5}$. $D$ 是 $AB$ 边的中点, 过点 $D$ 作直线 $CD$ 的垂线, 与边 $BC$ 相交于点 $E$.\n(1) 求线段 $CE$ 的长;\n(2) 求 $\\sin \\angle BDE$ 的值.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "相似三角形",
+      "直角三角形性质"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_trig_def",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q22",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "22",
+    "content": "张先生准备租一处房屋开一家公司. 现有甲、乙两家房屋出租, 甲家房屋已装修好, 每月租金 3000 元; 乙家房屋没有装修, 每月租金 2000 元, 但要装修成甲家房屋的模样, 需要花费 40000 元. 请你自行定义变量, 建立函数, 并利用与函数有关的知识帮助张先生设计一个租房方案 (备注: 只从最省钱的角度设计租房方案, 写出具体的解题过程).",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "一次函数应用",
+      "最优方案"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q23",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "23",
+    "content": "已知: 四边形 $ABCD$ 是正方形, 点 $E$ 是 $BC$ 边中点, 点 $F$ 在边 $AB$ 上, 联结 $DE、EF$.\n(1) 如图 1, 如果 $\\tan \\angle BEF = \\frac{1}{2}$, 求证: $EF \\perp DE$;\n(2) 如图 2, 如果 $\\tan \\angle BEF = \\frac{3}{4}$, 求证: $\\angle DEF = 3\\angle CDE$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "正方形",
+      "相似三角形",
+      "锐角三角比",
+      "角度证明"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_angle_calc",
+      "geo_similar_basic",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q23_0.png",
+      "/problems/2021_Jiading_Two_Mock/q23_1.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q24",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ (如图) 中, 二次函数 $f(x) = ax^2 - 2ax + a-1$ (其中 $a$ 是常数, 且 $a \\neq 0$) 的图象是开口向上的抛物线.\n(1) 求该抛物线的顶点 $P$ 的坐标;\n(2) 我们将横、纵坐标都是整数的点叫做 “整点”, 将抛物线 $f(x) = ax^2 - 2ax + a-1$ 与 $y$ 轴的交点记为 $A$, 如果线段 $OA$ 上的 “整点” 的个数小于 4, 试求 $a$ 的取值范围;\n(3) 如果 $f(-1)、f(0)、f(3)、f(4)$ 这四个函数值中有且只有一个值大于 0, 试写出符合题意的一个函数解析式; 结合函数图象, 求 $a$ 的取值范围.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "顶点",
+      "新定义",
+      "不等式"
+    ],
+    "kps": [
+      "alg_inequality_system",
+      "func_quadratic_basic"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jiading_Two_Mock_Q25",
+    "paper": "2021_Jiading_Two_Mock",
+    "question": "25",
+    "content": "已知: $\\odot O$ 的半径长度是 5, $AB$ 是 $\\odot O$ 的直径, $CD$ 是 $\\odot O$ 的弦. 分别过点 $A、B$ 向直线 $CD$ 作垂线, 垂足分别为 $E、F$.\n(1) 如图 1, 当点 $A、B$ 位于直线 $CD$ 同侧, 求证: $CF=DE$;\n(2) 如图 2, 当点 $A、B$ 位于直线 $CD$ 两侧, $\\angle BAE = 30^\\circ$, 且 $AE=2BF$, 求弦 $CD$ 的长;\n(3) 设弦 $CD$ 的长度为 $l$, 线段 $AE$ 的长度为 $m$, 线段 $BF$ 的长度为 $n$, 探究 $l$ 与 $m、n$ 之间的数量关系, 并用含 $m、n$ 的代数式表示 $l$.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "垂线",
+      "全等三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_congruent_adv",
+      "geo_circle_chord",
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_congruent_judge",
+      "geo_congruent_prop"
+    ],
+    "images": [
+      "/problems/2021_Jiading_Two_Mock/q25_0.png",
+      "/problems/2021_Jiading_Two_Mock/q25_1.png",
+      "/problems/2021_Jiading_Two_Mock/q25_2.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q01",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "1",
+    "content": "下列计算正确的是 ( )\nA. $1^{-1}=-1$\nB. $1^0=0$\nC. $(-1)^{-1}=1$\nD. $(-1)^0=1$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "实数运算",
+      "负指数",
+      "零指数"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q02",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "2",
+    "content": "如果关于 $x$ 的方程 $x^2-6x+m=0$ 有实数根, 那么 $m$ 的取值范围是 ( )\nA. $m>9$\nB. $m \\geq 9$\nC. $m \\leq 9$\nD. $m<9$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q03",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "3",
+    "content": "一次函数 $y=3x-2$ 的图像不经过的象限是 ( )\nA. 第一象限\nB. 第二象限\nC. 第三象限\nD. 第四象限",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "象限"
+    ],
+    "kps": [
+      "alg_linear_func_quadrant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q04",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "4",
+    "content": "对于等边三角形, 下列说法正确的为 ( )\nA. 既是中心对称图形, 又是轴对称图形\nB. 是轴对称图形, 但不是中心对称图形\nC. 是中心对称图形, 但不是轴对称图形\nD. 既不是中心对称图形, 又不是轴对称图形",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等边三角形",
+      "对称性"
+    ],
+    "kps": [
+      "geo_symmetry"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q05",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "5",
+    "content": "某厂对一个班组生产的零件进行调查, 该组在 8 天中每天所出的次品数如下 (单位: 个) : 3, 3, 0, 2, 2, 3, 0, 3, 那么该班组在 8 天中出的次品数的中位数与方差分别是 ( )\nA. 2.5与1.5\nB. 2与1.5\nC. 2.5与$\\frac{\\sqrt{6}}{2}$\nD. 2与$\\frac{\\sqrt{6}}{2}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "方差"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_variance"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q06",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "6",
+    "content": "对于命题: ①如果一个圆上所有的点都在另一个圆的内部, 那么这个圆内含; ②如果一个圆上所有的点都在另一个圆的外部, 那么这个圆外离. 下列判断正确的是 ( )\nA. ①是真命题, ②是假命题\nB. ①是假命题, ②是真命题\nC. ①、②都是真命题\nD. ①、②都是假命题",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "真假命题",
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_logic_statements"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q07",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "7",
+    "content": "化简: $|\\sqrt{3}-2| =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "绝对值",
+      "实数"
+    ],
+    "kps": [
+      "alg_abs_value_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q08",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "8",
+    "content": "计算: $x \\div (x^2-x) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q09",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "9",
+    "content": "函数 $f(x) = \\frac{x-1}{3-2x}$ 定义域为 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "定义域"
+    ],
+    "kps": [
+      "alg_func_domain"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q10",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "10",
+    "content": "如果正比例函数的图像经过第二、四象限, 那么函数值 $y$ 随 $x$ 的增大而 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "正比例函数",
+      "增减性"
+    ],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q11",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "11",
+    "content": "方程组 $\\begin{cases} x^2-y^2=3 \\\\ x-y=1 \\end{cases}$ 的解为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q12",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "12",
+    "content": "从 1, 2, 3 这三个数中任选两个组成两位数, 在组成的所有数中任意抽取一个数, 这个数恰好能被 3 整除的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "整除"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q13",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "13",
+    "content": "为了了解学生用于阅读课外书籍 时间的情况, 某校在 300 名九年级学生中随机对 40 名学生每周阅读课外书籍所用的时间进行统计. 根据调查结果画出频率分布直方图, 如图所示 (每个小组可包括最小值, 不包括最大值), 由此可以估计该校九年级学生阅读课外书籍的时间在 6 小时及以上的人数约为 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "频率分布直方图",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_freq_histogram",
+      "stat_sample_estimate"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q13_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q14",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "14",
+    "content": "如图, 在 $\\triangle ABC$ 中, 点 $D$ 在边 $AB$ 上, $\\angle ACD = \\angle B$, $AD=2, AC=\\sqrt{6}$, 设 $\\vec{BA}=\\vec{a}, \\vec{BC}=\\vec{b}$, 那么 $\\vec{CD} =$ __________. (用向量 $\\vec{a}, \\vec{b}$ 的式子表示).",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_vector_calc",
+      "geo_similar_prop",
+      "geo_vector_concept",
+      "geo_similar_basic"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q14_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q15",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "15",
+    "content": "如果 $\\odot O_1$ 与 $\\odot O_2$ 相交, $\\odot O_1$ 的半径是 5, $O_1O_2=3$, 那么 $\\odot O_2$ 的半径 $r$ 的取值范围是 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q16",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "16",
+    "content": "如图, 已知在梯形 $ABCD$ 中, $AD // BC, AB=CD$, 矩形 $DEFG$ 的顶点 $E、F、G$ 分别在边 $AB、BC、CD$ 上, 如果 $DE=5$, $\\tan C = \\frac{5}{2}$, 那么 $AE$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等腰梯形",
+      "矩形",
+      "相似三角形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_trig_def",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q17",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "17",
+    "content": "已知矩形纸片 $ABCD$ 的边 $AB=10, BC=12$ (如图), 将它折叠后, 点 $D$ 落在边 $AB$ 的中点处, 那么折痕的长为 __________.",
+    "difficulty": 0.65,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "矩形",
+      "勾股定理"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q18",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "18",
+    "content": "在一个三角形中, 如果一个内角是另一内角的 $n$ 倍 ($n$ 为整数), 那么我们称这个三角形为 $n$ 倍三角形. 如果一个三角形既是 2 倍三角形, 又是 3 倍三角形, 那么这个三角形最小的内角度数为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "新定义",
+      "三角形内角和",
+      "分类讨论"
+    ],
+    "kps": [
+      "geo_tri_angles"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q19",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "19",
+    "content": "先化简, 再求值: $\\frac{x+2}{x^2-x} - \\frac{x-1}{x^2+x} - \\frac{4}{x^2-1}$. 其中 $x=\\sqrt{2}+1$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_expr_simplify"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q20",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "20",
+    "content": "已知点 $A(2, m+3)$ 在双曲线 $y = \\frac{m}{x}$ 上.\n(1) 求此双曲线表达式与点 $A$ 的坐标;\n(2) 如果点 $B(a, 5-a)$ 在此双曲线上, 图像经过点 $A、B$ 的一次函数的函数值 $y$ 随 $x$ 的增大而增大, 求此一次函数的解析式.",
+    "difficulty": 0.4,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "一次函数",
+      "待定系数法"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "func_linear_inverse",
+      "alg_func_inverse_image",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q21",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "21",
+    "content": "已知: 如图, 在 $\\triangle ABC$ 中, $AB=AC, AE \\perp BC$, 垂足为 $E$. $DC \\perp BC, DC=BC=2, \\angle ADB=90^\\circ, BD$ 与 $AE、AC$ 分别相交于点 $F、G$.\n求: (1) $AF$ 长;\n(2) $AG$ 的长.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "等腰三角形",
+      "直角三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_isosceles_tri"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q22",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "22",
+    "content": "小丽的叔叔先用 900 元从甲批发部购进一种商品, 后发现同样的商品乙批发部比甲批发部每件便宜 3 元, 又用 1200 元钱从乙批发部购进了同样的商品, 且比从甲批发部购进数量多了 40 件. 问: 乙批发部的这种商品每件几元?",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "分式方程应用题",
+      "行程/工程问题"
+    ],
+    "kps": [
+      "alg_rational_eq_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q23",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "23",
+    "content": "已知: 如图, 在梯形 $ABCD$ 中, $AD // BC, \\angle B=90^\\circ, E$ 是 $AC$ 的中点, $DE$ 的延长线交边 $BC$ 于点 $F$.\n(1) 求证: 四边形 $AFCD$ 是平行四边形;\n(2) 如果 $2AE^2 = AD \\cdot BC$, 求证四边形 $AFCD$ 是菱形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "梯形",
+      "平行四边形判定",
+      "菱形判定",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q24",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中, 点 $A$ 的坐标为 $(5, 0)$ (如图), 经过点 $A$ 的抛物线 $y=x^2+bx+5$ 与 $y$ 轴相交于点 $B$, 顶点为点 $C$.\n(1) 求此抛物线表达式与顶点 $C$ 的坐标;\n(2) 求 $\\angle ABC$ 的正弦值;\n(3) 将此抛物线向上平移, 所得新抛物线的顶点为 $D$, 且 $\\triangle DCA$ 与 $\\triangle ABC$ 相似, 求平移后的新抛物线的表达式.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移",
+      "相似三角形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_similar_k_model",
+      "geo_trig_def",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jingan_Two_Mock_Q25",
+    "paper": "2021_Jingan_Two_Mock",
+    "question": "25",
+    "content": "如图, 已知半圆 $O$ 的直径 $AB=4$, 点 $P$ 在线段 $OA$ 上, 半圆 $P$ 与半圆 $O$ 相切于点 $A$, 点 $C$ 在半圆 $P$ 上, $CO \\perp AB$, $AC$ 的延长线与半圆 $O$ 相交于点 $D$, $OD$ 与 $BC$ 相交于点 $E$.\n(1) 求证: $AD \\cdot AP = OD \\cdot AC$;\n(2) 设半圆 $P$ 的半径为 $x$, 线段 $CD$ 的长为 $y$, 求 $y$ 与 $x$ 之间的函数解析式, 并写出定义域;\n(3) 当点 $E$ 在半圆 $P$ 上时, 求半圆 $P$ 的半径.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "静安",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "相切",
+      "相似三角形",
+      "函数解析式"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Jingan_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q01",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "1",
+    "content": "下列根式中, 是最简二次根式的是 ( )\nA. $\\sqrt{8}$\nB. $\\sqrt{5}$\nC. $\\sqrt[3]{3}$\nD. $\\sqrt[4]{2}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "最简二次根式"
+    ],
+    "kps": [
+      "alg_radical_simplest"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q02",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "2",
+    "content": "已知 $x>y$, 那么下列正确的是 ( )\nA. $x+y>0$\nB. $ax>ay$\nC. $x-2>y+2$\nD. $2-x<2-y$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "不等式的性质"
+    ],
+    "kps": [
+      "alg_inequality_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q03",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "3",
+    "content": "已知正比例函数的图象经过点 $(1, -2)$, 那么这个正比例函数的解析式是 ( )\nA. $y = -2x$\nB. $y = -\\frac{1}{2}x$\nC. $y = 2x$\nD. $y = \\frac{1}{2}x$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "正比例函数",
+      "待定系数法"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q04",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "4",
+    "content": "某人统计九年级一个班 35 人的身高时, 算出平均数与中位数都是 158 厘米, 但后来发现其中一位同学的身高记录错误, 将 160 厘米写成了 166 厘米, 经重新计算后, 正确的中位数是 $a$ 厘米, 那么中位数 $a$ 应 ( )\nA. 大于 158\nB. 小于 158\nC. 等于 158\nD. 无法判断",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数"
+    ],
+    "kps": [
+      "stat_median"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q05",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "5",
+    "content": "已知三条线段长分别为 $2cm、4cm、a cm$, 若这三条线段首尾顺次联结能围成一个三角形, 那么 $a$ 的取值可以是 ( )\nA. $1cm$\nB. $2cm$\nC. $4cm$\nD. $7cm$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "三角形",
+      "三边关系"
+    ],
+    "kps": [
+      "geo_tri_sides"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q06",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "6",
+    "content": "已知 $\\odot A、\\odot B、\\odot C$ 的半径分别为 $2、3、4$, 且 $AB=5, AC=6, BC=6$, 那么这三个圆的位置关系 ( )\nA. $\\odot A$ 与 $\\odot B$、$\\odot C$ 外切, $\\odot B$ 与 $\\odot C$ 相交\nB. $\\odot A$ 与 $\\odot B$、$\\odot C$ 相交, $\\odot B$ 与 $\\odot C$ 外切\nC. $\\odot B$ 与 $\\odot A$、$\\odot C$ 外切, $\\odot A$ 与 $\\odot C$ 相交\nD. $\\odot B$ 与 $\\odot A$、$\\odot C$ 相交, $\\odot A$ 与 $\\odot C$ 外切",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q07",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "7",
+    "content": "因式分解: $x^2-4 =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_square_diff"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q08",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "8",
+    "content": "已知 $f(x) = \\frac{x^2-2}{x}$, 那么 $f(2) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "函数值"
+    ],
+    "kps": [
+      "alg_func_value"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q09",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "9",
+    "content": "如果反比例函数 $y = \\frac{m-1}{x}$ ($m$ 是常数, $m \\neq 1$) 的图象, 在每个象限内 $y$ 随着 $x$ 的增大而减小, 那么 $m$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q10",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "10",
+    "content": "方程 $\\sqrt{x+2}=-x$ 的解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q11",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "11",
+    "content": "如果从方程 $x+1=0, x^2-2x-1=0, x+\\frac{1}{x}=1, \\sqrt{x+1}=0, x^4-1=0, \\sqrt{x}+\\frac{1}{\\sqrt{x}}=3$ 中任意选取一个方程, 那么取到的方程是整式方程的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "方程分类"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q12",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "12",
+    "content": "关于 $x$ 的方程 $x^2-2x+k=0$ 有两个不相等的实数根, 则实数 $k$ 的取值范围 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q13",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "13",
+    "content": "为了了解某校初三学生在体育测试中报名球类的情况, 随机调查了 40 名学生的报名情况, 得到如下数据:\n\n| 项目 | 排球 | 篮球 | 足球 |\n| :--- | :--- | :--- | :--- |\n| 人数 | 10 | 15 | 15 |\n\n根据此信息, 估计该校 480 名初三学生报名足球的学生人数约为 __________ 人.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q14",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "14",
+    "content": "已知正六边形 $ABCDEF$ 中, $AB=6$, 那么正六边形 $ABCDEF$ 的面积等于 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "正六边形",
+      "面积"
+    ],
+    "kps": [
+      "geo_regular_hexagon"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q15",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "15",
+    "content": "如图, $BE、AD$ 分别是 $\\triangle ABC$ 的两条中线, 设 $\\vec{BQ}=\\vec{a}, \\vec{BD}=\\vec{b}$, 那么向量 $\\vec{AB}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "中线",
+      "重心"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_tri_centroid"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q16",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "16",
+    "content": "小张、小王两个人从甲地出发, 去 8 千米外的乙地, 图中线段 $OA、PB$ 分别反映了小张、小王步行所走的路程 $S$ (千米) 与时间 $t$ (分钟) 的函数关系, 根据图象提供的信息, 小王比小张早到乙地的时间是 __________ 分钟.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "行程问题"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q17",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "17",
+    "content": "如图, 在 $\\triangle ABC$ 中, $AB=AC=4, BC=6$, 把 $\\triangle ABC$ 绕着点 $B$ 顺时针旋转, 当点 $A$ 与边 $BC$ 上的点 $A'$ 重合时, 那么 $\\angle AA'B$ 的余弦值等于 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "等腰三角形",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_trig_def",
+      "geo_isosceles_tri",
+      "geo_trig_vector",
+      "geo_triangle_prop"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q18",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "18",
+    "content": "如图, 在矩形 $ABCD$ 中, $AB=3, BC=4$, 点 $E$ 在对角线 $BD$ 上, 联结 $AE$, 作 $EF \\perp AE$ 交边 $BC$ 于 $F$, 若 $BF = \\frac{39}{16}$, 那么 $BE =$ __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "矩形",
+      "相似三角形",
+      "垂直"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q19",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "19",
+    "content": "计算: $(\\sqrt{3}-\\sqrt{2})(\\sqrt{3}+\\sqrt{2}) + \\frac{2}{\\sqrt{3}+1} - (\\sqrt{2})^{-2} - |1-\\sqrt{3}|$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q20",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} 2x-y=1 \\\\ 2x^2+xy-y^2=5 \\end{cases}$.",
+    "difficulty": 0.4,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q21",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "21",
+    "content": "如图, 是一个地下排水管的横截面图, 已知 $\\odot O$ 的半径 $OA$ 等于 $50cm$, 水的深度等于 $25cm$ (水的深度指 $\\widehat{AB}$ 的中点到弦 $AB$ 的距离).\n求: (1) 水面的宽度 $AB$.\n(2) 横截面浸没在水中的 $\\widehat{AB}$ 的长 (结果保留 $\\pi$).",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "垂径定理",
+      "弧长计算"
+    ],
+    "kps": [
+      "geo_circle_chord",
+      "geo_circle_arc_length"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q22",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "22",
+    "content": "$A、B$ 两地相距 18 千米, 甲工程队要在 $A、B$ 两地间铺设一条输送天然气的管道, 乙工程队要在 $A、B$ 两地间铺设一条输油管道, 已知甲工程队每天比乙工程队少铺设 1 千米.\n(1) 若两队同时开工, 甲工程队每天铺设 3 千米, 求乙工程队比甲工程队提前几天完成?\n(2) 若甲工程队提前 3 天开工, 结果两队同时完成任务, 求甲、乙两队每天各铺设管道多少千米?",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "分式方程应用题",
+      "工程问题"
+    ],
+    "kps": [
+      "alg_rational_eq_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q23",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "23",
+    "content": "如图, 已知在梯形 $ABCD$ 中, $AD // BC$, 对角线 $BD$ 平分 $\\angle ABC$, 点 $G$ 在底边 $BC$ 上, 联结 $DG$ 交对角线 $AC$ 于 $F$, $\\angle DGB = \\angle DAB$.\n(1) 求证: 四边形 $ABGD$ 是菱形;\n(2) 联结 $EG$, 求证: $BG \\cdot EG = BC \\cdot EF$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "菱形判定",
+      "相似三角形",
+      "梯形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q24",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "24",
+    "content": "已知直线 $y=kx+b$ 经过点 $A(-2, 0)$, $B(1, 3)$ 两点, 抛物线 $y=ax^2-4ax+b$ 与已知直线交于 $C、D$ 两点 (点 $C$ 在点 $D$ 的右侧), 顶点为 $P$.\n(1) 求直线 $y=kx+b$ 的表达式;\n(2) 若抛物线的顶点不在第一象限, 求 $a$ 的取值范围;\n(3) 若直线 $DP$ 与直线 $AB$ 所成的夹角等于 $15^\\circ$, 且点 $P$ 在直线 $AB$ 的上方, 求抛物线 $y=ax^2-4ax+b$ 的表达式.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "一次函数",
+      "夹角",
+      "解直角三角形"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "func_quadratic_basic",
+      "geo_trig_ratio_app",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Jinshan_Two_Mock_Q25",
+    "paper": "2021_Jinshan_Two_Mock",
+    "question": "25",
+    "content": "已知在 $\\triangle ABC$ 中, $AB=AC=2\\sqrt{3}$, $\\angle BAC=120^\\circ$, $\\triangle ADE$ 的顶点 $D$ 在边 $BC$ 上, $AE$ 交 $BC$ 于点 $F$ (点 $F$ 在点 $D$ 的右侧), $\\angle DAE=30^\\circ$.\n(1) 求证: $\\triangle ABF \\sim \\triangle DCA$;\n(2) 若 $AD=ED$.\n① 联结 $EC$, 当点 $F$ 是 $BC$ 的黄金分割点 ($FC>BF$) 时, 求 $\\frac{S_{\\triangle ABF}}{S_{\\triangle FEC}}$.\n② 联结 $BE$, 当 $DF=1$ 时, 求 $BE$ 的长.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "一模",
+    "district": "金山",
+    "year": "2021",
+    "tags": [
+      "等腰三角形",
+      "相似三角形",
+      "黄金分割",
+      "旋转"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_isosceles_tri",
+      "geo_golden_ratio"
+    ],
+    "images": [
+      "/problems/2021_Jinshan_Two_Mock/q25_0.png",
+      "/problems/2021_Jinshan_Two_Mock/q25_1.png",
+      "/problems/2021_Jinshan_Two_Mock/q25_2.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q01",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "1",
+    "content": "下列运算中, 运算结果正确的是 ( )\nA. $(x^2)^3=x^5$\nB. $x^2 \\cdot x^3 = x^5$\nC. $x^2+x^3=x^5$\nD. $x^{10} \\div x^2 = x^5$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q02",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "2",
+    "content": "下列二次根式中, 是最简二次根式的是 ( )\nA. $\\sqrt{\\frac{1}{3}}$\nB. $\\sqrt{5b^3}$\nC. $\\sqrt{x-y}$\nD. $\\sqrt{x^2+2x+1}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "最简二次根式"
+    ],
+    "kps": [
+      "alg_radical_simplest"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q03",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "3",
+    "content": "在平面直角坐标系 $xOy$ 中, 一次函数 $y=kx+b$ 的图象如图所示, 那么根据图象, 下列结论正确的是 ( )\nA. $k>0, b>0$\nB. $k>0, b<0$\nC. $k<0, b<0$\nD. $k<0, b>0$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "图象性质"
+    ],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q3_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q04",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "4",
+    "content": "如果一组数据为 $-1, 0, 1, 0, 0$, 那么下列说法不正确的是 ( )\nA. 这组数据的方差是 0\nB. 这组数据的众数是 0\nC. 这组数据的中位数是 0\nD. 这组数据的平均数是 0",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "平均数",
+      "中位数",
+      "方差"
+    ],
+    "kps": [
+      "stat_mean",
+      "stat_median",
+      "stat_variance"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q05",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "5",
+    "content": "下列命题中, 真命题是 ( )\nA. 有两个内角是 $90^\\circ$ 的四边形是矩形\nB. 一组邻边互相垂直的菱形是正方形\nC. 对角线互相垂直的梯形是等腰梯形\nD. 两组内角相等的四边形是平行四边形",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "真假命题",
+      "特殊平行四边形判定"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_quad_judge"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q06",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "6",
+    "content": "如图, 在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, AC=BC, AB=8$, 点 $P$ 在边 $AB$ 上, $\\odot P$ 的半径为 3, $\\odot C$ 的半径为 2, 如果 $\\odot P$ 和 $\\odot C$ 相交, 那么线段 $AP$ 长的取值范围是 ( )\nA. $0<AP<8$\nB. $1<AP<5$\nC. $1<AP<7$\nD. $4<AP<8$",
+    "difficulty": 0.4,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q07",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "7",
+    "content": "$\\frac{4}{3}$ 的倒数是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "实数",
+      "倒数"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q08",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "8",
+    "content": "在实数范围内分解因式: $2x-6 =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_common"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q09",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "9",
+    "content": "已知函数 $f(x) = \\frac{2x}{x-1}$, 那么 $f(3) =$ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "函数值"
+    ],
+    "kps": [
+      "alg_func_value"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q10",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "10",
+    "content": "方程 $\\sqrt{2x-1}=x$ 的解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q11",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "11",
+    "content": "二元一次方程组 $\\begin{cases} 3x+2y=15 \\\\ x-2y=5 \\end{cases}$ 的解是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "二元一次方程组"
+    ],
+    "kps": [
+      "alg_linear_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q12",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "12",
+    "content": "如果关于 $x$ 的一元二次方程 $x^2+2x-c=0$ 有两个相等的实数根, 那么 $c=$ __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q13",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "13",
+    "content": "已知点 $A(x_1, y_1)$ 和 $B(x_2, y_2)$ 均在反比例函数 $y = \\frac{k}{x}$ ($k>0$) 的图象上, 且 $x_2>x_1>0$, 那么 $y_1$ __________ $y_2$. (填 “$<$”, “$>$” 或 “$=$”)",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q14",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "14",
+    "content": "布袋中有五个大小一样的球, 分别写有 $2.2\\dot{7}, \\sqrt{3}, \\sqrt[3]{27}, \\frac{\\pi}{3}, \\frac{29}{11}$ 这五个实数, 从布袋中任意摸出一个球, 那么摸出写有无理数的球的概率为 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "实数分类"
+    ],
+    "kps": [
+      "prob_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q15",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "15",
+    "content": "为了了解全区 104000 个小学生家庭是否有校内课后服务需求, 随机调查了 4000 个小学生家庭, 结果发现有 2800 个小学生家庭有校内课后服务需求, 那么估计该区约有 __________ 个小学生家庭有校内课后服务需求.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q16",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "16",
+    "content": "《九章算术》中记载了一种测距的方法. 如图, 有座塔在河流北岸的点 $E$ 处, 一棵树位于河流南岸的点 $A$ 处, 从点 $A$ 处开始, 在河流南岸立 4 根标杆, 以这 4 根标杆为顶点, 组成边长为 10 米的正方形 $ABCD$, 且 $A, D, E$ 三点在一条直线上, 在标杆 $B$ 处观察塔 $E$, 视线 $BE$ 与边 $DC$ 相交于点 $F$, 如果测得 $FC=4$ 米, 那么塔与树的距离 $AE$ 为 __________ 米.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "应用题",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q17",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "17",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, \\angle A=60^\\circ$, 点 $D$ 为 $AB$ 中点, 将 $\\triangle ACD$ 沿直线 $CD$ 翻折后, 点 $A$ 落在点 $E$ 处, 设 $\\vec{BC}=\\vec{a}, \\vec{DB}=\\vec{b}$, 那么向量 $\\vec{DE}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "翻折",
+      "直角三角形中线"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc",
+      "geo_motion_folding"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q18",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "18",
+    "content": "对于任意三角形, 如果存在一个菱形, 使得这个菱形的一条边与三角形的一条边重合, 且三角形的这条边所对的顶点在菱形的这条边的对边上, 那么称这个菱形为该三角形的 “最优覆盖菱形”. 问题: 如图, 在 $\\triangle ABC$ 中, $AB=AC, BC=4$, 且 $\\triangle ABC$ 的面积为 $m$, 如果 $\\triangle ABC$ 存在 “最优覆盖菱形” 为菱形 $BCMN$, 那么 $m$ 的取值范围是 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "新定义",
+      "菱形",
+      "面积范围"
+    ],
+    "kps": [
+      "geo_quad_property",
+      "alg_inequality_system"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q19",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "19",
+    "content": "计算: $(1-\\sqrt{3})^2 + (\\frac{\\sqrt{3}}{3})^{-1} - 9^{\\frac{1}{2}} + |1-\\sqrt{3}|$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q20",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} \\frac{1}{3}x > x-2 \\\\ 9x+1 > 7x-3 \\end{cases}$, 并把解集在数轴上表示出来.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q20_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q21",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "21",
+    "content": "如图, 四边形 $ABCD$ 是平行四边形, 联结 $AC, AB=5, BC=7, \\cos B = \\frac{3}{5}$.\n(1) 求 $\\angle ACB$ 的度数;\n(2) 求 $\\sin \\angle ACD$ 的值.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "平行四边形"
+    ],
+    "kps": [
+      "geo_trig_def",
+      "geo_quad_property",
+      "geo_trig_vector"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q22",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "22",
+    "content": "在疫情防控常态化背景下, 每周需要对面积为 4800 平方米的仓库进行一次全面消毒工作. 最初采用人工操作完成消毒任务. 为提高效率采用机器人消毒, 机器人消毒每分钟消毒面积比人工操作多 60 平方米, 并且提前 40 分钟完成消毒任务. 求人工操作每分钟消毒面积为多少平方米.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "分式方程应用题",
+      "工程问题"
+    ],
+    "kps": [
+      "alg_rational_eq_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q23",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "23",
+    "content": "如图, 在梯形 $ABCD$ 中, $AD // BC, AB=CD$, 过点 $A$ 作 $AE \\perp BC$, 垂足为点 $E$, 过点 $E$ 作 $EF \\perp CD$, 垂足为点 $F$, 联结 $DE$, 且 $DE$ 平分 $\\angle ADC$.\n(1) 求证: $\\triangle ABE \\cong \\triangle ECF$;\n(2) 联结 $BD, BD$ 与 $AE$ 交于点 $G$, 当 $AB^2 = BG \\cdot BD$ 时, 求证 $EC^2 = BE \\cdot BC$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "等腰梯形",
+      "全等三角形",
+      "相似三角形",
+      "角平分线"
+    ],
+    "kps": [
+      "geo_congruent_adv",
+      "geo_similar_k_model",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_congruent_judge",
+      "geo_congruent_prop",
+      "geo_quad_property"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q24",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = -x^2+mx+n$ 经过点 $A(5, 0)$, 顶点为点 $B$, 对称轴为直线 $x=3$, 且对称轴与 $x$ 轴交于点 $C$. 直线 $y=kx+b$ 经过点 $A$, 与线段 $BC$ 交于点 $E$.\n(1) 求抛物线 $y = -x^2+mx+n$ 的表达式;\n(2) 联结 $BO、EO$. 当 $\\triangle BOE$ 的面积为 3 时, 求直线 $y=kx+b$ 的表达式;\n(3) 在 (2) 的条件下, 设点 $D$ 为 $y$ 轴上的一点, 联结 $BD、AD$, 当 $BD=EO$ 时, 求 $\\angle DAO$ 的余切值.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "待定系数法",
+      "面积",
+      "三角比"
+    ],
+    "kps": [
+      "alg_func_linear",
+      "func_quadratic_basic",
+      "geo_trig_def",
+      "geo_trig_vector",
+      "alg_func_linear_image",
+      "alg_func_linear_property"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Minhang_Two_Mock_Q25",
+    "paper": "2021_Minhang_Two_Mock",
+    "question": "25",
+    "content": "如图, 在矩形 $ABCD$ 中, $AB=4, BC=8$, 点 $P$ 在边 $BC$ 上 (点 $P$ 与端点 $B, C$ 不重合), 以 $P$ 为圆心, $PB$ 为半径作圆, 圆 $P$ 与射线 $BD$ 的另一个交点为点 $E$, 直线 $CE$ 与射线 $AD$ 交于点 $G$. 点 $M$ 为线段 $BE$ 的中点, 联结 $PM$. 设 $BP=x, BM=y$.\n(1) 求 $y$ 关于 $x$ 的函数解析式, 并写出该函数的定义域;\n(2) 联结 $AP$, 当 $AP // CE$ 时, 求 $x$ 的值;\n(3) 如果射线 $EC$ 与圆 $P$ 的另一个公共点为点 $F$, 当 $\\triangle CPF$ 为直角三角形时, 求 $\\triangle CPF$ 的面积.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "闵行",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "矩形",
+      "相似三角形",
+      "直角三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_k_model",
+      "geo_similar_basic",
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Minhang_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q01",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "1",
+    "content": "下列实数中, 是无理数的是 ( )\nA. $0.\\dot{3}$\nB. $3.1415926$\nC. $\\sqrt{3}$\nD. $\\sqrt[3]{27}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "实数分类",
+      "无理数"
+    ],
+    "kps": [
+      "alg_real_number_type"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q02",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "2",
+    "content": "下列二次根式中, 被开方数中各因式的指数都为 1 的是 ( )\nA. $\\sqrt{x^2y^2}$\nB. $\\sqrt{x^2+y^2}$\nC. $\\sqrt{(x+y)^2}$\nD. $\\sqrt{xy^2}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "二次根式",
+      "定义"
+    ],
+    "kps": [
+      "alg_radical_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q03",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "3",
+    "content": "我国古代《四元玉鉴》中记载 “二果问价” 问题, 其内容如下: 九百九十九文钱, 甜果苦果买一千, 甜果九个十一文, 苦果七个四文钱, 试问甜苦果几个, 又问各该几个钱? 若设买甜果 $x$ 个, 买苦果 $y$ 个, 则下列关于 $x, y$ 的二元一次方程组中符合题意的是 ( )\nA. $\\begin{cases} x+y=999 \\\\ \\frac{11}{9}x + \\frac{4}{7}y = 1000 \\end{cases}$\nB. $\\begin{cases} x+y=1000 \\\\ \\frac{11}{9}x + \\frac{4}{7}y = 999 \\end{cases}$\nC. $\\begin{cases} x+y=999 \\\\ \\frac{9}{11}x + \\frac{7}{4}y = 1000 \\end{cases}$\nD. $\\begin{cases} x+y=1000 \\\\ \\frac{9}{11}x + \\frac{7}{4}y = 999 \\end{cases}$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "二元一次方程组",
+      "应用题",
+      "数学文化"
+    ],
+    "kps": [
+      "alg_linear_eq_system_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q04",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "4",
+    "content": "下列语句所描述的事件中, 是不可能事件的是 ( )\nA. 手可摘星辰\nB. 黄河入海流\nC. 大漠孤烟直\nD. 红豆生南国",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "事件分类",
+      "不可能事件"
+    ],
+    "kps": [
+      "prob_event_type"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q05",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "5",
+    "content": "在下列图形中, 中心对称图形是 ( )\nA. 等边三角形\nB. 平行四边形\nC. 等腰梯形\nD. 正五边形",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "中心对称"
+    ],
+    "kps": [
+      "geo_symmetry_center"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q06",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "6",
+    "content": "下列命题中, 真命题是 ( )\nA. 周长相等的锐角三角形都全等\nB. 周长相等的直角三角形都全等\nC. 周长相等的钝角三角形都全等\nD. 周长相等的等腰直角三角形都全等",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "真假命题",
+      "三角形全等"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_congruent_tri_judge"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q07",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "7",
+    "content": "据统计, 截至 2021 年 4 月 14 日, 全国各地累计报告接种新冠病毒疫苗 175 623 000 剂次, 这个数用科学记数法表示为 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "alg_scientific_notation"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q08",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "8",
+    "content": "计算: $\\frac{3b^2}{a} \\times \\frac{a}{b} = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "alg_rational_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q09",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "9",
+    "content": "在实数范围内分解因式: $x^2-4 = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_formula"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q10",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "10",
+    "content": "如果关于 $x$ 的方程 $x^2+3x-k=0$ 没有实数根, 那么 $k$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q11",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "11",
+    "content": "方程 $\\sqrt{3-x}=2$ 的解是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q12",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "12",
+    "content": "将抛物线 $y=x^2+2$ 向右平移 2 个单位后, 所得新抛物线的顶点坐标是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移"
+    ],
+    "kps": [
+      "alg_quadratic_func_shift"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q13",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "13",
+    "content": "在数据 1, 2, 3, 4, 5, 6, $n$ 中, 众数是 2, 那么这组数据的中位数是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "众数",
+      "中位数"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_mode"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q14",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "14",
+    "content": "如果两个相似三角形的相似比是 1:3, 那么这两个三角形面积的比是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "相似三角形",
+      "性质"
+    ],
+    "kps": [
+      "geo_similar_tri_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q15",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "15",
+    "content": "已知两个非零向量 $\\vec{a}, \\vec{b}$ 的方向相反, 且 $2|\\vec{a}|=3|\\vec{b}|$, 那么用 $\\vec{b}$ 表示 $\\vec{a}$ 为 __________.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "向量"
+    ],
+    "kps": [
+      "alg_vector_basic"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q16",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "16",
+    "content": "一副三角尺按如图的位置摆放 (顶点 $C$ 与 $F$ 重合, 边 $CA$ 与边 $FE$ 叠合, 顶点 $B, C, D$ 在一条直线上). 将三角尺 $DEF$ 绕着点 $F$ 按顺时针方向旋转 $n^\\circ$ ($0 < n < 180$), 如果 $DE // AB$, 那么 $n$ 的值是 __________.",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "平行线",
+      "三角尺"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_parallel_lines"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q17",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "17",
+    "content": "将联结四边形对边中点的线段称为 “中对线”. 凸四边形 $ABCD$ 的对角线 $AC=BD=4$, 且两条对角线的夹角为 $60^\\circ$, 那么该四边形较短的 “中对线” 的长度为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "中点连线",
+      "四边形",
+      "余弦定理/勾股定理"
+    ],
+    "kps": [
+      "geo_midpoint_segment"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q18",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "18",
+    "content": "如图, 矩形 $ABCD$ 中, 点 $E, F$ 分别在 $AD, BC$ 边上, $DE=2AE, BF=2CF$, 将四边形 $ABFE$ 沿 $BF$ 所在直线翻折, 点 $A$ 落在点 $A'$ 处, 点 $E$ 落在点 $E'$ 处, 如果 $E'F \\perp CE'$, 那么 $\\frac{AB}{AD}$ 的值为 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "翻折",
+      "矩形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_motion_folding",
+      "geo_rectangle",
+      "geo_similar_tri"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q19",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "19",
+    "content": "计算: $|3-\\sqrt{3}| - 27^{\\frac{1}{3}} + 2^{-2} + \\frac{2}{\\sqrt{3}+1}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "alg_real_number_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q20",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "20",
+    "content": "解不等式组: $\\begin{cases} 3x > x-6 \\\\ \\frac{x-1}{2} < \\frac{x+6}{6} \\end{cases}$, 并把解集在数轴上表示出来, 写出这个不等式组的自然数解.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "不等式组",
+      "自然数解"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q21",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "21",
+    "content": "平面直角坐标系 $xOy$ 中, 直线 $y=\\frac{1}{2}x$ 与直线 $y=-1$ 相交于点 $A$, 反比例函数 $y=\\frac{k}{x}$ ($k \\neq 0$) 的图象经过点 $A$ 且与直线 $y=\\frac{1}{2}x$ 的另一个交点为点 $B$.\n(1) 求反比例函数的解析式;\n(2) 点 $C$ 在直线 $y=-1$ 上且横坐标为 3, 求 $\\angle ACB$ 的正切值.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "反比例函数",
+      "一次函数",
+      "正切值"
+    ],
+    "kps": [
+      "alg_inverse_func",
+      "alg_linear_func",
+      "geo_trig_ratio"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q22",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "22",
+    "content": "如图 1 是一个公园入口双翼闸机的双翼展开时的截面图, 闸机的双翼 $\\triangle PCA$ 和 $\\triangle QDB$ 成轴对称, $PC$ 和 $QD$ 均垂直于地面, 双翼边缘的端点 $A$ 与 $B$ 在同一水平线上, 且它们之间的距离为 $16cm$, 双翼边缘 $AC=BD=54cm$, 且与闸机侧立面夹角 $\\angle PCA = \\angle QDB = 30^\\circ$.\n(1) 求闸机通道宽度, 即 $PC$ 和 $QD$ 之间的距离;\n(2) 经实践调查, 8:00 至 14:00 该公园入园游客较多, 图 2 为该公园 8:00 至 14:00 每一小时为一个时段的入园人数统计图的一部分 (每个时间段含前一个整点时刻不含后一个整点时刻), 现已知所有统计数据的平均数为 4200 人.\n① 求 9:00~10:00 时段的入园游客人数;\n② 根据该公园的承载能力, 建议 “某个时段入园游客超过 5000 人” 或 “在园内游客总数超过 20000 人” 的对游客入园进行适当限流, 如不考虑个别出园游客, 那么哪几个时段建议公园需要采取限流措施? 并分别说明原因.",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "应用题",
+      "统计",
+      "解直角三角形"
+    ],
+    "kps": [
+      "geo_trig_ratio_app",
+      "stat_bar_chart",
+      "stat_mean"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q22_0.png",
+      "/problems/2021_Pudong_Two_Mock/q22_1.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q23",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "23",
+    "content": "已知: 如图, 在四边形 $ABCD$ 中, $AB // DC$, 对角线 $AC, BD$ 交于点 $O$, 过点 $C$ 作 $CE \\perp CD$ 交 $AB$ 的延长线于点 $E$, 联结 $OE, OC=OE$.\n(1) 求证: $OE = \\frac{1}{2}AC$;\n(2) 如果 $DB$ 平分 $\\angle ADC$, 求证: 四边形 $ABCD$ 是菱形.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "平行四边形",
+      "菱形",
+      "相似三角形",
+      "全等三角形"
+    ],
+    "kps": [
+      "geo_parallelogram",
+      "geo_rhombus",
+      "geo_similar_tri"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q24",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "24",
+    "content": "已知抛物线 $y=ax^2+bx+c$ 的对称轴与 $x$ 轴的交点为 $M(-3, 0)$, 抛物线上三点 $A, B, C$ 到点 $M$ 的距离都为 5, 其中点 $A, B$ 在 $x$ 轴上 (点 $A$ 在点 $B$ 的左侧), 点 $C$ 在 $y$ 轴正半轴上, 抛物线的顶点为点 $P$.\n(1) 求点 $A, B, C$ 的坐标;\n(2) 求这条抛物线的表达式及顶点坐标;\n(3) 点 $Q$ 是抛物线对称轴上一点, 当以点 $Q$ 为圆心, $QA$ 为半径的圆与线段 $AP$ 有两个交点时, 求点 $Q$ 的纵坐标的取值范围.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "圆",
+      "距离",
+      "不等式"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_circle_line_relation"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Pudong_Two_Mock_Q25",
+    "paper": "2021_Pudong_Two_Mock",
+    "question": "25",
+    "content": "四边形 $ABCD$ 内接于半径为 2 的 $\\odot O, BC=2\\sqrt{3}$, 射线 $BO$ 与对角线 $AC$ 交于点 $E$.\n(1) 如果 $AB、CD$ 是 $\\odot O$ 的内接正 $n$ 边形的边, $AD$ 是 $\\odot O$ 的内接正 $(n+2)$ 边形的边,\n① 求 $AB$ 的长;\n② 试证明 $\\triangle ABE \\sim \\triangle ACB$, 并求 $\\frac{AE}{AC}$ 的值;\n(2) 当 $\\triangle AEO$ 为等腰三角形且点 $E$ 在 $BO$ 的延长线上时, 求 $\\angle ABC$ 的大小.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "浦东",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "正多边形",
+      "相似三角形",
+      "等腰三角形"
+    ],
+    "kps": [
+      "geo_circle_inscribed",
+      "geo_similar_tri",
+      "geo_regular_polygon"
+    ],
+    "images": [
+      "/problems/2021_Pudong_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q01",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "1",
+    "content": "下列计算中, 正确的是 ( )\nA. $2a^2+3a=5a^3$\nB. $2a^2 \\cdot 3a = 5a^3$\nC. $2a^2 \\div 3a = \\frac{2}{3}a$\nD. $(2a^2)^3=8a^5$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "整式运算"
+    ],
+    "kps": [
+      "alg_poly_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q02",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "2",
+    "content": "下列单项式中, 可以与 $x^2y^3$ 合并同类项的是 ( )\nA. $x^3y^2$\nB. $\\frac{y^3x^2}{2}$\nC. $3x^2y$\nD. $2x^2y^3z$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "同类项"
+    ],
+    "kps": [
+      "alg_like_terms"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q03",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "3",
+    "content": "方程 $\\sqrt{x+2}=x$ 的根是 ( )\nA. $x=-2$\nB. $x=-1$\nC. $x=0$\nD. $x=2$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q04",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "4",
+    "content": "已知两组数据: $x_1, x_2, x_3, x_4, x_5$ 和 $x_1+2, x_2+2, x_3+2, x_4+2, x_5+2$, 下列有关这两组数据的说法中, 正确的是 ( )\nA. 平均数相等\nB. 中位数相等\nC. 众数相等\nD. 方差相等",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "方差",
+      "平均数性质"
+    ],
+    "kps": [
+      "stat_variance_prop",
+      "stat_mean_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q05",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "5",
+    "content": "已知在 $\\triangle ABC$ 和 $\\triangle A'B'C'$ 中, $AB=A'B', AC=A'C'$, 下列条件中, 不一定能得到 $\\triangle ABC \\cong \\triangle A'B'C'$ 的是 ( )\nA. $BC=B'C'$\nB. $\\angle A = \\angle A'$\nC. $\\angle C = \\angle C'$\nD. $\\angle B = \\angle B' = 90^\\circ$",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "三角形全等判定"
+    ],
+    "kps": [
+      "geo_congruent_tri_judge"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q06",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "6",
+    "content": "如图, 在平面直角坐标系中, $\\triangle ABC$ 的顶点 $A, B$ 均在 $y$ 轴上, 点 $C$ 在 $x$ 轴上, 将 $\\triangle ABC$ 绕着顶点 $B$ 旋转后, 点 $C$ 的对应点 $C'$ 落在 $y$ 轴上, 点 $A$ 的对应点 $A'$ 落在反比例函数 $y = \\frac{6}{x}$ 在第一象限的图象上. 如果点 $B, C$ 的坐标分别是 $(0, -4), (-2, 0)$, 那么点 $A'$ 的坐标是 ( )\nA. $(3, 2)$\nB. $(\\frac{3}{2}, 4)$\nC. $(2, 3)$\nD. $(4, \\frac{3}{2})$",
+    "difficulty": 0.5,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "反比例函数",
+      "坐标计算"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "alg_inverse_func",
+      "geo_coord_calc"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q6_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q07",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "7",
+    "content": "因式分解: $a^3-4a = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_formula"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q08",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "8",
+    "content": "已知 $f(x) = \\frac{2}{x-1}$, 则 $f(\\sqrt{3}) = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "函数值"
+    ],
+    "kps": [
+      "alg_func_value"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q09",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "9",
+    "content": "不等式组 $\\begin{cases} -2x < 4 \\\\ x-3 < 1 \\end{cases}$ 的解集是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_linear_ineq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q10",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "10",
+    "content": "已知正比例函数 $y=kx$ ($k$ 是常数, $k \\neq 0$) 的函数值 $y$ 随 $x$ 的值增大而减小, 那么 $k$ 的取值范围是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "正比例函数",
+      "性质"
+    ],
+    "kps": [
+      "alg_linear_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q11",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "11",
+    "content": "如果关于 $x$ 的方程 $x^2-x+m-1=0$ 有两个相等的实数根, 那么 $m$ 的值等于 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q12",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "12",
+    "content": "抛物线 $y = ax^2+ax+2$ ($a \\neq 0$) 的对称轴是直线 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "对称轴"
+    ],
+    "kps": [
+      "alg_quadratic_func_axis"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q13",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "13",
+    "content": "为了唤起公众的节水意识, 从 1993 年起, 联合国将每年的 3 月 22 日定为 “世界水日”. 某居委会表彰了社区内 100 户节约用水的家庭, 5 月份这 100 户家庭节约用水的情况如下表所示, 那么 5 月份这 100 户家庭节水量的平均数是 __________ 吨.\n| 每户节水量 (单位: 吨) | 5 | 6 | 7.2 |\n| :--- | :--- | :--- | :--- |\n| 节水户户数 | 62 | 28 | 10 |",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "平均数"
+    ],
+    "kps": [
+      "stat_mean"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q14",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "14",
+    "content": "小明已有两根长度分别是 $2cm$ 和 $5cm$ 的细竹签, 盒子里有四根长度分别是 $3cm, 4cm, 7cm, 8cm$ 的细竹签, 小明从盒子里面随意抽取一根细竹签, 恰能与已有的两根细竹签首尾顺次联结组成三角形的概率等于 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "三角形三边关系"
+    ],
+    "kps": [
+      "prob_basic",
+      "geo_tri_inequality"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q15",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "15",
+    "content": "如图, 两条平行线 $l_1, l_2$ 分别经过正五边形 $ABCDE$ 的顶点 $B, C$. 如果 $\\angle 1=20^\\circ$, 那么 $\\angle 2 = $ __________.",
+    "difficulty": 0.4,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "正五边形",
+      "平行线"
+    ],
+    "kps": [
+      "geo_regular_polygon",
+      "geo_parallel_lines"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q16",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "16",
+    "content": "如图, 已知 $\\triangle ABC$ 中, $D, E$ 分别为边 $AB, AC$ 的中点, 点 $F$ 在 $DE$ 的延长线上, $EF=DE$. 设 $\\vec{BC}=\\vec{a}, \\vec{AF}=\\vec{b}$, 那么向量 $\\vec{AC}$ 用向量 $\\vec{a}, \\vec{b}$ 表示是 __________.",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "中位线"
+    ],
+    "kps": [
+      "alg_vector_basic",
+      "geo_midpoint_segment"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q17",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "17",
+    "content": "已知等腰三角形 $ABC$ 中, $AB=AC, BC=6$, 以 $A$ 为圆心 2 为半径作 $\\odot A$, 以 $B$ 为圆心 $BC$ 为半径作 $\\odot B$, 如果 $\\odot A$ 与 $\\odot B$ 内切, 那么 $\\triangle ABC$ 的面积等于 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "圆的位置关系",
+      "等腰三角形",
+      "面积"
+    ],
+    "kps": [
+      "geo_circle_relation",
+      "geo_isosceles_tri"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q18",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "18",
+    "content": "如图, 正方形 $ABCD$ 中, $AB=4, E$ 为边 $BC$ 的中点, 点 $F$ 在 $AE$ 上, 过点 $F$ 作 $MN \\perp AE$, 分别交边 $AB, DC$ 于点 $M, N$, 联结 $FC$, 如果 $\\triangle FNC$ 是以 $CN$ 为底边的等腰三角形, 那么 $FC = $ __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "正方形",
+      "等腰三角形",
+      "垂直"
+    ],
+    "kps": [
+      "geo_square",
+      "geo_isosceles_tri",
+      "geo_perpendicular"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q18_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q19",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "19",
+    "content": "计算: $-1^{2020} + (\\frac{1}{3})^{-2} - |\\sqrt{3}-2| + \\sqrt[3]{27}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "alg_real_number_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q20",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "20",
+    "content": "解方程: $\\frac{2x}{x+3} - \\frac{24}{x^2+2x-3} = 1$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "分式方程"
+    ],
+    "kps": [
+      "alg_rational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q21",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "21",
+    "content": "在平面直角坐标系 $xOy$ 中 (如图), 已知直线 $y = -\\frac{1}{2}x+2$ 分别与 $x$ 轴, $y$ 轴交于点 $A, B$, 一个正比例函数的图象与这条直线交于点 $C$, 点 $C$ 的横坐标是 1.\n(1) 求正比例函数的解析式;\n(2) 将正比例函数的图象向上或向下平移, 交直线 $y = -\\frac{1}{2}x+2$ 于点 $D$, 设平移后函数图象的截距为 $b$, 如果交点 $D$ 始终落在线段 $AB$ 上, 求 $b$ 的取值范围.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "平移"
+    ],
+    "kps": [
+      "alg_linear_func",
+      "alg_linear_func_shift"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q22",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "22",
+    "content": "如图 1, 一扇窗户打开后可以用窗钩 $AB$ 将其固定, 窗钩的一个端点 $A$ 固定在窗户底边 $OE$ 上, 且与转轴底端 $O$ 之间的距离为 $20cm$, 窗钩的另一个端点 $B$ 可在窗框边上的滑槽 $OF$ 上移动, 滑槽 $OF$ 的长度为 $17cm$, $AB, BO, AO$ 构成一个三角形. 当窗钩端点 $B$ 与点 $O$ 之间的距离是 $7cm$ 的位置时 (如图 2), 窗户打开的角 $\\angle AOB$ 的度数为 $37^\\circ$.\n(1) 求钩 $AB$ 的长度 (精确到 $1cm$);\n(2) 现需要将窗户打开的角 $\\angle AOB$ 的度数调整到 $45^\\circ$ 时, 求此时窗钩端点 $B$ 与点 $O$ 之间的距离 (精确到 $1cm$).\n(参考数据: $\\sin 37^\\circ \\approx 0.6, \\cos 37^\\circ \\approx 0.8, \\tan 37^\\circ \\approx 0.75, \\sqrt{2} \\approx 1.4$)",
+    "difficulty": 0.6,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "应用题"
+    ],
+    "kps": [
+      "geo_trig_ratio_app"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q23",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "23",
+    "content": "已知: 如图, 在平行四边形 $ABCD$ 中, 点 $E, F$ 分别在边 $BC$, 边 $BC$ 的延长线上, 四边形 $AEFD$ 是菱形, 菱形的对角线 $AF$ 分别交 $DE, DC$ 于点 $P, Q$, $\\frac{AF}{EF} = \\frac{EF}{PF}$.\n求证: (1) 四边形 $ABCD$ 为矩形;\n(2) $BE \\cdot DQ = FQ \\cdot PE$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "平行四边形",
+      "菱形",
+      "相似三角形",
+      "全等三角形"
+    ],
+    "kps": [
+      "geo_parallelogram",
+      "geo_rhombus",
+      "geo_similar_tri"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q24",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "24",
+    "content": "在平面直角坐标系 $xOy$ 中 (如图), 已知抛物线 $y = \\frac{1}{2}x^2+bx+c$ 与 $x$ 轴交于点 $A(-2, 0), B(6, 0)$, 与 $y$ 轴交于点 $C$, 点 $D$ 是在第四象限内抛物线上的一个动点, 直线 $AD$ 与直线 $BC$ 交于点 $E$.\n(1) 求 $b, c$ 的值和直线 $BC$ 的表达式;\n(2) 设 $\\angle CAD = 45^\\circ$, 求点 $E$ 的坐标;\n(3) 设点 $D$ 的横坐标为 $d$, 用含 $d$ 的代数式表示 $\\triangle ACE$ 与 $\\triangle DCE$ 的面积比.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "面积",
+      "三角比"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "alg_linear_func",
+      "geo_area_ratio"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Putuo_Two_Mock_Q25",
+    "paper": "2021_Putuo_Two_Mock",
+    "question": "25",
+    "content": "在梯形 $ABCD$ 中, $AD // BC, AB \\perp BC, AD=3, CD=5, \\cos C = \\frac{3}{5}$ (如图). $M$ 是边 $BC$ 上一个动点 (不与点 $B, C$ 重合), 以点 $M$ 为圆心, $CM$ 为半径作圆, $\\odot M$ 与射线 $CD$, 射线 $MA$ 分别相交于点 $E, F$.\n(1) 设 $CE = \\frac{18}{5}$, 求证: 四边形 $AMCD$ 是平行四边形;\n(2) 联结 $EM$, 设 $\\angle FMB = \\angle EMC$, 求 $CE$ 的长;\n(3) 以点 $D$ 为圆心, $DA$ 为半径作圆, $\\odot D$ 与 $\\odot M$ 的公共弦恰好经过梯形的一个顶点, 求此时 $\\odot M$ 的半径长.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "普陀",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "梯形",
+      "相似三角形",
+      "公共弦"
+    ],
+    "kps": [
+      "geo_circle_line_relation",
+      "geo_similar_tri",
+      "geo_circle_relation"
+    ],
+    "images": [
+      "/problems/2021_Putuo_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q01",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "1",
+    "content": "下列二次根式中, 与 $\\sqrt{2}$ 是同类二次根式的是 ( )\nA. $\\sqrt{4}$\nB. $\\sqrt{8}$\nC. $\\sqrt{12}$\nD. $\\sqrt{20}$",
+    "difficulty": 0.1,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "同类二次根式"
+    ],
+    "kps": [
+      "alg_radical_like"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q02",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "2",
+    "content": "如果 $a>b, m$ 为非零实数, 那么下列结论一定成立的是 ( )\nA. $a+m < b+m$\nB. $m-a < m-b$\nC. $am > bm$\nD. $\\frac{a}{m} > \\frac{b}{m}$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "不等式性质"
+    ],
+    "kps": [
+      "alg_inequality_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q03",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "3",
+    "content": "下列对反比例函数 $y = -\\frac{3}{x}$ 的图象的描述, 正确的是 ( )\nA. 与坐标轴有交点\nB. 有两支, 分别在第二、四象限\nC. 经过点 $(1, 3)$\nD. 函数值 $y$ 随 $x$ 的值增大而减小",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "反比例函数性质"
+    ],
+    "kps": [
+      "alg_inverse_func_prop"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q04",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "4",
+    "content": "某校为了了解学生在 “慈善募捐” 活动中的捐款情况, 进行了抽样调查, 结果如表所示.\n| 捐款金额 (元) | 5 | 10 | 20 | 50 | 100 | 200 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 人数 | 8 | 10 | 12 | 13 | 5 | 2 |\n那么该样本中学生捐款金额的中位数和众数分别是 ( )\nA. 20 元, 50 元\nB. 35 元, 50 元\nC. 50 元, 50 元\nD. 20 元, 20 元",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "中位数",
+      "众数"
+    ],
+    "kps": [
+      "stat_median",
+      "stat_mode"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q05",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "5",
+    "content": "如果一个正多边形每一个外角都是 $45^\\circ$, 那么这个正多边形的内角和为 ( )\nA. $360^\\circ$\nB. $720^\\circ$\nC. $1080^\\circ$\nD. $1440^\\circ$",
+    "difficulty": 0.2,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "多边形内角和",
+      "多边形外角和"
+    ],
+    "kps": [
+      "geo_polygon_angles"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q06",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "6",
+    "content": "下列命题中, 真命题是 ( )\nA. 一组对边平行, 且另一组对边相等的四边形是平行四边形\nB. 一组对边平行, 且对角线相等的四边形是等腰梯形\nC. 一组对边平行, 且一组邻边互相垂直的四边形是矩形\nD. 一组对边平行, 且对角线平分一组对角的四边形是菱形",
+    "difficulty": 0.3,
+    "question_type": "选择题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "真假命题",
+      "特殊平行四边形判定",
+      "梯形判定"
+    ],
+    "kps": [
+      "geo_logic_statements",
+      "geo_parallelogram_det",
+      "geo_rhombus_det"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q07",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "7",
+    "content": "计算: $(-3a^3)^2 = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_power_rules"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q08",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "8",
+    "content": "在实数范围内分解因式: $y^2-4x^2 = $ __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_factoring_formula"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q09",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "9",
+    "content": "方程 $\\sqrt{2x+1}=3$ 的解是 __________.",
+    "difficulty": 0.1,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_irrational_eq"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q10",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "10",
+    "content": "如果关于 $x$ 的方程 $x^2+3x-k=0$ 有两个不相等的实数根, 那么 $k$ 的取值范围是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_quadratic_eq_discriminant"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q11",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "11",
+    "content": "从 $\\frac{1}{3}, 3.101001, \\pi, \\sqrt{5}$ 这四个数中任选一个数, 选出的这个数是无理数的概率是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "概率",
+      "实数分类"
+    ],
+    "kps": [
+      "prob_basic",
+      "alg_real_number_type"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q12",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "12",
+    "content": "如果将抛物线 $y = -x^2$ 向下平移, 使其经过点 $(0, -2)$, 那么所得新抛物线的表达式是 __________.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "平移"
+    ],
+    "kps": [
+      "alg_quadratic_func_shift"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q13",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "13",
+    "content": "为了了解某区 2400 名初中教师中接种新冠疫苗的教师人数, 随机调查了其中 200 名教师, 结果有 150 人接种了疫苗, 那么估计该区接种新冠疫苗的初中教师人数约有 __________ 人.",
+    "difficulty": 0.2,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "统计",
+      "样本估计总体"
+    ],
+    "kps": [
+      "stat_sample_estimate"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q14",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "14",
+    "content": "某传送带与地面所成斜坡的坡度 $i = 1:2.4$, 如果把它把物体从地面送到离地面 6 米高的地方, 那么物体所经过的路程为 __________ 米.",
+    "difficulty": 0.3,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "坡度"
+    ],
+    "kps": [
+      "geo_trig_ratio_app"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q15",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "15",
+    "content": "如图, 点 $G$ 是 $\\triangle ABC$ 的重心, 设 $\\vec{AB}=\\vec{a}, \\vec{BG}=\\vec{b}$, 那么向量 $\\vec{DC}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 __________.",
+    "difficulty": 0.5,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "向量",
+      "重心"
+    ],
+    "kps": [
+      "alg_vector_basic",
+      "geo_centroid"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q16",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "16",
+    "content": "如图, 在半径为 2 的 $\\odot O$ 中, 弦 $AB$ 与弦 $CD$ 相交于点 $M$, 如果 $AB=CD=2\\sqrt{3}$, $\\angle AMC=120^\\circ$, 那么 $OM$ 的长为 __________.",
+    "difficulty": 0.6,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "垂径定理",
+      "解直角三角形"
+    ],
+    "kps": [
+      "geo_circle_chord",
+      "geo_trig_ratio"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q17",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "17",
+    "content": "在 $\\triangle ABC$ 中, $\\angle C=90^\\circ, AC=3$, 将 $\\triangle ABC$ 绕着点 $A$ 旋转, 点 $C$ 恰好落在 $AB$ 的中点上, 设点 $B$ 旋转后的对应点为点 $D$, 则 $CD$ 的长为 __________.",
+    "difficulty": 0.7,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "旋转",
+      "直角三角形",
+      "余弦定理/解三角形"
+    ],
+    "kps": [
+      "geo_motion_rotation",
+      "geo_trig_ratio"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q18",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "18",
+    "content": "在矩形 $ABCD$ 中, $AC, BD$ 相交于点 $O, AB=4cm, AD=8cm$. $Q$ 为直线 $BC$ 上一动点, 如果以 $5cm$ 为半径 $\\odot Q$ 与矩形 $ABCD$ 的各边有 4 个公共点, 那么线段 $OQ$ 长的取值范围是 __________.",
+    "difficulty": 0.8,
+    "question_type": "填空题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "直线与圆的位置关系",
+      "矩形",
+      "动点问题"
+    ],
+    "kps": [
+      "geo_circle_line_relation"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q19",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "19",
+    "content": "计算: $27^{\\frac{2}{3}} + |\\sqrt{3}-2| + \\frac{1}{2-\\sqrt{5}} - (\\frac{1}{3})^{-2}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "实数运算"
+    ],
+    "kps": [
+      "alg_real_number_calc"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q20",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "20",
+    "content": "解方程组: $\\begin{cases} 3x+y=19 \\\\ x^2-5xy-6y^2=0 \\end{cases}$.",
+    "difficulty": 0.2,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_quadratic_eq_system"
+    ],
+    "images": [],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q21",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "21",
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=3, \\sin \\angle ABC = \\frac{1}{3}, D$ 边 $AB$ 上一点, 且 $CD=CA, BE \\perp CD$, 垂足为点 $E$.\n(1) 求 $AD$ 的长;\n(2) 求 $\\angle EBC$ 的正切值.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "解直角三角形",
+      "等腰三角形"
+    ],
+    "kps": [
+      "geo_trig_ratio",
+      "geo_isosceles_tri"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q22",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "22",
+    "content": "某校九年级学生从学校乘车前往郊野公园春游, 1 号车于上午 8 点出发, 2 号车晚 10 分钟出发, 设 1 号车的行驶时间为 $x$ 分钟, 行驶的路程为 $y_1$ 千米, 2 号车的行驶路程为 $y_2$ 千米, $y_1, y_2$ 关于 $x$ 的部分函数图象如图所示.\n(1) 求 $y_2$ 关于 $x$ 的函数解析式;\n(2) 如果 2 号车与 1 号车同时到达郊野公园的停车场, 求汽车从学校到郊野公园停车场行驶的路程.",
+    "difficulty": 0.5,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "一次函数",
+      "行程问题图像"
+    ],
+    "kps": [
+      "alg_linear_func_app"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q23",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "23",
+    "content": "已知: 如图, 在正方形 $ABCD$ 中, 联结 $BD, E$ 是边 $AB$ 上一点, $BF \\perp DE$, 垂足为点 $F$, 且 $EF \\cdot BD = BE \\cdot BF$.\n(1) 求证: $\\angle ADE = \\angle BDE$;\n(2) 延长 $DF$ 与 $CB$ 的延长线交于点 $G$, 求证: $BG = BC+AE$.",
+    "difficulty": 0.75,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "正方形",
+      "相似三角形",
+      "全等三角形"
+    ],
+    "kps": [
+      "geo_square",
+      "geo_similar_tri",
+      "geo_congruent_tri"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q24",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "24",
+    "content": "已知: 如图, 在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2+bx+3$ 图象与 $x$ 轴交于点 $A(-1, 0)$ 和点 $B$, 与 $y$ 轴交于点 $C$, 对称轴是直线 $x=1$, 顶点是点 $D$.\n(1) 求该抛物线的解析式和顶点 $D$ 的坐标;\n(2) 点 $P$ 为该抛物线第三象限上的一点, 当四边形 $PBDC$ 为梯形时, 求点 $P$ 的坐标;\n(3) 在 (2) 的条件下, 点 $E$ 为 $x$ 轴正半轴上的一点, 当 $\\tan(\\angle PBO + \\angle PEO) = \\frac{5}{2}$ 时, 求 $OE$ 的长.",
+    "difficulty": 0.85,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "二次函数",
+      "梯形",
+      "三角比"
+    ],
+    "kps": [
+      "alg_quadratic_func",
+      "geo_trapezoid",
+      "geo_trig_ratio"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q24_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Qingpu_Two_Mock_Q25",
+    "paper": "2021_Qingpu_Two_Mock",
+    "question": "25",
+    "content": "已知: 在半径为 2 的扇形 $AOB$ 中, $\\angle AOB = m^\\circ$ ($0 < m \\leq 180$), 点 $C$ 是 $\\widehat{AB}$ 上的一个动点, 直线 $AC$ 与直线 $OB$ 相交于点 $D$.\n(1) 如图 1, 当 $0 < m < 90$, $\\triangle BCD$ 是等腰三角形时, 求 $\\angle D$ 的大小 (用含 $m$ 的代数式表示);\n(2) 如图 2, 当 $m=90$ 点 $C$ 是 $\\widehat{AB}$ 的中点时, 联结 $AB$, 求 $\\frac{S_{\\triangle ABD}}{S_{\\triangle ABC}}$ 的值;\n(3) 将 $AC$ 沿 $AC$ 所在的直线折叠, 当折叠后的圆弧与 $OB$ 所在的直线相切于点 $E$, 且 $OE=1$ 时, 求线段 $AD$ 的长.",
+    "difficulty": 0.95,
+    "question_type": "解答题",
+    "exam_type": "二模",
+    "district": "青浦",
+    "year": "2021",
+    "tags": [
+      "圆",
+      "扇形",
+      "翻折",
+      "切线",
+      "面积比"
+    ],
+    "kps": [
+      "geo_circle_sector",
+      "geo_motion_folding",
+      "geo_circle_tangent",
+      "geo_area_ratio"
+    ],
+    "images": [
+      "/problems/2021_Qingpu_Two_Mock/q25_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q01",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列二次根式中,最简二次根式是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $\\sqrt{8}$",
+      "(B) $\\sqrt{6}$",
+      "(C) $\\sqrt{\\frac{1}{2}}$",
+      "(D) $\\sqrt{0.2}$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q02",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "将抛物线 $y = (x-2)^2 + 1$ 向上平移 3 个单位, 得到新抛物线的顶点坐标是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $(2, 4)$",
+      "(B) $(-1, 1)$",
+      "(C) $(5, 1)$",
+      "(D) $(2, -2)$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q03",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "关于 $x$ 的一元二次方程 $kx^2 - 4x + 1 = 0$ 有两个实数根, 则 $k$ 的取值范围是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $k > 4$",
+      "(B) $k \\le 4$",
+      "(C) $k < 4$ 且 $k \\ne 0$",
+      "(D) $k \\le 4$ 且 $k \\ne 0$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q04",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "4",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "下列统计量中, 表示一组数据波动程度的量是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) 平均数",
+      "(B) 众数",
+      "(C) 方差",
+      "(D) 频率"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q05",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "5",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "已知三角形两边的长分别是 4 和 9, 则此三角形第三边的长可以是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) 4",
+      "(B) 5",
+      "(C) 10",
+      "(D) 15"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q06",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知 $\\odot O$ 半径 $OA$ 长为 3, 点 $B$ 在线段 $OA$ 上, 且 $OB = 2$, 如果 $\\odot B$ 与 $\\odot O$ 有公共点, 那么 $\\odot B$ 的半径 $r$ 的取值范围是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "options": [
+      "(A) $r \\ge 1$",
+      "(B) $r \\le 5$",
+      "(C) $1 < r < 5$",
+      "(D) $1 \\le r \\le 5$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q07",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $8^{-\\frac{1}{3}} = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q08",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "分解因式: $a^2 - 4b^2 = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q09",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程 $\\sqrt{2x-3} = 1$ 的解是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q10",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "10",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "数 0.00035 用科学记数法表示 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q11",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "11",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "用换元法解方程 $\\frac{x-1}{x} + \\frac{2x}{x-1} = 3$ 时, 设 $\\frac{x-1}{x} = y$, 那么原方程化成关于 $y$ 的整式方程是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q12",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "已知反比例函数 $y = \\frac{k-2}{x}$ 的图像在每个象限内 $y$ 的值随 $x$ 的值增大而减小, 则 $k$ 的取值范围是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q13",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "13",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "布袋中装有 4 个红球和 5 个白球, 它们除颜色不同外其他都相同. 如果从布袋中随机摸出一个球, 那么摸到的球恰好为红球的概率是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q14",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "一次数学测试后, 某班 40 名学生按成绩分成 5 组, 第 1、2、3、4 组的频数分别为 13、10、6、7, 则第 5 组的频率为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q15",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "15",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知 $\\square ABCD$, $E$ 是边 $CD$ 的中点, 联结 $AE$ 并延长, 与 $BC$ 的延长线交于点 $F$. 设 $\\vec{AB} = \\vec{a}, \\vec{AD} = \\vec{b}$, 用 $\\vec{a}, \\vec{b}$ 表示 $\\vec{AF}$ 为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q15_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q16",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知正三角形 $ABC$ 外接圆的半径为 2, 那么正三角形 $ABC$ 的面积为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q17",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 某人在山坡坡脚 $A$ 处测得电视塔塔尖 $P$ 的仰角为 $60^\\circ$, 沿山坡向上走 200 米到达 $B$ 处, 在 $B$ 处测得点 $P$ 的仰角为 $15^\\circ$. 已知山坡 $AB$ 的坡度 $i = 1 : \\sqrt{3}$, 且 $H, A, B, P$ 在同一平面内, 那么电视塔的高度 $PH$ 为 $\\dots$ 米. (结果保留根号形式)",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q18",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知 $Rt\\triangle ABC$ 中, $\\angle ACB = 90^\\circ, AC = 6, BC = 8$. 将 $\\triangle ABC$ 翻折, 使点 $C$ 落在 $AB$ 边上的点 $D$处, 折痕 $EF$ 交边 $AC$ 于点 $E$, 交边 $BC$ 于点 $F$, 如果 $DE \\parallel BC$, 则线段 $EF$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q18_0.png"
+    ],
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q19",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "先化简, 再求值: $\\frac{2x-6}{x+2} \\div (x-2 - \\frac{5}{x+2})$, 其中 $x = -\\frac{1}{2}$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q20",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "20",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程组: $\\begin{cases} x + 3y = 4 \\\\ x^2 + 4xy - 5y^2 = 0 \\end{cases}$",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q21",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知 $Rt\\triangle ABC$ 中, $\\angle ACB = 90^\\circ, \\cot \\angle BAC = 2, BC = 4$, 以边 $AC$ 上一点 $O$ 为圆心, $OA$ 为半径 $\\odot O$ 经过点 $B$.\n(1) 求 $\\odot O$ 的半径;\n(2) 点 $P$ 是劣弧 $AB$ 的中点, 求 $\\tan \\angle PAB$ 的值.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q22",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "一辆轿车和一辆货车分别从甲、乙两地同时出发, 匀速相向而行, 两车相遇时轿车比货车多行驶了 90 千米. 设行驶的时间为 $t$ (小时), 两车之间的距离为 $s$ (千米), 图中线段 $AB$ 表示从两车出发至两车相遇这一过程中 $s$ 与 $t$ 之间的函数关系, 根据图象提供的信息回答下列问题:\n(1) 求 $s$ 关于 $t$ 的函数关系式; (不必写出定义域)\n(2) 求两车速度.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q23",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知在直角梯形 $ABCD$ 中, $AD \\parallel BC, \\angle ABC = 90^\\circ, AE \\perp BD$, 垂足为 $E$, 联结 $CE$, 作 $EF \\perp CE$, 交边 $AB$ 于点 $F$.\n(1) 求证: $\\triangle AEF \\sim \\triangle BEC$;\n(2) 若 $AB = BC$, 求证: $AF = AD$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q24",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中, 直线 $y = 3x + 3$ 与 $x$ 轴、 $y$ 轴分别交于点 $A, B$, 抛物线 $y = ax^2 + bx - 5a$ 经过点 $A$. 将点 $B$ 向右平移 5 个单位长度, 得到点 $C$.\n(1) 求点 $C$ 的坐标;\n(2) 求抛物线的对称轴;\n(3) 若抛物线的顶点在 $\\triangle OBC$ 的内部, 求 $a$ 的取值范围.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q24_0.png"
+    ],
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Songjiang_Two_Mock_Q25",
+    "paper": "2021_Songjiang_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知在 $\\triangle ABC$ 中, $BC > AB, BD$ 平分 $\\angle ABC$, 交边 $AC$ 于点 $D$, $E$ 是 $BC$ 边上一点, 且 $BE = BA$, 过点 $A$ 作 $AG \\parallel DE$, 分别交 $BD, BC$ 于点 $F, G$, 联结 $FE$.\n(1) 求证: 四边形 $AFED$ 是菱形;\n(2) 求证: $AB^2 = BG \\cdot BC$;\n(3) 若 $AB = AC, BG = CE$, 联结 $AE$, 求 $\\frac{S_{\\triangle ADE}}{S_{\\triangle ABC}}$ 值.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "松江",
+    "images": [
+      "/problems/2021_Songjiang_Two_Mock/q25_0.png"
+    ],
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q01",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列各数中无理数是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $\\frac{\\pi}{2}$",
+      "(B) $\\frac{22}{7}$",
+      "(C) $\\sqrt{4}$",
+      "(D) $\\sqrt[3]{27}$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q02",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "下列说法不一定成立的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 若 $a > b$, 则 $a + c > b + c$",
+      "(B) 若 $a + c > b + c$, 则 $a > b$",
+      "(C) 若 $a > b$, 则 $ac^2 > bc^2$",
+      "(D) 若 $ac^2 > bc^2$, 则 $a > b$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q03",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "下列方程中, 有实数根的方程是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $x^4 + 1 = 0$",
+      "(B) $\\sqrt{x+2} = -1$",
+      "(C) $\\sqrt{x+2} = -x$",
+      "(D) $\\frac{x}{x^2-1} = \\frac{1}{x^2-1}$"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q04",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "已知 $A(x_1, y_1)$ 和 $B(x_2, y_2)$ 是双曲线 $y = -\\frac{2}{x}$ 上的两个点, 如果 $x_1 < x_2$, 那么 $y_1$ 和 $y_2$ 的大小关系正确的是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) $y_1 > y_2$",
+      "(B) $y_1 < y_2$",
+      "(C) $y_1 = y_2$",
+      "(D) 无法判断"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q05",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "5",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "为了了解某校九年级 400 名学生的体重情况, 从中抽取 50 名学生的体重进行分析. 在这项调查中, 样本是指 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 400 名学生",
+      "(B) 被抽取的 50 名学生",
+      "(C) 400 名学生的体重",
+      "(D) 被抽取的 50 名学生的体重"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q06",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "6",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "下列命题中, 真命题是 ( )",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "options": [
+      "(A) 平分弦的直径垂直于弦",
+      "(B) 垂直平分弦的直线平分这条弦所对的弧",
+      "(C) 在同圆中, 相等的弦所对的弧也相等",
+      "(D) 经过半径一端且垂直于这条半径的直线是圆的切线"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q07",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $a^3 \\cdot a^{-1} = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q08",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "分解因式: $x^2 - 4x = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q09",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "在函数 $y = \\frac{x}{2x+3}$ 中, 自变量 $x$ 的取值范围是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q10",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "不等式组 $\\begin{cases} 3x - 15 \\le 0 \\\\ \\frac{3-x}{2} > 1 \\end{cases}$ 的解集是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q11",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "已知关于 $x$ 的一元二次方程 $x^2 - 6x + m - 1 = 0$ 有两个相等的实数根, 那么 $m$ 的值为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q12",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "一个射箭运动员连续射靶 5 次, 所得环数分别是: 8, 6, 10, 7, 9, 则这个运动员所得环数的标准差为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q13",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "13",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "在一个布袋中, 装有除颜色外其他完全相同的 2 个红球和 2 个白球, 如果从中随机摸出两个球, 那么摸到的两个球颜色相同的概率是 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q14",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "14",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "已知点 $G$ 是 $\\triangle ABC$ 的重心, 如果 $\\vec{AB} = \\vec{a}, \\vec{AC} = \\vec{b}$, 那么向量 $\\vec{AG}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q15",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知一个正六边形的边心距为 $\\sqrt{3}$, 则它的半径为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q16",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知在正方形网格中, 点 $A, B, C, D$ 在小正方形的顶点上, 线段 $AB$ 与线段 $CD$ 相交于点 $O$, 那么 $\\tan \\angle AOC = \\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q16_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q17",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "17",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如果一条直线把一个平面图形的面积分成相等的两部分, 那么我们把这条直线叫做这个平面图形的面积等分线. 已知在菱形 $ABCD$ 中, $AB = 6, \\angle B = 60^\\circ$, 点 $E$ 在边 $AD$ 上, 且 $AE = 2$, 过点 $E$ 的面积等分线与菱形的另一条边交于点 $F$, 那么线段 $EF$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q17_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q18",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, \\angle B = 30^\\circ, AC = 2$, 点 $D$ 是边 $BC$ 的中点, 点 $E$ 是边 $AB$ 上一点, 将 $\\triangle BDE$ 沿直线 $DE$ 翻折, 点 $B$ 落在 $B'$ 处, 联结 $AB'$, 如果 $\\angle AB'D = 90^\\circ$, 那么线段 $AE$ 的长为 $\\dots$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q18_0.png"
+    ],
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q19",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $\\sqrt{8} - \\frac{1}{\\sqrt{3}-2} - (\\frac{1}{3})^{-1} \\div \\sqrt{3} + (1-\\sqrt{2})^2$.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q20",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "20",
+    "difficulty": 0.4,
+    "tags": [],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程: $\\frac{4x}{x^2-9} = 1 + \\frac{2}{x-3} - \\frac{2}{x+3}$",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q21",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知正比例函数 $y = kx$ 的图像与反比例函数 $y = \\frac{6}{x} (x > 0)$ 的图像经过点 $A(a, 3)$, 点 $B$ 为 $x$ 轴正半轴上一点, 过点 $B$ 作 $BD \\perp x$ 轴, 交反比例函数的图像于点 $C$, 交正比例函数的图像于点 $D$.\n(1) 求 $a, k$ 的值;\n(2) 联结 $AC$, 如果 $BD = 6$, 求 $\\triangle ACD$ 面积.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q21_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q22",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "22",
+    "difficulty": 0.7,
+    "tags": [],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "如图 1 是一种手机平板支架, 由底座、支撑板和托板构成, 手机放置在托板上, 如图 2 是其侧面示意图, 量得底座长 $AB = 11cm$, 支撑板长 $BC = 8cm$, 托板长 $CD = 6cm$, 托板 $CD$ 固定在支撑板顶端点 $C$ 处, 托板 $CD$ 可绕点 $C$ 旋转, 支撑板 $BC$ 可绕点 $B$ 转动.\n(1) 如果 $\\angle ABC = 60^\\circ, \\angle BCD = 70^\\circ$, 求点 $D$ 到直线 $AB$ 的距离 (精确到 $0.1cm$);\n(2) 在第 (1) 小题的条件下, 如果把线段 $CD$ 绕点 $C$ 顺时针旋转 $20^\\circ$ 后, 再将线段 $BC$ 绕点 $B$ 逆时针旋转, 使点 $D$ 落在直线 $AB$ 上, 求线段 $BC$ 旋转的角度.\n(参考数据: $\\sin 40^\\circ \\approx 0.64, \\cos 40^\\circ \\approx 0.77, \\tan 40^\\circ \\approx 0.84, \\sin 37^\\circ \\approx 0.60, \\cos 37^\\circ \\approx 0.80, \\tan 37^\\circ \\approx 0.75, \\sqrt{3} \\approx 1.73$)",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q22_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q23",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知: 如图, $AB$ 是半圆 $O$ 直径, $C$ 是半圆上一点 (不与点 $A, B$ 重合), 过点 $A$ 作 $AD \\parallel OC$ 交半圆于点 $D$, $E$ 是直径 $AB$ 上一点, 且 $AE = AD$, 联结 $CE, CD$.\n(1) 求证: $CE = CD$;\n(2) 如果 $AD = 3CD$, 延长 $EC$ 与弦 $AD$ 的延长线交于点 $F$, 联结 $OD$, 求证: 四边形 $OCFD$ 是菱形.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q23_0.png"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q24",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如图, 已知在平面直角坐标系 $xOy$ 中, 直线 $y = x - 5$ 与 $x$ 轴相交于点 $A$, 与 $y$ 轴相交于点 $B$, 抛物线 $y = ax^2 + 6x + c$ 经过 $A, B$ 两点.\n(1) 求这条抛物线的表达式;\n(2) 设抛物线与 $x$ 轴的另一个交点为 $C$, 点 $P$ 是抛物线上一点, 点 $Q$ 是直线 $AB$ 上一点, 当四边形 $BCPQ$ 是平行四边形时, 求点 $Q$ 的坐标;\n(3) 在第 (2) 小题的条件下, 联结 $QC$, 在 $\\angle QCB$ 内作射线 $CD$ 与抛物线的对称轴相交于点 $D$, 使得 $\\angle QCD = \\angle ABC$, 求线段 $DQ$ 的长.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q24_0.png"
+    ],
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2021_Yangpu_Two_Mock_Q25",
+    "paper": "2021_Yangpu_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知 $Q$ 是 $\\angle BAC$ 的边 $AC$ 上一点, $AQ = 15, \\cot \\angle BAC = \\frac{3}{4}$, 点 $P$ 是射线 $AB$ 上一点, 联结 $PQ$, $\\odot O$ 经过点 $A$ 且与 $QP$ 相切于点 $P$, 与边 $AC$ 相交于另一点 $D$.\n(1) 当圆心 $O$ 在射线 $AB$ 上时, 求 $\\odot O$ 的半径;\n(2) 当圆心 $O$ 到直线 $AB$ 的距离为 $\\frac{3}{4}$ 时, 求线段 $AP$ 的长;\n(3) 试讨论以线段 $PQ$ 长为半径的 $\\odot P$ 与 $\\odot O$ 的位置关系, 并写出相应的线段 $AP$ 取值范围.",
+    "year": "2021",
+    "exam_type": "二模",
+    "district": "杨浦",
+    "images": [
+      "/problems/2021_Yangpu_Two_Mock/q25_0.png"
+    ],
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "1",
+    "question_type": "Q1",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "下列各运算中，正确的运算是（ ）",
+    "options": [
+      "5\\sqrt{3} + 3\\sqrt{5} = 8\\sqrt{8}",
+      "(-3a^3)^3 = -27a^9",
+      "a^8 \\div a^4 = a^2",
+      "(a^2 - b^2)^2 = a^4 - b^4"
+    ],
+    "answer": "B",
+    "has_answer": true,
+    "tags": [
+      "实数运算",
+      "幂的运算"
+    ],
+    "kps": [
+      "real_number_calc",
+      "power_rules"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "2",
+    "question_type": "Q2",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "如果关于 $x$ 的一元一次方程 $x - m + 2 = 0$ 的解是负数，那么 $m$ 的取值范围是（ ）",
+    "options": [
+      "m < 2",
+      "m \\le 2",
+      "m \\ge 2",
+      "m > 2"
+    ],
+    "answer": "A",
+    "has_answer": true,
+    "tags": [
+      "一元一次方程",
+      "方程的解"
+    ],
+    "kps": [
+      "linear_eq_basic"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "3",
+    "question_type": "Q3",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "成人每天维生素 D 的摄入量约为 $0.0000046$ 克. 数据“$0.0000046$”用科学记数法表示为（ ）",
+    "options": [
+      "46 \\times 10^{-7}",
+      "4.6 \\times 10^{-7}",
+      "4.6 \\times 10^{-6}",
+      "0.46 \\times 10^{-5}"
+    ],
+    "answer": "C",
+    "has_answer": true,
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "scientific_notation"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "4",
+    "question_type": "Q4",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "如果数轴上表示 $-1$ 和 $-3$ 的两点分别是点 $A$ 和点 $B$, 那么点 $A$ 和点 $B$ 之间的距离是（ ）",
+    "options": [
+      "-4",
+      "-2",
+      "2",
+      "4"
+    ],
+    "answer": "C",
+    "has_answer": true,
+    "tags": [
+      "数轴",
+      "两点间距离"
+    ],
+    "kps": [
+      "number_line_dist"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "5",
+    "question_type": "Q5",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.25,
+    "content": "如图 1, 已知 $\\triangle ABC$ 与 $\\triangle BDE$ 都是等边三角形, 点 $D$ 在边 $AC$ 上（不与点 $A$、$C$ 重合）, $DE$ 与 $AB$ 相交于点 $F$, 那么与 $\\triangle BFD$ 相似的三角形是（ ）",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q5_1.png"
+    ],
+    "options": [
+      "\\triangle BFE",
+      "\\triangle BDA",
+      "\\triangle BDC",
+      "\\triangle AFD"
+    ],
+    "answer": "B",
+    "has_answer": true,
+    "tags": [
+      "等边三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "similar_triangle_judgement"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "6",
+    "question_type": "Q6",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.2,
+    "content": "下列命题中正确的是（ ）",
+    "options": [
+      "一组对边相等，另一组对边平行的四边形是等腰梯形",
+      "对角线互相垂直且相等的四边形是矩形",
+      "对角线互相平分且相等的四边形是正方形",
+      "对角线互相垂直平分的四边形是菱形"
+    ],
+    "answer": "D",
+    "has_answer": true,
+    "tags": [
+      "命题判定",
+      "特殊四边形"
+    ],
+    "kps": [
+      "quadrilateral_properties"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "7",
+    "question_type": "Q7",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "如果 $a = b + 2$, 那么代数式 $a^2 - 2ab + b^2$ 的值为\\_\\_\\_\\_\\_\\_.",
+    "answer": "4",
+    "has_answer": true,
+    "tags": [
+      "完全平方公式",
+      "代数式求值"
+    ],
+    "kps": [
+      "alg_expr_eval"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "8",
+    "question_type": "Q8",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "化简: $\\frac{1}{a} - \\frac{1}{3a} =$\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\frac{2}{3a}",
+    "has_answer": true,
+    "tags": [
+      "分式运算"
+    ],
+    "kps": [
+      "fraction_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "9",
+    "question_type": "Q9",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.1,
+    "content": "如果一个数的平方等于 $5$, 那么这个数等于\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\pm\\sqrt{5}",
+    "has_answer": true,
+    "tags": [
+      "平方根"
+    ],
+    "kps": [
+      "square_root_basic"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "10",
+    "question_type": "Q10",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.15,
+    "content": "方程 $\\sqrt{x - 2} \\cdot \\sqrt{x - 1} = 0$ 的解是\\_\\_\\_\\_\\_\\_.",
+    "answer": "x=2",
+    "has_answer": true,
+    "tags": [
+      "无理方程",
+      "定义域"
+    ],
+    "kps": [
+      "irrational_eq_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "11",
+    "question_type": "Q11",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.2,
+    "content": "如果反比例函数 $y = \\frac{k}{x}$ ($k$ 是常数, $k \\neq 0$) 的图像经过点 $(-1, 3)$, 那么当 $x > 0$ 时, $y$ 的值随 $x$ 的值增大而\\_\\_\\_\\_\\_\\_. (填“增大”或“减小”)",
+    "answer": "增大",
+    "has_answer": true,
+    "tags": [
+      "反比例函数",
+      "函数性质"
+    ],
+    "kps": [
+      "inverse_func_properties"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "12",
+    "question_type": "Q12",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.45,
+    "content": "《九章算术》是我国古代数学的经典著作，书中有一个问题：“今有黄金九枚，白银一十一枚，称之重适等，交易其一，金轻十三两，问金、银一枚各重几何？”意思是：甲袋中装有黄金 9 枚（每枚黄金重量相同），乙袋中装有白银 11 枚（每枚白银重量相同），称重两袋相等，两袋互相交换 1 枚后，甲袋比乙袋轻了 13 两（袋子重量忽略不计），问黄金、白银每枚各重多少两？设每枚黄金重 $x$ 两，每枚白银重 $y$ 两，根据题意可列方程组为\\_\\_\\_\\_.",
+    "answer": "\\begin{cases} 9x=11y \\\\ (10y+x)-(8x+y)=13 \\end{cases}",
+    "has_answer": true,
+    "tags": [
+      "二元一次方程组",
+      "实际问题"
+    ],
+    "kps": [
+      "linear_eq_system_word_problem"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "13",
+    "question_type": "Q13",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.4,
+    "content": "在一张边长为 4cm 的正方形纸上做扎针随机试验，纸上有一个半径为 1cm 的圆形阴影区域，则针头扎在阴影区域内的概率为\\_\\_\\_\\_\\_\\_.",
+    "answer": "\\frac{\\pi}{16}",
+    "has_answer": true,
+    "tags": [
+      "几何概率"
+    ],
+    "kps": [
+      "geometric_probability"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "14",
+    "question_type": "Q14",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.5,
+    "content": "某社区在创建全国卫生城市的活动中，随机检查了本社区部分住户五月份某周内“垃圾分类”的实施情况，并绘制了两幅不完整的统计图（图 2）（A. 小于 5 天；B. 5 天；C. 6 天；D. 7 天），那么扇形统计图 B 部分所对应的圆心角的度数是\\_\\_\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q14_1.png"
+    ],
+    "answer": "108^\\circ",
+    "has_answer": true,
+    "tags": [
+      "统计图",
+      "扇形统计图"
+    ],
+    "kps": [
+      "statistical_chart_analysis"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "15",
+    "question_type": "Q15",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.5,
+    "content": "如图 3, 点 $B$、$C$、$D$ 在同一直线上, $CE \\parallel AB$, $\\angle ACB = 90^\\circ$ , 如果 $\\angle ECD = 35^\\circ$ , 那么 $\\angle A =$\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q15_1.png"
+    ],
+    "answer": "55^\\circ",
+    "has_answer": true,
+    "tags": [
+      "平行线性质",
+      "三角形内角和"
+    ],
+    "kps": [
+      "parallel_lines_properties"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "16",
+    "question_type": "Q16",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.6,
+    "content": "如图 4, 在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ$, $\\angle A = 30^\\circ$, $BD$ 是 $\\angle ABC$ 的平分线, 如果 $\\vec{AC} = \\vec{x}$, 那么 $\\vec{CD} =$\\_\\_\\_\\_\\_\\_ (用 $\\vec{x}$ 表示).",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q16_1.png"
+    ],
+    "answer": "-\\frac{1}{3}\\vec{x}",
+    "has_answer": true,
+    "tags": [
+      "向量",
+      "角平分线性质"
+    ],
+    "kps": [
+      "vector_operation"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "17",
+    "question_type": "Q17",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.65,
+    "content": "如图 5, 在 $\\triangle ABC$ 中, $\\angle B = 45^\\circ$, $AC = 2$, $\\cos C = \\frac{3}{5}$. $BC$ 的垂直平分线交 $AB$ 于点 $E$, 那么 $BE:AE$ 的值是\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q17_1.png"
+    ],
+    "answer": "7",
+    "has_answer": true,
+    "tags": [
+      "垂直平分线",
+      "三角比"
+    ],
+    "kps": [
+      "perpendicular_bisector_prop",
+      "trigonometry_basic"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.75,
+    "content": "如图 6, 在 $\\triangle ABC$ 内有一点 $P$, 满足 $\\angle PAB = \\angle CBP = \\angle ACP$, 那么点 $P$ 被称为 $\\triangle ABC$ 的“布洛卡点”. 如图 7, 在 $\\triangle DEF$ 中, $DE = DF$, $\\angle EDF = 90^\\circ$, 点 $P$ 是 $\\triangle DEF$ 的一个“布洛卡点”, 那么 $\\tan \\angle DFP =$\\_\\_\\_\\_.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q18_1.png"
+    ],
+    "answer": "\\frac{1}{2}",
+    "has_answer": true,
+    "tags": [
+      "新定义问题",
+      "等腰直角三角形"
+    ],
+    "kps": [
+      "new_definition_geo",
+      "special_triangle_prop"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "19",
+    "question_type": "Q19",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.3,
+    "content": "计算: $(\\sqrt{2})^2 + (-\\frac{\\pi}{3})^0 - |2| + 2(\\tan 60^\\circ - 1)^{-1}$",
+    "answer": "4 - \\sqrt{3}",
+    "has_answer": true,
+    "tags": [
+      "实数混合运算",
+      "三角比"
+    ],
+    "kps": [
+      "real_number_calc_advanced"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "20",
+    "question_type": "Q20",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.35,
+    "content": "解方程组: $\\begin{cases} x + y = 2 \\\\ x^2 - xy - 6y^2 = 0 \\end{cases}$",
+    "answer": "\\begin{cases} x_1 = \\frac{3}{2} \\\\ y_1 = \\frac{1}{2} \\end{cases}, \\begin{cases} x_2 = 4 \\\\ y_2 = -2 \\end{cases}",
+    "has_answer": true,
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "quadratic_linear_system"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "21",
+    "question_type": "Q21",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.55,
+    "content": "如图 8, 在梯形 $ABCD$ 中, $AD \\parallel BC$, $\\angle BCD = 90^\\circ$, $AB = BC = 5$, $AD = 2$.\n(1) 求 $CD$ 的长;\n(2) 如果 $\\angle ABC$ 的平分线交 $CD$ 于点 $E$, 联结 $AE$, 求 $\\angle AEB$ 的正切值.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q21_1.png"
+    ],
+    "answer": "(1) CD=4; (2) \\tan\\angle AEB = 1",
+    "has_answer": true,
+    "tags": [
+      "梯形",
+      "角平分线",
+      "三角比"
+    ],
+    "kps": [
+      "trapezoid_calc",
+      "angle_bisector_prop"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "22",
+    "question_type": "Q22",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.6,
+    "content": "如图 9, 是某型号新能源纯电动汽车充满电后, 蓄电池剩余电量 $y$ (千瓦时) 关于已行驶路程 $x$ (千米) 的函数图像.\n(1) 根据函数图像, 如果蓄电池剩余电量为 35 千瓦时, 那么汽车已经行驶的路程为\\_\\_\\_\\_千米; 当 $0 \\le x \\le 150$ 时, 消耗 1 千瓦时的电量, 汽车能行驶的路程为\\_\\_\\_\\_千米.\n(2) 当 $150 \\le x \\le 200$ 时, 求 $y$ 关于 $x$ 的函数解析式, 并计算当汽车已行驶 160 千米时, 蓄电池的剩余电量.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q22_1.png"
+    ],
+    "answer": "(1) 150, 6; (2) y = -\\frac{1}{5}x + 40, y(160)=8",
+    "has_answer": true,
+    "tags": [
+      "函数图像分析",
+      "分段函数"
+    ],
+    "kps": [
+      "function_graph_analysis",
+      "piecewise_func"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "23",
+    "question_type": "Q23",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.7,
+    "content": "如图 10, 在平行四边形 $ABCD$ 中, $AC$、$DB$ 交于点 $E$, 点 $F$ 在 $BC$ 的延长线上, 联结 $EF$、$DF$, 且 $\\angle DEF = \\angle ADC$.\n(1) 求证: $\\frac{EF}{BF} = \\frac{AB}{DB}$;\n(2) 如果 $BD^2 = 2AD \\cdot DF$, 求证: 四边形 $ABCD$ 是矩形.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q23_1.png"
+    ],
+    "answer": "略",
+    "has_answer": true,
+    "tags": [
+      "平行四边形",
+      "相似三角形",
+      "矩形判定"
+    ],
+    "kps": [
+      "parallelogram_calc",
+      "similar_triangle_proof",
+      "rectangle_determination"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = \\frac{1}{3}x^2 + bx - 1$ 与 $x$ 轴交于点 $A$ 和点 $B$ (点 $A$ 在 $x$ 轴的正半轴上), 与 $y$ 轴交于点 $C$, 已知 $\\tan \\angle CAB = \\frac{1}{3}$.\n(1) 求顶点 $P$ 和点 $B$ 的坐标;\n(2) 将抛物线向右平移 2 个单位, 得到的新抛物线与 $y$ 轴交于点 $M$, 求点 $M$ 的坐标和 $\\triangle APM$ 的面积;\n(3) 如果点 $N$ 在原抛物线的对称轴上, 当 $\\triangle PMN$ 与 $\\triangle ABC$ 相似时, 求点 $N$ 的坐标.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q24_1.png"
+    ],
+    "answer": "(1) P(1, -\\frac{4}{3}), B(-1, 0); (2) M(0, 0), S=\\frac{2}{3}; (3) N(1, -\\frac{4}{3} \\pm \\frac{2\\sqrt{10}}{3})",
+    "has_answer": true,
+    "tags": [
+      "二次函数",
+      "抛物线平移",
+      "相似三角形"
+    ],
+    "kps": [
+      "quadratic_func_analysis",
+      "coord_geo_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Baoshan_Two_Mock",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "宝山",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "如图 11, 在半径为 3 的圆 $O$ 中, $OA$、$OB$ 都是圆 $O$ 的半径, 且 $\\angle AOB = 90^\\circ$, 点 $C$ 是劣弧 $AB$ 上的一个动点 (点 $C$ 不与点 $A$、$B$ 重合), 延长 $AC$ 交射线 $OB$ 于点 $D$.\n(1) 当点 $C$ 为线段 $AD$ 中点时, 求 $\\angle ADB$ 的大小;\n(2) 如果设 $AC = x$, $BD = y$, 求 $y$ 关于 $x$ 的函数解析式, 并写出定义域;\n(3) 当 $AC = \\frac{18}{5}$ 时, 点 $E$ 在线段 $OD$ 上, 且 $OE = 1$, 点 $F$ 是射线 $OA$ 上一点, 射线 $EF$ 与射线 $DA$ 交于点 $G$, 如果以点 $A$、$G$、$F$ 为顶点的三角形与 $\\triangle DGE$ 相似, 求 $\\frac{S_{\\triangle AGF}}{S_{\\triangle ADGE}}$ 的值.",
+    "images": [
+      "/problems/2022_Baoshan_Two_Mock/2022_baoshan_q25_1.png"
+    ],
+    "answer": "(1) 30^\\circ; (2) y = \\frac{9}{x} - \\sqrt{9 - (x/2)^2} (略); (3) 1/2 or 1/4 (需细核)",
+    "has_answer": true,
+    "tags": [
+      "圆",
+      "动点问题",
+      "函数解析式",
+      "图形相似"
+    ],
+    "kps": [
+      "circle_geometry",
+      "moving_point_problem",
+      "func_derivation_geo"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "1",
+    "question_type": "Q1",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "已知 $\\\\vec{a} // \\\\vec{b}$, 如果 $\\\\vec{a} = 2\\\\vec{e}$, 那么 $\\\\vec{b}$ 可以表示为 (  )\n\nA. $2\\\\vec{e}$; B. $-2\\\\vec{e}$; C. $m\\\\vec{e}$ ($m \\\\neq 0$); D. $m\\\\vec{e}$ ($m$ 为实数).",
+    "images": [],
+    "has_answer": true,
+    "answer": "D",
+    "tags": [
+      "代数",
+      "平面向量"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "2",
+    "question_type": "Q2",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "如果 $\\\\triangle ABC \\\\sim \\\\triangle DEF$, $\\\\triangle ABC$ 的周长为 4, $\\\\triangle DEF$ 的周长为 8, 那么 $S_{\\\\triangle ABC} : S_{\\\\triangle DEF}$ 为 (  )\n\nA. 1:2; B. 1:4; C. 2:1; D. 4:1.",
+    "images": [],
+    "has_answer": true,
+    "answer": "B",
+    "tags": [
+      "几何",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "3",
+    "question_type": "Q3",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "在 $Rt\\\\triangle ABC$ 中, $\\\\angle C = 90^\\\\circ$, $AC = 1, BC = 2$, 那么 $\\\\cos A$ 的值为 (  )\n\nA. $\\\\frac{1}{2}$; B. $\\\\frac{\\\\sqrt{5}}{5}$; C. $\\\\frac{2\\\\sqrt{5}}{5}$; D. 2.",
+    "images": [],
+    "has_answer": true,
+    "answer": "B",
+    "tags": [
+      "几何",
+      "锐角三角比"
+    ],
+    "kps": [
+      "geo_trigonometry"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "4",
+    "question_type": "Q4",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "如图 1, 已知 $AB // CD // EF$, $AD:DF = 1:2$, 那么下列结论正确的是 (  )\n\nA. $AC:CE = 1:2$; B. $AC:AE = 1:2$; C. $CD:EF = 1:2$; D. $BC:BF = 1:2$.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q4_1.png"
+    ],
+    "has_answer": true,
+    "answer": "A",
+    "tags": [
+      "几何",
+      "平行线分线段成比例"
+    ],
+    "kps": [
+      "geo_parallel_proportional"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "5",
+    "question_type": "Q5",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "已知斜坡的水平距离为 10 米, 坡角为 $\\\\alpha$, 那么斜坡的垂直高度为 (  )\n\nA. $10\\\\sin\\\\alpha$; B. $10\\\\cos\\\\alpha$; C. $10\\\\tan\\\\alpha$; D. $10\\\\cot\\\\alpha$.",
+    "images": [],
+    "has_answer": true,
+    "answer": "C",
+    "tags": [
+      "几何",
+      "解直角三角形应用"
+    ],
+    "kps": [
+      "geo_trigonometry_app"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "6",
+    "question_type": "Q6",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "如果将抛物线 $y = x^2$ 向右平移 1 个单位, 那么平移后抛物线的表达式是 (  )\n\nA. $y = x^2+1$; B. $y = x^2-1$; C. $y = (x+1)^2$; D. $y = (x-1)^2$.",
+    "images": [],
+    "has_answer": true,
+    "answer": "D",
+    "tags": [
+      "代数",
+      "二次函数平移"
+    ],
+    "kps": [
+      "algebra_quadratic_shift"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "7",
+    "question_type": "Q7",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "如果 $\\\\frac{a}{2} = \\\\frac{b}{3}$, 那么 $\\\\frac{a-b}{a+b} = $ _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "-\\\\frac{1}{5}",
+    "tags": [
+      "代数",
+      "比例性质"
+    ],
+    "kps": [
+      "algebra_proportion"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "8",
+    "question_type": "Q8",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "已知线段 $AB = 2$ 厘米, 点 $P$ 是线段 $AB$ 的黄金分割点, 那么较长线段 $AP$ 的长为 _________ 厘米.",
+    "images": [],
+    "has_answer": true,
+    "answer": "\\\\sqrt{5}-1",
+    "tags": [
+      "几何",
+      "黄金分割"
+    ],
+    "kps": [
+      "geo_golden_ratio"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "9",
+    "question_type": "Q9",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "已知 $\\\\vec{a}$ 是单位向量, $\\\\vec{b} = -3\\\\vec{a}$, 那么 $|\\\\vec{b}| = $ _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "3",
+    "tags": [
+      "代数",
+      "平面向量"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "10",
+    "question_type": "Q10",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "在 $\\\\triangle ABC$ 中, $G$ 是重心, $\\\\vec{GA} + \\\\vec{GB} = $ _________. (用向量 $\\\\vec{GC}$ 表示)",
+    "images": [],
+    "has_answer": true,
+    "answer": "-\\\\vec{GC}",
+    "tags": [
+      "几何",
+      "重心",
+      "向量"
+    ],
+    "kps": [
+      "geo_centroid",
+      "geo_vector"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "11",
+    "question_type": "Q11",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "已知反比例函数 $f(x) = \\\\frac{k}{x}$ ($k \\\\neq 0$) 的图像经过点 $A(2, 3)$, 那么 $k = $ _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "6",
+    "tags": [
+      "代数",
+      "反比例函数"
+    ],
+    "kps": [
+      "func_linear_inverse",
+      "alg_func_inverse_image"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "12",
+    "question_type": "Q12",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "如果抛物线 $y = (m-1)x^2$ 的开口向下, 那么 $m$ 的取值范围是 _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "m < 1",
+    "tags": [
+      "代数",
+      "二次函数性质"
+    ],
+    "kps": [
+      "algebra_quadratic_prop"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "13",
+    "question_type": "Q13",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "抛物线 $y = -2(x-1)^2+3$ 的顶点坐标是 _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "(1, 3)",
+    "tags": [
+      "代数",
+      "二次函数顶点"
+    ],
+    "kps": [
+      "algebra_quadratic_vertex"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "14",
+    "question_type": "Q14",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.8,
+    "content": "已知线段 $AB$ 的长度为 2, 点 $G$ 是 $\\\\triangle ABC$ 的重心, 如果 $CG=2$, 且点 $C$ 到 $AB$ 的距离为 3, 那么 $AB$ 与 $CG$ 的位置关系是 _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "垂直",
+    "tags": [
+      "几何",
+      "重心",
+      "位置关系"
+    ],
+    "kps": [
+      "geo_centroid"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "15",
+    "question_type": "Q15",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.8,
+    "content": "如图 2, 在平行四边形 $ABCD$ 中, $E$ 是 $BA$ 延长线上一点, $CE$ 交 $AD$ 于点 $F$, 如果 $AF:FD = 1:2$, 那么 $AE:AB = $ _________.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q15_1.png"
+    ],
+    "has_answer": true,
+    "answer": "1:2",
+    "tags": [
+      "几何",
+      "平行四边形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "16",
+    "question_type": "Q16",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.75,
+    "content": "如图 3, 在 $\\\\triangle ABC$ 中, $AB=AC$, $\\\\angle BAC=120^\\\\circ$, $D, E$ 是 $BC$ 上的点, $\\\\triangle ADE$ 是等边三角形, 如果 $BD=2$, 那么 $CE = $ _________.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q16_1.png"
+    ],
+    "has_answer": true,
+    "answer": "2",
+    "tags": [
+      "几何",
+      "等腰三角形",
+      "等边三角形"
+    ],
+    "kps": [
+      "geo_isosceles",
+      "geo_equilateral"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "17",
+    "question_type": "Q17",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.7,
+    "content": "如图 4, 在 $Rt\\\\triangle ABC$ 中, $\\\\angle C=90^\\\\circ, AC=BC$, $D$ 是 $AC$ 的中点, $CE \\\\perp BD$ 于 $E, CE$ 的延长线交 $AB$ 于 $F$, 那么 $AF:FB = $ _________.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q17_1.png"
+    ],
+    "has_answer": true,
+    "answer": "1:2",
+    "tags": [
+      "几何",
+      "直角三角形",
+      "相似三角形"
+    ],
+    "kps": [
+      "geo_rt_triangle",
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "18",
+    "question_type": "Q18",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.65,
+    "content": "在 $Rt\\\\triangle ABC$ 中, $\\\\angle C=90^\\\\circ, AC=4, BC=3$, $P$ 是 $\\\\triangle ABC$ 内一点, 且 $S_{\\\\triangle PAB} = S_{\\\\triangle PBC} = S_{\\\\triangle PAC}$, 那么 $PC = $ _________.",
+    "images": [],
+    "has_answer": true,
+    "answer": "\\\\frac{5}{3}",
+    "tags": [
+      "几何",
+      "重心",
+      "直角三角形"
+    ],
+    "kps": [
+      "geo_centroid",
+      "geo_rt_triangle"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "19",
+    "question_type": "Q19",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.9,
+    "content": "计算: $\\\\frac{1}{2}\\\\sqrt{8} - (\\\\frac{1}{3})^{-1} + 2\\\\cos 45^\\\\circ + |\\\\sqrt{2}-2|$.",
+    "images": [],
+    "has_answer": true,
+    "answer": "\\\\sqrt{2}-1",
+    "tags": [
+      "代数",
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "20",
+    "question_type": "Q20",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.85,
+    "content": "已知 $\\\\vec{a}, \\\\vec{b}$ 是两个不平行的向量, $\\\\vec{x} = 2\\\\vec{a} - \\\\vec{b}, \\\\vec{y} = \\\\vec{a} + 3\\\\vec{b}$. (1) 求 $\\\\vec{x} + \\\\vec{y}$ (用 $\\\\vec{a}, \\\\vec{b}$ 表示); (2) 在图 5 中, 已知向量 $\\\\vec{a}, \\\\vec{b}$, 利用三角形法则或平行四边形法则求作向量 $\\\\vec{x} = 2\\\\vec{a} - \\\\vec{b}$.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q20_1.png"
+    ],
+    "has_answer": true,
+    "answer": "(1) 3\\\\vec{a}+2\\\\vec{b}; (2) 作图略",
+    "tags": [
+      "代数",
+      "平面向量"
+    ],
+    "kps": [
+      "geo_vector_concept",
+      "geo_vector_calc"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "21",
+    "question_type": "Q21",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.8,
+    "content": "如图 6, 在 $\\\\triangle ABC$ 中, 点 $D, E$ 分别在边 $AB, AC$ 上, $DE // BC$, $AD=3, AB=5$. (1) 如果 $BC=10$, 求 $DE$ 的长; (2) 如果 $S_{\\\\triangle ADE} = 9$, 求 $S_{梯形 DBCE}$ 的值.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q21_1.png"
+    ],
+    "has_answer": true,
+    "answer": "(1) 6; (2) 16",
+    "tags": [
+      "几何",
+      "相似三角形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "22",
+    "question_type": "Q22",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.75,
+    "content": "如图 7, 某校数学兴趣小组利用无人机测量学校旗杆 $AB$ 的高度. 在点 $C$ 处观测旗杆顶端 $A$ 的仰角为 $30^\\\\circ$, 之后无人机沿水平方向 $CD$ 飞行了 6 米到达点 $D$处, 在点 $D$ 处观测旗杆顶端 $A$ 的仰角为 $60^\\\\circ$. 已知无人机离地面的高度 $CE = 1.5$ 米, 且点 $E, B, F$ 在同一水平直线上, 求旗杆 $AB$ 的高度. ($\\\\sqrt{3} \\\\approx 1.73$, 结果精确到 0.1 米)",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q22_1.png"
+    ],
+    "has_answer": true,
+    "answer": "6.7 米",
+    "tags": [
+      "几何",
+      "解直角三角形应用"
+    ],
+    "kps": [
+      "geo_trigonometry_app"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "23",
+    "question_type": "Q23",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.6,
+    "content": "如图 8, 在 $\\\\triangle ABC$ 中, $\\\\angle BAC=90^\\\\circ, AD \\\\perp BC$ 于点 $D, E$ 是 $AD$ 的中点, $CE$ 的延长线交 $AB$ 于点 $F, FG // AD$ 交 $BC$ 于点 $G$. (1) 求证: $DG = GB$; (2) 如果 $\\\\frac{BD}{CD} = \\\\frac{2}{3}$, 求 $\\\\frac{AF}{FB}$ 的值.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q23_1.png"
+    ],
+    "has_answer": true,
+    "answer": "(1) 证明略; (2) \\\\frac{3}{4}",
+    "tags": [
+      "几何",
+      "直角三角形",
+      "相似三角形",
+      "比例线段"
+    ],
+    "kps": [
+      "geo_similar_prop",
+      "geo_rt_triangle",
+      "geo_similar_basic",
+      "geo_similar_k_model"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "24",
+    "question_type": "Q24",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.45,
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = ax^2 + bx + 3$ 经过点 $A(-1, 0)$ 和点 $B(3, 0)$, 与 $y$ 轴交于点 $C$. (1) 求该抛物线的表达式; (2) 点 $P$ 是该抛物线第一象限上的一个动点, 且 $S_{\\\\triangle PAB} = S_{\\\\triangle ABC}$, 求点 $P$ 的坐标; (3) 在 (2) 的条件下, 连接 $AC$, 点 $M$ 是 $x$ 轴上的一个动点, 当 $\\\\triangle ACM$ 是以 $AC$ 为腰的等腰三角形时, 求点 $M$ 的坐标.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q24_1.png"
+    ],
+    "has_answer": true,
+    "answer": "(1) y=-x^2+2x+3; (2) P(2, 3); (3) M(0, 0), (\\\\sqrt{10}-1, 0), (-\\\\sqrt{10}-1, 0)",
+    "tags": [
+      "代数",
+      "二次函数",
+      "等腰三角形"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_isosceles"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Changning_One_Mock",
+    "question": "25",
+    "question_type": "Q25",
+    "exam_type": "一模",
+    "district": "长宁",
+    "year": "2022",
+    "difficulty": 0.35,
+    "content": "如图 9, 在 $Rt\\\\triangle ABC$ 中, $\\\\angle ACB=90^\\\\circ, AC=3, BC=4$. 点 $D$ 是边 $BC$ 上的一个动点 (不与点 $B, C$ 重合), 以 $CD$ 为边在 $\\\\triangle ABC$ 外部作正方形 $CDEF$, 联结 $AF, BE$. (1) 当 $AF // BE$ 时, 求 $CD$ 的长; (2) 联结 $AE$, 如果 $\\\\triangle ACE \\\\sim \\\\triangle BCD$, 求 $CD$ 的长; (3) 如果点 $P$ 是 $AF$ 的中点, 联结 $CP, EP$. 当 $CP \\\\perp EP$ 时, 求 $CD$ 的长.",
+    "images": [
+      "/problems/2022_Changning_One_Mock/q25_1.png"
+    ],
+    "has_answer": true,
+    "answer": "(1) \\\\frac{12}{7}; (2) \\\\frac{9}{4}; (3) \\\\frac{3}{2}",
+    "tags": [
+      "几何",
+      "正方形",
+      "相似三角形",
+      "动点问题"
+    ],
+    "kps": [
+      "geo_similar_k_model",
+      "geo_dynamic_point",
+      "geo_similar_prop",
+      "geo_quad_judge",
+      "geo_similar_basic",
+      "geo_quad_property"
+    ],
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q01",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "实数",
+      "倒数"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "$\\sqrt{2}$ 的倒数是 ( )",
+    "options": [
+      "(A) $-\\sqrt{2}$",
+      "(B) $\\sqrt{2}$",
+      "(C) $\\frac{\\sqrt{2}}{2}$",
+      "(D) $-\\frac{\\sqrt{2}}{2}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q02",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "下列计算正确的是 ( )",
+    "options": [
+      "(A) $a^2 \\cdot a^3 = a^6$",
+      "(B) $(a^2)^3 = a^5$",
+      "(C) $a^5 \\div a^3 = a^2$",
+      "(D) $(a+2a)^2 = 4a^2$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q03",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "几何图形",
+      "对称性"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "下列图形中, 既是中心对称又是轴对称图形的是 ( )",
+    "options": [
+      "(A) 正三角形",
+      "(B) 菱形",
+      "(C) 平行四边形",
+      "(D) 等腰梯形"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q04",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "4",
+    "difficulty": 0.2,
+    "tags": [
+      "反比例函数"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "关于反比例函数 $y = \\frac{4}{x}$, 下列说法中错误的是 ( )",
+    "options": [
+      "(A) $y$ 的值随 $x$ 的值增大而减小",
+      "(B) 它的图像在第一、三象限",
+      "(C) 它的图像是双曲线",
+      "(D) 若点 $(a, b)$ 在它的图像上, 则点 $(b, a)$ 也在它的图像上"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q05",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "统计",
+      "众数",
+      "中位数"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "如果一组数据 1, 2, $x$, 5, 6 的众数为 6, 则这组数据的中位数为 ( )",
+    "options": [
+      "(A) 6",
+      "(B) 5",
+      "(C) 2",
+      "(D) 1"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q06",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [
+      "平行四边形",
+      "判定与性质"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知四边形 $ABCD$ 是平行四边形, 下列结论中不正确的是 ( )",
+    "options": [
+      "(A) 当 $AB=BC$ 时, 四边形 $ABCD$ 是菱形",
+      "(B) 当 $\\angle ABC=90^\\circ$ 时, 四边形 $ABCD$ 是矩形",
+      "(C) 当 $AC \\perp BD$ 时, 四边形 $ABCD$ 是菱形",
+      "(D) 当 $AC=BD$ 时, 四边形 $ABCD$ 是正方形"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q07",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "分式计算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算: $\\frac{1}{a} - \\frac{1}{2a} = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q08",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [
+      "二次根式",
+      "定义域"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "在实数范围内因式分解: $x^2 - 3 = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q09",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "9",
+    "difficulty": 0.3,
+    "tags": [
+      "平面向量",
+      "三角形"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, 在 $\\triangle ABC$ 中, 点 $D$ 在边 $AB$ 上, 且 $\\frac{AD}{BD} = \\frac{2}{3}$, 点 $E$ 是 $AC$ 的中点, $\\vec{BA} = \\vec{a}, \\vec{AC} = \\vec{b}$, 试用向量 $\\vec{a}, \\vec{b}$ 表示向量 $\\vec{DE}$, 那么 $\\vec{DE} = \\dots$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q9_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q10",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "不等式组 $\\begin{cases} x-1 \\le 0 \\\\ 3x+6 > 0 \\end{cases}$ 的解集是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q11",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "11",
+    "difficulty": 0.1,
+    "tags": [
+      "二次根式",
+      "定义域"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "函数 $y = \\sqrt{x+3}$ 的定义域是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q12",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "12",
+    "difficulty": 0.4,
+    "tags": [
+      "相似三角形",
+      "直角三角形"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, CD \\perp AB$, 垂足为点 $D$, 如果 $\\frac{S_{\\triangle ADC}}{S_{\\triangle CDB}} = \\frac{3}{2}, AD=8$, 那么 $CD$ 的长度是 $\\dots$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q12_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q13",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": [
+      "重心",
+      "平行线分线段成比例"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, 在 $\\triangle ABC$ 中, $AE$ 是 $BC$ 边上的中线, 点 $G$ 是 $\\triangle ABC$ 的重心, 过点 $G$ 作 $GF \\parallel AB$ 交 $BC$ 于点 $F$, 那么 $\\frac{EF}{EC} = \\dots$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q13_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q14",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "14",
+    "difficulty": 0.25,
+    "tags": [
+      "统计",
+      "频率"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "已知一个 40 个数据的样本, 把它分成 6 组, 第一组到第四组的频数分别是 10、5、7、6, 第五组的频率是 0.2, 那么第六组的频数是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q15",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": [
+      "正多边形",
+      "边心距"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知正六边形外接圆的半径为 3, 那么它的边心距为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q16",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "16",
+    "difficulty": 0.45,
+    "tags": [
+      "圆",
+      "内切圆",
+      "面积"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_triangle_prop"
+    ],
+    "content": "如图, $\\odot O$ 的半径为 10cm, $\\triangle ABC$ 内接于 $\\odot O$, 圆心 $O$ 在 $\\triangle ABC$ 内部. 如果 $AB=AC, BC=12cm$, 那么 $\\triangle ABC$ 的面积为 $\\dots cm^2$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q16_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q17",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [
+      "新定义",
+      "直角三角形"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如果一个三角形有一条边上的高等于这条边的一半, 那么我们把这个三角形叫做半高三角形. 已知直角三角形 $ABC$ 是半高三角形, 且斜边 $AB=10$, 则它的周长等于 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q18",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "18",
+    "difficulty": 0.8,
+    "tags": [
+      "圆",
+      "矩形",
+      "翻折",
+      "切线性质",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_quad_prop",
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 四边形 $ABCD$ 是 $\\odot O$ 的内接矩形, 将矩形 $ABCD$ 沿直线 $BC$ 翻折, 点 $A, D$ 的对应点分别为 $A', D'$, 如果直线 $A'D'$ 与 $\\odot O$ 相切, 若 $AB=2$, 那么 $BC$ 的长为 $\\dots$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q18_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q19",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $-1^{2022} + 2\\cot^2 60^\\circ - |\\pi - 3| + 9^{-\\frac{1}{2}}$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q20",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [
+      "二次函数",
+      "图象性质"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "已知二次函数 $y = -x^2 + 6x - 5$ 的图像交 $x$ 轴于 $A, B$ 两点, 点 $A$ 在 $B$ 左边, 交 $y$ 轴于点 $C$.\n(1) 将函数 $y = -x^2 + 6x - 5$ 的解析式化为 $y = a(x+m)^2 + k$ 的形式, 并指出该函数图像的开口方向、对称轴和顶点坐标;\n(2) 点 $D$ 在该抛物线上, 它是点 $C$ 关于抛物线对称轴的对称点, 求 $\\triangle ABD$ 的面积.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q20_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q21",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "圆",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知: 如图, $AO$ 是 $\\odot O$ 的半径, $AC$ 为 $\\odot O$ 的弦, 点 $F$ 为 $AC$ 的中点, $OF$ 交 $AC$ 于点 $E$, $AC=10, EF=3$.\n(1) 求 $AO$ 的长;\n(2) 过点 $C$ 作 $CD \\perp AO$, 交 $AO$ 延长线于点 $D$, 求 $OD$ 的长.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q21_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q22",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "22",
+    "difficulty": 0.6,
+    "tags": [
+      "应用题",
+      "三角比"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "冬至是一年中太阳光照射最少的日子, 如果此时楼房最低层能采到阳光, 一年四季整楼均能受到阳光的照射, 所以冬至是选房买房时确定阳光照射的最好时机. 某居民小区有一朝向为正南方向的居民楼. 该居民楼的一楼是高 6 米的小区超市, 超市以上是居民住房, 在该楼前面 20 米处要盖一栋高 25 米的新楼. 已知上海地区冬至正午的阳光与水平线夹角为 $29^\\circ$ (参考数据: $\\sin 29^\\circ \\approx 0.48; \\cos 29^\\circ \\approx 0.87; \\tan 29^\\circ \\approx 0.55$).\n(1) 冬至正午时, 超市以上的居民住房采光是否有影响, 为什么?\n(2) 若要使超市全部采光不受影响, 两楼应至少相距多少米? (结果保留整数)",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q23",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "23",
+    "difficulty": 0.75,
+    "tags": [
+      "相似三角形",
+      "判定与性质"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "已知: 如图, 在 $\\triangle ABC$ 中, $AB=AC, DE \\parallel BC$, 点 $F$ 在边 $AC$ 上, $DF$ 与 $BE$ 相交于点 $G$, 且 $\\angle EDF = \\angle ABE$.\n求证: (1) $\\triangle DEF \\sim \\triangle BDE$;\n(2) $DG \\cdot DF = DB \\cdot EF$.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q24",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "几何存在性",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_similar_basic"
+    ],
+    "content": "在平面直角坐标系中, 抛物线 $y = -x^2 + 2bx + c$ 与 $x$ 轴交于点 $A, B$ (点 $A$ 在点 $B$ 的右侧), 且与 $y$ 轴交于点 $C$. 已知点 $A(3, 0)$, $O$ 为坐标原点.\n(1) 当 $B$ 的坐标为 $(-5, 0)$ 时, 求抛物线的解析式;\n(2) 在 (1) 的条件下, 以 $A$ 为圆心, $OA$ 长为半径画 $\\odot A$, 以 $C$ 为圆心, $AB$ 长为半径画 $\\odot C$, 通过计算说明 $\\odot A$ 和 $\\odot C$ 的位置关系;\n(3) 如果 $\\triangle BAC \\sim \\triangle AOC$, 求抛物线顶点 $P$ 的坐标.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Changning_Two_Mock_Q25",
+    "paper": "2022_Changning_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "圆",
+      "相似",
+      "等腰三角形",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_circle_prop",
+      "geo_similar_basic",
+      "geo_triangle_prop"
+    ],
+    "content": "在 $Rt\\triangle ABC$ 中, $\\angle ACB=90^\\circ, AC=9, \\sin \\angle BAC = \\frac{4}{5}$. 点 $D$ 在边 $AB$ 上 (不与点 $A, B$ 重合), 以 $AD$ 为半径的 $\\odot A$ 与射线 $AC$ 相交于点 $E$, 射线 $DE$ 与射线 $BC$ 相交于点 $F$, 射线 $AF$ 与 $\\odot A$ 交于点 $G$.\n(1) 如图 1, 设 $AD=x$, 用含 $x$ 的代数式表示 $DE$ 的长;\n(2) 如果点 $E$ 是 $\\overparen{DG}$ 的中点, 求 $\\angle AFD$ 的余切值;\n(3) 如果 $\\triangle AFD$ 为等腰三角形, 直接写出 $AD$ 的长.",
+    "images": [
+      "/problems/2022_Changning_Two_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "长宁",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "图像平移"
+    ],
+    "kps": [],
+    "content": "将抛物线  = 2x^2$ 向上平移 $ 个单位后所得抛物线的表达式是 ( )",
+    "options": [
+      " = 2x^2 + 3$",
+      " = 2(x+3)^2$",
+      " = 2(x-3)^2$",
+      " = 2x^2 - 3$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "相似三角形",
+      "周长比与中线比"
+    ],
+    "kps": [],
+    "content": "如果两个相似三角形的周长比为  : 4$，那么这两个三角形的对应中线的比为 ( )",
+    "options": [
+      " : 2$",
+      " : 4$",
+      " : 8$",
+      " : 16$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "3",
+    "difficulty": 0.15,
+    "tags": [
+      "平面向量",
+      "共线向量"
+    ],
+    "kps": [],
+    "content": "如果向量 $\\\\vec{a}$ 与向量 $\\\\vec{b}$ 方向相反，且 $|\\\\vec{a}| = \\\\frac{1}{3}|\\\\vec{b}|$，那么向量 $\\\\vec{a}$ 用向量 $\\\\vec{b}$ 表示为 ( )",
+    "options": [
+      "$\\\\vec{a} = 3\\\\vec{b}$",
+      "$\\\\vec{a} = -3\\\\vec{b}$",
+      "$\\\\vec{a} = \\\\frac{1}{3}\\\\vec{b}$",
+      "$\\\\vec{a} = -\\\\frac{1}{3}\\\\vec{b}$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "4",
+    "difficulty": 0.15,
+    "tags": [
+      "锐角三角比",
+      "余弦"
+    ],
+    "kps": [],
+    "content": "在 \\\\triangle ABC$ 中，$\\\\angle C = 90^\\\\circ$， = 2$， = 1$，那么 $\\\\cos B$ 的值是 ( )",
+    "options": [
+      "$\\\\frac{\\\\sqrt{2}}{2}$",
+      "$\\\\frac{\\\\sqrt{3}}{2}$",
+      "$\\\\frac{1}{2}$",
+      "$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "相似三角形",
+      "判定定理"
+    ],
+    "kps": [],
+    "content": "下列各组条件中，一定能推得 $\\\\triangle ABC$ 与 $\\\\triangle DEF$ 相似的是 ( )",
+    "options": [
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\angle D = \\\\angle F$",
+      "$\\\\angle A = \\\\angle B$ 且 $\\\\angle D = \\\\angle F$",
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\frac{AB}{AC} = \\\\frac{EF}{ED}$",
+      "$\\\\angle A = \\\\angle E$ 且 $\\\\frac{AB}{BC} = \\\\frac{FD}{DE}$"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "6",
+    "difficulty": 0.25,
+    "tags": [
+      "二次函数",
+      "图像与系数的关系"
+    ],
+    "kps": [],
+    "content": "已知二次函数  = ax^2 + bx + c$ ( \\\\ne 0$) 的图像如图所示，那么下列结论中正确的是 ( )",
+    "options": [
+      " > 0$",
+      "当  > -1$ 时， > 0$",
+      " = 2a$",
+      " + 3b + c = 0$"
+    ],
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q6.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "7",
+    "difficulty": 0.15,
+    "tags": [
+      "比例式"
+    ],
+    "kps": [],
+    "content": "如果 $\\\\frac{x-y}{y} = \\\\frac{2}{3}$，那么 $\\\\frac{x}{y} =$ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "8",
+    "difficulty": 0.15,
+    "tags": [
+      "平面向量",
+      "线性运算"
+    ],
+    "kps": [],
+    "content": "计算：(3\\\\vec{a} + 2\\\\vec{b}) - 5\\\\vec{a} =$ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "黄金分割"
+    ],
+    "kps": [],
+    "content": "已知线段  = 8cm$，点 $ 是 $ 的黄金分割点，且  > BC$，那么线段 $ 的长为 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "开口方向"
+    ],
+    "kps": [],
+    "content": "如果抛物线 $y = (k-2)x^2$ 的开口向上，那么 $k$ 的取值范围是 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "11",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "过原点"
+    ],
+    "kps": [],
+    "content": "如果抛物线 $y = -x^2 + 3x - 1 + m$ 经过原点，那么 $m = $ _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "12",
+    "difficulty": 0.3,
+    "tags": [
+      "二次函数",
+      "对称性"
+    ],
+    "kps": [],
+    "content": "已知二次函数 $y = ax^2 + bx + c$ ($a \\ne 0$) 自变量 $x$ 的值和它对应的函数值 $y$ 如下表所示：\n| $x$ | $\\cdots$ | $-1$ | $0$ | $1$ | $2$ | $3$ | $\\cdots$ |\n| $y$ | $\\cdots$ | $0$ | $3$ | $4$ | $3$ | $m$ | $\\cdots$ |\n那么上表中 $m$ 的值为 _______.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": [
+      "解直角三角形",
+      "坡比"
+    ],
+    "kps": [],
+    "content": "某滑雪运动员沿着坡比为 $1 : \\sqrt{3}$ 的斜坡向下滑行了 $100$ 米，那么运动员下降的垂直高度为 _______ 米.",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "14",
+    "difficulty": 0.4,
+    "tags": [
+      "平行线分线段成比例"
+    ],
+    "kps": [],
+    "content": "如图，直线 $AD \\parallel BE \\parallel CF$，如果 $\\frac{AB}{BC} = \\frac{1}{3}$，$AD = 2$，$CF = 6$，那么线段 $BE$ 的长是 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q14.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "15",
+    "difficulty": 0.45,
+    "tags": [
+      "平面向量",
+      "几何应用"
+    ],
+    "kps": [],
+    "content": "如图，在平行四边形 $ABCD$ 中，点 $M$ 是边 $CD$ 中点，点 $N$ 是边 $BC$ 的中点，设 $\\vec{AB} = \\vec{a}$，$\\vec{BC} = \\vec{b}$，那么 $\\vec{MN}$ 可用 $\\vec{a} , \\vec{b}$ 表示为 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q15.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "16",
+    "difficulty": 0.5,
+    "tags": [
+      "相似三角形",
+      "矩形内接"
+    ],
+    "kps": [],
+    "content": "如图，已知正方形 $DEFG$ 的顶点 $D$、$E$ 在 $\\triangle ABC$ 的边 $BC$ 上，顶点 $G$、$F$ 分别在边 $AB$、$AC$ 上，如果 $BC = 4$，$\\triangle ABC$ 的面积为 $6$，那么这个正方形的边长是 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q16.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [
+      "解直角三角形",
+      "新定义几何"
+    ],
+    "kps": [],
+    "content": "定义：有一组对边相等而另一组对边不相等的凸四边形叫做“对等四边形”，如图，在 $Rt\\triangle PBC$ 中，$\\angle PCB = 90^\\circ$，点 $A$ 在边 $BP$ 上，点 $D$ 在边 $CP$ 上，如果 $BC = 11$，$\\tan \\angle PBC = \\frac{12}{5}$，$AB = 13$，四边形 $ABCD$ 为“对等四边形”，那么 $CD$ 的长为 _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q17.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q17",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [
+      "几何变换",
+      "折叠问题",
+      "解直角三角形"
+    ],
+    "kps": [],
+    "content": "如图所示，在三角形纸片 $\\triangle ABC$ 中，$AB=9$，$BC=6$，$\\angle ACB=2\\angle A$，如果将 $\\triangle ABC$ 沿过点 $C$ 的直线折叠，使点 $B$ 落在边 $AC$ 上的点 $D$ 处，折痕为 $CM$，那么 $\\cos \\angle DMA =$ _______.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q18.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "锐角三角比",
+      "特殊角的三角比"
+    ],
+    "kps": [],
+    "content": "计算：$3\\tan 30^\\circ + 2\\cos 45^\\circ - 2\\sin 60^\\circ \\times \\cot 45^\\circ$",
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "20",
+    "difficulty": 0.45,
+    "tags": [
+      "相似三角形",
+      "重心",
+      "平面向量"
+    ],
+    "kps": [],
+    "content": "如图，在 $\\triangle ABC$ 中，点 $F$ 为 $\\triangle ABC$ 的重心，联结 $AF$ 并延长交 $BC$ 于点 $D$，联结 $BF$ 并延长交 $AC$ 于点 $E$.\n(1) 求 $\\frac{S_{\\triangle DEF}}{S_{\\triangle ABF}}$ 的值；\n(2) 如果 $\\vec{AB} = \\vec{a}$，$\\vec{AC} = \\vec{b}$，用 $\\vec{a}$，$\\vec{b}$ 表示 $\\vec{BE}$ 和 $\\vec{AF}$.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q20.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "21",
+    "difficulty": 0.5,
+    "tags": [
+      "解直角三角形",
+      "等腰三角形"
+    ],
+    "kps": [],
+    "content": "如图，在 $\\triangle ABC$ 中，$AB = AC = \\sqrt{5}$，$\\sin B = \\frac{2\\sqrt{5}}{5}$.\n(1) 求边 $BC$ 的长度；\n(2) 求 $\\cos A$ 的值.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q21.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "22",
+    "difficulty": 0.55,
+    "tags": [
+      "解直角三角形",
+      "仰角俯角问题"
+    ],
+    "kps": [],
+    "content": "如图，小明同学在学习了解直角三角形及其应用的知识后，尝试利用无人机测量他所住小区的楼房 $BC$ 的高度，当无人机在地面 $A$ 点处时，测得小区楼房 $BC$ 顶端点 $C$ 处的仰角为 $30^\\circ$，当无人机垂直向上飞行到距地面 $60$ 米的 $D$ 点处时，测得小区楼房 $BC$ 顶端点 $C$ 处的俯角为 $45^\\circ$.\n(1) 求小区楼房 $BC$ 的高度；\n(2) 若无人机保持现有高度沿平行于 $AB$ 的方向，并以 $5$ 米/秒的速度继续向前匀速飞行，问：经过多少秒后，无人机无法观察到地面上点 $A$ 的位置（计算结果保留根号）",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q22.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "23",
+    "difficulty": 0.65,
+    "tags": [
+      "相似三角形",
+      "几何证明"
+    ],
+    "kps": [],
+    "content": "已知：如图，在 $Rt\\triangle ABC$ 中，$\\angle ACB = 90^\\circ$，$CD \\perp AB$，垂足为点 $D$，$E$ 为边 $AC$ 上一点，联结 $BE$ 交 $CD$ 于点 $F$，并满足 $BC^2 = CD \\cdot BE$.\n求证：(1) $\\triangle BCE \\sim \\triangle CDB$；\n(2) 过点 $C$ 作 $CM \\perp BE$，交 $BE$ 于点 $G$，交 $AB$ 于点 $M$，求证：$BE \\cdot CM = AB \\cdot CF$.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q23.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "24",
+    "difficulty": 0.85,
+    "tags": [
+      "二次函数与几何综合",
+      "相似三角形",
+      "动点问题"
+    ],
+    "kps": [],
+    "content": "如图，抛物线 $y = -\\frac{3}{4}x^2 + bx + c$ 与 $x$ 轴交于点 $A(4, 0)$，与 $y$ 轴交于点 $B(0, 3)$，点 $M(m, 0)$ 为线段 $OA$ 上一动点，过点 $M$ 且垂直于 $x$ 轴的直线与直线 $AB$ 及抛物线分别交于点 $P$、$N$.\n(1) 求抛物线的解析式，并写出此抛物线的对称轴和顶点坐标；\n(2) 如果以点 $P$、$N$、$B$、$O$ 为顶点的四边形为平行四边形，求 $m$ 的值；\n(3) 如果以 $B$、$P$、$N$ 为顶点的三角形与 $\\triangle AOB$ 相似，求点 $M$ 的坐标.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q24.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Chongming_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "几何综合",
+      "旋转性质",
+      "动点与函数"
+    ],
+    "kps": [],
+    "content": "已知：如图，正方形的边长为 $1$，在射线 $AB$ 上取一点 $E$，联结 $DE$，将 $\\triangle ADE$ 绕点 $D$ 逆时针旋转 $90^\\circ$，$E$ 点落在点 $F$ 处，联结 $EF$，与对角线 $BD$ 所在的直线交于点 $M$，与射线 $DC$ 交于点 $N$.\n(1) 当 $AE = \\frac{1}{3}$ 时，求 $\\tan \\angle EDB$ 的值；\n(2) 当点 $E$ 在线段 $AB$ 上，如果 $AE = x$，$FM = y$，求 $y$ 关于 $x$ 的函数解析式，并写出定义域；\n(3) 联结 $AM$，直线 $AM$ 与直线 $BC$ 交于点 $G$，当 $BG = \\frac{1}{3}$ 时，求 $AE$ 的值.",
+    "images": [
+      "/problems/2022_Chongming_One_Mock/2022_Chongming_One_Mock_Q25.png"
+    ],
+    "has_answer": false,
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "崇明",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "1",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "alg_expr_eval"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中，下列函数的图像过点 (-1, 1) 的是（ ）",
+    "options": [
+      "A. $y = x - 1$",
+      "B. $y = -x + 1$",
+      "C. $y = \\frac{1}{x}$",
+      "D. $y = x^2$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "2",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_triangle_prop",
+      "对称轴"
+    ],
+    "content": "从图形运动的角度研究抛物线，有利于我们认识新的抛物线的特征. 如果将抛物线 $y = x^2 + 2$ 绕着原点旋转 $180^\\circ$，那么关于旋转后所得新抛物线与原抛物线之间的关系，下列正确的是（ ）",
+    "options": [
+      "A. 它们的开口方向相同",
+      "B. 它们的对称轴相同",
+      "C. 它们的变化情况相同",
+      "D. 它们的顶点坐标相同"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_trig_def"
+    ],
+    "content": "如果直线 $y = 2x$ 与 $x$ 轴正半轴的夹角为锐角 $\\alpha$，那么下列各式正确的是（ ）",
+    "options": [
+      "A. $\\sin \\alpha = \\frac{1}{2}$",
+      "B. $\\cos \\alpha = \\frac{1}{2}$",
+      "C. $\\tan \\alpha = \\frac{1}{2}$",
+      "D. $\\cot \\alpha = \\frac{1}{2}$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知 D 是 $\\triangle ABC$ 边 AB 上的一点，如果 $\\angle BCD = \\angle A$，那么下列结论中正确的是（ ）",
+    "options": [
+      "A. $AC^2 = AD \\cdot AB$",
+      "B. $BC^2 = BD \\cdot AB$",
+      "C. $CD^2 = AD \\cdot BD$",
+      "D. $AD^2 = BD \\cdot CD$"
+    ],
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q4.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "5",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_aux_line",
+      "geo_similar_basic"
+    ],
+    "content": "已知线段 AB. 按以下步骤作图：\n(1) 作以 A 为端点的射线 AP (不与线段 AB 所在直线重合);\n(2) 在射线 AP 上顺次截取 AC = CD = DE;\n(3) 联结 BE, 过点 D 作 DF // BE, 交线段 AB 于点 F.\n根据上述作图过程，下列结论中正确的是（ ）",
+    "options": [
+      "A. AF:AB = 1:2",
+      "B. AF:AB = 1:3",
+      "C. AF:AB = 2:3",
+      "D. AF:AB = 2:1"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "6",
+    "difficulty": 0.35,
+    "tags": [],
+    "kps": [
+      "geo_congruent_judge",
+      "解直角三角形"
+    ],
+    "content": "在 $\\triangle ABC$ 中，$AB = 2\\sqrt{3}, \\angle BAC = 30^\\circ$. 下列线段 BC 的长度不能使 $\\triangle ABC$ 的形状和大小都确定的是（ ）",
+    "options": [
+      "A. 2",
+      "B. 4",
+      "C. $\\sqrt{3}$",
+      "D. $2\\sqrt{3}$"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "7",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "如果 $\\frac{x}{2} = \\frac{y}{3} = \\frac{z}{5} \\neq 0$，那么 $\\frac{y-x}{z} = $ ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [],
+    "kps": [
+      "alg_fraction_concept"
+    ],
+    "content": "函数 $y = \\frac{x}{x+1}$ 的定义域是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算：$2(\\vec{a}-2\\vec{b}) + 3(\\vec{a}+\\vec{b}) = $ ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [],
+    "kps": [
+      "alg_func_linear_property"
+    ],
+    "content": "如果函数 $y=kx$ ($k \\neq 0$) 的图像经过第二、四象限，那么 $y$ 的值随 $x$ 的值增大而 ________. (填“增大”或“减小”)",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "11",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如果抛物线 $y = (x-2)^2 + k$ 不经过第三象限，那么 $k$ 的值可以是 ________. (只需写一个)",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "12",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "二次函数的对称性",
+      "func_quadratic_basic"
+    ],
+    "content": "用描点法画二次函数的图像需要经过列表、描点、连线三个步骤. 以下是小明画二次函数 $y = ax^2 + bx + c$ 图像时所列的表格：\n\n| x | ... | -4 | -3 | -2 | 0 | 2 | ... |\n|---|---|---|---|---|---|---|---|\n| y | ... | 3 | 0 | -1 | 3 | 15 | ... |\n\n根据表格可以知道该二次函数图像的顶点坐标是 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q12_table.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "13",
+    "difficulty": 0.45,
+    "tags": [],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知 $AD // BE // CF$，它们依次交直线 $l_1, l_2$ 于点 A、B、C 和点 D、E、F. 如果 $5AB = 2AC, DE = 6$，那么线段 EF 的长是 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q13.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "解直角三角形"
+    ],
+    "content": "已知在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ, \\sin A = \\frac{3}{4}, BC = 6$，则 AB 的长是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "15",
+    "difficulty": 0.3,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_prop"
+    ],
+    "content": "联结三角形各边中点，所得的三角形的周长与原三角形周长的比是 ________.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "16",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "geo_similar_prop",
+      "geo_quad_property",
+      "geo_similar_basic"
+    ],
+    "content": "如图，已知菱形 ABCD，E、F 分别为 $\\triangle ABD$ 和 $\\triangle BCD$ 的重心，如果边 $AB=5$，对角线 $BD=6$，那么 EF 的长为 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q16.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "17",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "content": "《九章算术》是我国古代的数学名著，书中有一个问题：“今有邑方不知大小，各中开门，出北门一百步立一表，出西门二百二十五步适可见之，问邑方几何？”它的意思是：如图，M、N 分别是正方形 ABCD 的边 AD, AB 的中点，$ME \\perp AD, NF \\perp AB, EF$ 过点 A，且 $ME = 100$ 步，$NF = 225$ 步，那么该正方形城邑边长 AD 约为 ________ 步.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q17_1.png",
+      "/problems/2022_Fengxian_One_Mock/q17_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "18",
+    "difficulty": 0.75,
+    "tags": [],
+    "kps": [
+      "解直角三角形",
+      "相似三角形",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在 $Rt\\triangle ABC$ 中，$\\angle C = 90^\\circ, \\sin B = \\frac{3}{5}, D$ 是边 BC 的中点，点 E 在边 AB 上，将 $\\triangle BDE$ 沿直线 DE 翻折，使得点 B 落在同一平面内的点 F 处. 如果射线 FD 交边 AB 于点 G，当 $FD \\perp AB$ 时，AE:BE 的值为 ________.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q18.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "19",
+    "difficulty": 0.25,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "计算：$\\frac{2\\sin^2 60^\\circ - \\frac{1}{2}\\cot 45^\\circ}{\\tan^2 60^\\circ + 4\\sin 30^\\circ}$.",
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "func_linear_inverse",
+      "geo_quad_property"
+    ],
+    "content": "如图，在平面直角坐标系 $xOy$ 中，矩形 ABCD 的顶点 A(4,0) 和 B 在 x 轴的正半轴上，反比例函数 $y = \\frac{k}{x}$ 在第一象限内的图像经过点 D，交 BC 于点 E, CE = 2BE, $\\tan \\angle AOD = \\frac{3}{4}$.\n(1) 求反比例函数的解析式；\n(2) 联结 OC, 求 $\\angle BOC$ 的正切值.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q20.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [],
+    "kps": [
+      "alg_expr_calc",
+      "解直角三角形"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，AC = 5, $\\cot A = 2, \\cot B = 3, D$ 是 AB 边上的一点，$\\angle BDC = 45^\\circ$.\n(1) 求线段 BD 的长；\n(2) 如果设 $\\vec{CA} = \\vec{a}, \\vec{CB} = \\vec{b}$，那么用含 $\\vec{a}, \\vec{b}$ 的式子表示向量 $\\vec{CD}$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q21.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图是位于奉贤南桥镇解放东路 866 号的“奉贤电视发射塔”，它建于 1996 年，在长达二十几年的时间里它一直是奉贤区最高建筑物，该记录一直保持到 2017 年，历了 25 年风雨的电视塔锋刻了一代奉贤人的记忆. 某数学活动小组在学习了“解直角三角形的应用”后，开展了测量“奉贤电视发射塔的高度”的实践活动. 测量方案：如图，在电视塔附近的高楼楼顶 C 处测量塔顶 A 处的仰角和塔底 B 处的俯角. 数据收集：这幢高楼共 12 层，每层高约 2.8 米，在高楼楼顶 C 处测得塔顶 A 处的仰角为 $58^\\circ$，塔底 B 处的俯角为 $22^\\circ$. 问题解决：求奉贤电视发射塔 AB 的高度 (结果精确到 1 米). 参考数据：$\\sin 22^\\circ \\approx 0.37, \\cos 22^\\circ \\approx 0.93, \\tan 22^\\circ \\approx 0.40, \\sin 58^\\circ \\approx 0.85, \\cos 58^\\circ \\approx 0.53, \\tan 58^\\circ \\approx 1.60$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q22.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "23",
+    "difficulty": 0.85,
+    "tags": [],
+    "kps": [
+      "geo_triangle_basic",
+      "geo_similar_k_model"
+    ],
+    "content": "根据相似形定义可以知道，如果一个四边形的四个角与另一个四边形的四个角对应相等，且它们各有的四边对应成比例，那么这两个四边形叫做相似四边形. 对应相等的角的顶点叫做这两个相似四边形的对应顶点，以对应顶点为端点的边是这两个相似四边形的对应边，对应边的比叫做这两个相似多边形的相似比. (我们研究的四边形都是指凸四边形)\n(1) 某学习小组在探究相似四边形的判定时，得到如下两个命题，请判断它们是真命题还是假命题 (直接在横线上填写“真”或“假”)：\n① 梯形的中位线将原梯形分成的两个小的梯形相似; ________ 命题\n② 有一个内角对应相等的两个菱形相似; ________ 命题\n(2) 已知：如图 1, $\\triangle ABC$ 是以 BC 为斜边的等腰直角三角形，以 BC 为直角边作等腰直角三角形 BCD, 再以 BD 为直角边作等腰直角三角形 BDE. 求证：四边形 ABDC 与四边形 CBED 相似.\n(3) 已知：如图 2, 在 $\\triangle ABC$ 中，点 D、E 分别在边 AB、AC 上，BE、CD 相交于点 F，点 G 在 AF 的延长线上，联结 BG、CG. 如果四边形 ADFE 与四边形 ABGC 相似，且点 A、D、F、E 分别对应 A、B、G、C. 求证：$AF \\cdot BF = AG \\cdot EF$.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q23_1.png",
+      "/problems/2022_Fengxian_One_Mock/q23_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [],
+    "kps": [
+      "func_quadratic_basic",
+      "func_linear_inverse",
+      "geo_triangle_prop"
+    ],
+    "content": "如图，在平面直角坐标系 $xOy$ 中，抛物线 $y = ax^2 + bx + 3$ 与 x 轴交于点 A(-1, 0) 和点 B(3, 0)，与 y 轴交于点 C，顶点为 D.\n(1) 求该抛物线的表达式的顶点 D 的坐标；\n(2) 将抛物线沿 y 轴上下平移，平移后所得新抛物线顶点为 M，点 C 的对应点为 E.\n① 如果点 M 落在直线 BC 上，求 $\\angle DBE$ 的度数；\n② 设直线 ME 与 x 轴正半轴交于点 P，与线段 BC 交于点 Q，当 PE = 2PQ 时，求平移后新抛物线的表达式.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q24.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Fengxian_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [],
+    "kps": [
+      "geo_trig_def",
+      "geo_quad_property",
+      "geo_similar_k_model"
+    ],
+    "content": "如图 1, 已知锐角 $\\triangle ABC$ 的高 AD、BE 相交于点 F，延长 AD 至 G，使 DG=FD, 连接 BG, CG.\n(1) 求证：$BD \\cdot AC = AD \\cdot BG$；\n(2) 如果 BC = 10, 设 $\\tan \\angle ABC = m$.\n① 如图 2, 当 $\\angle ABG = 90^\\circ$ 时，用含 m 的代数式表示 $\\triangle BFG$ 的面积；\n② 当 AB = 8, 且四边形 BGCE 是梯形时，求 m 的值.",
+    "images": [
+      "/problems/2022_Fengxian_One_Mock/q25_1.png",
+      "/problems/2022_Fengxian_One_Mock/q25_2.png"
+    ],
+    "year": "2022",
+    "district": "奉贤",
+    "exam_type": "一模",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "比例线段"
+    ],
+    "kps": [
+      "proportion_segments"
+    ],
+    "content": "如果 $2x = 3y$，那么下列各式中正确的是（ ）",
+    "options": [
+      "(A) $\\frac{x}{y} = \\frac{2}{3}$",
+      "(B) $\\frac{x}{3} = \\frac{y}{2}$",
+      "(C) $\\frac{x}{2} = \\frac{y}{3}$",
+      "(D) $x:3 = y:2$"
+    ],
+    "answer": "B",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "相似三角形"
+    ],
+    "kps": [
+      "similar_triangles"
+    ],
+    "content": "在 $\\triangle ABC$ 中，$D, E$ 分别是 $AB, AC$ 上的点，$DE // BC$，如果 $AD=2, BD=3$，那么 $DE:BC$ 等于（ ）",
+    "options": [
+      "(A) $2:3$",
+      "(B) $3:2$",
+      "(C) $2:5$",
+      "(D) $5:2$"
+    ],
+    "answer": "C",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "3",
+    "difficulty": 0.1,
+    "tags": [
+      "平面直角坐标系"
+    ],
+    "kps": [
+      "distance_to_origin"
+    ],
+    "content": "在直角坐标平面内，点 $P(3, 4)$ 到原点 $O$ 的距离为（ ）",
+    "options": [
+      "(A) 3",
+      "(B) 4",
+      "(C) 5",
+      "(D) $\\sqrt{7}$"
+    ],
+    "answer": "C",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "4",
+    "difficulty": 0.2,
+    "tags": [
+      "向量"
+    ],
+    "kps": [
+      "unit_vector"
+    ],
+    "content": "已知 $\\vec{a}$ 是单位向量，$\\vec{b} = -3\\vec{a}$，那么下列说法中错误的是（ ）",
+    "options": [
+      "(A) $|\\vec{b}| = 3$",
+      "(B) $\\vec{a}$ 与 $\\vec{b}$ 方向相反",
+      "(C) $\\vec{a} // \\vec{b}$",
+      "(D) $\\vec{b}$ 是单位向量"
+    ],
+    "answer": "D",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "5",
+    "difficulty": 0.15,
+    "tags": [
+      "三角比"
+    ],
+    "kps": [
+      "sin_definition"
+    ],
+    "content": "在 $\\triangle ABC$ 中，$\\angle C = 90^\\circ, BC = a, AB = c$，那么 $\\sin A$ 等于（ ）",
+    "options": [
+      "(A) $\\frac{a}{c}$",
+      "(B) $\\frac{c}{a}$",
+      "(C) $\\frac{a}{\\sqrt{c^2-a^2}}$",
+      "(D) $\\frac{\\sqrt{c^2-a^2}}{c}$"
+    ],
+    "answer": "A",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [
+      "二次函数"
+    ],
+    "kps": [
+      "parabola_quadrants"
+    ],
+    "content": "如果二次函数 $y = ax^2 + bx + c$ ($a \\neq 0$) 的图像经过第一、二、四象限，那么下列判断中正确的是（ ）",
+    "options": [
+      "(A) $a > 0$",
+      "(B) $b > 0$",
+      "(C) $c > 0$",
+      "(D) $b^2 - 4ac < 0$"
+    ],
+    "answer": "C",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "比例尺"
+    ],
+    "kps": [
+      "scale_calculation"
+    ],
+    "content": "比例尺为 $1:1000000$ 的地图上，两地的距离为 5 厘米，则这两地的实际距离是 ______ 千米。",
+    "answer": "50",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "8",
+    "difficulty": 0.15,
+    "tags": [
+      "向量"
+    ],
+    "kps": [
+      "vector_operation"
+    ],
+    "content": "计算：$2(\\vec{a} - 2\\vec{b}) + 3\\vec{b} =$ ______。",
+    "answer": "$2\\vec{a} - \\vec{b}$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "9",
+    "difficulty": 0.1,
+    "tags": [
+      "相似三角形"
+    ],
+    "kps": [
+      "area_ratio"
+    ],
+    "content": "如果两个相似三角形的相似比是 $1:4$，那么它们的面积比是 ______。",
+    "answer": "$1:16$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "10",
+    "difficulty": 0.25,
+    "tags": [
+      "黄金分割"
+    ],
+    "kps": [
+      "golden_ratio"
+    ],
+    "content": "如果线段 $AB$ 的长为 2 厘米，点 $P$ 是线段 $AB$ 的黄金分割点，$AP > BP$，那么线段 $AP$ 的长等于 ______ 厘米。",
+    "answer": "$\\sqrt{5}-1$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "11",
+    "difficulty": 0.35,
+    "tags": [
+      "相似三角形"
+    ],
+    "kps": [
+      "similarity_criteria"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，$D$ 是 $AB$ 上一点，$\\angle ACD = \\angle B$，如果 $AD=1, AB=4$，那么 $AC =$ ______。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q11.png"
+    ],
+    "answer": "2",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "12",
+    "difficulty": 0.4,
+    "tags": [
+      "坡度"
+    ],
+    "kps": [
+      "slope_calculation"
+    ],
+    "content": "如图，斜坡 $AB$ 的坡度 $i = 1:2.4$，如果坡长 $AB = 26$ 米，那么坡高 $BC =$ ______ 米。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q12.png"
+    ],
+    "answer": "10",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "13",
+    "difficulty": 0.2,
+    "tags": [
+      "解直角三角形"
+    ],
+    "kps": [
+      "trig_in_right_triangle"
+    ],
+    "content": "已知在 $\\triangle ABC$ 中，$\\angle C = 90^\\circ, \\angle A = 30^\\circ, AC = 3$，那么 $BC =$ ______。",
+    "answer": "$\\sqrt{3}$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "14",
+    "difficulty": 0.3,
+    "tags": [
+      "二次函数"
+    ],
+    "kps": [
+      "parabola_opening"
+    ],
+    "content": "如果抛物线 $y = (k-1)x^2 + k$ 的开口向下，那么 $k$ 的取值范围是 ______。",
+    "answer": "$k < 1$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "15",
+    "difficulty": 0.3,
+    "tags": [
+      "二次函数"
+    ],
+    "kps": [
+      "parabola_translation"
+    ],
+    "content": "如果将抛物线 $y = x^2$ 向上平移 3 个单位，那么所得新抛物线的表达式是 ______。",
+    "answer": "$y = x^2 + 3$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "16",
+    "difficulty": 0.45,
+    "tags": [
+      "重心"
+    ],
+    "kps": [
+      "geo_vector_calc"
+    ],
+    "content": "已知 $\\triangle ABC$ 的重心为 $G$，$\\vec{AB} = \\vec{a}, \\vec{AC} = \\vec{b}$，那么 $\\vec{AG} =$ ______。(用含 $\\vec{a}, \\vec{b}$ 的向量表示)",
+    "answer": "$\\frac{1}{3}(\\vec{a} + \\vec{b})$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [
+      "平行线分线段成比例"
+    ],
+    "kps": [
+      "trapezoid_parallel_segment"
+    ],
+    "content": "如图，已知 $AD // EF // BC, AD=2, BC=5, AE:EB = 1:2$，那么 $EF =$ ______。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q17.png"
+    ],
+    "answer": "3",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "18",
+    "difficulty": 0.65,
+    "tags": [
+      "新定义",
+      "解直角三角形"
+    ],
+    "kps": [
+      "double_angle_triangle"
+    ],
+    "content": "定义：如果一个三角形的一个内角是另一个内角的 2 倍，那么称这个三角形为“二倍角三角形”。在 $\\triangle ABC$ 中，$\\angle C = 90^\\circ$，如果 $\\triangle ABC$ 是“二倍角三角形”，那么 $\\sin A$ 的值为 ______。",
+    "answer": "$\\frac{1}{2}$ 或 $\\frac{\\sqrt{3}}{2}$",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "三角比"
+    ],
+    "kps": [
+      "trig_calculation"
+    ],
+    "content": "计算：$\\frac{\\sqrt{3} \\tan 30^\\circ + \\cos^2 45^\\circ}{\\sin 60^\\circ \\cdot \\cot 30^\\circ} - \\sin 45^\\circ \\cdot \\cos 45^\\circ$。",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "20",
+    "difficulty": 0.55,
+    "tags": [
+      "解直角三角形"
+    ],
+    "kps": [
+      "solving_triangle_with_altitude"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，$AD$ 是 $BC$ 边上的高，$BC = 12, \\cos B = \\frac{4}{5}, \\tan C = \\frac{3}{4}$，求 $\\triangle ABC$ 的周长。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q20.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "21",
+    "difficulty": 0.5,
+    "tags": [
+      "二次函数"
+    ],
+    "kps": [
+      "parabola_equation_3points"
+    ],
+    "content": "已知抛物线经过点 $A(0, 3), B(-1, 0), C(3, 0)$。\n(1) 求抛物线的表达式；\n(2) 如果点 $P$ 在抛物线上，且点 $P$ 的纵坐标为 3，求 $\\triangle PBC$ 的面积。",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [
+      "梯形",
+      "相似三角形"
+    ],
+    "kps": [
+      "trapezoid_similarity_area"
+    ],
+    "content": "如图，在梯形 $ABCD$ 中，$AD // BC, AD=2, BC=5$，点 $E, F$ 分别在 $BC$ 和 $CD$ 上，且 $EF // AB, CE:EB = 1:2$。\n(1) 求线段 $EF$ 的长；\n(2) 连接 $AF, AE$，如果 $\\triangle AEF$ 的面积为 2，求梯形 $ABCD$ 的面积。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q22.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "23",
+    "difficulty": 0.75,
+    "tags": [
+      "相似三角形证明"
+    ],
+    "kps": [
+      "similarity_proof_multi_step"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，点 $D, E$ 分别在 $AB, AC$ 上，$DE // BC$。点 $F$ 是 $BC$ 延长线上的一点，$AF$ 交 $DE$ 于点 $G, \\angle AFG = \\angle B$。\n(1) 求证：$AG^2 = AE \\cdot AC$；\n(2) 如果 $G$ 是 $DE$ 的中点，求证：$BC = 2CF$。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q23.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "24",
+    "difficulty": 0.85,
+    "tags": [
+      "二次函数综合"
+    ],
+    "kps": [
+      "parabola_geometric_condition"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中，已知抛物线 $y = ax^2 + bx + c$ ($a < 0$) 的对称轴是直线 $x = 1$，且抛物线经过点 $A(0, 3)$ 和点 $B(3, 0)$。\n(1) 求抛物线的表达式；\n(2) 如果该抛物线的顶点为 $D$，点 $P$ 是抛物线在第一象限内的一点。如果 $\\angle PAB = \\angle ADB$，求点 $P$ 的坐标。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q24.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "paper": "2022_Hongkou_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "几何综合",
+      "圆"
+    ],
+    "kps": [
+      "geometric_synthesis_moving_points"
+    ],
+    "content": "如图，在 $\\triangle ABC$ 中，$\\angle ACB = 90^\\circ, AC = 4, BC = 3$。点 $D$ 在射线 $BC$ 上，以 $D$ 为圆心，$BD$ 为半径的 $\\odot D$ 与边 $AB$ 相交于点 $E$ (点 $E$ 不与点 $B$ 重合)，过点 $E$ 作 $\\odot D$ 的切线 $EF$ 交边 $AC$ 于点 $F$。\n(1) 当点 $E$ 是 $AB$ 的中点时，求 $BD$ 的长；\n(2) 当点 $F$ 在边 $AC$ 上时，设 $BD = x, AF = y$，求 $y$ 关于 $x$ 的函数关系式，并写出定义域；\n(3) 如果 $\\triangle AEF$ 是等腰三角形，求 $BD$ 的长。",
+    "images": [
+      "/problems/2022_Hongkou_One_Mock/q25.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q01",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "实数",
+      "有理数"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列实数中, 有理数是 ( )",
+    "options": [
+      "(A) $\\frac{\\sqrt{3}}{3}$",
+      "(B) $\\frac{\\pi}{3}$",
+      "(C) $\\frac{1}{3}$",
+      "(D) $3^{-\\frac{1}{3}}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q02",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "2",
+    "difficulty": 0.1,
+    "tags": [
+      "二次根式",
+      "同类二次根式"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "在下列各组根式中, 是同类二次根式的是 ( )",
+    "options": [
+      "(A) $\\sqrt{2}$ 和 $\\sqrt{12}$",
+      "(B) $\\sqrt{5}$ 和 $\\sqrt{\\frac{4}{5}}$",
+      "(C) $\\sqrt{ab}$ 和 $\\sqrt{ab^4}$",
+      "(D) $\\sqrt{a^2-1}$ 和 $\\sqrt{a+1}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q03",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "正多边形",
+      "对称性"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "下列命题中, 正确的是 ( )",
+    "options": [
+      "(A) 正多边形都是中心对称图形",
+      "(B) 正多边形一个内角的大小与边数成正比例",
+      "(C) 正多边形一个外角的大小与边数成反比例",
+      "(D) 边数大于 3 的正多边形的对角线长都相等"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q04",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "4",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "平移"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "将抛物线 $y = ax^2 + bx + c (a \\ne 0)$ 向左平移两个单位, 以下不变的是 ( )",
+    "options": [
+      "(A) 开口方向",
+      "(B) 对称轴",
+      "(C) $y$ 随 $x$ 变化情况",
+      "(D) 与 $y$ 轴的交点"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q05",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "统计",
+      "中位数"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "六个学生进行投篮比赛, 投进的个数分别为 2, 10, 3, 3, 13, 5, 这六个数的中位数为 ( )",
+    "options": [
+      "(A) 3",
+      "(B) 4",
+      "(C) 5",
+      "(D) 6"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q06",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "6",
+    "difficulty": 0.35,
+    "tags": [
+      "圆",
+      "位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知圆 $O_1$、圆 $O_2$ 的半径不相等, 圆 $O_1$ 的半径长为 5, 若圆 $O_2$ 上的点 $A$ 满足 $AO_1 = 5$, 则圆 $O_1$ 与圆 $O_2$ 的位置关系是 ( )",
+    "options": [
+      "(A) 相交或相切",
+      "(B) 相切或相离",
+      "(C) 相交或内含",
+      "(D) 相切或内含"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q07",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "幂的运算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算 $a^6 \\div a^3 = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q08",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [
+      "函数计算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "已知 $f(x) = \\frac{2}{x^2-1}$, 则 $f(-\\sqrt{3}) = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q09",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "不等式组 $\\begin{cases} x-1 > 0 \\\\ 2x+3 > 0 \\end{cases}$ 的解集是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q10",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程 $\\sqrt{2-x} = 2$ 的解是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q11",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [
+      "一元二次方程",
+      "判别式"
+    ],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "如果关于 $x$ 的一元二次方程 $x^2 - 3x + k = 0$ 有两个相等的实数根, 那么实数 $k$ 的值是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q12",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "12",
+    "difficulty": 0.25,
+    "tags": [
+      "反比例函数"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "已知点 $P$ 位于第三象限内, 且点 $P$ 到两坐标轴的距离分别为 3 和 2. 若反比例函数图象经过点 $P$, 则该反比例函数的解析式为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q13",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "13",
+    "difficulty": 0.2,
+    "tags": [
+      "概率"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "女生小琳所在班级共有 40 名学生, 其中女生占 60%. 现学校组织部分女生去市三女中参观, 需要从小琳所在班级的女生当中随机抽取一名女生参加, 那么小琳被抽到的概率是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q14",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [
+      "平行四边形",
+      "角度"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知平行四边形相邻两个内角相差 $40^\\circ$, 则该平行四边形中较小内角数是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q15",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "15",
+    "difficulty": 0.3,
+    "tags": [
+      "正三角形",
+      "外接圆"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_circle_prop"
+    ],
+    "content": "半径为 4 的圆的内接正三角形的边长为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q16",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [
+      "梯形",
+      "向量"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知梯形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC, BD$ 交于点 $O$, $\\frac{S_{\\triangle AOD}}{S_{\\triangle BOC}} = \\frac{1}{4}$. 设 $\\vec{AD} = \\vec{a}, \\vec{AB} = \\vec{b}$, 则 $\\vec{AO} = \\dots$. (用含 $\\vec{a}, \\vec{b}$ 的式子表示)",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q16_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q17",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "17",
+    "difficulty": 0.45,
+    "tags": [
+      "四边形",
+      "中点线段"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "如图, 在四边形 $ABCD$ 中, $\\angle ABC = \\angle ADC = 90^\\circ, AC=26, BD=24$, $M, N$ 分别是 $AC, BD$ 的中点, 则线段 $MN$ 的长为 $\\dots$.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q17_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q18",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [
+      "直线与圆",
+      "位置关系",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知 $l_1 \\parallel l_2$, $l_1, l_2$ 之间的距离是 5cm, 圆心 $O$ 到直线 $l_1$ 的距离是 2cm, 如果圆 $O$ 与直线 $l_1, l_2$ 有三个公共点, 那么圆 $O$ 的半径为 $\\dots cm$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q19",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $|\\sqrt{3} - 2| - 36^{\\frac{1}{2}} + \\sqrt{\\frac{4}{3}} + (\\frac{1}{2})^{-2}$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q20",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "20",
+    "difficulty": 0.45,
+    "tags": [
+      "方程组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程组: $\\begin{cases} x - y = 10 \\\\ x^2 - 5xy - 6y^2 = 0 \\end{cases}$",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q21",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "三角形",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, $AH$ 是 $\\triangle ABC$ 高, $D$ 是边 $AB$ 上一点, $CD$ 与 $AH$ 交于点 $E$. 已知 $AB=AC, AD:DB=3:5$.\n(1) 求 $DE:EC$;\n(2) 若以 $H$ 为圆心, $HB$ 为半径的圆恰好经过点 $D$, 求 $\\cos B$ 的值.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q21_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q22",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [
+      "反比例函数",
+      "一次函数",
+      "等腰梯形"
+    ],
+    "kps": [
+      "func_linear_inverse",
+      "geo_quad_prop"
+    ],
+    "content": "已知反比例函数 $y = \\frac{12}{x}$ 的图像和一次函数 $y = kx - 7$ 的图像都经过点 $P(m, 2)$.\n(1) 求这个一次函数的解析式;\n(2) 如果等腰梯形 $ABCD$ 的顶点 $A, B$ 在这个一次函数的图像上, 顶点 $C, D$ 在这个反比例函数的图像上, 两底 $AD, BC$ 与 $y$ 轴平行, 且 $A$ 和 $B$ 的横坐标分别为 $a$ 和 $a+2$, 求 $a$ 的值.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q23",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [
+      "梯形",
+      "菱形",
+      "证明"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知: 如图, 梯形 $ABCD$ 中, $AD \\parallel BC, DE \\parallel AB, DE$ 与对角线 $AC$ 交于点 $F, FG \\parallel AD$, 且 $FG=EF$.\n(1) 求证: 四边形 $ABED$ 是菱形;\n(2) 联结 $AE$, 又知 $AC \\perp ED$, 求证: $\\frac{1}{2}AE^2 = EF \\cdot ED$.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q24",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "几何存在性",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_quad_prop"
+    ],
+    "content": "如图, 抛物线 $y = ax^2 + 6x + c$ 交 $x$ 轴于 $A, B$ 两点, 交 $y$ 轴于点 $C$. 直线 $y = x - 5$ 经过点 $B, C$.\n(1) 求抛物线解析式;\n(2) 过点 $A$ 的直线交直线 $BC$ 于点 $M$.\n① 当 $AM \\perp BC$ 时, 过抛物线上一点 $P$ (不与 $B, C$ 重合), 作直线 $AM$ 的平行线交直线 $BC$ 于点 $Q$, 若以点 $A, M, P, Q$ 为顶点的四边形是平行四边形, 求点 $P$ 的横坐标;\n② 连结 $AC$, 当直线 $AM$ 与直线 $BC$ 的夹角等于 $\\angle ACB$ 的 2 倍时, 请直接写出点 $M$ 的坐标.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q26_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Hongkou_Two_Mock_Q25",
+    "paper": "2022_Hongkou_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "三角形",
+      "中线",
+      "相似",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, $\\triangle ABC$ 中, $AB = AC, BD$ 是 $AC$ 边上的中线, $AO$ 平分 $\\angle BAC$ 且交 $BD$ 于点 $O$.\n(1) 求证: $BO = 2OD$;\n(2) 当 $\\triangle BCD$ 是等腰三角形时, 求 $\\angle CBD$ 的余弦值;\n(3) 以 $O$ 为圆心, $OD$ 长为半径的圆交线段 $BO$ 于点 $E$, 连结 $CE$. 当 $\\triangle CDE$ 与 $\\triangle AOB$ 相似时, 求 $AB:BC$ 的值.",
+    "images": [
+      "/problems/2022_Hongkou_Two_Mock/q27_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "虹口",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q01",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "二次根式",
+      "最简二次根式"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列二次根式中, 最简二次根式是 ( )",
+    "options": [
+      "(A) $\\sqrt{8}$",
+      "(B) $\\sqrt{\\frac{1}{2}}$",
+      "(C) $\\sqrt{6}$",
+      "(D) $\\sqrt{0.2}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q02",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "二次函数",
+      "平移"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "将抛物线 $y = (x-2)^2 + 1$ 向上平移 3 个单位, 得到的新抛物线的顶点坐标是 ( )",
+    "options": [
+      "(A) $(2, -2)$",
+      "(B) $(2, 4)$",
+      "(C) $(5, 1)$",
+      "(D) $(-1, 1)$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q03",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "一元二次方程",
+      "根的判别式"
+    ],
+    "kps": [
+      "alg_eq_quadratic"
+    ],
+    "content": "关于 $x$ 的一元二次方程 $kx^2 - 4x + 1 = 0$ 有两个不相等的实数根, 则 $k$ 的取值范围是 ( )",
+    "options": [
+      "(A) $k > 4$",
+      "(B) $k < 4$",
+      "(C) $k < 4$ 且 $k \\ne 0$",
+      "(D) $k \\le 4$ 且 $k \\ne 0$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q04",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "4",
+    "difficulty": 0.1,
+    "tags": [
+      "统计",
+      "波动程度"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "下列各统计量中, 表示一组数据波动程度的量是 ( )",
+    "options": [
+      "(A) 方差",
+      "(B) 众数",
+      "(C) 平均数",
+      "(D) 频率"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q05",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "5",
+    "difficulty": 0.15,
+    "tags": [
+      "三角形",
+      "三边关系"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "已知三角形两边的长分别是 4 和 9, 则此三角形第三边的长可以是 ( )",
+    "options": [
+      "(A) 4",
+      "(B) 5",
+      "(C) 10",
+      "(D) 15"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q06",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [
+      "圆",
+      "位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知 $\\odot O$ 的半径 $OA$ 长为 3, 点 $B$ 在线段 $OA$ 上, 且 $OB=2$, 如果 $\\odot B$ 与 $\\odot O$ 有公共点, 那么 $\\odot B$ 的半径 $r$ 的取值范围是 ( )",
+    "options": [
+      "(A) $r \\ge 1$",
+      "(B) $r \\le 5$",
+      "(C) $1 < r < 5$",
+      "(D) $1 \\le r \\le 5$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q07",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "整式计算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算: $a(a+1) = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q08",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [
+      "二次根式",
+      "定义域"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "函数 $y = \\sqrt{x-2}$ 的定义域是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q09",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程组 $\\begin{cases} x+2y=3 \\\\ x^2-y^2=0 \\end{cases}$ 的解是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q10",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "10",
+    "difficulty": 0.15,
+    "tags": [
+      "正多边形",
+      "外角"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "一个正多边形的一个外角等于 $30^\\circ$, 则这个正多边形的边数为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q11",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "11",
+    "difficulty": 0.2,
+    "tags": [
+      "二次函数",
+      "图象性质"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "如果抛物线 $y = (m+1)x^2$ 的最高点是坐标轴的原点, 那么 $m$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q12",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "12",
+    "difficulty": 0.2,
+    "tags": [
+      "反比例函数",
+      "取值范围"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "观察反比例函数 $y = \\frac{2}{x}$ 的图像, 当 $0 < x < 1$ 时, $y$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q13",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "13",
+    "difficulty": 0.15,
+    "tags": [
+      "概率",
+      "有理数"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "从 $\\frac{2}{9}, \\sqrt{2}, \\pi$ 这三个数中任选一个数, 选出的这个数是有理数的概率为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q14",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "14",
+    "difficulty": 0.3,
+    "tags": [
+      "坡度",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "某传送带与地面所成斜坡的坡度 $i = 1:2.4$, 如果它把物体从地面送到离地面 10 米高的地方, 那么物体所经过的路程为 $\\dots$ 米.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q15",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "15",
+    "difficulty": 0.35,
+    "tags": [
+      "重心",
+      "向量"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图, 点 $G$ 是 $\\triangle ABC$ 的重心, 设 $\\vec{AB} = \\vec{a}, \\vec{BG} = \\vec{b}$, 那么向量 $\\vec{BC}$ 用向量 $\\vec{a}, \\vec{b}$ 表示为 $\\dots$.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q15_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q16",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "16",
+    "difficulty": 0.45,
+    "tags": [
+      "圆",
+      "弦长",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 在半径为 2 的 $\\odot O$ 中, 弦 $AB$ 与弦 $CD$ 相交于点 $M$, 如果 $AB = CD = 2\\sqrt{3}, \\angle AMC = 120^\\circ$, 那么 $OM$ 的长度为 $\\dots$.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q16_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q17",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [
+      "几何变换",
+      "旋转"
+    ],
+    "kps": [
+      "geo_motion_rotation_hand"
+    ],
+    "content": "在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, AC = 3$, 将 $\\triangle ABC$ 绕点 $A$ 旋转, 点 $C$ 恰好落在 $AB$ 的中点上, 设点 $B$ 旋转后的对应点为点 $D$, 则 $CD$ 的长度为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q18",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.8,
+    "tags": [
+      "翻折",
+      "面积比",
+      "中线",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, 在 $\\triangle ABC$ 中, $AD$ 是 $BC$ 边上的中线, $\\angle ADC = 60^\\circ, BC = 3AD$. 将 $\\triangle ABD$ 沿直线 $AD$ 翻折, 点 $B$ 落在平面上的 $B'$ 处, 联结 $AB'$ 交 $BC$ 于点 $E$, 那么 $\\frac{CE}{BE}$ 的值为 $\\dots$.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q18_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q19",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $27^{\\frac{2}{3}} + |\\sqrt{3} - 2| + \\frac{1}{2 - \\sqrt{5}} - (\\frac{1}{3})^{-2}$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q20",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "20",
+    "difficulty": 0.4,
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解不等式组: $\\begin{cases} 3(x+5) > 3 - (x-2) \\\\ \\frac{2x+2}{3} < \\frac{3x}{4} - 1 \\end{cases}$",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q21",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "直角三角形",
+      "三角比",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图, 在 $Rt\\triangle ABC$ 中, $\\angle ACB = 90^\\circ, AC = 3, \\sin \\angle ABC = \\frac{1}{3}$, $D$ 是边 $AB$ 上一点, 且 $CD = CA$, $BE \\perp CD$, 垂足为点 $E$.\n(1) 求 $AD$ 的长;\n(2) 求 $\\angle EBC$ 的正切值.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q21_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q22",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [
+      "一次函数",
+      "应用题"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "一辆轿车和一辆货车分别从甲、乙两地同时出发, 匀速相向而行, 两车相遇时轿车比货车多行驶了 90 千米. 设行驶的时间为 $t$ (小时), 两车之间的距离为 $s$ (千米), 图中线段 $AB$ 表示从两车出发至两车相遇这一过程中 $s$ 与 $t$ 之间的函数关系, 根据图象提供的信息回答下列问题:\n(1) 求 $s$ 关于 $t$ 的函数关系式; (不必写出定义域)\n(2) 求两车的速度.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q23",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [
+      "梯形",
+      "平行四边形",
+      "菱形",
+      "几何证明"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知: 如图, 在梯形 $ABCD$ 中, $AD \\parallel BC, \\angle ABC = 90^\\circ$, $E$ 是 $AC$ 的中点, $DE$ 的延长线交 $BC$ 于点 $F$.\n(1) 求证: 四边形 $AFCD$ 是平行四边形;\n(2) 如果 $2AE^2 = AD \\cdot BC$, 求证: 四边形 $AFCD$ 是菱形.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q24",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "几何存在性",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_triangle_prop"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中, 抛物线 $y = -x^2 + mx + n$ 经过点 $A(5, 0)$, 顶点为点 $B$, 对称轴为直线 $x=3$, 且对称轴与 $x$ 轴交于点 $C$. 直线 $y = kx + b$ 经过点 $A$, 与线段 $BC$ 交于点 $E$.\n(1) 求抛物线 $y = -x^2 + mx + n$ 的表达式;\n(2) 联结 $BO, EO$. 当 $\\triangle BOE$ 的面积为 3 时, 求直线 $y = kx + b$ 的表达式;\n(3) 在 (2) 的条件下, 设点 $D$ 为 $y$ 轴上的一点, 联结 $BD, AD$. 当 $BD=EO$ 时, 求 $\\angle DAO$ 的余切值.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Huangpu_Two_Mock_Q25",
+    "paper": "2022_Huangpu_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "几何证明",
+      "相似三角形",
+      "比例线段",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_similar_basic",
+      "geo_quad_prop"
+    ],
+    "content": "如图, 已知在 $\\triangle ABC$ 中, $BC > AB, BD$ 平分 $\\angle ABC$, 交边 $AC$ 于点 $D$, $E$ 是 $BC$ 边上一点, 且 $BE = BA$, 过点 $A$ 作 $AG \\parallel DE$, 分别交 $BD, BC$ 于点 $F, G$, 联结 $FE$.\n(1) 求证: 四边形 $AFED$ 是菱形;\n(2) 求证: $AB^2 = BG \\cdot BC$;\n(3) 若 $AB = AC, BG = CE$, 联结 $AE$, 求 $\\frac{S_{\\triangle ADE}}{S_{\\triangle ABC}}$ 的值.",
+    "images": [
+      "/problems/2022_Huangpu_Two_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "黄浦",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q01",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "函数概念",
+      "二次函数"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "下列函数中是二次函数的是 ( )",
+    "options": [
+      "(A) $y = x - 1$",
+      "(B) $y = \\frac{1}{x^2}$",
+      "(C) $y = (x-2)^2 - x^2$",
+      "(D) $y = x(x-1)$"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q02",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "抛物线",
+      "顶点"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "已知抛物线 $y = (a-1)x^2 + 2$ 的顶点是此抛物线的最低点, 那么 $a$ 的取值范围是 ( )",
+    "options": [
+      "(A) $a \\ne 0$",
+      "(B) $a \\ne 1$",
+      "(C) $a > 1$",
+      "(D) $a < 1$"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q03",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "直角三角形",
+      "三角比"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, AC = 6, BC = 2$, 那么下列各式中正确的是 ( )",
+    "options": [
+      "(A) $\\tan A = \\frac{1}{3}$",
+      "(B) $\\cot A = \\frac{1}{3}$",
+      "(C) $\\sin A = \\frac{1}{3}$",
+      "(D) $\\cos A = \\frac{1}{3}$"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q04",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [
+      "等腰三角形",
+      "余弦",
+      "三边计算"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_trig_vector"
+    ],
+    "content": "在 $\\triangle ABC$ 中, $AB = AC = 10, \\cos B = \\frac{2}{5}$, 那么 $BC$ 的长是 ( )",
+    "options": [
+      "(A) 4",
+      "(B) 8",
+      "(C) $2\\sqrt{21}$",
+      "(D) $4\\sqrt{21}$"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q05",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "平面向量",
+      "单位向量"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知一个单位向量 $\\vec{e}$, 设 $\\vec{a}, \\vec{b}$ 是非零向量, 那么下列等式中一定正确的是 ( )",
+    "options": [
+      "(A) $|\\vec{e}|\\vec{a} = \\vec{a}$",
+      "(B) $|\\vec{b}|\\vec{e} = \\vec{b}$",
+      "(C) $\\frac{1}{|\\vec{b}|}\\vec{b} = \\vec{e}$",
+      "(D) $\\frac{1}{|\\vec{a}|}\\vec{a} = \\frac{1}{|\\vec{b}|}\\vec{b}$"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q06",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [
+      "平行线分线段成比例"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图 1, 已知 $AB \\parallel CD \\parallel EF$, $AC:AE = 3:5$, 那么下列结论正确的是 ( )",
+    "options": [
+      "(A) $BD:DF = 2:3$",
+      "(B) $AB:CD = 2:3$",
+      "(C) $CD:EF = 3:5$",
+      "(D) $DF:BF = 2:5$"
+    ],
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q6_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q07",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "抛物线",
+      "待定系数法"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = ax^2 + 2$ 经过点 $(-2, 6)$, 那么 $a = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q08",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [
+      "抛物线",
+      "对称轴"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = -x^2 - 2x + 1$ 的对称轴是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q09",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "二次函数",
+      "增减性"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = (m+3)x^2 + x - 1$ 在对称轴右侧的部分是上升的, 那么 $m$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q10",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [
+      "抛物线",
+      "平移"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "将抛物线 $y = x^2 - 2x$ 向左平移 2 个单位, 得到一条新抛物线, 这条新抛物线的表达式是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q11",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "11",
+    "difficulty": 0.25,
+    "tags": [
+      "直角三角形",
+      "三角比"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, \\cos B = \\frac{1}{4}, BC = 4$, 那么 $AB = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q12",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "12",
+    "difficulty": 0.25,
+    "tags": [
+      "菱形",
+      "对角线",
+      "正弦"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_trig_vector"
+    ],
+    "content": "在菱形 $ABCD$ 中, 对角线 $AC$ 与 $BD$ 之比是 3:4, 那么 $\\sin \\angle BAC = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q13",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": [
+      "俯角",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图 2, 飞机在目标 $B$ 的正上方 $A$ 处, 飞行员测得地面目标 $C$ 的俯角 $\\alpha = 30^\\circ$, 如果地面目标 $B, C$ 之间的距离为 6 千米, 那么飞机离地面的高度 $AB$ 等于 $\\dots$ 千米. (结果保留根号)",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q13_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q14",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "14",
+    "difficulty": 0.15,
+    "tags": [
+      "比例计算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "已知 $x:y = 2:3$, 那么 $(x+y):y = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q15",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": [
+      "平面向量"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知向量 $\\vec{a}, \\vec{b}, \\vec{x}$ 满足 $2(\\vec{a}-\\vec{x}) = 3(\\vec{b}-\\vec{x})$, 试用向量 $\\vec{a}, \\vec{b}$ 表示向量 $\\vec{x}$, 那么 $\\vec{x} = \\dots$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q16",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "16",
+    "difficulty": 0.4,
+    "tags": [
+      "相似三角形",
+      "比例线段"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图 3, 在 $\\triangle ABC$ 中, $DE \\parallel BC, DF \\parallel AC$, $AD=3, BD=2$, 那么 $BF:DE$ 的值是 $\\dots$.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q16_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q17",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "17",
+    "difficulty": 0.45,
+    "tags": [
+      "等腰梯形",
+      "面积"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "在梯形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC$ 与 $BD$ 相交于点 $O$, 如果 $S_{\\triangle AOD}, S_{\\triangle BOC}$ 的面积分别是 $1cm^2, 4cm^2$, 那么梯形 $ABCD$ 的面积等于 $\\dots cm^2$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q18",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "18",
+    "difficulty": 0.7,
+    "tags": [
+      "直角三角形",
+      "角度计算",
+      "比例线段",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图 4, 在 $\\triangle ABC$ 中, $\\angle C = 90^\\circ, BC = 2, AB = 2\\sqrt{5}$, 点 $D$ 在边 $AC$ 上, $CD:AD = 1:3$, 联结 $BD$, 点 $E$ 在线段 $BD$ 上, 如果 $\\angle BCE = \\angle A$, 那么 $CE = \\dots$.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q18_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q19",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "三角比计算"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "计算: $\\tan 60^\\circ \\cdot \\cot 30^\\circ + \\frac{\\tan 45^\\circ}{\\cot 45^\\circ + 2\\sin 45^\\circ} + 2|\\cos 60^\\circ - 1|$.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q20",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [
+      "梯形",
+      "相似",
+      "计算线段"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图 5, 在梯形 $ABCD$ 中, $AD \\parallel BC$, 点 $E$ 在线段 $AD$ 上, $CE$ 与 $BD$ 相交于点 $H$, $CE$ 与 $BA$ 的延长线相交于点 $G$, 已知 $DE:AE = 2:3, BC = 4DE, CE = 10$. 求 $EH, GE$ 的长.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q20_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q21",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "21",
+    "difficulty": 0.5,
+    "tags": [
+      "二次函数",
+      "解析式",
+      "顶点"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "已知二次函数 $y = ax^2 + bx + c$ 的图像经过点 $A(3, -2), B(2, -3), C(0, 1)$.\n(1) 求这个二次函数的解析式;\n(2) 用配方法求出这个二次函数图像的顶点坐标.",
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q22",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "22",
+    "difficulty": 0.6,
+    "tags": [
+      "解直角三角形",
+      "应用题",
+      "航行"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图 6, 在航线 $l$ 的两侧分别有两个灯塔 $A$ 和 $B$, 灯塔 $A$ 到航线 $l$ 的距离为 $AC = 3$ 千米, 灯塔 $B$ 到航线 $l$ 的距离为 $BD = 4$ 千米, 灯塔 $B$ 位于灯塔 $A$ 南偏东 $60^\\circ$ 方向. 现有一艘轮船从位于灯塔 $B$ 北偏西 $53^\\circ$ 方向的 $N$ (在航线 $l$ 上) 处, 正沿该航线自东向西航行, 10 分钟后该轮船行至灯塔 $A$ 正南方向的点 $C$ (在航线 $l$ 上) 处.\n(1) 求两个灯塔 $A$ 和 $B$ 之间的距离;\n(2) 求该轮船航行的速度 (结果精确到 0.1 千米/小时). (参考数据: $\\sqrt{3} \\approx 1.73, \\sin 53^\\circ \\approx 0.80, \\cos 53^\\circ \\approx 0.60, \\tan 53^\\circ \\approx 1.33$)",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q23",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "23",
+    "difficulty": 0.75,
+    "tags": [
+      "正方形",
+      "相似",
+      "证明"
+    ],
+    "kps": [
+      "geo_similar_basic",
+      "geo_quad_prop"
+    ],
+    "content": "如图 7, 已知正方形 $ABCD$ 和正方形 $BEFG$, 点 $E$ 在边 $BC$ 上, 点 $G$ 在边 $AB$ 的延长线上, 联结 $AE$, 并延长 $AE$ 交 $CG$ 于点 $K$.\n(1) 求证: $\\triangle ABE \\sim \\triangle CKE$;\n(2) 如果 $CG$ 与 $EF$ 交于点 $H$, 求证: $BE^2 = FH \\cdot AB$.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q24",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "相似三角形",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_similar_basic"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中, 点 $A, B$ 两点在直线 $y = \\frac{1}{2}x$ 上, 如图 8. 二次函数 $y = ax^2 + bx - 2$ 的图像也经过点 $A, B$ 两点, 并与 $y$ 轴相交于点 $C$, 如果 $BC \\parallel x$ 轴, 点 $A$ 的横坐标是 2.\n(1) 求这个二次函数的解析式;\n(2) 设这个二次函数图像的对称轴与 $BC$ 交于点 $D$, 点 $E$ 在 $x$ 轴的负半轴上, 如果以点 $E, O, B$ 所组成的三角形与 $\\triangle OBD$ 相似, 且相似比不为 1, 求点 $E$ 的坐标;\n(3) 设这个二次函数图像的顶点是 $M$, 求 $\\tan \\angle AMC$ 的值.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Jiading_One_Mock_Q25",
+    "paper": "2022_Jiading_One_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "平行四边形",
+      "三角比",
+      "几何综合",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_trig_vector",
+      "geo_similar_basic"
+    ],
+    "content": "在平行四边形 $ABCD$ 中, 对角线 $AC$ 与 $CD$ 垂直, $\\frac{AB}{AC} = \\frac{3}{4}$, 四边形 $ABCD$ 的周长是 16, 点 $E$ 是在 $AD$ 延长线上的一点, 点 $F$ 是在射线 $AB$ 上的一点, $\\angle CED = \\angle CDF$.\n(1) 如图 9, 如果点 $F$ 与点 $B$ 重合, 求 $\\angle AFD$ 的余切值;\n(2) 如图 10, 点 $F$ 在边 $AB$ 上的一点. 设 $AE = x, BF = y$, 求 $y$ 关于 $x$ 的函数关系式并写出它的定义域;\n(3) 如果 $BF:FA = 1:2$, 求 $\\triangle CDE$ 的面积.",
+    "images": [
+      "/problems/2022_Jiading_One_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "一模",
+    "district": "嘉定",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q01",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "多边形",
+      "外角和"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "多边形的外角和等于 ( )",
+    "options": [
+      "(A) $360^\\circ$",
+      "(B) $270^\\circ$",
+      "(C) $180^\\circ$",
+      "(D) $90^\\circ$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q02",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "2",
+    "difficulty": 0.15,
+    "tags": [
+      "一次函数",
+      "图象"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "在平面直角坐标系中, 直线 $y = x + 1$ 不经过 ( )",
+    "options": [
+      "(A) 第一象限",
+      "(B) 第二象限",
+      "(C) 第三象限",
+      "(D) 第四象限"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q03",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "平行线",
+      "角度计算"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 直线 $l_1 \\parallel l_2$, 如果 $\\angle 1 = 25^\\circ, \\angle 2 = 20^\\circ$, 那么 $\\angle 3$ 的度数是 ( )",
+    "options": [
+      "(A) $55^\\circ$",
+      "(B) $45^\\circ$",
+      "(C) $40^\\circ$",
+      "(D) $35^\\circ$"
+    ],
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q3_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q04",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "4",
+    "difficulty": 0.2,
+    "tags": [
+      "平面向量"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知 $|\\vec{a}| = 1, |\\vec{b}| = 2$, 且 $\\vec{b}$ 与 $\\vec{a}$ 的方向相反, 那么下列结论中正确的是 ( )",
+    "options": [
+      "(A) $\\vec{a} = 2\\vec{b}$",
+      "(B) $\\vec{a} = -2\\vec{b}$",
+      "(C) $\\vec{b} = 2\\vec{a}$",
+      "(D) $\\vec{b} = -2\\vec{a}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q05",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "5",
+    "difficulty": 0.3,
+    "tags": [
+      "平行线分线段成比例"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图, 已知直线 $l_1 \\parallel l_2 \\parallel l_3$, 它们依次交直线 $l_4, l_5$ 于点 $A, C, E$ 和点 $B, D, F$, 下列比例式中正确的是 ( )",
+    "options": [
+      "(A) $\\frac{AC}{AB} = \\frac{CD}{BF}$",
+      "(B) $\\frac{AB}{CD} = \\frac{CD}{EF}$",
+      "(C) $\\frac{AC}{AE} = \\frac{BD}{BF}$",
+      "(D) $\\frac{AC}{EC} = \\frac{DF}{BD}$"
+    ],
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q5_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q06",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "6",
+    "difficulty": 0.25,
+    "tags": [
+      "四边形",
+      "中点联结"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "顺次联结直角梯形各边中点所得的四边形可能是 ( )",
+    "options": [
+      "(A) 菱形",
+      "(B) 矩形",
+      "(C) 梯形",
+      "(D) 正方形"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q07",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "函数计算"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "已知 $f(x) = x^3 - 1$, 那么 $f(2) = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q08",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "8",
+    "difficulty": 0.15,
+    "tags": [
+      "正比例函数",
+      "增减性"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "如果函数 $y = kx (k \\ne 0)$ 的图像经过第二、四象限, 那么 $y$ 的值随 $x$ 的值增大而 $\\dots$. (填 “增大” 或 “减小” )",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q09",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "轴对称图形"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_quad_prop"
+    ],
+    "content": "在 ① 平行四边形; ② 等腰三角形; ③ 等腰梯形; ④ 圆四个图形中, 一定是轴对称图形的有 $\\dots$. (填序号)",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q10",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "10",
+    "difficulty": 0.3,
+    "tags": [
+      "网格",
+      "三角比"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "如图, $\\triangle ABC$ 在边长为 1 个单位的方格纸中, 它的顶点在小正方形顶点位置, 那么 $\\cot B$ 的值为 $\\dots$.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q10_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q11",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "11",
+    "difficulty": 0.15,
+    "tags": [
+      "正多边形",
+      "中心角"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "正十边形的中心角等于 $\\dots$ 度.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q12",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "12",
+    "difficulty": 0.15,
+    "tags": [
+      "菱形",
+      "面积"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "菱形的两条对角线长分别为 5 和 12, 那么这个菱形的面积为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q13",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "13",
+    "difficulty": 0.25,
+    "tags": [
+      "直角三角形",
+      "中线"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知 $Rt\\triangle ABC$ 中, $\\angle BCA = 90^\\circ, CD$ 是斜边上的中线, $BC = 12, AC = 5$, 那么 $CD = \\dots$.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q13_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q14",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "14",
+    "difficulty": 0.35,
+    "tags": [
+      "平面向量",
+      "比例"
+    ],
+    "kps": [
+      "geo_trig_vector",
+      "geo_similar_basic"
+    ],
+    "content": "如图, 线段 $AD$ 与 $BC$ 相交于点 $G$, $AB \\parallel CD, \\frac{AB}{CD} = \\frac{1}{2}$, 设 $\\vec{GB} = \\vec{a}, \\vec{GA} = \\vec{b}$, 那么向量 $\\vec{CD}$ 用向量 $\\vec{a}, \\vec{b}$ 表示是 $\\dots$.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q14_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q15",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "15",
+    "difficulty": 0.3,
+    "tags": [
+      "圆",
+      "直线与圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知在等边 $\\triangle ABC$ 中, $AB = 2$, 如果以点 $C$ 为圆心的圆与边 $AB$ 有且只有一个公共点, 那么 $\\odot C$ 的半径是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q16",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "16",
+    "difficulty": 0.25,
+    "tags": [
+      "圆",
+      "位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "已知两圆的半径长分别为 2 和 5, 两圆的圆心距为 $d$, 如果两圆没有公共点, 那么 $d$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q17",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "17",
+    "difficulty": 0.45,
+    "tags": [
+      "平行四边形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, $\\square ABCD$ 中, $E$ 是边 $AD$ 中点, $BE$ 交对角线 $AC$ 于点 $F$, 那么 $S_{\\triangle AFB} : S_{四边形 FEDC}$ 的值为 $\\dots$.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q17_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q18",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "18",
+    "difficulty": 0.8,
+    "tags": [
+      "翻折",
+      "角度计算",
+      "几何证明",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_motion_rotation_hand"
+    ],
+    "content": "如图, 已知在 $Rt\\triangle ABC$ 中, $\\angle C = 90^\\circ, AC = BC = 2$, 点 $D$ 在边 $BC$ 上, 将 $\\triangle ABC$ 沿直线 $AD$ 翻折, 使点 $C$ 落在点 $C'$ 处, 联结 $AC'$, 直线 $AC'$ 与边 $CB$ 的延长线相交于点 $F$, 如果 $\\angle DAB = \\angle BAF$, 那么 $BF = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q19",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $27^{\\frac{1}{3}} + |2 - \\sqrt{3}| - (\\sqrt{5} - \\sqrt{2})^0 + 2\\cos 30^\\circ$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q20",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [
+      "反比例函数",
+      "一次函数",
+      "交点"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "如图, 在平面直角坐标系 $xOy$ 中, 反比例函数 $y = \\frac{k}{x} (k \\ne 0)$ 的图像与正比例函数 $y = 2x$ 的图像的交点 $A$ 在第一象限, 点 $A$ 的纵坐标比横坐标大 1.\n(1) 求点 $A$ 的坐标和反比例函数的解析式;\n(2) 点 $P$ 在射线 $OA$ 上, 过点 $P$ 作 $x$ 轴的垂线交双曲线于点 $B$. 如果点 $B$ 的纵坐标为 1, 求 $\\triangle PAB$ 的面积.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q20_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q21",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "圆",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知 $\\odot O$ 的直径 $AB = 10$, 点 $P$ 是弦 $BC$ 上一点, 联结 $OP$, $\\angle OPB = 45^circ, PC = 1$, 求弦 $BC$ 的长.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q21_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q22",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "22",
+    "difficulty": 0.6,
+    "tags": [
+      "函数图象",
+      "应用题"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "某山山脚到山顶有一条登山路, 登山爱好者小李沿此路上山走到山顶, 休息了一会儿后再原路返回. 在下山途中, 小李收到消息, 需及时回到山脚, 于是加速下山, 小李下山过程中收到消息前所行的路程与收到消息后所行的路程之比为 2:3, 其间小李离开山脚的路程 $y$(米) 与离开山脚的时间 $x$(分) ($x > 0$) 之间的函数关系如图 9 中折线 $OABCD$ 所示. 根据图像提供的信息, 回答下列问题:\n(1) 这条登山路的全长为 $\\dots$ 米; 小李在山顶休息了 $\\dots$ 分钟;\n(2) 如果小李在下山途中没有收到消息, 下山的速度一直保持不变, 求小李实际提前了多少时间回到山脚.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q23",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "23",
+    "difficulty": 0.75,
+    "tags": [
+      "菱形",
+      "相似三角形",
+      "判定与性质"
+    ],
+    "kps": [
+      "geo_similar_basic",
+      "geo_quad_prop"
+    ],
+    "content": "已知: 如图, 在菱形 $ABCD$ 中, 对角线 $AC, BD$ 交于点 $E$, 点 $M$ 是 $CD$ 中点, 联结 $EM$ 并延长, 交 $\\angle DCB$ 外角 $\\angle DCN$ 的平分线于点 $F$.\n(1) 求证: $ME = MF$;\n(2) 联结 $DF$, 如果 $AB^2 = EB \\cdot BD$, 求证: 四边形 $DECF$ 正方形.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q24",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "几何存在性",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_triangle_prop"
+    ],
+    "content": "在平面直角坐标系 $xOy$ 中(如图), 已知抛物线 $y = x^2 - bx + c$ 经过 $A(-1, 2), B(0, -1)$ 两点.\n(1) 求抛物线的表达式及顶点 $P$ 的坐标;\n(2) 将抛物线 $y = x^2 - bx + c$ 向左平移 $(\\sqrt{3} + 1)$ 个单位, 设平移后的抛物线顶点为点 $P'$.\n① 求 $\\angle BPP'$ 的度数;\n② 将线段 $P'B$ 绕点 $B$ 按逆时针方向旋转 $150^\\circ$, 点 $P'$ 落在点 $M$ 处, 点 $N$ 是平移后抛物线上的一点, 当 $\\triangle MNB$ 的面积为 1 时, 求点 $N$ 的坐标.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Putuo_Two_Mock_Q25",
+    "paper": "2022_Putuo_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "等腰梯形",
+      "圆",
+      "相似",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_circle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "在等腰梯形 $ABCD$ 中, $DC \\parallel AB, AB = 6, \\tan B = 2\\sqrt{2}$, 过点 $A$ 作 $AH \\perp BC$, 垂足为点 $H$.\n(1) 当点 $C$ 与点 $H$ 重合时(如图), 求线段 $BC$ 的长;\n(2) 当点 $C$ 不与点 $H$ 重合时, 联结 $AC$, 作 $\\triangle ACH$ 的外接圆 $\\odot O$.\n① 当点 $C$ 在 $BH$ 的延长线上时(如图), 设 $CH = x, CD = y$, 求 $y$ 关于 $x$ 的函数解析式, 并写出定义域;\n② 延长 $CD$ 交圆 $O$ 于点 $G$, 如果 $\\triangle ACH$ 与 $\\triangle ACG$ 全等, 求 $CD$ 长.",
+    "images": [
+      "/problems/2022_Putuo_Two_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "普陀",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q01",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "三角比",
+      "余弦"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "在 $Rt\\triangle ABC$ 中, $\\angle C = 90^\\circ$, $\\angle A$ 的余弦是 ( )",
+    "options": [
+      "(A) $\\frac{AB}{AC}$",
+      "(B) $\\frac{BC}{AB}$",
+      "(C) $\\frac{AC}{AB}$",
+      "(D) $\\frac{AC}{BC}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q02",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "2",
+    "difficulty": 0.2,
+    "tags": [
+      "平面向量",
+      "单位向量"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知非零向量 $\\vec{a}$ 和单位向量 $\\vec{e}$, 那么下列结论中, 正确的是 ( )",
+    "options": [
+      "(A) $|\\vec{a}| = |\\vec{e}| \\vec{a}$",
+      "(B) $\\vec{e} = \\frac{1}{|\\vec{a}|} \\vec{a}$",
+      "(C) $\\vec{a} = |\\vec{a}| \\vec{e}$",
+      "(D) $\\vec{a} = |\\vec{a}| \\vec{e}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q03",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "3",
+    "difficulty": 0.15,
+    "tags": [
+      "二次根式",
+      "最简二次根式"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列二次根式的被开方数中, 各因式指数为 1 的有 ( )",
+    "options": [
+      "(A) $\\sqrt{4x^2 + 9y^2}$",
+      "(B) $\\sqrt{5x^2y}$",
+      "(C) $\\sqrt{12(x+y)}$",
+      "(D) $\\sqrt{x^2 - 2xy + y^2}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q04",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "4",
+    "difficulty": 0.2,
+    "tags": [
+      "实数",
+      "二次根式",
+      "判断"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "下列说法中, 错误的有 ( )\n① 2 能被 6 整除; ② 把 16 开平方得 16 的平方根, 表示为 $\\sqrt{16} = \\pm 4$;\n③ 把 237145 精确到万位是 240000; ④ 对于实数 $a$, 规定 $a^{\\frac{n}{m}} = \\sqrt[m]{a^n}$",
+    "options": [
+      "(A) 1个",
+      "(B) 2个",
+      "(C) 3个",
+      "(D) 4个"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q05",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "5",
+    "difficulty": 0.2,
+    "tags": [
+      "代数式",
+      "判断"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "下列关于代数式的说法中, 正确的有 ( )\n① 单项式 $-2^{2022}$ 系数是 2, 次数是 2022 次; ② 多项式 $\\frac{x^2}{x} + 1$ 是一次二项式; ③ $\\sqrt{9}$ 是二次根式; ④ 对于实数 $a$, $\\sqrt{a^2} = \\pm a$.",
+    "options": [
+      "(A) 1个",
+      "(B) 2个",
+      "(C) 3个",
+      "(D) 4个"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q06",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "6",
+    "difficulty": 0.3,
+    "tags": [
+      "平面直角坐标系",
+      "等腰直角三角形"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 在平面直角坐标系中, 已知 $A(2, 1), B(0, 2)$, 以 $A$ 为顶点, $BA$ 为一边作 $45^\\circ$ 角, 角的另一边交 $y$ 轴于 $C$ ($C$ 在 $B$ 上方), 则 $C$ 坐标为 ( )",
+    "options": [
+      "(A) (0, 6)",
+      "(B) (0, 7)",
+      "(C) (0, $\\frac{22}{3}$)",
+      "(D) (0, $\\frac{13}{2}$)"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q07",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "无理数",
+      "概率"
+    ],
+    "kps": [
+      "stat_prob",
+      "num_real"
+    ],
+    "content": "如果从 $\\pi^0, \\frac{22}{7}, -1, 9^{\\frac{1}{3}}, \\tan 30^\\circ$ 任意选取一个数, 选到的数是无理数的概率为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q08",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "8",
+    "difficulty": 0.15,
+    "tags": [
+      "抛物线",
+      "平移"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "将抛物线 $C$ 向左平移 2 个单位, 向上平移 1 个单位后, 所得抛物线为 $y = (x-1)^2$, 则抛物线 $C$ 解析式为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q09",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "9",
+    "difficulty": 0.2,
+    "tags": [
+      "二次函数",
+      "增减性"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "抛物线 $y = (a-1)x^2 - 2x + 3$ 在对称轴左侧, $y$ 随 $x$ 增大而增大, 则 $a$ 的取值范围是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q10",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [
+      "函数解析式",
+      "增长率"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "为防治新冠病毒, 某医药公司一月份的产值为 1 亿元, 若每月平均增长率为 $x$, 第一季度的总产值为 $y$ (亿元), 则 $y$ 关于 $x$ 的函数解析式为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q11",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "11",
+    "difficulty": 0.25,
+    "tags": [
+      "统计",
+      "平均数"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "如图, 是实验室里一批种子的发芽天数统计图, 其中 “1 天发芽” 的圆心角和 “3 天发芽” 的百分比如图所示, “2 天发芽” 与 “4 天发芽” 的扇形弧长相等. 则这批种子的平均发芽天数为 $\\dots$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q11_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q12",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "12",
+    "difficulty": 0.35,
+    "tags": [
+      "正多边形",
+      "内角"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "已知正多边形每个内角的度数为 $144^\\circ$, 则正多边形的边长与半径的比值为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q13",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "13",
+    "difficulty": 0.35,
+    "tags": [
+      "平行四边形",
+      "向量"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_trig_vector"
+    ],
+    "content": "如图, 已知平行四边形 $ABCD$ 中, $E$ 是 $AD$ 上一点, $ED=2AE$, 联结 $BE$ 交 $AC$ 于 $F$, 若向量 $\\vec{BA} = \\vec{a}$, 向量 $\\vec{BC} = \\vec{b}$, 则向量 $\\vec{FA} = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q14",
+    "difficulty": 0.4,
+    "tags": [
+      "解直角三角形",
+      "相似"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, 已知 $\\triangle ABC$ 中, 点 $D$ 是 $AC$ 上一点, $DB \\perp BC$, 若 $\\angle ADB = \\angle ABC, \\tan C = \\frac{1}{2}$, 则 $\\frac{AC}{AB} = \\dots$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q14_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q15",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "15",
+    "difficulty": 0.4,
+    "tags": [
+      "仰角",
+      "解直角三角形"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "小明要测量公园里一棵古树的高, 被一条小溪挡住去路, 采用计算方法, 在 $A$ 点测得古树顶的仰角为 $\\alpha$, 向前走了 100 米到 $B$ 点, 测得古树顶的仰角为 $\\beta$, 则古树的高度为 $\\dots$ 米.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q15_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q16",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "16",
+    "difficulty": 0.45,
+    "tags": [
+      "相似三角形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图, 已知 $\\triangle ABC$ 中, $D, E$ 分别在边 $AB, AC$ 上, $\\angle ADE = \\angle C, AN$ 平分 $\\angle BAC$, 交 $DE$ 于 $M$, 若 $S_{四边形 BCED} = 2S_{\\triangle ADE}$, 则 $\\frac{AM}{AN} = \\dots$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q16_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q17",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [
+      "翻折",
+      "距离"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "如图, 已知 $\\triangle ABC$ 中, $AB=13, BC=15, \\sin B = \\frac{5}{13}$, $D$ 是边 $BC$ 上一点, 将 $\\triangle ACD$ 沿直线 $AD$ 翻折, 点 $C$ 落在点 $E$ 处, 如果 $DE \\parallel AB$, 那么点 $E$ 与点 $B$ 的距离等于 $\\dots$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q17_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q18",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "18",
+    "difficulty": 0.8,
+    "tags": [
+      "圆",
+      "位置关系",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 在直角梯形 $ABCD$ 中, $AD \\parallel BC, \\angle A=90^\\circ, E$ 是 $AD$ 上一对应点, $AB=3, BC=6, AD=8, AE=2$, 点 $P$ 是 $BC$ 上一个动点, 以 $P$ 为圆心, $PC$ 为半径作 $\\odot P$, 若 $\\odot P$ 与以 $E$ 为圆心, 1 为半径的 $\\odot E$ 有公共点, 且 $\\odot P$ 与线段 $AD$ 只有一个交点, 则 $PC$ 长度的取值范围是 $\\dots$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q18_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q19",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "代数式",
+      "先化简再求值"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "先化简代数式 $\\frac{x^2 + 3x}{x^2 + 6x + 9} \\div \\frac{x^2 - 2x}{x^2 - 9}$, 然后在下列数值 $\\sqrt{2} + 4, 3, -3, 2, 0$ 中, 挑选一个作为 $x$ 的值代入求值.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q20",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "20",
+    "difficulty": 0.45,
+    "tags": [
+      "不等式组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解不等式组: $\\begin{cases} 2x-1 < \\sqrt{5}x \\\\ \\frac{x}{5} + \\frac{x-1}{3} \\le 2 \\end{cases}$ 并写出它 自然数解.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q21",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "统计",
+      "数据分析"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "为了了解某区 3200 名学生放学后在校体育运动的情况, 调研组选择了有 600 名学生的 $W$ 校, 抽取 40 名学生进行调查, 调查情况具体如下表:\n图表 1: 感兴趣的运动项目 (乒乓球 4, 篮球 16, 足球 10, 羽毛球 4, 健美操 6)\n图表 2: 学生放学后体育运动时间 (频率分布直方图)\n(1) 此次调查的总体是 $\\dots$, 样本容量是 $\\dots$.\n(2) 若从 9 年级某学习加强班进行抽样调查, 则这样的调查 $\\dots$ (“合适”, “不合适”), 原因是样本不是 $\\dots$ 样本;\n(3) 根据图表 1, 估计该校对篮球感兴趣的学生总人数为 $\\dots$;\n(4) 根据图表 2, 若从左至右依次是第一、二、三、四、五组, 则中位数落在第 $\\dots$ 组.\n(5) 若要从对篮球感兴趣的同学中选拔出一支篮球队来, 现在有以下两名学生的投篮数据, 记录的是每 10 次投篮命中的个数.\n甲同学: 10, 5, 7, 9, 4; 乙同学: 7, 8, 7, 6, 7. 若想要选择更稳定的同学, 你会选择这两组数据的 $\\dots$, 因为这个量可以代表数据的 $\\dots$. 请计算出你所填写的统计量, 并且根据计算的结果, 选择合适的队员.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q21_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q22",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "22",
+    "difficulty": 0.65,
+    "tags": [
+      "函数",
+      "图象分析"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "如图, 已知 $AB$ 是 $\\odot O$ 的直径, $P$ 是 $AO$ 上一点, 点 $C, D$ 在直径两侧的圆周上, 若 $PB$ 平分 $\\angle CPD$, 求证: 劣弧 $BC$ 与劣弧 $BD$ 相等.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q23",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "23",
+    "difficulty": 0.8,
+    "tags": [
+      "几何证明",
+      "圆"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "如图, 已知 $AB$ 是 $\\odot O$ 的直径, $P$ 是 $AO$ 上一点, 点 $C, D$ 在直径两侧的圆周上, 若 $PB$ 平分 $\\angle CPD$, 求证: 劣弧 $BC$ 与劣弧 $BD$ 相等.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q24",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "梯形",
+      "相似",
+      "菱形",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_similar_basic"
+    ],
+    "content": "如图, 已知在梯形 $ABCD$ 中, $AD \\parallel BC$, 对角线 $AC, BD$ 交于点 $E, BD$ 平分 $\\angle ABC$, 点 $G$ 在底边 $BC$ 上, 连结 $DG$ 交对角线 $AC$ 于点 $F, \\angle DGB = \\angle DAB$.\n(1) 求证: 四边形 $ABGD$ 是菱形;\n(2) 连结 $EG$, 求证: $BG \\cdot EG = BC \\cdot EF$.",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Qingpu_Two_Mock_Q25",
+    "paper": "2022_Qingpu_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "二次函数",
+      "图象性质",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic"
+    ],
+    "content": "已知直线 $y = kx + b$ 经过点 $A(-2, 0), B(1, 3)$ 两点, 抛物线 $y = ax^2 - 4ax + b$ 与已知直线交于 $C, D$ 两点 (点 $C$ 在点 $D$ 的右侧), 顶点为 $P$.\n(1) 求直线 $y = kx + b$ 的表达式;",
+    "images": [
+      "/problems/2022_Qingpu_Two_Mock/q26_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "青浦",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q01",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "1",
+    "difficulty": 0.1,
+    "tags": [
+      "整式乘法"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "计算 $2a \\cdot 3a$ 的结果是 ( )",
+    "options": [
+      "(A) $5a$",
+      "(B) $6a$",
+      "(C) $5a^2$",
+      "(D) $6a^2$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q02",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "2",
+    "difficulty": 0.25,
+    "tags": [
+      "直角三角形",
+      "重心"
+    ],
+    "kps": [
+      "geo_triangle_prop"
+    ],
+    "content": "等腰直角三角形的腰长为 $\\sqrt{2}$, 该三角形的重心到斜边的距离为 ( )",
+    "options": [
+      "(A) $\\frac{2\\sqrt{2}}{3}$",
+      "(B) $\\frac{\\sqrt{2}}{3}$",
+      "(C) $\\frac{2}{3}$",
+      "(D) $\\frac{1}{3}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q03",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "3",
+    "difficulty": 0.2,
+    "tags": [
+      "圆的位置关系"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "$\\odot A$ 半径为 3, $\\odot B$ 半径为 5, 若两圆相交, 那么 $AB$ 长度范围为 ( )",
+    "options": [
+      "(A) $3 < AB < 5$",
+      "(B) $2 < AB < 8$",
+      "(C) $3 < AB < 8$",
+      "(D) $2 < AB < 5$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q04",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "4",
+    "difficulty": 0.25,
+    "tags": [
+      "函数图象",
+      "应用题"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "游泳池原有一定量的水. 打开进水阀进水, 了一段时间后关闭进水阀. 再过一段时间后打开排水阀排水, 直到水排完. 已知进水时的流量、排水时的流量各保持不变. 用 $h$ 表示游泳池的水深, $t$ 表示时间. 下列各函数图像中能反映所述情况的是 ( )",
+    "options": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q4_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q05",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "5",
+    "difficulty": 0.25,
+    "tags": [
+      "概率",
+      "数字组合"
+    ],
+    "kps": [
+      "stat_prob"
+    ],
+    "content": "将三张相同卡片的正面分别写写 “2”、 “4”、 “6”. 将背面朝上洗匀后随机抽取一张卡片, 将该卡片上的数作为十位数, 再从余下的两张卡片中随机抽取一张卡片, 将该卡片上的数作为个位数, 所得的两位数能被 4 整除的概率是 ( )",
+    "options": [
+      "(A) $\\frac{1}{6}$",
+      "(B) $\\frac{1}{4}$",
+      "(C) $\\frac{1}{3}$",
+      "(D) $\\frac{1}{2}$"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q06",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "6",
+    "difficulty": 0.2,
+    "tags": [
+      "图形变换",
+      "旋转"
+    ],
+    "kps": [
+      "geo_motion_rotation_hand"
+    ],
+    "content": "将图形如图绕中心旋转 $180^\\circ$ 后的图形是 ( )",
+    "options": [
+      "(A)",
+      "(B)",
+      "(C)",
+      "(D)"
+    ],
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q6_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q07",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "7",
+    "difficulty": 0.1,
+    "tags": [
+      "素数"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "写出 1 到 9 这九个整数中所有的素数: $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q08",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "8",
+    "difficulty": 0.1,
+    "tags": [
+      "科学记数法"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "据报道, 全球观看北京奥运会开幕式现场直播的观众达 2,300,000,000 人, 创下全球直播节目收视率的最高记录. 该观众人数可用科学记数法表示为 $\\dots$ 人.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q09",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "9",
+    "difficulty": 0.15,
+    "tags": [
+      "不等式"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "不等式 $\\frac{2}{3}x + 1 < \\frac{7}{3}x - 3$ 的解集是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q10",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "10",
+    "difficulty": 0.2,
+    "tags": [
+      "一次函数",
+      "解析式"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "已知一次函数 $y = kx + b (k \\ne 0)$ 的图像与直线 $y = -2x - 1$ 平行, 并且经过点 $(1, 4)$, 那么这个一次函数的解析式是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q11",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "11",
+    "difficulty": 0.3,
+    "tags": [
+      "相似三角形",
+      "面积比"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "两个相似三角形的面积之比为 3:4, 则这两个三角形的周长之比为 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q12",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "12",
+    "difficulty": 0.15,
+    "tags": [
+      "因式分解"
+    ],
+    "kps": [
+      "alg_expr_calc"
+    ],
+    "content": "分解因式: $2x^2 - 18 = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q13",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "13",
+    "difficulty": 0.15,
+    "tags": [
+      "二次根式",
+      "定义域"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "函数 $y = \\frac{\\sqrt{x}}{x-1}$ 的定义域是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q14",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "14",
+    "difficulty": 0.2,
+    "tags": [
+      "无理方程"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "方程 $x + \\sqrt{2x-1} = 2$ 的根是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q15",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "15",
+    "difficulty": 0.25,
+    "tags": [
+      "平面向量"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "已知向量 $\\vec{e}$ 为单位向量, 则 $|-3\\vec{e}| = \\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q16",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "16",
+    "difficulty": 0.2,
+    "tags": [
+      "正多边形",
+      "中心角"
+    ],
+    "kps": [
+      "geo_quad_prop"
+    ],
+    "content": "若正多边形的中心角为 $20^\\circ$, 那么它的边数是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q17",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "17",
+    "difficulty": 0.5,
+    "tags": [
+      "圆",
+      "几何计算"
+    ],
+    "kps": [
+      "geo_circle_prop"
+    ],
+    "content": "铲车轮胎在建筑工地的泥地上留下圆弧形凹坑如图所示, 量得凹坑跨度 $AB$ 为 80cm, 凹坑最大深度 $CD$ 为 20cm, 由此可算得铲车轮胎半径为 $\\dots cm$.",
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q17_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q18",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "18",
+    "difficulty": 0.8,
+    "tags": [
+      "平行四边形",
+      "翻折",
+      "面积",
+      "压轴填空"
+    ],
+    "kps": [
+      "geo_quad_prop",
+      "geo_triangle_prop"
+    ],
+    "content": "平行四边形 $ABCD$ 中, $AB=4, BC=3, \\angle B=60^\\circ, AE$ 为 $BC$ 边上的高, 将 $\\triangle ABE$ 沿直线翻折后得 $\\triangle AFE$, 那么 $\\triangle AFE$ 与四边形 $AECD$ 重叠部分的面积是 $\\dots$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "question_type": "Q18",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q19",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "19",
+    "difficulty": 0.3,
+    "tags": [
+      "实数计算"
+    ],
+    "kps": [
+      "num_real"
+    ],
+    "content": "计算: $\\frac{1}{\\sqrt{2}-1} + \\sqrt{3}(\\sqrt{3}-\\sqrt{6}) - (\\sqrt{8}-\\sqrt{18})^0 - \\sin 45^\\circ$.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q20",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "20",
+    "difficulty": 0.5,
+    "tags": [
+      "二元二次方程组"
+    ],
+    "kps": [
+      "alg_eq_linear"
+    ],
+    "content": "解方程组: $\\begin{cases} 4x^2 - y^2 = 0 \\\\ 3x^2 - xy + x + 2y + 6 = 0 \\end{cases}$",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q21",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "21",
+    "difficulty": 0.6,
+    "tags": [
+      "一次函数",
+      "几何结合"
+    ],
+    "kps": [
+      "func_linear_inverse"
+    ],
+    "content": "已知直线 $y = -\\frac{1}{2}x + 3$ 与 $x$ 轴、 $y$ 轴分别交于 $A, B$ 两点, 设 $O$ 为坐标原点.\n(1) 求 $\\angle ABO$ 的正切值;\n(2) 如果点 $A$ 向左平移 12 个单位到点 $C$, 直线 $l$ 过点 $C$ 且与直线 $y = -\\frac{1}{2}x + 3$ 平行, 求直线 $l$ 的解析式.",
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q22",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "22",
+    "difficulty": 0.6,
+    "tags": [
+      "应用题",
+      "三角比",
+      "坡度"
+    ],
+    "kps": [
+      "geo_trig_vector"
+    ],
+    "content": "水坝的横截面是梯形 $ABCD$ (如图 1), 上底 $AD=4$ 米, 坝高 $AM=DN=3$ 米, 斜坡 $AB$ 的坡比 $i_1 = 1:\\sqrt{3}$, 斜坡 $DC$ 的坡比 $i_2 = 1:1$.\n(1) 求坝底 $BC$ 的长 (结果保留根号);\n(2) 为了增强水坝的防洪能力, 在原来的水坝上增加高度 (如图 2), 使得水坝的上底 $EF=2$ 米, 求水坝增加的高度 (精确到 0.1 米, 参考数据 $\\sqrt{3} \\approx 1.73$).",
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q22_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q23",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "23",
+    "difficulty": 0.75,
+    "tags": [
+      "全等三角形",
+      "相似三角形",
+      "判定与性质"
+    ],
+    "kps": [
+      "geo_similar_basic"
+    ],
+    "content": "如图, 四边形 $ABCD, DEFG$ 都是正方形, 连接 $AE, CG, AE$ 与 $CG$ 相交于点 $M, CG$ 与 $AD$ 相交于点 $N$.\n求证: (1) $AE=CG$;\n(2) $AN \\cdot DN = CN \\cdot MN$.",
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q23_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q24",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "24",
+    "difficulty": 0.9,
+    "tags": [
+      "二次函数",
+      "几何存在性",
+      "压轴大题"
+    ],
+    "kps": [
+      "func_quadratic_basic",
+      "geo_quad_prop"
+    ],
+    "content": "已知抛物线 $y = ax^2 + 3x$ 过点 $C(4, 0)$, 顶点为 $D$, 点 $B$ 在第一象限, $BC \\perp x$ 轴, 且 $BC=2$, 直线 $BD$ 交 $y$ 轴于点 $A$.\n(1) 求抛物线的解析式;\n(2) 求点 $A$ 的坐标;\n(3) 在抛物线的对称轴上是否存在点 $M$, 使四边形 $AOMD$ 和四边形 $BCMD$ 中一个是平行四边形, 另一个是等腰梯形? 若存在, 请求出点 $M$ 的坐标; 若不存在, 请说明理由.",
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q24_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "question_type": "Q24",
+    "discrimination": 0.5,
+    "guess": 0.2
+  },
+  {
+    "id": "2022_Songjiang_Two_Mock_Q25",
+    "paper": "2022_Songjiang_Two_Mock",
+    "question": "25",
+    "difficulty": 0.95,
+    "tags": [
+      "等腰三角形",
+      "相似",
+      "圆",
+      "压轴大题"
+    ],
+    "kps": [
+      "geo_triangle_prop",
+      "geo_similar_basic",
+      "geo_circle_prop"
+    ],
+    "content": "如图, $\\triangle ABC$ 中, $AB=AC=10, BC=12$, 点 $D$ 在边 $BC$ 上, 且 $BD=4$, 以点 $D$ 为顶点作 $\\angle EDF = \\angle B$, 分别交边 $AB$ 于点 $E$, 交射线 $CA$ 于点 $F$.\n(1) 当 $AE=6$ 时, 求 $AF$ 的长;\n(2) 当以点 $C$ 为圆心 $CF$ 长为半径的 $\\odot C$ 和以点 $A$ 为圆心 $AE$ 长为半径的 $\\odot A$ 相切时, 求 $BE$ 的长;\n(3) 当以边 $AC$ 为直径的 $\\odot O$ 与线段 $DE$ 相切时, 求 $BE$ 的长.",
+    "images": [
+      "/problems/2022_Songjiang_Two_Mock/q25_0.png"
+    ],
+    "year": "2022",
+    "exam_type": "二模",
+    "district": "松江",
+    "question_type": "Q25",
+    "discrimination": 0.5,
+    "guess": 0.2
+  }
+];
