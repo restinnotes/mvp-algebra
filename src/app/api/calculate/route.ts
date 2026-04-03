@@ -1,4 +1,3 @@
-
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
 import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
