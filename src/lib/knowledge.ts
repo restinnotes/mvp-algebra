@@ -1,28 +1,17 @@
-import fs from 'fs';
-import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
-
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
+import { _graphCache as _prebuildGraph, _mappingsCache as _prebuildMappings } from './knowledge_data';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
-let _graphCache: KnowledgeGraph | null = null;
+let _graphCache: KnowledgeGraph | null = _prebuildGraph as KnowledgeGraph;
 let _nodesCache: KnowledgeNode[] | null = null;
 let _nodesMapCache: Map<string, KnowledgeNode> | null = null;
-let _mappingsCache: QuestionMapping[] | null = null;
+let _mappingsCache: QuestionMapping[] | null = _prebuildMappings as QuestionMapping[];
 
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
-
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
-  }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
-  return _graphCache;
+  return { version: '1.0', categories: [] };
 }
 
 export function getAllNodes(): KnowledgeNode[] {
@@ -77,73 +66,7 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
-
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
-  
-  const allMappings: QuestionMapping[] = [];
-  
-  for (const file of jsonFiles) {
-    try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
-      const qs = Array.isArray(data) ? data : [data];
-      
-      // Extract year from filename if possible (e.g., 2022_Songjiang...)
-      const yearMatch = file.match(/^(\d{4})/);
-      const fileYear = yearMatch ? yearMatch[1] : '2022';
-
-      const processedQs = qs.map(q => {
-        // Standardize question number
-        const questionNum = q.question || q.questionNumber || q.qNumber || q.question_type?.replace(/^Q/, '') || '';
-        
-        // Standardize KPs
-        let kps = q.kps || [];
-        if (q.knowledgePoints && Array.isArray(q.knowledgePoints)) {
-          kps = [...new Set([...kps, ...q.knowledgePoints])];
-        }
-        
-        // Standardize District
-        let district = q.district || '';
-        if (!district || district === 'all') {
-          // Try to extract from filename: 2022_Baoshan_...
-          const parts = file.split('_');
-          if (parts.length > 1) district = parts[1];
-        }
-        district = formatPaperName(district); // Use our mapper to get Chinese name
-
-        // Standardize Exam Type
-        let examType = q.exam_type || '';
-        if (!examType) {
-            if (file.includes('One_Mock')) examType = '一模';
-            else if (file.includes('Two_Mock')) examType = '二模';
-        }
-
-        return {
-          ...q,
-          question: questionNum.toString(),
-          kps,
-          district,
-          exam_type: examType,
-          year: q.year || fileYear,
-          paper: q.paper || file.replace('.json', '')
-        };
-      });
-
-      // Only include questions that have at least one knowledge point or tag
-      const validQs = processedQs.filter(q => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
-      allMappings.push(...validQs);
-    } catch (e) {
-      console.error(`Error loading paper data from ${file}:`, e);
-    }
-  }
-
-  _mappingsCache = allMappings;
-  return _mappingsCache;
+  return [];
 }
 
 export function getMappingForQuestion(paper: string, question: string): QuestionMapping | undefined {
