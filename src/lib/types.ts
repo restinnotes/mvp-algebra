@@ -36,6 +36,8 @@ export interface QuestionMapping {
   question_type?: string; // "Q18" | "Q24" | "Q25"
   source_file?: string;
   steps?: StepMapping[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 export interface StepMapping {
@@ -199,6 +201,8 @@ export interface BktParams {
   p_slip: number;
   p_guess: number;
   p_trans: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 export interface BktUpdateInput {

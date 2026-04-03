@@ -1,10 +1,7 @@
-import fs from 'fs';
-import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 import { formatPaperName, PAPER_NAME_MAP } from './format';
-
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+import knowledgeGraphData from '../../knowledge_points.json';
+import { ALL_PAPERS } from '../data/papers';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -16,12 +13,7 @@ let _mappingsCache: QuestionMapping[] | null = null;
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
 
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
-  }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
+  _graphCache = knowledgeGraphData as unknown as KnowledgeGraph;
   return _graphCache;
 }
 
@@ -77,27 +69,21 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
-
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   
-  for (const file of jsonFiles) {
+  for (const paper of ALL_PAPERS) {
     try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
+      const file = paper.name;
+      const data = paper.data;
       const qs = Array.isArray(data) ? data : [data];
       
       // Extract year from filename if possible (e.g., 2022_Songjiang...)
       const yearMatch = file.match(/^(\d{4})/);
       const fileYear = yearMatch ? yearMatch[1] : '2022';
 
-      const processedQs = qs.map(q => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const processedQs = qs.map((q: any) => {
         // Standardize question number
         const questionNum = q.question || q.questionNumber || q.qNumber || q.question_type?.replace(/^Q/, '') || '';
         
@@ -135,10 +121,11 @@ export function loadMappings(): QuestionMapping[] {
       });
 
       // Only include questions that have at least one knowledge point or tag
-      const validQs = processedQs.filter(q => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const validQs = processedQs.filter((q: any) => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
       allMappings.push(...validQs);
     } catch (e) {
-      console.error(`Error loading paper data from ${file}:`, e);
+      console.error(`Error loading paper data from ${paper.name}:`, e);
     }
   }
 

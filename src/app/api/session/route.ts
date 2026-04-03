@@ -1,12 +1,11 @@
+export const runtime = "edge";
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
-import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const body = await parseSafeJson<any>(req, 1024 * 1024);
+        const body = await req.json();
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {
@@ -130,9 +129,6 @@ export async function POST(req: NextRequest) {
                 return NextResponse.json({ error: `Unknown action: ${action}` }, { status: 400 });
         }
     } catch (error: unknown) {
-        if (error instanceof PayloadTooLargeError) {
-            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
-        }
         console.error('Session API error:', error);
         return NextResponse.json(
             { error: 'Internal server error' },

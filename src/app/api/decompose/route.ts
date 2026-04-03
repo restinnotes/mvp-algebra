@@ -1,7 +1,7 @@
+export const runtime = "edge";
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
-import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const responseSchema = {
     description: "Scaffolding steps for a math problem",
@@ -33,7 +33,7 @@ const responseSchema = {
 
 export async function POST(req: NextRequest) {
     try {
-        const { imageBase64 } = await parseSafeJson<{ imageBase64: string }>(req, 5 * 1024 * 1024);
+        const { imageBase64 } = await req.json();
 
         if (!imageBase64) {
             return NextResponse.json({ error: 'No image provided' }, { status: 400 });
@@ -41,6 +41,11 @@ export async function POST(req: NextRequest) {
 
         if (typeof imageBase64 !== 'string') {
             return NextResponse.json({ error: 'Invalid image format' }, { status: 400 });
+        }
+
+        // Limit base64 length to ~5MB to prevent memory exhaustion (DoS)
+        if (imageBase64.length > 5 * 1024 * 1024) {
+            return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
         }
 
         const prompt = `
@@ -61,9 +66,6 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json(data);
     } catch (error: unknown) {
-        if (error instanceof PayloadTooLargeError) {
-            return NextResponse.json({ error: 'Image payload too large' }, { status: 413 });
-        }
         console.error('Decomposition Error:', error);
         return NextResponse.json({
             error: 'Failed to decompose problem',
