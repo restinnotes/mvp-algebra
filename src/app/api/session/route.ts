@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
+        const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = await parseSafeJson<{
+            action?: string;
+            sessionId?: string;
+            studentId?: string;
+            problemText?: string;
+            strategy?: string;
+            answer?: string;
+            timeSpentMs?: number;
+        }>(req);
 
         if (!action) {
             return NextResponse.json({ error: 'Missing action' }, { status: 400 });
@@ -112,7 +120,6 @@ export async function POST(req: NextRequest) {
             }
 
             case 'getLTM': {
-                const { studentId } = body;
                 const ltm = LTMMemory.load(studentId || 'demo_student');
                 return NextResponse.json({
                     mastery: ltm.mastery,
@@ -128,6 +135,9 @@ export async function POST(req: NextRequest) {
                 return NextResponse.json({ error: `Unknown action: ${action}` }, { status: 400 });
         }
     } catch (error: unknown) {
+        if (error instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: error.message }, { status: 413 });
+        }
         console.error('Session API error:', error);
         return NextResponse.json(
             { error: 'Internal server error' },

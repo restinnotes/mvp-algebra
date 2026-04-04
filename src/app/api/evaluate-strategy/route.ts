@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
 const responseSchema = {
     description: "Evaluation of student's strategy",
@@ -15,8 +16,10 @@ const responseSchema = {
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        const { problemStatement, strategyText } = body;
+        const { problemStatement, strategyText } = await parseSafeJson<{
+            problemStatement?: string;
+            strategyText?: string;
+        }>(req);
 
         if (!strategyText || !problemStatement) {
             return NextResponse.json({ error: 'Missing problem statement or strategy text' }, { status: 400 });
@@ -53,6 +56,9 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json(data);
     } catch (error: unknown) {
+        if (error instanceof PayloadTooLargeError) {
+            return NextResponse.json({ error: error.message }, { status: 413 });
+        }
         console.error('Strategy Evaluation Error:', error);
         return NextResponse.json({ error: 'Failed' }, { status: 500 });
     }
