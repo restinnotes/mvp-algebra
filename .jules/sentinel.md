@@ -1,4 +1,4 @@
-## 2024-05-30 - [Insecure Randomness for Identifiers]
-**Vulnerability:** Insecure use of `Math.random()` to generate critical unique identifiers like `session_id` in `src/lib/orchestrator.ts` and problem `id`s in `src/lib/memory.ts`.
-**Learning:** This codebase uses `Math.random()` to generate IDs, which is predictable and insecure for things like session IDs or database primary keys. A malicious user could potentially predict session IDs or problem IDs, leading to insecure direct object references (IDOR) or session hijacking.
-**Prevention:** Always use cryptographically secure methods like `crypto.randomUUID()` for generating unique identifiers.
+## 2024-04-04 - [CRITICAL] Fix DoS vulnerability in NextRequest.json()
+**Vulnerability:** NextRequest.json() buffers the entire request body into memory, allowing a DoS attack via memory exhaustion before Next.js or the underlying runtime can reject the request based on content-length alone.
+**Learning:** Checking the `content-length` header is insufficient for preventing payload-based DoS attacks, and `req.json()` must not be used on untrusted inputs without streaming protections, especially with Edge-compatible APIs.
+**Prevention:** Always use a safe streaming utility like `parseSafeJson` that consumes the request body as a stream using `req.body.getReader()`, aborts the read, and throws an error if the accumulated length exceeds a safe maximum limit.
