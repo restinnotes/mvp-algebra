@@ -10,6 +10,7 @@ import {
   formatPaperName
 } from '@/lib/knowledge';
 
+
 export async function POST(request: NextRequest) {
   try {
     // Force cache clear for development/data updates

@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
+import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
+
 
 export async function POST(req: NextRequest) {
         try {
-                const body = await req.json();
-                const { problemContext, history } = body;
+                const { problemContext, history } = await parseSafeJson<{
+                        problemContext: string;
+                        history: { contentType: string; latex?: string; text?: string; type: string }[];
+                }>(req);
 
                 const historyText = history.map((log: { contentType: string, latex?: string, text?: string, type: string }, i: number) => {
                         const content = log.contentType === 'math' ? `Math: ${log.latex}` : `Text: ${log.text}`;
@@ -38,6 +42,9 @@ export async function POST(req: NextRequest) {
                 return NextResponse.json({ summary: summary.trim() });
 
         } catch (error: unknown) {
+                if (error instanceof PayloadTooLargeError) {
+                        return NextResponse.json({ error: error.message }, { status: 413 });
+                }
                 console.error('Review API error:', error);
                 return NextResponse.json({ error: 'Failed to generate review' }, { status: 500 });
         }
