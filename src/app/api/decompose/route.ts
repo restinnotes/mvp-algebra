@@ -3,6 +3,7 @@ import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
 import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
+
 const responseSchema = {
     description: "Scaffolding steps for a math problem",
     // ... (rest of schema)

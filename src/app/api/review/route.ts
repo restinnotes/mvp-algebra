@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/gemini';
 import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
+
 export async function POST(req: NextRequest) {
         try {
                 const { problemContext, history } = await parseSafeJson<{

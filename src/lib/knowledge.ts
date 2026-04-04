@@ -1,28 +1,62 @@
-import fs from 'fs';
-import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
-
 export { formatPaperName, PAPER_NAME_MAP };
+
+// Instead of fs, dynamically import or hardcode depending on environment requirements.
+// For Next-on-Pages, we must avoid fs completely. We'll use require since it works across bundlers better than fs here.
+// But Edge runtime throws on require as well if not careful, so we try-catch it at runtime, NOT top level.
 
 let _graphCache: KnowledgeGraph | null = null;
 let _nodesCache: KnowledgeNode[] | null = null;
 let _nodesMapCache: Map<string, KnowledgeNode> | null = null;
 let _mappingsCache: QuestionMapping[] | null = null;
 
+function safeReadFileSync(filePath: string): string | null {
+  try {
+    if (typeof window === 'undefined' && process.env.NEXT_RUNTIME !== 'edge') {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const fs = require('fs');
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const path = require('path');
+      const fullPath = path.resolve(process.cwd(), filePath);
+      if (fs.existsSync(fullPath)) {
+        return fs.readFileSync(fullPath, 'utf-8');
+      }
+    }
+  } catch (e) {
+    // Ignore
+  }
+  return null;
+}
+
+function safeReaddirSync(dirPath: string): string[] {
+  try {
+    if (typeof window === 'undefined' && process.env.NEXT_RUNTIME !== 'edge') {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const fs = require('fs');
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const path = require('path');
+      const fullPath = path.resolve(process.cwd(), dirPath);
+      if (fs.existsSync(fullPath)) {
+        return fs.readdirSync(fullPath);
+      }
+    }
+  } catch (e) {
+    // Ignore
+  }
+  return [];
+}
+
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
 
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
+  const raw = safeReadFileSync('knowledge_points.json');
+  if (raw) {
+      _graphCache = JSON.parse(raw) as KnowledgeGraph;
+      return _graphCache;
   }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
-  return _graphCache;
+  return { version: '1.0', categories: [] };
 }
 
 export function getAllNodes(): KnowledgeNode[] {
@@ -78,18 +112,16 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  const files = safeReaddirSync('src/data/papers');
+  const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   
   for (const file of jsonFiles) {
     try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
+      const raw = safeReadFileSync(`src/data/papers/${file}`);
+      if (!raw) continue;
+
       const data = JSON.parse(raw);
       const qs = Array.isArray(data) ? data : [data];
       

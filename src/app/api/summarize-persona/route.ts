@@ -3,6 +3,7 @@ import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
 import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 
+
 const personaSchema = {
     type: SchemaType.OBJECT,
     properties: {
