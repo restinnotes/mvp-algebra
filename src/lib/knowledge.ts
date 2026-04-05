@@ -1,10 +1,6 @@
-import fs from 'fs';
-import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 import { formatPaperName, PAPER_NAME_MAP } from './format';
-
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+import { knowledgePointsData, papersData } from './knowledge_data';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -16,12 +12,7 @@ let _mappingsCache: QuestionMapping[] | null = null;
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
 
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
-  }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
+  _graphCache = knowledgePointsData as KnowledgeGraph;
   return _graphCache;
 }
 
@@ -77,21 +68,13 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
-
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   
-  for (const file of jsonFiles) {
+  for (const [file, data] of Object.entries(papersData)) {
     try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
-      const qs = Array.isArray(data) ? data : [data];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const qs = Array.isArray(data) ? (data as any[]) : [data as any];
       
       // Extract year from filename if possible (e.g., 2022_Songjiang...)
       const yearMatch = file.match(/^(\d{4})/);
@@ -170,6 +153,12 @@ export function clearCache(): void {
   _nodesCache = null;
   _nodesMapCache = null;
   _mappingsCache = null;
+}
+
+export function _setTestKnowledgeGraph(graph: KnowledgeGraph | null): void {
+  _graphCache = graph;
+  _nodesCache = null;
+  _nodesMapCache = null;
 }
 
 // ─── Question Search APIs ──────────────────────────────────────────────
