@@ -1,10 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+import knowledgeGraph from '../../knowledge_points.json';
+import { allPapers } from '../data/papers_index';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -15,13 +13,7 @@ let _mappingsCache: QuestionMapping[] | null = null;
 
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
-
-  if (!fs.existsSync(KP_PATH)) {
-    return { version: '1.0', categories: [] };
-  }
-
-  const raw = fs.readFileSync(KP_PATH, 'utf-8');
-  _graphCache = JSON.parse(raw) as KnowledgeGraph;
+  _graphCache = knowledgeGraph as KnowledgeGraph;
   return _graphCache;
 }
 
@@ -78,49 +70,35 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(PAPERS_DIR)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
-  
   const allMappings: QuestionMapping[] = [];
   
-  for (const file of jsonFiles) {
+  for (const { filename, data } of allPapers) {
     try {
-      const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
       const qs = Array.isArray(data) ? data : [data];
       
-      // Extract year from filename if possible (e.g., 2022_Songjiang...)
-      const yearMatch = file.match(/^(\d{4})/);
+      const yearMatch = filename.match(/^(\d{4})/);
       const fileYear = yearMatch ? yearMatch[1] : '2022';
 
-      const processedQs = qs.map(q => {
-        // Standardize question number
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const processedQs = qs.map((q: any) => {
         const questionNum = q.question || q.questionNumber || q.qNumber || q.question_type?.replace(/^Q/, '') || '';
         
-        // Standardize KPs
         let kps = q.kps || [];
         if (q.knowledgePoints && Array.isArray(q.knowledgePoints)) {
           kps = [...new Set([...kps, ...q.knowledgePoints])];
         }
         
-        // Standardize District
         let district = q.district || '';
         if (!district || district === 'all') {
-          // Try to extract from filename: 2022_Baoshan_...
-          const parts = file.split('_');
+          const parts = filename.split('_');
           if (parts.length > 1) district = parts[1];
         }
-        district = formatPaperName(district); // Use our mapper to get Chinese name
+        district = formatPaperName(district);
 
-        // Standardize Exam Type
         let examType = q.exam_type || '';
         if (!examType) {
-            if (file.includes('One_Mock')) examType = '一模';
-            else if (file.includes('Two_Mock')) examType = '二模';
+            if (filename.includes('One_Mock')) examType = '一模';
+            else if (filename.includes('Two_Mock')) examType = '二模';
         }
 
         return {
@@ -130,15 +108,15 @@ export function loadMappings(): QuestionMapping[] {
           district,
           exam_type: examType,
           year: q.year || fileYear,
-          paper: q.paper || file.replace('.json', '')
-        };
+          paper: q.paper || filename.replace('.json', '')
+        } as QuestionMapping;
       });
 
-      // Only include questions that have at least one knowledge point or tag
-      const validQs = processedQs.filter(q => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const validQs = processedQs.filter((q: any) => (q.kps && q.kps.length > 0) || (q.tags && q.tags.length > 0));
       allMappings.push(...validQs);
     } catch (e) {
-      console.error(`Error loading paper data from ${file}:`, e);
+      console.error(`Error loading paper data from ${filename}:`, e);
     }
   }
 
