@@ -1,0 +1,3 @@
+## 2025-02-13 - [Semantic Pagination Navigation]
+**Learning:** Pagination controls (next/prev buttons, page numbers) in this app's UI elements were originally wrapped in standard `div` elements without accessible roles. Without semantic `<nav>` wrappers and `aria-label`/`aria-current` attributes, screen readers cannot properly announce or understand the pagination context.
+**Action:** Replace `div` containers with `<nav aria-label="分页导航">`, add specific `aria-label`s to icon-only buttons (like "上一页"/"下一页"), and ensure the active page uses `aria-current="page"` alongside appropriate numbering labels for inactive buttons.
