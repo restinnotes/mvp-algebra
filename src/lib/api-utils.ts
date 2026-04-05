@@ -7,7 +7,6 @@ export class PayloadTooLargeError extends Error {
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function parseSafeJson<T = unknown>(req: NextRequest, maxSize: number = 5242880): Promise<T> {
     if (!req.body) return {} as T;
     const reader = req.body.getReader();
@@ -15,25 +14,18 @@ export async function parseSafeJson<T = unknown>(req: NextRequest, maxSize: numb
     let result = '';
     let bytesRead = 0;
 
-    try {
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
 
-            bytesRead += value.length;
-            if (bytesRead > maxSize) {
-                await reader.cancel('reason: payload too large');
-                throw new PayloadTooLargeError();
-            }
+        bytesRead += value.length;
+        if (bytesRead > maxSize) {
+            await reader.cancel('reason: payload too large');
+            throw new PayloadTooLargeError();
+        }
 
-            result += decoder.decode(value, { stream: true });
-        }
-        result += decoder.decode();
-        return JSON.parse(result) as T;
-    } catch (err) {
-        if (err instanceof PayloadTooLargeError) {
-            throw err;
-        }
-        throw err;
+        result += decoder.decode(value, { stream: true });
     }
+    result += decoder.decode();
+    return JSON.parse(result) as T;
 }
