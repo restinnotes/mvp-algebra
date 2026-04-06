@@ -1,0 +1,3 @@
+## 2024-04-06 - Pagination Accessibility
+**Learning:** Pagination controls must be wrapped in a semantic `<nav>` element with a descriptive `aria-label` (e.g., '分页导航'), and the currently active page button must include the `aria-current="page"` attribute for proper screen reader support.
+**Action:** Always ensure pagination components use `<nav>` wrapper with `aria-label` and `aria-current` state for the active button to improve accessibility.

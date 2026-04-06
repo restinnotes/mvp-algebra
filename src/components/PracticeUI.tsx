@@ -380,12 +380,13 @@ export default function PracticeUI() {
 
                     {/* Pagination Controls */}
                     {activeTab === 'bank' && totalPages > 1 && (
-                        <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                        <nav aria-label="分页导航" className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
                             <div className="text-xs text-white/30 font-bold">
                                 共 <span className="text-indigo-400">{totalResults}</span> 道题目
                             </div>
                             <div className="flex items-center gap-2">
                                 <button
+                                    aria-label="上一页"
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
@@ -400,6 +401,8 @@ export default function PracticeUI() {
                                             return (
                                                 <button
                                                     key={p}
+                                                    aria-label={`第 ${p} 页`}
+                                                    aria-current={page === p ? 'page' : undefined}
                                                     onClick={() => handlePageChange(p)}
                                                     className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
                                                 >
@@ -414,6 +417,7 @@ export default function PracticeUI() {
                                     })}
                                 </div>
                                 <button
+                                    aria-label="下一页"
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
@@ -421,7 +425,7 @@ export default function PracticeUI() {
                                     <ChevronRight size={18} />
                                 </button>
                             </div>
-                        </div>
+                        </nav>
                     )}
                 </div>
             </div>
