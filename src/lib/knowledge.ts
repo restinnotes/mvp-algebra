@@ -8,10 +8,13 @@ let path: any = null;
 
 const isNode = typeof process !== 'undefined' && process.release?.name === 'node';
 if (isNode) {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    fs = require('fs');
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    path = require('path');
+    try {
+        const req = eval('require');
+        fs = req('fs');
+        path = req('path');
+    } catch (e) {
+        // Fallback or ignore in strict environments
+    }
 }
 
 const KP_PATH = 'knowledge_points.json';

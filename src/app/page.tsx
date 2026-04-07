@@ -41,3 +41,4 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
     </PasswordGate>
   );
 }
+export const runtime = 'edge';
