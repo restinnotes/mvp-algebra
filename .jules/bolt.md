@@ -1,0 +1,3 @@
+## 2025-04-07 - [Memoizing expensive array derivations in high-frequency React input renders]
+**Learning:** In a codebase mapping numerous questions and filtering against large datasets based on search queries, failing to pre-compute and memoize values (such as aggregating strings into a `searchableText` array) leads to massive O(Q * K * N) operations inside the main thread blocking frequent input rendering.
+**Action:** Always wrap heavy string-formatting combinations and find-mappings for filtering behind a `useMemo` block tracking the specific search query state and question collections to prevent continuous main-thread stalls, especially on client-side search UI fields.

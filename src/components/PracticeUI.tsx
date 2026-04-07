@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -174,7 +174,26 @@ export default function PracticeUI() {
         }
     };
 
-    const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
+    // ⚡ Bolt: Memoize the filtered questions array to prevent expensive O(Q * K * N) operations
+    // on every keystroke when rendering the search bar input.
+    const filteredQuestions = useMemo(() => {
+        if (!questions.length) return [];
+        if (!searchQuery.trim()) return questions;
+
+        const queryParts = searchQuery.toLowerCase().split(/\s+/).filter(p => p.length > 0);
+
+        return questions.filter(q => {
+            const searchableText = [
+                formatPaperName(q.paper).toLowerCase(),
+                formatPaperName(q.district).toLowerCase(),
+                (q.exam_type || '').toLowerCase(),
+                q.question,
+                ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
+            ].join(' ');
+
+            return queryParts.every(part => searchableText.includes(part));
+        });
+    }, [questions, searchQuery, allKPs]);
 
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
@@ -325,25 +344,9 @@ export default function PracticeUI() {
                                             <BrainCircuit size={48} className="animate-pulse mb-4" />
                                             <p>正在检索同步题库...</p>
                                         </div>
-                                    ) : questions.length > 0 ? (
+                                    ) : filteredQuestions.length > 0 ? (
                                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-                                            {questions.filter(q => {
-                                                if (searchQuery === '') return true;
-                                                const query = searchQuery.toLowerCase();
-                                                const queryParts = query.split(/\s+/).filter(p => p.length > 0);
-                                                
-                                                // 准备待匹配的中文文本池
-                                                const searchableText = [
-                                                    formatPaperName(q.paper).toLowerCase(),
-                                                    formatPaperName(q.district).toLowerCase(),
-                                                    (q.exam_type || '').toLowerCase(),
-                                                    q.question, // 题号
-                                                    ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
-                                                ].join(' ');
-
-                                                // 必须满足所有搜索片段 (AND 逻辑)
-                                                return queryParts.every(part => searchableText.includes(part));
-                                            }).map((q, i) => (
+                                            {filteredQuestions.map((q, i) => (
                                                 <QuestionCard key={i} question={q} allKPs={allKPs} />
                                             ))}
                                         </div>
