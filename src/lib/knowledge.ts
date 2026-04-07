@@ -1,10 +1,24 @@
-import fs from 'fs';
-import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let fs: any = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let path: any = null;
+
+const isNode = typeof process !== 'undefined' && process.release?.name === 'node';
+if (isNode) {
+    try {
+        const req = eval('require');
+        fs = req('fs');
+        path = req('path');
+    } catch (e) {
+        // Fallback or ignore in strict environments
+    }
+}
+
+const KP_PATH = 'knowledge_points.json';
+const PAPERS_DIR = 'src/data/papers';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -16,7 +30,7 @@ let _mappingsCache: QuestionMapping[] | null = null;
 export function loadKnowledgeGraph(): KnowledgeGraph {
   if (_graphCache) return _graphCache;
 
-  if (!fs.existsSync(KP_PATH)) {
+  if (!fs || !fs.existsSync(KP_PATH)) {
     return { version: '1.0', categories: [] };
   }
 
@@ -78,12 +92,12 @@ export function getPrerequisiteChain(kpId: string): KnowledgeNode[] {
 export function loadMappings(): QuestionMapping[] {
   if (_mappingsCache) return _mappingsCache;
 
-  if (!fs.existsSync(PAPERS_DIR)) {
+  if (!fs || !fs.existsSync(PAPERS_DIR)) {
     return [];
   }
 
   const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   

@@ -543,7 +543,10 @@ export function useDynamicScaffold() {
             addLog('api', 'POST /api/session | 开始新会话...');
             const res = await fetch('/api/session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-App-Password': typeof window !== 'undefined' ? localStorage.getItem('app_password') || '' : ''
+                },
                 body: JSON.stringify({
                     action: 'start',
                     studentId: 'default_student',
@@ -575,7 +578,10 @@ export function useDynamicScaffold() {
         try {
             const res = await fetch('/api/session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-App-Password': typeof window !== 'undefined' ? localStorage.getItem('app_password') || '' : ''
+                },
                 body: JSON.stringify({
                     action: 'strategy',
                     sessionId: sessionId,
@@ -621,7 +627,10 @@ export function useDynamicScaffold() {
         try {
             const reviewRes = await fetch('/api/session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-App-Password': typeof window !== 'undefined' ? localStorage.getItem('app_password') || '' : ''
+                },
                 body: JSON.stringify({
                     action: 'review',
                     sessionId: sessionId
@@ -672,7 +681,10 @@ export function useDynamicScaffold() {
         try {
             const res = await fetch('/api/session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-App-Password': typeof window !== 'undefined' ? localStorage.getItem('app_password') || '' : ''
+                },
                 body: JSON.stringify({
                     action: 'step',
                     sessionId: sessionId,
