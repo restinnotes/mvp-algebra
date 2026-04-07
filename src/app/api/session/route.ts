@@ -4,6 +4,12 @@ import { LTMMemory } from '@/lib/memory';
 
 export async function POST(req: NextRequest) {
     try {
+        const appPassword = process.env.APP_PASSWORD || process.env.NEXT_PUBLIC_APP_PASSWORD;
+        const clientPassword = req.headers.get('X-App-Password');
+        if (appPassword && clientPassword !== appPassword) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
         const body = await req.json();
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 

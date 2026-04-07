@@ -6,7 +6,16 @@ const APP_PASSWORD = process.env.NEXT_PUBLIC_APP_PASSWORD;
 
 function getInitialVerified(): boolean {
   if (typeof window === 'undefined') return false;
-  return localStorage.getItem('app_password_verified') === 'true';
+  const isVerified = localStorage.getItem('app_password_verified') === 'true';
+  const hasPassword = !!localStorage.getItem('app_password');
+
+  if (isVerified && !hasPassword) {
+    // Migration: force re-authentication for existing users who don't have the raw password saved
+    localStorage.removeItem('app_password_verified');
+    return false;
+  }
+
+  return isVerified && hasPassword;
 }
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
@@ -25,6 +34,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
     }
     if (inputPassword === APP_PASSWORD) {
       localStorage.setItem('app_password_verified', 'true');
+      localStorage.setItem('app_password', inputPassword);
       setLocalVerified(true);
       setError('');
     } else {
