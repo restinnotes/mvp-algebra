@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -174,7 +174,36 @@ export default function PracticeUI() {
         }
     };
 
-    const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
+    // ⚡ Bolt: Memoize expensive array derivations to prevent O(N) operations on every re-render (e.g. search bar typing)
+    const uniqueExamTypes = useMemo(() => {
+        return [...new Set(examTypes.map(et => formatPaperName(et)))]
+            .filter(et => et && et !== '通用');
+    }, [examTypes]);
+
+    const uniqueDistricts = useMemo(() => {
+        return [...new Set(districts.map(d => formatPaperName(d)))]
+            .filter(d => d && d !== '通用')
+            .sort();
+    }, [districts]);
+
+    const filteredQuestions = useMemo(() => {
+        if (!searchQuery) return questions;
+
+        const query = searchQuery.toLowerCase();
+        const queryParts = query.split(/\s+/).filter(p => p.length > 0);
+
+        return questions.filter(q => {
+            const searchableText = [
+                formatPaperName(q.paper).toLowerCase(),
+                formatPaperName(q.district).toLowerCase(),
+                (q.exam_type || '').toLowerCase(),
+                q.question,
+                ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
+            ].join(' ');
+
+            return queryParts.every(part => searchableText.includes(part));
+        });
+    }, [questions, searchQuery, allKPs]);
 
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
@@ -239,7 +268,7 @@ export default function PracticeUI() {
                                 >
                                     全部
                                 </button>
-                                {[...new Set(examTypes.map(et => formatPaperName(et)))].filter(et => et && et !== '通用').map(et => (
+                                {uniqueExamTypes.map(et => (
                                     <button
                                         key={et}
                                         onClick={() => handleExamTypeChange(et)}
@@ -261,7 +290,7 @@ export default function PracticeUI() {
                                 >
                                     全部
                                 </button>
-                                {[...new Set(districts.map(d => formatPaperName(d)))].filter(d => d && d !== '通用').sort().map(d => (
+                                {uniqueDistricts.map(d => (
                                     <button
                                         key={d}
                                         onClick={() => handleDistrictChange(d)}
@@ -327,23 +356,7 @@ export default function PracticeUI() {
                                         </div>
                                     ) : questions.length > 0 ? (
                                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-                                            {questions.filter(q => {
-                                                if (searchQuery === '') return true;
-                                                const query = searchQuery.toLowerCase();
-                                                const queryParts = query.split(/\s+/).filter(p => p.length > 0);
-                                                
-                                                // 准备待匹配的中文文本池
-                                                const searchableText = [
-                                                    formatPaperName(q.paper).toLowerCase(),
-                                                    formatPaperName(q.district).toLowerCase(),
-                                                    (q.exam_type || '').toLowerCase(),
-                                                    q.question, // 题号
-                                                    ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
-                                                ].join(' ');
-
-                                                // 必须满足所有搜索片段 (AND 逻辑)
-                                                return queryParts.every(part => searchableText.includes(part));
-                                            }).map((q, i) => (
+                                            {filteredQuestions.map((q, i) => (
                                                 <QuestionCard key={i} question={q} allKPs={allKPs} />
                                             ))}
                                         </div>
