@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateJSON } from '@/lib/gemini';
+import { parseSafeJson } from '@/lib/api-utils';
 
 const personaSchema = {
     type: SchemaType.OBJECT,
@@ -62,7 +63,8 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
         }
 
-        const body = await req.json();
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const body = await parseSafeJson<any>(req, 100 * 1024);
         const { currentPersona, sessionLogs } = body;
 
         // 2. Input validation
