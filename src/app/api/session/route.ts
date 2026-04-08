@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { startSession, submitStrategy, submitStep, runReview, startExitTicket, submitExitTicketStep, getSession } from '@/lib/orchestrator';
 import { LTMMemory } from '@/lib/memory';
+import { parseSafeJson } from '@/lib/api-utils';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const body = await parseSafeJson<any>(req, 5 * 1024 * 1024);
         const { action, sessionId, studentId, problemText, strategy, answer, timeSpentMs } = body;
 
         if (!action) {

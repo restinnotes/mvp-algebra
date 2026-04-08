@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SchemaType } from "@google/generative-ai";
 import { generateFromImage } from '@/lib/gemini';
+import { parseSafeJson } from '@/lib/api-utils';
 
 const responseSchema = {
     description: "Scaffolding steps for a math problem",
@@ -32,7 +33,8 @@ const responseSchema = {
 
 export async function POST(req: NextRequest) {
     try {
-        const { imageBase64 } = await req.json();
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const { imageBase64 } = await parseSafeJson<any>(req, 5 * 1024 * 1024);
 
         if (!imageBase64) {
             return NextResponse.json({ error: 'No image provided' }, { status: 400 });
