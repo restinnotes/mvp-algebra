@@ -1,0 +1,3 @@
+## 2024-04-09 - Memoize expensive UI array filtering and remove dead code
+**Learning:** Performing multiple `String.prototype.toLowerCase()`, string concatenations, and `Array.prototype.find()` lookups directly inside `Array.prototype.filter()` during every component re-render (e.g. typing in the search box) blocks the main thread and introduces significant lag. Dead code calculations (like `weakKPs` object mapping) also waste CPU cycles needlessly.
+**Action:** Extracted the complex search filter logic into a `useMemo` block with explicit dependency tracking (`[questions, searchQuery, allKPs]`) and deleted the unused `weakKPs` intermediate calculation to optimize React re-render performance.
