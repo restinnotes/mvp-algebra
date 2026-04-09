@@ -1,10 +1,18 @@
-import fs from 'fs';
-import path from 'path';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+let fs: any = null;
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+let path: any = null;
+if (typeof process !== 'undefined' && process.release?.name === 'node') {
+    fs = eval("require('fs')");
+    path = eval("require('path')");
+}
+
+// ⚡ Sentinel: Replace process.cwd() with static strings for Edge compatibility
+const KP_PATH = 'knowledge_points.json';
+const PAPERS_DIR = 'src/data/papers';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -83,11 +91,11 @@ export function loadMappings(): QuestionMapping[] {
   }
 
   const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   
-  for (const file of jsonFiles) {
+  for (const file of jsonFiles as string[]) {
     try {
       const raw = fs.readFileSync(path.join(PAPERS_DIR, file), 'utf-8');
       const data = JSON.parse(raw);
