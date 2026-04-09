@@ -1,4 +1,4 @@
-## 2024-05-30 - [Insecure Randomness for Identifiers]
-**Vulnerability:** Insecure use of `Math.random()` to generate critical unique identifiers like `session_id` in `src/lib/orchestrator.ts` and problem `id`s in `src/lib/memory.ts`.
-**Learning:** This codebase uses `Math.random()` to generate IDs, which is predictable and insecure for things like session IDs or database primary keys. A malicious user could potentially predict session IDs or problem IDs, leading to insecure direct object references (IDOR) or session hijacking.
-**Prevention:** Always use cryptographically secure methods like `crypto.randomUUID()` for generating unique identifiers.
+## 2025-04-09 - [Denial of Service via Memory Exhaustion in NextRequest.json()]
+**Vulnerability:** Next.js `NextRequest.json()` completely buffers the request body in memory before parsing. Passing a large payload (e.g. huge images in base64) results in a DoS via OOM. There are arbitrary large size checks AFTER memory has been consumed.
+**Learning:** Checking the string length of an already parsed `await req.json()` result does NOT protect against memory exhaustion because the attack has already succeeded when `req.json()` returns.
+**Prevention:** Implement `parseSafeJson` that processes `req.body.getReader()` sequentially in chunks. Keep track of memory consumed inside the stream, and throw `PayloadTooLargeError` early with `await reader.cancel()` to cleanly abort parsing before process memory fills up.
