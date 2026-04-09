@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from 'next/server';
 import { parseSafeJson, PayloadTooLargeError } from '@/lib/api-utils';
 import { SchemaType } from "@google/generative-ai";
