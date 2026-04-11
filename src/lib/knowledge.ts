@@ -1,10 +1,20 @@
-import fs from 'fs';
-import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+// Edge runtime compatibility
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let fs: any = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let path: any = null;
+if (typeof process !== 'undefined' && process.env.NEXT_RUNTIME !== 'edge') {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  fs = require('fs');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  path = require('path');
+}
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
-const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
-const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
+// Next.js Edge runtime static analysis (via @cloudflare/next-on-pages) strictly prohibits process.cwd()
+const KP_PATH = path ? path.join(process.cwd(), 'knowledge_points.json') : '';
+const PAPERS_DIR = path ? path.join(process.cwd(), 'src', 'data', 'papers') : '';
 
 export { formatPaperName, PAPER_NAME_MAP };
 
@@ -83,7 +93,7 @@ export function loadMappings(): QuestionMapping[] {
   }
 
   const files = fs.readdirSync(PAPERS_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json'));
+  const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
   
