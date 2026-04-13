@@ -1,0 +1,3 @@
+## 2024-05-18 - Avoid O(N^2) lookups during render loops
+**Learning:** In `PracticeUI.tsx`, the `QuestionCard` component and search filter perform multiple `Array.prototype.find()` lookups on the `allKPs` array for each associated knowledge point (KP) in every rendered question. For a list of questions, this results in O(N * M) operations where N is the number of KPs per question and M is the total number of KPs. This causes redundant overhead during re-renders.
+**Action:** Use `useMemo` to create an O(1) lookup map (e.g., `Map<string, KP>`) from `allKPs` at the parent component level, and pass this map down to child components or use it directly in filters to avoid repeated `O(N)` scans.
