@@ -176,10 +176,8 @@ export function clearCache(): void {
 
 export function getQuestionsByKPs(kpIds: string[]): QuestionMapping[] {
   const mappings = loadMappings();
-  // ⚡ Bolt: Use Set for O(1) lookups in loops
-  const kpIdSet = new Set(kpIds);
   return mappings.filter(m => 
-    m.kps.some(kp => kpIdSet.has(kp))
+    m.kps.some(kp => kpIds.includes(kp))
   );
 }
 
@@ -190,14 +188,10 @@ export function getQuestionsForWeakPoints(
 ): QuestionMapping[] {
   const mappings = loadMappings();
   
-  // ⚡ Bolt: Use Set for O(1) lookups in loops
-  const excludePapersSet = new Set(excludePapers);
-  const weakKPSet = new Set(weakKPs);
-
   const scored = mappings
-    .filter(m => !excludePapersSet.has(m.paper))
+    .filter(m => !excludePapers.includes(m.paper))
     .map(m => {
-      const weakKPCoverage = m.kps.filter(kp => weakKPSet.has(kp)).length;
+      const weakKPCoverage = m.kps.filter(kp => weakKPs.includes(kp)).length;
       const matchRatio = weakKPCoverage / m.kps.length; // How much of this question matches selected KPs
       return { 
         mapping: m, 

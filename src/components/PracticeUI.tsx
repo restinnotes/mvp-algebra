@@ -327,12 +327,10 @@ export default function PracticeUI() {
                                         </div>
                                     ) : questions.length > 0 ? (
                                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-                                            {(() => {
-                                                // ⚡ Bolt: Hoist search query parsing outside the loop to avoid redundant recalculations per question
+                                            {questions.filter(q => {
+                                                if (searchQuery === '') return true;
                                                 const query = searchQuery.toLowerCase();
                                                 const queryParts = query.split(/\s+/).filter(p => p.length > 0);
-                                                return questions.filter(q => {
-                                                if (searchQuery === '') return true;
                                                 
                                                 // 准备待匹配的中文文本池
                                                 const searchableText = [
@@ -347,8 +345,7 @@ export default function PracticeUI() {
                                                 return queryParts.every(part => searchableText.includes(part));
                                             }).map((q, i) => (
                                                 <QuestionCard key={i} question={q} allKPs={allKPs} />
-                                            ));
-                                            })()}
+                                            ))}
                                         </div>
                                     ) : (
                                         <div className="text-center py-20 bg-white/5 rounded-3xl border border-dashed border-white/10">
