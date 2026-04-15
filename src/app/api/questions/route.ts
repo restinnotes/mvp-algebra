@@ -43,13 +43,17 @@ export async function POST(request: NextRequest) {
       }
       
       if (kps && kps.length > 0) {
+        // ⚡ Bolt: Use Set for O(1) lookups inside iterations instead of Array.includes() which is O(N)
+        const kpSet = new Set(kps);
         questions = questions.filter(q => 
-          q.kps && Array.isArray(q.kps) && q.kps.some(kp => kps.includes(kp))
+          q.kps && Array.isArray(q.kps) && q.kps.some(kp => kpSet.has(kp))
         );
       }
       
       if (excludePapers && excludePapers.length > 0) {
-        questions = questions.filter(q => !excludePapers.includes(q.paper));
+        // ⚡ Bolt: Convert excludePapers to Set to transform O(N*M) operations into O(N+M)
+        const excludeSet = new Set(excludePapers);
+        questions = questions.filter(q => !excludeSet.has(q.paper));
       }
 
       if (searchQuery && searchQuery.trim() !== '') {
