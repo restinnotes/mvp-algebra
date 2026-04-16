@@ -42,14 +42,18 @@ export async function POST(request: NextRequest) {
         questions = questions.filter(q => q.exam_type === examType);
       }
       
-      if (kps && kps.length > 0) {
+      if (kps && Array.isArray(kps) && kps.length > 0) {
+        // ⚡ Bolt: Convert kps array to Set for O(1) lookups during filtering
+        const kpsSet = new Set(kps);
         questions = questions.filter(q => 
-          q.kps && Array.isArray(q.kps) && q.kps.some(kp => kps.includes(kp))
+          q.kps && Array.isArray(q.kps) && q.kps.some(kp => kpsSet.has(kp))
         );
       }
       
-      if (excludePapers && excludePapers.length > 0) {
-        questions = questions.filter(q => !excludePapers.includes(q.paper));
+      if (excludePapers && Array.isArray(excludePapers) && excludePapers.length > 0) {
+        // ⚡ Bolt: Convert excludePapers array to Set for O(1) lookups during filtering
+        const excludePapersSet = new Set(excludePapers);
+        questions = questions.filter(q => !excludePapersSet.has(q.paper));
       }
 
       if (searchQuery && searchQuery.trim() !== '') {

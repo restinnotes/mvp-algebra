@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
 const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
@@ -176,8 +176,10 @@ export function clearCache(): void {
 
 export function getQuestionsByKPs(kpIds: string[]): QuestionMapping[] {
   const mappings = loadMappings();
+  // ⚡ Bolt: Convert kpIds to Set for O(1) lookups during filtering
+  const kpIdsSet = new Set(kpIds);
   return mappings.filter(m => 
-    m.kps.some(kp => kpIds.includes(kp))
+    m.kps.some(kp => kpIdsSet.has(kp))
   );
 }
 
@@ -187,11 +189,14 @@ export function getQuestionsForWeakPoints(
   maxResults: number = 5
 ): QuestionMapping[] {
   const mappings = loadMappings();
+  // ⚡ Bolt: Convert arrays to Sets for O(1) lookups in tight loops
+  const weakKPsSet = new Set(weakKPs);
+  const excludePapersSet = new Set(excludePapers);
   
   const scored = mappings
-    .filter(m => !excludePapers.includes(m.paper))
+    .filter(m => !excludePapersSet.has(m.paper))
     .map(m => {
-      const weakKPCoverage = m.kps.filter(kp => weakKPs.includes(kp)).length;
+      const weakKPCoverage = m.kps.filter(kp => weakKPsSet.has(kp)).length;
       const matchRatio = weakKPCoverage / m.kps.length; // How much of this question matches selected KPs
       return { 
         mapping: m, 
