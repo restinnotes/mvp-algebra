@@ -18,15 +18,22 @@ export const metadata: Metadata = {
   description: 'AI 驱动的中考数学单点爆破',
 };
 
-export default function RootLayout({
+import { checkAuthStatus } from '@/app/actions/auth';
+import PasswordGate from '@/components/PasswordGate';
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isVerified = await checkAuthStatus();
+
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-indigo-500/50`}>
-        {children}
+        <PasswordGate isVerified={isVerified}>
+          {children}
+        </PasswordGate>
       </body>
     </html>
   );
