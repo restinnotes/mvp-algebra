@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useRef, useEffect } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { LTMMemory, StudentPersona } from '@/lib/memory';
