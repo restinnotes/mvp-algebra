@@ -49,30 +49,6 @@ export default function PracticeUI() {
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
-    useEffect(() => {
-        const data = LTMMemory.load('demo_student');
-        setStudentData(data);
-        fetchKPs();
-        fetchFilterOptions();
-
-        // Handle URL Params for navigation from Dashboard
-        const params = new URLSearchParams(window.location.search);
-        const kpParam = params.get('kp');
-        const searchParam = params.get('search');
-        
-        let initialKPs: string[] = [];
-        if (kpParam) {
-            initialKPs = [kpParam];
-            setSelectedKPs(initialKPs);
-        }
-        let initialSearch = '';
-        if (searchParam) {
-            initialSearch = searchParam;
-            setSearchQuery(searchParam);
-        }
-
-        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
-    }, []);
 
     const fetchKPs = async () => {
         try {
@@ -173,6 +149,32 @@ export default function PracticeUI() {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        const data = LTMMemory.load('demo_student');
+        setStudentData(data);
+        fetchKPs();
+        fetchFilterOptions();
+
+        // Handle URL Params for navigation from Dashboard
+        const params = new URLSearchParams(window.location.search);
+        const kpParam = params.get('kp');
+        const searchParam = params.get('search');
+
+        let initialKPs: string[] = [];
+        if (kpParam) {
+            initialKPs = [kpParam];
+            setSelectedKPs(initialKPs);
+        }
+        let initialSearch = '';
+        if (searchParam) {
+            initialSearch = searchParam;
+            setSearchQuery(searchParam);
+        }
+
+        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 

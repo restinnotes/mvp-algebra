@@ -12,3 +12,8 @@
 **Vulnerability:** A build error occurred due to `.ts` extensions in import paths, which is forbidden in Next.js when `allowImportingTsExtensions` is not enabled in `tsconfig.json`. This isn't a direct security vulnerability, but it prevented the CI build from succeeding and deploying the fix.
 **Learning:** Next.js strictly forbids importing typescript files with `.ts` extensions. When patching imports for node testing scripts (like replacing `.ts` with `.ts`), always remember to revert those changes before running `pnpm build` or submitting the code.
 **Prevention:** Always verify `git status` to ensure you haven't accidentally committed local patches required only for `node --test`.
+
+## 2024-06-16 - [Build Error: Function usage before declaration]
+**Vulnerability:** A build error occurred due to a React functional component attempting to use functions inside a `useEffect` hook that were declared further down in the file.
+**Learning:** Next.js and TypeScript linting strictly forbids accessing variables and functions before they are declared in functional components. The `useEffect` block must be placed *after* the helper functions it intends to call.
+**Prevention:** Always place helper functions inside the component above the `useEffect` blocks that consume them.
