@@ -50,6 +50,33 @@ export default function PracticeUI() {
     const pageSize = 12;
 
 
+    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'search',
+                    kps: kps.length > 0 ? kps : undefined,
+                    district: district !== 'all' ? district : undefined,
+                    examType: examType !== 'all' ? examType : undefined,
+                    searchQuery: query || undefined,
+                    maxResults: pageSize,
+                    page: targetPage
+                })
+            });
+            const data = await res.json();
+            setQuestions(data.questions || []);
+            setTotalPages(data.totalPages || 1);
+            setTotalResults(data.total || 0);
+        } catch (e) {
+            console.error('Failed to fetch questions', e);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const fetchKPs = async () => {
         try {
             const res = await fetch('/api/questions', {
@@ -122,33 +149,6 @@ export default function PracticeUI() {
         }, 300);
         return () => clearTimeout(timer);
     }, [searchQuery]);
-
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    action: 'search', 
-                    kps: kps.length > 0 ? kps : undefined,
-                    district: district !== 'all' ? district : undefined,
-                    examType: examType !== 'all' ? examType : undefined,
-                    searchQuery: query || undefined,
-                    maxResults: pageSize,
-                    page: targetPage
-                })
-            });
-            const data = await res.json();
-            setQuestions(data.questions || []);
-            setTotalPages(data.totalPages || 1);
-            setTotalResults(data.total || 0);
-        } catch (e) {
-            console.error('Failed to fetch questions', e);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     useEffect(() => {
         const data = LTMMemory.load('demo_student');

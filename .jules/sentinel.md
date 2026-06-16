@@ -17,3 +17,8 @@
 **Vulnerability:** A build error occurred due to a React functional component attempting to use functions inside a `useEffect` hook that were declared further down in the file.
 **Learning:** Next.js and TypeScript linting strictly forbids accessing variables and functions before they are declared in functional components. The `useEffect` block must be placed *after* the helper functions it intends to call.
 **Prevention:** Always place helper functions inside the component above the `useEffect` blocks that consume them.
+
+## 2024-06-16 - [Build Error: Duplicate function declaration]
+**Vulnerability:** A build error occurred due to `fetchQuestionsWithFilter` being declared twice in `src/components/PracticeUI.tsx` during conflict resolution of a patch.
+**Learning:** Be very careful when moving function declarations up or down in a file using text replacement tools. Always ensure the original declaration is removed to prevent duplicate identifier build errors.
+**Prevention:** Always verify local builds after large restructuring patches, especially those moving functions around to satisfy strict mode lint rules.
