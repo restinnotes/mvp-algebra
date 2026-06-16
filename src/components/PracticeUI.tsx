@@ -49,30 +49,33 @@ export default function PracticeUI() {
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
-    useEffect(() => {
-        const data = LTMMemory.load('demo_student');
-        setStudentData(data);
-        fetchKPs();
-        fetchFilterOptions();
 
-        // Handle URL Params for navigation from Dashboard
-        const params = new URLSearchParams(window.location.search);
-        const kpParam = params.get('kp');
-        const searchParam = params.get('search');
-        
-        let initialKPs: string[] = [];
-        if (kpParam) {
-            initialKPs = [kpParam];
-            setSelectedKPs(initialKPs);
+    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'search',
+                    kps: kps.length > 0 ? kps : undefined,
+                    district: district !== 'all' ? district : undefined,
+                    examType: examType !== 'all' ? examType : undefined,
+                    searchQuery: query || undefined,
+                    maxResults: pageSize,
+                    page: targetPage
+                })
+            });
+            const data = await res.json();
+            setQuestions(data.questions || []);
+            setTotalPages(data.totalPages || 1);
+            setTotalResults(data.total || 0);
+        } catch (e) {
+            console.error('Failed to fetch questions', e);
+        } finally {
+            setLoading(false);
         }
-        let initialSearch = '';
-        if (searchParam) {
-            initialSearch = searchParam;
-            setSearchQuery(searchParam);
-        }
-
-        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
-    }, []);
+    };
 
     const fetchKPs = async () => {
         try {
@@ -147,32 +150,31 @@ export default function PracticeUI() {
         return () => clearTimeout(timer);
     }, [searchQuery]);
 
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    action: 'search', 
-                    kps: kps.length > 0 ? kps : undefined,
-                    district: district !== 'all' ? district : undefined,
-                    examType: examType !== 'all' ? examType : undefined,
-                    searchQuery: query || undefined,
-                    maxResults: pageSize,
-                    page: targetPage
-                })
-            });
-            const data = await res.json();
-            setQuestions(data.questions || []);
-            setTotalPages(data.totalPages || 1);
-            setTotalResults(data.total || 0);
-        } catch (e) {
-            console.error('Failed to fetch questions', e);
-        } finally {
-            setLoading(false);
+    useEffect(() => {
+        const data = LTMMemory.load('demo_student');
+        setStudentData(data);
+        fetchKPs();
+        fetchFilterOptions();
+
+        // Handle URL Params for navigation from Dashboard
+        const params = new URLSearchParams(window.location.search);
+        const kpParam = params.get('kp');
+        const searchParam = params.get('search');
+
+        let initialKPs: string[] = [];
+        if (kpParam) {
+            initialKPs = [kpParam];
+            setSelectedKPs(initialKPs);
         }
-    };
+        let initialSearch = '';
+        if (searchParam) {
+            initialSearch = searchParam;
+            setSearchQuery(searchParam);
+        }
+
+        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
