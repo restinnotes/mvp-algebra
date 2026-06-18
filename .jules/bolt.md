@@ -1,0 +1,3 @@
+## 2023-10-27 - Fast Map Lookups for React components with array matching
+**Learning:** React component rendering iterates over item properties mapping them to other structures, like `q.kps.map(kpId => allKPs.find(k => k.id === kpId))`. This runs `O(N * M)` because `find()` iterates over `allKPs` for every ID in `q.kps` inside the loop, and is especially slow during array rendering or search filter evaluating functions that execute multiple times per render cycle.
+**Action:** Use `useMemo` to convert `allKPs` (the search target) to a `Map` so lookups become `O(1)`, mitigating the `O(N*M)` complexity to `O(N+M)`. Ensure to verify if modifying `useEffect` dependency arrays satisfies `exhaustive-deps` via ESLint.
