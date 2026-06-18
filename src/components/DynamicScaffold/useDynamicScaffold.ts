@@ -16,7 +16,7 @@ export function useDynamicScaffold() {
     useEffect(() => {
         const saved = localStorage.getItem('demoScriptIndex');
         if (saved) {
-            setDemoScriptIndex(parseInt(saved, 10));
+            setTimeout(() => setDemoScriptIndex(parseInt(saved, 10)), 0);
         }
     }, []);
 
@@ -26,8 +26,10 @@ export function useDynamicScaffold() {
     // Sync problem text when demoScriptIndex changes
     useEffect(() => {
         const scriptData = getDemoScript(demoScriptIndex);
-        setProblemText(scriptData.problem);
-        setProblemImage(scriptData.problemImage || null);
+        setTimeout(() => {
+            setProblemText(scriptData.problem);
+            setProblemImage(scriptData.problemImage || null);
+        }, 0);
     }, [demoScriptIndex]);
 
     // Strategy Phase States
@@ -52,7 +54,7 @@ export function useDynamicScaffold() {
     // Initial LTM Load
     useEffect(() => {
         const mem = LTMMemory.load('demo_student');
-        setPersona(mem.persona);
+        setTimeout(() => setPersona(mem.persona), 0);
     }, []);
 
     // iPad Optimization: Prevent bounce scroll
@@ -138,7 +140,7 @@ export function useDynamicScaffold() {
 
             if (data.isCorrect !== undefined) {
                 const newLog: StepLog = {
-                    id: Date.now().toString(),
+                    id: crypto.randomUUID(),
                     type: 'student',
                     contentType: 'math',
                     latex: latex,
@@ -282,7 +284,7 @@ export function useDynamicScaffold() {
 
         const processStep = async (step: DemoStepData) => {
             const newStepLog: StepLog = {
-                id: Date.now().toString(),
+                id: crypto.randomUUID(),
                 type: 'student',
                 contentType: step.contentType,
                 latex: step.latex,
@@ -592,7 +594,7 @@ export function useDynamicScaffold() {
             addLog('api', `思路结果: ${JSON.stringify(evaluation)}`);
 
             const newLog: StepLog = {
-                id: Date.now().toString(),
+                id: crypto.randomUUID(),
                 type: 'student',
                 contentType: 'text',
                 text: textToSubmit,
@@ -686,7 +688,7 @@ export function useDynamicScaffold() {
             const finalLatex = value.trim();
 
             const newLog: StepLog = {
-                id: Date.now().toString(),
+                id: crypto.randomUUID(),
                 type: 'student',
                 contentType: 'math',
                 latex: finalLatex,
