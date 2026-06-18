@@ -3,12 +3,16 @@
 import { cookies } from 'next/headers';
 import crypto from 'crypto';
 
-const SECRET_KEY = process.env.APP_SECRET || 'default_secret_key_change_me';
+const SECRET_KEY = process.env.APP_SECRET;
+if (!SECRET_KEY && process.env.NODE_ENV === 'production') {
+  console.error("CRITICAL: APP_SECRET is not set in production!");
+}
+const EFFECTIVE_SECRET = SECRET_KEY || crypto.randomBytes(32).toString('hex');
 // Use server-side env variable, not NEXT_PUBLIC_
 const APP_PASSWORD = process.env.APP_PASSWORD || process.env.NEXT_PUBLIC_APP_PASSWORD;
 
 function createSignature(payload: string) {
-  return crypto.createHmac('sha256', SECRET_KEY).update(payload).digest('hex');
+  return crypto.createHmac('sha256', EFFECTIVE_SECRET).update(payload).digest('hex');
 }
 
 export async function verifyPassword(password: string) {
