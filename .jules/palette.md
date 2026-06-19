@@ -1,0 +1,3 @@
+## 2025-01-20 - Pagination Accessibility Enhancement
+**Learning:** Adding semantic `<nav>` wrappers and `aria-label` attributes to pagination components greatly improves screen reader accessibility, particularly for icon-only buttons (like next/prev). Setting a tall viewport (`height: 2000`) is crucial for verifying UI elements like pagination controls that appear at the bottom of dynamic lists during Playwright testing.
+**Action:** Always wrap pagination in `<nav aria-label="...">` and assign explicit descriptive `aria-label`s to purely icon-driven navigation buttons. When testing these elements using Playwright, configure a sufficiently tall viewport so that bottom-anchored components are rendered inside the visible area for screenshots.
