@@ -29,10 +29,6 @@ export async function POST(request: NextRequest) {
 
     if (action === 'search') {
       let questions = loadMappings();
-      
-      // Get all nodes for KP name lookup
-      const allNodes = getAllNodes();
-      const nodeMap = new Map(allNodes.map(n => [n.id, n]));
 
       if (district && district !== 'all') {
         questions = questions.filter(q => q.district === district);
@@ -57,14 +53,8 @@ export async function POST(request: NextRequest) {
         const queryParts = query.split(/\s+/).filter((p: string) => p.length > 0);
         
         questions = questions.filter(q => {
-          const searchableText = [
-            formatPaperName(q.paper).toLowerCase(),
-            formatPaperName(q.district).toLowerCase(),
-            (q.exam_type || '').toLowerCase(),
-            q.question.toLowerCase(),
-            ...q.kps.map(kpId => (nodeMap.get(kpId)?.name || '').toLowerCase())
-          ].join(' ');
-
+          // ⚡ Bolt Optimization: Use precomputed text. Impact: O(1) filter operations instead of formatting dynamically
+          const searchableText = q._searchableText || '';
           return queryParts.every((part: string) => searchableText.includes(part));
         });
       }
