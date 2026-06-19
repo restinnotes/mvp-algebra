@@ -1,0 +1,3 @@
+## 2024-06-19 - Pre-computing Search Strings for O(1) Filtering
+**Learning:** In Next.js API routes handling large data sets, performing string formatting and mapping inside an array `.filter()` during each search request introduces massive overhead (O(N*M) lookups).
+**Action:** Always pre-compute and cache expensive searchable string combinations during initial load (`loadMappings()`), reducing filter operations to O(1) `.includes()` checks.

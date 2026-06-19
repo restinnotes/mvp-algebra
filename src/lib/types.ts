@@ -36,6 +36,7 @@ export interface QuestionMapping {
   question_type?: string; // "Q18" | "Q24" | "Q25"
   source_file?: string;
   steps?: StepMapping[];
+  _searchableText?: string;
 }
 
 export interface StepMapping {

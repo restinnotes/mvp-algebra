@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
-import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
+import { formatPaperName, PAPER_NAME_MAP } from './format';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
 const PAPERS_DIR = path.join(process.cwd(), 'src', 'data', 'papers');
@@ -86,6 +86,8 @@ export function loadMappings(): QuestionMapping[] {
   const jsonFiles = files.filter(f => f.endsWith('.json'));
   
   const allMappings: QuestionMapping[] = [];
+  const allNodes = getAllNodes();
+  const nodeMap = new Map(allNodes.map(n => [n.id, n]));
   
   for (const file of jsonFiles) {
     try {
@@ -123,7 +125,7 @@ export function loadMappings(): QuestionMapping[] {
             else if (file.includes('Two_Mock')) examType = '二模';
         }
 
-        return {
+        const mapped = {
           ...q,
           question: questionNum.toString(),
           kps,
@@ -132,6 +134,15 @@ export function loadMappings(): QuestionMapping[] {
           year: q.year || fileYear,
           paper: q.paper || file.replace('.json', '')
         };
+        // ⚡ Bolt Optimization: Precompute searchable text once on load. Impact: Reduces per-request search filter overhead to near O(1)
+        const searchableText = [
+          formatPaperName(mapped.paper).toLowerCase(),
+          formatPaperName(mapped.district).toLowerCase(),
+          (mapped.exam_type || '').toLowerCase(),
+          mapped.question.toLowerCase(),
+          ...mapped.kps.map((kpId: string) => (nodeMap.get(kpId)?.name || '').toLowerCase())
+        ].join(' ');
+        return { ...mapped, _searchableText: searchableText };
       });
 
       // Only include questions that have at least one knowledge point or tag
