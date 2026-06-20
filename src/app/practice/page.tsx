@@ -1,3 +1,4 @@
+
 import DynamicScaffold from '@/components/DynamicScaffold';
 import PracticeUI from '@/components/PracticeUI';
 import Link from 'next/link';
