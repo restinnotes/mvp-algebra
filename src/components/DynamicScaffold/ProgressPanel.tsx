@@ -76,7 +76,7 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                 {isManualDemo && (
                     <div className="flex flex-col gap-4 flex-1">
                         <div className="flex items-center gap-3">
-                            <button
+                            <button aria-label="上一步"
                                 type="button"
                                 onClick={() => {
                                     if (manualDemoStep > 0) {
@@ -109,7 +109,7 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                             <span className="text-white/50 text-xs font-mono flex-1 text-center">
                                 {manualDemoStep} / {demoSteps.length}
                             </span>
-                            <button
+                            <button aria-label="下一步"
                                 type="button"
                                 onClick={handleDemoOcr}
                                 disabled={manualDemoStep >= demoSteps.length}
