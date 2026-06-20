@@ -142,7 +142,6 @@ export default function PracticeUI() {
             fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
         };
         loadInitialData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleKPToggle = (kpId: string) => {
@@ -387,7 +386,7 @@ export default function PracticeUI() {
 
                     {/* Pagination Controls */}
                     {activeTab === 'bank' && totalPages > 1 && (
-                        <nav aria-label="分页" className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
                             <div className="text-xs text-white/30 font-bold">
                                 共 <span className="text-indigo-400">{totalResults}</span> 道题目
                             </div>
@@ -395,7 +394,6 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    aria-label="上一页"
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
                                 >
                                     <ChevronLeft size={18} />
@@ -409,8 +407,6 @@ export default function PracticeUI() {
                                                 <button
                                                     key={p}
                                                     onClick={() => handlePageChange(p)}
-                                                    aria-label={`第 ${p} 页`}
-                                                    aria-current={page === p ? 'page' : undefined}
                                                     className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
                                                 >
                                                     {p}
@@ -426,13 +422,12 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    aria-label="下一页"
                                     className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
                             </div>
-                        </nav>
+                        </div>
                     )}
                 </div>
             </div>
