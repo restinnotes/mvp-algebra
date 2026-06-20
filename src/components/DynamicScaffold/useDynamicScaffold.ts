@@ -10,24 +10,26 @@ export function useDynamicScaffold() {
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
-    const [demoScriptIndex, setDemoScriptIndex] = useState(0);
-
-    // Resume demoScriptIndex from localStorage
-    useEffect(() => {
-        const saved = localStorage.getItem('demoScriptIndex');
-        if (saved) {
-            setDemoScriptIndex(parseInt(saved, 10));
+    const getInitialIndex = () => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('demoScriptIndex');
+            if (saved) return parseInt(saved, 10);
         }
-    }, []);
+        return 0;
+    };
+    const [demoScriptIndex, setDemoScriptIndex] = useState(getInitialIndex);
 
-    const [problemText, setProblemText] = useState<string>("");
-    const [problemImage, setProblemImage] = useState<React.ReactNode | null>(null);
+    const scriptData = getDemoScript(demoScriptIndex);
+    const [problemText, setProblemText] = useState<string>(scriptData.problem);
+    const [problemImage, setProblemImage] = useState<React.ReactNode | null>(scriptData.problemImage || null);
 
     // Sync problem text when demoScriptIndex changes
     useEffect(() => {
-        const scriptData = getDemoScript(demoScriptIndex);
-        setProblemText(scriptData.problem);
-        setProblemImage(scriptData.problemImage || null);
+        setTimeout(() => {
+            const nextScriptData = getDemoScript(demoScriptIndex);
+            setProblemText(nextScriptData.problem);
+            setProblemImage(nextScriptData.problemImage || null);
+        }, 0);
     }, [demoScriptIndex]);
 
     // Strategy Phase States
@@ -51,8 +53,9 @@ export function useDynamicScaffold() {
 
     // Initial LTM Load
     useEffect(() => {
-        const mem = LTMMemory.load('demo_student');
-        setPersona(mem.persona);
+        setTimeout(() => {
+            setPersona(LTMMemory.load('demo_student').persona);
+        }, 0);
     }, []);
 
     // iPad Optimization: Prevent bounce scroll
@@ -138,7 +141,7 @@ export function useDynamicScaffold() {
 
             if (data.isCorrect !== undefined) {
                 const newLog: StepLog = {
-                    id: Date.now().toString(),
+                    id: crypto.randomUUID ? crypto.randomUUID() : 'step-' + new Date().getTime(),
                     type: 'student',
                     contentType: 'math',
                     latex: latex,
