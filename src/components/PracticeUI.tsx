@@ -10,7 +10,6 @@ import {
     Star, 
     Clock, 
     CheckCircle2, 
-    AlertCircle, 
     ArrowRight,
     BrainCircuit,
     Layers,
@@ -20,7 +19,7 @@ import {
 } from 'lucide-react';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { QuestionMapping } from '@/lib/types';
-import { formatPaperName, PAPER_NAME_MAP } from '@/lib/format';
+import { formatPaperName } from '@/lib/format';
 import Link from 'next/link';
 
 interface KP {
@@ -37,7 +36,12 @@ export default function PracticeUI() {
     const [allKPs, setAllKPs] = useState<KP[]>([]);
     const [questions, setQuestions] = useState<QuestionMapping[]>([]);
     const [loading, setLoading] = useState(false);
-    const [studentData, setStudentData] = useState<MemoryData | null>(null);
+    const [studentData] = useState<MemoryData | null>(() => {
+        if (typeof window !== 'undefined') {
+            return LTMMemory.load('demo_student');
+        }
+        return null;
+    });
     const [districts, setDistricts] = useState<string[]>([]);
     const [examTypes, setExamTypes] = useState<string[]>([]);
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
@@ -49,40 +53,17 @@ export default function PracticeUI() {
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
-    useEffect(() => {
-        const data = LTMMemory.load('demo_student');
-        setStudentData(data);
-        fetchKPs();
-        fetchFilterOptions();
-
-        // Handle URL Params for navigation from Dashboard
-        const params = new URLSearchParams(window.location.search);
-        const kpParam = params.get('kp');
-        const searchParam = params.get('search');
-        
-        let initialKPs: string[] = [];
-        if (kpParam) {
-            initialKPs = [kpParam];
-            setSelectedKPs(initialKPs);
-        }
-        let initialSearch = '';
-        if (searchParam) {
-            initialSearch = searchParam;
-            setSearchQuery(searchParam);
-        }
-
-        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
-    }, []);
-
     const fetchKPs = async () => {
         try {
             const res = await fetch('/api/questions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'kps' })
+                body: JSON.stringify({ action: 'get_kps' })
             });
             const data = await res.json();
-            setAllKPs(data.kps || []);
+            if (data.kps) {
+                setAllKPs(data.kps);
+            }
         } catch (e) {
             console.error('Failed to fetch KPs', e);
         }
@@ -94,22 +75,88 @@ export default function PracticeUI() {
                 fetch('/api/questions', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'districts' })
+                    body: JSON.stringify({ action: 'get_districts' })
                 }),
                 fetch('/api/questions', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'examTypes' })
+                    body: JSON.stringify({ action: 'get_exam_types' })
                 })
             ]);
-            const districtsData = await districtsRes.json();
-            const examTypesData = await examTypesRes.json();
-            setDistricts(districtsData.districts || []);
-            setExamTypes(examTypesData.examTypes || []);
+
+            const distData = await districtsRes.json();
+            const examData = await examTypesRes.json();
+
+            if (distData.districts) setDistricts(distData.districts);
+            if (examData.examTypes) setExamTypes(examData.examTypes);
         } catch (e) {
             console.error('Failed to fetch filter options', e);
         }
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'filter',
+                    district: district === 'all' ? undefined : district,
+                    exam_type: examType === 'all' ? undefined : examType,
+                    kps: kps.length > 0 ? kps : undefined,
+                    page: targetPage,
+                    pageSize: pageSize,
+                    search: query || undefined
+                })
+            });
+            const data = await res.json();
+            if (data.questions) {
+                setQuestions(data.questions);
+                setTotalPages(data.totalPages || 1);
+                setTotalResults(data.total || 0);
+            }
+        } catch (e) {
+            console.error('Failed to fetch questions', e);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        let mounted = true;
+
+        const init = async () => {
+            await fetchKPs();
+            await fetchFilterOptions();
+
+            if (!mounted) return;
+
+            // Handle URL Params for navigation from Dashboard
+            const params = new URLSearchParams(window.location.search);
+            const kpParam = params.get('kp');
+            const searchParam = params.get('search');
+
+            let initialKPs: string[] = [];
+            if (kpParam) {
+                initialKPs = [kpParam];
+                setSelectedKPs(initialKPs);
+            }
+            let initialSearch = '';
+            if (searchParam) {
+                initialSearch = searchParam;
+                setSearchQuery(searchParam);
+            }
+
+            fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
+        };
+
+        init();
+
+        return () => { mounted = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleKPToggle = (kpId: string) => {
         const next = selectedKPs.includes(kpId)
@@ -145,36 +192,8 @@ export default function PracticeUI() {
             fetchQuestionsWithFilter(selectedDistrict, selectedExamType, selectedKPs, 1, searchQuery);
         }, 300);
         return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchQuery]);
-
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    action: 'search', 
-                    kps: kps.length > 0 ? kps : undefined,
-                    district: district !== 'all' ? district : undefined,
-                    examType: examType !== 'all' ? examType : undefined,
-                    searchQuery: query || undefined,
-                    maxResults: pageSize,
-                    page: targetPage
-                })
-            });
-            const data = await res.json();
-            setQuestions(data.questions || []);
-            setTotalPages(data.totalPages || 1);
-            setTotalResults(data.total || 0);
-        } catch (e) {
-            console.error('Failed to fetch questions', e);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
@@ -431,12 +450,6 @@ export default function PracticeUI() {
 
 function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
     const formattedTitle = formatPaperName(question.paper);
-    
-    const examTypeStyle = question.exam_type === '一模' 
-        ? 'bg-amber-500/15 text-amber-400 border-amber-500/30' 
-        : question.exam_type === '二模'
-        ? 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30'
-        : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30';
 
     return (
         <div className="group bg-[#1a1d24] border border-white/5 rounded-2xl p-6 hover:border-indigo-500/40 transition-all hover:bg-[#1e222b] shadow-lg">
