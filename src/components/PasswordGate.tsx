@@ -1,38 +1,29 @@
 'use client';
 
 import { useState } from 'react';
+import { verifyPassword } from '@/app/actions/auth';
+import { useRouter } from 'next/navigation';
 
-const APP_PASSWORD = process.env.NEXT_PUBLIC_APP_PASSWORD;
-
-function getInitialVerified(): boolean {
-  if (typeof window === 'undefined') return false;
-  return localStorage.getItem('app_password_verified') === 'true';
-}
-
-export default function PasswordGate({ children }: { children: React.ReactNode }) {
-  const [isVerified] = useState(getInitialVerified);
+export default function PasswordGate({ children, initialVerified = false }: { children: React.ReactNode, initialVerified?: boolean }) {
+  const [isVerified, setIsVerified] = useState(initialVerified);
   const [inputPassword, setInputPassword] = useState('');
   const [error, setError] = useState('');
-  const [localVerified, setLocalVerified] = useState(false);
+  const router = useRouter();
 
-  const isActuallyVerified = isVerified || localVerified;
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!APP_PASSWORD) {
-      setError('密码未配置，请联系管理员');
-      return;
-    }
-    if (inputPassword === APP_PASSWORD) {
-      localStorage.setItem('app_password_verified', 'true');
-      setLocalVerified(true);
+    const result = await verifyPassword(inputPassword);
+
+    if (result.success) {
+      setIsVerified(true);
       setError('');
+      router.refresh(); // Refresh to let server components know about the cookie
     } else {
-      setError('密码错误，请重试');
+      setError(result.error || '密码错误，请重试');
     }
   };
 
-  if (isActuallyVerified) {
+  if (isVerified) {
     return <>{children}</>;
   }
 
