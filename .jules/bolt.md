@@ -1,0 +1,3 @@
+## 2024-05-24 - Dynamic Regex Object Allocation in Hot Paths
+**Learning:** Recreating `new RegExp(str, 'gi')` inside `Object.entries().forEach()` during high-frequency string processing functions (like formatting paper names for thousands of items) causes extreme memory allocation and garbage collection overhead in Node/V8, leading to ~100x slower execution times. Using `Regex.test()` on a global regex advances `lastIndex`, which requires resetting before reuse or understanding that `.replace` with a regex literal handles it differently.
+**Action:** Always pre-compile regular expressions using an array of objects `[{regex: new RegExp(...)}]` outside the function and use memoization caches for pure formatting functions.
