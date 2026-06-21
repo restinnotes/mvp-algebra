@@ -10,25 +10,20 @@ export function useDynamicScaffold() {
     const [isProcessingOcr, setIsProcessingOcr] = useState(false);
     const [isDecomposing, setIsDecomposing] = useState(false);
     const [recognizedLatex, setRecognizedLatex] = useState<string>('');
-    const [demoScriptIndex, setDemoScriptIndex] = useState(0);
 
-    // Resume demoScriptIndex from localStorage
-    useEffect(() => {
-        const saved = localStorage.getItem('demoScriptIndex');
-        if (saved) {
-            setDemoScriptIndex(parseInt(saved, 10));
+    // Initialize demoScriptIndex safely
+    const [demoScriptIndex, setDemoScriptIndex] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('demoScriptIndex');
+            if (saved) return parseInt(saved, 10);
         }
-    }, []);
+        return 0;
+    });
 
-    const [problemText, setProblemText] = useState<string>("");
-    const [problemImage, setProblemImage] = useState<React.ReactNode | null>(null);
+    // Initialize problem text and image
+    const [problemText, setProblemText] = useState<string>(() => getDemoScript(demoScriptIndex).problem);
+    const [problemImage, setProblemImage] = useState<React.ReactNode | null>(() => getDemoScript(demoScriptIndex).problemImage || null);
 
-    // Sync problem text when demoScriptIndex changes
-    useEffect(() => {
-        const scriptData = getDemoScript(demoScriptIndex);
-        setProblemText(scriptData.problem);
-        setProblemImage(scriptData.problemImage || null);
-    }, [demoScriptIndex]);
 
     // Strategy Phase States
     const [isStrategyApproved, setIsStrategyApproved] = useState(false);
@@ -45,15 +40,14 @@ export function useDynamicScaffold() {
     const recognitionRef = useRef<{ stop: () => void } | null>(null);
 
     // LTM States
-    const [persona, setPersona] = useState<StudentPersona | null>(null);
+    const [persona, setPersona] = useState<StudentPersona | null>(() => {
+        if (typeof window !== 'undefined') {
+            return LTMMemory.load('demo_student').persona;
+        }
+        return null;
+    });
     const [sessionId, setSessionId] = useState<string | null>(null);
     const [showPersonaModal, setShowPersonaModal] = useState(false);
-
-    // Initial LTM Load
-    useEffect(() => {
-        const mem = LTMMemory.load('demo_student');
-        setPersona(mem.persona);
-    }, []);
 
     // iPad Optimization: Prevent bounce scroll
     useEffect(() => {
@@ -138,7 +132,7 @@ export function useDynamicScaffold() {
 
             if (data.isCorrect !== undefined) {
                 const newLog: StepLog = {
-                    id: Date.now().toString(),
+                    id: crypto.randomUUID(),
                     type: 'student',
                     contentType: 'math',
                     latex: latex,
