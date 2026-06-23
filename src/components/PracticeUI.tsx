@@ -51,8 +51,11 @@ export default function PracticeUI() {
 
     useEffect(() => {
         const data = LTMMemory.load('demo_student');
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setStudentData(data);
+        // eslint-disable-next-line react-hooks/immutability
         fetchKPs();
+        // eslint-disable-next-line react-hooks/immutability
         fetchFilterOptions();
 
         // Handle URL Params for navigation from Dashboard
@@ -71,6 +74,7 @@ export default function PracticeUI() {
             setSearchQuery(searchParam);
         }
 
+        // eslint-disable-next-line react-hooks/immutability
         fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
     }, []);
 
