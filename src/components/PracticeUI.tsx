@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -176,6 +176,26 @@ export default function PracticeUI() {
 
     const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
+    // ⚡ Bolt Optimization: Memoize complex array transformations to prevent O(N) recalculation on every keystroke. Impact: Eliminates redundant sorting/filtering overhead on re-renders, making search typing significantly smoother.
+    const uniqueExamTypes = useMemo(() => {
+        return [...new Set(examTypes.map(et => formatPaperName(et)))].filter(et => et && et !== '通用');
+    }, [examTypes]);
+
+    const uniqueDistricts = useMemo(() => {
+        return [...new Set(districts.map(d => formatPaperName(d)))].filter(d => d && d !== '通用').sort();
+    }, [districts]);
+
+    const kpCategories = useMemo(() => {
+        return [
+            { prefix: 'geo', label: '几何' },
+            { prefix: 'alg', label: '代数' },
+            { prefix: 'stat', label: '统计' }
+        ].map(cat => ({
+            ...cat,
+            kps: allKPs.filter(kp => kp.id.startsWith(cat.prefix))
+        })).filter(cat => cat.kps.length > 0);
+    }, [allKPs]);
+
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
             {/* Header Tabs */}
@@ -239,7 +259,7 @@ export default function PracticeUI() {
                                 >
                                     全部
                                 </button>
-                                {[...new Set(examTypes.map(et => formatPaperName(et)))].filter(et => et && et !== '通用').map(et => (
+                                {uniqueExamTypes.map(et => (
                                     <button
                                         key={et}
                                         onClick={() => handleExamTypeChange(et)}
@@ -261,7 +281,7 @@ export default function PracticeUI() {
                                 >
                                     全部
                                 </button>
-                                {[...new Set(districts.map(d => formatPaperName(d)))].filter(d => d && d !== '通用').sort().map(d => (
+                                {uniqueDistricts.map(d => (
                                     <button
                                         key={d}
                                         onClick={() => handleDistrictChange(d)}
@@ -280,19 +300,11 @@ export default function PracticeUI() {
 
                         {/* Categories */}
                         <div className="space-y-6">
-                            {[
-                                { prefix: 'geo', label: '几何' },
-                                { prefix: 'alg', label: '代数' },
-                                { prefix: 'stat', label: '统计' }
-                            ].map(cat => {
-                                const categoryKPs = allKPs.filter(kp => kp.id.startsWith(cat.prefix));
-                                if (categoryKPs.length === 0) return null;
-                                
-                                return (
-                                    <div key={cat.prefix}>
-                                        <h3 className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-3">{cat.label}</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {categoryKPs.map(kp => (
+                            {kpCategories.map(cat => (
+                                <div key={cat.prefix}>
+                                    <h3 className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-3">{cat.label}</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {cat.kps.map(kp => (
                                                 <button
                                                     key={kp.id}
                                                     onClick={() => handleKPToggle(kp.id)}
@@ -303,8 +315,7 @@ export default function PracticeUI() {
                                             ))}
                                         </div>
                                     </div>
-                                );
-                            })}
+                                ))}
                         </div>
                     </div>
                 )}
