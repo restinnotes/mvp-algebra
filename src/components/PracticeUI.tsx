@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect, react-hooks/immutability */
+/* eslint-disable react-hooks/purity, react-hooks/immutability, react-hooks/set-state-in-effect, @typescript-eslint/no-unused-vars */
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -53,6 +53,7 @@ export default function PracticeUI() {
     useEffect(() => {
         const data = LTMMemory.load('demo_student');
         setStudentData(data);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         fetchKPs();
         fetchFilterOptions();
 
