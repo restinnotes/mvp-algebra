@@ -51,6 +51,7 @@ export default function PracticeUI() {
 
     useEffect(() => {
         const data = LTMMemory.load('demo_student');
+
         setStudentData(data);
         fetchKPs();
         fetchFilterOptions();
@@ -74,7 +75,7 @@ export default function PracticeUI() {
         fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
     }, []);
 
-    const fetchKPs = async () => {
+    function fetchKPs() {
         try {
             const res = await fetch('/api/questions', {
                 method: 'POST',
@@ -88,7 +89,7 @@ export default function PracticeUI() {
         }
     };
 
-    const fetchFilterOptions = async () => {
+    function fetchFilterOptions() {
         try {
             const [districtsRes, examTypesRes] = await Promise.all([
                 fetch('/api/questions', {
@@ -147,7 +148,7 @@ export default function PracticeUI() {
         return () => clearTimeout(timer);
     }, [searchQuery]);
 
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
+    function fetchQuestionsWithFilter(district: string, examType: string, kps: string[], targetPage: number, query?: string) {
         setLoading(true);
         try {
             const res = await fetch('/api/questions', {
@@ -384,11 +385,12 @@ export default function PracticeUI() {
                             <div className="text-xs text-white/30 font-bold">
                                 共 <span className="text-indigo-400">{totalResults}</span> 道题目
                             </div>
-                            <div className="flex items-center gap-2">
+                            <nav aria-label="分页" className="flex items-center gap-2">
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="上一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-indigo-500 transition-all text-white/60"
                                 >
                                     <ChevronLeft size={18} />
                                 </button>
@@ -401,7 +403,9 @@ export default function PracticeUI() {
                                                 <button
                                                     key={p}
                                                     onClick={() => handlePageChange(p)}
-                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+                                                    aria-label={`第 ${p} 页`}
+                                                    aria-current={page === p ? 'page' : undefined}
+                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
                                                 >
                                                     {p}
                                                 </button>
@@ -416,11 +420,12 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="下一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-indigo-500 transition-all text-white/60"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
-                            </div>
+                            </nav>
                         </div>
                     )}
                 </div>
