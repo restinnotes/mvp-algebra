@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types.ts';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeCategory, QuestionMapping } from './types';
 import { formatPaperName, PAPER_NAME_MAP } from './format.ts';
 
 const KP_PATH = path.join(process.cwd(), 'knowledge_points.json');
