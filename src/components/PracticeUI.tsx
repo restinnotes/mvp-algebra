@@ -49,32 +49,7 @@ export default function PracticeUI() {
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
-    useEffect(() => {
-        const data = LTMMemory.load('demo_student');
-        setStudentData(data);
-        fetchKPs();
-        fetchFilterOptions();
-
-        // Handle URL Params for navigation from Dashboard
-        const params = new URLSearchParams(window.location.search);
-        const kpParam = params.get('kp');
-        const searchParam = params.get('search');
-        
-        let initialKPs: string[] = [];
-        if (kpParam) {
-            initialKPs = [kpParam];
-            setSelectedKPs(initialKPs);
-        }
-        let initialSearch = '';
-        if (searchParam) {
-            initialSearch = searchParam;
-            setSearchQuery(searchParam);
-        }
-
-        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
-    }, []);
-
-    const fetchKPs = async () => {
+    async function fetchKPs() {
         try {
             const res = await fetch('/api/questions', {
                 method: 'POST',
@@ -88,7 +63,7 @@ export default function PracticeUI() {
         }
     };
 
-    const fetchFilterOptions = async () => {
+    async function fetchFilterOptions() {
         try {
             const [districtsRes, examTypesRes] = await Promise.all([
                 fetch('/api/questions', {
@@ -110,6 +85,59 @@ export default function PracticeUI() {
             console.error('Failed to fetch filter options', e);
         }
     };
+
+    async function fetchQuestionsWithFilter(district: string, examType: string, kps: string[], targetPage: number, query?: string) {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'search',
+                    kps: kps.length > 0 ? kps : undefined,
+                    district: district !== 'all' ? district : undefined,
+                    examType: examType !== 'all' ? examType : undefined,
+                    searchQuery: query || undefined,
+                    maxResults: pageSize,
+                    page: targetPage
+                })
+            });
+            const data = await res.json();
+            setQuestions(data.questions || []);
+            setTotalPages(data.totalPages || 1);
+            setTotalResults(data.total || 0);
+        } catch (e) {
+            console.error('Failed to fetch questions', e);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        const data = LTMMemory.load('demo_student');
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setStudentData(data);
+        fetchKPs();
+        fetchFilterOptions();
+
+        // Handle URL Params for navigation from Dashboard
+        const params = new URLSearchParams(window.location.search);
+        const kpParam = params.get('kp');
+        const searchParam = params.get('search');
+
+        let initialKPs: string[] = [];
+        if (kpParam) {
+            initialKPs = [kpParam];
+            setSelectedKPs(initialKPs);
+        }
+        let initialSearch = '';
+        if (searchParam) {
+            initialSearch = searchParam;
+            setSearchQuery(searchParam);
+        }
+
+        fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
+    }, []);
 
     const handleKPToggle = (kpId: string) => {
         const next = selectedKPs.includes(kpId)
@@ -146,33 +174,6 @@ export default function PracticeUI() {
         }, 300);
         return () => clearTimeout(timer);
     }, [searchQuery]);
-
-    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    action: 'search', 
-                    kps: kps.length > 0 ? kps : undefined,
-                    district: district !== 'all' ? district : undefined,
-                    examType: examType !== 'all' ? examType : undefined,
-                    searchQuery: query || undefined,
-                    maxResults: pageSize,
-                    page: targetPage
-                })
-            });
-            const data = await res.json();
-            setQuestions(data.questions || []);
-            setTotalPages(data.totalPages || 1);
-            setTotalResults(data.total || 0);
-        } catch (e) {
-            console.error('Failed to fetch questions', e);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
@@ -384,11 +385,12 @@ export default function PracticeUI() {
                             <div className="text-xs text-white/30 font-bold">
                                 共 <span className="text-indigo-400">{totalResults}</span> 道题目
                             </div>
-                            <div className="flex items-center gap-2">
+                            <nav aria-label="分页" className="flex items-center gap-2">
                                 <button
                                     onClick={() => handlePageChange(page - 1)}
                                     disabled={page === 1}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="上一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 focus-visible:ring-2 focus-visible:outline-none"
                                 >
                                     <ChevronLeft size={18} />
                                 </button>
@@ -401,7 +403,9 @@ export default function PracticeUI() {
                                                 <button
                                                     key={p}
                                                     onClick={() => handlePageChange(p)}
-                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+                                                    aria-label={`第 ${p} 页`}
+                                                    aria-current={page === p ? "page" : undefined}
+                                                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all focus-visible:ring-2 focus-visible:outline-none ${page === p ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
                                                 >
                                                     {p}
                                                 </button>
@@ -416,11 +420,12 @@ export default function PracticeUI() {
                                 <button
                                     onClick={() => handlePageChange(page + 1)}
                                     disabled={page === totalPages}
-                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60"
+                                    aria-label="下一页"
+                                    className="p-2 rounded-lg bg-white/5 border border-white/10 disabled:opacity-20 hover:bg-white/10 transition-all text-white/60 focus-visible:ring-2 focus-visible:outline-none"
                                 >
                                     <ChevronRight size={18} />
                                 </button>
-                            </div>
+                            </nav>
                         </div>
                     )}
                 </div>
