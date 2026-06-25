@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';
 import { QuestionMapping } from '@/lib/types';
-import { formatPaperName, PAPER_NAME_MAP } from '@/lib/format';
+import { formatPaperName } from '@/lib/format';
 import Link from 'next/link';
 
 interface KP {
@@ -179,7 +179,7 @@ export default function PracticeUI() {
         return () => clearTimeout(timer);
     }, [searchQuery]);
 
-    const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
+    // const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
     return (
         <div className="flex flex-col h-full bg-[#0d0f14] text-white">
