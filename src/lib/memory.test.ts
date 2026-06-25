@@ -1,6 +1,6 @@
 import { test, describe, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert';
-import { LTMMemory } from './memory.ts';
+import { LTMMemory } from './memory';
 
 // Mock localStorage
 class MockLocalStorage {
