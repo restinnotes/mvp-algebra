@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BktEngine } from '@/lib/bkt';
+
 import { Activity, ShieldAlert, CheckCircle2, RefreshCcw, ArrowRight, BrainCircuit, UserCircle, Bug, BookOpen, History, Lightbulb, PlayCircle, ChevronRight, AlertTriangle, Sparkles, Layers, ChevronDown, Flame, Target } from 'lucide-react';
 import { InlineMath } from 'react-katex';
 import { LTMMemory, MemoryData, WrongProblem } from '@/lib/memory';

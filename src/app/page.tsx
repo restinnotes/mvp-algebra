@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import PasswordGate from '@/components/PasswordGate';
 import { redirect } from 'next/navigation';
+import { isAuthenticated } from '@/app/actions/auth';
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ problem?: string }> }) {
   const params = await searchParams;
@@ -11,9 +12,14 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
     redirect('/dashboard');
   }
 
+  const authenticated = await isAuthenticated();
+
+  if (!authenticated) {
+    return <PasswordGate />;
+  }
+
   return (
-    <PasswordGate>
-      <main className="h-[100dvh] bg-[#0f1115] text-white flex flex-col items-center py-4 px-4 selection:bg-indigo-500/30 overflow-hidden">
+    <main className="h-[100dvh] bg-[#0f1115] text-white flex flex-col items-center py-4 px-4 selection:bg-indigo-500/30 overflow-hidden">
         <div className="w-full max-w-6xl flex flex-col h-full">
           {/* Header / Intro */}
           <div className="shrink-0 relative flex items-center justify-center mb-2 mt-2 py-2">
@@ -38,6 +44,5 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
           </div>
         </div>
       </main>
-    </PasswordGate>
   );
 }
