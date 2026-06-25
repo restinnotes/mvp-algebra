@@ -286,7 +286,7 @@ export function useDynamicScaffold() {
 
         const processStep = async (step: DemoStepData) => {
             const newStepLog: StepLog = {
-                // eslint-disable-next-line react-hooks/purity
+                    // eslint-disable-next-line react-hooks/purity
                     id: Date.now().toString(),
                 type: 'student',
                 contentType: step.contentType,
@@ -597,7 +597,7 @@ export function useDynamicScaffold() {
             addLog('api', `思路结果: ${JSON.stringify(evaluation)}`);
 
             const newLog: StepLog = {
-                // eslint-disable-next-line react-hooks/purity
+                    // eslint-disable-next-line react-hooks/purity
                     id: Date.now().toString(),
                 type: 'student',
                 contentType: 'text',
@@ -692,7 +692,7 @@ export function useDynamicScaffold() {
             const finalLatex = value.trim();
 
             const newLog: StepLog = {
-                // eslint-disable-next-line react-hooks/purity
+                    // eslint-disable-next-line react-hooks/purity
                     id: Date.now().toString(),
                 type: 'student',
                 contentType: 'math',
