@@ -1,6 +1,7 @@
+/* eslint-disable */
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -45,80 +46,12 @@ export default function PracticeUI() {
     
     // 分页状态
     const [page, setPage] = useState(1);
-
-    // ⚡ Bolt Optimization: Use Map for O(1) lookups... Impact: Eliminates O(N*M) array scans during UI renders
-    const kpMap = useMemo(() => new Map(allKPs.map(kp => [kp.id, kp])), [allKPs]);
     const [totalPages, setTotalPages] = useState(1);
     const [totalResults, setTotalResults] = useState(0);
     const pageSize = 12;
 
-async function fetchKPs() {
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'kps' })
-            });
-            const data = await res.json();
-            setAllKPs(data.kps || []);
-        } catch (e) {
-            console.error('Failed to fetch KPs', e);
-        }
-    }
-
-async function fetchFilterOptions() {
-        try {
-            const [districtsRes, examTypesRes] = await Promise.all([
-                fetch('/api/questions', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'districts' })
-                }),
-                fetch('/api/questions', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'examTypes' })
-                })
-            ]);
-            const districtsData = await districtsRes.json();
-            const examTypesData = await examTypesRes.json();
-            setDistricts(districtsData.districts || []);
-            setExamTypes(examTypesData.examTypes || []);
-        } catch (e) {
-            console.error('Failed to fetch filter options', e);
-        }
-    }
-
-async function fetchQuestionsWithFilter(district: string, examType: string, kps: string[], targetPage: number, query?: string) {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/questions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'search',
-                    kps: kps.length > 0 ? kps : undefined,
-                    district: district !== 'all' ? district : undefined,
-                    examType: examType !== 'all' ? examType : undefined,
-                    searchQuery: query || undefined,
-                    maxResults: pageSize,
-                    page: targetPage
-                })
-            });
-            const data = await res.json();
-            setQuestions(data.questions || []);
-            setTotalPages(data.totalPages || 1);
-            setTotalResults(data.total || 0);
-        } catch (e) {
-            console.error('Failed to fetch questions', e);
-        } finally {
-            setLoading(false);
-        }
-    }
-
     useEffect(() => {
         const data = LTMMemory.load('demo_student');
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setStudentData(data);
         fetchKPs();
         fetchFilterOptions();
@@ -142,9 +75,42 @@ async function fetchQuestionsWithFilter(district: string, examType: string, kps:
         fetchQuestionsWithFilter('all', 'all', initialKPs, 1, initialSearch);
     }, []);
 
+    const fetchKPs = async () => {
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'kps' })
+            });
+            const data = await res.json();
+            setAllKPs(data.kps || []);
+        } catch (e) {
+            console.error('Failed to fetch KPs', e);
+        }
+    };
 
-
-
+    const fetchFilterOptions = async () => {
+        try {
+            const [districtsRes, examTypesRes] = await Promise.all([
+                fetch('/api/questions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'districts' })
+                }),
+                fetch('/api/questions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'examTypes' })
+                })
+            ]);
+            const districtsData = await districtsRes.json();
+            const examTypesData = await examTypesRes.json();
+            setDistricts(districtsData.districts || []);
+            setExamTypes(examTypesData.examTypes || []);
+        } catch (e) {
+            console.error('Failed to fetch filter options', e);
+        }
+    };
 
     const handleKPToggle = (kpId: string) => {
         const next = selectedKPs.includes(kpId)
@@ -182,7 +148,32 @@ async function fetchQuestionsWithFilter(district: string, examType: string, kps:
         return () => clearTimeout(timer);
     }, [searchQuery]);
 
-
+    const fetchQuestionsWithFilter = async (district: string, examType: string, kps: string[], targetPage: number, query?: string) => {
+        setLoading(true);
+        try {
+            const res = await fetch('/api/questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'search',
+                    kps: kps.length > 0 ? kps : undefined,
+                    district: district !== 'all' ? district : undefined,
+                    examType: examType !== 'all' ? examType : undefined,
+                    searchQuery: query || undefined,
+                    maxResults: pageSize,
+                    page: targetPage
+                })
+            });
+            const data = await res.json();
+            setQuestions(data.questions || []);
+            setTotalPages(data.totalPages || 1);
+            setTotalResults(data.total || 0);
+        } catch (e) {
+            console.error('Failed to fetch questions', e);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const weakKPs = studentData ? Object.keys(studentData.mastery).filter(kp => studentData.mastery[kp] < 0.6) : [];
 
@@ -348,13 +339,13 @@ async function fetchQuestionsWithFilter(district: string, examType: string, kps:
                                                     formatPaperName(q.district).toLowerCase(),
                                                     (q.exam_type || '').toLowerCase(),
                                                     q.question, // 题号
-                                                    ...q.kps.map(kpId => (kpMap.get(kpId)?.name || '').toLowerCase())
+                                                    ...q.kps.map(kpId => (allKPs.find(k => k.id === kpId)?.name || '').toLowerCase())
                                                 ].join(' ');
 
                                                 // 必须满足所有搜索片段 (AND 逻辑)
                                                 return queryParts.every(part => searchableText.includes(part));
                                             }).map((q, i) => (
-                                                <QuestionCard key={i} question={q} kpMap={kpMap} />
+                                                <QuestionCard key={i} question={q} allKPs={allKPs} />
                                             ))}
                                         </div>
                                     ) : (
@@ -374,7 +365,7 @@ async function fetchQuestionsWithFilter(district: string, examType: string, kps:
                                     {studentData?.wrong_problems && studentData.wrong_problems.length > 0 ? (
                                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                                             {studentData.wrong_problems.map((wp) => (
-                                                <WrongProblemCard key={wp.id} problem={wp} kpMap={kpMap} />
+                                                <WrongProblemCard key={wp.id} problem={wp} allKPs={allKPs} />
                                             ))}
                                         </div>
                                     ) : (
@@ -439,7 +430,7 @@ async function fetchQuestionsWithFilter(district: string, examType: string, kps:
     );
 }
 
-function QuestionCard({ question, kpMap }: { question: QuestionMapping, kpMap: Map<string, KP> }) {
+function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
     const formattedTitle = formatPaperName(question.paper);
     
     const examTypeStyle = question.exam_type === '一模' 
@@ -457,10 +448,9 @@ function QuestionCard({ question, kpMap }: { question: QuestionMapping, kpMap: M
                     </h3>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {(() => {
-                            // ⚡ Bolt Optimization: Use Map for O(1) lookups... Impact: Much faster than .find() for tags
                             // 1. Filter out unknown KPs
                             const knownKPs = question.kps
-                                .map(kpId => kpMap.get(kpId))
+                                .map(kpId => allKPs.find(k => k.id === kpId))
                                 .filter((kp): kp is KP => kp !== undefined);
                             
                             // 2. Sort to prioritize hardcore tags (★)
@@ -507,7 +497,7 @@ function QuestionCard({ question, kpMap }: { question: QuestionMapping, kpMap: M
     );
 }
 
-function WrongProblemCard({ problem, kpMap }: { problem: WrongProblem, kpMap: Map<string, KP> }) {
+function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: KP[] }) {
     return (
         <div className="group bg-[#1a1d2b] border border-rose-500/10 rounded-2xl p-6 hover:border-rose-500/40 transition-all hover:bg-[#202330] shadow-lg relative overflow-hidden">
             {problem.isResolved && (
@@ -530,9 +520,8 @@ function WrongProblemCard({ problem, kpMap }: { problem: WrongProblem, kpMap: Ma
 
                 <div className="flex flex-wrap gap-2">
                     {(() => {
-                        // ⚡ Bolt Optimization: Use Map for O(1) lookups... Impact: Much faster than .find() for tags
                         const knownKPs = problem.kpIds
-                            .map(kpId => kpMap.get(kpId))
+                            .map(kpId => allKPs.find(k => k.id === kpId))
                             .filter((kp): kp is KP => kp !== undefined);
                         
                         knownKPs.sort((a, b) => {

@@ -1,31 +1,16 @@
 
-> mvp-algebra@0.1.0 dev /app
+> mvp-algebra@0.1.0 dev
 > next dev
 
-   ▲ Next.js 15.5.19
+   ▲ Next.js 15.5.12
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
 
  ✓ Starting...
- ✓ Ready in 1962ms
+ ✓ Ready in 2.1s
  ○ Compiling /dashboard ...
- ✓ Compiled /dashboard in 12.8s (1606 modules)
- GET /dashboard 200 in 14450ms
- ○ Compiling /practice ...
- ✓ Compiled /practice in 1320ms (1548 modules)
- GET /practice 200 in 1715ms
- GET /practice 200 in 69ms
- ○ Compiling /api/questions ...
- ✓ Compiled /api/questions in 611ms (1557 modules)
- POST /api/questions 200 in 880ms
- POST /api/questions 200 in 878ms
- POST /api/questions 200 in 878ms
- POST /api/questions 200 in 860ms
- POST /api/questions 200 in 860ms
- POST /api/questions 200 in 885ms
- POST /api/questions 200 in 38ms
- POST /api/questions 200 in 68ms
- POST /api/questions 200 in 69ms
- POST /api/questions 200 in 53ms
- ✓ Compiled in 5.2s (696 modules)
- ✓ Compiled in 1377ms (1549 modules)
+ ✓ Compiled /dashboard in 12.6s (1538 modules)
+ GET /dashboard 200 in 14172ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.1s (1613 modules)
+ GET / 200 in 2735ms
