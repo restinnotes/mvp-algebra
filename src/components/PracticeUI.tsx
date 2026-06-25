@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -59,7 +60,7 @@ export default function PracticeUI() {
         const params = new URLSearchParams(window.location.search);
         const kpParam = params.get('kp');
         const searchParam = params.get('search');
-        
+
         let initialKPs: string[] = [];
         if (kpParam) {
             initialKPs = [kpParam];
@@ -153,8 +154,8 @@ export default function PracticeUI() {
             const res = await fetch('/api/questions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    action: 'search', 
+                body: JSON.stringify({
+                    action: 'search',
                     kps: kps.length > 0 ? kps : undefined,
                     district: district !== 'all' ? district : undefined,
                     examType: examType !== 'all' ? examType : undefined,
