@@ -78,6 +78,7 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                         <div className="flex items-center gap-3">
                             <button
                                 type="button"
+                                aria-label="上一步"
                                 onClick={() => {
                                     if (manualDemoStep > 0) {
                                         const newStepIdx = manualDemoStep - 1;
@@ -111,6 +112,7 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                             </span>
                             <button
                                 type="button"
+                                aria-label="下一步"
                                 onClick={handleDemoOcr}
                                 disabled={manualDemoStep >= demoSteps.length}
                                 className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0"
