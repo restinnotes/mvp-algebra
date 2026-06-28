@@ -78,6 +78,7 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                         <div className="flex items-center gap-3">
                             <button
                                 type="button"
+                                aria-label="上一步"
                                 onClick={() => {
                                     if (manualDemoStep > 0) {
                                         const newStepIdx = manualDemoStep - 1;
@@ -102,18 +103,19 @@ export const ProgressPanel = React.memo(function ProgressPanel({
                                     }
                                 }}
                                 disabled={manualDemoStep <= 0}
-                                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0"
+                                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white disabled:opacity-20 transition-all shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
                             >
                                 <ChevronLeft size={16} />
                             </button>
-                            <span className="text-white/50 text-xs font-mono flex-1 text-center">
+                            <span className="text-white/50 text-xs font-mono flex-1 text-center" aria-live="polite">
                                 {manualDemoStep} / {demoSteps.length}
                             </span>
                             <button
                                 type="button"
+                                aria-label="下一步"
                                 onClick={handleDemoOcr}
                                 disabled={manualDemoStep >= demoSteps.length}
-                                className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0"
+                                className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 text-white disabled:opacity-20 transition-all shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
                             >
                                 <ChevronRight size={16} />
                             </button>
