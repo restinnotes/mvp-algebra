@@ -12,8 +12,12 @@ import {
 
 export async function POST(request: NextRequest) {
   try {
-    // Force cache clear for development/data updates
-    clearCache();
+    // Only clear cache in development to allow hot-reloading of data files
+    // In production, this causes a major bottleneck by forcing synchronous
+    // fs.readFileSync on every request, blocking the main thread
+    if (process.env.NODE_ENV === 'development') {
+      clearCache();
+    }
     const body = await request.json();
     const { 
       action, 
