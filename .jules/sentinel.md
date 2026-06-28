@@ -1,4 +1,4 @@
-## 2024-05-30 - [Insecure Randomness for Identifiers]
-**Vulnerability:** Insecure use of `Math.random()` to generate critical unique identifiers like `session_id` in `src/lib/orchestrator.ts` and problem `id`s in `src/lib/memory.ts`.
-**Learning:** This codebase uses `Math.random()` to generate IDs, which is predictable and insecure for things like session IDs or database primary keys. A malicious user could potentially predict session IDs or problem IDs, leading to insecure direct object references (IDOR) or session hijacking.
-**Prevention:** Always use cryptographically secure methods like `crypto.randomUUID()` for generating unique identifiers.
+## 2024-05-28 - [APP_PASSWORD Environment Variable Leak]
+**Vulnerability:** The application password was stored in the `NEXT_PUBLIC_APP_PASSWORD` environment variable and directly accessed in the client-side component `src/components/PasswordGate.tsx` using `process.env.NEXT_PUBLIC_APP_PASSWORD`.
+**Learning:** In Next.js, any environment variable prefixed with `NEXT_PUBLIC_` is inlined into the client-side bundle during the build process. This means anyone inspecting the client-side code can easily find the hardcoded password, completely bypassing the authentication mechanism.
+**Prevention:** Sensitive secrets like application passwords should NEVER be prefixed with `NEXT_PUBLIC_`. Authentication must be performed on the server-side, not client-side. The client should send the password to an API endpoint which verifies it against a server-side only environment variable (e.g., `APP_PASSWORD`) and returns a session or a success status.
