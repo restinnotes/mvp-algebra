@@ -12,8 +12,11 @@ import {
 
 export async function POST(request: NextRequest) {
   try {
+    // ⚡ Bolt: Made clearCache() conditional to allow in-memory cache to speed up requests
     // Force cache clear for development/data updates
-    clearCache();
+    if (process.env.NODE_ENV === 'development') {
+      clearCache();
+    }
     const body = await request.json();
     const { 
       action, 
