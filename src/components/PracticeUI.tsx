@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     Search, 
@@ -429,7 +429,7 @@ export default function PracticeUI() {
     );
 }
 
-function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
+const QuestionCard = memo(function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs: KP[] }) {
     const formattedTitle = formatPaperName(question.paper);
     
     const examTypeStyle = question.exam_type === '一模' 
@@ -437,6 +437,30 @@ function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs:
         : question.exam_type === '二模'
         ? 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30'
         : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30';
+
+    const kpTags = useMemo(() => {
+        // 1. Filter out unknown KPs
+        const knownKPs = question.kps
+            .map(kpId => allKPs.find(k => k.id === kpId))
+            .filter((kp): kp is KP => kp !== undefined);
+
+        // 2. Sort to prioritize hardcore tags (★)
+        knownKPs.sort((a, b) => {
+            const aHard = a.name.includes('★') ? 1 : 0;
+            const bHard = b.name.includes('★') ? 1 : 0;
+            return bHard - aHard;
+        });
+
+        // 3. Take top 5 meaningful tags
+        return knownKPs.slice(0, 5).map(kp => {
+            const isHardcore = kp.name.includes('★');
+            return (
+                <span key={kp.id} className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${isHardcore ? 'bg-indigo-500/20 border border-indigo-500/40 text-indigo-300' : 'bg-white/5 border border-white/10 text-white/40'}`}>
+                    {kp.name.replace('★ ', '')}
+                </span>
+            );
+        });
+    }, [question.kps, allKPs]);
 
     return (
         <div className="group bg-[#1a1d24] border border-white/5 rounded-2xl p-6 hover:border-indigo-500/40 transition-all hover:bg-[#1e222b] shadow-lg">
@@ -446,29 +470,7 @@ function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs:
                         {formattedTitle} 第 {question.question} 题
                     </h3>
                     <div className="flex flex-wrap gap-2 mt-2">
-                        {(() => {
-                            // 1. Filter out unknown KPs
-                            const knownKPs = question.kps
-                                .map(kpId => allKPs.find(k => k.id === kpId))
-                                .filter((kp): kp is KP => kp !== undefined);
-                            
-                            // 2. Sort to prioritize hardcore tags (★)
-                            knownKPs.sort((a, b) => {
-                                const aHard = a.name.includes('★') ? 1 : 0;
-                                const bHard = b.name.includes('★') ? 1 : 0;
-                                return bHard - aHard;
-                            });
-
-                            // 3. Take top 5 meaningful tags
-                            return knownKPs.slice(0, 5).map(kp => {
-                                const isHardcore = kp.name.includes('★');
-                                return (
-                                    <span key={kp.id} className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${isHardcore ? 'bg-indigo-500/20 border border-indigo-500/40 text-indigo-300' : 'bg-white/5 border border-white/10 text-white/40'}`}>
-                                        {kp.name.replace('★ ', '')}
-                                    </span>
-                                );
-                            });
-                        })()}
+                        {kpTags}
                     </div>
                 </div>
                 <div className="flex flex-col items-end gap-1">
@@ -494,9 +496,30 @@ function QuestionCard({ question, allKPs }: { question: QuestionMapping, allKPs:
             </div>
         </div>
     );
-}
+});
 
-function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: KP[] }) {
+const WrongProblemCard = memo(function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: KP[] }) {
+    const kpTags = useMemo(() => {
+        const knownKPs = problem.kpIds
+            .map(kpId => allKPs.find(k => k.id === kpId))
+            .filter((kp): kp is KP => kp !== undefined);
+
+        knownKPs.sort((a, b) => {
+            const aHard = a.name.includes('★') ? 1 : 0;
+            const bHard = b.name.includes('★') ? 1 : 0;
+            return bHard - aHard;
+        });
+
+        return knownKPs.slice(0, 3).map(kp => {
+            const isHardcore = kp.name.includes('★');
+            return (
+                <span key={kp.id} className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${isHardcore ? 'bg-rose-500/20 border border-rose-500/40 text-rose-300' : 'bg-rose-500/5 border border-rose-500/10 text-rose-400/70'}`}>
+                    {kp.name.replace('★ ', '')}
+                </span>
+            );
+        });
+    }, [problem.kpIds, allKPs]);
+
     return (
         <div className="group bg-[#1a1d2b] border border-rose-500/10 rounded-2xl p-6 hover:border-rose-500/40 transition-all hover:bg-[#202330] shadow-lg relative overflow-hidden">
             {problem.isResolved && (
@@ -518,26 +541,7 @@ function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: 
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                    {(() => {
-                        const knownKPs = problem.kpIds
-                            .map(kpId => allKPs.find(k => k.id === kpId))
-                            .filter((kp): kp is KP => kp !== undefined);
-                        
-                        knownKPs.sort((a, b) => {
-                            const aHard = a.name.includes('★') ? 1 : 0;
-                            const bHard = b.name.includes('★') ? 1 : 0;
-                            return bHard - aHard;
-                        });
-
-                        return knownKPs.slice(0, 3).map(kp => {
-                            const isHardcore = kp.name.includes('★');
-                            return (
-                                <span key={kp.id} className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${isHardcore ? 'bg-rose-500/20 border border-rose-500/40 text-rose-300' : 'bg-rose-500/5 border border-rose-500/10 text-rose-400/70'}`}>
-                                    {kp.name.replace('★ ', '')}
-                                </span>
-                            );
-                        });
-                    })()}
+                    {kpTags}
                 </div>
 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
@@ -552,4 +556,4 @@ function WrongProblemCard({ problem, allKPs }: { problem: WrongProblem, allKPs: 
             </div>
         </div>
     );
-}
+});
