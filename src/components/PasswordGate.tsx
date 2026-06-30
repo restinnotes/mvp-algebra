@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-const APP_PASSWORD = process.env.NEXT_PUBLIC_APP_PASSWORD;
+import { verifyAppPassword } from '@/app/actions';
 
 function getInitialVerified(): boolean {
   if (typeof window === 'undefined') return false;
@@ -17,18 +16,21 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
 
   const isActuallyVerified = isVerified || localVerified;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!APP_PASSWORD) {
-      setError('密码未配置，请联系管理员');
-      return;
-    }
-    if (inputPassword === APP_PASSWORD) {
-      localStorage.setItem('app_password_verified', 'true');
-      setLocalVerified(true);
-      setError('');
-    } else {
-      setError('密码错误，请重试');
+
+    try {
+      const result = await verifyAppPassword(inputPassword);
+
+      if (result.success) {
+        localStorage.setItem('app_password_verified', 'true');
+        setLocalVerified(true);
+        setError('');
+      } else {
+        setError(result.error || '密码错误，请重试');
+      }
+    } catch (err) {
+      setError('验证失败，请稍后重试');
     }
   };
 
