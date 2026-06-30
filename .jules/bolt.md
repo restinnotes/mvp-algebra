@@ -1,0 +1,3 @@
+## 2026-06-30 - Optimize rendering of items in large lists
+**Learning:** Found an inline IIFE used to compute `kpTags` directly inside a child component (`QuestionCard` and `WrongProblemCard`) rendered by `PracticeUI`. It included computationally expensive array methods (`map`, `find`, `filter`, `sort`). Every re-render of `PracticeUI` was causing these computations to run again unnecessarily, even if props hadn't changed.
+**Action:** Wrappe components with `React.memo` to prevent unnecessary re-renders. Refactored the inline IIFE into a `useMemo` hook to cache the calculated array, mapping array changes as a dependency.
