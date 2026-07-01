@@ -22,8 +22,8 @@ export const ProblemDisplay = React.memo(function ProblemDisplay({
                     <h2 className="font-semibold tracking-wide text-sm uppercase">当前目标</h2>
                 </div>
 
-                <label className="cursor-pointer flex items-center gap-2 px-3 py-1 bg-white/5 hover:bg-white/10 text-white/60 text-xs rounded-lg transition-all">
-                    <input type="file" className="hidden" accept="image/*" onChange={handleProblemUpload} disabled={isDecomposing} />
+                <label className="cursor-pointer flex items-center gap-2 px-3 py-1 bg-white/5 hover:bg-white/10 text-white/60 text-xs rounded-lg transition-all focus-within:ring-2 focus-within:ring-indigo-500/50 outline-none">
+                    <input type="file" className="sr-only" accept="image/*" aria-label="上传新题目图片" onChange={handleProblemUpload} disabled={isDecomposing} />
                     {isDecomposing ? '分析中...' : '上传新题目'}
                 </label>
             </div>

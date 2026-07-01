@@ -1,0 +1,3 @@
+## 2024-05-24 - File Upload Button Keyboard Accessibility
+**Learning:** Hiding file inputs with `display: none` (like Tailwind's `hidden` class) completely removes them from the tab order, breaking keyboard accessibility for file uploads. Users navigating with a keyboard cannot access the upload functionality if the actual `<input>` is hidden this way, even if it's wrapped in a clickable label.
+**Action:** Always use visually hidden techniques (like Tailwind's `sr-only` class) instead of `hidden` or `display: none` for file inputs. Combine this with `focus-within` styles on the parent `<label>` wrapper to provide a clear visual focus indicator when the invisible input receives focus.
