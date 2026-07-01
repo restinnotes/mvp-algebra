@@ -6,14 +6,11 @@ import {
   getAllNodes, 
   loadMappings,
   getQuestionById,
-  clearCache,
   formatPaperName
 } from '@/lib/knowledge';
 
 export async function POST(request: NextRequest) {
   try {
-    // Force cache clear for development/data updates
-    clearCache();
     const body = await request.json();
     const { 
       action, 
