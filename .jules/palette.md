@@ -1,0 +1,3 @@
+## 2025-07-02 - Added Missing ARIA Labels to Icon-Only Buttons
+**Learning:** Found a common pattern of missing ARIA labels on icon-only buttons (such as back/forward carets, and close buttons '✕'). This severely degrades the experience for screen reader users who rely on these labels to understand the button's action.
+**Action:** When working on components or modals with icon-only actions, systematically add `aria-label` attributes to ensure keyboard and screen reader accessibility is upheld across the application.
