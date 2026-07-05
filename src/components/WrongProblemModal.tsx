@@ -30,8 +30,8 @@ export function WrongProblemModal({ problem, onClose, onResolve }: { problem: Wr
             {/* Immersive Header */}
             <div className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-black/40 backdrop-blur-xl">
                 <div className="flex items-center gap-4">
-                    <button onClick={onClose} className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white/70 group">
-                        <ChevronRight className="rotate-180 group-hover:-translate-x-0.5 transition-transform" size={24} />
+                    <button onClick={onClose} aria-label="关闭" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white/70 group">
+                        <ChevronRight aria-hidden="true" className="rotate-180 group-hover:-translate-x-0.5 transition-transform" size={24} />
                     </button>
                     <div>
                         <h2 className="text-xl font-bold text-white flex items-center gap-2">
